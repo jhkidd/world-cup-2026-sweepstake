@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      background: #FFFFFF;
+      padding: 40px;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .header {
+      margin-bottom: 30px;
+    }
+    
+    h1 {
+      font-size: 32px;
+      font-weight: 700;
+      color: #2C3E50;
+      margin-bottom: 8px;
+    }
+    
+    .subtitle {
+      font-size: 16px;
+      color: #7F8C8D;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    
+    th {
+      background: #F5F5F5;
+      text-align: left;
+      padding: 16px;
+      font-weight: 700;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #5A6C7D;
+      border-bottom: 2px solid #E0E0E0;
+    }
+    
+    th.right {
+      text-align: right;
+    }
+    
+    td {
+      padding: 16px;
+      border-bottom: 1px solid #F0F0F0;
+      font-size: 15px;
+    }
+    
+    tr:nth-child(odd) {
+      background: #FAFAFA;
+    }
+    
+    tr.top-3 {
+      background: #FFF9E6 !important;
+    }
+    
+    tr.top-3.rank-1 {
+      background: #FFD700 !important;
+      background: linear-gradient(90deg, #FFD70020 0%, transparent 100%) !important;
+    }
+    
+    .rank {
+      font-weight: 700;
+      font-size: 18px;
+      color: #2C3E50;
+      width: 50px;
+    }
+    
+    .name {
+      font-weight: 600;
+      color: #2C3E50;
+    }
+    
+    .team {
+      color: #5A6C7D;
+      font-size: 14px;
+    }
+    
+    .prob {
+      text-align: right;
+      color: #7F8C8D;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    
+    .total {
+      text-align: right;
+      position: relative;
+      font-weight: 700;
+      font-size: 16px;
+      color: #2C3E50;
+    }
+    
+    .prob-bar {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      background: linear-gradient(90deg, #4DB8A8 0%, #A8E6CF 100%);
+      opacity: 0.3;
+      z-index: 0;
+      border-radius: 2px;
+    }
+    
+    .prob-text {
+      position: relative;
+      z-index: 1;
+    }
+    
+    .change {
+      text-align: right;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    
+    .change.positive {
+      color: #27AE60;
+    }
+    
+    .change.negative {
+      color: #E74C3C;
+    }
+    
+    .change.neutral {
+      color: #95A5A6;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>2026 World Cup Sweepstake Standings</h1>
+      <div class="subtitle" id="subtitle"></div>
+    </div>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Participant</th>
+          <th>Team 1</th>
+          <th class="right">Odds</th>
+          <th>Team 2</th>
+          <th class="right">Odds</th>
+          <th class="right">Total Win %</th>
+          <th class="right">Change</th>
+        </tr>
+      </thead>
+      <tbody id="leaderboard"></tbody>
+    </table>
+  </div>
+  
+  <script>
+    const data = DATA_PLACEHOLDER;
+    
+    // Format date
+    const date = new Date(data.timestamp);
+    document.getElementById('subtitle').textContent = 
+      `Updated ${date.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })} at ${date.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' })}`;
+    
+    // Render leaderboard
+    const tbody = document.getElementById('leaderboard');
+    const maxProb = Math.max(...data.leaderboard.map(p => p.total_probability));
+    
+    data.leaderboard.forEach((participant, index) => {
+      const row = document.createElement('tr');
+      if (index < 3) row.classList.add('top-3');
+      if (index === 0) row.classList.add('rank-1');
+      
+      const team1Pct = (participant.team1.probability * 100).toFixed(2);
+      const team2Pct = (participant.team2.probability * 100).toFixed(2);
+      const totalPct = (participant.total_probability * 100).toFixed(2);
+      
+      let changeHTML = '';
+      if (participant.change_from_last_week !== null) {
+        const changeValue = participant.change_from_last_week * 100;
+        const changeClass = changeValue > 0 ? 'positive' : (changeValue < 0 ? 'negative' : 'neutral');
+        const arrow = changeValue > 0 ? '↑' : (changeValue < 0 ? '↓' : '→');
+        changeHTML = `<td class="change ${changeClass}">${arrow} ${Math.abs(changeValue).toFixed(2)}%</td>`;
+      } else {
+        changeHTML = '<td class="change neutral">—</td>';
+      }
+      
+      const barWidth = (participant.total_probability / maxProb * 100).toFixed(1);
+      
+      row.innerHTML = `
+        <td class="rank">${participant.rank}</td>
+        <td class="name">${participant.name}</td>
+        <td class="team">${participant.team1.name}</td>
+        <td class="prob">${team1Pct}%</td>
+        <td class="team">${participant.team2.name}</td>
+        <td class="prob">${team2Pct}%</td>
+        <td class="total">
+          <div class="prob-bar" style="width: ${barWidth}%"></div>
+          <span class="prob-text">${totalPct}%</span>
+        </td>
+        ${changeHTML}
+      `;
+      
+      tbody.appendChild(row);
+    });
+    
+    // Signal ready for screenshot
+    document.body.classList.add('render-complete');
+  </script>
+</body>
+</html>

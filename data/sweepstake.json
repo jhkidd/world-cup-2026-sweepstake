@@ -1,0 +1,60 @@
+{
+  "participants": [
+    {
+      "name": "Nicholas Burgoyne",
+      "teams": ["Argentina", "Panama"]
+    },
+    {
+      "name": "Dave Mosely",
+      "teams": ["Ecuador", "Ivory Coast"]
+    },
+    {
+      "name": "Bryn Mills",
+      "teams": ["Australia", "DR Congo"]
+    },
+    {
+      "name": "Anugrah Sebastian",
+      "teams": ["Iran", "Ghana"]
+    },
+    {
+      "name": "Joshua Kidd",
+      "teams": ["Croatia", "Scotland"]
+    },
+    {
+      "name": "Ian Whelan",
+      "teams": ["Spain", "Qatar"]
+    },
+    {
+      "name": "Yousef Mahmood",
+      "teams": ["Morocco", "Paraguay"]
+    },
+    {
+      "name": "Allan Chan",
+      "teams": ["Japan", "Haiti"]
+    },
+    {
+      "name": "Julie Hulme",
+      "teams": ["USA", "Jordan"]
+    },
+    {
+      "name": "Caitlin Kilcoyne",
+      "teams": ["Brazil", "Saudi Arabia"]
+    },
+    {
+      "name": "Andrew Turner",
+      "teams": ["Mexico", "Tunisia"]
+    },
+    {
+      "name": "Tim Copland",
+      "teams": ["Turkey", "Curaçao"]
+    },
+    {
+      "name": "Tina Buckley",
+      "teams": ["England", "Egypt"]
+    },
+    {
+      "name": "Emma Ryan",
+      "teams": ["Netherlands", "Algeria"]
+    }
+  ]
+}

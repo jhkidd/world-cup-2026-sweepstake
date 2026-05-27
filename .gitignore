@@ -1,0 +1,6 @@
+node_modules/
+.env
+data/odds/
+data/processed/
+output/
+*.log

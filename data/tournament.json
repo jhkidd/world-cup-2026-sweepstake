@@ -1,0 +1,524 @@
+{
+  "meta": {
+    "description": "2026 FIFA World Cup – Complete Tournament Structure",
+    "sources": [
+      "Official Draw, JFK Center, Washington D.C., December 5, 2025",
+      "UEFA Playoff Finals, March 31, 2026",
+      "FIFA Intercontinental Playoff Finals, March 31, 2026",
+      "Official FIFA schedule (Al Jazeera, NBC Sports, World Cup Wiki)"
+    ],
+    "kickoff_times_note": "All kickoff_utc values are in UTC (≈ GMT). Times sourced from published schedule; verify against official FIFA schedule for exact values. BST (UK summer) = UTC+1.",
+    "last_updated": "2026-05"
+  },
+
+  "tournament": {
+    "name": "FIFA World Cup 2026",
+    "edition": 23,
+    "year": 2026,
+    "hosts": ["Mexico", "Canada", "United States"],
+    "start_date": "2026-06-11",
+    "end_date": "2026-07-19",
+    "total_teams": 48,
+    "total_groups": 12,
+    "total_matches": 104,
+    "defending_champion": "Argentina",
+    "format": {
+      "group_stage": {
+        "description": "12 groups of 4 teams, round-robin",
+        "matches": 72,
+        "qualifiers_per_group": "Top 2 from each group, plus 8 best third-placed teams = 32 teams advance",
+        "dates": "June 11 – June 27, 2026"
+      },
+      "knockout_stage": {
+        "rounds": ["Round of 32", "Round of 16", "Quarter-finals", "Semi-finals", "Third-place play-off", "Final"],
+        "matches": 32,
+        "dates": "June 28 – July 19, 2026",
+        "note": "All knockout matches from Round of 16 onward are played in the United States only"
+      }
+    },
+    "final": {
+      "venue": "New York New Jersey Stadium",
+      "real_name": "MetLife Stadium",
+      "city": "East Rutherford, NJ",
+      "country": "USA",
+      "date": "2026-07-19",
+      "kickoff_utc": "2026-07-19T20:00:00Z"
+    }
+  },
+
+  "venues": {
+    "mexico_city": {
+      "fifa_name": "Mexico City Stadium",
+      "real_name": "Estadio Azteca",
+      "city": "Mexico City",
+      "country": "Mexico",
+      "capacity": 87500,
+      "timezone": "America/Mexico_City"
+    },
+    "guadalajara": {
+      "fifa_name": "Estadio Guadalajara",
+      "real_name": "Estadio Akron",
+      "city": "Zapopan",
+      "country": "Mexico",
+      "capacity": 49850,
+      "timezone": "America/Mexico_City"
+    },
+    "monterrey": {
+      "fifa_name": "Estadio Monterrey",
+      "real_name": "Estadio BBVA",
+      "city": "Guadalupe",
+      "country": "Mexico",
+      "capacity": 53500,
+      "timezone": "America/Monterrey"
+    },
+    "toronto": {
+      "fifa_name": "Toronto Stadium",
+      "real_name": "BMO Field",
+      "city": "Toronto",
+      "country": "Canada",
+      "capacity": 30000,
+      "timezone": "America/Toronto"
+    },
+    "vancouver": {
+      "fifa_name": "BC Place",
+      "real_name": "BC Place",
+      "city": "Vancouver",
+      "country": "Canada",
+      "capacity": 54500,
+      "timezone": "America/Vancouver"
+    },
+    "los_angeles": {
+      "fifa_name": "Los Angeles Stadium",
+      "real_name": "SoFi Stadium",
+      "city": "Inglewood, CA",
+      "country": "USA",
+      "capacity": 70240,
+      "timezone": "America/Los_Angeles"
+    },
+    "san_francisco": {
+      "fifa_name": "San Francisco Bay Area Stadium",
+      "real_name": "Levi's Stadium",
+      "city": "Santa Clara, CA",
+      "country": "USA",
+      "capacity": 68500,
+      "timezone": "America/Los_Angeles"
+    },
+    "seattle": {
+      "fifa_name": "Seattle Stadium",
+      "real_name": "Lumen Field",
+      "city": "Seattle, WA",
+      "country": "USA",
+      "capacity": 69000,
+      "timezone": "America/Los_Angeles"
+    },
+    "boston": {
+      "fifa_name": "Boston Stadium",
+      "real_name": "Gillette Stadium",
+      "city": "Foxborough, MA",
+      "country": "USA",
+      "capacity": 65878,
+      "timezone": "America/New_York"
+    },
+    "new_york": {
+      "fifa_name": "New York New Jersey Stadium",
+      "real_name": "MetLife Stadium",
+      "city": "East Rutherford, NJ",
+      "country": "USA",
+      "capacity": 82500,
+      "timezone": "America/New_York"
+    },
+    "philadelphia": {
+      "fifa_name": "Philadelphia Stadium",
+      "real_name": "Lincoln Financial Field",
+      "city": "Philadelphia, PA",
+      "country": "USA",
+      "capacity": 69796,
+      "timezone": "America/New_York"
+    },
+    "dallas": {
+      "fifa_name": "Dallas Stadium",
+      "real_name": "AT&T Stadium",
+      "city": "Arlington, TX",
+      "country": "USA",
+      "capacity": 80000,
+      "timezone": "America/Chicago"
+    },
+    "houston": {
+      "fifa_name": "Houston Stadium",
+      "real_name": "NRG Stadium",
+      "city": "Houston, TX",
+      "country": "USA",
+      "capacity": 72220,
+      "timezone": "America/Chicago"
+    },
+    "kansas_city": {
+      "fifa_name": "Kansas City Stadium",
+      "real_name": "Arrowhead Stadium",
+      "city": "Kansas City, MO",
+      "country": "USA",
+      "capacity": 76416,
+      "timezone": "America/Chicago"
+    },
+    "atlanta": {
+      "fifa_name": "Atlanta Stadium",
+      "real_name": "Mercedes-Benz Stadium",
+      "city": "Atlanta, GA",
+      "country": "USA",
+      "capacity": 71000,
+      "timezone": "America/New_York"
+    },
+    "miami": {
+      "fifa_name": "Miami Stadium",
+      "real_name": "Hard Rock Stadium",
+      "city": "Miami Gardens, FL",
+      "country": "USA",
+      "capacity": 65000,
+      "timezone": "America/New_York"
+    }
+  },
+
+  "teams": [
+    { "name": "Mexico",                  "group": "A", "confederation": "CONCACAF", "host": true,  "debut": false },
+    { "name": "South Africa",            "group": "A", "confederation": "CAF",      "host": false, "debut": false },
+    { "name": "South Korea",             "group": "A", "confederation": "AFC",      "host": false, "debut": false },
+    { "name": "Czechia",                 "group": "A", "confederation": "UEFA",     "host": false, "debut": false, "qualified_via": "UEFA Playoff Path D" },
+    { "name": "Canada",                  "group": "B", "confederation": "CONCACAF", "host": true,  "debut": false },
+    { "name": "Bosnia and Herzegovina",  "group": "B", "confederation": "UEFA",     "host": false, "debut": false, "qualified_via": "UEFA Playoff Path A" },
+    { "name": "Qatar",                   "group": "B", "confederation": "AFC",      "host": false, "debut": false },
+    { "name": "Switzerland",             "group": "B", "confederation": "UEFA",     "host": false, "debut": false },
+    { "name": "Brazil",                  "group": "C", "confederation": "CONMEBOL", "host": false, "debut": false },
+    { "name": "Morocco",                 "group": "C", "confederation": "CAF",      "host": false, "debut": false },
+    { "name": "Haiti",                   "group": "C", "confederation": "CONCACAF", "host": false, "debut": false },
+    { "name": "Scotland",                "group": "C", "confederation": "UEFA",     "host": false, "debut": false },
+    { "name": "USA",                     "group": "D", "confederation": "CONCACAF", "host": true,  "debut": false },
+    { "name": "Paraguay",                "group": "D", "confederation": "CONMEBOL", "host": false, "debut": false },
+    { "name": "Australia",               "group": "D", "confederation": "AFC",      "host": false, "debut": false },
+    { "name": "Türkiye",                 "group": "D", "confederation": "UEFA",     "host": false, "debut": false, "qualified_via": "UEFA Playoff Path C" },
+    { "name": "Germany",                 "group": "E", "confederation": "UEFA",     "host": false, "debut": false },
+    { "name": "Curaçao",                 "group": "E", "confederation": "CONCACAF", "host": false, "debut": true  },
+    { "name": "Ivory Coast",             "group": "E", "confederation": "CAF",      "host": false, "debut": false },
+    { "name": "Ecuador",                 "group": "E", "confederation": "CONMEBOL", "host": false, "debut": false },
+    { "name": "Netherlands",             "group": "F", "confederation": "UEFA",     "host": false, "debut": false },
+    { "name": "Japan",                   "group": "F", "confederation": "AFC",      "host": false, "debut": false },
+    { "name": "Sweden",                  "group": "F", "confederation": "UEFA",     "host": false, "debut": false, "qualified_via": "UEFA Playoff Path B" },
+    { "name": "Tunisia",                 "group": "F", "confederation": "CAF",      "host": false, "debut": false },
+    { "name": "Belgium",                 "group": "G", "confederation": "UEFA",     "host": false, "debut": false },
+    { "name": "Egypt",                   "group": "G", "confederation": "CAF",      "host": false, "debut": false },
+    { "name": "Iran",                    "group": "G", "confederation": "AFC",      "host": false, "debut": false },
+    { "name": "New Zealand",             "group": "G", "confederation": "OFC",      "host": false, "debut": false },
+    { "name": "Spain",                   "group": "H", "confederation": "UEFA",     "host": false, "debut": false },
+    { "name": "Cape Verde",              "group": "H", "confederation": "CAF",      "host": false, "debut": true  },
+    { "name": "Saudi Arabia",            "group": "H", "confederation": "AFC",      "host": false, "debut": false },
+    { "name": "Uruguay",                 "group": "H", "confederation": "CONMEBOL", "host": false, "debut": false },
+    { "name": "France",                  "group": "I", "confederation": "UEFA",     "host": false, "debut": false },
+    { "name": "Senegal",                 "group": "I", "confederation": "CAF",      "host": false, "debut": false },
+    { "name": "Iraq",                    "group": "I", "confederation": "AFC",      "host": false, "debut": false, "qualified_via": "FIFA Intercontinental Path 2", "note": "First World Cup since Mexico 1986" },
+    { "name": "Norway",                  "group": "I", "confederation": "UEFA",     "host": false, "debut": false },
+    { "name": "Argentina",               "group": "J", "confederation": "CONMEBOL", "host": false, "debut": false, "note": "Defending champions" },
+    { "name": "Algeria",                 "group": "J", "confederation": "CAF",      "host": false, "debut": false },
+    { "name": "Austria",                 "group": "J", "confederation": "UEFA",     "host": false, "debut": false },
+    { "name": "Jordan",                  "group": "J", "confederation": "AFC",      "host": false, "debut": true  },
+    { "name": "Portugal",                "group": "K", "confederation": "UEFA",     "host": false, "debut": false },
+    { "name": "DR Congo",                "group": "K", "confederation": "CAF",      "host": false, "debut": false, "qualified_via": "FIFA Intercontinental Path 1" },
+    { "name": "Uzbekistan",              "group": "K", "confederation": "AFC",      "host": false, "debut": true  },
+    { "name": "Colombia",                "group": "K", "confederation": "CONMEBOL", "host": false, "debut": false },
+    { "name": "England",                 "group": "L", "confederation": "UEFA",     "host": false, "debut": false },
+    { "name": "Croatia",                 "group": "L", "confederation": "UEFA",     "host": false, "debut": false },
+    { "name": "Ghana",                   "group": "L", "confederation": "CAF",      "host": false, "debut": false },
+    { "name": "Panama",                  "group": "L", "confederation": "CONCACAF", "host": false, "debut": false }
+  ],
+
+  "groups": {
+    "A": { "teams": ["Mexico", "South Africa", "South Korea", "Czechia"],              "host": "Mexico" },
+    "B": { "teams": ["Canada", "Bosnia and Herzegovina", "Qatar", "Switzerland"],      "host": "Canada" },
+    "C": { "teams": ["Brazil", "Morocco", "Haiti", "Scotland"],                        "host": null },
+    "D": { "teams": ["USA", "Paraguay", "Australia", "Türkiye"],                       "host": "USA" },
+    "E": { "teams": ["Germany", "Curaçao", "Ivory Coast", "Ecuador"],                 "host": null },
+    "F": { "teams": ["Netherlands", "Japan", "Sweden", "Tunisia"],                     "host": null },
+    "G": { "teams": ["Belgium", "Egypt", "Iran", "New Zealand"],                       "host": null },
+    "H": { "teams": ["Spain", "Cape Verde", "Saudi Arabia", "Uruguay"],                "host": null },
+    "I": { "teams": ["France", "Senegal", "Iraq", "Norway"],                           "host": null, "note": "Group of Death (highest avg. FIFA ranking)" },
+    "J": { "teams": ["Argentina", "Algeria", "Austria", "Jordan"],                     "host": null },
+    "K": { "teams": ["Portugal", "DR Congo", "Uzbekistan", "Colombia"],                "host": null },
+    "L": { "teams": ["England", "Croatia", "Ghana", "Panama"],                         "host": null }
+  },
+
+  "matches": {
+
+    "group_stage": [
+
+      { "id": "A1", "group": "A", "matchday": 1, "home": "Mexico",       "away": "South Africa",  "kickoff_utc": "2026-06-11T19:00:00Z", "venue_key": "mexico_city"   },
+      { "id": "A2", "group": "A", "matchday": 1, "home": "South Korea",  "away": "Czechia",        "kickoff_utc": "2026-06-12T02:00:00Z", "venue_key": "guadalajara"   },
+      { "id": "A3", "group": "A", "matchday": 2, "home": "Czechia",      "away": "South Africa",   "kickoff_utc": "2026-06-18T17:00:00Z", "venue_key": "atlanta"       },
+      { "id": "A4", "group": "A", "matchday": 2, "home": "Mexico",       "away": "South Korea",    "kickoff_utc": "2026-06-19T03:00:00Z", "venue_key": "guadalajara"   },
+      { "id": "A5", "group": "A", "matchday": 3, "home": "South Africa", "away": "South Korea",    "kickoff_utc": "2026-06-25T03:00:00Z", "venue_key": "monterrey",    "simultaneous_with": "A6" },
+      { "id": "A6", "group": "A", "matchday": 3, "home": "Czechia",      "away": "Mexico",         "kickoff_utc": "2026-06-25T03:00:00Z", "venue_key": "mexico_city",  "simultaneous_with": "A5" },
+
+      { "id": "B1", "group": "B", "matchday": 1, "home": "Canada",                 "away": "Bosnia and Herzegovina", "kickoff_utc": "2026-06-12T19:00:00Z", "venue_key": "toronto"       },
+      { "id": "B2", "group": "B", "matchday": 1, "home": "Qatar",                  "away": "Switzerland",            "kickoff_utc": "2026-06-13T19:00:00Z", "venue_key": "san_francisco" },
+      { "id": "B3", "group": "B", "matchday": 2, "home": "Switzerland",            "away": "Bosnia and Herzegovina", "kickoff_utc": "2026-06-18T23:00:00Z", "venue_key": "los_angeles"   },
+      { "id": "B4", "group": "B", "matchday": 2, "home": "Canada",                 "away": "Qatar",                  "kickoff_utc": "2026-06-19T02:00:00Z", "venue_key": "vancouver"     },
+      { "id": "B5", "group": "B", "matchday": 3, "home": "Switzerland",            "away": "Canada",                 "kickoff_utc": "2026-06-24T23:00:00Z", "venue_key": "vancouver",    "simultaneous_with": "B6" },
+      { "id": "B6", "group": "B", "matchday": 3, "home": "Bosnia and Herzegovina", "away": "Qatar",                  "kickoff_utc": "2026-06-24T23:00:00Z", "venue_key": "seattle",      "simultaneous_with": "B5" },
+
+      { "id": "C1", "group": "C", "matchday": 1, "home": "Brazil",   "away": "Morocco",  "kickoff_utc": "2026-06-13T23:00:00Z", "venue_key": "new_york"    },
+      { "id": "C2", "group": "C", "matchday": 1, "home": "Haiti",    "away": "Scotland", "kickoff_utc": "2026-06-14T01:00:00Z", "venue_key": "boston"      },
+      { "id": "C3", "group": "C", "matchday": 2, "home": "Scotland", "away": "Morocco",  "kickoff_utc": "2026-06-19T23:00:00Z", "venue_key": "boston"      },
+      { "id": "C4", "group": "C", "matchday": 2, "home": "Brazil",   "away": "Haiti",    "kickoff_utc": "2026-06-20T02:00:00Z", "venue_key": "philadelphia"},
+      { "id": "C5", "group": "C", "matchday": 3, "home": "Scotland", "away": "Brazil",   "kickoff_utc": "2026-06-24T23:00:00Z", "venue_key": "miami",      "simultaneous_with": "C6" },
+      { "id": "C6", "group": "C", "matchday": 3, "home": "Morocco",  "away": "Haiti",    "kickoff_utc": "2026-06-24T23:00:00Z", "venue_key": "atlanta",    "simultaneous_with": "C5" },
+
+      { "id": "D1", "group": "D", "matchday": 1, "home": "USA",       "away": "Paraguay",  "kickoff_utc": "2026-06-13T01:00:00Z", "venue_key": "los_angeles"   },
+      { "id": "D2", "group": "D", "matchday": 1, "home": "Australia", "away": "Türkiye",   "kickoff_utc": "2026-06-14T04:00:00Z", "venue_key": "vancouver"     },
+      { "id": "D3", "group": "D", "matchday": 2, "home": "USA",       "away": "Australia", "kickoff_utc": "2026-06-19T23:00:00Z", "venue_key": "seattle"       },
+      { "id": "D4", "group": "D", "matchday": 2, "home": "Türkiye",   "away": "Paraguay",  "kickoff_utc": "2026-06-20T08:00:00Z", "venue_key": "san_francisco" },
+      { "id": "D5", "group": "D", "matchday": 3, "home": "Türkiye",   "away": "USA",       "kickoff_utc": "2026-06-26T06:00:00Z", "venue_key": "los_angeles",  "simultaneous_with": "D6" },
+      { "id": "D6", "group": "D", "matchday": 3, "home": "Paraguay",  "away": "Australia", "kickoff_utc": "2026-06-26T06:00:00Z", "venue_key": "san_francisco","simultaneous_with": "D5" },
+
+      { "id": "E1", "group": "E", "matchday": 1, "home": "Germany",     "away": "Curaçao",     "kickoff_utc": "2026-06-14T18:00:00Z", "venue_key": "houston"     },
+      { "id": "E2", "group": "E", "matchday": 1, "home": "Ivory Coast", "away": "Ecuador",     "kickoff_utc": "2026-06-15T00:00:00Z", "venue_key": "philadelphia"},
+      { "id": "E3", "group": "E", "matchday": 2, "home": "Germany",     "away": "Ivory Coast", "kickoff_utc": "2026-06-20T21:00:00Z", "venue_key": "toronto"     },
+      { "id": "E4", "group": "E", "matchday": 2, "home": "Ecuador",     "away": "Curaçao",     "kickoff_utc": "2026-06-21T04:00:00Z", "venue_key": "kansas_city" },
+      { "id": "E5", "group": "E", "matchday": 3, "home": "Ecuador",     "away": "Germany",     "kickoff_utc": "2026-06-25T21:00:00Z", "venue_key": "new_york",   "simultaneous_with": "E6" },
+      { "id": "E6", "group": "E", "matchday": 3, "home": "Curaçao",     "away": "Ivory Coast", "kickoff_utc": "2026-06-25T21:00:00Z", "venue_key": "philadelphia","simultaneous_with": "E5" },
+
+      { "id": "F1", "group": "F", "matchday": 1, "home": "Netherlands", "away": "Japan",       "kickoff_utc": "2026-06-14T21:00:00Z", "venue_key": "dallas"      },
+      { "id": "F2", "group": "F", "matchday": 1, "home": "Sweden",      "away": "Tunisia",     "kickoff_utc": "2026-06-15T04:00:00Z", "venue_key": "monterrey"   },
+      { "id": "F3", "group": "F", "matchday": 2, "home": "Netherlands", "away": "Sweden",      "kickoff_utc": "2026-06-20T19:00:00Z", "venue_key": "houston"     },
+      { "id": "F4", "group": "F", "matchday": 2, "home": "Tunisia",     "away": "Japan",       "kickoff_utc": "2026-06-21T06:00:00Z", "venue_key": "monterrey"   },
+      { "id": "F5", "group": "F", "matchday": 3, "home": "Japan",       "away": "Sweden",      "kickoff_utc": "2026-06-26T01:00:00Z", "venue_key": "dallas",     "simultaneous_with": "F6" },
+      { "id": "F6", "group": "F", "matchday": 3, "home": "Tunisia",     "away": "Netherlands", "kickoff_utc": "2026-06-26T01:00:00Z", "venue_key": "kansas_city","simultaneous_with": "F5" },
+
+      { "id": "G1", "group": "G", "matchday": 1, "home": "Belgium",     "away": "Egypt",       "kickoff_utc": "2026-06-15T23:00:00Z", "venue_key": "vancouver"   },
+      { "id": "G2", "group": "G", "matchday": 1, "home": "Iran",        "away": "New Zealand", "kickoff_utc": "2026-06-16T05:00:00Z", "venue_key": "los_angeles" },
+      { "id": "G3", "group": "G", "matchday": 2, "home": "Belgium",     "away": "Iran",        "kickoff_utc": "2026-06-21T23:00:00Z", "venue_key": "los_angeles" },
+      { "id": "G4", "group": "G", "matchday": 2, "home": "New Zealand", "away": "Egypt",       "kickoff_utc": "2026-06-22T05:00:00Z", "venue_key": "vancouver"   },
+      { "id": "G5", "group": "G", "matchday": 3, "home": "Egypt",       "away": "Iran",        "kickoff_utc": "2026-06-27T07:00:00Z", "venue_key": "seattle",    "simultaneous_with": "G6" },
+      { "id": "G6", "group": "G", "matchday": 3, "home": "New Zealand", "away": "Belgium",     "kickoff_utc": "2026-06-27T07:00:00Z", "venue_key": "vancouver",  "simultaneous_with": "G5" },
+
+      { "id": "H1", "group": "H", "matchday": 1, "home": "Spain",       "away": "Cape Verde",   "kickoff_utc": "2026-06-15T17:00:00Z", "venue_key": "atlanta"   },
+      { "id": "H2", "group": "H", "matchday": 1, "home": "Saudi Arabia","away": "Uruguay",       "kickoff_utc": "2026-06-15T23:00:00Z", "venue_key": "miami"     },
+      { "id": "H3", "group": "H", "matchday": 2, "home": "Spain",       "away": "Saudi Arabia",  "kickoff_utc": "2026-06-21T17:00:00Z", "venue_key": "atlanta"   },
+      { "id": "H4", "group": "H", "matchday": 2, "home": "Uruguay",     "away": "Cape Verde",    "kickoff_utc": "2026-06-21T23:00:00Z", "venue_key": "miami"     },
+      { "id": "H5", "group": "H", "matchday": 3, "home": "Cape Verde",  "away": "Saudi Arabia",  "kickoff_utc": "2026-06-27T02:00:00Z", "venue_key": "houston",  "simultaneous_with": "H6" },
+      { "id": "H6", "group": "H", "matchday": 3, "home": "Uruguay",     "away": "Spain",         "kickoff_utc": "2026-06-27T02:00:00Z", "venue_key": "guadalajara","simultaneous_with": "H5" },
+
+      { "id": "I1", "group": "I", "matchday": 1, "home": "France",  "away": "Senegal", "kickoff_utc": "2026-06-16T20:00:00Z", "venue_key": "new_york"    },
+      { "id": "I2", "group": "I", "matchday": 1, "home": "Iraq",    "away": "Norway",  "kickoff_utc": "2026-06-16T23:00:00Z", "venue_key": "boston"      },
+      { "id": "I3", "group": "I", "matchday": 2, "home": "France",  "away": "Iraq",    "kickoff_utc": "2026-06-22T22:00:00Z", "venue_key": "philadelphia"},
+      { "id": "I4", "group": "I", "matchday": 2, "home": "Norway",  "away": "Senegal", "kickoff_utc": "2026-06-23T01:00:00Z", "venue_key": "new_york"    },
+      { "id": "I5", "group": "I", "matchday": 3, "home": "Norway",  "away": "France",  "kickoff_utc": "2026-06-26T20:00:00Z", "venue_key": "boston",     "simultaneous_with": "I6" },
+      { "id": "I6", "group": "I", "matchday": 3, "home": "Senegal", "away": "Iraq",    "kickoff_utc": "2026-06-26T20:00:00Z", "venue_key": "toronto",    "simultaneous_with": "I5" },
+
+      { "id": "J1", "group": "J", "matchday": 1, "home": "Argentina", "away": "Algeria",   "kickoff_utc": "2026-06-17T03:00:00Z", "venue_key": "kansas_city"  },
+      { "id": "J2", "group": "J", "matchday": 1, "home": "Austria",   "away": "Jordan",    "kickoff_utc": "2026-06-17T08:00:00Z", "venue_key": "san_francisco"},
+      { "id": "J3", "group": "J", "matchday": 2, "home": "Argentina", "away": "Austria",   "kickoff_utc": "2026-06-22T19:00:00Z", "venue_key": "dallas"       },
+      { "id": "J4", "group": "J", "matchday": 2, "home": "Jordan",    "away": "Algeria",   "kickoff_utc": "2026-06-23T07:00:00Z", "venue_key": "san_francisco"},
+      { "id": "J5", "group": "J", "matchday": 3, "home": "Algeria",   "away": "Austria",   "kickoff_utc": "2026-06-28T04:00:00Z", "venue_key": "kansas_city",  "simultaneous_with": "J6" },
+      { "id": "J6", "group": "J", "matchday": 3, "home": "Jordan",    "away": "Argentina", "kickoff_utc": "2026-06-28T04:00:00Z", "venue_key": "dallas",       "simultaneous_with": "J5" },
+
+      { "id": "K1", "group": "K", "matchday": 1, "home": "Portugal",   "away": "DR Congo",   "kickoff_utc": "2026-06-17T19:00:00Z", "venue_key": "houston"      },
+      { "id": "K2", "group": "K", "matchday": 1, "home": "Uzbekistan", "away": "Colombia",   "kickoff_utc": "2026-06-18T04:00:00Z", "venue_key": "mexico_city"  },
+      { "id": "K3", "group": "K", "matchday": 2, "home": "Portugal",   "away": "Uzbekistan", "kickoff_utc": "2026-06-23T19:00:00Z", "venue_key": "houston"      },
+      { "id": "K4", "group": "K", "matchday": 2, "home": "Colombia",   "away": "DR Congo",   "kickoff_utc": "2026-06-24T04:00:00Z", "venue_key": "guadalajara"  },
+      { "id": "K5", "group": "K", "matchday": 3, "home": "Colombia",   "away": "Portugal",   "kickoff_utc": "2026-06-28T02:30:00Z", "venue_key": "miami",        "simultaneous_with": "K6" },
+      { "id": "K6", "group": "K", "matchday": 3, "home": "DR Congo",   "away": "Uzbekistan", "kickoff_utc": "2026-06-28T02:30:00Z", "venue_key": "atlanta",      "simultaneous_with": "K5" },
+
+      { "id": "L1", "group": "L", "matchday": 1, "home": "England", "away": "Croatia", "kickoff_utc": "2026-06-17T22:00:00Z", "venue_key": "dallas"     },
+      { "id": "L2", "group": "L", "matchday": 1, "home": "Ghana",   "away": "Panama",  "kickoff_utc": "2026-06-18T00:00:00Z", "venue_key": "toronto"    },
+      { "id": "L3", "group": "L", "matchday": 2, "home": "England", "away": "Ghana",   "kickoff_utc": "2026-06-23T21:00:00Z", "venue_key": "boston"     },
+      { "id": "L4", "group": "L", "matchday": 2, "home": "Panama",  "away": "Croatia", "kickoff_utc": "2026-06-24T00:00:00Z", "venue_key": "toronto"    },
+      { "id": "L5", "group": "L", "matchday": 3, "home": "Panama",  "away": "England", "kickoff_utc": "2026-06-27T22:00:00Z", "venue_key": "new_york",   "simultaneous_with": "L6" },
+      { "id": "L6", "group": "L", "matchday": 3, "home": "Croatia", "away": "Ghana",   "kickoff_utc": "2026-06-27T22:00:00Z", "venue_key": "philadelphia","simultaneous_with": "L5" }
+    ],
+
+    "round_of_32": [
+      {
+        "id": "R32-1", "match_number": 73,
+        "slot_1": "Runner-up Group A", "slot_2": "Runner-up Group B",
+        "kickoff_utc": "2026-06-28T23:00:00Z", "venue_key": "los_angeles"
+      },
+      {
+        "id": "R32-2", "match_number": 74,
+        "slot_1": "Winner Group E", "slot_2": "Best 3rd from Groups A/B/C/D/F",
+        "kickoff_utc": "2026-06-29T22:30:00Z", "venue_key": "boston"
+      },
+      {
+        "id": "R32-3", "match_number": 75,
+        "slot_1": "Winner Group F", "slot_2": "Runner-up Group C",
+        "kickoff_utc": "2026-06-30T03:00:00Z", "venue_key": "monterrey"
+      },
+      {
+        "id": "R32-4", "match_number": 76,
+        "slot_1": "Winner Group C", "slot_2": "Runner-up Group F",
+        "kickoff_utc": "2026-06-29T19:00:00Z", "venue_key": "houston"
+      },
+      {
+        "id": "R32-5", "match_number": 77,
+        "slot_1": "Winner Group I", "slot_2": "Best 3rd from Groups C/D/F/G/H",
+        "kickoff_utc": "2026-06-30T22:00:00Z", "venue_key": "new_york"
+      },
+      {
+        "id": "R32-6", "match_number": 78,
+        "slot_1": "Runner-up Group E", "slot_2": "Runner-up Group I",
+        "kickoff_utc": "2026-06-30T19:00:00Z", "venue_key": "dallas"
+      },
+      {
+        "id": "R32-7", "match_number": 79,
+        "slot_1": "Winner Group A", "slot_2": "Best 3rd from Groups C/E/F/H/I",
+        "kickoff_utc": "2026-07-01T03:00:00Z", "venue_key": "mexico_city"
+      },
+      {
+        "id": "R32-8", "match_number": 80,
+        "slot_1": "Winner Group L", "slot_2": "Best 3rd from Groups E/H/I/J/K",
+        "kickoff_utc": "2026-07-01T17:00:00Z", "venue_key": "atlanta"
+      },
+      {
+        "id": "R32-9", "match_number": 81,
+        "slot_1": "Winner Group D", "slot_2": "Best 3rd from Groups B/E/F/I/J",
+        "kickoff_utc": "2026-07-02T04:00:00Z", "venue_key": "san_francisco"
+      },
+      {
+        "id": "R32-10", "match_number": 82,
+        "slot_1": "Winner Group G", "slot_2": "Best 3rd from Groups A/E/H/I/J",
+        "kickoff_utc": "2026-07-02T00:00:00Z", "venue_key": "seattle"
+      },
+      {
+        "id": "R32-11", "match_number": 83,
+        "slot_1": "Runner-up Group K", "slot_2": "Runner-up Group L",
+        "kickoff_utc": "2026-07-03T00:00:00Z", "venue_key": "toronto"
+      },
+      {
+        "id": "R32-12", "match_number": 84,
+        "slot_1": "Winner Group H", "slot_2": "Runner-up Group J",
+        "kickoff_utc": "2026-07-02T23:00:00Z", "venue_key": "los_angeles"
+      },
+      {
+        "id": "R32-13", "match_number": 85,
+        "slot_1": "Winner Group B", "slot_2": "Best 3rd from Groups E/F/G/I/J",
+        "kickoff_utc": "2026-07-03T07:00:00Z", "venue_key": "vancouver"
+      },
+      {
+        "id": "R32-14", "match_number": 86,
+        "slot_1": "Winner Group J", "slot_2": "Runner-up Group H",
+        "kickoff_utc": "2026-07-03T23:00:00Z", "venue_key": "miami"
+      },
+      {
+        "id": "R32-15", "match_number": 87,
+        "slot_1": "Winner Group K", "slot_2": "Best 3rd from Groups D/E/I/J/L",
+        "kickoff_utc": "2026-07-04T03:30:00Z", "venue_key": "kansas_city"
+      },
+      {
+        "id": "R32-16", "match_number": 88,
+        "slot_1": "Runner-up Group D", "slot_2": "Runner-up Group G",
+        "kickoff_utc": "2026-07-03T21:00:00Z", "venue_key": "dallas"
+      }
+    ],
+
+    "round_of_16": [
+      {
+        "id": "R16-1", "match_number": 89,
+        "slot_1": "Winner R32-2 (M74)", "slot_2": "Winner R32-5 (M77)",
+        "kickoff_utc": "2026-07-04T22:00:00Z", "venue_key": "philadelphia"
+      },
+      {
+        "id": "R16-2", "match_number": 90,
+        "slot_1": "Winner R32-1 (M73)", "slot_2": "Winner R32-3 (M75)",
+        "kickoff_utc": "2026-07-04T19:00:00Z", "venue_key": "houston"
+      },
+      {
+        "id": "R16-3", "match_number": 91,
+        "slot_1": "Winner R32-4 (M76)", "slot_2": "Winner R32-7 (M79)",
+        "kickoff_utc": "2026-07-05T21:00:00Z", "venue_key": "new_york"
+      },
+      {
+        "id": "R16-4", "match_number": 92,
+        "slot_1": "Winner R32-6 (M78)", "slot_2": "Winner R32-8 (M80)",
+        "kickoff_utc": "2026-07-06T02:00:00Z", "venue_key": "mexico_city"
+      },
+      {
+        "id": "R16-5", "match_number": 93,
+        "slot_1": "Winner R32-9 (M81)", "slot_2": "Winner R32-10 (M82)",
+        "kickoff_utc": "2026-07-06T21:00:00Z", "venue_key": "dallas"
+      },
+      {
+        "id": "R16-6", "match_number": 94,
+        "slot_1": "Winner R32-11 (M83)", "slot_2": "Winner R32-13 (M85)",
+        "kickoff_utc": "2026-07-07T04:00:00Z", "venue_key": "seattle"
+      },
+      {
+        "id": "R16-7", "match_number": 95,
+        "slot_1": "Winner R32-12 (M84)", "slot_2": "Winner R32-14 (M86)",
+        "kickoff_utc": "2026-07-07T17:00:00Z", "venue_key": "atlanta"
+      },
+      {
+        "id": "R16-8", "match_number": 96,
+        "slot_1": "Winner R32-15 (M87)", "slot_2": "Winner R32-16 (M88)",
+        "kickoff_utc": "2026-07-08T00:00:00Z", "venue_key": "vancouver"
+      }
+    ],
+
+    "quarter_finals": [
+      {
+        "id": "QF-1", "match_number": 97,
+        "slot_1": "Winner R16-1 (M89)", "slot_2": "Winner R16-2 (M90)",
+        "kickoff_utc": "2026-07-09T21:00:00Z", "venue_key": "boston"
+      },
+      {
+        "id": "QF-2", "match_number": 98,
+        "slot_1": "Winner R16-3 (M91)", "slot_2": "Winner R16-4 (M92)",
+        "kickoff_utc": "2026-07-10T23:00:00Z", "venue_key": "los_angeles"
+      },
+      {
+        "id": "QF-3", "match_number": 99,
+        "slot_1": "Winner R16-5 (M93)", "slot_2": "Winner R16-6 (M94)",
+        "kickoff_utc": "2026-07-11T22:00:00Z", "venue_key": "miami"
+      },
+      {
+        "id": "QF-4", "match_number": 100,
+        "slot_1": "Winner R16-7 (M95)", "slot_2": "Winner R16-8 (M96)",
+        "kickoff_utc": "2026-07-12T03:00:00Z", "venue_key": "kansas_city"
+      }
+    ],
+
+    "semi_finals": [
+      {
+        "id": "SF-1", "match_number": 101,
+        "slot_1": "Winner QF-1 (M97)", "slot_2": "Winner QF-2 (M98)",
+        "kickoff_utc": "2026-07-14T21:00:00Z", "venue_key": "dallas"
+      },
+      {
+        "id": "SF-2", "match_number": 102,
+        "slot_1": "Winner QF-3 (M99)", "slot_2": "Winner QF-4 (M100)",
+        "kickoff_utc": "2026-07-15T20:00:00Z", "venue_key": "atlanta"
+      }
+    ],
+
+    "third_place": {
+      "id": "TPO", "match_number": 103,
+      "slot_1": "Loser SF-1 (M101)", "slot_2": "Loser SF-2 (M102)",
+      "kickoff_utc": "2026-07-18T22:00:00Z", "venue_key": "miami"
+    },
+
+    "final": {
+      "id": "FINAL", "match_number": 104,
+      "slot_1": "Winner SF-1 (M101)", "slot_2": "Winner SF-2 (M102)",
+      "kickoff_utc": "2026-07-19T20:00:00Z", "venue_key": "new_york"
+    }
+  },
+
+  "third_place_bracket_rules": {
+    "description": "The 8 best third-placed teams across all 12 groups advance to the Round of 32. Which R32 slot they fill depends on which groups they finished third in. FIFA pre-assigns eligible slots based on group origin.",
+    "slot_assignments": {
+      "M74_slot_2": { "eligible_groups": ["A","B","C","D","F"] },
+      "M77_slot_2": { "eligible_groups": ["C","D","F","G","H"] },
+      "M79_slot_2": { "eligible_groups": ["C","E","F","H","I"] },
+      "M80_slot_2": { "eligible_groups": ["E","H","I","J","K"] },
+      "M81_slot_2": { "eligible_groups": ["B","E","F","I","J"] },
+      "M82_slot_2": { "eligible_groups": ["A","E","H","I","J"] },
+      "M85_slot_2": { "eligible_groups": ["E","F","G","I","J"] },
+      "M87_slot_2": { "eligible_groups": ["D","E","I","J","L"] }
+    },
+    "note": "If a group's 3rd-placed team qualifies, the exact R32 slot is determined by FIFA based on the combination of 8 qualified third-placed groups. Actual assignment tables to be confirmed once group stage concludes."
+  }
+}

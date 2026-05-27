@@ -1,0 +1,26 @@
+{
+  "name": "2026-world-cup-visualisations",
+  "version": "1.0.0",
+  "description": "Aim of this project is to create professional grade visualisations for our companies 2026 World cup sweepstake.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "type": "module",
+  "scripts": {
+    "fetch": "node src/fetch-odds.js",
+    "process": "node src/process-data.js",
+    "visualize": "node src/generate-visualizations.js",
+    "generate": "npm run fetch && npm run process && npm run visualize",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.16.1",
+    "date-fns": "^4.3.0",
+    "dotenv": "^17.4.2",
+    "puppeteer": "^25.1.0"
+  }
+}
