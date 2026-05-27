@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      background: #FFFFFF;
+      padding: 40px;
+    }
+    
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    
+    .header {
+      margin-bottom: 30px;
+    }
+    
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      color: #2C3E50;
+      margin-bottom: 8px;
+    }
+    
+    .subtitle {
+      font-size: 13px;
+      color: #7F8C8D;
+    }
+    
+    .group-section {
+      margin-bottom: 40px;
+    }
+    
+    .group-header {
+      font-size: 20px;
+      font-weight: 700;
+      color: #2C3E50;
+      margin-bottom: 15px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #E0E0E0;
+    }
+    
+    .match-row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+      padding: 8px 0;
+    }
+    
+    .match-date {
+      width: 100px;
+      font-size: 13px;
+      color: #7F8C8D;
+      font-weight: 500;
+    }
+    
+    .team-cell {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      padding: 8px 12px;
+    }
+    
+    .team-cell.home {
+      justify-content: flex-end;
+      text-align: right;
+    }
+    
+    .team-cell.away {
+      justify-content: flex-start;
+      text-align: left;
+    }
+    
+    .team-flag {
+      font-size: 18px;
+      font-family: "Noto Color Emoji", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    }
+    
+    .team-name {
+      font-weight: 600;
+      color: #2C3E50;
+    }
+    
+    .team-owner {
+      font-size: 11px;
+      color: #3498DB;
+      font-weight: 600;
+    }
+    
+    .team-points {
+      font-size: 12px;
+      color: #7F8C8D;
+      margin-left: 4px;
+    }
+    
+    .odds-box {
+      display: flex;
+      border: 2px solid #333;
+      overflow: hidden;
+    }
+    
+    .odds-cell {
+      width: 80px;
+      padding: 8px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 600;
+      border-right: 2px solid #333;
+    }
+    
+    .odds-cell:last-child {
+      border-right: none;
+    }
+    
+    .odds-header {
+      font-size: 11px;
+      font-weight: 600;
+      color: #666;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+    }
+    
+    .odds-value {
+      font-size: 16px;
+      font-weight: 700;
+    }
+    
+    .no-matches {
+      text-align: center;
+      padding: 40px;
+      color: #7F8C8D;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Upcoming Matches - Matchday <span id="matchday">1</span></h1>
+      <div class="subtitle" id="subtitle">Loading...</div>
+    </div>
+    
+    <div id="matches-container"></div>
+    <div id="no-matches" class="no-matches" style="display: none;">
+      No upcoming matches in the current matchday
+    </div>
+  </div>
+
+  <script>
+    const data = {{DATA_PLACEHOLDER}};
+    
+    // Linear color interpolation
+    function hexToRgb(hex) {
+      const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+      return result ? {
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16)
+      } : null;
+    }
+    
+    function rgbToHex(r, g, b) {
+      return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+    }
+    
+    function interpolateColor(color1, color2, factor) {
+      const c1 = hexToRgb(color1);
+      const c2 = hexToRgb(color2);
+      const r = Math.round(c1.r + factor * (c2.r - c1.r));
+      const g = Math.round(c1.g + factor * (c2.g - c1.g));
+      const b = Math.round(c1.b + factor * (c2.b - c1.b));
+      return rgbToHex(r, g, b);
+    }
+    
+    function getColorForProbability(prob) {
+      const stops = [
+        { prob: 1.00, color: '#6DACA8' },
+        { prob: 0.90, color: '#78B4A9' },
+        { prob: 0.80, color: '#86BDAA' },
+        { prob: 0.70, color: '#94C4AB' },
+        { prob: 0.60, color: '#A1CBAC' },
+        { prob: 0.50, color: '#B1D5AE' },
+        { prob: 0.40, color: '#B9DBB1' },
+        { prob: 0.30, color: '#CAE4B5' },
+        { prob: 0.20, color: '#DCEEC1' },
+        { prob: 0.10, color: '#ECF6D0' },
+        { prob: 0.02, color: '#FAFDF0' },
+        { prob: 0.00, color: '#FFFFFE' }
+      ];
+      
+      for (let i = 0; i < stops.length - 1; i++) {
+        if (prob >= stops[i + 1].prob) {
+          const lower = stops[i + 1];
+          const upper = stops[i];
+          const range = upper.prob - lower.prob;
+          const factor = (prob - lower.prob) / range;
+          return interpolateColor(lower.color, upper.color, factor);
+        }
+      }
+      
+      return stops[stops.length - 1].color;
+    }
+    
+    function getTextColorForBackground(bgColor) {
+      const rgb = hexToRgb(bgColor);
+      const brightness = (rgb.r * 299 + rgb.g * 587 + rgb.b * 114) / 1000;
+      return brightness > 155 ? '#333' : 'white';
+    }
+    
+    // Flag emojis
+    const flagEmojis = {
+      'Argentina': '\u{1F1E6}\u{1F1F7}', 'Australia': '\u{1F1E6}\u{1F1FA}', 'Austria': '\u{1F1E6}\u{1F1F9}', 'Algeria': '\u{1F1E9}\u{1F1FF}',
+      'Belgium': '\u{1F1E7}\u{1F1EA}', 'Brazil': '\u{1F1E7}\u{1F1F7}', 'Bosnia and Herzegovina': '\u{1F1E7}\u{1F1E6}',
+      'Canada': '\u{1F1E8}\u{1F1E6}', 'Colombia': '\u{1F1E8}\u{1F1F4}', 'Croatia': '\u{1F1ED}\u{1F1F7}', 
+      'Curacao': '\u{1F1E8}\u{1F1FC}', 'Curaçao': '\u{1F1E8}\u{1F1FC}', 'Czechia': '\u{1F1E8}\u{1F1FF}',
+      'DR Congo': '\u{1F1E8}\u{1F1E9}',
+      'Ecuador': '\u{1F1EA}\u{1F1E8}', 'Egypt': '\u{1F1EA}\u{1F1EC}', 
+      'England': '\u{1F3F4}\u{E0067}\u{E0062}\u{E0065}\u{E006E}\u{E0067}\u{E007F}', 
+      'Spain': '\u{1F1EA}\u{1F1F8}',
+      'France': '\u{1F1EB}\u{1F1F7}',
+      'Ghana': '\u{1F1EC}\u{1F1ED}', 'Germany': '\u{1F1E9}\u{1F1EA}',
+      'Haiti': '\u{1F1ED}\u{1F1F9}',
+      'Iran': '\u{1F1EE}\u{1F1F7}', 'Iraq': '\u{1F1EE}\u{1F1F6}', 'Ivory Coast': '\u{1F1E8}\u{1F1EE}',
+      'Japan': '\u{1F1EF}\u{1F1F5}', 'Jordan': '\u{1F1EF}\u{1F1F4}',
+      'South Korea': '\u{1F1F0}\u{1F1F7}',
+      'Morocco': '\u{1F1F2}\u{1F1E6}', 'Mexico': '\u{1F1F2}\u{1F1FD}',
+      'Netherlands': '\u{1F1F3}\u{1F1F1}', 'New Zealand': '\u{1F1F3}\u{1F1FF}', 'Norway': '\u{1F1F3}\u{1F1F4}',
+      'Panama': '\u{1F1F5}\u{1F1E6}', 'Paraguay': '\u{1F1F5}\u{1F1FE}', 'Portugal': '\u{1F1F5}\u{1F1F9}',
+      'Qatar': '\u{1F1F6}\u{1F1E6}',
+      'Saudi Arabia': '\u{1F1F8}\u{1F1E6}', 'Senegal': '\u{1F1F8}\u{1F1F3}', 
+      'Scotland': '\u{1F3F4}\u{E0067}\u{E0062}\u{E0073}\u{E0063}\u{E0074}\u{E007F}', 
+      'Sweden': '\u{1F1F8}\u{1F1EA}', 'Switzerland': '\u{1F1E8}\u{1F1ED}', 'South Africa': '\u{1F1FF}\u{1F1E6}',
+      'Tunisia': '\u{1F1F9}\u{1F1F3}', 'Turkey': '\u{1F1F9}\u{1F1F7}', 'Türkiye': '\u{1F1F9}\u{1F1F7}',
+      'Uruguay': '\u{1F1FA}\u{1F1FE}', 'USA': '\u{1F1FA}\u{1F1F8}', 'Uzbekistan': '\u{1F1FA}\u{1F1FF}',
+      'Cape Verde': '\u{1F1E8}\u{1F1FB}'
+    };
+    
+    // Update subtitle
+    const date = new Date(data.timestamp);
+    document.getElementById('subtitle').textContent = 
+      `Updated ${date.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}`;
+    
+    // Group matches by group
+    const matchesByGroup = {};
+    if (data.upcoming_matches && data.upcoming_matches.length > 0) {
+      for (const match of data.upcoming_matches) {
+        if (!matchesByGroup[match.group]) {
+          matchesByGroup[match.group] = [];
+        }
+        matchesByGroup[match.group].push(match);
+      }
+      
+      // Render each group
+      const container = document.getElementById('matches-container');
+      const groups = Object.keys(matchesByGroup).sort();
+      
+      for (const group of groups) {
+        const section = document.createElement('div');
+        section.className = 'group-section';
+        
+        const header = document.createElement('div');
+        header.className = 'group-header';
+        header.textContent = `GROUP ${group}`;
+        section.appendChild(header);
+        
+        const matches = matchesByGroup[group];
+        for (const match of matches) {
+          const row = document.createElement('div');
+          row.className = 'match-row';
+          
+          const matchDate = new Date(match.commence_time);
+          const dateStr = matchDate.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+          
+          const homeFlag = flagEmojis[match.home_team] || '🏴';
+          const awayFlag = flagEmojis[match.away_team] || '🏴';
+          
+          const homeOwner = match.home_owner ? `⭐${match.home_owner.split(' ')[0]}` : '';
+          const awayOwner = match.away_owner ? `⭐${match.away_owner.split(' ')[0]}` : '';
+          
+          const homeWinBg = getColorForProbability(match.home_win_prob || 0);
+          const drawBg = getColorForProbability(match.draw_prob || 0);
+          const awayWinBg = getColorForProbability(match.away_win_prob || 0);
+          
+          const homeWinText = getTextColorForBackground(homeWinBg);
+          const drawText = getTextColorForBackground(drawBg);
+          const awayWinText = getTextColorForBackground(awayWinBg);
+          
+          row.innerHTML = `
+            <div class="match-date">${dateStr}</div>
+            <div class="team-cell home">
+              <span class="team-name">${match.home_team}</span>
+              <span class="team-flag">${homeFlag}</span>
+              ${homeOwner ? `<span class="team-owner">${homeOwner}</span>` : ''}
+              <span class="team-points">0 Pts.</span>
+            </div>
+            <div class="odds-box">
+              <div class="odds-cell" style="background: ${homeWinBg}; color: ${homeWinText};">
+                <div class="odds-header">win</div>
+                <div class="odds-value">${Math.round((match.home_win_prob || 0) * 100)}%</div>
+              </div>
+              <div class="odds-cell" style="background: ${drawBg}; color: ${drawText};">
+                <div class="odds-header">tie</div>
+                <div class="odds-value">${Math.round((match.draw_prob || 0) * 100)}%</div>
+              </div>
+              <div class="odds-cell" style="background: ${awayWinBg}; color: ${awayWinText};">
+                <div class="odds-header">win</div>
+                <div class="odds-value">${Math.round((match.away_win_prob || 0) * 100)}%</div>
+              </div>
+            </div>
+            <div class="team-cell away">
+              <span class="team-flag">${awayFlag}</span>
+              <span class="team-name">${match.away_team}</span>
+              ${awayOwner ? `<span class="team-owner">${awayOwner}</span>` : ''}
+              <span class="team-points">0 Pts.</span>
+            </div>
+          `;
+          
+          section.appendChild(row);
+        }
+        
+        container.appendChild(section);
+      }
+    } else {
+      document.getElementById('no-matches').style.display = 'block';
+    }
+    
+    // Signal ready for screenshot
+    document.body.classList.add('render-complete');
+  </script>
+</body>
+</html>

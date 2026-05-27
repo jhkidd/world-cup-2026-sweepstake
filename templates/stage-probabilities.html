@@ -113,41 +113,10 @@
     }
     
     /* FiveThirtyEight color palette - full cell background */
-    /* Intensity color classes - matching FiveThirtyEight's cool-to-warm gradient */
-    .prob-cell.very-high { 
-      background: #5AB8AB;  /* Cool green at high end */
-      color: white;
-    }  /* 70-100% */
-    
-    .prob-cell.high { 
-      background: #7BC6B0;  /* Transitioning */
-      color: white;
-    }  /* 50-70% */
-    
-    .prob-cell.medium-high { 
-      background: #A2D8AD;  /* ~50% - warmer green */
-      color: #333;
-    }  /* 40-50% */
-    
-    .prob-cell.medium { 
-      background: #BBDFB5;  /* Mid-range */
-      color: #333;
-    }  /* 25-40% */
-    
-    .prob-cell.medium-low { 
-      background: #D1EDB9;  /* ~25% - yellow-green */
-      color: #333;
-    }  /* 15-25% */
-    
-    .prob-cell.low { 
-      background: #E8F6D6;  /* Light yellow-green */
-      color: #333;
-    }  /* 5-15% */
-    
-    .prob-cell.very-low { 
-      background: #FEFFF4;  /* ~1% - very light yellow */
-      color: #666;
-    }  /* <5% */
+    /* Linear color gradient - no step function */
+    .prob-cell {
+      /* Background color set via inline style with linear interpolation */
+    }
     
     /* No background for group stage columns */
     .prob-cell.no-bg {
@@ -239,23 +208,78 @@
     // Render table
     const tbody = document.getElementById('teams');
     
-    function getIntensityClass(prob) {
-      if (prob >= 0.70) return 'very-high';
-      if (prob >= 0.50) return 'high';
-      if (prob >= 0.40) return 'medium-high';
-      if (prob >= 0.25) return 'medium';
-      if (prob >= 0.15) return 'medium-low';
-      if (prob >= 0.05) return 'low';
-      return 'very-low';
+    // Linear color interpolation function
+    function hexToRgb(hex) {
+      const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+      return result ? {
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16)
+      } : null;
+    }
+    
+    function rgbToHex(r, g, b) {
+      return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+    }
+    
+    function interpolateColor(color1, color2, factor) {
+      const c1 = hexToRgb(color1);
+      const c2 = hexToRgb(color2);
+      const r = Math.round(c1.r + factor * (c2.r - c1.r));
+      const g = Math.round(c1.g + factor * (c2.g - c1.g));
+      const b = Math.round(c1.b + factor * (c2.b - c1.b));
+      return rgbToHex(r, g, b);
+    }
+    
+    function getColorForProbability(prob) {
+      // Color stops: 100%, 90%, 80%, 70%, 60%, 50%, 40%, 30%, 20%, 10%, 2%, 0%
+      const stops = [
+        { prob: 1.00, color: '#6DACA8' },
+        { prob: 0.90, color: '#78B4A9' },
+        { prob: 0.80, color: '#86BDAA' },
+        { prob: 0.70, color: '#94C4AB' },
+        { prob: 0.60, color: '#A1CBAC' },
+        { prob: 0.50, color: '#B1D5AE' },
+        { prob: 0.40, color: '#B9DBB1' },
+        { prob: 0.30, color: '#CAE4B5' },
+        { prob: 0.20, color: '#DCEEC1' },
+        { prob: 0.10, color: '#ECF6D0' },
+        { prob: 0.02, color: '#FAFDF0' },
+        { prob: 0.00, color: '#FFFFFE' }
+      ];
+      
+      // Find the two stops to interpolate between
+      for (let i = 0; i < stops.length - 1; i++) {
+        if (prob >= stops[i + 1].prob) {
+          const lower = stops[i + 1];
+          const upper = stops[i];
+          const range = upper.prob - lower.prob;
+          const factor = (prob - lower.prob) / range;
+          return interpolateColor(lower.color, upper.color, factor);
+        }
+      }
+      
+      return stops[stops.length - 1].color; // 0%
+    }
+    
+    function getTextColorForBackground(bgColor) {
+      const rgb = hexToRgb(bgColor);
+      const brightness = (rgb.r * 299 + rgb.g * 587 + rgb.b * 114) / 1000;
+      return brightness > 155 ? '#333' : 'white';
     }
     
     function renderProbCell(prob, noBackground = false) {
       const pct = (prob * 100).toFixed(0);
-      const intensity = getIntensityClass(prob);
-      const noBgClass = noBackground ? 'no-bg' : '';
+      
+      if (noBackground) {
+        return `<td class="prob-cell no-bg"><span class="prob-text">${pct}%</span></td>`;
+      }
+      
+      const bgColor = getColorForProbability(prob);
+      const textColor = getTextColorForBackground(bgColor);
       
       return `
-        <td class="prob-cell ${intensity} ${noBgClass}">
+        <td class="prob-cell" style="background: ${bgColor}; color: ${textColor};">
           <span class="prob-text">${pct}%</span>
         </td>
       `;

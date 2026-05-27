@@ -252,55 +252,96 @@ function getTeamRankings(tournament, teamProbs, sweepstake) {
   return teams;
 }
 
-function getUpcomingMatches(oddsData, tournament) {
+function getUpcomingMatches(oddsData, tournament, sweepstake) {
+  // Get the next matchday (group of matches happening soonish)
   const now = new Date();
-  const nextWeek = addDays(now, 7);
   
-  const upcoming = [];
+  // Build owner lookup
+  const ownerLookup = {};
+  for (const participant of sweepstake.participants) {
+    for (const team of participant.teams) {
+      ownerLookup[normalizeTeamName(team)] = participant.name;
+    }
+  }
+  
+  // Find the earliest future matchday
+  let earliestMatchday = null;
+  let earliestDate = null;
   
   for (const match of tournament.matches.group_stage) {
     const matchDate = parseISO(match.kickoff_utc);
-    if (matchDate >= now && matchDate <= nextWeek) {
-      // Find odds for this match
-      const oddsMatch = oddsData.matchOdds.find(m => 
-        (m.home_team === match.home && m.away_team === match.away) ||
-        (m.away_team === match.home && m.home_team === match.away)
-      );
-      
-      let homeWinProb = null, drawProb = null, awayWinProb = null;
-      
-      if (oddsMatch && oddsMatch.bookmakers) {
-        const homeProbs = averageMatchOdds(oddsMatch.bookmakers, match.home);
-        const awayProbs = averageMatchOdds(oddsMatch.bookmakers, match.away);
+    if (matchDate >= now) {
+      if (!earliestDate || matchDate < earliestDate) {
+        earliestDate = matchDate;
+        earliestMatchday = match.matchday;
+      }
+    }
+  }
+  
+  if (!earliestMatchday) {
+    return []; // No upcoming matches
+  }
+  
+  // Get all matches from that matchday
+  const upcoming = [];
+  
+  for (const match of tournament.matches.group_stage) {
+    if (match.matchday !== earliestMatchday) continue;
+    
+    const matchDate = parseISO(match.kickoff_utc);
+    
+    // Find odds for this match
+    const oddsMatch = oddsData.matchOdds.find(m => 
+      (m.home_team === match.home && m.away_team === match.away) ||
+      (m.away_team === match.home && m.home_team === match.away)
+    );
+    
+    let homeWinProb = null, drawProb = null, awayWinProb = null;
+    
+    if (oddsMatch && oddsMatch.bookmakers && oddsMatch.bookmakers.length > 0) {
+      const market = oddsMatch.bookmakers[0].markets.find(m => m.key === 'h2h');
+      if (market) {
+        const homeOutcome = market.outcomes.find(o => o.name === match.home);
+        const awayOutcome = market.outcomes.find(o => o.name === match.away);
+        const drawOutcome = market.outcomes.find(o => o.name === 'Draw');
         
-        homeWinProb = homeProbs.win;
-        awayWinProb = awayProbs.win;
-        drawProb = homeProbs.draw;
+        homeWinProb = homeOutcome ? (1 / homeOutcome.price) : null;
+        awayWinProb = awayOutcome ? (1 / awayOutcome.price) : null;
+        drawProb = drawOutcome ? (1 / drawOutcome.price) : null;
         
-        // Normalize to sum to 1
-        if (homeWinProb && awayWinProb && drawProb) {
+        // Normalize probabilities
+        if (homeWinProb !== null && awayWinProb !== null && drawProb !== null) {
           const total = homeWinProb + awayWinProb + drawProb;
           homeWinProb /= total;
           awayWinProb /= total;
           drawProb /= total;
         }
       }
-      
-      upcoming.push({
-        id: match.id,
-        date: match.kickoff_utc,
-        home: match.home,
-        away: match.away,
-        venue: match.venue_key,
-        group: match.group,
-        home_win_prob: homeWinProb,
-        draw_prob: drawProb,
-        away_win_prob: awayWinProb
-      });
     }
+    
+    upcoming.push({
+      matchday: match.matchday,
+      group: match.group,
+      home_team: match.home,
+      away_team: match.away,
+      home_owner: ownerLookup[normalizeTeamName(match.home)] || null,
+      away_owner: ownerLookup[normalizeTeamName(match.away)] || null,
+      commence_time: match.kickoff_utc,
+      home_win_prob: homeWinProb,
+      draw_prob: drawProb,
+      away_win_prob: awayWinProb,
+      venue: match.venue_key
+    });
   }
   
-  upcoming.sort((a, b) => new Date(a.date) - new Date(b.date));
+  // Sort by date, then group
+  upcoming.sort((a, b) => {
+    const dateA = new Date(a.commence_time);
+    const dateB = new Date(b.commence_time);
+    if (dateA.getTime() !== dateB.getTime()) return dateA - dateB;
+    return a.group.localeCompare(b.group);
+  });
+  
   return upcoming;
 }
 
@@ -383,8 +424,8 @@ async function main() {
     
     // Upcoming matches
     console.log('\nFinding upcoming matches...');
-    const upcomingMatches = getUpcomingMatches(oddsData, tournament);
-    console.log(`✓ Found ${upcomingMatches.length} matches in next 7 days`);
+    const upcomingMatches = getUpcomingMatches(oddsData, tournament, sweepstake);
+    console.log(`✓ Found ${upcomingMatches.length} matches in next matchday`);
     
     // Build timeline
     console.log('\nBuilding historical timeline...');
