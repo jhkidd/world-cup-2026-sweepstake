@@ -291,10 +291,6 @@ export function runMonteCarloSimulation(tournament, matchOdds, teamStrengths, it
       if (teamStats[team]) teamStats[team].make_final++;
     });
     
-    result.final.forEach(team => {
-      if (teamStats[team]) teamStats[team].make_final++;
-    });
-    
     if (result.winner && teamStats[result.winner]) {
       teamStats[result.winner].win_tournament++;
     }

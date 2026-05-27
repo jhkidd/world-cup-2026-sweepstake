@@ -95,49 +95,56 @@
     }
     
     .prob-cell {
-      text-align: right;
+      text-align: center;
       position: relative;
       font-weight: 600;
-      color: #2C3E50;
-      min-width: 60px;
+      min-width: 70px;
+      padding: 10px 6px;
     }
     
     .prob-cell.section-start {
       border-left: 2px solid #E0E0E0;
     }
     
-    .prob-bar {
-      position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      z-index: 0;
-      opacity: 1;
-    }
+    /* FiveThirtyEight color palette - full cell background */
+    .prob-cell.very-high { 
+      background: #117864;
+      color: white;
+    }  /* 70-100% */
     
-    /* Gradient colors by probability intensity */
-    .prob-bar.very-high { background: #1a936f; }  /* >70% */
-    .prob-bar.high { background: #4DB8A8; }       /* 50-70% */
-    .prob-bar.medium { background: #7DD4BC; }     /* 30-50% */
-    .prob-bar.low { background: #A8E6CF; }        /* 10-30% */
-    .prob-bar.very-low { background: #D5F4E6; }   /* <10% */
+    .prob-cell.high { 
+      background: #4A9B8E;
+      color: white;
+    }  /* 50-70% */
+    
+    .prob-cell.medium-high { 
+      background: #73BDB3;
+      color: white;
+    }  /* 40-50% */
+    
+    .prob-cell.medium { 
+      background: #9FD9CE;
+      color: #2C3E50;
+    }  /* 25-40% */
+    
+    .prob-cell.medium-low { 
+      background: #C2E8E0;
+      color: #2C3E50;
+    }  /* 15-25% */
+    
+    .prob-cell.low { 
+      background: #DFF3ED;
+      color: #2C3E50;
+    }  /* 5-15% */
+    
+    .prob-cell.very-low { 
+      background: #F0F9F6;
+      color: #7F8C8D;
+    }  /* <5% */
     
     .prob-text {
-      position: relative;
-      z-index: 1;
-      color: #2C3E50;
-      font-size: 12px;
-      padding-right: 4px;
-    }
-    
-    .prob-cell.very-high .prob-text {
-      color: white;
-      font-weight: 700;
-    }
-    
-    .prob-cell.high .prob-text {
-      color: white;
-      font-weight: 700;
+      font-size: 13px;
+      font-weight: 600;
     }
     
     .owner-badge {
@@ -222,35 +229,60 @@
     function getIntensityClass(prob) {
       if (prob >= 0.70) return 'very-high';
       if (prob >= 0.50) return 'high';
-      if (prob >= 0.30) return 'medium';
-      if (prob >= 0.10) return 'low';
+      if (prob >= 0.40) return 'medium-high';
+      if (prob >= 0.25) return 'medium';
+      if (prob >= 0.15) return 'medium-low';
+      if (prob >= 0.05) return 'low';
       return 'very-low';
     }
     
     function renderProbCell(prob, sectionStart = false) {
       const pct = (prob * 100).toFixed(0);
       const intensity = getIntensityClass(prob);
-      const width = Math.min(prob * 100, 100);
       const sectionClass = sectionStart ? 'section-start' : '';
       
       return `
         <td class="prob-cell ${intensity} ${sectionClass}">
-          <div class="prob-bar ${intensity}" style="width: ${width}%"></div>
           <span class="prob-text">${pct}%</span>
         </td>
       `;
     }
     
+    // Country flag emojis
+    const flagEmojis = {
+      'Argentina': '🇦🇷', 'Australia': '🇦🇺', 'Austria': '🇦🇹', 'Algeria': '🇩🇿',
+      'Belgium': '🇧🇪', 'Brazil': '🇧🇷', 'Bosnia and Herzegovina': '🇧🇦',
+      'Canada': '🇨🇦', 'Colombia': '🇨🇴', 'Croatia': '🇭🇷', 'Czechia': '🇨🇿', 'Curaçao': '🇨🇼',
+      'DR Congo': '🇨🇩', 'Denmark': '🇩🇰',
+      'England': '🏴󠁧󠁢󠁥󠁮󠁧󠁿', 'Ecuador': '🇪🇨', 'Egypt': '🇪🇬',
+      'France': '🇫🇷',
+      'Germany': '🇩🇪', 'Ghana': '🇬🇭',
+      'Haiti': '🇭🇹',
+      'Iran': '🇮🇷', 'Iraq': '🇮🇶', 'Ivory Coast': '🇨🇮', 'Italy': '🇮🇹',
+      'Japan': '🇯🇵', 'Jordan': '🇯🇴',
+      'Kosovo': '🇽🇰',
+      'Mexico': '🇲🇽', 'Morocco': '🇲🇦',
+      'Netherlands': '🇳🇱', 'New Zealand': '🇳🇿', 'Norway': '🇳🇴',
+      'Panama': '🇵🇦', 'Paraguay': '🇵🇾', 'Portugal': '🇵🇹', 'Poland': '🇵🇱',
+      'Qatar': '🇶🇦',
+      'Saudi Arabia': '🇸🇦', 'Scotland': '🏴󠁧󠁢󠁳󠁣󠁴󠁿', 'Senegal': '🇸🇳', 'South Africa': '🇿🇦', 'South Korea': '🇰🇷',
+      'Spain': '🇪🇸', 'Sweden': '🇸🇪', 'Switzerland': '🇨🇭',
+      'Tunisia': '🇹🇳', 'Turkey': '🇹🇷',
+      'Uruguay': '🇺🇾', 'USA': '🇺🇸', 'Uzbekistan': '🇺🇿',
+      'Cape Verde': '🇨🇻'
+    };
+    
     teamsWithProbs.forEach((team, index) => {
       const row = document.createElement('tr');
       if (index < 10) row.classList.add('top-team');
       
+      const flag = flagEmojis[team.name] || '🏴';
       const ownerBadge = team.owner ? `<span class="owner-badge">⭐${team.owner.split(' ')[0]}</span>` : '';
       
       const probs = team.stage_probs;
       
       row.innerHTML = `
-        <td class="team">${team.name}${ownerBadge}</td>
+        <td class="team">${flag} ${team.name}${ownerBadge}</td>
         <td class="group">${team.group}</td>
         ${renderProbCell(probs.group_first || 0, true)}
         ${renderProbCell(probs.group_second || 0)}
