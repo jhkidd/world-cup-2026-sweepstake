@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      background: #FFFFFF;
+      padding: 40px;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .header {
+      margin-bottom: 30px;
+    }
+    
+    h1 {
+      font-size: 32px;
+      font-weight: 700;
+      color: #2C3E50;
+      margin-bottom: 8px;
+    }
+    
+    .subtitle {
+      font-size: 16px;
+      color: #7F8C8D;
+    }
+    
+    .chart-container {
+      background: white;
+      padding: 40px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      border-radius: 8px;
+    }
+    
+    canvas {
+      max-width: 100%;
+      height: auto;
+    }
+    
+    .insufficient-data {
+      text-align: center;
+      padding: 80px 20px;
+      background: #F8F9FA;
+      border-radius: 8px;
+      color: #7F8C8D;
+      font-size: 18px;
+    }
+    
+    .legend {
+      margin-top: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+    }
+    
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: #5A6C7D;
+    }
+    
+    .legend-color {
+      width: 24px;
+      height: 3px;
+      border-radius: 2px;
+    }
+    
+    .legend-rank {
+      font-size: 11px;
+      color: #95A5A6;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Probability Timeline</h1>
+      <div class="subtitle" id="subtitle"></div>
+    </div>
+    
+    <div id="chart-area"></div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script>
+    const data = DATA_PLACEHOLDER;
+    
+    // Format date
+    const date = new Date(data.timestamp);
+    document.getElementById('subtitle').textContent = 
+      `Updated ${date.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })} • Showing probability evolution over time`;
+    
+    const chartArea = document.getElementById('chart-area');
+    
+    if (data.timeline.length < 2) {
+      chartArea.innerHTML = `
+        <div class="insufficient-data">
+          Timeline will appear after multiple data collections.<br>
+          <span style="font-size: 14px; margin-top: 12px; display: block;">
+            Current data points: ${data.timeline.length}. Need at least 2 to show trends.
+          </span>
+        </div>
+      `;
+      document.body.classList.add('render-complete');
+    } else {
+      // Prepare chart data
+      const labels = data.timeline.map(t => {
+        const d = new Date(t.date);
+        return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+      });
+      
+      // Color palette for lines
+      const colors = [
+        '#4DB8A8', '#E74C3C', '#3498DB', '#F39C12', '#9B59B6',
+        '#1ABC9C', '#E67E22', '#2ECC71', '#34495E', '#E91E63',
+        '#00BCD4', '#FF5722', '#795548', '#607D8B'
+      ];
+      
+      // Build datasets
+      const participants = Object.keys(data.timeline[0].participants);
+      const datasets = participants.map((name, index) => {
+        const values = data.timeline.map(t => (t.participants[name] * 100).toFixed(2));
+        
+        return {
+          label: name,
+          data: values,
+          borderColor: colors[index % colors.length],
+          backgroundColor: colors[index % colors.length] + '20',
+          borderWidth: 3,
+          tension: 0.3,
+          pointRadius: 4,
+          pointHoverRadius: 6
+        };
+      });
+      
+      // Sort by final value (descending)
+      datasets.sort((a, b) => {
+        const aFinal = parseFloat(a.data[a.data.length - 1]);
+        const bFinal = parseFloat(b.data[b.data.length - 1]);
+        return bFinal - aFinal;
+      });
+      
+      // Create canvas
+      chartArea.innerHTML = `
+        <div class="chart-container">
+          <canvas id="timeline-chart"></canvas>
+        </div>
+      `;
+      
+      const ctx = document.getElementById('timeline-chart').getContext('2d');
+      new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: labels,
+          datasets: datasets
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: true,
+          aspectRatio: 2.5,
+          plugins: {
+            legend: {
+              display: true,
+              position: 'bottom',
+              labels: {
+                boxWidth: 30,
+                boxHeight: 3,
+                padding: 15,
+                font: {
+                  size: 12,
+                  family: '-apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif'
+                },
+                color: '#5A6C7D',
+                usePointStyle: false
+              }
+            },
+            tooltip: {
+              mode: 'index',
+              intersect: false,
+              backgroundColor: 'rgba(44, 62, 80, 0.95)',
+              titleFont: { size: 13, weight: '600' },
+              bodyFont: { size: 12 },
+              padding: 12,
+              cornerRadius: 6,
+              displayColors: true,
+              callbacks: {
+                label: function(context) {
+                  return context.dataset.label + ': ' + context.parsed.y + '%';
+                }
+              }
+            }
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+              title: {
+                display: true,
+                text: 'Total Win Probability (%)',
+                font: { size: 13, weight: '600' },
+                color: '#5A6C7D'
+              },
+              ticks: {
+                callback: function(value) {
+                  return value + '%';
+                },
+                font: { size: 11 },
+                color: '#7F8C8D'
+              },
+              grid: {
+                color: '#E0E0E0',
+                drawBorder: false
+              }
+            },
+            x: {
+              title: {
+                display: true,
+                text: 'Date',
+                font: { size: 13, weight: '600' },
+                color: '#5A6C7D'
+              },
+              ticks: {
+                font: { size: 11 },
+                color: '#7F8C8D',
+                maxRotation: 45,
+                minRotation: 0
+              },
+              grid: {
+                display: false
+              }
+            }
+          },
+          interaction: {
+            mode: 'nearest',
+            axis: 'x',
+            intersect: false
+          }
+        }
+      });
+      
+      // Wait for chart to render
+      setTimeout(() => {
+        document.body.classList.add('render-complete');
+      }, 500);
+    }
+  </script>
+</body>
+</html>

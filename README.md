@@ -1,3 +1,69 @@
+# 2026 World Cup Sweepstake Visualizations
+
+Professional-grade visualizations for tracking office World Cup sweepstakes, inspired by FiveThirtyEight's data journalism aesthetic.
+
+## Features
+
+- **Leaderboard**: Participant rankings with win probabilities and weekly changes
+- **Team Rankings**: All 48 teams sorted by tournament winner probability
+- **Upcoming Matches**: Next 7 days of fixtures with win/draw odds
+- **Probability Timeline**: Track how each participant's chances evolve over time
+- **Automated Data Pipeline**: Fetch odds → process → generate visualizations
+
+## Quick Start
+
+```bash
+# Install dependencies
+npm install
+
+# Run complete pipeline (fetch odds + process + generate images)
+npm run generate
+
+# Or run individual steps
+npm run fetch      # Fetch latest odds (2 API calls)
+npm run process    # Calculate probabilities
+npm run visualize  # Generate PNG images
+```
+
+## Output
+
+All visualizations are saved to the `output/` directory as PNG images:
+- `leaderboard.png` - Current sweepstake standings
+- `team-rankings.png` - All 48 teams ranked by win probability
+- `upcoming-matches.png` - Next week's fixtures with odds
+- `timeline.png` - Historical probability evolution
+
+## Data Files
+
+- `data/sweepstake.json` - Participant assignments (edit to add late entries)
+- `data/tournament.json` - World Cup structure (fixtures, groups, venues)
+- `data/odds/` - Archived API responses with timestamps
+- `data/processed/latest.json` - Calculated probabilities and rankings
+
+## API Usage
+
+Uses [the-odds-api.com](https://the-odds-api.com) with 500 free calls/month:
+- 2 calls per run (match odds + tournament winner odds)
+- 494 calls remaining this month
+- Automatically tracks usage and warns at <50 remaining
+
+## Current Standings
+
+**Last updated**: 27 May 2026
+
+1. **Ian Whelan** - 17.52% (Spain + Qatar)
+2. **Tina Buckley** - 13.51% (England + Egypt)  
+3. **Caitlin Kilcoyne** - 10.42% (Brazil + Saudi Arabia)
+
+## How It Works
+
+1. **Fetch**: Downloads betting odds from multiple bookmakers
+2. **Process**: Converts decimal odds to probabilities, averages across bookmakers, calculates participant totals
+3. **Visualize**: Renders HTML templates with Puppeteer, captures as PNG images
+
+---
+
+## API Details
 
 Aim of this project is to create professional grade visualisations for our companies 2026 World cup sweepstake. 
 
