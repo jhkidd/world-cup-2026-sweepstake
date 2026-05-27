@@ -82,6 +82,8 @@ function normalizeTeamName(name) {
   const normalized = name.trim();
   if (normalized === 'Türkiye' || normalized === 'Turkey') return 'Turkey';
   if (normalized === 'Curaçao' || normalized === 'Curacao') return 'Curaçao';
+  if (normalized === 'Czech Republic' || normalized === 'Czechia') return 'Czechia';
+  if (normalized === 'Bosnia' || normalized === 'Bosnia and Herzegovina') return 'Bosnia and Herzegovina';
   return normalized;
 }
 

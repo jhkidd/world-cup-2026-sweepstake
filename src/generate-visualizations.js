@@ -60,7 +60,7 @@ async function main() {
     // Render each visualization
     await renderVisualization('leaderboard', data, 'leaderboard');
     await renderVisualization('team-rankings', data, 'team-rankings');
-    await renderVisualization('upcoming-matches-v2', data, 'upcoming-matches');
+    await renderVisualization('upcoming-matches-v2-compact', data, 'upcoming-matches');
     await renderVisualization('timeline', data, 'timeline');
     await renderVisualization('stage-probabilities', data, 'stage-probabilities');
     

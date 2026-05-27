@@ -13,6 +13,8 @@ function normalizeTeamName(name) {
   // Handle special cases
   if (normalized === 'Türkiye' || normalized === 'Turkey') return 'Turkey';
   if (normalized === 'Curaçao' || normalized === 'Curacao') return 'Curacao';
+  if (normalized === 'Czech Republic' || normalized === 'Czechia') return 'Czechia';
+  if (normalized === 'Bosnia' || normalized === 'Bosnia and Herzegovina') return 'Bosnia and Herzegovina';
   return normalized;
 }
 
