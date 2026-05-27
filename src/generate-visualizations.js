@@ -62,9 +62,7 @@ async function main() {
     await renderVisualization('team-rankings', data, 'team-rankings');
     await renderVisualization('upcoming-matches', data, 'upcoming-matches');
     await renderVisualization('timeline', data, 'timeline');
-    
-    // TODO: Add remaining visualizations
-    console.log('\n📊 Note: Bracket visualization coming soon');
+    await renderVisualization('stage-probabilities', data, 'stage-probabilities');
     
     console.log('\n✅ All visualizations generated successfully!');
     

@@ -2,6 +2,7 @@ import { readFileSync, writeFileSync, readdirSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { addDays, parseISO, formatISO } from 'date-fns';
+import { runMonteCarloSimulation } from './monte-carlo.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -322,6 +323,16 @@ async function main() {
     const timeline = buildTimeline(allOddsFiles, sweepstake);
     console.log(`✓ Built timeline from ${timeline.length} data points`);
     
+    // Run Monte Carlo simulation
+    console.log('\n🎲 Running Monte Carlo simulation for stage probabilities...');
+    const stageProbabilities = runMonteCarloSimulation(
+      tournament, 
+      oddsData.matchOdds, 
+      teamProbs,
+      10000
+    );
+    console.log('✓ Monte Carlo simulation complete');
+    
     // Build output
     const output = {
       timestamp: oddsData.timestamp,
@@ -330,6 +341,7 @@ async function main() {
       teams: teamRankings,
       upcoming_matches: upcomingMatches,
       timeline,
+      stage_probabilities: stageProbabilities,
       bracket: {
         // TODO: Implement bracket data structure
         note: 'Bracket visualization to be implemented'
