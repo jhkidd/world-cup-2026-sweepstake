@@ -284,22 +284,28 @@ export function runMonteCarloSimulation(tournament, matchOdds, teamStrengths, it
     }
     
     // Track knockout progression
-    result.qualified.forEach(team => {
+    // Note: result arrays contain teams that WON that round (and will play next round)
+    // - result.r16 = 16 teams that won R32 (will play R16)
+    // - result.quarters = 8 teams that won R16 (will play QF)
+    // - result.semis = 4 teams that won QF (will play SF)
+    // - result.final = 2 teams that won SF (will play Final)
+    
+    result.r16.forEach(team => {
       const normalized = normalizeTeamName(team);
       if (teamStats[normalized]) teamStats[normalized].make_r16++;
     });
     
-    result.r16.forEach(team => {
+    result.quarters.forEach(team => {
       const normalized = normalizeTeamName(team);
       if (teamStats[normalized]) teamStats[normalized].make_quarters++;
     });
     
-    result.quarters.forEach(team => {
+    result.semis.forEach(team => {
       const normalized = normalizeTeamName(team);
       if (teamStats[normalized]) teamStats[normalized].make_semis++;
     });
     
-    result.semis.forEach(team => {
+    result.final.forEach(team => {
       const normalized = normalizeTeamName(team);
       if (teamStats[normalized]) teamStats[normalized].make_final++;
     });
