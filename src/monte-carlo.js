@@ -59,8 +59,23 @@ export function simulateGroupStage(tournament, matchOdds, teamStrengths) {
     );
     
     let result;
-    if (oddsMatch && oddsMatch.bookmakers && oddsMatch.bookmakers.length > 0) {
-      // Use actual h2h odds
+    let homeGoals, awayGoals;
+    
+    // Check if this match has an actual result (completed match)
+    if (oddsMatch && oddsMatch.actual_result && oddsMatch.actual_result.completed) {
+      // Use actual result - no simulation needed
+      homeGoals = oddsMatch.actual_result.home_score;
+      awayGoals = oddsMatch.actual_result.away_score;
+      
+      if (homeGoals > awayGoals) {
+        result = 'team1';
+      } else if (awayGoals > homeGoals) {
+        result = 'team2';
+      } else {
+        result = 'draw';
+      }
+    } else if (oddsMatch && oddsMatch.bookmakers && oddsMatch.bookmakers.length > 0) {
+      // Use actual h2h odds for simulation
       const market = oddsMatch.bookmakers[0].markets.find(m => m.key === 'h2h');
       if (market) {
         const outcomes = market.outcomes;
@@ -97,21 +112,40 @@ export function simulateGroupStage(tournament, matchOdds, teamStrengths) {
     groups[group][homeIdx].played++;
     groups[group][awayIdx].played++;
     
-    if (result === 'team1') {
-      groups[group][homeIdx].points += 3;
-      groups[group][homeIdx].goalsFor += 2;
-      groups[group][awayIdx].goalsAgainst += 2;
-    } else if (result === 'team2') {
-      groups[group][awayIdx].points += 3;
-      groups[group][awayIdx].goalsFor += 2;
-      groups[group][homeIdx].goalsAgainst += 2;
+    // Use actual goals if available, otherwise use simulated typical goals
+    if (homeGoals !== undefined && awayGoals !== undefined) {
+      // Actual result - use exact scores
+      groups[group][homeIdx].goalsFor += homeGoals;
+      groups[group][homeIdx].goalsAgainst += awayGoals;
+      groups[group][awayIdx].goalsFor += awayGoals;
+      groups[group][awayIdx].goalsAgainst += homeGoals;
+      
+      if (homeGoals > awayGoals) {
+        groups[group][homeIdx].points += 3;
+      } else if (awayGoals > homeGoals) {
+        groups[group][awayIdx].points += 3;
+      } else {
+        groups[group][homeIdx].points += 1;
+        groups[group][awayIdx].points += 1;
+      }
     } else {
-      groups[group][homeIdx].points += 1;
-      groups[group][awayIdx].points += 1;
-      groups[group][homeIdx].goalsFor += 1;
-      groups[group][homeIdx].goalsAgainst += 1;
-      groups[group][awayIdx].goalsFor += 1;
-      groups[group][awayIdx].goalsAgainst += 1;
+      // Simulated result - use typical goal values
+      if (result === 'team1') {
+        groups[group][homeIdx].points += 3;
+        groups[group][homeIdx].goalsFor += 2;
+        groups[group][awayIdx].goalsAgainst += 2;
+      } else if (result === 'team2') {
+        groups[group][awayIdx].points += 3;
+        groups[group][awayIdx].goalsFor += 2;
+        groups[group][homeIdx].goalsAgainst += 2;
+      } else {
+        groups[group][homeIdx].points += 1;
+        groups[group][awayIdx].points += 1;
+        groups[group][homeIdx].goalsFor += 1;
+        groups[group][homeIdx].goalsAgainst += 1;
+        groups[group][awayIdx].goalsFor += 1;
+        groups[group][awayIdx].goalsAgainst += 1;
+      }
     }
   }
   

@@ -51,10 +51,36 @@ async function fetchTournamentWinnerOdds() {
 }
 
 async function fetchMatchResults() {
-  // worldcup2026 API - check GitHub repo for exact endpoint
-  // For now, returning empty array as placeholder until we confirm the endpoint
-  console.log('Note: Match results fetching not yet implemented (need to confirm worldcup2026 API endpoint)');
-  return [];
+  // Fetch from rezarahiminia/worldcup2026 GitHub repo (free, no API key needed)
+  const url = 'https://raw.githubusercontent.com/rezarahiminia/worldcup2026/main/football.matches.json';
+  
+  try {
+    console.log(`Fetching: ${url}`);
+    const response = await axios.get(url);
+    const matches = response.data;
+    
+    // Filter to only completed matches
+    const completed = matches.filter(m => 
+      m.status === 'completed' || m.status === 'finished' || m.finished === true
+    );
+    
+    return completed.map(m => ({
+      id: m.id || `${m.home_team}-${m.away_team}`,
+      home_team: m.home_team,
+      away_team: m.away_team,
+      home_score: m.home_score,
+      away_score: m.away_score,
+      status: m.status,
+      group: m.group,
+      stage: m.stage || 'group_stage',
+      date: m.date || m.datetime
+    }));
+  } catch (error) {
+    // If GitHub repo doesn't exist yet or network error, just return empty
+    console.log(`   Note: Could not fetch match results (${error.message})`);
+    console.log('   This is normal before tournament starts or if repo structure changes');
+    return [];
+  }
 }
 
 async function main() {

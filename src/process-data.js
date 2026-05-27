@@ -85,6 +85,74 @@ function normalizeTeamName(name) {
   return normalized;
 }
 
+function mergeCompletedResults(matchOdds, completedResults, tournament) {
+  // Create a copy of matchOdds
+  const merged = JSON.parse(JSON.stringify(matchOdds));
+  
+  if (!completedResults || completedResults.length === 0) {
+    return merged; // No completed matches yet
+  }
+  
+  console.log(`   Merging ${completedResults.length} completed match results...`);
+  
+  // For each completed match, override the odds to force the actual result
+  for (const completed of completedResults) {
+    const normalizedHome = normalizeTeamName(completed.home_team);
+    const normalizedAway = normalizeTeamName(completed.away_team);
+    
+    // Find matching odds entry
+    const oddsMatch = merged.find(m => 
+      (normalizeTeamName(m.home_team) === normalizedHome && normalizeTeamName(m.away_team) === normalizedAway) ||
+      (normalizeTeamName(m.away_team) === normalizedHome && normalizeTeamName(m.home_team) === normalizedAway)
+    );
+    
+    if (oddsMatch && oddsMatch.bookmakers && oddsMatch.bookmakers.length > 0) {
+      // Determine winner
+      let homeWinProb, drawProb, awayWinProb;
+      
+      if (completed.home_score > completed.away_score) {
+        homeWinProb = 1.0;  // Home won
+        drawProb = 0.0;
+        awayWinProb = 0.0;
+      } else if (completed.home_score < completed.away_score) {
+        homeWinProb = 0.0;
+        drawProb = 0.0;
+        awayWinProb = 1.0;  // Away won
+      } else {
+        homeWinProb = 0.0;
+        drawProb = 1.0;     // Draw
+        awayWinProb = 0.0;
+      }
+      
+      // Convert probabilities to odds (odds = 1 / probability, but handle 0)
+      const homeOdds = homeWinProb > 0 ? 1.0 / homeWinProb : 1000.0;
+      const drawOdds = drawProb > 0 ? 1.0 / drawProb : 1000.0;
+      const awayOdds = awayWinProb > 0 ? 1.0 / awayWinProb : 1000.0;
+      
+      // Override all bookmakers with the actual result
+      for (const bookmaker of oddsMatch.bookmakers) {
+        const h2hMarket = bookmaker.markets.find(m => m.key === 'h2h');
+        if (h2hMarket) {
+          h2hMarket.outcomes = [
+            { name: oddsMatch.home_team, price: homeOdds },
+            { name: 'Draw', price: drawOdds },
+            { name: oddsMatch.away_team, price: awayOdds }
+          ];
+        }
+      }
+      
+      // Store actual score for goal difference calculations
+      oddsMatch.actual_result = {
+        home_score: completed.home_score,
+        away_score: completed.away_score,
+        completed: true
+      };
+    }
+  }
+  
+  return merged;
+}
+
 function processWinnerOdds(oddsData) {
   const winnerData = oddsData.winnerOdds[0];
   if (!winnerData || !winnerData.bookmakers) {
@@ -325,9 +393,13 @@ async function main() {
     
     // Run Monte Carlo simulation
     console.log('\n🎲 Running Monte Carlo simulation for stage probabilities...');
+    
+    // Merge completed results with match odds (override odds to 100% for actual winners)
+    const matchOddsWithResults = mergeCompletedResults(oddsData.matchOdds, oddsData.results, tournament);
+    
     const stageProbabilities = runMonteCarloSimulation(
       tournament, 
-      oddsData.matchOdds, 
+      matchOddsWithResults, 
       teamProbs,
       10000
     );
