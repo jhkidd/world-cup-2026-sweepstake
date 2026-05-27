@@ -7,6 +7,15 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const projectRoot = join(__dirname, '..');
 
+// Normalize team names to match odds data
+function normalizeTeamName(name) {
+  const normalized = name.trim();
+  // Handle special cases
+  if (normalized === 'Türkiye' || normalized === 'Turkey') return 'Turkey';
+  if (normalized === 'Curaçao' || normalized === 'Curacao') return 'Curacao';
+  return normalized;
+}
+
 // Simulate a single match given win probabilities
 function simulateMatch(team1WinProb, drawProb) {
   const rand = Math.random();
@@ -246,7 +255,7 @@ export function runMonteCarloSimulation(tournament, matchOdds, teamStrengths, it
   
   // Initialize stats for all teams
   for (const team of tournament.teams) {
-    teamStats[team.name] = {
+    teamStats[normalizeTeamName(team.name)] = {
       group_first: 0,
       group_second: 0,
       group_third: 0,
@@ -269,30 +278,37 @@ export function runMonteCarloSimulation(tournament, matchOdds, teamStrengths, it
     // Track group positions
     for (const group of Object.keys(result.groupStage)) {
       const teams = result.groupStage[group];
-      if (teams[0]) teamStats[teams[0].name].group_first++;
-      if (teams[1]) teamStats[teams[1].name].group_second++;
-      if (teams[2]) teamStats[teams[2].name].group_third++;
+      if (teams[0]) teamStats[normalizeTeamName(teams[0].name)].group_first++;
+      if (teams[1]) teamStats[normalizeTeamName(teams[1].name)].group_second++;
+      if (teams[2]) teamStats[normalizeTeamName(teams[2].name)].group_third++;
     }
     
     // Track knockout progression
     result.qualified.forEach(team => {
-      if (teamStats[team]) teamStats[team].make_r16++;
+      const normalized = normalizeTeamName(team);
+      if (teamStats[normalized]) teamStats[normalized].make_r16++;
     });
     
     result.r16.forEach(team => {
-      if (teamStats[team]) teamStats[team].make_quarters++;
+      const normalized = normalizeTeamName(team);
+      if (teamStats[normalized]) teamStats[normalized].make_quarters++;
     });
     
     result.quarters.forEach(team => {
-      if (teamStats[team]) teamStats[team].make_semis++;
+      const normalized = normalizeTeamName(team);
+      if (teamStats[normalized]) teamStats[normalized].make_semis++;
     });
     
     result.semis.forEach(team => {
-      if (teamStats[team]) teamStats[team].make_final++;
+      const normalized = normalizeTeamName(team);
+      if (teamStats[normalized]) teamStats[normalized].make_final++;
     });
     
-    if (result.winner && teamStats[result.winner]) {
-      teamStats[result.winner].win_tournament++;
+    if (result.winner) {
+      const normalized = normalizeTeamName(result.winner);
+      if (teamStats[normalized]) {
+        teamStats[normalized].win_tournament++;
+      }
     }
   }
   
