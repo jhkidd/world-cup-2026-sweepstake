@@ -95,8 +95,6 @@ async function main() {
     console.log(`Loaded ${Object.keys(profilePictures).length} profile pictures\n`);
     
     // Render each visualization
-    await renderVisualization('leaderboard', data, 'leaderboard');
-    await renderVisualization('team-rankings', data, 'team-rankings');
     await renderVisualization('upcoming-matches-two-column', data, 'upcoming-matches');
     await renderVisualization('timeline', data, 'timeline');
     await renderVisualization('stage-probabilities', data, 'stage-probabilities', profilePictures);
