@@ -222,7 +222,8 @@
       const prob = isNA ? 0 : value / 100;
       const bgColor = isNA ? '#F5F5F5' : getColorForProbability(prob);
       const brightness = getBrightness(bgColor);
-      const textColor = brightness > 155 ? '#2C3E50' : '#FFFFFF';
+      // Use white text for darker backgrounds (probabilities over ~65%)
+      const textColor = brightness > 180 ? '#2C3E50' : '#FFFFFF';
       
       return `
         <div class="odds-cell" style="background-color: ${bgColor};">

@@ -265,7 +265,8 @@
     function getTextColorForBackground(bgColor) {
       const rgb = hexToRgb(bgColor);
       const brightness = (rgb.r * 299 + rgb.g * 587 + rgb.b * 114) / 1000;
-      return brightness > 155 ? '#333' : 'white';
+      // Use white text for darker backgrounds (probabilities over ~65%)
+      return brightness > 180 ? '#333' : 'white';
     }
     
     function renderProbCell(prob, noBackground = false) {
@@ -311,7 +312,7 @@
     
     teamsWithProbs.forEach((team, index) => {
       const row = document.createElement('tr');
-      if (index < 10) row.classList.add('top-team');
+      if (index < 3) row.classList.add('top-team');
       
       const flag = flagEmojis[team.name] || '🏴';
       const ownerBadge = team.owner ? `<span class="owner-badge">⭐${team.owner.split(' ')[0]}</span>` : '';
