@@ -27,7 +27,7 @@ async function renderVisualization(templateName, data, outputName) {
     const page = await browser.newPage();
     
     // Adjust viewport based on template (two-column needs more width)
-    const viewportWidth = templateName === 'upcoming-matches-two-column' ? 1600 : 1200;
+    const viewportWidth = templateName === 'upcoming-matches-two-column' ? 1550 : 1200;
     await page.setViewport({ width: viewportWidth, height: 800, deviceScaleFactor: 2 });
     
     // Enable console logging from the page for debugging
