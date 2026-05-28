@@ -25,22 +25,21 @@
     }
     
     h1 {
-      font-size: 32px;
+      font-size: 28px;
       font-weight: 700;
       color: #2C3E50;
       margin-bottom: 8px;
     }
     
     .subtitle {
-      font-size: 16px;
+      font-size: 13px;
       color: #7F8C8D;
     }
     
     .chart-container {
       background: white;
-      padding: 40px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-      border-radius: 8px;
+      padding: 40px 120px 40px 40px;
+      border-radius: 0;
     }
     
     canvas {
@@ -89,7 +88,7 @@
 <body>
   <div class="container">
     <div class="header">
-      <h1>Probability Timeline</h1>
+      <h1>Sweepstake Race</h1>
       <div class="subtitle" id="subtitle"></div>
     </div>
     
@@ -99,11 +98,12 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   <script>
     const data = DATA_PLACEHOLDER;
+    const profilePictures = PROFILE_PICTURES_PLACEHOLDER;
     
     // Format date
     const date = new Date(data.timestamp);
     document.getElementById('subtitle').textContent = 
-      `Updated ${date.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })} • Showing probability evolution over time`;
+      `Tournament winner probability over time • Updated ${date.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}`;
     
     const chartArea = document.getElementById('chart-area');
     
@@ -118,29 +118,63 @@
       `;
       document.body.classList.add('render-complete');
     } else {
+      // Filter to prominent participants (>2% at any point in history)
+      function getProminentParticipants(timelineData) {
+        const participantPeaks = {};
+        
+        // Calculate peak probability for each participant
+        timelineData.forEach(snapshot => {
+          Object.entries(snapshot.participants).forEach(([name, prob]) => {
+            if (!participantPeaks[name] || prob > participantPeaks[name]) {
+              participantPeaks[name] = prob;
+            }
+          });
+        });
+        
+        // Filter those who hit >2% at any point
+        const prominent = Object.entries(participantPeaks)
+          .filter(([name, peak]) => peak > 0.02)
+          .map(([name, peak]) => name);
+        
+        // Sort by current (latest) probability, descending
+        const latestSnapshot = timelineData[timelineData.length - 1];
+        prominent.sort((a, b) => {
+          return (latestSnapshot.participants[b] || 0) - (latestSnapshot.participants[a] || 0);
+        });
+        
+        // Cap at 8 to avoid clutter
+        return prominent.slice(0, 8);
+      }
+      
+      const prominentParticipants = getProminentParticipants(data.timeline);
+      
       // Prepare chart data
       const labels = data.timeline.map(t => {
         const d = new Date(t.date);
         return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
       });
       
-      // Color palette for lines
+      // Company color palette (8 colors assigned by rank)
       const colors = [
-        '#4DB8A8', '#E74C3C', '#3498DB', '#F39C12', '#9B59B6',
-        '#1ABC9C', '#E67E22', '#2ECC71', '#34495E', '#E91E63',
-        '#00BCD4', '#FF5722', '#795548', '#607D8B'
+        '#28346E', // 1st - blue
+        '#E3A344', // 2nd - gold
+        '#FC4F30', // 3rd - red
+        '#6D904F', // 4th - green
+        '#810F7C', // 5th - purple
+        '#414042', // 6th - charcoal
+        '#1fa1a1', // 7th - teal
+        '#b37d14'  // 8th - bronze
       ];
       
-      // Build datasets
-      const participants = Object.keys(data.timeline[0].participants);
-      const datasets = participants.map((name, index) => {
+      // Build datasets for prominent participants only
+      const datasets = prominentParticipants.map((name, index) => {
         const values = data.timeline.map(t => (t.participants[name] * 100).toFixed(2));
         
         return {
           label: name,
           data: values,
-          borderColor: colors[index % colors.length],
-          backgroundColor: colors[index % colors.length] + '20',
+          borderColor: colors[index],
+          backgroundColor: colors[index] + '20',
           borderWidth: 3,
           tension: 0.3,
           pointRadius: 4,
@@ -148,12 +182,7 @@
         };
       });
       
-      // Sort by final value (descending)
-      datasets.sort((a, b) => {
-        const aFinal = parseFloat(a.data[a.data.length - 1]);
-        const bFinal = parseFloat(b.data[b.data.length - 1]);
-        return bFinal - aFinal;
-      });
+      // Already sorted by current probability (from getProminentParticipants)
       
       // Create canvas
       chartArea.innerHTML = `
@@ -163,44 +192,201 @@
       `;
       
       const ctx = document.getElementById('timeline-chart').getContext('2d');
+      
+      // Tournament phase mapping
+      function getTournamentPhase(dateStr) {
+        const d = new Date(dateStr);
+        const june11 = new Date('2026-06-11');
+        const june28 = new Date('2026-06-28');
+        const july5 = new Date('2026-07-05');
+        const july8 = new Date('2026-07-08');
+        const july12 = new Date('2026-07-12');
+        
+        if (d < june28) return 'Groups';
+        if (d < july5) return 'R16';
+        if (d < july8) return 'Quarters';
+        if (d < july12) return 'Semis';
+        return 'Final';
+      }
+      
+      // Create phase background plugin
+      const phaseBackgroundPlugin = {
+        id: 'phaseBackground',
+        beforeDraw: (chart) => {
+          const ctx = chart.ctx;
+          const chartArea = chart.chartArea;
+          const xScale = chart.scales.x;
+          
+          // Define phase colors (alternating subtle gray/white)
+          const phaseColors = {
+            'Groups': '#F8F9FA',
+            'R16': 'white',
+            'Quarters': '#F8F9FA',
+            'Semis': 'white',
+            'Final': '#F8F9FA'
+          };
+          
+          let prevPhase = null;
+          let prevX = chartArea.left;
+          
+          labels.forEach((label, index) => {
+            const phase = getTournamentPhase(data.timeline[index].date);
+            const x = xScale.getPixelForValue(index);
+            
+            if (prevPhase && prevPhase !== phase) {
+              // Draw previous phase background
+              ctx.fillStyle = phaseColors[prevPhase] || 'white';
+              ctx.fillRect(prevX, chartArea.top, x - prevX, chartArea.bottom - chartArea.top);
+              prevX = x;
+            }
+            
+            if (index === labels.length - 1) {
+              // Draw final phase
+              ctx.fillStyle = phaseColors[phase] || 'white';
+              ctx.fillRect(prevX, chartArea.top, chartArea.right - prevX, chartArea.bottom - chartArea.top);
+            }
+            
+            prevPhase = phase;
+          });
+        }
+      };
+      
+      // Profile picture collision avoidance and rendering
+      const profilePicturePlugin = {
+        id: 'profilePictures',
+        afterDatasetsDraw: (chart) => {
+          const ctx = chart.ctx;
+          const chartArea = chart.chartArea;
+          const xScale = chart.scales.x;
+          const yScale = chart.scales.y;
+          
+          const bubbleRadius = 20;
+          const padding = 5;
+          
+          // Collect endpoint data for each participant
+          const endpoints = datasets.map((dataset, index) => {
+            const lastValue = parseFloat(dataset.data[dataset.data.length - 1]);
+            const x = chartArea.right + 15; // Position to the right of chart
+            const y = yScale.getPixelForValue(lastValue);
+            
+            return {
+              name: dataset.label,
+              value: lastValue,
+              x: x,
+              y: y,
+              color: dataset.borderColor,
+              adjustedY: y  // Will be adjusted for collision avoidance
+            };
+          });
+          
+          // Collision avoidance algorithm (sequential downward offset)
+          for (let i = 1; i < endpoints.length; i++) {
+            const current = endpoints[i];
+            const previous = endpoints[i - 1];
+            
+            const distance = Math.abs(current.adjustedY - previous.adjustedY);
+            const minDistance = 2 * bubbleRadius + padding;
+            
+            if (distance < minDistance) {
+              // Offset downward
+              const offset = minDistance - distance;
+              current.adjustedY = previous.adjustedY + minDistance;
+            }
+          }
+          
+          // Draw profile pictures and connecting lines
+          endpoints.forEach((endpoint) => {
+            const normalizedName = endpoint.name.toLowerCase().replace(/\s+/g, ' ');
+            const imageSrc = profilePictures[normalizedName];
+            
+            // Draw connecting line if position was adjusted
+            if (Math.abs(endpoint.y - endpoint.adjustedY) > 1) {
+              ctx.save();
+              ctx.strokeStyle = endpoint.color;
+              ctx.lineWidth = 1;
+              ctx.setLineDash([3, 3]);
+              ctx.beginPath();
+              ctx.moveTo(endpoint.x, endpoint.y);
+              ctx.lineTo(endpoint.x, endpoint.adjustedY);
+              ctx.stroke();
+              ctx.restore();
+            }
+            
+            // Draw profile picture circle
+            ctx.save();
+            ctx.beginPath();
+            ctx.arc(endpoint.x, endpoint.adjustedY, bubbleRadius, 0, 2 * Math.PI);
+            ctx.closePath();
+            
+            if (imageSrc) {
+              // Draw image
+              const img = new Image();
+              img.src = imageSrc;
+              ctx.clip();
+              ctx.drawImage(img, 
+                endpoint.x - bubbleRadius, 
+                endpoint.adjustedY - bubbleRadius, 
+                bubbleRadius * 2, 
+                bubbleRadius * 2);
+            } else {
+              // Draw initials fallback
+              const initials = endpoint.name.split(' ').map(n => n[0]).join('').toUpperCase().slice(0, 2);
+              const colors = ['#3498DB', '#E74C3C', '#9B59B6', '#F39C12', '#1ABC9C', 
+                              '#E67E22', '#2ECC71', '#34495E', '#16A085', '#C0392B',
+                              '#8E44AD', '#27AE60'];
+              const colorIndex = endpoint.name.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0) % colors.length;
+              
+              ctx.fillStyle = colors[colorIndex];
+              ctx.fill();
+              
+              ctx.fillStyle = 'white';
+              ctx.font = '12px sans-serif';
+              ctx.textAlign = 'center';
+              ctx.textBaseline = 'middle';
+              ctx.fillText(initials, endpoint.x, endpoint.adjustedY);
+            }
+            
+            ctx.restore();
+            
+            // Draw probability percentage next to bubble
+            ctx.save();
+            ctx.fillStyle = '#2C3E50';
+            ctx.font = '600 13px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif';
+            ctx.textAlign = 'left';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(endpoint.value.toFixed(1) + '%', endpoint.x + bubbleRadius + 8, endpoint.adjustedY);
+            ctx.restore();
+          });
+        }
+      };
+      
       new Chart(ctx, {
         type: 'line',
         data: {
           labels: labels,
           datasets: datasets
         },
+        plugins: [phaseBackgroundPlugin, profilePicturePlugin],
         options: {
           responsive: true,
           maintainAspectRatio: true,
           aspectRatio: 2.5,
           plugins: {
             legend: {
-              display: true,
-              position: 'bottom',
-              labels: {
-                boxWidth: 30,
-                boxHeight: 3,
-                padding: 15,
-                font: {
-                  size: 12,
-                  family: '-apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif'
-                },
-                color: '#5A6C7D',
-                usePointStyle: false
-              }
+              display: false  // Hide legend, profile pictures will replace it
             },
             tooltip: {
               mode: 'index',
               intersect: false,
-              backgroundColor: 'rgba(44, 62, 80, 0.95)',
+              backgroundColor: '#28346E',
               titleFont: { size: 13, weight: '600' },
               bodyFont: { size: 12 },
               padding: 12,
-              cornerRadius: 6,
+              cornerRadius: 4,
               displayColors: true,
               callbacks: {
                 label: function(context) {
-                  return context.dataset.label + ': ' + context.parsed.y + '%';
+                  return context.dataset.label + ': ' + context.parsed.y.toFixed(1) + '%';
                 }
               }
             }
@@ -210,7 +396,7 @@
               beginAtZero: true,
               title: {
                 display: true,
-                text: 'Total Win Probability (%)',
+                text: 'Tournament Winner Probability (%)',
                 font: { size: 13, weight: '600' },
                 color: '#5A6C7D'
               },
@@ -228,10 +414,7 @@
             },
             x: {
               title: {
-                display: true,
-                text: 'Date',
-                font: { size: 13, weight: '600' },
-                color: '#5A6C7D'
+                display: false
               },
               ticks: {
                 font: { size: 11 },

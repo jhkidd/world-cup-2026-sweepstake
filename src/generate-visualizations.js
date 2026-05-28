@@ -96,7 +96,7 @@ async function main() {
     
     // Render each visualization
     await renderVisualization('upcoming-matches-two-column', data, 'upcoming-matches');
-    await renderVisualization('timeline', data, 'timeline');
+    await renderVisualization('timeline', data, 'timeline', profilePictures);
     await renderVisualization('stage-probabilities', data, 'stage-probabilities', profilePictures);
     
     console.log('\n✅ All visualizations generated successfully!');
