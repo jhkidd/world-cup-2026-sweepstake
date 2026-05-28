@@ -25,7 +25,14 @@ async function renderVisualization(templateName, data, outputName) {
     });
     
     const page = await browser.newPage();
-    await page.setViewport({ width: 1200, height: 800, deviceScaleFactor: 2 });
+    
+    // Adjust viewport based on template (two-column needs more width)
+    const viewportWidth = templateName === 'upcoming-matches-two-column' ? 1600 : 1200;
+    await page.setViewport({ width: viewportWidth, height: 800, deviceScaleFactor: 2 });
+    
+    // Enable console logging from the page for debugging
+    page.on('console', msg => console.log('  Browser:', msg.text()));
+    page.on('pageerror', error => console.error('  Page error:', error.message));
     
     // Load HTML
     await page.setContent(html, { waitUntil: 'networkidle0' });
@@ -60,7 +67,7 @@ async function main() {
     // Render each visualization
     await renderVisualization('leaderboard', data, 'leaderboard');
     await renderVisualization('team-rankings', data, 'team-rankings');
-    await renderVisualization('upcoming-matches-v2-compact', data, 'upcoming-matches');
+    await renderVisualization('upcoming-matches-two-column', data, 'upcoming-matches');
     await renderVisualization('timeline', data, 'timeline');
     await renderVisualization('stage-probabilities', data, 'stage-probabilities');
     
