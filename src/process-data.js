@@ -292,19 +292,26 @@ function getUpcomingMatches(oddsData, tournament, sweepstake) {
     
     const matchDate = parseISO(match.kickoff_utc);
     
-    // Find odds for this match
-    const oddsMatch = oddsData.matchOdds.find(m => 
-      (m.home_team === match.home && m.away_team === match.away) ||
-      (m.away_team === match.home && m.home_team === match.away)
-    );
+    // Normalize team names for matching
+    const normalizedHome = normalizeTeamName(match.home);
+    const normalizedAway = normalizeTeamName(match.away);
+    
+    // Find odds for this match (with normalization)
+    const oddsMatch = oddsData.matchOdds.find(m => {
+      const oddsHome = normalizeTeamName(m.home_team);
+      const oddsAway = normalizeTeamName(m.away_team);
+      return (oddsHome === normalizedHome && oddsAway === normalizedAway) ||
+             (oddsAway === normalizedHome && oddsHome === normalizedAway);
+    });
     
     let homeWinProb = null, drawProb = null, awayWinProb = null;
     
     if (oddsMatch && oddsMatch.bookmakers && oddsMatch.bookmakers.length > 0) {
       const market = oddsMatch.bookmakers[0].markets.find(m => m.key === 'h2h');
       if (market) {
-        const homeOutcome = market.outcomes.find(o => o.name === match.home);
-        const awayOutcome = market.outcomes.find(o => o.name === match.away);
+        // Normalize outcome names for matching
+        const homeOutcome = market.outcomes.find(o => normalizeTeamName(o.name) === normalizedHome);
+        const awayOutcome = market.outcomes.find(o => normalizeTeamName(o.name) === normalizedAway);
         const drawOutcome = market.outcomes.find(o => o.name === 'Draw');
         
         homeWinProb = homeOutcome ? (1 / homeOutcome.price) : null;
