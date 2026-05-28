@@ -137,6 +137,30 @@
       margin-left: 4px;
     }
     
+    .profile-pic {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 6px;
+      vertical-align: middle;
+      border: 1px solid #E0E0E0;
+    }
+    
+    .initials-circle {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      line-height: 20px;
+      text-align: center;
+      font-size: 9px;
+      font-weight: 600;
+      color: white;
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+    
     .top-team {
       background: #FFFBE6 !important;
     }
@@ -269,7 +293,7 @@
       return brightness > 180 ? '#333' : 'white';
     }
     
-    function renderProbCell(prob, noBackground = false) {
+    function renderProbCell(prob, noBackground = false, isWinCup = false) {
       const pct = (prob * 100).toFixed(0);
       
       if (noBackground) {
@@ -278,9 +302,10 @@
       
       const bgColor = getColorForProbability(prob);
       const textColor = getTextColorForBackground(bgColor);
+      const winCupClass = isWinCup ? ' win-cup' : '';
       
       return `
-        <td class="prob-cell" style="background: ${bgColor}; color: ${textColor};">
+        <td class="prob-cell${winCupClass}" style="background: ${bgColor}; color: ${textColor};">
           <span class="prob-text">${pct}%</span>
         </td>
       `;
@@ -310,17 +335,45 @@
       'Cape Verde': '🇨🇻'
     };
     
+    // Generate profile picture HTML
+    function getProfilePictureHtml(ownerName) {
+      if (!ownerName) return '';
+      
+      // Normalize name for filename: lowercase, spaces to hyphens
+      const normalized = ownerName.toLowerCase().replace(/\s+/g, '-');
+      const imagePath = `../data/profiles/${normalized}.jpg`;
+      
+      // Try to load image, fallback to initials
+      // In a browser context, we'll use onerror to handle fallback
+      const initials = ownerName.split(' ').map(n => n[0]).join('').toUpperCase().slice(0, 2);
+      
+      // Color hash based on name
+      const colors = ['#3498DB', '#E74C3C', '#9B59B6', '#F39C12', '#1ABC9C', 
+                      '#E67E22', '#2ECC71', '#34495E', '#16A085', '#C0392B',
+                      '#8E44AD', '#27AE60'];
+      const colorIndex = ownerName.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0) % colors.length;
+      const bgColor = colors[colorIndex];
+      
+      return `
+        <img src="${imagePath}" 
+             class="profile-pic" 
+             alt="${ownerName}"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
+        <span class="initials-circle" style="background: ${bgColor}; display: none;">${initials}</span>
+      `;
+    }
+    
     teamsWithProbs.forEach((team, index) => {
       const row = document.createElement('tr');
       if (index < 3) row.classList.add('top-team');
       
       const flag = flagEmojis[team.name] || '🏴';
-      const ownerBadge = team.owner ? `<span class="owner-badge">⭐${team.owner.split(' ')[0]}</span>` : '';
+      const profilePic = getProfilePictureHtml(team.owner);
       
       const probs = team.stage_probs;
       
       row.innerHTML = `
-        <td class="team">${flag} ${team.name}${ownerBadge}</td>
+        <td class="team">${flag} ${team.name}${profilePic}</td>
         <td class="group">${team.group}</td>
         ${renderProbCell(probs.group_first || 0, true)}
         ${renderProbCell(probs.group_second || 0, true)}
@@ -328,10 +381,18 @@
         ${renderProbCell(probs.make_quarters || 0)}
         ${renderProbCell(probs.make_semis || 0)}
         ${renderProbCell(probs.make_final || 0)}
-        ${renderProbCell(probs.win_tournament || 0)}
+        ${renderProbCell(probs.win_tournament || 0, false, true)}
       `;
       
       tbody.appendChild(row);
+      
+      // Add tier separators after rank 8 and rank 16
+      if (index === 7 || index === 15) {
+        const separator = document.createElement('tr');
+        separator.className = 'tier-separator';
+        separator.innerHTML = '<td colspan="10" style="border-top: 2px solid #E0E0E0; height: 12px; background: transparent;"></td>';
+        tbody.appendChild(separator);
+      }
     });
     
     // Signal ready for screenshot

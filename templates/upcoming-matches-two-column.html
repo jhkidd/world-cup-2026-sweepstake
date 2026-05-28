@@ -31,7 +31,46 @@
     .subtitle {
       font-size: 13px;
       color: #7F8C8D;
+      margin-bottom: 15px;
+    }
+    
+    .legend {
+      display: flex;
+      align-items: center;
+      gap: 24px;
       margin-bottom: 30px;
+      font-size: 13px;
+      color: #7F8C8D;
+    }
+    
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    
+    .legend-swatch {
+      width: 16px;
+      height: 16px;
+      border-radius: 2px;
+    }
+    
+    .legend-swatch.left {
+      background: #28346E;
+    }
+    
+    .legend-swatch.draw {
+      background: #E4E4E6;
+    }
+    
+    .legend-swatch.right {
+      background: #E3A344;
+    }
+    
+    .legend-note {
+      margin-left: auto;
+      font-style: italic;
+      font-size: 12px;
     }
     
     /* Two-column grid layout */
@@ -91,46 +130,56 @@
       color: #2C3E50;
     }
     
+    .team-name.favorite {
+      font-weight: 700;
+    }
+    
     .owner {
       font-size: 11px;
       color: #95A5A6;
       margin-left: 4px;
     }
     
-    .odds-box {
+    /* Split bar layout - replaces three-box layout */
+    .split-bar {
       display: flex;
-      border: 1px solid #BDC3C7;
+      height: 32px;
       border-radius: 3px;
       overflow: hidden;
+      border: 1px solid #BDC3C7;
     }
     
-    .odds-cell {
-      width: 60px;
-      padding: 6px 4px;
-      text-align: center;
-      border-right: 1px solid #BDC3C7;
-    }
-    
-    .odds-cell:last-child {
-      border-right: none;
-    }
-    
-    .odds-label {
-      font-size: 9px;
-      font-weight: 600;
-      color: #7F8C8D;
-      text-transform: uppercase;
-      margin-bottom: 2px;
-    }
-    
-    .odds-value {
-      font-size: 13px;
+    .bar-section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
       font-weight: 700;
-      color: #2C3E50;
+      color: white;
+      min-width: 2px;
+      position: relative;
     }
     
-    .odds-value.na {
-      color: #BDC3C7;
+    .bar-section.left-win {
+      background: #28346E;
+    }
+    
+    .bar-section.draw {
+      background: #E4E4E6;
+      color: #666;
+    }
+    
+    .bar-section.right-win {
+      background: #E3A344;
+    }
+    
+    .bar-section .pct-text {
+      display: none;
+    }
+    
+    /* Show percentage if section is wide enough */
+    .bar-section.show-pct .pct-text {
+      display: inline;
     }
     
     .match-date {
@@ -144,7 +193,23 @@
 <body>
   <div class="container">
     <h1>Upcoming Matches - Matchday 1</h1>
-    <div class="subtitle">Updated 27 May 2026</div>
+    <div class="subtitle">Updated 27 May 2026 · Monte Carlo match probabilities</div>
+    
+    <div class="legend">
+      <div class="legend-item">
+        <div class="legend-swatch left"></div>
+        <span>Left team win</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-swatch draw"></div>
+        <span>Draw</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-swatch right"></div>
+        <span>Right team win</span>
+      </div>
+      <div class="legend-note">Coloured name = favourite</div>
+    </div>
     
     <div class="groups-grid" id="groupsGrid">
       <!-- Groups will be inserted here by JavaScript -->
@@ -218,17 +283,40 @@
       return (rgb.r * 299 + rgb.g * 587 + rgb.b * 114) / 1000;
     }
     
-    function renderOddsCell(label, value, isNA = false) {
-      const prob = isNA ? 0 : value / 100;
-      const bgColor = isNA ? '#F5F5F5' : getColorForProbability(prob);
-      const brightness = getBrightness(bgColor);
-      // Use white text for darker backgrounds (probabilities over ~65%)
-      const textColor = brightness > 180 ? '#2C3E50' : '#FFFFFF';
+    function renderSplitBar(homeWinPct, drawPct, awayWinPct) {
+      // Normalize to ensure they sum to 100
+      const total = homeWinPct + drawPct + awayWinPct;
+      if (total === 0) {
+        // No odds available
+        return `
+          <div class="split-bar">
+            <div class="bar-section draw" style="flex-basis: 100%;">
+              <span class="pct-text">N/A</span>
+            </div>
+          </div>
+        `;
+      }
+      
+      const leftPct = (homeWinPct / total * 100).toFixed(1);
+      const drawPctNorm = (drawPct / total * 100).toFixed(1);
+      const rightPct = (awayWinPct / total * 100).toFixed(1);
+      
+      // Show percentage if section is wide enough (>15%)
+      const showLeftPct = parseFloat(leftPct) > 15;
+      const showDrawPct = parseFloat(drawPctNorm) > 15;
+      const showRightPct = parseFloat(rightPct) > 15;
       
       return `
-        <div class="odds-cell" style="background-color: ${bgColor};">
-          <div class="odds-label" style="color: ${textColor}; opacity: 0.7;">${label}</div>
-          <div class="odds-value ${isNA ? 'na' : ''}" style="color: ${textColor};">${isNA ? 'N/A' : value + '%'}</div>
+        <div class="split-bar">
+          <div class="bar-section left-win ${showLeftPct ? 'show-pct' : ''}" style="flex-basis: ${leftPct}%;">
+            <span class="pct-text">${Math.round(homeWinPct)}%</span>
+          </div>
+          <div class="bar-section draw ${showDrawPct ? 'show-pct' : ''}" style="flex-basis: ${drawPctNorm}%;">
+            <span class="pct-text">${Math.round(drawPct)}%</span>
+          </div>
+          <div class="bar-section right-win ${showRightPct ? 'show-pct' : ''}" style="flex-basis: ${rightPct}%;">
+            <span class="pct-text">${Math.round(awayWinPct)}%</span>
+          </div>
         </div>
       `;
     }
@@ -240,9 +328,13 @@
       
       const hasOdds = homeWin !== null && draw !== null && awayWin !== null;
       
-      const homeWinPct = hasOdds ? Math.round(homeWin * 100) : null;
-      const drawPct = hasOdds ? Math.round(draw * 100) : null;
-      const awayWinPct = hasOdds ? Math.round(awayWin * 100) : null;
+      const homeWinPct = hasOdds ? Math.round(homeWin * 100) : 0;
+      const drawPct = hasOdds ? Math.round(draw * 100) : 0;
+      const awayWinPct = hasOdds ? Math.round(awayWin * 100) : 0;
+      
+      // Determine favorite (higher probability)
+      const homeFavorite = homeWinPct > awayWinPct;
+      const awayFavorite = awayWinPct > homeWinPct;
       
       const matchDate = new Date(match.commence_time).toLocaleDateString('en-GB', { 
         day: 'numeric', 
@@ -271,27 +363,17 @@
       return `
         <div class="match-row">
           <div class="team-cell home">
-            <span class="team-name">${match.home_team}</span>
+            <span class="team-name${homeFavorite ? ' favorite' : ''}">${match.home_team}</span>
             <span class="team-flag">${homeFlag}</span>
-            ${match.home_owner ? `<span class="owner">${match.home_owner}</span>` : ''}
+            ${match.home_owner ? `<span class="owner">${match.home_owner.split(' ')[0]}</span>` : ''}
           </div>
           
-          <div class="odds-box">
-            ${hasOdds ? 
-              renderOddsCell('WIN', homeWinPct) + 
-              renderOddsCell('TIE', drawPct) + 
-              renderOddsCell('WIN', awayWinPct) 
-              : 
-              renderOddsCell('WIN', 0, true) + 
-              renderOddsCell('TIE', 0, true) + 
-              renderOddsCell('WIN', 0, true)
-            }
-          </div>
+          ${renderSplitBar(homeWinPct, drawPct, awayWinPct)}
           
           <div class="team-cell away">
             <span class="team-flag">${awayFlag}</span>
-            <span class="team-name">${match.away_team}</span>
-            ${match.away_owner ? `<span class="owner">${match.away_owner}</span>` : ''}
+            <span class="team-name${awayFavorite ? ' favorite' : ''}">${match.away_team}</span>
+            ${match.away_owner ? `<span class="owner">${match.away_owner.split(' ')[0]}</span>` : ''}
           </div>
           
           <div class="match-date">${matchDate}</div>
