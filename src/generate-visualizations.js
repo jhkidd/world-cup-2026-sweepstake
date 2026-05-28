@@ -1,5 +1,5 @@
 import puppeteer from 'puppeteer';
-import { readFileSync, writeFileSync } from 'fs';
+import { readFileSync, writeFileSync, existsSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -7,7 +7,30 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const projectRoot = join(__dirname, '..');
 
-async function renderVisualization(templateName, data, outputName) {
+// Load profile pictures as base64
+function loadProfilePictures() {
+  const profilesDir = join(projectRoot, 'data', 'profiles');
+  const profiles = {};
+  
+  const names = [
+    'allan chan', 'andrew turner', 'bryn mills', 'caitlin kilcoyne',
+    'dave moseley', 'emma ryan', 'ian whelan', 'joshua kidd',
+    'nicholas burgoyne', 'tina buckley'
+  ];
+  
+  for (const name of names) {
+    const filePath = join(profilesDir, `${name}.jpg`);
+    if (existsSync(filePath)) {
+      const imageData = readFileSync(filePath);
+      const base64 = imageData.toString('base64');
+      profiles[name] = `data:image/jpeg;base64,${base64}`;
+    }
+  }
+  
+  return profiles;
+}
+
+async function renderVisualization(templateName, data, outputName, profilePictures = {}) {
   console.log(`Rendering ${outputName}...`);
   
   try {
@@ -17,6 +40,9 @@ async function renderVisualization(templateName, data, outputName) {
     
     // Inject data
     html = html.replace('DATA_PLACEHOLDER', JSON.stringify(data));
+    
+    // Inject profile pictures if provided
+    html = html.replace('PROFILE_PICTURES_PLACEHOLDER', JSON.stringify(profilePictures));
     
     // Launch browser
     const browser = await puppeteer.launch({
@@ -64,12 +90,16 @@ async function main() {
     const dataPath = join(projectRoot, 'data', 'processed', 'latest.json');
     const data = JSON.parse(readFileSync(dataPath, 'utf-8'));
     
+    // Load profile pictures
+    const profilePictures = loadProfilePictures();
+    console.log(`Loaded ${Object.keys(profilePictures).length} profile pictures\n`);
+    
     // Render each visualization
     await renderVisualization('leaderboard', data, 'leaderboard');
     await renderVisualization('team-rankings', data, 'team-rankings');
     await renderVisualization('upcoming-matches-two-column', data, 'upcoming-matches');
     await renderVisualization('timeline', data, 'timeline');
-    await renderVisualization('stage-probabilities', data, 'stage-probabilities');
+    await renderVisualization('stage-probabilities', data, 'stage-probabilities', profilePictures);
     
     console.log('\n✅ All visualizations generated successfully!');
     

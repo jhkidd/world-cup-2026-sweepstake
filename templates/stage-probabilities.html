@@ -199,6 +199,7 @@
   
   <script>
     const data = DATA_PLACEHOLDER;
+    const profilePictures = PROFILE_PICTURES_PLACEHOLDER;
     
     // Format date
     const date = new Date(data.timestamp);
@@ -340,11 +341,9 @@
       if (!ownerName) return '';
       
       // Normalize name for filename: lowercase, spaces to hyphens
-      const normalized = ownerName.toLowerCase().replace(/\s+/g, '-');
-      const imagePath = `../data/profiles/${normalized}.jpg`;
+      const normalized = ownerName.toLowerCase().replace(/\s+/g, ' ');
       
       // Try to load image, fallback to initials
-      // In a browser context, we'll use onerror to handle fallback
       const initials = ownerName.split(' ').map(n => n[0]).join('').toUpperCase().slice(0, 2);
       
       // Color hash based on name
@@ -354,13 +353,18 @@
       const colorIndex = ownerName.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0) % colors.length;
       const bgColor = colors[colorIndex];
       
-      return `
-        <img src="${imagePath}" 
-             class="profile-pic" 
-             alt="${ownerName}"
-             onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
-        <span class="initials-circle" style="background: ${bgColor}; display: none;">${initials}</span>
-      `;
+      // Check if we have a base64 image for this person
+      const imageSrc = profilePictures[normalized];
+      
+      if (imageSrc) {
+        return `
+          <img src="${imageSrc}" 
+               class="profile-pic" 
+               alt="${ownerName}">
+        `;
+      } else {
+        return `<span class="initials-circle" style="background: ${bgColor};">${initials}</span>`;
+      }
     }
     
     teamsWithProbs.forEach((team, index) => {
