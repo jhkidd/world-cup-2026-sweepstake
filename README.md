@@ -1,86 +1,374 @@
 # 2026 World Cup Sweepstake Visualizations
 
-Professional-grade visualizations for tracking office World Cup sweepstakes, inspired by FiveThirtyEight's data journalism aesthetic.
+Professional-grade FiveThirtyEight-style visualizations for tracking an office World Cup sweepstake. Combines live betting odds, Monte Carlo simulations, and clean data visualization to show who's winning the office competition.
 
-## Features
+## ✨ Features
 
-- **Leaderboard**: Participant rankings with win probabilities and weekly changes
-- **Team Rankings**: All 48 teams sorted by tournament winner probability
-- **Upcoming Matches**: Next 7 days of fixtures with win/draw odds
-- **Probability Timeline**: Track how each participant's chances evolve over time
-- **Automated Data Pipeline**: Fetch odds → process → generate visualizations
+### Three Core Visualizations
 
-## Quick Start
+1. **Stage Probabilities** (`stage-probabilities.png`)
+   - 48 teams ranked by tournament winner probability
+   - Heat map showing chances to reach each knockout stage
+   - Profile pictures for sweepstake participants
+   - Top 3 teams highlighted
+
+2. **Upcoming Matches** (`upcoming-matches.png`)
+   - Matchday 1 group stage fixtures with win/draw odds
+   - Mirror-symmetrical layout with proportional split bars
+   - Favorites highlighted in bold
+   - Organized by group in two-column layout
+
+3. **Sweepstake Race** (`timeline.png`)
+   - Historical probability evolution over time
+   - Top 8 participants with distinct company colors
+   - Profile pictures at line endpoints with collision avoidance
+   - Tournament phase background shading
+
+### Technical Highlights
+
+- **Monte Carlo Simulation**: 10,000 iterations for statistical accuracy
+- **Live Odds Integration**: Fetches from 20+ UK bookmakers via the-odds-api.com
+- **Completed Match Support**: Automatically locks in actual results as 100% probability
+- **Smart Team Matching**: Handles name variations (Turkey/Türkiye, Czech Republic/Czechia, etc.)
+- **Responsive Design**: Clean, professional aesthetic matching FiveThirtyEight style
+
+## 🚀 Quick Start
+
+### Prerequisites
+
+- Node.js 18+ (for ES modules)
+- API key from [the-odds-api.com](https://the-odds-api.com) (500 free calls/month)
+
+### Installation
 
 ```bash
+# Clone the repository
+git clone <repository-url>
+cd 2026-world-cup-visualisations
+
 # Install dependencies
 npm install
 
-# Run complete pipeline (fetch odds + process + generate images)
+# Create .env file with your API key
+echo "ODDS_API_KEY=your_api_key_here" > .env
+```
+
+### Usage
+
+```bash
+# Complete pipeline: fetch odds → process data → generate visualizations
 npm run generate
 
 # Or run individual steps
-npm run fetch      # Fetch latest odds (2 API calls)
-npm run process    # Calculate probabilities
-npm run visualize  # Generate PNG images
+npm run fetch      # Fetch latest odds (uses 2 API calls)
+npm run process    # Run Monte Carlo simulation
+npm run visualize  # Generate PNG files from templates
 ```
 
-## Output
+All visualizations are saved to the `output/` directory.
 
-All visualizations are saved to the `output/` directory as PNG images:
-- `leaderboard.png` - Current sweepstake standings
-- `team-rankings.png` - All 48 teams ranked by win probability
-- `upcoming-matches.png` - Next week's fixtures with odds
-- `timeline.png` - Historical probability evolution
+## 📁 Project Structure
 
-## Data Files
+```
+2026-world-cup-visualisations/
+├── src/
+│   ├── fetch-odds.js           # Fetch odds from API
+│   ├── process-data.js         # Calculate probabilities
+│   ├── monte-carlo.js          # Simulation engine
+│   └── generate-visualizations.js  # Render HTML to PNG
+├── templates/
+│   ├── stage-probabilities.html
+│   ├── upcoming-matches-two-column.html
+│   └── timeline.html
+├── data/
+│   ├── sweepstake.json         # Participant-team assignments
+│   ├── tournament.json         # World Cup structure & fixtures
+│   ├── completed-matches.json  # Historical results
+│   ├── profiles/               # Profile pictures (JPG)
+│   ├── odds/                   # Archived API responses
+│   └── processed/
+│       └── latest.json         # Calculated probabilities
+├── output/
+│   ├── stage-probabilities.png
+│   ├── upcoming-matches.png
+│   └── timeline.png
+└── .env                        # API key (create this)
+```
 
-- `data/sweepstake.json` - Participant assignments (edit to add late entries)
-- `data/tournament.json` - World Cup structure (fixtures, groups, venues)
-- `data/odds/` - Archived API responses with timestamps
-- `data/processed/latest.json` - Calculated probabilities and rankings
+## 📊 Data Pipeline
 
-## API Usage
+### 1. Fetch Odds (`npm run fetch`)
 
-Uses [the-odds-api.com](https://the-odds-api.com) with 500 free calls/month:
-- 2 calls per run (match odds + tournament winner odds)
-- 494 calls remaining this month
-- Automatically tracks usage and warns at <50 remaining
+Retrieves betting odds from the-odds-api.com:
+- **Match odds**: Head-to-head outcomes (home/draw/away) for upcoming fixtures
+- **Tournament winner odds**: Outright winner probabilities for all 48 teams
 
-## Current Standings
+API calls: 2 per run (costs 1 token each)
 
-**Last updated**: 27 May 2026
+Saves timestamped JSON files to `data/odds/` for historical tracking.
 
-1. **Ian Whelan** - 17.52% (Spain + Qatar)
-2. **Tina Buckley** - 13.51% (England + Egypt)  
-3. **Caitlin Kilcoyne** - 10.42% (Brazil + Saudi Arabia)
+### 2. Process Data (`npm run process`)
 
-## How It Works
+**Odds Processing:**
+- Averages odds across 20+ bookmakers
+- Converts decimal odds to implied probabilities
+- Normalizes probabilities to sum to 100%
 
-1. **Fetch**: Downloads betting odds from multiple bookmakers
-2. **Process**: Converts decimal odds to probabilities, averages across bookmakers, calculates participant totals
-3. **Visualize**: Renders HTML templates with Puppeteer, captures as PNG images
+**Monte Carlo Simulation:**
+- Runs 10,000 tournament simulations
+- Group stage: Uses bookmaker h2h odds when available
+- Knockout stage: Uses Bradley-Terry model based on winner odds
+- Tracks advancement probabilities for each stage
+
+**Completed Match Handling:**
+- Reads `data/completed-matches.json` for actual results
+- Overrides simulated outcomes with 100% probability for winners
+- Updates goal difference for accurate group standings
+
+**Output:**
+- Participant rankings with total win probability
+- Stage-by-stage advancement probabilities for all 48 teams
+- Upcoming matches with owner information
+- Historical timeline for probability tracking
+
+### 3. Generate Visualizations (`npm run visualize`)
+
+Uses Puppeteer to render HTML templates as PNG images:
+1. Loads HTML template
+2. Injects processed data via placeholder replacement
+3. Embeds profile pictures as base64
+4. Waits for render-complete signal
+5. Captures full-page screenshot
+
+## 🔧 Configuration
+
+### Adding Participants
+
+Edit `data/sweepstake.json`:
+
+```json
+{
+  "participants": [
+    {
+      "name": "Your Name",
+      "teams": ["Team 1", "Team 2"]
+    }
+  ]
+}
+```
+
+### Adding Profile Pictures
+
+1. Save JPG files to `data/profiles/`
+2. Use lowercase filename with spaces: `your name.jpg`
+3. Recommended size: 100x100px or larger
+4. Falls back to colored initials if image missing
+
+### Recording Match Results
+
+Edit `data/completed-matches.json`:
+
+```json
+{
+  "completed_matches": [
+    {
+      "home_team": "Mexico",
+      "away_team": "South Africa",
+      "home_score": 2,
+      "away_score": 0,
+      "date": "2026-06-11"
+    }
+  ]
+}
+```
+
+## 🎨 Design System
+
+### Color Palette
+
+**Stage Probabilities:**
+- Gradient from #6DACA8 (100%) → #FFFFFE (0%)
+- Win Cup column: 16px, 2px border for emphasis
+- Top 3 teams: yellow background highlighting
+
+**Upcoming Matches:**
+- Company colors: #28346E (left win), #E4E4E6 (draw), #E3A344 (right win)
+- Split bars show proportional probability
+- Favorites: font-weight 800, 14px
+
+**Timeline:**
+- 8-color company palette assigned by rank
+- Profile pictures: 20px circles at line endpoints
+- Tournament phases: alternating subtle gray/white backgrounds
+
+### Typography
+
+- Titles: 28px, font-weight 700
+- Subtitles: 13px, color #7F8C8D
+- Body text: 13px, font-weight 500
+- Bold favorites: font-weight 800, 14px
+
+## 📖 API Reference
+
+### the-odds-api.com Endpoints
+
+**Sports List:**
+```
+GET https://api.the-odds-api.com/v4/sports/?apiKey={key}&all=true
+```
+
+**Match Odds (H2H):**
+```
+GET https://api.the-odds-api.com/v4/sports/soccer_fifa_world_cup/odds
+  ?apiKey={key}
+  &regions=uk
+  &markets=h2h
+  &oddsFormat=decimal
+```
+*Uses 1 API call*
+
+**Tournament Winner Odds (Outrights):**
+```
+GET https://api.the-odds-api.com/v4/sports/soccer_fifa_world_cup_winner/odds
+  ?apiKey={key}
+  &regions=uk
+  &markets=outrights
+  &oddsFormat=decimal
+```
+*Uses 1 API call*
+
+### API Limits
+
+- **Free tier**: 500 calls/month, resets on 1st
+- **Current usage**: Tracked in console output
+- **Per run**: 2 calls (match odds + winner odds)
+- **Estimated runs**: ~250 per month
+
+## 🔍 Technical Details
+
+### Monte Carlo Simulation
+
+**Group Stage:**
+- Each match simulated using bookmaker h2h odds
+- Completed matches override with actual score
+- Group standings calculated: wins (3pts), draws (1pt), goal difference
+- Top 2 + best 8 third-place teams advance
+
+**Knockout Stage:**
+- Bradley-Terry model: P(A beats B) = strength_A / (strength_A + strength_B)
+- Team strength = 1 / tournament_winner_odds
+- Single elimination from Round of 32 → Final
+
+**Probability Tracking:**
+- Each simulation records which teams reach each stage
+- Probabilities = (count reaching stage) / 10,000 simulations
+- Validation: Make Final sums to 200% (2 finalists expected)
+
+### Team Name Normalization
+
+Handles variations between tournament data and betting odds:
+- Turkey ↔ Türkiye
+- Czech Republic ↔ Czechia
+- Curaçao ↔ Curacao
+- Bosnia & Herzegovina ↔ Bosnia and Herzegovina
+
+Applied during odds matching and Monte Carlo simulation.
+
+### Profile Picture System
+
+**Loading:**
+1. Attempts to load from `data/profiles/{name}.jpg`
+2. Encodes as base64 data URL during visualization generation
+3. Falls back to colored initials circle if image missing
+
+**Collision Avoidance (Timeline):**
+- Sequential downward offset algorithm
+- Minimum 40px spacing between bubbles (2× radius)
+- Dotted connector lines when bubbles repositioned
+
+## 🐛 Troubleshooting
+
+### "API call failed"
+- Check `.env` file contains valid `ODDS_API_KEY`
+- Verify you haven't exceeded 500 calls/month
+- Check internet connection
+
+### "Team not found in odds"
+- Team name mismatch between tournament structure and odds API
+- Add normalization rule in `normalizeTeamName()` functions
+- Check console for actual team name from API
+
+### "Profile picture not loading"
+- Ensure filename is lowercase with spaces: `first last.jpg`
+- Check file exists in `data/profiles/`
+- JPG format only (not PNG or other formats)
+
+### "Probabilities don't sum to 100%"
+- Expected behavior: Make Final = 200% (2 finalists), Make Semis = 400%, etc.
+- Win Cup should always sum to 100%
+- Check console warnings for validation errors
+
+### "Timeline shows no data"
+- Need at least 2 data points in timeline
+- Run `npm run generate` multiple times over several days
+- Historical data stored in `data/processed/latest.json` timeline array
+
+## 🚧 Ideas for Future Improvements
+
+Some of these ideas require an interactive dashboard rather than static images.
+
+### Static Visualizations
+
+**Sweepstake Leaderboard**
+Rank each participant by their team's current "Win Cup" probability. Show movement since last update with up/down arrows. This is the homepage — the thing people refresh obsessively.
+
+**Odds Treemap**
+Each team is a rectangle sized by their Win Cup probability. Colour by confederation. Instantly shows how top-heavy the tournament is — Spain's box dwarfs Haiti's. More intuitive than a sorted table.
+
+**Group Stage Heat Map**
+Show each group as a 4×4 matrix of head-to-head win probabilities. Instantly reveals dominant teams and tight rivalries within a group. One glance tells you who qualifies.
+
+**Tournament Path to Glory**
+For each remaining team, trace the most likely sequence of opponents to reach the final. Show the cumulative probability at each stage. Helps participants understand why their team's odds shifted after a result.
+
+**Upset Tracker**
+Every time an underdog wins, log it. Rank upsets by how improbable they were (pre-match odds). A running "shock of the tournament" leaderboard — great for engagement between games.
+
+**Expected vs Actual Points**
+For each team, compare actual group stage points against their pre-tournament expected points. Teams above the line are overperforming — teams below are underachieving. Identifies who is riding their luck.
+
+**Probabilistic Bracket**
+Once we're out of the group stages, a knockout bracket where each box shows not just who's playing, but each team's probability of winning that match and advancing. The single most-clicked view during any tournament — every ESPN and FiveThirtyEight major event publishes one.
+
+### Interactive Dashboard Features
+
+**Head-to-Head Simulator**
+Pick any two teams and show the three-way match odds as an interactive split bar. Let participants war-game a potential final before it happens. Extremely shareable in a group chat.
+
+## 📝 License
+
+ISC
+
+## 🙏 Acknowledgments
+
+- Odds data provided by [the-odds-api.com](https://the-odds-api.com)
+- Design inspired by [FiveThirtyEight](https://fivethirtyeight.com)
+- Tournament structure from official FIFA sources
 
 ---
 
-## API Details
+**Last Updated:** May 2026  
+**World Cup Dates:** June 11 – July 19, 2026  
+**Current Leader:** Ian Whelan (17.52% – Spain + Qatar)
 
-Aim of this project is to create professional grade visualisations for our companies 2026 World cup sweepstake. 
+---
 
-We will need code to pull odds from the internet, and then further code to process the odds, upcoming matchups and meta information (like who has drawn which team) to build a compelling visualisation of the world cup tournament, everyone's various odds of individual game wins, making it out of the group stages, getting to the finals/semi-finals, and also since everyone has drawn two teams, which individual currently has the best odds of winning it all.
+## API Response Examples
 
-We have a free tier account which allows for 500 api calls, reseting on the 1st of each month.
-the-odds-api.com API KEY: ed7e6908eb6aae33fcf0f22140a2e47f
+For reference, here are sample API responses:
 
-`GET https://api.the-odds-api.com/v4/sports/?apiKey=ed7e6908eb6aae33fcf0f22140a2e47f&all=true` return multiple values, notably:
-{"key":"soccer_fifa_club_world_cup","group":"Soccer","title":"FIFA Club World Cup","description":"FIFA Club World Cup","active":false,"has_outrights":false},
-{"key":"soccer_fifa_world_cup","group":"Soccer","title":"FIFA World Cup","description":"FIFA World Cup 2026","active":true,"has_outrights":false},
-{"key":"soccer_fifa_world_cup_qualifiers_europe","group":"Soccer","title":"FIFA World Cup Qualifiers - Europe","description":"FIFA World Cup Qualifiers - UEFA","active":false,"has_outrights":false},
-{"key":"soccer_fifa_world_cup_qualifiers_south_america","group":"Soccer","title":"FIFA World Cup Qualifiers - South America","description":"FIFA World Cup Qualifiers - CONMEBOL","active":false,"has_outrights":false},
-{"key":"soccer_fifa_world_cup_winner","group":"Soccer","title":"FIFA World Cup Winner","description":"FIFA World Cup Winner 2026","active":true,"has_outrights":true},
-
-The following costs 1 token, and pulls odds for various matchups, giving price for either team winnind, or a draw, across a lot of bookmakers.
-`GET https://api.the-odds-api.com/v4/sports/soccer_fifa_world_cup/odds?apiKey=ed7e6908eb6aae33fcf0f22140a2e47f&regions=uk&markets=h2h&oddsFormat=decimal` returns:
+**Match Odds Response:**
+```
 ```json
 [
   {"id":"80d82d1113934bfbea4ce8daf37a2433",
@@ -261,10 +549,23 @@ The following costs 1 token, and pulls odds for various matchups, giving price f
 ]
 ```
 
-For the odds of winning everything instead of upcoming head to heads:
-
-`GET https://api.the-odds-api.com/v4/sports/soccer_fifa_world_cup_winner/odds?apiKey=ed7e6908eb6aae33fcf0f22140a2e47f&regions=uk&markets=outrights&oddsFormat=decimal`
-
-```
-[{"id":"94d798388a4dab6d081114ad5e83db38","has_outrights":true,"sport_key":"soccer_fifa_world_cup_winner","sport_title":"FIFA World Cup Winner","commence_time":"2026-07-19T19:00:00Z","home_team":null,"away_team":null,"bookmakers":[{"key":"betfair_ex_uk","title":"Betfair","last_update":"2026-05-27T10:49:55Z","markets":[{"key":"outrights","last_update":"2026-05-27T10:49:55Z","outcomes":[{"name":"Spain","price":6.0},{"name":"France","price":6.4},{"name":"England","price":8.2},{"name":"Brazil","price":10.5},{"name":"Argentina","price":10.5},{"name":"Portugal","price":12.0},{"name":"Germany","price":17.5},{"name":"Netherlands","price":28.0},{"name":"Norway","price":38.0},{"name":"Belgium","price":48.0},{"name":"Colombia","price":50.0},{"name":"Japan","price":60.0},{"name":"Morocco","price":70.0},{"name":"USA","price":85.0},{"name":"Mexico","price":95.0},{"name":"Uruguay","price":100.0},{"name":"Ecuador","price":100.0},{"name":"Switzerland","price":100.0},{"name":"Turkey","price":120.0},{"name":"Croatia","price":150.0},{"name":"Senegal","price":150.0},{"name":"Sweden","price":180.0},{"name":"Austria","price":180.0},{"name":"Italy","price":210.0},{"name":"Scotland","price":270.0},{"name":"Canada","price":360.0},{"name":"Ivory Coast","price":360.0},{"name":"Paraguay","price":400.0},{"name":"Czech Republic","price":440.0},{"name":"Egypt","price":480.0},{"name":"South Korea","price":500.0},{"name":"Algeria","price":560.0},{"name":"Bosnia & Herzegovina","price":590.0},{"name":"Ghana","price":640.0},{"name":"Australia","price":720.0},{"name":"Tunisia","price":1000.0},{"name":"Denmark","price":1000.0},{"name":"Iran","price":1000.0},{"name":"Jordan","price":1000.0},{"name":"Uzbekistan","price":1000.0},{"name":"New Zealand","price":1000.0},{"name":"Poland","price":1000.0},{"name":"Qatar","price":1000.0},{"name":"Saudi Arabia","price":1000.0},{"name":"Cape Verde","price":1000.0},{"name":"South Africa","price":1000.0},{"name":"Bolivia","price":1000.0},{"name":"Cura\u00e7ao","price":1000.0},{"name":"DR Congo","price":1000.0},{"name":"Haiti","price":1000.0},{"name":"Iraq","price":1000.0},{"name":"Jamaica","price":1000.0},{"name":"Kosovo","price":1000.0},{"name":"Panama","price":1000.0}]},{"key":"outrights_lay","last_update":"2026-05-27T10:49:55Z","outcomes":[{"name":"Spain","price":6.2},{"name":"France","price":6.6},{"name":"England","price":8.4},{"name":"Brazil","price":11.0},{"name":"Argentina","price":11.0},{"name":"Portugal","price":12.5},{"name":"Germany","price":18.0},{"name":"Netherlands","price":29.0},{"name":"Norway","price":40.0},{"name":"Belgium","price":50.0},{"name":"Colombia","price":55.0},{"name":"Japan","price":65.0},{"name":"Morocco","price":75.0},{"name":"USA","price":90.0},{"name":"Mexico","price":100.0},{"name":"Uruguay","price":110.0},{"name":"Ecuador","price":110.0},{"name":"Switzerland","price":110.0},{"name":"Turkey","price":140.0},{"name":"Croatia","price":160.0},{"name":"Senegal","price":160.0},{"name":"Sweden","price":190.0},{"name":"Austria","price":190.0},{"name":"Scotland","price":280.0},{"name":"Ivory Coast","price":380.0},{"name":"Canada","price":390.0},{"name":"Paraguay","price":420.0},{"name":"South Korea","price":550.0},{"name":"Algeria","price":600.0},{"name":"Czech Republic","price":620.0},{"name":"Bosnia & Herzegovina","price":620.0},{"name":"Ghana","price":680.0},{"name":"Australia","price":730.0},{"name":"Egypt","price":750.0},{"name":"Italy","price":1000.0}]}]},{"key":"williamhill","title":"William Hill","last_update":"2026-05-27T10:52:30Z","markets":[{"key":"outrights","last_update":"2026-05-27T10:52:30Z","outcomes":[{"name":"Spain","price":5.5},{"name":"France","price":5.5},{"name":"England","price":7.0},{"name":"Brazil","price":9.0},{"name":"Argentina","price":10.0},{"name":"Portugal","price":12.0},{"name":"Germany","price":15.0},{"name":"Netherlands","price":21.0},{"name":"Norway","price":29.0},{"name":"Belgium","price":34.0},{"name":"Colombia","price":34.0},{"name":"USA","price":51.0},{"name":"Japan","price":51.0},{"name":"Switzerland","price":51.0},{"name":"Uruguay","price":67.0},{"name":"Morocco","price":67.0},{"name":"Mexico","price":67.0},{"name":"Sweden","price":67.0},{"name":"Croatia","price":81.0},{"name":"Ivory Coast","price":81.0},{"name":"Turkey","price":81.0},{"name":"Ecuador","price":101.0},{"name":"Senegal","price":101.0},{"name":"Austria","price":101.0},{"name":"Canada","price":151.0},{"name":"Paraguay","price":151.0},{"name":"Scotland","price":151.0},{"name":"Czech Republic","price":201.0},{"name":"Bosnia & Herzegovina","price":201.0},{"name":"Ghana","price":251.0},{"name":"Egypt","price":301.0},{"name":"South Korea","price":301.0},{"name":"Algeria","price":301.0},{"name":"South Africa","price":501.0},{"name":"Australia","price":501.0},{"name":"Tunisia","price":501.0},{"name":"Iran","price":501.0},{"name":"DR Congo","price":751.0},{"name":"Qatar","price":1001.0},{"name":"New Zealand","price":1001.0},{"name":"Saudi Arabia","price":1001.0},{"name":"Iraq","price":1001.0},{"name":"Cape Verde","price":1001.0},{"name":"Panama","price":1001.0},{"name":"Uzbekistan","price":1501.0},{"name":"Haiti","price":2001.0},{"name":"Cura\u00e7ao","price":2001.0},{"name":"Jordan","price":2001.0}]}]}]}]
+**Tournament Winner Odds Response (truncated):**
+```json
+[{
+  "id": "94d798388a4dab6d081114ad5e83db38",
+  "sport_key": "soccer_fifa_world_cup_winner",
+  "bookmakers": [{
+    "key": "betfair_ex_uk",
+    "title": "Betfair",
+    "markets": [{
+      "key": "outrights",
+      "outcomes": [
+        {"name": "Spain", "price": 6.0},
+        {"name": "France", "price": 6.4},
+        {"name": "England", "price": 8.2},
+        ...
+      ]
+    }]
+  }]
+}]
 ```
