@@ -164,23 +164,9 @@ Edit `data/sweepstake.json`:
 3. Recommended size: 100x100px or larger
 4. Falls back to colored initials if image missing
 
-### Recording Match Results
+### Match Results
 
-Edit `data/completed-matches.json`:
-
-```json
-{
-  "completed_matches": [
-    {
-      "home_team": "Mexico",
-      "away_team": "South Africa",
-      "home_score": 2,
-      "away_score": 0,
-      "date": "2026-06-11"
-    }
-  ]
-}
-```
+Completed match results are **automatically fetched** from an external data source during `npm run fetch`. No manual entry required — once games finish, results will be pulled and incorporated into the Monte Carlo simulation automatically.
 
 ## 🎨 Design System
 
