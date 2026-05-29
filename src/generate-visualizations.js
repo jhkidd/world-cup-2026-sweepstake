@@ -53,7 +53,12 @@ async function renderVisualization(templateName, data, outputName, profilePictur
     const page = await browser.newPage();
     
     // Adjust viewport based on template (two-column needs more width)
-    const viewportWidth = templateName === 'upcoming-matches-two-column' ? 1550 : 1200;
+    let viewportWidth = 1200;
+    if (templateName === 'upcoming-matches-two-column') {
+      viewportWidth = 1550;
+    } else if (templateName === 'timeline') {
+      viewportWidth = 1400; // Extra width for profile pictures on right
+    }
     await page.setViewport({ width: viewportWidth, height: 800, deviceScaleFactor: 2 });
     
     // Enable console logging from the page for debugging

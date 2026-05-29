@@ -16,7 +16,7 @@
     }
     
     .container {
-      max-width: 1200px;
+      max-width: 1300px;
       margin: 0 auto;
     }
     
@@ -96,6 +96,7 @@
   </div>
   
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
   <script>
     const data = DATA_PLACEHOLDER;
     const profilePictures = PROFILE_PICTURES_PLACEHOLDER;
@@ -148,8 +149,9 @@
       
       const prominentParticipants = getProminentParticipants(data.timeline);
       
-      // Prepare chart data
-      const labels = data.timeline.map(t => {
+      // Prepare chart data with actual timestamps for time-based x-axis
+      const timestamps = data.timeline.map(t => new Date(t.date).getTime());
+      const dateLabels = data.timeline.map(t => {
         const d = new Date(t.date);
         return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
       });
@@ -168,7 +170,10 @@
       
       // Build datasets for prominent participants only
       const datasets = prominentParticipants.map((name, index) => {
-        const values = data.timeline.map(t => (t.participants[name] * 100).toFixed(2));
+        const values = data.timeline.map((t, idx) => ({
+          x: timestamps[idx],
+          y: (t.participants[name] * 100).toFixed(2)
+        }));
         
         return {
           label: name,
@@ -229,9 +234,9 @@
           let prevPhase = null;
           let prevX = chartArea.left;
           
-          labels.forEach((label, index) => {
+          timestamps.forEach((timestamp, index) => {
             const phase = getTournamentPhase(data.timeline[index].date);
-            const x = xScale.getPixelForValue(index);
+            const x = xScale.getPixelForValue(timestamp);
             
             if (prevPhase && prevPhase !== phase) {
               // Draw previous phase background
@@ -240,7 +245,7 @@
               prevX = x;
             }
             
-            if (index === labels.length - 1) {
+            if (index === timestamps.length - 1) {
               // Draw final phase
               ctx.fillStyle = phaseColors[phase] || 'white';
               ctx.fillRect(prevX, chartArea.top, chartArea.right - prevX, chartArea.bottom - chartArea.top);
@@ -265,7 +270,8 @@
           
           // Collect endpoint data for each participant
           const endpoints = datasets.map((dataset, index) => {
-            const lastValue = parseFloat(dataset.data[dataset.data.length - 1]);
+            const lastDataPoint = dataset.data[dataset.data.length - 1];
+            const lastValue = parseFloat(lastDataPoint.y);
             const x = chartArea.right + 15; // Position to the right of chart
             const y = yScale.getPixelForValue(lastValue);
             
@@ -363,7 +369,6 @@
       new Chart(ctx, {
         type: 'line',
         data: {
-          labels: labels,
           datasets: datasets
         },
         plugins: [phaseBackgroundPlugin, profilePicturePlugin],
@@ -385,6 +390,11 @@
               cornerRadius: 4,
               displayColors: true,
               callbacks: {
+                title: function(context) {
+                  const timestamp = context[0].parsed.x;
+                  const date = new Date(timestamp);
+                  return date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+                },
                 label: function(context) {
                   return context.dataset.label + ': ' + context.parsed.y.toFixed(1) + '%';
                 }
@@ -413,6 +423,14 @@
               }
             },
             x: {
+              type: 'time',
+              time: {
+                unit: 'day',
+                displayFormats: {
+                  day: 'd MMM'
+                },
+                tooltipFormat: 'd MMM yyyy'
+              },
               title: {
                 display: false
               },
