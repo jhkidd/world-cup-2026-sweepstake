@@ -55,6 +55,18 @@
     {
       "name": "Emma Ryan",
       "teams": ["Netherlands", "Algeria"]
+    },
+    {
+      "name": "Logan Garwood",
+      "teams": ["Colombia", "Czechia"]
+    },
+    {
+      "name": "Nathan Nekrews",
+      "teams": ["Germany", "Norway"]
+    },
+    {
+      "name": "Catherine Swain",
+      "teams": ["Belgium", "Sweden"]
     }
   ]
 }

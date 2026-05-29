@@ -114,11 +114,13 @@
     .team-cell.home {
       justify-content: flex-end;
       text-align: right;
+      flex-direction: row;
     }
     
     .team-cell.away {
       justify-content: flex-start;
       text-align: left;
+      flex-direction: row-reverse;
     }
     
     .team-flag {
@@ -367,9 +369,9 @@
       return `
         <div class="match-row">
           <div class="team-cell home">
+            ${match.home_owner ? `<span class="owner">${match.home_owner.split(' ')[0]}</span>` : ''}
             <span class="team-name${homeFavorite ? ' favorite' : ''}">${match.home_team}</span>
             <span class="team-flag">${homeFlag}</span>
-            ${match.home_owner ? `<span class="owner">${match.home_owner.split(' ')[0]}</span>` : ''}
           </div>
           
           ${renderSplitBar(homeWinPct, drawPct, awayWinPct)}
