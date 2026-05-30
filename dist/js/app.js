@@ -177,7 +177,8 @@ function renderStandings() {
     const maxPts = team.gamesPlayed * 3;
     const ptsDisplay = `${team.points} / ${maxPts}`;
 
-    return `<tr class="${topClass} ${sectionBreak}">
+    const teamSlug = team.name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+    return `<tr class="${topClass} ${sectionBreak} clickable-row" onclick="window.location.hash='teams/${teamSlug}'">
       <td class="team-name"><span class="team-flag">${flag}</span> ${team.name}${profilePic}${team.owner ? `<span class="owner-name">${team.owner}</span>` : ''}</td>
       <td class="pts-cell" style="text-align:center;color:#7F8C8D;font-size:12px">${ptsDisplay}</td>
       <td style="text-align:center;color:#7F8C8D">${team.group}</td>
@@ -258,6 +259,8 @@ function renderMatches(matchday) {
   const renderMatch = (match) => {
     const homeFlag = flagEmojis[match.home_team] || '🏴';
     const awayFlag = flagEmojis[match.away_team] || '🏴';
+    const homeSlug = match.home_team.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+    const awaySlug = match.away_team.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
     
     const matchDate = new Date(match.commence_time);
     // Use US Eastern timezone to match FIFA's venue-local dates
@@ -291,7 +294,7 @@ function renderMatches(matchday) {
         <div class="match-row completed${isNextMatch ? ' next-match' : ''}">
           <div class="match-home">
             <span class="owner">${getFirstName(match.home_owner)}</span>
-            <span class="team-name">${match.home_team}</span>
+            <a href="#teams/${homeSlug}" class="team-name team-link">${match.home_team}</a>
             <span class="team-flag">${homeFlag}</span>
           </div>
           <div class="match-bar">
@@ -301,7 +304,7 @@ function renderMatches(matchday) {
           </div>
           <div class="match-away">
             <span class="team-flag">${awayFlag}</span>
-            <span class="team-name">${match.away_team}</span>
+            <a href="#teams/${awaySlug}" class="team-name team-link">${match.away_team}</a>
             <span class="owner">${getFirstName(match.away_owner)}</span>
           </div>
           <span class="match-date">${dateStr}</span>
@@ -320,7 +323,7 @@ function renderMatches(matchday) {
       <div class="match-row${isNextMatch ? ' next-match' : ''}">
         <div class="match-home">
           <span class="owner">${getFirstName(match.home_owner)}</span>
-          <span class="team-name ${homeFav ? 'favorite' : ''}">${match.home_team}</span>
+          <a href="#teams/${homeSlug}" class="team-name team-link ${homeFav ? 'favorite' : ''}">${match.home_team}</a>
           <span class="team-flag">${homeFlag}</span>
         </div>
         <div class="match-bar">
@@ -332,7 +335,7 @@ function renderMatches(matchday) {
         </div>
         <div class="match-away">
           <span class="team-flag">${awayFlag}</span>
-          <span class="team-name ${awayFav ? 'favorite' : ''}">${match.away_team}</span>
+          <a href="#teams/${awaySlug}" class="team-name team-link ${awayFav ? 'favorite' : ''}">${match.away_team}</a>
           <span class="owner">${getFirstName(match.away_owner)}</span>
         </div>
         <span class="match-date">${dateStr}</span>

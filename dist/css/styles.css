@@ -392,6 +392,17 @@ tbody td:last-child {
   font-weight: 800;
 }
 
+/* Team links - clickable team names */
+.team-link {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.15s ease;
+}
+.team-link:hover {
+  color: #002D72;
+  text-decoration: underline;
+}
+
 .match-away .team-flag {
   font-size: 20px;
 }
@@ -481,6 +492,15 @@ tbody tr:hover td:nth-child(5) {
 
 tbody tr:hover .owner-name {
   opacity: 1;
+}
+
+/* Clickable rows */
+.clickable-row {
+  cursor: pointer;
+}
+.clickable-row:hover {
+  outline: 2px solid rgba(0, 45, 114, 0.3);
+  outline-offset: -2px;
 }
 
 /* Emoji font support */
