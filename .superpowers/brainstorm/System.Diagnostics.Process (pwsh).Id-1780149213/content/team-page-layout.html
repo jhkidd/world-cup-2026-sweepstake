@@ -1,0 +1,125 @@
+<h2>Team Detail Page Layout</h2>
+<p class="subtitle">How should we organize the comprehensive team information?</p>
+
+<div class="cards">
+  <!-- Option A: Hero + Sections -->
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#f8f9fa;padding:16px;">
+      <div style="background:#002D72;color:white;padding:16px;border-radius:8px 8px 0 0;display:flex;align-items:center;gap:16px;">
+        <div style="font-size:48px;">🇫🇷</div>
+        <div>
+          <div style="font-size:24px;font-weight:700;">France</div>
+          <div style="opacity:0.8;">17.2% chance to win • Group I</div>
+        </div>
+        <div style="margin-left:auto;text-align:right;">
+          <div style="font-size:12px;opacity:0.7;">Owned by</div>
+          <div style="display:flex;align-items:center;gap:6px;">
+            <div style="width:24px;height:24px;background:#667;border-radius:50%;"></div>
+            <span>Unowned</span>
+          </div>
+        </div>
+      </div>
+      <div style="background:white;padding:12px;display:grid;grid-template-columns:1fr 1fr;gap:12px;font-size:11px;">
+        <div style="border:1px solid #ddd;border-radius:4px;padding:8px;">
+          <div style="font-weight:600;margin-bottom:4px;">📊 Group I Standings</div>
+          <div style="color:#666;">Mini table here</div>
+        </div>
+        <div style="border:1px solid #ddd;border-radius:4px;padding:8px;">
+          <div style="font-weight:600;margin-bottom:4px;">📅 Upcoming Matches</div>
+          <div style="color:#666;">Next 3 matches</div>
+        </div>
+        <div style="border:1px solid #ddd;border-radius:4px;padding:8px;grid-column:span 2;">
+          <div style="font-weight:600;margin-bottom:4px;">👥 Squad (26 players)</div>
+          <div style="color:#666;">Player cards with photos</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A: Hero Banner + Grid Sections</h3>
+      <p>Large team header at top, content organized in a responsive grid below. Clean hierarchy, easy to scan.</p>
+    </div>
+  </div>
+
+  <!-- Option B: Sidebar Layout -->
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#f8f9fa;padding:16px;">
+      <div style="display:grid;grid-template-columns:200px 1fr;gap:12px;font-size:11px;">
+        <div style="background:#002D72;color:white;padding:12px;border-radius:8px;">
+          <div style="font-size:36px;text-align:center;margin-bottom:8px;">🇫🇷</div>
+          <div style="font-size:16px;font-weight:700;text-align:center;">France</div>
+          <div style="text-align:center;opacity:0.8;font-size:10px;">Group I</div>
+          <div style="margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,0.2);">
+            <div style="text-align:center;">
+              <div style="font-size:24px;font-weight:700;">17.2%</div>
+              <div style="font-size:9px;opacity:0.7;">WIN PROBABILITY</div>
+            </div>
+          </div>
+          <div style="margin-top:8px;padding-top:8px;border-top:1px solid rgba(255,255,255,0.2);font-size:9px;">
+            <div>Coach: Deschamps</div>
+            <div>Owner: Unowned</div>
+          </div>
+        </div>
+        <div>
+          <div style="border:1px solid #ddd;border-radius:4px;padding:8px;margin-bottom:8px;background:white;">
+            <div style="font-weight:600;margin-bottom:4px;">Group Standings</div>
+            <div style="color:#666;">Table</div>
+          </div>
+          <div style="border:1px solid #ddd;border-radius:4px;padding:8px;margin-bottom:8px;background:white;">
+            <div style="font-weight:600;margin-bottom:4px;">Matches</div>
+            <div style="color:#666;">List</div>
+          </div>
+          <div style="border:1px solid #ddd;border-radius:4px;padding:8px;background:white;">
+            <div style="font-weight:600;margin-bottom:4px;">Squad</div>
+            <div style="color:#666;">Grid</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B: Fixed Sidebar + Scrolling Content</h3>
+      <p>Team info pinned on left, detailed content scrolls on right. Works well for deep content.</p>
+    </div>
+  </div>
+
+  <!-- Option C: Dashboard Style -->
+  <div class="card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#f8f9fa;padding:16px;">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;padding-bottom:12px;border-bottom:2px solid #002D72;">
+        <div style="font-size:32px;">🇫🇷</div>
+        <div style="font-size:18px;font-weight:700;">France</div>
+        <div style="background:#002D72;color:white;padding:2px 8px;border-radius:12px;font-size:10px;">Group I</div>
+        <div style="margin-left:auto;background:#e8f5e9;padding:4px 12px;border-radius:4px;">
+          <span style="font-weight:700;color:#2e7d32;">17.2%</span>
+          <span style="font-size:10px;color:#666;">to win</span>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;font-size:10px;">
+        <div style="background:white;border:1px solid #ddd;border-radius:4px;padding:8px;text-align:center;">
+          <div style="font-size:18px;font-weight:700;color:#002D72;">3</div>
+          <div style="color:#666;">Points</div>
+        </div>
+        <div style="background:white;border:1px solid #ddd;border-radius:4px;padding:8px;text-align:center;">
+          <div style="font-size:18px;font-weight:700;color:#002D72;">1st</div>
+          <div style="color:#666;">Group Pos</div>
+        </div>
+        <div style="background:white;border:1px solid #ddd;border-radius:4px;padding:8px;text-align:center;">
+          <div style="font-size:18px;font-weight:700;color:#002D72;">5</div>
+          <div style="color:#666;">Goals</div>
+        </div>
+        <div style="background:white;border:1px solid #ddd;border-radius:4px;padding:8px;text-align:center;">
+          <div style="font-size:18px;font-weight:700;color:#002D72;">1</div>
+          <div style="color:#666;">Conceded</div>
+        </div>
+      </div>
+      <div style="margin-top:8px;font-size:9px;color:#666;">Sections below: Group table, Matches, Squad grid...</div>
+    </div>
+    <div class="card-body">
+      <h3>C: Stats Dashboard Style</h3>
+      <p>Compact header with key metrics as tiles. Data-dense, FiveThirtyEight-inspired. Best for stats nerds.</p>
+    </div>
+  </div>
+</div>
+
+<p style="margin-top:24px;color:#666;font-size:13px;">
+  All options will include: Group standings table, Upcoming/past matches, Full squad with player photos, Coach info, and owner display. The difference is in visual hierarchy and layout.
+</p>

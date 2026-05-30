@@ -536,6 +536,309 @@ function renderTimeline() {
   `;
 }
 
+// Teams List Page - alphabetical grid of all 48 teams
+function renderTeamsList() {
+  const teams = data.teams.slice().sort((a, b) => a.name.localeCompare(b.name));
+  
+  const teamCards = teams.map(team => {
+    const slug = team.name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+    return `
+      <a href="#teams/${slug}" class="team-card" onclick="event.preventDefault(); window.location.hash='#teams/${slug}';">
+        <span class="team-card-flag">${getFlag(team.name)}</span>
+        <span class="team-card-name">${team.name}</span>
+      </a>
+    `;
+  }).join('');
+  
+  return `
+    <div class="teams-list-container">
+      <h2 class="section-title">All Teams</h2>
+      <p class="section-subtitle">Click a team to view details</p>
+      <div class="teams-grid">
+        ${teamCards}
+      </div>
+    </div>
+  `;
+}
+
+// Team Detail Page
+function renderTeamDetail(slug) {
+  // Find team by slug
+  const team = data.teams.find(t => {
+    const teamSlug = t.name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+    return teamSlug === slug;
+  });
+  
+  if (!team) {
+    return `
+      <div class="team-not-found">
+        <h2>Team not found</h2>
+        <p>Could not find team: ${slug}</p>
+        <a href="#teams">← Back to all teams</a>
+      </div>
+    `;
+  }
+  
+  // Get team details from team_details if available
+  const details = data.team_details?.[team.name] || {};
+  
+  // Find team's matches across all matchdays
+  const teamMatches = [];
+  [data.matchday1, data.matchday2, data.matchday3].forEach((matchday, idx) => {
+    if (!matchday) return;
+    matchday.forEach(match => {
+      if (match.home_team === team.name || match.away_team === team.name) {
+        teamMatches.push({ ...match, matchday: idx + 1 });
+      }
+    });
+  });
+  
+  // Build group standings for this team's group
+  const groupTeams = data.teams.filter(t => t.group === team.group)
+    .sort((a, b) => (b.win_probability || 0) - (a.win_probability || 0));
+  
+  // Calculate points for group standings
+  const pointsMap = {};
+  const gamesPlayedMap = {};
+  const winsMap = {};
+  const drawsMap = {};
+  const lossesMap = {};
+  const goalsScoredMap = {};
+  const goalsConcededMap = {};
+  
+  groupTeams.forEach(t => {
+    pointsMap[t.name] = 0;
+    gamesPlayedMap[t.name] = 0;
+    winsMap[t.name] = 0;
+    drawsMap[t.name] = 0;
+    lossesMap[t.name] = 0;
+    goalsScoredMap[t.name] = 0;
+    goalsConcededMap[t.name] = 0;
+  });
+  
+  [data.matchday1, data.matchday2, data.matchday3].forEach(matchday => {
+    if (!matchday) return;
+    matchday.forEach(match => {
+      if (match.actual_result && match.group === team.group) {
+        const homeTeam = match.home_team;
+        const awayTeam = match.away_team;
+        const homeGoals = match.actual_result.home;
+        const awayGoals = match.actual_result.away;
+        
+        gamesPlayedMap[homeTeam] = (gamesPlayedMap[homeTeam] || 0) + 1;
+        gamesPlayedMap[awayTeam] = (gamesPlayedMap[awayTeam] || 0) + 1;
+        goalsScoredMap[homeTeam] = (goalsScoredMap[homeTeam] || 0) + homeGoals;
+        goalsScoredMap[awayTeam] = (goalsScoredMap[awayTeam] || 0) + awayGoals;
+        goalsConcededMap[homeTeam] = (goalsConcededMap[homeTeam] || 0) + awayGoals;
+        goalsConcededMap[awayTeam] = (goalsConcededMap[awayTeam] || 0) + homeGoals;
+        
+        if (homeGoals > awayGoals) {
+          pointsMap[homeTeam] = (pointsMap[homeTeam] || 0) + 3;
+          winsMap[homeTeam] = (winsMap[homeTeam] || 0) + 1;
+          lossesMap[awayTeam] = (lossesMap[awayTeam] || 0) + 1;
+        } else if (awayGoals > homeGoals) {
+          pointsMap[awayTeam] = (pointsMap[awayTeam] || 0) + 3;
+          winsMap[awayTeam] = (winsMap[awayTeam] || 0) + 1;
+          lossesMap[homeTeam] = (lossesMap[homeTeam] || 0) + 1;
+        } else {
+          pointsMap[homeTeam] = (pointsMap[homeTeam] || 0) + 1;
+          pointsMap[awayTeam] = (pointsMap[awayTeam] || 0) + 1;
+          drawsMap[homeTeam] = (drawsMap[homeTeam] || 0) + 1;
+          drawsMap[awayTeam] = (drawsMap[awayTeam] || 0) + 1;
+        }
+      }
+    });
+  });
+  
+  // Sort group by points, then goal difference
+  const sortedGroupTeams = groupTeams.sort((a, b) => {
+    const ptsA = pointsMap[a.name] || 0;
+    const ptsB = pointsMap[b.name] || 0;
+    if (ptsB !== ptsA) return ptsB - ptsA;
+    const gdA = (goalsScoredMap[a.name] || 0) - (goalsConcededMap[a.name] || 0);
+    const gdB = (goalsScoredMap[b.name] || 0) - (goalsConcededMap[b.name] || 0);
+    return gdB - gdA;
+  });
+  
+  // Render group standings table
+  const groupStandingsRows = sortedGroupTeams.map((t, idx) => {
+    const isCurrentTeam = t.name === team.name;
+    const pts = pointsMap[t.name] || 0;
+    const p = gamesPlayedMap[t.name] || 0;
+    const w = winsMap[t.name] || 0;
+    const d = drawsMap[t.name] || 0;
+    const l = lossesMap[t.name] || 0;
+    const gf = goalsScoredMap[t.name] || 0;
+    const ga = goalsConcededMap[t.name] || 0;
+    const gd = gf - ga;
+    const gdStr = gd > 0 ? '+' + gd : gd.toString();
+    const slug = t.name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+    
+    return `
+      <tr class="${isCurrentTeam ? 'current-team' : ''}" onclick="window.location.hash='#teams/${slug}'" style="cursor:pointer;">
+        <td>${idx + 1}</td>
+        <td class="team-cell">${getFlag(t.name)} ${t.name}</td>
+        <td class="center">${p}</td>
+        <td class="center">${w}</td>
+        <td class="center">${d}</td>
+        <td class="center">${l}</td>
+        <td class="center">${gdStr}</td>
+        <td class="center" style="font-weight:700;">${pts}</td>
+      </tr>
+    `;
+  }).join('');
+  
+  // Render matches using similar style to Matches page
+  const matchesHtml = teamMatches.map(match => {
+    const isHome = match.home_team === team.name;
+    const opponent = isHome ? match.away_team : match.home_team;
+    const opponentSlug = opponent.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+    
+    if (match.actual_result) {
+      // Completed match
+      const homeScore = match.actual_result.home;
+      const awayScore = match.actual_result.away;
+      const teamScore = isHome ? homeScore : awayScore;
+      const oppScore = isHome ? awayScore : homeScore;
+      const result = teamScore > oppScore ? 'win' : teamScore < oppScore ? 'loss' : 'draw';
+      const resultClass = result === 'win' ? 'result-win' : result === 'loss' ? 'result-loss' : 'result-draw';
+      
+      return `
+        <div class="team-match ${resultClass}">
+          <div class="match-date">Matchday ${match.matchday}</div>
+          <div class="match-teams">
+            <span>${getFlag(match.home_team)} ${match.home_team}</span>
+            <span class="match-score">${homeScore} - ${awayScore}</span>
+            <span>${match.away_team} ${getFlag(match.away_team)}</span>
+          </div>
+          <a href="#teams/${opponentSlug}" class="match-opponent-link">View ${opponent} →</a>
+        </div>
+      `;
+    } else {
+      // Upcoming match - show odds
+      const homeProb = Math.round((match.home_win_prob || 0.33) * 100);
+      const drawProb = Math.round((match.draw_prob || 0.33) * 100);
+      const awayProb = Math.round((match.away_win_prob || 0.33) * 100);
+      const teamProb = isHome ? homeProb : awayProb;
+      
+      return `
+        <div class="team-match upcoming">
+          <div class="match-date">Matchday ${match.matchday}</div>
+          <div class="match-teams">
+            <span>${getFlag(match.home_team)} ${match.home_team}</span>
+            <span class="match-vs">vs</span>
+            <span>${match.away_team} ${getFlag(match.away_team)}</span>
+          </div>
+          <div class="match-odds-bar">
+            <div class="odds-home" style="width:${homeProb}%">${homeProb}%</div>
+            <div class="odds-draw" style="width:${drawProb}%">${drawProb}%</div>
+            <div class="odds-away" style="width:${awayProb}%">${awayProb}%</div>
+          </div>
+          <a href="#teams/${opponentSlug}" class="match-opponent-link">View ${opponent} →</a>
+        </div>
+      `;
+    }
+  }).join('');
+  
+  // Squad section (placeholder until we have API data)
+  const squadHtml = details.squad && details.squad.length > 0 ? `
+    <div class="team-section">
+      <h3 class="section-header">Squad</h3>
+      <table class="squad-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Player</th>
+            <th>Position</th>
+            <th class="center">Goals</th>
+            <th class="center">Assists</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${details.squad.map(player => `
+            <tr>
+              <td>${player.shirt_number || '-'}</td>
+              <td>${player.name}</td>
+              <td>${player.position || '-'}</td>
+              <td class="center">${player.goals || 0}</td>
+              <td class="center">${player.assists || 0}</td>
+            </tr>
+          `).join('')}
+        </tbody>
+      </table>
+    </div>
+  ` : `
+    <div class="team-section">
+      <h3 class="section-header">Squad</h3>
+      <p class="placeholder-text">Squad information will be available once team data is fetched.</p>
+    </div>
+  `;
+  
+  const winProbPct = ((team.win_probability || 0) * 100).toFixed(1);
+  
+  return `
+    <div class="team-detail-container">
+      <a href="#teams" class="back-link">← All Teams</a>
+      
+      <div class="team-hero">
+        <div class="team-hero-main">
+          <span class="team-hero-flag">${getFlag(team.name)}</span>
+          <div class="team-hero-info">
+            <h1 class="team-hero-name">${team.name}</h1>
+            <div class="team-hero-meta">Group ${team.group} • ${team.confederation}</div>
+          </div>
+          <div class="team-hero-stats">
+            <div class="hero-stat">
+              <div class="hero-stat-value">${winProbPct}%</div>
+              <div class="hero-stat-label">Win Probability</div>
+            </div>
+          </div>
+        </div>
+        <div class="team-hero-owner">
+          ${team.owner ? `
+            <span class="owner-label">Owned by</span>
+            <span class="owner-name">${team.owner}</span>
+          ` : `
+            <span class="owner-label">Unowned</span>
+          `}
+        </div>
+      </div>
+      
+      <div class="team-content-grid">
+        <div class="team-section">
+          <h3 class="section-header">Group ${team.group} Standings</h3>
+          <table class="group-standings-table">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Team</th>
+                <th class="center">P</th>
+                <th class="center">W</th>
+                <th class="center">D</th>
+                <th class="center">L</th>
+                <th class="center">GD</th>
+                <th class="center">Pts</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${groupStandingsRows}
+            </tbody>
+          </table>
+        </div>
+        
+        <div class="team-section">
+          <h3 class="section-header">Matches</h3>
+          <div class="team-matches">
+            ${matchesHtml || '<p class="placeholder-text">No matches scheduled yet.</p>'}
+          </div>
+        </div>
+      </div>
+      
+      ${squadHtml}
+    </div>
+  `;
+}
+
 // Router
 function route() {
   const hash = window.location.hash || '#standings';
@@ -550,6 +853,8 @@ function route() {
     const href = a.getAttribute('href');
     if (view === 'matches') {
       a.classList.toggle('active', href.startsWith('#matches'));
+    } else if (view === 'teams') {
+      a.classList.toggle('active', href === '#teams');
     } else {
       a.classList.toggle('active', href === '#' + view);
     }
@@ -575,6 +880,13 @@ function route() {
       break;
     case 'matches':
       main.innerHTML = renderMatches(parseInt(param) || 1);
+      break;
+    case 'teams':
+      if (param) {
+        main.innerHTML = renderTeamDetail(param);
+      } else {
+        main.innerHTML = renderTeamsList();
+      }
       break;
     case 'timeline':
       main.innerHTML = renderTimeline();

@@ -532,6 +532,371 @@ tbody tr:hover .owner-name {
 .team-flag {
   font-family: "Noto Color Emoji", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
 }
+
+/* Teams List Page */
+.teams-list-container {
+  padding: 20px 0;
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #2C3E50;
+  margin-bottom: 8px;
+}
+
+.section-subtitle {
+  color: #7F8C8D;
+  margin-bottom: 24px;
+}
+
+.teams-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 12px;
+}
+
+.team-card {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: white;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #2C3E50;
+  border: 1px solid #e0e0e0;
+  transition: all 150ms ease;
+}
+
+.team-card:hover {
+  border-color: #002D72;
+  box-shadow: 0 2px 8px rgba(0, 45, 114, 0.15);
+  transform: translateY(-1px);
+}
+
+.team-card-flag {
+  font-size: 24px;
+  font-family: "Noto Color Emoji", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+}
+
+.team-card-name {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+/* Team Detail Page */
+.team-detail-container {
+  padding: 20px 0;
+}
+
+.back-link {
+  display: inline-block;
+  color: #002D72;
+  text-decoration: none;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.team-hero {
+  background: #002D72;
+  color: white;
+  padding: 24px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.team-hero-main {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.team-hero-flag {
+  font-size: 48px;
+  font-family: "Noto Color Emoji", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+}
+
+.team-hero-name {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.team-hero-meta {
+  opacity: 0.8;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.team-hero-stats {
+  display: flex;
+  gap: 24px;
+  margin-left: 32px;
+}
+
+.hero-stat {
+  text-align: center;
+}
+
+.hero-stat-value {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.hero-stat-label {
+  font-size: 12px;
+  opacity: 0.8;
+  text-transform: uppercase;
+}
+
+.team-hero-owner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.team-hero-owner .owner-label {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.team-hero-owner .owner-name {
+  font-weight: 600;
+  opacity: 1;
+  margin-left: 0;
+  color: white;
+}
+
+/* Team Content Grid */
+.team-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 900px) {
+  .team-content-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.team-section {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+}
+
+.section-header {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2C3E50;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #002D72;
+}
+
+/* Group Standings Table */
+.group-standings-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.group-standings-table th,
+.group-standings-table td {
+  padding: 8px;
+  text-align: left;
+}
+
+.group-standings-table th {
+  background: #f8f9fa;
+  font-weight: 600;
+  color: #666;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.group-standings-table tbody tr {
+  border-top: 1px solid #eee;
+}
+
+.group-standings-table tbody tr:hover {
+  background: #f8f9fa;
+}
+
+.group-standings-table .current-team {
+  background: #e8f5e9 !important;
+}
+
+.group-standings-table .current-team:hover {
+  background: #c8e6c9 !important;
+}
+
+.group-standings-table .team-cell {
+  font-weight: 500;
+}
+
+/* Team Matches */
+.team-matches {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.team-match {
+  padding: 12px;
+  border-radius: 8px;
+  background: #f8f9fa;
+}
+
+.team-match.result-win {
+  border-left: 4px solid #27AE60;
+}
+
+.team-match.result-loss {
+  border-left: 4px solid #E74C3C;
+}
+
+.team-match.result-draw {
+  border-left: 4px solid #F39C12;
+}
+
+.team-match.upcoming {
+  border-left: 4px solid #3498DB;
+}
+
+.match-date {
+  font-size: 11px;
+  color: #666;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.match-teams {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.match-score {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.match-vs {
+  color: #999;
+}
+
+.match-odds-bar {
+  display: flex;
+  height: 20px;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 8px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.odds-home {
+  background: #3498DB;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.odds-draw {
+  background: #95A5A6;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.odds-away {
+  background: #E3A344;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.match-opponent-link {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 12px;
+  color: #002D72;
+  text-decoration: none;
+}
+
+.match-opponent-link:hover {
+  text-decoration: underline;
+}
+
+/* Squad Table */
+.squad-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.squad-table th,
+.squad-table td {
+  padding: 10px 8px;
+  text-align: left;
+}
+
+.squad-table th {
+  background: #f8f9fa;
+  font-weight: 600;
+  color: #666;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.squad-table tbody tr {
+  border-top: 1px solid #eee;
+}
+
+.squad-table tbody tr:hover {
+  background: #f8f9fa;
+}
+
+.placeholder-text {
+  color: #999;
+  font-style: italic;
+  text-align: center;
+  padding: 20px;
+}
+
+.team-not-found {
+  text-align: center;
+  padding: 60px;
+}
+
+.team-not-found h2 {
+  color: #E74C3C;
+  margin-bottom: 16px;
+}
+
+.team-not-found a {
+  color: #002D72;
+}
 `;
 
 writeFileSync(join(distDir, 'css', 'styles.css'), css);
@@ -1077,6 +1442,309 @@ function renderTimeline() {
   \`;
 }
 
+// Teams List Page - alphabetical grid of all 48 teams
+function renderTeamsList() {
+  const teams = data.teams.slice().sort((a, b) => a.name.localeCompare(b.name));
+  
+  const teamCards = teams.map(team => {
+    const slug = team.name.toLowerCase().replace(/\\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+    return \`
+      <a href="#teams/\${slug}" class="team-card" onclick="event.preventDefault(); window.location.hash='#teams/\${slug}';">
+        <span class="team-card-flag">\${getFlag(team.name)}</span>
+        <span class="team-card-name">\${team.name}</span>
+      </a>
+    \`;
+  }).join('');
+  
+  return \`
+    <div class="teams-list-container">
+      <h2 class="section-title">All Teams</h2>
+      <p class="section-subtitle">Click a team to view details</p>
+      <div class="teams-grid">
+        \${teamCards}
+      </div>
+    </div>
+  \`;
+}
+
+// Team Detail Page
+function renderTeamDetail(slug) {
+  // Find team by slug
+  const team = data.teams.find(t => {
+    const teamSlug = t.name.toLowerCase().replace(/\\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+    return teamSlug === slug;
+  });
+  
+  if (!team) {
+    return \`
+      <div class="team-not-found">
+        <h2>Team not found</h2>
+        <p>Could not find team: \${slug}</p>
+        <a href="#teams">← Back to all teams</a>
+      </div>
+    \`;
+  }
+  
+  // Get team details from team_details if available
+  const details = data.team_details?.[team.name] || {};
+  
+  // Find team's matches across all matchdays
+  const teamMatches = [];
+  [data.matchday1, data.matchday2, data.matchday3].forEach((matchday, idx) => {
+    if (!matchday) return;
+    matchday.forEach(match => {
+      if (match.home_team === team.name || match.away_team === team.name) {
+        teamMatches.push({ ...match, matchday: idx + 1 });
+      }
+    });
+  });
+  
+  // Build group standings for this team's group
+  const groupTeams = data.teams.filter(t => t.group === team.group)
+    .sort((a, b) => (b.win_probability || 0) - (a.win_probability || 0));
+  
+  // Calculate points for group standings
+  const pointsMap = {};
+  const gamesPlayedMap = {};
+  const winsMap = {};
+  const drawsMap = {};
+  const lossesMap = {};
+  const goalsScoredMap = {};
+  const goalsConcededMap = {};
+  
+  groupTeams.forEach(t => {
+    pointsMap[t.name] = 0;
+    gamesPlayedMap[t.name] = 0;
+    winsMap[t.name] = 0;
+    drawsMap[t.name] = 0;
+    lossesMap[t.name] = 0;
+    goalsScoredMap[t.name] = 0;
+    goalsConcededMap[t.name] = 0;
+  });
+  
+  [data.matchday1, data.matchday2, data.matchday3].forEach(matchday => {
+    if (!matchday) return;
+    matchday.forEach(match => {
+      if (match.actual_result && match.group === team.group) {
+        const homeTeam = match.home_team;
+        const awayTeam = match.away_team;
+        const homeGoals = match.actual_result.home;
+        const awayGoals = match.actual_result.away;
+        
+        gamesPlayedMap[homeTeam] = (gamesPlayedMap[homeTeam] || 0) + 1;
+        gamesPlayedMap[awayTeam] = (gamesPlayedMap[awayTeam] || 0) + 1;
+        goalsScoredMap[homeTeam] = (goalsScoredMap[homeTeam] || 0) + homeGoals;
+        goalsScoredMap[awayTeam] = (goalsScoredMap[awayTeam] || 0) + awayGoals;
+        goalsConcededMap[homeTeam] = (goalsConcededMap[homeTeam] || 0) + awayGoals;
+        goalsConcededMap[awayTeam] = (goalsConcededMap[awayTeam] || 0) + homeGoals;
+        
+        if (homeGoals > awayGoals) {
+          pointsMap[homeTeam] = (pointsMap[homeTeam] || 0) + 3;
+          winsMap[homeTeam] = (winsMap[homeTeam] || 0) + 1;
+          lossesMap[awayTeam] = (lossesMap[awayTeam] || 0) + 1;
+        } else if (awayGoals > homeGoals) {
+          pointsMap[awayTeam] = (pointsMap[awayTeam] || 0) + 3;
+          winsMap[awayTeam] = (winsMap[awayTeam] || 0) + 1;
+          lossesMap[homeTeam] = (lossesMap[homeTeam] || 0) + 1;
+        } else {
+          pointsMap[homeTeam] = (pointsMap[homeTeam] || 0) + 1;
+          pointsMap[awayTeam] = (pointsMap[awayTeam] || 0) + 1;
+          drawsMap[homeTeam] = (drawsMap[homeTeam] || 0) + 1;
+          drawsMap[awayTeam] = (drawsMap[awayTeam] || 0) + 1;
+        }
+      }
+    });
+  });
+  
+  // Sort group by points, then goal difference
+  const sortedGroupTeams = groupTeams.sort((a, b) => {
+    const ptsA = pointsMap[a.name] || 0;
+    const ptsB = pointsMap[b.name] || 0;
+    if (ptsB !== ptsA) return ptsB - ptsA;
+    const gdA = (goalsScoredMap[a.name] || 0) - (goalsConcededMap[a.name] || 0);
+    const gdB = (goalsScoredMap[b.name] || 0) - (goalsConcededMap[b.name] || 0);
+    return gdB - gdA;
+  });
+  
+  // Render group standings table
+  const groupStandingsRows = sortedGroupTeams.map((t, idx) => {
+    const isCurrentTeam = t.name === team.name;
+    const pts = pointsMap[t.name] || 0;
+    const p = gamesPlayedMap[t.name] || 0;
+    const w = winsMap[t.name] || 0;
+    const d = drawsMap[t.name] || 0;
+    const l = lossesMap[t.name] || 0;
+    const gf = goalsScoredMap[t.name] || 0;
+    const ga = goalsConcededMap[t.name] || 0;
+    const gd = gf - ga;
+    const gdStr = gd > 0 ? '+' + gd : gd.toString();
+    const slug = t.name.toLowerCase().replace(/\\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+    
+    return \`
+      <tr class="\${isCurrentTeam ? 'current-team' : ''}" onclick="window.location.hash='#teams/\${slug}'" style="cursor:pointer;">
+        <td>\${idx + 1}</td>
+        <td class="team-cell">\${getFlag(t.name)} \${t.name}</td>
+        <td class="center">\${p}</td>
+        <td class="center">\${w}</td>
+        <td class="center">\${d}</td>
+        <td class="center">\${l}</td>
+        <td class="center">\${gdStr}</td>
+        <td class="center" style="font-weight:700;">\${pts}</td>
+      </tr>
+    \`;
+  }).join('');
+  
+  // Render matches using similar style to Matches page
+  const matchesHtml = teamMatches.map(match => {
+    const isHome = match.home_team === team.name;
+    const opponent = isHome ? match.away_team : match.home_team;
+    const opponentSlug = opponent.toLowerCase().replace(/\\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+    
+    if (match.actual_result) {
+      // Completed match
+      const homeScore = match.actual_result.home;
+      const awayScore = match.actual_result.away;
+      const teamScore = isHome ? homeScore : awayScore;
+      const oppScore = isHome ? awayScore : homeScore;
+      const result = teamScore > oppScore ? 'win' : teamScore < oppScore ? 'loss' : 'draw';
+      const resultClass = result === 'win' ? 'result-win' : result === 'loss' ? 'result-loss' : 'result-draw';
+      
+      return \`
+        <div class="team-match \${resultClass}">
+          <div class="match-date">Matchday \${match.matchday}</div>
+          <div class="match-teams">
+            <span>\${getFlag(match.home_team)} \${match.home_team}</span>
+            <span class="match-score">\${homeScore} - \${awayScore}</span>
+            <span>\${match.away_team} \${getFlag(match.away_team)}</span>
+          </div>
+          <a href="#teams/\${opponentSlug}" class="match-opponent-link">View \${opponent} →</a>
+        </div>
+      \`;
+    } else {
+      // Upcoming match - show odds
+      const homeProb = Math.round((match.home_win_prob || 0.33) * 100);
+      const drawProb = Math.round((match.draw_prob || 0.33) * 100);
+      const awayProb = Math.round((match.away_win_prob || 0.33) * 100);
+      const teamProb = isHome ? homeProb : awayProb;
+      
+      return \`
+        <div class="team-match upcoming">
+          <div class="match-date">Matchday \${match.matchday}</div>
+          <div class="match-teams">
+            <span>\${getFlag(match.home_team)} \${match.home_team}</span>
+            <span class="match-vs">vs</span>
+            <span>\${match.away_team} \${getFlag(match.away_team)}</span>
+          </div>
+          <div class="match-odds-bar">
+            <div class="odds-home" style="width:\${homeProb}%">\${homeProb}%</div>
+            <div class="odds-draw" style="width:\${drawProb}%">\${drawProb}%</div>
+            <div class="odds-away" style="width:\${awayProb}%">\${awayProb}%</div>
+          </div>
+          <a href="#teams/\${opponentSlug}" class="match-opponent-link">View \${opponent} →</a>
+        </div>
+      \`;
+    }
+  }).join('');
+  
+  // Squad section (placeholder until we have API data)
+  const squadHtml = details.squad && details.squad.length > 0 ? \`
+    <div class="team-section">
+      <h3 class="section-header">Squad</h3>
+      <table class="squad-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Player</th>
+            <th>Position</th>
+            <th class="center">Goals</th>
+            <th class="center">Assists</th>
+          </tr>
+        </thead>
+        <tbody>
+          \${details.squad.map(player => \`
+            <tr>
+              <td>\${player.shirt_number || '-'}</td>
+              <td>\${player.name}</td>
+              <td>\${player.position || '-'}</td>
+              <td class="center">\${player.goals || 0}</td>
+              <td class="center">\${player.assists || 0}</td>
+            </tr>
+          \`).join('')}
+        </tbody>
+      </table>
+    </div>
+  \` : \`
+    <div class="team-section">
+      <h3 class="section-header">Squad</h3>
+      <p class="placeholder-text">Squad information will be available once team data is fetched.</p>
+    </div>
+  \`;
+  
+  const winProbPct = ((team.win_probability || 0) * 100).toFixed(1);
+  
+  return \`
+    <div class="team-detail-container">
+      <a href="#teams" class="back-link">← All Teams</a>
+      
+      <div class="team-hero">
+        <div class="team-hero-main">
+          <span class="team-hero-flag">\${getFlag(team.name)}</span>
+          <div class="team-hero-info">
+            <h1 class="team-hero-name">\${team.name}</h1>
+            <div class="team-hero-meta">Group \${team.group} • \${team.confederation}</div>
+          </div>
+          <div class="team-hero-stats">
+            <div class="hero-stat">
+              <div class="hero-stat-value">\${winProbPct}%</div>
+              <div class="hero-stat-label">Win Probability</div>
+            </div>
+          </div>
+        </div>
+        <div class="team-hero-owner">
+          \${team.owner ? \`
+            <span class="owner-label">Owned by</span>
+            <span class="owner-name">\${team.owner}</span>
+          \` : \`
+            <span class="owner-label">Unowned</span>
+          \`}
+        </div>
+      </div>
+      
+      <div class="team-content-grid">
+        <div class="team-section">
+          <h3 class="section-header">Group \${team.group} Standings</h3>
+          <table class="group-standings-table">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Team</th>
+                <th class="center">P</th>
+                <th class="center">W</th>
+                <th class="center">D</th>
+                <th class="center">L</th>
+                <th class="center">GD</th>
+                <th class="center">Pts</th>
+              </tr>
+            </thead>
+            <tbody>
+              \${groupStandingsRows}
+            </tbody>
+          </table>
+        </div>
+        
+        <div class="team-section">
+          <h3 class="section-header">Matches</h3>
+          <div class="team-matches">
+            \${matchesHtml || '<p class="placeholder-text">No matches scheduled yet.</p>'}
+          </div>
+        </div>
+      </div>
+      
+      \${squadHtml}
+    </div>
+  \`;
+}
+
 // Router
 function route() {
   const hash = window.location.hash || '#standings';
@@ -1091,6 +1759,8 @@ function route() {
     const href = a.getAttribute('href');
     if (view === 'matches') {
       a.classList.toggle('active', href.startsWith('#matches'));
+    } else if (view === 'teams') {
+      a.classList.toggle('active', href === '#teams');
     } else {
       a.classList.toggle('active', href === '#' + view);
     }
@@ -1116,6 +1786,13 @@ function route() {
       break;
     case 'matches':
       main.innerHTML = renderMatches(parseInt(param) || 1);
+      break;
+    case 'teams':
+      if (param) {
+        main.innerHTML = renderTeamDetail(param);
+      } else {
+        main.innerHTML = renderTeamsList();
+      }
       break;
     case 'timeline':
       main.innerHTML = renderTimeline();
@@ -1185,6 +1862,7 @@ const html = `<!DOCTYPE html>
     <ul class="nav-tabs">
       <li><a href="#standings">Standings</a></li>
       <li><a href="#matches/1">Matches</a></li>
+      <li><a href="#teams">Teams</a></li>
       <li><a href="#timeline">Timeline</a></li>
     </ul>
   </nav>

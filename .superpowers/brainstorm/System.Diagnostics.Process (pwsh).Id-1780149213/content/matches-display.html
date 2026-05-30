@@ -1,0 +1,151 @@
+<h2>Matches Display on Team Page</h2>
+<p class="subtitle">How should we show the team's upcoming and completed matches?</p>
+
+<div class="cards">
+  <!-- Option A: Timeline Style -->
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#f8f9fa;padding:16px;">
+      <div style="font-size:10px;">
+        <!-- Completed -->
+        <div style="display:flex;gap:12px;margin-bottom:12px;">
+          <div style="width:60px;text-align:right;color:#666;padding-top:8px;">
+            <div style="font-weight:600;">Jun 12</div>
+            <div style="font-size:9px;">Group I</div>
+          </div>
+          <div style="width:3px;background:#27ae60;border-radius:2px;"></div>
+          <div style="flex:1;background:white;border-radius:8px;padding:10px;border-left:3px solid #27ae60;">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <div><span style="font-weight:600;">France</span> vs Iraq</div>
+              <div style="font-weight:700;color:#27ae60;">3 - 0 ✓</div>
+            </div>
+            <div style="color:#666;font-size:9px;margin-top:4px;">Goals: Mbappé 23', 67' • Griezmann 45'</div>
+          </div>
+        </div>
+        <!-- Upcoming -->
+        <div style="display:flex;gap:12px;margin-bottom:12px;">
+          <div style="width:60px;text-align:right;color:#666;padding-top:8px;">
+            <div style="font-weight:600;">Jun 17</div>
+            <div style="font-size:9px;">Group I</div>
+          </div>
+          <div style="width:3px;background:#3498db;border-radius:2px;"></div>
+          <div style="flex:1;background:white;border-radius:8px;padding:10px;border-left:3px solid #3498db;">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <div><span style="font-weight:600;">France</span> vs Colombia</div>
+              <div style="font-size:9px;background:#e3f2fd;padding:2px 8px;border-radius:10px;color:#1976d2;">68% to win</div>
+            </div>
+          </div>
+        </div>
+        <!-- Next -->
+        <div style="display:flex;gap:12px;">
+          <div style="width:60px;text-align:right;color:#666;padding-top:8px;">
+            <div style="font-weight:600;">Jun 22</div>
+            <div style="font-size:9px;">Group I</div>
+          </div>
+          <div style="width:3px;background:#ccc;border-radius:2px;"></div>
+          <div style="flex:1;background:white;border-radius:8px;padding:10px;opacity:0.7;">
+            <div><span style="font-weight:600;">France</span> vs Denmark</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A: Vertical Timeline</h3>
+      <p>Chronological flow with date sidebar. Green for wins, blue for upcoming, gray for later. Shows goal scorers for completed matches.</p>
+    </div>
+  </div>
+
+  <!-- Option B: Cards Row -->
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#f8f9fa;padding:16px;">
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;font-size:10px;">
+        <!-- Completed -->
+        <div style="background:white;border-radius:8px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
+          <div style="background:#27ae60;color:white;padding:4px 8px;font-size:9px;text-align:center;">WIN • Jun 12</div>
+          <div style="padding:10px;text-align:center;">
+            <div style="display:flex;justify-content:center;align-items:center;gap:8px;margin-bottom:6px;">
+              <div>🇫🇷</div>
+              <div style="font-weight:700;font-size:14px;">3 - 0</div>
+              <div>🇮🇶</div>
+            </div>
+            <div style="font-size:9px;color:#666;">vs Iraq</div>
+          </div>
+        </div>
+        <!-- Upcoming -->
+        <div style="background:white;border-radius:8px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.1);border:2px solid #3498db;">
+          <div style="background:#3498db;color:white;padding:4px 8px;font-size:9px;text-align:center;">NEXT • Jun 17</div>
+          <div style="padding:10px;text-align:center;">
+            <div style="display:flex;justify-content:center;align-items:center;gap:8px;margin-bottom:6px;">
+              <div>🇫🇷</div>
+              <div style="font-weight:700;font-size:12px;color:#3498db;">68%</div>
+              <div>🇨🇴</div>
+            </div>
+            <div style="font-size:9px;color:#666;">vs Colombia</div>
+          </div>
+        </div>
+        <!-- Future -->
+        <div style="background:white;border-radius:8px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.1);opacity:0.6;">
+          <div style="background:#999;color:white;padding:4px 8px;font-size:9px;text-align:center;">Jun 22</div>
+          <div style="padding:10px;text-align:center;">
+            <div style="display:flex;justify-content:center;align-items:center;gap:8px;margin-bottom:6px;">
+              <div>🇫🇷</div>
+              <div style="font-weight:500;font-size:11px;color:#666;">vs</div>
+              <div>🇩🇰</div>
+            </div>
+            <div style="font-size:9px;color:#666;">vs Denmark</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B: Horizontal Cards</h3>
+      <p>Each match as a card in a row. Compact, shows flags prominently, highlights the next match.</p>
+    </div>
+  </div>
+
+  <!-- Option C: Reuse Matches Page Style -->
+  <div class="card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#f8f9fa;padding:16px;">
+      <div style="font-size:10px;">
+        <div style="background:white;border-radius:8px;padding:10px;margin-bottom:6px;">
+          <div style="display:flex;align-items:center;gap:8px;">
+            <div style="display:flex;align-items:center;gap:4px;width:100px;justify-content:flex-end;">
+              <span style="font-weight:600;">France</span>
+              <span>🇫🇷</span>
+            </div>
+            <div style="flex:1;display:flex;align-items:center;gap:4px;">
+              <div style="flex:1;height:16px;background:#27ae60;border-radius:2px 0 0 2px;"></div>
+              <div style="font-weight:700;font-size:12px;white-space:nowrap;">3 - 0</div>
+              <div style="width:30px;height:16px;background:#e74c3c;border-radius:0 2px 2px 0;"></div>
+            </div>
+            <div style="display:flex;align-items:center;gap:4px;width:100px;">
+              <span>🇮🇶</span>
+              <span>Iraq</span>
+            </div>
+          </div>
+        </div>
+        <div style="background:white;border-radius:8px;padding:10px;margin-bottom:6px;border:2px solid #3498db;">
+          <div style="display:flex;align-items:center;gap:8px;">
+            <div style="display:flex;align-items:center;gap:4px;width:100px;justify-content:flex-end;">
+              <span style="font-weight:600;">France</span>
+              <span>🇫🇷</span>
+            </div>
+            <div style="flex:1;display:flex;align-items:center;gap:4px;">
+              <div style="flex:2;height:16px;background:#3498db;border-radius:2px 0 0 2px;"></div>
+              <div style="font-size:9px;white-space:nowrap;">68%</div>
+              <div style="flex:1;height:16px;background:#e67e22;border-radius:0 2px 2px 0;"></div>
+            </div>
+            <div style="display:flex;align-items:center;gap:4px;width:100px;">
+              <span>🇨🇴</span>
+              <span>Colombia</span>
+            </div>
+          </div>
+        </div>
+        <div style="color:#666;text-align:center;font-size:9px;">Same visual style as Matches tab</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C: Consistent with Matches Tab</h3>
+      <p>Reuse the same odds bar visualization from the Matches page. Familiar, consistent design language.</p>
+    </div>
+  </div>
+</div>

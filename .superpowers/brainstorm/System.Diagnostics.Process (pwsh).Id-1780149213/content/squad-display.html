@@ -1,0 +1,119 @@
+<h2>Squad Display Style</h2>
+<p class="subtitle">How should we show the 26 players in the squad?</p>
+
+<div class="cards">
+  <!-- Option A: Photo Cards Grid -->
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#f8f9fa;padding:16px;">
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px;">
+        <div style="background:white;border-radius:8px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
+          <div style="height:60px;background:linear-gradient(135deg,#3498db,#2980b9);display:flex;align-items:center;justify-content:center;">
+            <div style="width:40px;height:40px;background:white;border-radius:50%;border:2px solid white;"></div>
+          </div>
+          <div style="padding:6px;text-align:center;font-size:9px;">
+            <div style="font-weight:600;">Mbappé</div>
+            <div style="color:#666;">Forward • #10</div>
+            <div style="color:#2e7d32;font-weight:500;">3 ⚽ 1 🅰️</div>
+          </div>
+        </div>
+        <div style="background:white;border-radius:8px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
+          <div style="height:60px;background:linear-gradient(135deg,#27ae60,#229954);display:flex;align-items:center;justify-content:center;">
+            <div style="width:40px;height:40px;background:white;border-radius:50%;border:2px solid white;"></div>
+          </div>
+          <div style="padding:6px;text-align:center;font-size:9px;">
+            <div style="font-weight:600;">Maignan</div>
+            <div style="color:#666;">Goalkeeper • #1</div>
+            <div style="color:#1976d2;font-weight:500;">2 🧤</div>
+          </div>
+        </div>
+        <div style="background:white;border-radius:8px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
+          <div style="height:60px;background:linear-gradient(135deg,#e74c3c,#c0392b);display:flex;align-items:center;justify-content:center;">
+            <div style="width:40px;height:40px;background:white;border-radius:50%;border:2px solid white;"></div>
+          </div>
+          <div style="padding:6px;text-align:center;font-size:9px;">
+            <div style="font-weight:600;">Griezmann</div>
+            <div style="color:#666;">Forward • #7</div>
+            <div style="color:#2e7d32;font-weight:500;">1 ⚽ 2 🅰️</div>
+          </div>
+        </div>
+        <div style="background:#eee;border-radius:8px;height:100px;display:flex;align-items:center;justify-content:center;color:#999;font-size:10px;">+23 more</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A: Photo Cards Grid</h3>
+      <p>Each player gets a card with photo, position color-coding, and tournament stats. Visual and engaging.</p>
+    </div>
+  </div>
+
+  <!-- Option B: Compact Table -->
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#f8f9fa;padding:16px;">
+      <div style="background:white;border-radius:8px;overflow:hidden;font-size:10px;">
+        <div style="display:grid;grid-template-columns:32px 1fr 80px 50px 50px;padding:8px;background:#002D72;color:white;font-weight:600;">
+          <div>#</div>
+          <div>Player</div>
+          <div>Position</div>
+          <div style="text-align:center;">⚽</div>
+          <div style="text-align:center;">🅰️</div>
+        </div>
+        <div style="display:grid;grid-template-columns:32px 1fr 80px 50px 50px;padding:6px 8px;border-bottom:1px solid #eee;align-items:center;">
+          <div>10</div>
+          <div style="display:flex;align-items:center;gap:6px;">
+            <div style="width:20px;height:20px;background:#ddd;border-radius:50%;"></div>
+            <span style="font-weight:500;">K. Mbappé</span>
+          </div>
+          <div style="color:#666;">Forward</div>
+          <div style="text-align:center;font-weight:600;color:#2e7d32;">3</div>
+          <div style="text-align:center;font-weight:600;color:#1976d2;">1</div>
+        </div>
+        <div style="display:grid;grid-template-columns:32px 1fr 80px 50px 50px;padding:6px 8px;border-bottom:1px solid #eee;align-items:center;background:#f9f9f9;">
+          <div>7</div>
+          <div style="display:flex;align-items:center;gap:6px;">
+            <div style="width:20px;height:20px;background:#ddd;border-radius:50%;"></div>
+            <span style="font-weight:500;">A. Griezmann</span>
+          </div>
+          <div style="color:#666;">Forward</div>
+          <div style="text-align:center;font-weight:600;color:#2e7d32;">1</div>
+          <div style="text-align:center;font-weight:600;color:#1976d2;">2</div>
+        </div>
+        <div style="padding:8px;color:#666;text-align:center;">...24 more rows</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B: Compact Table</h3>
+      <p>Sortable table with small photos. Data-dense, fits more players at once, easier to compare stats.</p>
+    </div>
+  </div>
+
+  <!-- Option C: Position Groups -->
+  <div class="card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#f8f9fa;padding:16px;">
+      <div style="font-size:10px;">
+        <div style="margin-bottom:12px;">
+          <div style="background:#27ae60;color:white;padding:4px 8px;border-radius:4px 4px 0 0;font-weight:600;font-size:9px;">GOALKEEPERS (3)</div>
+          <div style="background:white;padding:8px;border:1px solid #27ae60;border-top:none;border-radius:0 0 4px 4px;display:flex;gap:12px;">
+            <div style="display:flex;align-items:center;gap:4px;"><div style="width:24px;height:24px;background:#ddd;border-radius:50%;"></div><span>Maignan</span></div>
+            <div style="display:flex;align-items:center;gap:4px;"><div style="width:24px;height:24px;background:#ddd;border-radius:50%;"></div><span>Areola</span></div>
+            <div style="display:flex;align-items:center;gap:4px;"><div style="width:24px;height:24px;background:#ddd;border-radius:50%;"></div><span>Samba</span></div>
+          </div>
+        </div>
+        <div style="margin-bottom:12px;">
+          <div style="background:#3498db;color:white;padding:4px 8px;border-radius:4px 4px 0 0;font-weight:600;font-size:9px;">DEFENDERS (8)</div>
+          <div style="background:white;padding:8px;border:1px solid #3498db;border-top:none;border-radius:0 0 4px 4px;display:flex;flex-wrap:wrap;gap:8px;">
+            <div style="display:flex;align-items:center;gap:4px;"><div style="width:24px;height:24px;background:#ddd;border-radius:50%;"></div><span>Upamecano</span></div>
+            <div style="display:flex;align-items:center;gap:4px;"><div style="width:24px;height:24px;background:#ddd;border-radius:50%;"></div><span>Konaté</span></div>
+            <div style="color:#999;">+6 more</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:8px;">
+          <div style="flex:1;background:#f39c12;color:white;padding:4px;border-radius:4px;text-align:center;font-size:9px;">MIDFIELDERS (8)</div>
+          <div style="flex:1;background:#e74c3c;color:white;padding:4px;border-radius:4px;text-align:center;font-size:9px;">FORWARDS (7)</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C: Grouped by Position</h3>
+      <p>Players organized by role (GK, DEF, MID, FWD). Shows team structure at a glance.</p>
+    </div>
+  </div>
+</div>
