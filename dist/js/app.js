@@ -589,9 +589,13 @@ function renderTeamDetail(slug) {
   // Get team details from team_details if available
   const details = data.team_details?.[team.name] || {};
   
+  // Get stage probabilities for this team (Monte Carlo results)
+  const stageProbs = data.stage_probabilities?.[team.name] || {};
+  
   // Find team's matches across all matchdays
   const teamMatches = [];
-  [data.matchday1, data.matchday2, data.matchday3].forEach((matchday, idx) => {
+  const matchdays = data.matchdays || {};
+  [matchdays.matchday1, matchdays.matchday2, matchdays.matchday3].forEach((matchday, idx) => {
     if (!matchday) return;
     matchday.forEach(match => {
       if (match.home_team === team.name || match.away_team === team.name) {
@@ -623,7 +627,7 @@ function renderTeamDetail(slug) {
     goalsConcededMap[t.name] = 0;
   });
   
-  [data.matchday1, data.matchday2, data.matchday3].forEach(matchday => {
+  [matchdays.matchday1, matchdays.matchday2, matchdays.matchday3].forEach(matchday => {
     if (!matchday) return;
     matchday.forEach(match => {
       if (match.actual_result && match.group === team.group) {
@@ -781,7 +785,8 @@ function renderTeamDetail(slug) {
     </div>
   `;
   
-  const winProbPct = ((team.win_probability || 0) * 100).toFixed(1);
+  // Use Monte Carlo win_tournament probability (same as standings page)
+  const winProbPct = ((stageProbs.win_tournament || 0) * 100).toFixed(1);
   
   return `
     <div class="team-detail-container">
