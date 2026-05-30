@@ -546,7 +546,7 @@ function route() {
 // Initialize
 async function init() {
   try {
-    const response = await fetch('data/latest.json');
+    const response = await fetch('data/latest.json', { cache: 'no-store' });
     data = await response.json();
     
     // Handle hash changes
