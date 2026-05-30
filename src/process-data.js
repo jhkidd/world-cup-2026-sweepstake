@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync, readdirSync } from 'fs';
+import { readFileSync, writeFileSync, readdirSync, mkdirSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { addDays, parseISO, formatISO } from 'date-fns';
@@ -497,7 +497,9 @@ async function main() {
     };
     
     // Save processed data
-    const outputPath = join(projectRoot, 'data', 'processed', 'latest.json');
+    const processedDir = join(projectRoot, 'data', 'processed');
+    mkdirSync(processedDir, { recursive: true });
+    const outputPath = join(processedDir, 'latest.json');
     writeFileSync(outputPath, JSON.stringify(output, null, 2));
     console.log(`\n✅ Processed data saved to: data/processed/latest.json`);
     
