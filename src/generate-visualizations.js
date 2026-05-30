@@ -14,8 +14,9 @@ function loadProfilePictures() {
   
   const names = [
     'allan chan', 'andrew turner', 'bryn mills', 'caitlin kilcoyne',
-    'dave moseley', 'emma ryan', 'ian whelan', 'joshua kidd',
-    'nicholas burgoyne', 'tina buckley'
+    'catherine swain', 'dave moseley', 'emma ryan', 'ian whelan',
+    'joshua kidd', 'julie hulme', 'logan garwood', 'nathan nekrews',
+    'nicholas burgoyne', 'tim copland', 'tina buckley', 'yousaf mahmood'
   ];
   
   for (const name of names) {

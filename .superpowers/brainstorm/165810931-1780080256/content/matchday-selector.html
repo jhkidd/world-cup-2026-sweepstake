@@ -1,0 +1,95 @@
+<h2>How should matchday selection work?</h2>
+<p class="subtitle">For navigating between Matchday 1, 2, and 3 in the group stage</p>
+
+<div class="cards">
+  <div class="card" data-choice="dropdown" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div class="mockup" style="padding: 0; overflow: hidden;">
+        <div style="background: #002D72; color: white; padding: 12px 20px; font-size: 14px; font-weight: 600;">
+          INRIX 2026 Football World Cup Sweepstakes
+        </div>
+        <div style="background: white; padding: 0 20px; position: relative;">
+          <div style="display: flex; gap: 28px; font-size: 13px; border-bottom: 1px solid #e0e0e0;">
+            <span style="padding: 12px 0; color: #666;">Standings</span>
+            <span style="border-bottom: 2px solid #002D72; padding: 12px 0; font-weight: 600; color: #002D72;">Matches ▾</span>
+            <span style="padding: 12px 0; color: #666;">Timeline</span>
+          </div>
+          <!-- Dropdown -->
+          <div style="position: absolute; left: 95px; top: 38px; background: white; border: 1px solid #ddd; border-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); font-size: 13px; z-index: 10;">
+            <div style="padding: 10px 20px; background: #f5f5f5; font-weight: 600;">Matchday 1</div>
+            <div style="padding: 10px 20px; border-top: 1px solid #eee;">Matchday 2</div>
+            <div style="padding: 10px 20px; border-top: 1px solid #eee;">Matchday 3</div>
+          </div>
+        </div>
+        <div style="background: #fafafa; padding: 30px; text-align: center; color: #ccc; font-size: 12px;">
+          Match content
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A: Dropdown Menu</h3>
+      <p>Click "Matches" to reveal dropdown. Compact, but requires extra click to switch matchdays.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="subtabs" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div class="mockup" style="padding: 0; overflow: hidden;">
+        <div style="background: #002D72; color: white; padding: 12px 20px; font-size: 14px; font-weight: 600;">
+          INRIX 2026 Football World Cup Sweepstakes
+        </div>
+        <div style="background: white; padding: 0 20px;">
+          <div style="display: flex; gap: 28px; font-size: 13px; border-bottom: 1px solid #e0e0e0;">
+            <span style="padding: 12px 0; color: #666;">Standings</span>
+            <span style="border-bottom: 2px solid #002D72; padding: 12px 0; font-weight: 600; color: #002D72;">Matches</span>
+            <span style="padding: 12px 0; color: #666;">Timeline</span>
+          </div>
+        </div>
+        <!-- Secondary tabs row -->
+        <div style="background: #f8f9fa; padding: 0 20px; border-bottom: 1px solid #e0e0e0;">
+          <div style="display: flex; gap: 20px; font-size: 12px;">
+            <span style="padding: 10px 0; border-bottom: 2px solid #002D72; font-weight: 600; color: #002D72;">Matchday 1</span>
+            <span style="padding: 10px 0; color: #666;">Matchday 2</span>
+            <span style="padding: 10px 0; color: #666;">Matchday 3</span>
+          </div>
+        </div>
+        <div style="background: #fafafa; padding: 30px; text-align: center; color: #ccc; font-size: 12px;">
+          Match content
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B: Secondary Tab Row</h3>
+      <p>All matchdays visible at once. One click to switch. Takes slightly more vertical space.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="pills" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div class="mockup" style="padding: 0; overflow: hidden;">
+        <div style="background: #002D72; color: white; padding: 12px 20px; font-size: 14px; font-weight: 600;">
+          INRIX 2026 Football World Cup Sweepstakes
+        </div>
+        <div style="background: white; padding: 0 20px;">
+          <div style="display: flex; gap: 28px; font-size: 13px; border-bottom: 1px solid #e0e0e0;">
+            <span style="padding: 12px 0; color: #666;">Standings</span>
+            <span style="border-bottom: 2px solid #002D72; padding: 12px 0; font-weight: 600; color: #002D72;">Matches</span>
+            <span style="padding: 12px 0; color: #666;">Timeline</span>
+          </div>
+        </div>
+        <div style="background: white; padding: 16px 20px; display: flex; gap: 8px;">
+          <span style="background: #002D72; color: white; padding: 6px 14px; border-radius: 16px; font-size: 12px; font-weight: 500;">Matchday 1</span>
+          <span style="background: #eee; padding: 6px 14px; border-radius: 16px; font-size: 12px;">Matchday 2</span>
+          <span style="background: #eee; padding: 6px 14px; border-radius: 16px; font-size: 12px;">Matchday 3</span>
+        </div>
+        <div style="background: #fafafa; padding: 30px; text-align: center; color: #ccc; font-size: 12px;">
+          Match content
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C: Pill Buttons in Content</h3>
+      <p>Matchday selector as pill buttons within the page content. Clear visual separation from main nav.</p>
+    </div>
+  </div>
+</div>

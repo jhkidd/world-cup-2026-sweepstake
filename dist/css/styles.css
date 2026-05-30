@@ -1,0 +1,464 @@
+/* INRIX World Cup Sweepstake Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  background: #f5f5f5;
+  min-height: 100vh;
+}
+
+/* Header */
+.header {
+  background: #002D72;
+  color: white;
+  padding: 16px 24px;
+}
+
+.header h1 {
+  font-size: 18px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-logo {
+  height: 48px;
+  width: auto;
+}
+
+/* Navigation */
+.nav {
+  background: white;
+  padding: 0 24px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.nav-tabs {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+
+.nav-tabs a {
+  display: block;
+  padding: 14px 0;
+  text-decoration: none;
+  color: #666;
+  font-size: 14px;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+}
+
+.nav-tabs a:hover {
+  color: #002D72;
+}
+
+.nav-tabs a.active {
+  color: #002D72;
+  font-weight: 600;
+  border-bottom-color: #002D72;
+}
+
+/* Secondary nav for matchdays */
+.nav-secondary {
+  background: #f8f9fa;
+  padding: 0 24px;
+  border-bottom: 1px solid #e0e0e0;
+  display: none;
+}
+
+.nav-secondary.visible {
+  display: block;
+}
+
+.nav-secondary .nav-tabs {
+  gap: 24px;
+}
+
+.nav-secondary .nav-tabs a {
+  padding: 10px 0;
+  font-size: 13px;
+}
+
+/* Main content */
+.main {
+  padding: 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.card {
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.card-title {
+  font-size: 24px;
+  font-weight: 400;
+  color: #2C3E50;
+  margin-bottom: 8px;
+}
+
+.card-subtitle {
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 20px;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+th {
+  background: #f5f5f5;
+  text-align: left;
+  padding: 8px;
+  font-weight: 700;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  color: #5A6C7D;
+}
+
+th.center {
+  text-align: center;
+}
+
+/* Grouped header row */
+.header-group {
+  background: #f5f5f5;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.header-group th {
+  padding: 10px 8px 4px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #5A6C7D;
+  border-bottom: none;
+}
+
+.header-cols th {
+  padding: 4px 8px 10px;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+td {
+  padding: 10px 8px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+tr:nth-child(odd) td {
+  background: #fafafa;
+}
+
+/* Section separator row */
+tr.section-break td {
+  border-bottom: 3px solid #e0e0e0;
+}
+
+.team-name {
+  font-weight: 600;
+  font-size: 14px;
+  color: #2C3E50;
+}
+
+.team-name .team-flag {
+  font-size: 18px;
+  margin-right: 6px;
+}
+
+/* Probability cells */
+.prob-cell {
+  text-align: center;
+  font-weight: 600;
+  padding: 10px 6px;
+}
+
+/* Profile pictures */
+.profile-pic {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-left: 8px;
+  vertical-align: middle;
+  border: 1px solid #e0e0e0;
+}
+
+.initials-circle {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  line-height: 24px;
+  text-align: center;
+  font-size: 10px;
+  font-weight: 600;
+  color: white;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+/* Matches - Two column layout with groups */
+.matches-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.group-section {
+  margin-bottom: 24px;
+}
+
+.group-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #2C3E50;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.match-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 13px;
+}
+
+.match-home {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 200px;
+  text-align: right;
+}
+
+.match-home .owner {
+  font-size: 11px;
+  color: #999;
+  margin-right: 8px;
+}
+
+.match-home .team-name {
+  font-weight: 600;
+  margin-right: 6px;
+}
+
+.match-home .team-name.favorite {
+  font-weight: 800;
+}
+
+.match-home .team-flag {
+  font-size: 20px;
+}
+
+.match-bar {
+  flex: 1;
+  margin: 0 12px;
+}
+
+.split-bar {
+  height: 28px;
+  display: flex;
+  border-radius: 3px;
+  overflow: hidden;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.split-bar .home {
+  background: #002D72;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 6px;
+}
+
+.split-bar .draw {
+  background: #e4e4e6;
+  color: #666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.split-bar .away {
+  background: #E3A344;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 6px;
+}
+
+/* Completed match result bar */
+.result-bar {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.result-bar.home-win {
+  background: #002D72;
+}
+
+.result-bar.away-win {
+  background: #E3A344;
+}
+
+.result-bar.draw-result {
+  background: #e4e4e6;
+}
+
+.result-text {
+  color: white;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.result-bar.draw-result .result-text {
+  color: #555;
+}
+
+/* Next match highlight - pulsing glow */
+.match-row.next-match {
+  animation: pulseGlow 2s ease-in-out infinite;
+  border-radius: 4px;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    background: rgba(0, 45, 114, 0.03);
+    box-shadow: 0 0 0 0 rgba(0, 45, 114, 0);
+  }
+  50% {
+    background: rgba(0, 45, 114, 0.08);
+    box-shadow: 0 0 8px 2px rgba(0, 45, 114, 0.15);
+  }
+}
+
+.match-away {
+  display: flex;
+  align-items: center;
+  width: 200px;
+}
+
+.match-away .team-name {
+  font-weight: 600;
+  margin-left: 6px;
+}
+
+.match-away .team-name.favorite {
+  font-weight: 800;
+}
+
+.match-away .team-flag {
+  font-size: 20px;
+}
+
+.match-away .owner {
+  font-size: 11px;
+  color: #999;
+  margin-left: 8px;
+}
+
+.match-date {
+  font-size: 11px;
+  color: #999;
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+/* Legend */
+.legend {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 16px;
+  font-size: 11px;
+  color: #666;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.legend-box {
+  width: 16px;
+  height: 12px;
+  border-radius: 2px;
+}
+
+.legend-box.home { background: #002D72; }
+.legend-box.draw { background: #e4e4e6; }
+.legend-box.away { background: #E3A344; }
+
+.legend-note {
+  margin-left: auto;
+  font-style: italic;
+}
+
+/* Timeline chart container */
+#timeline-chart {
+  width: 100%;
+  height: 400px;
+}
+
+/* Loading state */
+.loading {
+  text-align: center;
+  padding: 60px;
+  color: #999;
+}
+
+/* Top teams highlight - team, group, and group stage finish columns */
+.top-team td:nth-child(1),
+.top-team td:nth-child(2),
+.top-team td:nth-child(3),
+.top-team td:nth-child(4) {
+  background: #fffbe6 !important;
+}
+
+/* Row hover highlight - team, group, and group stage finish columns */
+tbody tr:hover td:nth-child(1),
+tbody tr:hover td:nth-child(2),
+tbody tr:hover td:nth-child(3),
+tbody tr:hover td:nth-child(4) {
+  background-color: rgba(0, 45, 114, 0.08) !important;
+}
+
+/* Owner name - hidden by default, fades in on hover */
+.owner-name {
+  opacity: 0;
+  transition: opacity 250ms ease-out;
+  margin-left: 8px;
+  color: #7F8C8D;
+  font-weight: 400;
+}
+
+tbody tr:hover .owner-name {
+  opacity: 1;
+}
+
+/* Emoji font support */
+.team-flag {
+  font-family: "Noto Color Emoji", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+}

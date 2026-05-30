@@ -254,43 +254,11 @@ function getTeamRankings(tournament, teamProbs, sweepstake) {
   return teams;
 }
 
-function getUpcomingMatches(oddsData, tournament, sweepstake) {
-  // Get the next matchday (group of matches happening soonish)
-  const now = new Date();
-  
-  // Build owner lookup
-  const ownerLookup = {};
-  for (const participant of sweepstake.participants) {
-    for (const team of participant.teams) {
-      ownerLookup[normalizeTeamName(team)] = participant.name;
-    }
-  }
-  
-  // Find the earliest future matchday
-  let earliestMatchday = null;
-  let earliestDate = null;
+function getMatchesForMatchday(matchday, oddsData, tournament, ownerLookup) {
+  const matches = [];
   
   for (const match of tournament.matches.group_stage) {
-    const matchDate = parseISO(match.kickoff_utc);
-    if (matchDate >= now) {
-      if (!earliestDate || matchDate < earliestDate) {
-        earliestDate = matchDate;
-        earliestMatchday = match.matchday;
-      }
-    }
-  }
-  
-  if (!earliestMatchday) {
-    return []; // No upcoming matches
-  }
-  
-  // Get all matches from that matchday
-  const upcoming = [];
-  
-  for (const match of tournament.matches.group_stage) {
-    if (match.matchday !== earliestMatchday) continue;
-    
-    const matchDate = parseISO(match.kickoff_utc);
+    if (match.matchday !== matchday) continue;
     
     // Normalize team names for matching
     const normalizedHome = normalizeTeamName(match.home);
@@ -328,7 +296,7 @@ function getUpcomingMatches(oddsData, tournament, sweepstake) {
       }
     }
     
-    upcoming.push({
+    matches.push({
       matchday: match.matchday,
       group: match.group,
       home_team: match.home,
@@ -339,19 +307,69 @@ function getUpcomingMatches(oddsData, tournament, sweepstake) {
       home_win_prob: homeWinProb,
       draw_prob: drawProb,
       away_win_prob: awayWinProb,
-      venue: match.venue_key
+      venue: match.venue_key,
+      actual_result: oddsMatch?.actual_result || null
     });
   }
   
   // Sort by date, then group
-  upcoming.sort((a, b) => {
+  matches.sort((a, b) => {
     const dateA = new Date(a.commence_time);
     const dateB = new Date(b.commence_time);
     if (dateA.getTime() !== dateB.getTime()) return dateA - dateB;
     return a.group.localeCompare(b.group);
   });
   
-  return upcoming;
+  return matches;
+}
+
+function getAllMatchdays(oddsData, tournament, sweepstake) {
+  // Build owner lookup
+  const ownerLookup = {};
+  for (const participant of sweepstake.participants) {
+    for (const team of participant.teams) {
+      ownerLookup[normalizeTeamName(team)] = participant.name;
+    }
+  }
+  
+  return {
+    matchday1: getMatchesForMatchday(1, oddsData, tournament, ownerLookup),
+    matchday2: getMatchesForMatchday(2, oddsData, tournament, ownerLookup),
+    matchday3: getMatchesForMatchday(3, oddsData, tournament, ownerLookup)
+  };
+}
+
+function getUpcomingMatches(oddsData, tournament, sweepstake) {
+  // For backwards compatibility, returns only the next matchday
+  const now = new Date();
+  
+  // Build owner lookup
+  const ownerLookup = {};
+  for (const participant of sweepstake.participants) {
+    for (const team of participant.teams) {
+      ownerLookup[normalizeTeamName(team)] = participant.name;
+    }
+  }
+  
+  // Find the earliest future matchday
+  let earliestMatchday = null;
+  let earliestDate = null;
+  
+  for (const match of tournament.matches.group_stage) {
+    const matchDate = parseISO(match.kickoff_utc);
+    if (matchDate >= now) {
+      if (!earliestDate || matchDate < earliestDate) {
+        earliestDate = matchDate;
+        earliestMatchday = match.matchday;
+      }
+    }
+  }
+  
+  if (!earliestMatchday) {
+    return []; // No upcoming matches
+  }
+  
+  return getMatchesForMatchday(earliestMatchday, oddsData, tournament, ownerLookup);
 }
 
 function buildTimeline(allOddsFiles, sweepstake) {
@@ -431,10 +449,17 @@ async function main() {
     const teamRankings = getTeamRankings(tournament, teamProbs, sweepstake);
     console.log(`✓ Ranked ${teamRankings.length} teams`);
     
-    // Upcoming matches
+    // Upcoming matches (next matchday only - for backwards compatibility)
     console.log('\nFinding upcoming matches...');
     const upcomingMatches = getUpcomingMatches(oddsData, tournament, sweepstake);
     console.log(`✓ Found ${upcomingMatches.length} matches in next matchday`);
+    
+    // All matchdays (for web site)
+    console.log('\nProcessing all group stage matchdays...');
+    const allMatchdays = getAllMatchdays(oddsData, tournament, sweepstake);
+    console.log(`✓ Matchday 1: ${allMatchdays.matchday1.length} matches`);
+    console.log(`✓ Matchday 2: ${allMatchdays.matchday2.length} matches`);
+    console.log(`✓ Matchday 3: ${allMatchdays.matchday3.length} matches`);
     
     // Build timeline
     console.log('\nBuilding historical timeline...');
@@ -462,6 +487,7 @@ async function main() {
       leaderboard,
       teams: teamRankings,
       upcoming_matches: upcomingMatches,
+      matchdays: allMatchdays,
       timeline,
       stage_probabilities: stageProbabilities,
       bracket: {

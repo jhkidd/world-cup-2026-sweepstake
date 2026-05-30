@@ -12,6 +12,7 @@
     "process": "node src/process-data.js",
     "visualize": "node src/generate-visualizations.js",
     "generate": "npm run fetch && npm run process && npm run visualize",
+    "build-site": "node src/build-site.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
