@@ -48,7 +48,8 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/odds/ data/team_details.json
+          git add data/odds/
+          git add data/team_details.json 2>/dev/null || true
           git diff --staged --quiet || git commit -m "chore: update odds and team data [skip ci]"
           git push
         
