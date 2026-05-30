@@ -1860,8 +1860,6 @@ function route() {
     case 'teams':
       if (param) {
         main.innerHTML = renderTeamDetail(param);
-        // Load player photos after rendering
-        loadPlayerPhotos();
       } else {
         main.innerHTML = renderTeamsList();
       }
@@ -1871,39 +1869,6 @@ function route() {
       break;
     default:
       window.location.hash = '#standings';
-  }
-}
-
-// Fetch player photos from TheSportsDB
-async function loadPlayerPhotos() {
-  const photoElements = document.querySelectorAll('.player-photo[data-player-name]');
-  
-  for (const el of photoElements) {
-    const playerName = el.dataset.playerName;
-    if (!playerName) continue;
-    
-    try {
-      // TheSportsDB free API - search for player
-      const response = await fetch(\`https://www.thesportsdb.com/api/v1/json/3/searchplayers.php?p=\${encodeURIComponent(playerName)}\`);
-      const data = await response.json();
-      
-      if (data.player && data.player.length > 0) {
-        // Find best match (prefer football players)
-        const footballPlayer = data.player.find(p => 
-          p.strSport === 'Soccer' || p.strSport === 'Football'
-        ) || data.player[0];
-        
-        if (footballPlayer.strThumb || footballPlayer.strCutout) {
-          const imgUrl = footballPlayer.strCutout || footballPlayer.strThumb;
-          el.innerHTML = \`<img src="\${imgUrl}" alt="\${playerName}" loading="lazy">\`;
-        }
-      }
-    } catch (error) {
-      // Silently fail - keep initials as fallback
-    }
-    
-    // Small delay to avoid rate limiting
-    await new Promise(resolve => setTimeout(resolve, 100));
   }
 }
 
