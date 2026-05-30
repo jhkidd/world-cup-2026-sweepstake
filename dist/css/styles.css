@@ -728,99 +728,28 @@ tbody tr:hover .owner-name {
 .team-matches {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-}
-
-.team-match {
-  padding: 12px;
-  border-radius: 8px;
-  background: #f8f9fa;
-}
-
-.team-match.result-win {
-  border-left: 4px solid #27AE60;
-}
-
-.team-match.result-loss {
-  border-left: 4px solid #E74C3C;
-}
-
-.team-match.result-draw {
-  border-left: 4px solid #F39C12;
-}
-
-.team-match.upcoming {
-  border-left: 4px solid #3498DB;
-}
-
-.match-date {
-  font-size: 11px;
-  color: #666;
-  margin-bottom: 6px;
-  text-transform: uppercase;
-}
-
-.match-teams {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   gap: 8px;
-  font-size: 14px;
 }
 
-.match-score {
-  font-weight: 700;
-  font-size: 16px;
-}
-
-.match-vs {
-  color: #999;
-}
-
-.match-odds-bar {
-  display: flex;
-  height: 20px;
-  border-radius: 4px;
-  overflow: hidden;
-  margin-top: 8px;
+/* Matchday label for team page matches */
+.matchday-label {
   font-size: 10px;
-  font-weight: 600;
+  color: #999;
+  margin-right: 8px;
+  font-weight: 500;
 }
 
-.odds-home {
-  background: #3498DB;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* Team page uses match-row from Matches page - just ensure proper container styling */
+.team-section .match-row {
+  font-size: 13px;
 }
 
-.odds-draw {
-  background: #95A5A6;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.team-section .match-home {
+  width: 180px;
 }
 
-.odds-away {
-  background: #E3A344;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.match-opponent-link {
-  display: inline-block;
-  margin-top: 8px;
-  font-size: 12px;
-  color: #002D72;
-  text-decoration: none;
-}
-
-.match-opponent-link:hover {
-  text-decoration: underline;
+.team-section .match-away {
+  width: 180px;
 }
 
 /* Squad Table */

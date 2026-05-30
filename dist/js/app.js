@@ -699,53 +699,73 @@ function renderTeamDetail(slug) {
     `;
   }).join('');
   
-  // Render matches using similar style to Matches page
+  // Render matches using same structure as Matches page
   const matchesHtml = teamMatches.map(match => {
+    const homeFlag = getFlag(match.home_team);
+    const awayFlag = getFlag(match.away_team);
     const isHome = match.home_team === team.name;
     const opponent = isHome ? match.away_team : match.home_team;
     const opponentSlug = opponent.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
     
     if (match.actual_result) {
       // Completed match
-      const homeScore = match.actual_result.home;
-      const awayScore = match.actual_result.away;
-      const teamScore = isHome ? homeScore : awayScore;
-      const oppScore = isHome ? awayScore : homeScore;
-      const result = teamScore > oppScore ? 'win' : teamScore < oppScore ? 'loss' : 'draw';
-      const resultClass = result === 'win' ? 'result-win' : result === 'loss' ? 'result-loss' : 'result-draw';
+      const homeScore = match.actual_result.home_score || match.actual_result.home || 0;
+      const awayScore = match.actual_result.away_score || match.actual_result.away || 0;
+      let barClass, resultText;
+      
+      if (homeScore > awayScore) {
+        barClass = 'home-win';
+        resultText = `${match.home_team} won ${homeScore}-${awayScore}`;
+      } else if (awayScore > homeScore) {
+        barClass = 'away-win';
+        resultText = `${match.away_team} won ${awayScore}-${homeScore}`;
+      } else {
+        barClass = 'draw-result';
+        resultText = `Draw ${homeScore}-${awayScore}`;
+      }
       
       return `
-        <div class="team-match ${resultClass}">
-          <div class="match-date">Matchday ${match.matchday}</div>
-          <div class="match-teams">
-            <span>${getFlag(match.home_team)} ${match.home_team}</span>
-            <span class="match-score">${homeScore} - ${awayScore}</span>
-            <span>${match.away_team} ${getFlag(match.away_team)}</span>
+        <div class="match-row completed">
+          <div class="match-home">
+            <span class="matchday-label">MD${match.matchday}</span>
+            <a href="#teams/${match.home_team.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}" class="team-name team-link">${match.home_team}</a>
+            <span class="team-flag">${homeFlag}</span>
           </div>
-          <a href="#teams/${opponentSlug}" class="match-opponent-link">View ${opponent} →</a>
+          <div class="match-bar">
+            <div class="result-bar ${barClass}">
+              <span class="result-text">${resultText}</span>
+            </div>
+          </div>
+          <div class="match-away">
+            <span class="team-flag">${awayFlag}</span>
+            <a href="#teams/${match.away_team.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}" class="team-name team-link">${match.away_team}</a>
+          </div>
         </div>
       `;
     } else {
-      // Upcoming match - show odds
-      const homeProb = Math.round((match.home_win_prob || 0.33) * 100);
-      const drawProb = Math.round((match.draw_prob || 0.33) * 100);
-      const awayProb = Math.round((match.away_win_prob || 0.33) * 100);
-      const teamProb = isHome ? homeProb : awayProb;
+      // Upcoming match - show odds (same as Matches page)
+      const homeWin = ((match.home_win_prob || 0) * 100).toFixed(0);
+      const draw = ((match.draw_prob || 0) * 100).toFixed(0);
+      const awayWin = ((match.away_win_prob || 0) * 100).toFixed(0);
       
       return `
-        <div class="team-match upcoming">
-          <div class="match-date">Matchday ${match.matchday}</div>
-          <div class="match-teams">
-            <span>${getFlag(match.home_team)} ${match.home_team}</span>
-            <span class="match-vs">vs</span>
-            <span>${match.away_team} ${getFlag(match.away_team)}</span>
+        <div class="match-row">
+          <div class="match-home">
+            <span class="matchday-label">MD${match.matchday}</span>
+            <a href="#teams/${match.home_team.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}" class="team-name team-link">${match.home_team}</a>
+            <span class="team-flag">${homeFlag}</span>
           </div>
-          <div class="match-odds-bar">
-            <div class="odds-home" style="width:${homeProb}%">${homeProb}%</div>
-            <div class="odds-draw" style="width:${drawProb}%">${drawProb}%</div>
-            <div class="odds-away" style="width:${awayProb}%">${awayProb}%</div>
+          <div class="match-bar">
+            <div class="split-bar">
+              <div class="home" style="width:${homeWin}%">${homeWin > 12 ? homeWin + '%' : ''}</div>
+              <div class="draw" style="width:${draw}%">${draw > 12 ? draw + '%' : ''}</div>
+              <div class="away" style="width:${awayWin}%">${awayWin > 12 ? awayWin + '%' : ''}</div>
+            </div>
           </div>
-          <a href="#teams/${opponentSlug}" class="match-opponent-link">View ${opponent} →</a>
+          <div class="match-away">
+            <span class="team-flag">${awayFlag}</span>
+            <a href="#teams/${match.away_team.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}" class="team-name team-link">${match.away_team}</a>
+          </div>
         </div>
       `;
     }
