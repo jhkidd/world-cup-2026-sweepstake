@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { writeFileSync } from 'fs';
+import { writeFileSync, mkdirSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
@@ -114,7 +114,11 @@ async function main() {
       .replace(/\..+/, '')
       .replace('T', '_');
     const filename = `${timestamp}.json`;
-    const filepath = join(projectRoot, 'data', 'odds', filename);
+    const oddsDir = join(projectRoot, 'data', 'odds');
+    const filepath = join(oddsDir, filename);
+    
+    // Ensure directory exists
+    mkdirSync(oddsDir, { recursive: true });
     
     writeFileSync(filepath, JSON.stringify(data, null, 2));
     console.log(`✅ Data saved to: data/odds/${filename}`);
