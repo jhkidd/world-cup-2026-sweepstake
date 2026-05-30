@@ -772,27 +772,71 @@ function renderTeamDetail(slug) {
   }).join('');
   
   // Squad section (placeholder until we have API data)
+  // Helper to calculate age from DOB
+  const calculateAge = (dob) => {
+    if (!dob) return '-';
+    const birthDate = new Date(dob);
+    const today = new Date();
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const monthDiff = today.getMonth() - birthDate.getMonth();
+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+      age--;
+    }
+    return age;
+  };
+
+  // Nationality to flag emoji mapping
+  const nationalityFlags = {
+    'Spain': '🇪🇸', 'Germany': '🇩🇪', 'France': '🇫🇷', 'England': '🏴󠁧󠁢󠁥󠁮󠁧󠁿', 'Italy': '🇮🇹',
+    'Brazil': '🇧🇷', 'Argentina': '🇦🇷', 'Portugal': '🇵🇹', 'Netherlands': '🇳🇱', 'Belgium': '🇧🇪',
+    'Croatia': '🇭🇷', 'Uruguay': '🇺🇾', 'Colombia': '🇨🇴', 'Mexico': '🇲🇽', 'USA': '🇺🇸',
+    'Japan': '🇯🇵', 'South Korea': '🇰🇷', 'Australia': '🇦🇺', 'Morocco': '🇲🇦', 'Senegal': '🇸🇳',
+    'Ghana': '🇬🇭', 'Cameroon': '🇨🇲', 'Nigeria': '🇳🇬', 'Egypt': '🇪🇬', 'Tunisia': '🇹🇳',
+    'Algeria': '🇩🇿', 'Poland': '🇵🇱', 'Denmark': '🇩🇰', 'Sweden': '🇸🇪', 'Norway': '🇳🇴',
+    'Switzerland': '🇨🇭', 'Austria': '🇦🇹', 'Wales': '🏴󠁧󠁢󠁷󠁬󠁳󠁿', 'Scotland': '🏴󠁧󠁢󠁳󠁣󠁴󠁿',
+    'Ireland': '🇮🇪', 'Serbia': '🇷🇸', 'Czech Republic': '🇨🇿', 'Czechia': '🇨🇿', 'Turkey': '🇹🇷',
+    'Greece': '🇬🇷', 'Russia': '🇷🇺', 'Ukraine': '🇺🇦', 'Romania': '🇷🇴', 'Hungary': '🇭🇺',
+    'Slovakia': '🇸🇰', 'Slovenia': '🇸🇮', 'Bosnia and Herzegovina': '🇧🇦', 'Montenegro': '🇲🇪',
+    'North Macedonia': '🇲🇰', 'Albania': '🇦🇱', 'Kosovo': '🇽🇰', 'Finland': '🇫🇮', 'Iceland': '🇮🇸',
+    'Canada': '🇨🇦', 'Chile': '🇨🇱', 'Peru': '🇵🇪', 'Ecuador': '🇪🇨', 'Venezuela': '🇻🇪',
+    'Paraguay': '🇵🇾', 'Bolivia': '🇧🇴', 'Costa Rica': '🇨🇷', 'Panama': '🇵🇦', 'Honduras': '🇭🇳',
+    'Jamaica': '🇯🇲', 'Haiti': '🇭🇹', 'Trinidad and Tobago': '🇹🇹', 'Curaçao': '🇨🇼',
+    'Iran': '🇮🇷', 'Saudi Arabia': '🇸🇦', 'Qatar': '🇶🇦', 'Iraq': '🇮🇶', 'Jordan': '🇯🇴',
+    'United Arab Emirates': '🇦🇪', 'Uzbekistan': '🇺🇿', 'China': '🇨🇳', 'Thailand': '🇹🇭',
+    'Vietnam': '🇻🇳', 'Indonesia': '🇮🇩', 'Malaysia': '🇲🇾', 'New Zealand': '🇳🇿',
+    'South Africa': '🇿🇦', 'DR Congo': '🇨🇩', 'Ivory Coast': '🇨🇮', 'Mali': '🇲🇱',
+    'Burkina Faso': '🇧🇫', 'Guinea': '🇬🇳', 'Cape Verde': '🇨🇻', 'Gabon': '🇬🇦',
+    'Congo': '🇨🇬', 'Angola': '🇦🇴', 'Zambia': '🇿🇲', 'Zimbabwe': '🇿🇼'
+  };
+  const getNationalityFlag = (nat) => nationalityFlags[nat] || '🌍';
+
   const squadHtml = details.squad && details.squad.length > 0 ? `
-    <div class="team-section">
+    <div class="team-section squad-section">
       <h3 class="section-header">Squad</h3>
       <table class="squad-table">
         <thead>
           <tr>
+            <th class="photo-col"></th>
             <th>#</th>
             <th>Player</th>
             <th>Position</th>
-            <th class="center">Goals</th>
-            <th class="center">Assists</th>
+            <th class="center">Age</th>
+            <th class="center">Nat.</th>
           </tr>
         </thead>
         <tbody>
           ${details.squad.map(player => `
             <tr>
-              <td>${player.shirt_number || '-'}</td>
-              <td>${player.name}</td>
-              <td>${player.position || '-'}</td>
-              <td class="center">${player.goals || 0}</td>
-              <td class="center">${player.assists || 0}</td>
+              <td class="player-photo-cell">
+                <div class="player-photo" data-player-name="${player.name}">
+                  <span class="player-initials">${player.name.split(' ').map(n => n[0]).join('').slice(0,2)}</span>
+                </div>
+              </td>
+              <td class="num-col">${player.shirt_number || '-'}</td>
+              <td class="player-name-cell">${player.name}</td>
+              <td class="position-cell">${player.position || '-'}</td>
+              <td class="center">${calculateAge(player.date_of_birth)}</td>
+              <td class="center" title="${player.nationality || ''}">${getNationalityFlag(player.nationality)}</td>
             </tr>
           `).join('')}
         </tbody>
@@ -916,6 +960,8 @@ function route() {
     case 'teams':
       if (param) {
         main.innerHTML = renderTeamDetail(param);
+        // Load player photos after rendering
+        loadPlayerPhotos();
       } else {
         main.innerHTML = renderTeamsList();
       }
@@ -925,6 +971,39 @@ function route() {
       break;
     default:
       window.location.hash = '#standings';
+  }
+}
+
+// Fetch player photos from TheSportsDB
+async function loadPlayerPhotos() {
+  const photoElements = document.querySelectorAll('.player-photo[data-player-name]');
+  
+  for (const el of photoElements) {
+    const playerName = el.dataset.playerName;
+    if (!playerName) continue;
+    
+    try {
+      // TheSportsDB free API - search for player
+      const response = await fetch(`https://www.thesportsdb.com/api/v1/json/3/searchplayers.php?p=${encodeURIComponent(playerName)}`);
+      const data = await response.json();
+      
+      if (data.player && data.player.length > 0) {
+        // Find best match (prefer football players)
+        const footballPlayer = data.player.find(p => 
+          p.strSport === 'Soccer' || p.strSport === 'Football'
+        ) || data.player[0];
+        
+        if (footballPlayer.strThumb || footballPlayer.strCutout) {
+          const imgUrl = footballPlayer.strCutout || footballPlayer.strThumb;
+          el.innerHTML = `<img src="${imgUrl}" alt="${playerName}" loading="lazy">`;
+        }
+      }
+    } catch (error) {
+      // Silently fail - keep initials as fallback
+    }
+    
+    // Small delay to avoid rate limiting
+    await new Promise(resolve => setTimeout(resolve, 100));
   }
 }
 
