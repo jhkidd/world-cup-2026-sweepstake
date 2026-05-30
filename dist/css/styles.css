@@ -186,6 +186,22 @@ tr.section-break td {
   padding: 10px 6px;
 }
 
+/* Knockout stage columns - equal width */
+.ko-col {
+  width: 80px;
+  min-width: 80px;
+}
+
+/* Win Cup column - subtle distinction */
+.win-cup {
+  border-left: 2px solid #ccc;
+}
+
+/* Win Cup cells in body */
+tbody td:last-child {
+  border-left: 2px solid #ccc;
+}
+
 /* Profile pictures */
 .profile-pic {
   width: 24px;

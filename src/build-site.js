@@ -231,6 +231,22 @@ tr.section-break td {
   padding: 10px 6px;
 }
 
+/* Knockout stage columns - equal width */
+.ko-col {
+  width: 80px;
+  min-width: 80px;
+}
+
+/* Win Cup column - subtle distinction */
+.win-cup {
+  border-left: 2px solid #ccc;
+}
+
+/* Win Cup cells in body */
+tbody td:last-child {
+  border-left: 2px solid #ccc;
+}
+
 /* Profile pictures */
 .profile-pic {
   width: 24px;
@@ -631,10 +647,46 @@ function renderStandings() {
     ownerLookup[p.team2.name] = p.name;
   });
 
+  // Calculate group stage points from completed matches
+  const teamPoints = {};
+  const teamGames = {};
+  
+  ['matchday1', 'matchday2', 'matchday3'].forEach(md => {
+    const matches = data.matchdays[md] || [];
+    matches.forEach(match => {
+      if (match.actual_result) {
+        const homeTeam = match.home_team;
+        const awayTeam = match.away_team;
+        const homeScore = match.actual_result.home_score;
+        const awayScore = match.actual_result.away_score;
+        
+        // Initialize if needed
+        if (!teamPoints[homeTeam]) { teamPoints[homeTeam] = 0; teamGames[homeTeam] = 0; }
+        if (!teamPoints[awayTeam]) { teamPoints[awayTeam] = 0; teamGames[awayTeam] = 0; }
+        
+        // Count game
+        teamGames[homeTeam]++;
+        teamGames[awayTeam]++;
+        
+        // Award points
+        if (homeScore > awayScore) {
+          teamPoints[homeTeam] += 3;
+        } else if (awayScore > homeScore) {
+          teamPoints[awayTeam] += 3;
+        } else {
+          teamPoints[homeTeam] += 1;
+          teamPoints[awayTeam] += 1;
+        }
+      }
+    });
+  });
+
   const teams = data.teams.map(team => ({
     ...team,
     probs: data.stage_probabilities[team.name] || {},
-    owner: ownerLookup[team.name]
+    owner: ownerLookup[team.name],
+    points: teamPoints[team.name] || 0,
+    gamesPlayed: teamGames[team.name] || 0
   })).sort((a, b) => (b.probs.win_tournament || 0) - (a.probs.win_tournament || 0));
 
   const rows = teams.map((team, i) => {
@@ -654,8 +706,12 @@ function renderStandings() {
       return \`<td class="prob-cell" style="background:\${bgColor};color:\${textColor}">\${pct}%</td>\`;
     };
 
+    const maxPts = team.gamesPlayed * 3;
+    const ptsDisplay = \`\${team.points} / \${maxPts}\`;
+
     return \`<tr class="\${topClass} \${sectionBreak}">
       <td class="team-name"><span class="team-flag">\${flag}</span> \${team.name}\${profilePic}\${team.owner ? \`<span class="owner-name">\${team.owner}</span>\` : ''}</td>
+      <td class="pts-cell" style="text-align:center;color:#7F8C8D;font-size:12px">\${ptsDisplay}</td>
       <td style="text-align:center;color:#7F8C8D">\${team.group}</td>
       \${renderCell(probs.group_first, true)}
       \${renderCell(probs.group_second, true)}
@@ -678,6 +734,7 @@ function renderStandings() {
         <thead>
           <tr class="header-group">
             <th rowspan="2">Team</th>
+            <th rowspan="2" class="center">Pts</th>
             <th rowspan="2" class="center">Group</th>
             <th colspan="2" class="center">Group Stage Finish</th>
             <th colspan="5" class="center">Knockout Stage Chances</th>
@@ -685,11 +742,11 @@ function renderStandings() {
           <tr class="header-cols">
             <th class="center">1st Place</th>
             <th class="center">2nd Place</th>
-            <th class="center">Make R16</th>
-            <th class="center">Make Quarters</th>
-            <th class="center">Make Semis</th>
-            <th class="center">Make Final</th>
-            <th class="center">Win Cup</th>
+            <th class="center ko-col">Make R16</th>
+            <th class="center ko-col">Make Quarters</th>
+            <th class="center ko-col">Make Semis</th>
+            <th class="center ko-col">Make Final</th>
+            <th class="center ko-col win-cup">Win Cup</th>
           </tr>
         </thead>
         <tbody>\${rows}</tbody>
