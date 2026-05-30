@@ -38,12 +38,18 @@ jobs:
         env:
           THE_ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
 
-      - name: Commit new odds data
+      - name: Fetch team details
+        run: npm run fetch-teams
+        env:
+          FOOTBALL_DATA_API_KEY: ${{ secrets.FOOTBALL_DATA_API_KEY }}
+        continue-on-error: true
+
+      - name: Commit new data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/odds/
-          git diff --staged --quiet || git commit -m "chore: update odds data [skip ci]"
+          git add data/odds/ data/team_details.json
+          git diff --staged --quiet || git commit -m "chore: update odds and team data [skip ci]"
           git push
         
       - name: Process data

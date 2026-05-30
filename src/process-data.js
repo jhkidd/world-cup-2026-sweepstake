@@ -409,6 +409,16 @@ async function main() {
     const sweepstake = loadJSON(join(projectRoot, 'data', 'sweepstake.json'));
     const tournament = loadJSON(join(projectRoot, 'data', 'tournament.json'));
     
+    // Load team details if available (optional - from fetch-team-data.js)
+    let teamDetails = {};
+    const teamDetailsPath = join(projectRoot, 'data', 'team_details.json');
+    try {
+      teamDetails = loadJSON(teamDetailsPath);
+      console.log(`✓ Loaded team details for ${Object.keys(teamDetails).length} teams`);
+    } catch (e) {
+      console.log('ℹ No team details found (run npm run fetch-teams to fetch)');
+    }
+    
     const latestOddsFile = getLatestOddsFile();
     console.log(`Using latest odds: ${latestOddsFile.split(/[/\\]/).pop()}`);
     const oddsData = loadJSON(latestOddsFile);
@@ -490,6 +500,7 @@ async function main() {
       matchdays: allMatchdays,
       timeline,
       stage_probabilities: stageProbabilities,
+      team_details: teamDetails,
       bracket: {
         // TODO: Implement bracket data structure
         note: 'Bracket visualization to be implemented'
