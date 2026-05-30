@@ -952,6 +952,10 @@ const flagEmojis = {
   'Cape Verde': '🇨🇻'
 };
 
+function getFlag(teamName) {
+  return flagEmojis[teamName] || '🏴';
+}
+
 // Profile picture colors for initials fallback
 const profileColors = ['#3498DB', '#E74C3C', '#9B59B6', '#F39C12', '#1ABC9C', 
                        '#E67E22', '#2ECC71', '#34495E', '#16A085', '#C0392B',
