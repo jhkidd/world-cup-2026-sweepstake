@@ -232,10 +232,16 @@ tr.section-break td {
   padding: 10px 6px;
 }
 
+/* Group stage finish columns */
+.gs-col {
+  width: 100px;
+  min-width: 100px;
+}
+
 /* Knockout stage columns - equal width */
 .ko-col {
-  width: 90px;
-  min-width: 90px;
+  width: 115px;
+  min-width: 115px;
 }
 
 /* Win Cup column - subtle distinction */
@@ -743,8 +749,8 @@ function renderStandings() {
             <th colspan="5" class="center">Knockout Stage Chances</th>
           </tr>
           <tr class="header-cols">
-            <th class="center">1st Place</th>
-            <th class="center">2nd Place</th>
+            <th class="center gs-col">1st Place</th>
+            <th class="center gs-col">2nd Place</th>
             <th class="center ko-col">Make R16</th>
             <th class="center ko-col">Make Quarters</th>
             <th class="center ko-col">Make Semis</th>
