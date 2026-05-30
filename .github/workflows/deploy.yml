@@ -51,6 +51,7 @@ jobs:
           git add data/odds/
           git add data/team_details.json 2>/dev/null || true
           git diff --staged --quiet || git commit -m "chore: update odds and team data [skip ci]"
+          git pull --rebase origin master
           git push
         
       - name: Process data
