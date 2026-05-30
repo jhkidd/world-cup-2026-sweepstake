@@ -268,15 +268,10 @@ async function main() {
     }
   }
   
-  // Save combined output
-  const output = {
-    fetched_at: new Date().toISOString(),
-    standings: standings,
-    teams: teamDetails
-  };
-  
-  const outputPath = join(teamsDir, 'team-data.json');
-  writeFileSync(outputPath, JSON.stringify(output, null, 2));
+  // Save team details to data/team_details.json (format expected by process-data.js)
+  // The file is keyed by team name for easy lookup
+  const outputPath = join(projectRoot, 'data', 'team_details.json');
+  writeFileSync(outputPath, JSON.stringify(teamDetails, null, 2));
   console.log(`\n✅ Saved team data to ${outputPath}`);
   
   // Summary
