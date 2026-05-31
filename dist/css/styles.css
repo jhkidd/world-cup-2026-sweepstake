@@ -601,10 +601,23 @@ tbody tr:hover .owner-name {
   font-family: "Noto Color Emoji", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
 }
 
+.team-hero-badge {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+
 .team-hero-name {
   font-size: 28px;
   font-weight: 700;
   margin: 0;
+}
+
+.team-hero-nickname {
+  font-size: 15px;
+  font-style: italic;
+  opacity: 0.85;
+  margin-top: 2px;
 }
 
 .team-hero-meta {
@@ -634,6 +647,13 @@ tbody tr:hover .owner-name {
   text-transform: uppercase;
 }
 
+.team-hero-kit {
+  width: 80px;
+  height: auto;
+  margin-left: auto;
+  margin-right: 24px;
+}
+
 .team-hero-owner {
   display: flex;
   flex-direction: column;
@@ -651,6 +671,46 @@ tbody tr:hover .owner-name {
   opacity: 1;
   margin-left: 0;
   color: white;
+}
+
+/* About section */
+.team-about {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 24px;
+  line-height: 1.6;
+  color: #333;
+  font-size: 14px;
+}
+
+.team-about-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #002D72;
+}
+
+.team-about-text {
+  max-height: 150px;
+  overflow: hidden;
+  position: relative;
+}
+
+.team-about-text.expanded {
+  max-height: none;
+}
+
+.team-about-toggle {
+  color: #002D72;
+  cursor: pointer;
+  font-weight: 500;
+  margin-top: 8px;
+  display: inline-block;
+}
+
+.team-about-toggle:hover {
+  text-decoration: underline;
 }
 
 /* Team Content Grid */

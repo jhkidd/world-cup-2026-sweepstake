@@ -58,6 +58,36 @@ if (existsSync(playerPhotosDir)) {
   console.log('✓ No player photos yet (run npm run fetch-photos)');
 }
 
+// Copy team badges and kits
+console.log('\nCopying team badges and kits...');
+let teamMetadata = {};
+const badgesDir = join(projectRoot, 'data', 'team_badges');
+const kitsDir = join(projectRoot, 'data', 'team_kits');
+const metadataPath = join(projectRoot, 'data', 'team_metadata.json');
+
+if (existsSync(badgesDir)) {
+  mkdirSync(join(distDir, 'team_badges'), { recursive: true });
+  const badges = readdirSync(badgesDir).filter(f => f.endsWith('.png'));
+  for (const badge of badges) {
+    cpSync(join(badgesDir, badge), join(distDir, 'team_badges', badge));
+  }
+  console.log(`✓ Copied ${badges.length} team badges`);
+}
+
+if (existsSync(kitsDir)) {
+  mkdirSync(join(distDir, 'team_kits'), { recursive: true });
+  const kits = readdirSync(kitsDir).filter(f => f.endsWith('.png'));
+  for (const kit of kits) {
+    cpSync(join(kitsDir, kit), join(distDir, 'team_kits', kit));
+  }
+  console.log(`✓ Copied ${kits.length} team kits`);
+}
+
+if (existsSync(metadataPath)) {
+  teamMetadata = JSON.parse(readFileSync(metadataPath, 'utf8'));
+  console.log(`✓ Loaded metadata for ${Object.keys(teamMetadata).length} teams`);
+}
+
 // Copy logo
 console.log('\nCopying logo...');
 cpSync(join(projectRoot, 'INRIX_Logo.webp'), join(distDir, 'INRIX_Logo.webp'));
@@ -668,10 +698,23 @@ tbody tr:hover .owner-name {
   font-family: "Noto Color Emoji", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
 }
 
+.team-hero-badge {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+
 .team-hero-name {
   font-size: 28px;
   font-weight: 700;
   margin: 0;
+}
+
+.team-hero-nickname {
+  font-size: 15px;
+  font-style: italic;
+  opacity: 0.85;
+  margin-top: 2px;
 }
 
 .team-hero-meta {
@@ -701,6 +744,13 @@ tbody tr:hover .owner-name {
   text-transform: uppercase;
 }
 
+.team-hero-kit {
+  width: 80px;
+  height: auto;
+  margin-left: auto;
+  margin-right: 24px;
+}
+
 .team-hero-owner {
   display: flex;
   flex-direction: column;
@@ -718,6 +768,46 @@ tbody tr:hover .owner-name {
   opacity: 1;
   margin-left: 0;
   color: white;
+}
+
+/* About section */
+.team-about {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 24px;
+  line-height: 1.6;
+  color: #333;
+  font-size: 14px;
+}
+
+.team-about-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #002D72;
+}
+
+.team-about-text {
+  max-height: 150px;
+  overflow: hidden;
+  position: relative;
+}
+
+.team-about-text.expanded {
+  max-height: none;
+}
+
+.team-about-toggle {
+  color: #002D72;
+  cursor: pointer;
+  font-weight: 500;
+  margin-top: 8px;
+  display: inline-block;
+}
+
+.team-about-toggle:hover {
+  text-decoration: underline;
 }
 
 /* Team Content Grid */
@@ -927,6 +1017,9 @@ let data = null;
 // Player photo mapping (built at build time)
 const playerPhotoMapping = ${JSON.stringify(playerPhotoMapping)};
 
+// Team metadata (built at build time)
+const teamMetadata = ${JSON.stringify(teamMetadata)};
+
 // Flag emojis
 const flagEmojis = {
   'Argentina': '🇦🇷', 'Australia': '🇦🇺', 'Austria': '🇦🇹', 'Algeria': '🇩🇿',
@@ -967,6 +1060,18 @@ function getColorForName(name) {
 
 function getInitials(name) {
   return name.split(' ').map(n => n[0]).join('').toUpperCase().slice(0, 2);
+}
+
+function toggleAbout() {
+  const text = document.getElementById('about-text');
+  const toggle = document.querySelector('.team-about-toggle');
+  if (text.classList.contains('expanded')) {
+    text.classList.remove('expanded');
+    toggle.textContent = 'Read more';
+  } else {
+    text.classList.add('expanded');
+    toggle.textContent = 'Read less';
+  }
 }
 
 function getFirstName(name) {
@@ -1782,15 +1887,35 @@ function renderTeamDetail(slug) {
   // Use Monte Carlo win_tournament probability (same as standings page)
   const winProbPct = ((stageProbs.win_tournament || 0) * 100).toFixed(1);
   
+  // Get team metadata
+  const meta = teamMetadata[team.name] || {};
+  const badgeHtml = meta.badge 
+    ? \`<img src="team_badges/\${meta.badge}" alt="\${team.name}" class="team-hero-badge">\`
+    : \`<span class="team-hero-flag">\${getFlag(team.name)}</span>\`;
+  const nicknameHtml = meta.nickname 
+    ? \`<div class="team-hero-nickname">"\${meta.nickname}"</div>\`
+    : '';
+  const kitHtml = meta.kit
+    ? \`<img src="team_kits/\${meta.kit}" alt="\${team.name} kit" class="team-hero-kit">\`
+    : '';
+  const aboutHtml = meta.description
+    ? \`<div class="team-about">
+        <div class="team-about-title">About \${team.name}</div>
+        <div class="team-about-text" id="about-text">\${meta.description}</div>
+        <span class="team-about-toggle" onclick="toggleAbout()">Read more</span>
+      </div>\`
+    : '';
+  
   return \`
     <div class="team-detail-container">
       <a href="#teams" class="back-link">← All Teams</a>
       
       <div class="team-hero">
         <div class="team-hero-main">
-          <span class="team-hero-flag">\${getFlag(team.name)}</span>
+          \${badgeHtml}
           <div class="team-hero-info">
             <h1 class="team-hero-name">\${team.name}</h1>
+            \${nicknameHtml}
             <div class="team-hero-meta">Group \${team.group} • \${team.confederation}</div>
           </div>
           <div class="team-hero-stats">
@@ -1800,6 +1925,7 @@ function renderTeamDetail(slug) {
             </div>
           </div>
         </div>
+        \${kitHtml}
         <div class="team-hero-owner">
           \${team.owner ? \`
             <span class="owner-label">Owned by</span>
@@ -1810,6 +1936,7 @@ function renderTeamDetail(slug) {
         </div>
       </div>
       
+      \${aboutHtml}
       <div class="team-content-grid">
         <div class="team-section">
           <h3 class="section-header">Group \${team.group} Standings</h3>
