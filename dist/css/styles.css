@@ -891,6 +891,15 @@ tbody tr:hover .owner-name {
   font-size: 12px;
 }
 
+.birthplace-cell {
+  color: #666;
+  font-size: 12px;
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 /* Player bio expandable rows */
 .player-row.has-bio {
   cursor: pointer;

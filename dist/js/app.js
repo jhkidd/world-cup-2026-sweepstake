@@ -849,6 +849,9 @@ function renderTeamDetail(slug) {
             <th>Position</th>
             <th>Club</th>
             <th class="center">Height</th>
+            <th class="center">Weight</th>
+            <th class="center">Foot</th>
+            <th>Birthplace</th>
             <th class="center">Age</th>
           </tr>
         </thead>
@@ -861,6 +864,7 @@ function renderTeamDetail(slug) {
               : `<span class="player-initials">${player.name.split(' ').map(n => n[0]).join('').slice(0,2)}</span>`;
             const hasBio = stats.bio && stats.bio.length > 0;
             const playerId = `player-${idx}`;
+            const foot = stats.preferredFoot ? stats.preferredFoot.charAt(0).toUpperCase() : '-';
             return `
             <tr class="player-row${hasBio ? ' has-bio' : ''}" ${hasBio ? `onclick="togglePlayerBio('${playerId}')"` : ''}>
               <td class="player-photo-cell">
@@ -875,10 +879,13 @@ function renderTeamDetail(slug) {
               <td class="position-cell">${player.position || '-'}</td>
               <td class="club-cell">${stats.club || '-'}</td>
               <td class="center">${stats.height ? stats.height.split(' ')[0] : '-'}</td>
+              <td class="center">${stats.weight ? stats.weight.replace(' lbs', '').replace(' kg', '') : '-'}</td>
+              <td class="center">${foot}</td>
+              <td class="birthplace-cell">${stats.birthLocation || '-'}</td>
               <td class="center">${calculateAge(player.date_of_birth)}</td>
             </tr>
             ${hasBio ? `<tr class="player-bio-row" id="${playerId}">
-              <td colspan="6">
+              <td colspan="9">
                 <div class="player-bio-content">
                   <p>${stats.bio.replace(/\r\n/g, '</p><p>')}</p>
                 </div>
