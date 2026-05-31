@@ -1,0 +1,189 @@
+Missing players (111 of 1219):
+
+Algeria (3):
+  - Melvin Mastil (DOB: undefined)
+  - Kilian Belazzoug (DOB: undefined)
+  - Zin├®dine Bela├»d (DOB: undefined)
+
+Australia (2):
+  - Maty Ryan (DOB: undefined)
+  - Patrick Yazbek (DOB: undefined)
+
+Austria (1):
+  - Philipp Mwene (DOB: undefined)
+
+Belgium (1):
+  - Timothy Castagne (DOB: undefined)
+
+Brazil (4):
+  - Rayan (DOB: undefined)
+  - Danilo dos Santos de Oliveira (DOB: undefined)
+  - Thiago (DOB: undefined)
+  - Martinelli (DOB: undefined)
+
+Canada (4):
+  - Maxime Cr├®peau (DOB: undefined)
+  - Jonathan Osorio (DOB: undefined)
+  - Aribim Pepple (DOB: undefined)
+  - Jonathan David (DOB: undefined)
+
+Colombia (1):
+  - Luis Su├írez (DOB: undefined)
+
+Cura├ºao (3):
+  - Tyrick Bodak (DOB: undefined)
+  - Sontje Hansen (DOB: undefined)
+  - Sheral Floranus (DOB: undefined)
+
+DR Congo (1):
+  - Edo Kayembe (DOB: undefined)
+
+Ecuador (6):
+  - David Cabezas (DOB: undefined)
+  - Gonzalo Valle (DOB: undefined)
+  - Bryan Ram├¡rez (DOB: undefined)
+  - Jeremy (DOB: undefined)
+  - Elias Legendre Qui├▒onez (DOB: undefined)
+  - William Pacho (DOB: undefined)
+
+Egypt (4):
+  - Oufa Shobeir (DOB: undefined)
+  - Trezeguet (DOB: undefined)
+  - Mohanad Lashin (DOB: undefined)
+  - Marwan Attia (DOB: undefined)
+
+England (1):
+  - Reece James (DOB: undefined)
+
+Ghana (3):
+  - Jonas Adjei Adjetey (DOB: undefined)
+  - Christopher Bonsu Baah (DOB: undefined)
+  - Kamal Deen Sulemana (DOB: undefined)
+
+Haiti (1):
+  - Jean-Kevin Duverne (DOB: undefined)
+
+Iran (2):
+  - Saleh Hardani (DOB: undefined)
+  - Ariya Yousefi (DOB: undefined)
+
+Iraq (11):
+  - Kumel Al Rekabe (DOB: undefined)
+  - Frans Dhia Putros (DOB: undefined)
+  - Maytham Jabbar (DOB: undefined)
+  - Rebin Sulaka (DOB: undefined)
+  - Manaf Younis (DOB: undefined)
+  - Ahmed Maknazi (DOB: undefined)
+  - Zaid Ismail (DOB: undefined)
+  - Karar Nabeel (DOB: undefined)
+  - Hasan Abdulkareem (DOB: undefined)
+  - Akam Hashem (DOB: undefined)
+  - Ali Jassim El-Aibi (DOB: undefined)
+
+Ivory Coast (1):
+  - Evan N'Dicka (DOB: undefined)
+
+Japan (1):
+  - Hiroki Ito (DOB: undefined)
+
+Jordan (3):
+  - Yazeed Abulaila (DOB: undefined)
+  - Abdallah Naseeb (DOB: undefined)
+  - Yousef Qashi (DOB: undefined)
+
+Morocco (1):
+  - Yassine Bounou (DOB: undefined)
+
+Netherlands (2):
+  - Mickey van de Ven (DOB: undefined)
+  - Tijjani Reijnders (DOB: undefined)
+
+Panama (2):
+  - Edgardo Fari├▒a (DOB: undefined)
+  - Christian Martinez (DOB: undefined)
+
+Paraguay (4):
+  - Roberto Fern├índez (DOB: undefined)
+  - Nicol├ís Fern├índez (DOB: undefined)
+  - Mauricio (DOB: undefined)
+  - Mat├¡as Galarza (DOB: undefined)
+
+Portugal (1):
+  - Jos├® S├í (DOB: undefined)
+
+Qatar (9):
+  - Mahmoud Abunada (DOB: undefined)
+  - Shehab Mamdouh Ellethy (DOB: undefined)
+  - Jassem Gaber Abdulsallam (DOB: undefined)
+  - Al Hashmi Al Hussain (DOB: undefined)
+  - Yousef Ayman (DOB: undefined)
+  - Ahmed Fathy (DOB: undefined)
+  - Mohamed Khaled Gouda (DOB: undefined)
+  - Khalid Ali Sabah (DOB: undefined)
+  - Edm├¡lson (DOB: undefined)
+
+Saudi Arabia (5):
+  - Muteb Al Mufarrij (DOB: undefined)
+  - Hassan Kadesh (DOB: undefined)
+  - Rayane Hamed (DOB: undefined)
+  - Khalid Al Ghannam (DOB: undefined)
+  - Abdullah Al-Hamdan (DOB: undefined)
+
+Scotland (4):
+  - Liam Kelly (DOB: undefined)
+  - Ross Stewart (DOB: undefined)
+  - Lewis Ferguson (DOB: undefined)
+  - Ryan Christie (DOB: undefined)
+
+Senegal (4):
+  - El Hadji Malick Diouf (DOB: undefined)
+  - Ibrahim M'Baye (DOB: undefined)
+  - Iliman Ndiaye (DOB: undefined)
+  - Idrissa Gana Gu├¿ye (DOB: undefined)
+
+South Africa (2):
+  - Samukelo Kabini (DOB: undefined)
+  - Thapelo Maseko (DOB: undefined)
+
+South Korea (2):
+  - Joon-ho Bae (DOB: undefined)
+  - Hwang Heechan (DOB: undefined)
+
+Spain (4):
+  - V├¡ctor Mu├▒oz (DOB: undefined)
+  - Rodri (DOB: undefined)
+  - Yeremi Pino (DOB: undefined)
+  - Pedri (DOB: undefined)
+
+Sweden (1):
+  - Emil Holm (DOB: undefined)
+
+Switzerland (1):
+  - Ardon Jasari (DOB: undefined)
+
+Tunisia (1):
+  - Yassine Chikhaoui (DOB: undefined)
+
+T├╝rkiye (2):
+  - Samet Akayd─▒n (DOB: undefined)
+  - Evren Eren Elmal─▒ (DOB: undefined)
+
+USA (3):
+  - Sebastian Berhalter (DOB: undefined)
+  - Patrick Agyemang (DOB: undefined)
+  - Johnny (DOB: undefined)
+
+Uruguay (2):
+  - Facundo Torres P├®rez (DOB: undefined)
+  - Juan Sanabria (DOB: undefined)
+
+Uzbekistan (8):
+  - Jakhongir O'rozov (DOB: undefined)
+  - Khodjiakbar Alijonov (DOB: undefined)
+  - Dostonbek Xamdamov (DOB: undefined)
+  - Jamshid Iskanderov (DOB: undefined)
+  - Akmal Mozgovoy (DOB: undefined)
+  - Azizjon Ganiev (DOB: undefined)
+  - Odiljon Hamrobekov (DOB: undefined)
+  - Ibrokhim Ibrokhimov (DOB: undefined)
+
