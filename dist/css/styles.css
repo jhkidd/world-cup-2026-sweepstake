@@ -886,6 +886,59 @@ tbody tr:hover .owner-name {
   color: #666;
 }
 
+.club-cell {
+  color: #666;
+  font-size: 12px;
+}
+
+/* Player bio expandable rows */
+.player-row.has-bio {
+  cursor: pointer;
+}
+
+.player-row.has-bio:hover {
+  background: #f0f7ff;
+}
+
+.bio-indicator {
+  margin-left: 6px;
+  font-size: 11px;
+  opacity: 0.6;
+}
+
+.player-bio-row {
+  display: none;
+}
+
+.player-bio-row.expanded {
+  display: table-row;
+}
+
+.player-bio-row td {
+  padding: 0 !important;
+  background: #f8f9fa;
+  border-top: none !important;
+}
+
+.player-bio-content {
+  padding: 16px 20px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #444;
+  border-left: 3px solid #2ecc71;
+  margin: 8px 12px;
+  background: white;
+  border-radius: 4px;
+}
+
+.player-bio-content p {
+  margin: 0 0 12px 0;
+}
+
+.player-bio-content p:last-child {
+  margin-bottom: 0;
+}
+
 .placeholder-text {
   color: #999;
   font-style: italic;

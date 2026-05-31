@@ -58,6 +58,14 @@ if (existsSync(playerPhotosDir)) {
   console.log('✓ No player photos yet (run npm run fetch-photos)');
 }
 
+// Load player stats
+let playerStats = {};
+const playerStatsPath = join(projectRoot, 'data', 'player_stats.json');
+if (existsSync(playerStatsPath)) {
+  playerStats = JSON.parse(readFileSync(playerStatsPath, 'utf8'));
+  console.log(`✓ Loaded stats for ${Object.keys(playerStats).length} players`);
+}
+
 // Copy team badges and kits
 console.log('\nCopying team badges and kits...');
 let teamMetadata = {};
@@ -983,6 +991,59 @@ tbody tr:hover .owner-name {
   color: #666;
 }
 
+.club-cell {
+  color: #666;
+  font-size: 12px;
+}
+
+/* Player bio expandable rows */
+.player-row.has-bio {
+  cursor: pointer;
+}
+
+.player-row.has-bio:hover {
+  background: #f0f7ff;
+}
+
+.bio-indicator {
+  margin-left: 6px;
+  font-size: 11px;
+  opacity: 0.6;
+}
+
+.player-bio-row {
+  display: none;
+}
+
+.player-bio-row.expanded {
+  display: table-row;
+}
+
+.player-bio-row td {
+  padding: 0 !important;
+  background: #f8f9fa;
+  border-top: none !important;
+}
+
+.player-bio-content {
+  padding: 16px 20px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #444;
+  border-left: 3px solid #2ecc71;
+  margin: 8px 12px;
+  background: white;
+  border-radius: 4px;
+}
+
+.player-bio-content p {
+  margin: 0 0 12px 0;
+}
+
+.player-bio-content p:last-child {
+  margin-bottom: 0;
+}
+
 .placeholder-text {
   color: #999;
   font-style: italic;
@@ -1016,6 +1077,9 @@ let data = null;
 
 // Player photo mapping (built at build time)
 const playerPhotoMapping = ${JSON.stringify(playerPhotoMapping)};
+
+// Player stats (height, club, bio, etc.)
+const playerStats = ${JSON.stringify(playerStats)};
 
 // Team metadata (built at build time)
 const teamMetadata = ${JSON.stringify(teamMetadata)};
@@ -1071,6 +1135,13 @@ function toggleAbout() {
   } else {
     text.classList.add('expanded');
     toggle.textContent = 'Read less';
+  }
+}
+
+function togglePlayerBio(playerId) {
+  const bioRow = document.getElementById(playerId);
+  if (bioRow) {
+    bioRow.classList.toggle('expanded');
   }
 }
 
@@ -1847,32 +1918,45 @@ function renderTeamDetail(slug) {
         <thead>
           <tr>
             <th class="photo-col"></th>
-            <th>#</th>
             <th>Player</th>
             <th>Position</th>
+            <th>Club</th>
+            <th class="center">Height</th>
             <th class="center">Age</th>
-            <th class="center">Nat.</th>
           </tr>
         </thead>
         <tbody>
-          \${details.squad.map(player => {
+          \${details.squad.map((player, idx) => {
             const photoFile = playerPhotoMapping[player.name];
+            const stats = playerStats[player.name] || {};
             const photoContent = photoFile 
               ? \`<img src="player_photos/\${photoFile}" alt="\${player.name}">\`
               : \`<span class="player-initials">\${player.name.split(' ').map(n => n[0]).join('').slice(0,2)}</span>\`;
+            const hasBio = stats.bio && stats.bio.length > 0;
+            const playerId = \`player-\${idx}\`;
             return \`
-            <tr>
+            <tr class="player-row\${hasBio ? ' has-bio' : ''}" \${hasBio ? \`onclick="togglePlayerBio('\${playerId}')"\` : ''}>
               <td class="player-photo-cell">
                 <div class="player-photo">
                   \${photoContent}
                 </div>
               </td>
-              <td class="num-col">\${player.shirt_number || '-'}</td>
-              <td class="player-name-cell">\${player.name}</td>
+              <td class="player-name-cell">
+                \${player.name}
+                \${hasBio ? '<span class="bio-indicator">ℹ️</span>' : ''}
+              </td>
               <td class="position-cell">\${player.position || '-'}</td>
+              <td class="club-cell">\${stats.club || '-'}</td>
+              <td class="center">\${stats.height ? stats.height.split(' ')[0] : '-'}</td>
               <td class="center">\${calculateAge(player.date_of_birth)}</td>
-              <td class="center" title="\${player.nationality || ''}">\${getNationalityFlag(player.nationality)}</td>
             </tr>
+            \${hasBio ? \`<tr class="player-bio-row" id="\${playerId}">
+              <td colspan="6">
+                <div class="player-bio-content">
+                  <p>\${stats.bio.replace(/\\r\\n/g, '</p><p>')}</p>
+                </div>
+              </td>
+            </tr>\` : ''}
           \`;}).join('')}
         </tbody>
       </table>
