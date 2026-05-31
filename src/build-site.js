@@ -568,21 +568,21 @@ tr.section-break td {
   color: #999;
 }
 
-/* Top teams highlight - team, pts, group, and group stage finish columns */
-.top-team td:nth-child(1),
-.top-team td:nth-child(2),
-.top-team td:nth-child(3),
-.top-team td:nth-child(4),
-.top-team td:nth-child(5) {
+/* Top teams highlight - standings table only */
+.standings-table .top-team td:nth-child(1),
+.standings-table .top-team td:nth-child(2),
+.standings-table .top-team td:nth-child(3),
+.standings-table .top-team td:nth-child(4),
+.standings-table .top-team td:nth-child(5) {
   background: #fffbe6 !important;
 }
 
-/* Row hover highlight - team, pts, group, and group stage finish columns */
-tbody tr:hover td:nth-child(1),
-tbody tr:hover td:nth-child(2),
-tbody tr:hover td:nth-child(3),
-tbody tr:hover td:nth-child(4),
-tbody tr:hover td:nth-child(5) {
+/* Row hover highlight - standings table only (avoid highlighting heatmap columns) */
+.standings-table tbody tr:hover td:nth-child(1),
+.standings-table tbody tr:hover td:nth-child(2),
+.standings-table tbody tr:hover td:nth-child(3),
+.standings-table tbody tr:hover td:nth-child(4),
+.standings-table tbody tr:hover td:nth-child(5) {
   background-color: rgba(0, 45, 114, 0.08) !important;
 }
 
@@ -595,7 +595,7 @@ tbody tr:hover td:nth-child(5) {
   font-weight: 400;
 }
 
-tbody tr:hover .owner-name {
+.standings-table tbody tr:hover .owner-name {
   opacity: 1;
 }
 
@@ -942,7 +942,7 @@ tbody tr:hover .owner-name {
   border-top: 1px solid #eee;
 }
 
-.squad-table tbody tr:hover td {
+.squad-table tbody tr:hover {
   background: #f8f9fa;
 }
 
@@ -1010,7 +1010,7 @@ tbody tr:hover .owner-name {
   cursor: pointer;
 }
 
-.player-row.has-bio:hover td {
+.player-row.has-bio:hover {
   background: #f0f7ff;
 }
 
