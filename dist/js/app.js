@@ -231,7 +231,7 @@ function renderStandings() {
     <div class="card">
       <div class="card-title">World Cup 2026 - Stage-by-Stage Probabilities</div>
       <div class="card-subtitle">Based on 10,000 Monte Carlo simulations • Updated ${dateStr}</div>
-      <table>
+      <table class="standings-table">
         <thead>
           <tr class="header-group">
             <th rowspan="2">Team</th>
