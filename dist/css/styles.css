@@ -199,13 +199,13 @@ tr.section-break td {
   min-width: 115px;
 }
 
-/* Win Cup column - subtle distinction */
+/* Win Cup column - subtle distinction (standings table only) */
 .win-cup {
   border-left: 2px solid #ccc;
 }
 
-/* Win Cup cells in body */
-tbody td:last-child {
+/* Win Cup cells in body (standings table only) */
+.standings-table tbody td:last-child {
   border-left: 2px solid #ccc;
 }
 
@@ -837,7 +837,7 @@ tbody tr:hover .owner-name {
   border-top: 1px solid #eee;
 }
 
-.squad-table tbody tr:hover {
+.squad-table tbody tr:hover td {
   background: #f8f9fa;
 }
 
@@ -905,7 +905,7 @@ tbody tr:hover .owner-name {
   cursor: pointer;
 }
 
-.player-row.has-bio:hover {
+.player-row.has-bio:hover td {
   background: #f0f7ff;
 }
 
