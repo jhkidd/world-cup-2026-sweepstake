@@ -36,6 +36,28 @@ for (const profile of profiles) {
 }
 console.log(`✓ Copied ${profiles.length} profile pictures`);
 
+// Copy player photos if they exist
+console.log('\nCopying player photos...');
+const playerPhotosDir = join(projectRoot, 'data', 'player_photos');
+let playerPhotoMapping = {};
+if (existsSync(playerPhotosDir)) {
+  mkdirSync(join(distDir, 'player_photos'), { recursive: true });
+  const photos = readdirSync(playerPhotosDir).filter(f => f.endsWith('.webp'));
+  for (const photo of photos) {
+    cpSync(join(playerPhotosDir, photo), join(distDir, 'player_photos', photo));
+  }
+  console.log(`✓ Copied ${photos.length} player photos`);
+  
+  // Load mapping
+  const mappingPath = join(projectRoot, 'data', 'player_photos.json');
+  if (existsSync(mappingPath)) {
+    playerPhotoMapping = JSON.parse(readFileSync(mappingPath, 'utf8'));
+    console.log(`✓ Loaded photo mapping for ${Object.keys(playerPhotoMapping).length} players`);
+  }
+} else {
+  console.log('✓ No player photos yet (run npm run fetch-photos)');
+}
+
 // Copy logo
 console.log('\nCopying logo...');
 cpSync(join(projectRoot, 'INRIX_Logo.webp'), join(distDir, 'INRIX_Logo.webp'));
@@ -902,6 +924,9 @@ const js = `// INRIX World Cup Sweepstake - Single Page App
 
 let data = null;
 
+// Player photo mapping (built at build time)
+const playerPhotoMapping = ${JSON.stringify(playerPhotoMapping)};
+
 // Flag emojis
 const flagEmojis = {
   'Argentina': '🇦🇷', 'Australia': '🇦🇺', 'Austria': '🇦🇹', 'Algeria': '🇩🇿',
@@ -1725,11 +1750,16 @@ function renderTeamDetail(slug) {
           </tr>
         </thead>
         <tbody>
-          \${details.squad.map(player => \`
+          \${details.squad.map(player => {
+            const photoFile = playerPhotoMapping[player.name];
+            const photoContent = photoFile 
+              ? \`<img src="player_photos/\${photoFile}" alt="\${player.name}">\`
+              : \`<span class="player-initials">\${player.name.split(' ').map(n => n[0]).join('').slice(0,2)}</span>\`;
+            return \`
             <tr>
               <td class="player-photo-cell">
-                <div class="player-photo" data-player-name="\${player.name}">
-                  <span class="player-initials">\${player.name.split(' ').map(n => n[0]).join('').slice(0,2)}</span>
+                <div class="player-photo">
+                  \${photoContent}
                 </div>
               </td>
               <td class="num-col">\${player.shirt_number || '-'}</td>
@@ -1738,7 +1768,7 @@ function renderTeamDetail(slug) {
               <td class="center">\${calculateAge(player.date_of_birth)}</td>
               <td class="center" title="\${player.nationality || ''}">\${getNationalityFlag(player.nationality)}</td>
             </tr>
-          \`).join('')}
+          \`;}).join('')}
         </tbody>
       </table>
     </div>

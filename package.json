@@ -10,6 +10,7 @@
   "scripts": {
     "fetch": "node src/fetch-odds.js",
     "fetch-teams": "node src/fetch-team-data.js",
+    "fetch-photos": "node src/fetch-player-photos.js",
     "process": "node src/process-data.js",
     "visualize": "node src/generate-visualizations.js",
     "generate": "npm run fetch && npm run process && npm run visualize",
@@ -23,6 +24,7 @@
     "axios": "^1.16.1",
     "date-fns": "^4.3.0",
     "dotenv": "^17.4.2",
-    "puppeteer": "^25.1.0"
+    "puppeteer": "^25.1.0",
+    "sharp": "^0.34.5"
   }
 }
