@@ -149,6 +149,11 @@ th.center {
   border-bottom: none;
 }
 
+/* Rowspan headers need bottom border since they span to second row */
+.header-group th[rowspan] {
+  border-bottom: 2px solid #e0e0e0;
+}
+
 .header-cols th {
   padding: 4px 8px 10px;
   border-bottom: 2px solid #e0e0e0;
@@ -204,8 +209,8 @@ tr.section-break td {
   border-left: 2px solid #ccc;
 }
 
-/* Win Cup cells in body (standings table only) */
-.standings-table tbody td:last-child {
+/* Win Cup cells in body - second-to-last column (before Bookie) */
+.standings-table tbody td:nth-last-child(2) {
   border-left: 2px solid #ccc;
 }
 
