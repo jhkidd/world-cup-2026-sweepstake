@@ -797,7 +797,6 @@ export function runMonteCarloSimulation(tournament, matchOdds, teamStrengths, it
       group_first: 0,
       group_second: 0,
       group_third: 0,
-      make_r32: 0,
       make_r16: 0,
       make_quarters: 0,
       make_semis: 0,
@@ -823,30 +822,30 @@ export function runMonteCarloSimulation(tournament, matchOdds, teamStrengths, it
     }
     
     // Track knockout progression
-    // R32 winners advance to R16
+    // The arrays contain WINNERS of each round, who advance to play in the NEXT round
+    // result.r32 = 16 R32 winners → they MADE it to R16
+    // result.r16 = 8 R16 winners → they MADE it to QF
+    // result.quarters = 4 QF winners → they MADE it to SF
+    // result.semis = 2 SF winners → they MADE it to Final
+    
     if (result.r32) {
       result.r32.forEach(team => {
         const normalized = normalizeTeamName(team);
-        if (teamStats[normalized]) teamStats[normalized].make_r32++;
+        if (teamStats[normalized]) teamStats[normalized].make_r16++;
       });
     }
     
     result.r16.forEach(team => {
       const normalized = normalizeTeamName(team);
-      if (teamStats[normalized]) teamStats[normalized].make_r16++;
+      if (teamStats[normalized]) teamStats[normalized].make_quarters++;
     });
     
     result.quarters.forEach(team => {
       const normalized = normalizeTeamName(team);
-      if (teamStats[normalized]) teamStats[normalized].make_quarters++;
-    });
-    
-    result.semis.forEach(team => {
-      const normalized = normalizeTeamName(team);
       if (teamStats[normalized]) teamStats[normalized].make_semis++;
     });
     
-    result.final.forEach(team => {
+    result.semis.forEach(team => {
       const normalized = normalizeTeamName(team);
       if (teamStats[normalized]) teamStats[normalized].make_final++;
     });
