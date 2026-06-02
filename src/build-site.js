@@ -1303,6 +1303,7 @@ function renderStandings() {
       \${renderCell(probs.make_semis)}
       \${renderCell(probs.make_final)}
       \${renderCell(probs.win_tournament)}
+      \${renderCell(team.bookmaker_win_probability, true)}
     </tr>\`;
   }).join('');
 
@@ -1320,7 +1321,7 @@ function renderStandings() {
             <th rowspan="2" class="center">Pts</th>
             <th rowspan="2" class="center">Group</th>
             <th colspan="2" class="center">Group Stage Finish</th>
-            <th colspan="5" class="center">Knockout Stage Chances</th>
+            <th colspan="6" class="center">Knockout Stage Chances</th>
           </tr>
           <tr class="header-cols">
             <th class="center gs-col">1st Place</th>
@@ -1330,6 +1331,7 @@ function renderStandings() {
             <th class="center ko-col">Make Semis</th>
             <th class="center ko-col">Make Final</th>
             <th class="center ko-col win-cup">Win Cup</th>
+            <th class="center ko-col">Bookie</th>
           </tr>
         </thead>
         <tbody>\${rows}</tbody>
