@@ -573,6 +573,380 @@ function renderTimeline() {
   `;
 }
 
+// Methodology Explainer Page
+function renderMethodology() {
+  // Elo ratings with confederation mapping for colors
+  const eloRatings = {
+    'Spain': { elo: 2165, conf: 'uefa' },
+    'Argentina': { elo: 2113, conf: 'conmebol' },
+    'France': { elo: 2081, conf: 'uefa' },
+    'England': { elo: 2020, conf: 'uefa' },
+    'Brazil': { elo: 1984, conf: 'conmebol' },
+    'Portugal': { elo: 1976, conf: 'uefa' },
+    'Netherlands': { elo: 1963, conf: 'uefa' },
+    'Belgium': { elo: 1944, conf: 'uefa' },
+    'Germany': { elo: 1935, conf: 'uefa' },
+    'Colombia': { elo: 1920, conf: 'conmebol' },
+    'Uruguay': { elo: 1905, conf: 'conmebol' },
+    'Croatia': { elo: 1895, conf: 'uefa' },
+    'Morocco': { elo: 1878, conf: 'caf' },
+    'Japan': { elo: 1860, conf: 'afc' },
+    'USA': { elo: 1845, conf: 'concacaf' },
+    'Senegal': { elo: 1835, conf: 'caf' },
+    'Switzerland': { elo: 1830, conf: 'uefa' },
+    'Mexico': { elo: 1825, conf: 'concacaf' },
+    'Norway': { elo: 1818, conf: 'uefa' },
+    'Austria': { elo: 1810, conf: 'uefa' },
+    'Turkey': { elo: 1805, conf: 'uefa' },
+    'Ecuador': { elo: 1798, conf: 'conmebol' },
+    'Ivory Coast': { elo: 1790, conf: 'caf' },
+    'Sweden': { elo: 1785, conf: 'uefa' },
+    'Algeria': { elo: 1775, conf: 'caf' },
+    'Egypt': { elo: 1765, conf: 'caf' },
+    'Paraguay': { elo: 1755, conf: 'conmebol' },
+    'Scotland': { elo: 1745, conf: 'uefa' },
+    'Australia': { elo: 1735, conf: 'afc' },
+    'Iran': { elo: 1725, conf: 'afc' },
+    'Ghana': { elo: 1715, conf: 'caf' },
+    'Canada': { elo: 1710, conf: 'concacaf' },
+    'South Korea': { elo: 1705, conf: 'afc' },
+    'Tunisia': { elo: 1695, conf: 'caf' },
+    'Czechia': { elo: 1685, conf: 'uefa' },
+    'DR Congo': { elo: 1670, conf: 'caf' },
+    'Bosnia and Herzegovina': { elo: 1665, conf: 'uefa' },
+    'Panama': { elo: 1640, conf: 'concacaf' },
+    'Saudi Arabia': { elo: 1625, conf: 'afc' },
+    'Qatar': { elo: 1610, conf: 'afc' },
+    'South Africa': { elo: 1600, conf: 'caf' },
+    'Iraq': { elo: 1590, conf: 'afc' },
+    'Uzbekistan': { elo: 1575, conf: 'afc' },
+    'Jordan': { elo: 1560, conf: 'afc' },
+    'New Zealand': { elo: 1545, conf: 'ofc' },
+    'Cape Verde': { elo: 1520, conf: 'caf' },
+    'Haiti': { elo: 1495, conf: 'concacaf' },
+    'Curaçao': { elo: 1450, conf: 'concacaf' }
+  };
+  
+  const maxElo = 2165;
+  const minElo = 1400; // For scaling
+  
+  // Build Elo bar chart HTML
+  const sortedTeams = Object.entries(eloRatings)
+    .sort((a, b) => b[1].elo - a[1].elo);
+  
+  const eloChartHtml = sortedTeams.map(([team, data]) => {
+    const width = ((data.elo - minElo) / (maxElo - minElo)) * 100;
+    const flag = flagEmojis[team] || '🏴';
+    return `<div class="elo-bar">
+      <span class="team-name">${flag} ${team}</span>
+      <div class="bar conf-${data.conf}" style="width:${width}%"></div>
+      <span class="rating">${data.elo}</span>
+    </div>`;
+  }).join('');
+  
+  // Build team options for calculator
+  const teamOptions = sortedTeams.map(([team, data]) => 
+    `<option value="${data.elo}">${team} (${data.elo})</option>`
+  ).join('');
+  
+  // Build comparison table from actual data
+  const top10Teams = sortedTeams.slice(0, 10);
+  const comparisonRows = top10Teams.map(([team]) => {
+    const simProb = (data.stage_probabilities[team]?.win_tournament || 0) * 100;
+    const bookieProb = (data.teams.find(t => t.name === team)?.bookmaker_win_probability || 0) * 100;
+    const diff = simProb - bookieProb;
+    const diffClass = diff > 0 ? 'diff-positive' : 'diff-negative';
+    const diffStr = (diff >= 0 ? '+' : '') + diff.toFixed(1) + '%';
+    return `<tr>
+      <td>${flagEmojis[team] || '🏴'} ${team}</td>
+      <td>${bookieProb.toFixed(1)}%</td>
+      <td>${simProb.toFixed(1)}%</td>
+      <td class="${diffClass}">${diffStr}</td>
+    </tr>`;
+  }).join('');
+  
+  // Setup calculator interactivity
+  setTimeout(() => {
+    const teamA = document.getElementById('calc-team-a');
+    const teamB = document.getElementById('calc-team-b');
+    const result = document.getElementById('calc-result');
+    
+    function updateCalc() {
+      if (!teamA || !teamB || !result) return;
+      const eloA = parseInt(teamA.value);
+      const eloB = parseInt(teamB.value);
+      const teamAName = teamA.options[teamA.selectedIndex].text.split(' (')[0];
+      const teamBName = teamB.options[teamB.selectedIndex].text.split(' (')[0];
+      
+      const prob = 1 / (1 + Math.pow(10, (eloB - eloA) / 400));
+      const probPct = (prob * 100).toFixed(1);
+      const oppPct = ((1 - prob) * 100).toFixed(1);
+      
+      result.innerHTML = `
+        <div class="result-text">
+          Based on Elo ratings, <strong>${teamAName}</strong> has a <strong>${probPct}%</strong> chance 
+          of beating <strong>${teamBName}</strong> (who has ${oppPct}%).
+        </div>
+        <div class="formula">
+          P(${teamAName}) = 1 / (1 + 10^((${eloB} - ${eloA}) / 400)) = ${probPct}%
+        </div>
+      `;
+    }
+    
+    if (teamA && teamB) {
+      teamA.addEventListener('change', updateCalc);
+      teamB.addEventListener('change', updateCalc);
+      // Set default selections
+      teamA.value = '2165'; // Spain
+      teamB.value = '2113'; // Argentina  
+      updateCalc();
+    }
+    
+    // Tech details toggle
+    const techToggle = document.getElementById('tech-toggle');
+    const techContent = document.getElementById('tech-content');
+    if (techToggle && techContent) {
+      techToggle.addEventListener('click', () => {
+        techContent.classList.toggle('visible');
+        const arrow = techToggle.querySelector('.arrow');
+        if (arrow) arrow.textContent = techContent.classList.contains('visible') ? '▼' : '▶';
+      });
+    }
+  }, 100);
+  
+  return `
+    <div class="methodology-container">
+      <div class="meth-hero">
+        <h1>How We Forecast the World Cup</h1>
+        <p class="subtitle">10,000 simulations, real bookmaker odds, and the Elo rating system</p>
+      </div>
+      
+      <div class="meth-section">
+        <h2><span class="icon">🎯</span> The Big Picture</h2>
+        <p>
+          We simulate the entire 2026 World Cup <strong>10,000 times</strong>. Each simulation plays out 
+          every match from the group stage through the final, using real bookmaker odds and team 
+          strength ratings. After all simulations complete, we count how often each team reaches 
+          each stage—that's their probability.
+        </p>
+        <p>
+          <strong>Key insight:</strong> Your path through the bracket matters as much as your strength. 
+          A strong team with an easy draw has better odds than an equally strong team facing 
+          powerhouses in the early rounds.
+        </p>
+      </div>
+      
+      <div class="meth-section">
+        <h2><span class="icon">📊</span> Our Data Sources</h2>
+        <div class="data-sources">
+          <div class="data-source-card">
+            <div class="icon">🎰</div>
+            <h4>Bookmaker Odds</h4>
+            <p>Real-time match odds from UK bookmakers via The Odds API. Updated every 6 hours.</p>
+          </div>
+          <div class="data-source-card">
+            <div class="icon">⚡</div>
+            <h4>Elo Ratings</h4>
+            <p>Team strength ratings from eloratings.net—a chess-inspired system for football.</p>
+          </div>
+          <div class="data-source-card">
+            <div class="icon">⚽</div>
+            <h4>Match Results</h4>
+            <p>Actual scores from completed matches lock in with 100% certainty.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="meth-section">
+        <h2><span class="icon">🔀</span> How We Simulate Each Match</h2>
+        <p>For every match in every simulation, we follow this priority cascade:</p>
+        
+        <div class="cascade-flow">
+          <div class="cascade-step yes">
+            <strong>1.</strong>&nbsp; Has this match been played? → <strong>Use actual result (100% certain)</strong>
+          </div>
+          <div class="cascade-arrow">↓ No</div>
+          <div class="cascade-step yes">
+            <strong>2.</strong>&nbsp; Do we have bookmaker odds? → <strong>Use those probabilities</strong>
+          </div>
+          <div class="cascade-arrow">↓ No</div>
+          <div class="cascade-step fallback">
+            <strong>3.</strong>&nbsp; Fall back to <strong>Elo ratings</strong> → Calculate probability from team strengths
+          </div>
+        </div>
+        
+        <h3>Group Stage</h3>
+        <p>
+          Bookmaker odds give us win/draw/loss probabilities. We then generate realistic scorelines 
+          using the <strong>Poisson distribution</strong>—a statistical model that captures how goals 
+          are scored in football. This matters because goal difference affects third-place tiebreakers.
+        </p>
+        
+        <h3>Knockout Stage</h3>
+        <p>
+          No draws—there must be a winner. If the match hasn't been scheduled yet (Round of 16 onwards), 
+          we calculate win probability directly from Elo ratings.
+        </p>
+      </div>
+      
+      <div class="meth-section">
+        <h2><span class="icon">📈</span> What is Elo?</h2>
+        <div class="elo-box">
+          <blockquote>
+            Elo is a rating system invented in 1960 for chess and now used worldwide for football. 
+            Each team has a number (higher = stronger). When teams play, the winner gains points 
+            and the loser drops—more points change hands for upsets.
+          </blockquote>
+          <div class="elo-facts">
+            <div class="elo-fact"><span class="bullet">•</span> Average team rating: ~1500</div>
+            <div class="elo-fact"><span class="bullet">•</span> Spain (current #1): 2165</div>
+            <div class="elo-fact"><span class="bullet">•</span> 400-point gap ≈ 91% win probability</div>
+            <div class="elo-fact"><span class="bullet">•</span> Every match updates ratings</div>
+          </div>
+        </div>
+        
+        <h3>All 48 Teams by Elo Rating</h3>
+        <div class="elo-chart-container">
+          ${eloChartHtml}
+        </div>
+        <p style="font-size:12px;color:#666;margin-top:12px;">
+          Colors: <span style="color:#3498db">■</span> UEFA&nbsp;&nbsp;
+          <span style="color:#f1c40f">■</span> CONMEBOL&nbsp;&nbsp;
+          <span style="color:#2ecc71">■</span> CONCACAF&nbsp;&nbsp;
+          <span style="color:#e74c3c">■</span> CAF&nbsp;&nbsp;
+          <span style="color:#9b59b6">■</span> AFC&nbsp;&nbsp;
+          <span style="color:#1abc9c">■</span> OFC
+        </p>
+        
+        <div class="prob-calculator">
+          <h4>🧮 Win Probability Calculator</h4>
+          <div class="calc-inputs">
+            <select id="calc-team-a">${teamOptions}</select>
+            <span class="vs">vs</span>
+            <select id="calc-team-b">${teamOptions}</select>
+          </div>
+          <div class="calc-result" id="calc-result">
+            Select two teams to see win probability
+          </div>
+        </div>
+      </div>
+      
+      <div class="meth-section">
+        <h2><span class="icon">🏆</span> The 2026 Tournament Format</h2>
+        <div class="tournament-structure">
+          <div class="stage-row">
+            <span class="stage-name">Group Stage</span>
+            <span class="stage-desc">12 groups of 4 teams, each plays 3 matches</span>
+            <span class="stage-teams">48</span>
+          </div>
+          <div class="stage-row">
+            <span class="stage-name">Qualify</span>
+            <span class="stage-desc">Top 2 per group (24) + 8 best third-place teams</span>
+            <span class="stage-teams">32</span>
+          </div>
+          <div class="stage-row">
+            <span class="stage-name">Round of 32</span>
+            <span class="stage-desc">16 matches (new stage for 2026!)</span>
+            <span class="stage-teams">32 → 16</span>
+          </div>
+          <div class="stage-row">
+            <span class="stage-name">Round of 16</span>
+            <span class="stage-desc">8 matches</span>
+            <span class="stage-teams">16 → 8</span>
+          </div>
+          <div class="stage-row">
+            <span class="stage-name">Quarter-finals</span>
+            <span class="stage-desc">4 matches</span>
+            <span class="stage-teams">8 → 4</span>
+          </div>
+          <div class="stage-row">
+            <span class="stage-name">Semi-finals</span>
+            <span class="stage-desc">2 matches</span>
+            <span class="stage-teams">4 → 2</span>
+          </div>
+          <div class="stage-row">
+            <span class="stage-name">Final</span>
+            <span class="stage-desc">The big one</span>
+            <span class="stage-teams">2 → 1</span>
+          </div>
+        </div>
+        <p style="margin-top:16px;font-size:14px;color:#666;">
+          This is the first World Cup with 48 teams. Third-place teams are assigned to specific 
+          bracket slots based on which groups they came from—our simulation handles all 495 possible combinations.
+        </p>
+      </div>
+      
+      <div class="meth-section">
+        <h2><span class="icon">🎯</span> Why Our Numbers Differ from Bookmakers</h2>
+        <div class="bracket-callout">
+          <h4>⚠️ The Bracket Effect</h4>
+          <p>
+            Bookmakers give you "outright winner" odds—a single number for each team. But winning 
+            the World Cup requires <strong>a specific path</strong> through the bracket. Our simulation 
+            captures this crucial detail.
+          </p>
+          <p>
+            <strong>Example:</strong> Spain and Argentina are both top contenders. But if both win 
+            their groups, they meet in the Round of 16! The survivor then gets an easier path 
+            (avoiding France/England until the Final). Our simulation accounts for these collision 
+            courses; bookmaker odds average across all possible brackets.
+          </p>
+        </div>
+        
+        <h3>Validation: Simulated vs Bookmaker Odds</h3>
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Team</th>
+              <th>Bookmaker</th>
+              <th>Simulated</th>
+              <th>Difference</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${comparisonRows}
+          </tbody>
+        </table>
+        <p style="font-size:13px;color:#666;margin-top:12px;">
+          Large positive differences typically indicate favorable bracket positions. The simulation 
+          isn't wrong—it's capturing information the flat odds don't show.
+        </p>
+      </div>
+      
+      <div class="meth-section">
+        <h2><span class="icon">🛠️</span> Technical Details</h2>
+        <p>For the curious, here's what's under the hood:</p>
+        
+        <div class="tech-details">
+          <div class="tech-toggle" id="tech-toggle">
+            <span class="arrow">▶</span> Show technical implementation
+          </div>
+          <div class="tech-content" id="tech-content">
+            <p><strong>Monte Carlo Simulation:</strong> 10,000 iterations per data refresh</p>
+            <p><strong>Elo Win Probability:</strong><br>
+              <code>P(A) = 1 / (1 + 10^((eloB - eloA) / 400))</code>
+            </p>
+            <p><strong>Poisson Scoreline:</strong><br>
+              <code>Expected goals = 1.15 ± (eloDiff / 800)</code><br>
+              Where 1.15 is the historical World Cup average per team.
+            </p>
+            <p><strong>Third-place Assignment:</strong><br>
+              Uses backtracking algorithm to assign 8 best third-place teams to correct R32 slots 
+              based on FIFA rules (495 possible group combinations).
+            </p>
+            <p><strong>Data Refresh:</strong> Every 6 hours via GitHub Actions</p>
+            <p><strong>Source Code:</strong> <a href="https://github.com/jhkidd/world-cup-2026-sweepstake" target="_blank">GitHub Repository</a></p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="meth-footer">
+        <a href="#standings">← Back to Standings</a>
+      </div>
+    </div>
+  `;
+}
+
 // Teams List Page - alphabetical grid of all 48 teams
 function renderTeamsList() {
   const teams = data.teams.slice().sort((a, b) => a.name.localeCompare(b.name));
@@ -1043,6 +1417,9 @@ function route() {
       break;
     case 'timeline':
       main.innerHTML = renderTimeline();
+      break;
+    case 'methodology':
+      main.innerHTML = renderMethodology();
       break;
     default:
       window.location.hash = '#standings';
