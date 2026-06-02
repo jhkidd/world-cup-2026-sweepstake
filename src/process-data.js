@@ -2,7 +2,7 @@ import { readFileSync, writeFileSync, readdirSync, mkdirSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { addDays, parseISO, formatISO } from 'date-fns';
-import { runMonteCarloSimulation } from './monte-carlo.js';
+import { runMonteCarloSimulation, deriveTeamStrengths, calibrateDampingFactor } from './monte-carlo.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -476,19 +476,98 @@ async function main() {
     const timeline = buildTimeline(allOddsFiles, sweepstake);
     console.log(`✓ Built timeline from ${timeline.length} data points`);
     
-    // Run Monte Carlo simulation
+    // Load Elo ratings
+    console.log('\nLoading Elo ratings...');
+    let eloRatings = {};
+    try {
+      const eloData = loadJSON(join(projectRoot, 'data', 'elo_ratings.json'));
+      eloRatings = eloData.ratings;
+      console.log(`✓ Loaded Elo ratings for ${Object.keys(eloRatings).length} teams (source: ${eloData.source})`);
+    } catch (e) {
+      console.log('⚠ No Elo ratings found - using bookmaker-derived strengths as fallback');
+    }
+    
+    // Run Monte Carlo simulation with Elo ratings
     console.log('\n🎲 Running Monte Carlo simulation for stage probabilities...');
     
     // Merge completed results with match odds (override odds to 100% for actual winners)
     const matchOddsWithResults = mergeCompletedResults(oddsData.matchOdds, oddsData.results, tournament);
     
+    // Use Elo ratings directly for knockout matches, bookmaker H2H for group stage
+    // Fall back to calibrated strengths if no Elo available
+    let calibratedStrengths = null;
+    if (Object.keys(eloRatings).length === 0) {
+      console.log('   Deriving calibrated team strengths from bookmaker odds (no Elo data)...');
+      const calibration = calibrateDampingFactor(tournament, matchOddsWithResults, teamProbs, {
+        simIterations: 2000,
+        maxIterations: 8
+      });
+      calibratedStrengths = calibration.strengths;
+    } else {
+      console.log('   Using Elo ratings for knockout match predictions...');
+    }
+    
     const stageProbabilities = runMonteCarloSimulation(
       tournament, 
       matchOddsWithResults, 
-      teamProbs,
-      10000
+      calibratedStrengths || teamProbs, // Fallback strengths
+      10000,
+      Object.keys(eloRatings).length > 0 ? eloRatings : null
     );
     console.log('✓ Monte Carlo simulation complete');
+    
+    // Validation: compare simulated vs bookmaker win probabilities
+    console.log('\n📊 Validation: Simulated vs Bookmaker Outright Odds');
+    console.log('━'.repeat(60));
+    console.log('Team'.padEnd(20) + 'Bookmaker'.padEnd(12) + 'Simulated'.padEnd(12) + 'Diff'.padEnd(10) + 'Status');
+    console.log('━'.repeat(60));
+    
+    const topTeams = Object.entries(teamProbs)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 10);
+    
+    let totalError = 0;
+    let maxDiff = 0;
+    let maxDiffTeam = '';
+    
+    for (const [team, bookmakerProb] of topTeams) {
+      const simProb = stageProbabilities[team]?.win_tournament || 0;
+      const diff = simProb - bookmakerProb;
+      const absDiff = Math.abs(diff);
+      totalError += absDiff;
+      
+      if (absDiff > maxDiff) {
+        maxDiff = absDiff;
+        maxDiffTeam = team;
+      }
+      
+      const diffStr = (diff >= 0 ? '+' : '') + (diff * 100).toFixed(1) + '%';
+      const status = absDiff < 0.03 ? '✓' : (absDiff < 0.05 ? '~' : '⚠');
+      
+      console.log(
+        team.padEnd(20) + 
+        ((bookmakerProb * 100).toFixed(1) + '%').padEnd(12) +
+        ((simProb * 100).toFixed(1) + '%').padEnd(12) +
+        diffStr.padEnd(10) +
+        status
+      );
+    }
+    
+    const mae = totalError / topTeams.length;
+    console.log('━'.repeat(60));
+    console.log(`Mean Absolute Error: ${(mae * 100).toFixed(2)}%`);
+    console.log(`Max Deviation: ${maxDiffTeam} (${(maxDiff * 100).toFixed(1)}%)`);
+    
+    // Enrich team rankings with simulated probabilities
+    for (const team of teamRankings) {
+      const simData = stageProbabilities[team.name];
+      team.bookmaker_win_probability = team.win_probability; // Keep original
+      team.simulated_win_probability = simData?.win_tournament || 0;
+      // Re-sort by simulated probability for display
+    }
+    // Re-sort by simulated probability and update ranks
+    teamRankings.sort((a, b) => b.simulated_win_probability - a.simulated_win_probability);
+    teamRankings.forEach((t, i) => t.rank = i + 1);
     
     // Build output
     const output = {
@@ -501,6 +580,11 @@ async function main() {
       timeline,
       stage_probabilities: stageProbabilities,
       team_details: teamDetails,
+      elo_source: Object.keys(eloRatings).length > 0 ? 'eloratings.net' : null,
+      validation: {
+        mean_absolute_error: mae,
+        max_deviation: { team: maxDiffTeam, diff: maxDiff }
+      },
       bracket: {
         // TODO: Implement bracket data structure
         note: 'Bracket visualization to be implemented'

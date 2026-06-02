@@ -13,6 +13,7 @@
     "fetch-photos": "node src/fetch-player-photos.js",
     "fetch-metadata": "node src/fetch-team-metadata.js",
     "fetch-player-stats": "node src/fetch-player-stats.js",
+    "fetch-missing": "node src/fetch-missing-players.js",
     "process": "node src/process-data.js",
     "visualize": "node src/generate-visualizations.js",
     "generate": "npm run fetch && npm run process && npm run visualize",
