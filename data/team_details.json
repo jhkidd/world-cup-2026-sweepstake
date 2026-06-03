@@ -193,7 +193,7 @@
         "date_of_birth": "2003-04-20"
       }
     ],
-    "fetched_at": "2026-06-03T07:56:15.900Z",
+    "fetched_at": "2026-06-03T13:52:52.115Z",
     "group": "A",
     "confederation": "CONCACAF"
   },
@@ -391,7 +391,7 @@
         "date_of_birth": "2000-10-02"
       }
     ],
-    "fetched_at": "2026-06-03T07:56:22.893Z",
+    "fetched_at": "2026-06-03T13:52:59.218Z",
     "group": "A",
     "confederation": "CAF"
   },
@@ -582,7 +582,7 @@
         "date_of_birth": "2002-05-09"
       }
     ],
-    "fetched_at": "2026-06-03T07:56:29.781Z",
+    "fetched_at": "2026-06-03T13:53:06.233Z",
     "group": "A",
     "confederation": "AFC"
   },
@@ -780,7 +780,7 @@
         "date_of_birth": "1999-04-29"
       }
     ],
-    "fetched_at": "2026-06-03T07:56:36.806Z",
+    "fetched_at": "2026-06-03T13:53:13.105Z",
     "group": "A",
     "confederation": "UEFA"
   },
@@ -978,7 +978,7 @@
         "date_of_birth": "2001-07-03"
       }
     ],
-    "fetched_at": "2026-06-03T07:56:43.657Z",
+    "fetched_at": "2026-06-03T13:53:20.150Z",
     "group": "B",
     "confederation": "CONCACAF"
   },
@@ -1176,7 +1176,7 @@
         "date_of_birth": "2007-09-21"
       }
     ],
-    "fetched_at": "2026-06-03T07:56:50.740Z",
+    "fetched_at": "2026-06-03T13:53:27.179Z",
     "group": "B",
     "confederation": "UEFA"
   },
@@ -1360,7 +1360,7 @@
         "date_of_birth": "1994-08-19"
       }
     ],
-    "fetched_at": "2026-06-03T07:56:57.740Z",
+    "fetched_at": "2026-06-03T13:53:34.063Z",
     "group": "B",
     "confederation": "AFC"
   },
@@ -1558,7 +1558,7 @@
         "date_of_birth": "2000-12-04"
       }
     ],
-    "fetched_at": "2026-06-03T07:57:04.610Z",
+    "fetched_at": "2026-06-03T13:53:41.088Z",
     "group": "B",
     "confederation": "UEFA"
   },
@@ -1756,7 +1756,7 @@
         "date_of_birth": "2006-08-03"
       }
     ],
-    "fetched_at": "2026-06-03T07:57:11.439Z",
+    "fetched_at": "2026-06-03T13:53:48.102Z",
     "group": "C",
     "confederation": "CONMEBOL"
   },
@@ -1947,7 +1947,7 @@
         "date_of_birth": "2004-11-30"
       }
     ],
-    "fetched_at": "2026-06-03T07:57:18.459Z",
+    "fetched_at": "2026-06-03T13:53:54.933Z",
     "group": "C",
     "confederation": "CAF"
   },
@@ -2131,7 +2131,7 @@
         "date_of_birth": "2001-07-07"
       }
     ],
-    "fetched_at": "2026-06-03T07:57:25.471Z",
+    "fetched_at": "2026-06-03T13:54:02.255Z",
     "group": "C",
     "confederation": "CONCACAF"
   },
@@ -2329,7 +2329,7 @@
         "date_of_birth": "1995-08-10"
       }
     ],
-    "fetched_at": "2026-06-03T07:57:32.310Z",
+    "fetched_at": "2026-06-03T13:54:09.085Z",
     "group": "C",
     "confederation": "UEFA"
   },
@@ -2527,7 +2527,7 @@
         "date_of_birth": "2001-04-19"
       }
     ],
-    "fetched_at": "2026-06-03T07:57:39.343Z",
+    "fetched_at": "2026-06-03T13:54:16.101Z",
     "group": "D",
     "confederation": "CONCACAF"
   },
@@ -2725,7 +2725,7 @@
         "date_of_birth": "1995-06-16"
       }
     ],
-    "fetched_at": "2026-06-03T07:57:46.350Z",
+    "fetched_at": "2026-06-03T13:54:23.116Z",
     "group": "D",
     "confederation": "CONMEBOL"
   },
@@ -2916,7 +2916,7 @@
         "date_of_birth": "2000-06-19"
       }
     ],
-    "fetched_at": "2026-06-03T07:57:53.362Z",
+    "fetched_at": "2026-06-03T13:54:29.953Z",
     "group": "D",
     "confederation": "AFC"
   },
@@ -3114,7 +3114,7 @@
         "date_of_birth": "2005-11-11"
       }
     ],
-    "fetched_at": "2026-06-03T07:58:00.425Z",
+    "fetched_at": "2026-06-03T13:54:36.827Z",
     "group": "D",
     "confederation": "UEFA"
   },
@@ -3312,7 +3312,7 @@
         "date_of_birth": "2002-10-17"
       }
     ],
-    "fetched_at": "2026-06-03T07:58:07.251Z",
+    "fetched_at": "2026-06-03T13:54:43.652Z",
     "group": "E",
     "confederation": "UEFA"
   },
@@ -3486,7 +3486,7 @@
         "name": "Sontje Hansen",
         "position": "Offence",
         "nationality": "Curaçao",
-        "date_of_birth": "2000-05-18"
+        "date_of_birth": "2002-05-18"
       },
       {
         "id": 149134,
@@ -3510,7 +3510,7 @@
         "date_of_birth": "1992-09-19"
       }
     ],
-    "fetched_at": "2026-06-03T07:58:14.095Z",
+    "fetched_at": "2026-06-03T13:54:50.488Z",
     "group": "E",
     "confederation": "CONCACAF"
   },
@@ -3521,8 +3521,8 @@
     "crest": "https://crests.football-data.org/787.svg",
     "flag": "🇨🇮",
     "coach": {
-      "name": null,
-      "nationality": null
+      "name": "Emerse Faé",
+      "nationality": "Ivory Coast"
     },
     "squad": [
       {
@@ -3552,6 +3552,13 @@
         "position": "Defence",
         "nationality": "Ivory Coast",
         "date_of_birth": "1999-08-20"
+      },
+      {
+        "id": 700,
+        "name": "Christopher Operi",
+        "position": "Defence",
+        "nationality": "Ivory Coast",
+        "date_of_birth": "1997-04-29"
       },
       {
         "id": 37432,
@@ -3587,13 +3594,6 @@
         "position": "Defence",
         "nationality": "Ivory Coast",
         "date_of_birth": "2001-01-04"
-      },
-      {
-        "id": 185194,
-        "name": "Clement Akpa",
-        "position": "Defence",
-        "nationality": "Ivory Coast",
-        "date_of_birth": "2001-11-24"
       },
       {
         "id": 191760,
@@ -3652,6 +3652,13 @@
         "date_of_birth": "2006-04-06"
       },
       {
+        "id": 8412,
+        "name": "Nicolas Pépé",
+        "position": "Offence",
+        "nationality": "Ivory Coast",
+        "date_of_birth": "1995-05-29"
+      },
+      {
         "id": 128710,
         "name": "Evann Guessand",
         "position": "Offence",
@@ -3699,16 +3706,9 @@
         "position": "Offence",
         "nationality": "Ivory Coast",
         "date_of_birth": "2006-11-14"
-      },
-      {
-        "id": 8412,
-        "name": "Nicolas Pépé",
-        "position": "Right Winger",
-        "nationality": "Ivory Coast",
-        "date_of_birth": "1995-05-29"
       }
     ],
-    "fetched_at": "2026-06-03T07:58:21.151Z",
+    "fetched_at": "2026-06-03T13:54:57.306Z",
     "group": "E",
     "confederation": "CAF"
   },
@@ -3719,8 +3719,8 @@
     "crest": "https://crests.football-data.org/791.svg",
     "flag": "🇪🇨",
     "coach": {
-      "name": null,
-      "nationality": null
+      "name": "Sebastián Beccacece",
+      "nationality": "Argentina"
     },
     "squad": [
       {
@@ -3731,11 +3731,11 @@
         "date_of_birth": "1987-03-30"
       },
       {
-        "id": 24896,
-        "name": "David Cabezas",
+        "id": 24881,
+        "name": "Gonzalo Valle",
         "position": "Goalkeeper",
         "nationality": "Ecuador",
-        "date_of_birth": "1995-06-12"
+        "date_of_birth": "1996-02-28"
       },
       {
         "id": 169139,
@@ -3743,13 +3743,6 @@
         "position": "Goalkeeper",
         "nationality": "Ecuador",
         "date_of_birth": "2000-09-09"
-      },
-      {
-        "id": 189828,
-        "name": "Gonzalo Valle",
-        "position": "Goalkeeper",
-        "nationality": null,
-        "date_of_birth": "1960-04-08"
       },
       {
         "id": 24673,
@@ -3773,13 +3766,6 @@
         "date_of_birth": "1998-01-21"
       },
       {
-        "id": 112965,
-        "name": "Leonardo Realpe",
-        "position": "Defence",
-        "nationality": "Ecuador",
-        "date_of_birth": "2001-02-26"
-      },
-      {
         "id": 114102,
         "name": "William Pacho",
         "position": "Defence",
@@ -3799,13 +3785,6 @@
         "position": "Defence",
         "nationality": "Ecuador",
         "date_of_birth": "2002-01-09"
-      },
-      {
-        "id": 131279,
-        "name": "José Hurtado",
-        "position": "Defence",
-        "nationality": "Ecuador",
-        "date_of_birth": "2001-12-23"
       },
       {
         "id": 178928,
@@ -3836,6 +3815,13 @@
         "date_of_birth": "1999-08-05"
       },
       {
+        "id": 56066,
+        "name": "Gonzalo Plata",
+        "position": "Midfield",
+        "nationality": "Ecuador",
+        "date_of_birth": "2000-11-01"
+      },
+      {
         "id": 121103,
         "name": "Moisés Caicedo",
         "position": "Midfield",
@@ -3850,8 +3836,15 @@
         "date_of_birth": "2002-03-09"
       },
       {
-        "id": 205684,
-        "name": "Ray Paez",
+        "id": 179174,
+        "name": "Alan Minda",
+        "position": "Midfield",
+        "nationality": "Ecuador",
+        "date_of_birth": "2003-05-14"
+      },
+      {
+        "id": 206097,
+        "name": "Kendry Paez",
         "position": "Midfield",
         "nationality": "Ecuador",
         "date_of_birth": "2007-05-04"
@@ -3871,25 +3864,11 @@
         "date_of_birth": "1997-11-18"
       },
       {
-        "id": 24667,
-        "name": "Janner Corozo",
-        "position": "Offence",
-        "nationality": "Ecuador",
-        "date_of_birth": "1995-09-08"
-      },
-      {
         "id": 40009,
         "name": "Enner Valencia",
         "position": "Offence",
         "nationality": "Ecuador",
         "date_of_birth": "1989-11-04"
-      },
-      {
-        "id": 56066,
-        "name": "Gonzalo Plata",
-        "position": "Offence",
-        "nationality": "Ecuador",
-        "date_of_birth": "2000-11-01"
       },
       {
         "id": 98549,
@@ -3899,13 +3878,6 @@
         "date_of_birth": "2000-06-23"
       },
       {
-        "id": 178792,
-        "name": "John Mercado",
-        "position": "Offence",
-        "nationality": "Ecuador",
-        "date_of_birth": "2002-06-03"
-      },
-      {
         "id": 178940,
         "name": "Anthony Valencia",
         "position": "Offence",
@@ -3913,11 +3885,18 @@
         "date_of_birth": "2003-07-21"
       },
       {
-        "id": 179174,
-        "name": "Alan Minda",
+        "id": 187375,
+        "name": "Nilson Angulo",
         "position": "Offence",
         "nationality": "Ecuador",
-        "date_of_birth": "2003-05-14"
+        "date_of_birth": "2003-06-19"
+      },
+      {
+        "id": 189975,
+        "name": "Kevin Rodríguez",
+        "position": "Offence",
+        "nationality": "Ecuador",
+        "date_of_birth": "2000-03-04"
       },
       {
         "id": 215510,
@@ -3925,23 +3904,9 @@
         "position": "Offence",
         "nationality": "Spain",
         "date_of_birth": "2005-03-19"
-      },
-      {
-        "id": 250229,
-        "name": "Bryan Ramírez",
-        "position": "Offence",
-        "nationality": "Ecuador",
-        "date_of_birth": "2000-08-11"
-      },
-      {
-        "id": 289597,
-        "name": "Elias Legendre Quiñonez",
-        "position": "Offence",
-        "nationality": "Ecuador",
-        "date_of_birth": "2008-04-22"
       }
     ],
-    "fetched_at": "2026-06-03T07:58:27.968Z",
+    "fetched_at": "2026-06-03T13:55:04.427Z",
     "group": "E",
     "confederation": "CONMEBOL"
   },
@@ -4139,7 +4104,7 @@
         "date_of_birth": "2002-02-01"
       }
     ],
-    "fetched_at": "2026-06-03T07:58:34.801Z",
+    "fetched_at": "2026-06-03T13:55:11.333Z",
     "group": "F",
     "confederation": "UEFA"
   },
@@ -4320,7 +4285,7 @@
         "name": "Ayase Ueda",
         "position": "Offence",
         "nationality": "Japan",
-        "date_of_birth": "1998-09-10"
+        "date_of_birth": "1998-08-28"
       },
       {
         "id": 247160,
@@ -4337,7 +4302,7 @@
         "date_of_birth": "2005-06-03"
       }
     ],
-    "fetched_at": "2026-06-03T07:58:41.622Z",
+    "fetched_at": "2026-06-03T13:55:18.492Z",
     "group": "F",
     "confederation": "AFC"
   },
@@ -4409,13 +4374,6 @@
         "date_of_birth": "1997-01-08"
       },
       {
-        "id": 111777,
-        "name": "Emil Holm",
-        "position": "Defence",
-        "nationality": "Sweden",
-        "date_of_birth": "2000-05-13"
-      },
-      {
         "id": 145937,
         "name": "Daniel Svensson",
         "position": "Defence",
@@ -4435,6 +4393,13 @@
         "position": "Defence",
         "nationality": "Sweden",
         "date_of_birth": "1999-01-13"
+      },
+      {
+        "id": 167409,
+        "name": "Herman Johansson",
+        "position": "Defence",
+        "nationality": "Sweden",
+        "date_of_birth": "1997-10-16"
       },
       {
         "id": 192811,
@@ -4535,7 +4500,7 @@
         "date_of_birth": "2002-04-27"
       }
     ],
-    "fetched_at": "2026-06-03T07:58:48.430Z",
+    "fetched_at": "2026-06-03T13:55:25.340Z",
     "group": "F",
     "confederation": "UEFA"
   },
@@ -4712,7 +4677,7 @@
         "date_of_birth": "2007-09-17"
       }
     ],
-    "fetched_at": "2026-06-03T07:58:55.457Z",
+    "fetched_at": "2026-06-03T13:55:32.156Z",
     "group": "F",
     "confederation": "CAF"
   },
@@ -4910,7 +4875,7 @@
         "date_of_birth": "2005-02-03"
       }
     ],
-    "fetched_at": "2026-06-03T07:59:02.330Z",
+    "fetched_at": "2026-06-03T13:55:39.027Z",
     "group": "G",
     "confederation": "UEFA"
   },
@@ -4921,8 +4886,8 @@
     "crest": "https://crests.football-data.org/825.svg",
     "flag": "🇪🇬",
     "coach": {
-      "name": null,
-      "nationality": null
+      "name": "Hossam Hassan",
+      "nationality": "Egypt"
     },
     "squad": [
       {
@@ -4940,11 +4905,11 @@
         "date_of_birth": "1999-09-01"
       },
       {
-        "id": 174490,
-        "name": "Ahmed Shobeir",
+        "id": 251169,
+        "name": "Oufa Shobeir",
         "position": "Goalkeeper",
         "nationality": "Egypt",
-        "date_of_birth": "2000-05-15"
+        "date_of_birth": "2000-03-17"
       },
       {
         "id": 780,
@@ -4996,13 +4961,6 @@
         "date_of_birth": "2001-04-30"
       },
       {
-        "id": 3759,
-        "name": "Trezeguet",
-        "position": "Midfield",
-        "nationality": "Egypt",
-        "date_of_birth": "1994-01-10"
-      },
-      {
         "id": 114669,
         "name": "Nabil Dunga",
         "position": "Midfield",
@@ -5015,6 +4973,13 @@
         "position": "Midfield",
         "nationality": "Egypt",
         "date_of_birth": "1994-09-29"
+      },
+      {
+        "id": 180952,
+        "name": "Trezeguet",
+        "position": "Midfield",
+        "nationality": "Egypt",
+        "date_of_birth": "1994-10-01"
       },
       {
         "id": 191972,
@@ -5080,7 +5045,7 @@
         "date_of_birth": "2008-01-01"
       }
     ],
-    "fetched_at": "2026-06-03T07:59:09.214Z",
+    "fetched_at": "2026-06-03T13:55:45.866Z",
     "group": "G",
     "confederation": "CAF"
   },
@@ -5091,8 +5056,8 @@
     "crest": "https://crests.football-data.org/iran.svg",
     "flag": "🇮🇷",
     "coach": {
-      "name": null,
-      "nationality": null
+      "name": "Amir Ghalenoei",
+      "nationality": "Iran"
     },
     "squad": [
       {
@@ -5138,53 +5103,88 @@
         "date_of_birth": "1993-09-29"
       },
       {
-        "id": 189688,
-        "name": "Hossein Kanaani",
+        "id": 231884,
+        "name": "Hossein Kanaanizadegan",
         "position": "Defence",
         "nationality": "Iran",
         "date_of_birth": "1994-03-23"
       },
       {
-        "id": 189694,
-        "name": "Shoja Khalilzadeh",
+        "id": 231889,
+        "name": "Shojae Khalilzadeh",
         "position": "Defence",
         "nationality": "Iran",
         "date_of_birth": "1989-05-14"
       },
       {
-        "id": 189699,
-        "name": "Saleh Hardani",
+        "id": 231900,
+        "name": "Rouzbeh Cheshmi",
         "position": "Defence",
-        "nationality": null,
-        "date_of_birth": "1998-09-14"
-      },
-      {
-        "id": 244158,
-        "name": "Ariya Yousefi",
-        "position": "Defence",
-        "nationality": "Iran",
-        "date_of_birth": "2002-04-22"
-      },
-      {
-        "id": 254587,
-        "name": "Aref Aghasi",
-        "position": "Defence",
-        "nationality": "Iran",
-        "date_of_birth": "1997-01-02"
-      },
-      {
-        "id": 3806,
-        "name": "Roozbeh Cheshmi",
-        "position": "Midfield",
         "nationality": "Iran",
         "date_of_birth": "1993-07-24"
       },
       {
-        "id": 189685,
-        "name": "Omid Noorafkan",
+        "id": 249673,
+        "name": "Saleh Hardani",
+        "position": "Defence",
+        "nationality": "Iran",
+        "date_of_birth": "1998-12-26"
+      },
+      {
+        "id": 3821,
+        "name": "Saeid Ezatolahi",
         "position": "Midfield",
         "nationality": "Iran",
-        "date_of_birth": "1997-04-09"
+        "date_of_birth": "1996-10-01"
+      },
+      {
+        "id": 189724,
+        "name": "Mehdi Torabi",
+        "position": "Midfield",
+        "nationality": "Iran",
+        "date_of_birth": "1994-09-10"
+      },
+      {
+        "id": 189790,
+        "name": "Mohammad Ghorbani",
+        "position": "Midfield",
+        "nationality": "Iran",
+        "date_of_birth": "2001-05-21"
+      },
+      {
+        "id": 244158,
+        "name": "Ariya Yousefi",
+        "position": "Midfield",
+        "nationality": "Iran",
+        "date_of_birth": "2002-04-22"
+      },
+      {
+        "id": 249672,
+        "name": "Medhi Ghayedi",
+        "position": "Midfield",
+        "nationality": "Iran",
+        "date_of_birth": "1998-12-05"
+      },
+      {
+        "id": 3819,
+        "name": "Alireza Jahanbakhsh",
+        "position": "Offence",
+        "nationality": "Iran",
+        "date_of_birth": "1993-08-11"
+      },
+      {
+        "id": 3820,
+        "name": "Mehdi Taremi",
+        "position": "Offence",
+        "nationality": "Iran",
+        "date_of_birth": "1992-07-18"
+      },
+      {
+        "id": 33634,
+        "name": "Dennis Eckert",
+        "position": "Offence",
+        "nationality": "Germany",
+        "date_of_birth": "1997-01-09"
       },
       {
         "id": 119530,
@@ -5194,35 +5194,35 @@
         "date_of_birth": "1995-11-11"
       },
       {
-        "id": 188028,
-        "name": "Amirhossein Hosseinzadeh",
+        "id": 152180,
+        "name": "Shahriar Moghanlou",
+        "position": "Offence",
+        "nationality": "Iran",
+        "date_of_birth": "1994-12-21"
+      },
+      {
+        "id": 172641,
+        "name": "Mohammad Mohebi",
+        "position": "Offence",
+        "nationality": "Iran",
+        "date_of_birth": "1998-12-20"
+      },
+      {
+        "id": 179746,
+        "name": "Saman Ghoddos",
+        "position": "Offence",
+        "nationality": "Iran",
+        "date_of_birth": "1993-09-06"
+      },
+      {
+        "id": 254746,
+        "name": "Amir Hosseinzadeh",
         "position": "Offence",
         "nationality": "Iran",
         "date_of_birth": "2000-10-30"
-      },
-      {
-        "id": 189724,
-        "name": "Mehdi Torabi",
-        "position": "Offence",
-        "nationality": "Iran",
-        "date_of_birth": "1994-09-10"
-      },
-      {
-        "id": 189807,
-        "name": "Mehdi Hashemnejad",
-        "position": "Offence",
-        "nationality": null,
-        "date_of_birth": "2001-10-27"
-      },
-      {
-        "id": 248727,
-        "name": "Kasra Taheri",
-        "position": "Offence",
-        "nationality": "Iran",
-        "date_of_birth": "2006-08-06"
       }
     ],
-    "fetched_at": "2026-06-03T07:59:16.046Z",
+    "fetched_at": "2026-06-03T13:55:52.937Z",
     "group": "G",
     "confederation": "AFC"
   },
@@ -5420,7 +5420,7 @@
         "date_of_birth": "2002-08-19"
       }
     ],
-    "fetched_at": "2026-06-03T07:59:22.870Z",
+    "fetched_at": "2026-06-03T13:55:59.940Z",
     "group": "G",
     "confederation": "OFC"
   },
@@ -5562,6 +5562,13 @@
         "date_of_birth": "2002-11-25"
       },
       {
+        "id": 171992,
+        "name": "Pablo Gavira",
+        "position": "Midfield",
+        "nationality": "Spain",
+        "date_of_birth": "2004-08-05"
+      },
+      {
         "id": 180137,
         "name": "Mikel Oyarzabal",
         "position": "Midfield",
@@ -5609,16 +5616,9 @@
         "position": "Offence",
         "nationality": "Spain",
         "date_of_birth": "2003-07-13"
-      },
-      {
-        "id": 171992,
-        "name": "Pablo Gavira",
-        "position": "Central Midfield",
-        "nationality": "Spain",
-        "date_of_birth": "2004-08-05"
       }
     ],
-    "fetched_at": "2026-06-03T07:59:29.717Z",
+    "fetched_at": "2026-06-03T13:56:06.967Z",
     "group": "H",
     "confederation": "UEFA"
   },
@@ -5674,6 +5674,13 @@
         "position": "Defence",
         "nationality": "Cape Verde Islands",
         "date_of_birth": "1992-06-17"
+      },
+      {
+        "id": 45328,
+        "name": "Diney Borges",
+        "position": "Defence",
+        "nationality": "Portugal",
+        "date_of_birth": "1995-01-17"
       },
       {
         "id": 63097,
@@ -5781,6 +5788,13 @@
         "date_of_birth": "1998-06-14"
       },
       {
+        "id": 151942,
+        "name": "Gilson Tavares",
+        "position": "Offence",
+        "nationality": "Cape Verde Islands",
+        "date_of_birth": "2001-12-29"
+      },
+      {
         "id": 166784,
         "name": "Nuno Da Costa",
         "position": "Offence",
@@ -5802,7 +5816,7 @@
         "date_of_birth": "2002-05-03"
       }
     ],
-    "fetched_at": "2026-06-03T07:59:36.550Z",
+    "fetched_at": "2026-06-03T13:56:13.801Z",
     "group": "H",
     "confederation": "CAF"
   },
@@ -5813,20 +5827,20 @@
     "crest": "https://crests.football-data.org/saudi_arabia.svg",
     "flag": "🇸🇦",
     "coach": {
-      "name": null,
-      "nationality": null
+      "name": "Giorgios Donis",
+      "nationality": "Greece"
     },
     "squad": [
       {
-        "id": 189720,
-        "name": "Mohammed Al-Rubaie",
+        "id": 3561,
+        "name": "Mohammed Al Owais",
         "position": "Goalkeeper",
-        "nationality": null,
-        "date_of_birth": "1997-08-14"
+        "nationality": "Saudi Arabia",
+        "date_of_birth": "1991-10-10"
       },
       {
-        "id": 189998,
-        "name": "Nawaf Alaqidi",
+        "id": 233580,
+        "name": "Nawaf Al Aqidi",
         "position": "Goalkeeper",
         "nationality": "Saudi Arabia",
         "date_of_birth": "2000-05-10"
@@ -5846,13 +5860,6 @@
         "date_of_birth": "1997-01-15"
       },
       {
-        "id": 114362,
-        "name": "Muteb Al Mufarrij",
-        "position": "Defence",
-        "nationality": "Saudi Arabia",
-        "date_of_birth": "1996-08-18"
-      },
-      {
         "id": 129098,
         "name": "Saud Abdulhamid",
         "position": "Defence",
@@ -5860,11 +5867,18 @@
         "date_of_birth": "1999-07-18"
       },
       {
-        "id": 189703,
-        "name": "Ayman Yahya",
+        "id": 132018,
+        "name": "Ali Lajami",
         "position": "Defence",
         "nationality": "Saudi Arabia",
-        "date_of_birth": "2001-05-14"
+        "date_of_birth": "1996-04-24"
+      },
+      {
+        "id": 244368,
+        "name": "Hassan Al Tambakti",
+        "position": "Defence",
+        "nationality": "Saudi Arabia",
+        "date_of_birth": "1999-02-09"
       },
       {
         "id": 244552,
@@ -5874,25 +5888,39 @@
         "date_of_birth": "1992-09-27"
       },
       {
-        "id": 249789,
-        "name": "Rayane Hamed",
+        "id": 253246,
+        "name": "Moteb Al Harbi",
         "position": "Defence",
         "nationality": "Saudi Arabia",
-        "date_of_birth": "2002-04-13"
+        "date_of_birth": "2000-02-20"
       },
       {
-        "id": 3580,
-        "name": "Mohamed Kanno",
+        "id": 3574,
+        "name": "Salem Al Dawsari",
         "position": "Midfield",
         "nationality": "Saudi Arabia",
-        "date_of_birth": "1994-09-22"
+        "date_of_birth": "1991-08-19"
       },
       {
-        "id": 189706,
-        "name": "Salman Al-Faraj",
+        "id": 3583,
+        "name": "Abdullah Al Khaibari",
         "position": "Midfield",
-        "nationality": null,
-        "date_of_birth": "1989-08-01"
+        "nationality": "Saudi Arabia",
+        "date_of_birth": "1996-08-16"
+      },
+      {
+        "id": 166119,
+        "name": "Nasser Al Dawsari",
+        "position": "Midfield",
+        "nationality": "Saudi Arabia",
+        "date_of_birth": "1998-12-19"
+      },
+      {
+        "id": 189703,
+        "name": "Ayman Yahya",
+        "position": "Midfield",
+        "nationality": "Saudi Arabia",
+        "date_of_birth": "2001-05-14"
       },
       {
         "id": 248781,
@@ -5902,11 +5930,11 @@
         "date_of_birth": "2003-06-20"
       },
       {
-        "id": 99391,
-        "name": "Turki Al Ammar",
-        "position": "Offence",
+        "id": 248783,
+        "name": "Mohammed Kanno",
+        "position": "Midfield",
         "nationality": "Saudi Arabia",
-        "date_of_birth": "1999-09-24"
+        "date_of_birth": "1994-09-22"
       },
       {
         "id": 114373,
@@ -5916,17 +5944,10 @@
         "date_of_birth": "1994-10-17"
       },
       {
-        "id": 189719,
-        "name": "Firas Al-Buraikan",
+        "id": 166114,
+        "name": "Saleh Al Shehri",
         "position": "Offence",
-        "nationality": null,
-        "date_of_birth": "2000-05-14"
-      },
-      {
-        "id": 189789,
-        "name": "Saleh Al-Shehri",
-        "position": "Offence",
-        "nationality": null,
+        "nationality": "Saudi Arabia",
         "date_of_birth": "1993-11-01"
       },
       {
@@ -5944,14 +5965,14 @@
         "date_of_birth": "2000-11-07"
       },
       {
-        "id": 251175,
-        "name": "Marwan Al Sahafi",
+        "id": 249786,
+        "name": "Firas Al Brikan",
         "position": "Offence",
         "nationality": "Saudi Arabia",
-        "date_of_birth": "2004-02-17"
+        "date_of_birth": "2000-05-14"
       }
     ],
-    "fetched_at": "2026-06-03T07:59:43.365Z",
+    "fetched_at": "2026-06-03T13:56:20.614Z",
     "group": "H",
     "confederation": "AFC"
   },
@@ -6149,7 +6170,7 @@
         "date_of_birth": "1998-06-30"
       }
     ],
-    "fetched_at": "2026-06-03T07:59:50.243Z",
+    "fetched_at": "2026-06-03T13:56:27.449Z",
     "group": "H",
     "confederation": "CONMEBOL"
   },
@@ -6347,7 +6368,7 @@
         "date_of_birth": "2002-09-02"
       }
     ],
-    "fetched_at": "2026-06-03T07:59:57.058Z",
+    "fetched_at": "2026-06-03T13:56:34.284Z",
     "group": "I",
     "confederation": "UEFA"
   },
@@ -6514,7 +6535,7 @@
         "name": "Iliman Ndiaye",
         "position": "Offence",
         "nationality": "Senegal",
-        "date_of_birth": "1999-07-22"
+        "date_of_birth": "2000-03-06"
       },
       {
         "id": 98299,
@@ -6559,7 +6580,7 @@
         "date_of_birth": "2008-01-24"
       }
     ],
-    "fetched_at": "2026-06-03T08:00:05.259Z",
+    "fetched_at": "2026-06-03T13:56:41.105Z",
     "group": "I",
     "confederation": "CAF"
   },
@@ -6570,10 +6591,17 @@
     "crest": "https://crests.football-data.org/iraq.svg",
     "flag": "🇮🇶",
     "coach": {
-      "name": null,
-      "nationality": null
+      "name": "Graham Arnold",
+      "nationality": "Australia"
     },
     "squad": [
+      {
+        "id": 117137,
+        "name": "Jalal Hassan",
+        "position": "Goalkeeper",
+        "nationality": "Iraq",
+        "date_of_birth": "1991-05-18"
+      },
       {
         "id": 132162,
         "name": "Fahad Talib",
@@ -6587,27 +6615,6 @@
         "position": "Goalkeeper",
         "nationality": "Iraq",
         "date_of_birth": "1996-08-19"
-      },
-      {
-        "id": 253185,
-        "name": "Kumel Al Rekabe",
-        "position": "Goalkeeper",
-        "nationality": "Iraq",
-        "date_of_birth": "2004-08-19"
-      },
-      {
-        "id": 24251,
-        "name": "Frans Dhia Putros",
-        "position": "Defence",
-        "nationality": "Iraq",
-        "date_of_birth": "1993-07-14"
-      },
-      {
-        "id": 117144,
-        "name": "Maytham Jabbar",
-        "position": "Defence",
-        "nationality": "Iraq",
-        "date_of_birth": "2000-11-10"
       },
       {
         "id": 129968,
@@ -6631,6 +6638,27 @@
         "date_of_birth": "1992-04-12"
       },
       {
+        "id": 236191,
+        "name": "Mustafa Saadoun",
+        "position": "Defence",
+        "nationality": "Iraq",
+        "date_of_birth": "2001-05-25"
+      },
+      {
+        "id": 236195,
+        "name": "Ahmed Yahya",
+        "position": "Defence",
+        "nationality": "Iraq",
+        "date_of_birth": "1997-05-27"
+      },
+      {
+        "id": 236201,
+        "name": "Frans Putros",
+        "position": "Defence",
+        "nationality": "Iraq",
+        "date_of_birth": "1993-07-14"
+      },
+      {
         "id": 249839,
         "name": "Zaid Tahseen",
         "position": "Defence",
@@ -6652,13 +6680,6 @@
         "date_of_birth": "1998-08-16"
       },
       {
-        "id": 253536,
-        "name": "Ahmed Maknazi",
-        "position": "Defence",
-        "nationality": "Iraq",
-        "date_of_birth": "2001-09-24"
-      },
-      {
         "id": 31373,
         "name": "Amir Al Ammari",
         "position": "Midfield",
@@ -6671,13 +6692,6 @@
         "position": "Midfield",
         "nationality": "Iraq",
         "date_of_birth": "2000-10-10"
-      },
-      {
-        "id": 117152,
-        "name": "Karar Nabeel",
-        "position": "Midfield",
-        "nationality": "Iraq",
-        "date_of_birth": "1998-01-16"
       },
       {
         "id": 117481,
@@ -6694,6 +6708,20 @@
         "date_of_birth": "2000-05-01"
       },
       {
+        "id": 165049,
+        "name": "Youssef Amyn",
+        "position": "Midfield",
+        "nationality": "Iraq",
+        "date_of_birth": "2003-08-21"
+      },
+      {
+        "id": 167462,
+        "name": "Ahmed Qasem",
+        "position": "Midfield",
+        "nationality": "Sweden",
+        "date_of_birth": "2003-07-12"
+      },
+      {
         "id": 176642,
         "name": "Zidane Iqbal",
         "position": "Midfield",
@@ -6708,25 +6736,11 @@
         "date_of_birth": "2002-01-03"
       },
       {
-        "id": 31375,
-        "name": "Peter Gwargis",
-        "position": "Offence",
-        "nationality": "Sweden",
-        "date_of_birth": "2000-09-04"
-      },
-      {
         "id": 117153,
         "name": "Aymen Hussein",
         "position": "Offence",
         "nationality": "Iraq",
         "date_of_birth": "1996-03-22"
-      },
-      {
-        "id": 165049,
-        "name": "Youssef Amyn",
-        "position": "Offence",
-        "nationality": "Iraq",
-        "date_of_birth": "2003-08-21"
       },
       {
         "id": 177008,
@@ -6755,16 +6769,9 @@
         "position": "Offence",
         "nationality": "Iraq",
         "date_of_birth": "2000-06-20"
-      },
-      {
-        "id": 236207,
-        "name": "Hasan Abdulkareem",
-        "position": "Offence",
-        "nationality": "Iraq",
-        "date_of_birth": "1999-01-01"
       }
     ],
-    "fetched_at": "2026-06-03T08:00:12.335Z",
+    "fetched_at": "2026-06-03T13:56:48.348Z",
     "group": "I",
     "confederation": "AFC"
   },
@@ -6815,6 +6822,13 @@
         "date_of_birth": "1999-01-12"
       },
       {
+        "id": 37913,
+        "name": "Fredrik Bjørkan",
+        "position": "Defence",
+        "nationality": "Norway",
+        "date_of_birth": "1998-08-21"
+      },
+      {
         "id": 38548,
         "name": "Marcus Pedersen",
         "position": "Defence",
@@ -6848,13 +6862,6 @@
         "position": "Defence",
         "nationality": "Norway",
         "date_of_birth": "2001-02-02"
-      },
-      {
-        "id": 177303,
-        "name": "Fredrik André Björkan",
-        "position": "Defence",
-        "nationality": "Norway",
-        "date_of_birth": "1998-08-21"
       },
       {
         "id": 205467,
@@ -6962,7 +6969,7 @@
         "date_of_birth": "2000-02-06"
       }
     ],
-    "fetched_at": "2026-06-03T08:00:19.205Z",
+    "fetched_at": "2026-06-03T13:56:55.181Z",
     "group": "I",
     "confederation": "UEFA"
   },
@@ -7160,7 +7167,7 @@
         "date_of_birth": "2002-12-18"
       }
     ],
-    "fetched_at": "2026-06-03T08:00:26.070Z",
+    "fetched_at": "2026-06-03T13:57:02.050Z",
     "group": "J",
     "confederation": "CONMEBOL"
   },
@@ -7344,7 +7351,7 @@
         "date_of_birth": "2002-09-06"
       }
     ],
-    "fetched_at": "2026-06-03T08:00:32.915Z",
+    "fetched_at": "2026-06-03T13:57:08.912Z",
     "group": "J",
     "confederation": "CAF"
   },
@@ -7542,7 +7549,7 @@
         "date_of_birth": "1997-07-07"
       }
     ],
-    "fetched_at": "2026-06-03T08:00:39.750Z",
+    "fetched_at": "2026-06-03T13:57:15.737Z",
     "group": "J",
     "confederation": "UEFA"
   },
@@ -7684,7 +7691,7 @@
         "date_of_birth": "2006-02-01"
       }
     ],
-    "fetched_at": "2026-06-03T08:00:46.614Z",
+    "fetched_at": "2026-06-03T13:57:22.555Z",
     "group": "J",
     "confederation": "AFC"
   },
@@ -7882,7 +7889,7 @@
         "date_of_birth": "2002-12-14"
       }
     ],
-    "fetched_at": "2026-06-03T08:00:53.436Z",
+    "fetched_at": "2026-06-03T13:57:29.757Z",
     "group": "K",
     "confederation": "UEFA"
   },
@@ -8080,7 +8087,7 @@
         "date_of_birth": "1994-06-24"
       }
     ],
-    "fetched_at": "2026-06-03T08:01:00.315Z",
+    "fetched_at": "2026-06-03T13:57:36.594Z",
     "group": "K",
     "confederation": "CAF"
   },
@@ -8091,8 +8098,8 @@
     "crest": "https://crests.football-data.org/8070.png",
     "flag": "🇺🇿",
     "coach": {
-      "name": null,
-      "nationality": null
+      "name": "Fabio Cannavaro",
+      "nationality": "Italy"
     },
     "squad": [
       {
@@ -8257,7 +8264,7 @@
         "date_of_birth": "2001-07-15"
       }
     ],
-    "fetched_at": "2026-06-03T08:01:07.130Z",
+    "fetched_at": "2026-06-03T13:57:43.432Z",
     "group": "K",
     "confederation": "AFC"
   },
@@ -8371,13 +8378,6 @@
         "date_of_birth": "1997-09-21"
       },
       {
-        "id": 22396,
-        "name": "Luis Díaz",
-        "position": "Midfield",
-        "nationality": "Colombia",
-        "date_of_birth": "1997-01-13"
-      },
-      {
         "id": 29012,
         "name": "Jorge Carrascal",
         "position": "Midfield",
@@ -8434,6 +8434,13 @@
         "date_of_birth": "1993-05-11"
       },
       {
+        "id": 22396,
+        "name": "Luis Díaz",
+        "position": "Offence",
+        "nationality": "Colombia",
+        "date_of_birth": "1997-01-13"
+      },
+      {
         "id": 32386,
         "name": "Luis Suárez",
         "position": "Offence",
@@ -8455,7 +8462,7 @@
         "date_of_birth": "2002-09-22"
       }
     ],
-    "fetched_at": "2026-06-03T08:01:14.044Z",
+    "fetched_at": "2026-06-03T13:57:50.368Z",
     "group": "K",
     "confederation": "CONMEBOL"
   },
@@ -8653,7 +8660,7 @@
         "date_of_birth": "2002-03-10"
       }
     ],
-    "fetched_at": "2026-06-03T08:01:20.877Z",
+    "fetched_at": "2026-06-03T13:57:57.388Z",
     "group": "L",
     "confederation": "UEFA"
   },
@@ -8851,7 +8858,7 @@
         "date_of_birth": "2003-03-31"
       }
     ],
-    "fetched_at": "2026-06-03T08:01:27.751Z",
+    "fetched_at": "2026-06-03T13:58:04.240Z",
     "group": "L",
     "confederation": "UEFA"
   },
@@ -8862,8 +8869,8 @@
     "crest": "https://crests.football-data.org/ghana.svg",
     "flag": "🇬🇭",
     "coach": {
-      "name": null,
-      "nationality": null
+      "name": "Carlos Queiroz",
+      "nationality": "Portugal"
     },
     "squad": [
       {
@@ -8888,18 +8895,18 @@
         "date_of_birth": "1992-07-13"
       },
       {
+        "id": 6499,
+        "name": "Abdul Rahman Baba",
+        "position": "Defence",
+        "nationality": "Ghana",
+        "date_of_birth": "1994-07-02"
+      },
+      {
         "id": 7442,
         "name": "Derrick Luckassen",
         "position": "Defence",
         "nationality": "Netherlands",
         "date_of_birth": "1995-07-03"
-      },
-      {
-        "id": 8323,
-        "name": "Alexander Djiku",
-        "position": "Defence",
-        "nationality": "Ghana",
-        "date_of_birth": "1994-08-09"
       },
       {
         "id": 16340,
@@ -8909,18 +8916,11 @@
         "date_of_birth": "1998-07-18"
       },
       {
-        "id": 64934,
-        "name": "Derrick Köhn",
+        "id": 25641,
+        "name": "Abdul Mumin",
         "position": "Defence",
         "nationality": "Ghana",
-        "date_of_birth": "1999-02-04"
-      },
-      {
-        "id": 67398,
-        "name": "Patric Pfeiffer",
-        "position": "Defence",
-        "nationality": "Ghana",
-        "date_of_birth": "1999-08-20"
+        "date_of_birth": "1998-06-06"
       },
       {
         "id": 128235,
@@ -8928,6 +8928,13 @@
         "position": "Defence",
         "nationality": "Ghana",
         "date_of_birth": "1998-10-14"
+      },
+      {
+        "id": 147893,
+        "name": "Alidu Seidu",
+        "position": "Defence",
+        "nationality": "Ghana",
+        "date_of_birth": "2000-06-04"
       },
       {
         "id": 153924,
@@ -8949,13 +8956,6 @@
         "position": "Defence",
         "nationality": "Ghana",
         "date_of_birth": "2004-06-04"
-      },
-      {
-        "id": 276631,
-        "name": "Manu Duah",
-        "position": "Defence",
-        "nationality": "Ghana",
-        "date_of_birth": "2005-06-05"
       },
       {
         "id": 110,
@@ -8986,13 +8986,6 @@
         "date_of_birth": "2000-11-03"
       },
       {
-        "id": 188791,
-        "name": "Ibrahim Sulemana",
-        "position": "Midfield",
-        "nationality": "Ghana",
-        "date_of_birth": "2003-05-22"
-      },
-      {
         "id": 262187,
         "name": "Caleb Yirenkyi",
         "position": "Midfield",
@@ -9007,11 +9000,11 @@
         "date_of_birth": "2000-01-07"
       },
       {
-        "id": 4969,
-        "name": "Daniel Agyei",
+        "id": 6389,
+        "name": "Brandon Thomas-Asante",
         "position": "Offence",
         "nationality": "Ghana",
-        "date_of_birth": "1997-06-01"
+        "date_of_birth": "1998-12-29"
       },
       {
         "id": 7984,
@@ -9021,18 +9014,11 @@
         "date_of_birth": "1991-09-11"
       },
       {
-        "id": 8863,
-        "name": "Francis Amuzu",
-        "position": "Offence",
-        "nationality": "Belgium",
-        "date_of_birth": "1999-08-23"
-      },
-      {
-        "id": 137302,
-        "name": "Ransford Königsdörffer",
+        "id": 32629,
+        "name": "Iñaki Williams",
         "position": "Offence",
         "nationality": "Ghana",
-        "date_of_birth": "2001-09-13"
+        "date_of_birth": "1994-06-15"
       },
       {
         "id": 142140,
@@ -9042,11 +9028,11 @@
         "date_of_birth": "2002-02-15"
       },
       {
-        "id": 179712,
-        "name": "Jesurun Rak-Sakyi",
+        "id": 184726,
+        "name": "Ernest Nuamah",
         "position": "Offence",
-        "nationality": "England",
-        "date_of_birth": "2002-10-05"
+        "nationality": "Ghana",
+        "date_of_birth": "2003-11-01"
       },
       {
         "id": 187162,
@@ -9070,7 +9056,7 @@
         "date_of_birth": "2003-09-23"
       }
     ],
-    "fetched_at": "2026-06-03T08:01:34.582Z",
+    "fetched_at": "2026-06-03T13:58:11.250Z",
     "group": "L",
     "confederation": "CAF"
   },
@@ -9268,7 +9254,7 @@
         "date_of_birth": "2001-06-21"
       }
     ],
-    "fetched_at": "2026-06-03T08:01:41.428Z",
+    "fetched_at": "2026-06-03T13:58:18.119Z",
     "group": "L",
     "confederation": "CONCACAF"
   }
