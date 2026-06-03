@@ -2,7 +2,7 @@ import { readFileSync, writeFileSync, readdirSync, mkdirSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { addDays, parseISO, formatISO } from 'date-fns';
-import { runMonteCarloSimulation, deriveTeamStrengths, calibrateDampingFactor } from './monte-carlo.js';
+import { runMonteCarloSimulation, runMonteCarloWithPaths, deriveTeamStrengths, calibrateDampingFactor } from './monte-carlo.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -507,7 +507,7 @@ async function main() {
       console.log('   Using Elo ratings for knockout match predictions...');
     }
     
-    const stageProbabilities = runMonteCarloSimulation(
+    const { teamStats: stageProbabilities, bracketData } = runMonteCarloWithPaths(
       tournament, 
       matchOddsWithResults, 
       calibratedStrengths || teamProbs, // Fallback strengths
@@ -586,8 +586,10 @@ async function main() {
         max_deviation: { team: maxDiffTeam, diff: maxDiff }
       },
       bracket: {
-        // TODO: Implement bracket data structure
-        note: 'Bracket visualization to be implemented'
+        topology: bracketData.bracketTopology,
+        teamCount: Object.keys(bracketData.teamIndex).length,
+        runCount: bracketData.runs.length,
+        note: 'Full bracket paths stored in bracket.json'
       }
     };
     
@@ -597,6 +599,12 @@ async function main() {
     const outputPath = join(processedDir, 'latest.json');
     writeFileSync(outputPath, JSON.stringify(output, null, 2));
     console.log(`\n✅ Processed data saved to: data/processed/latest.json`);
+    
+    // Save bracket data separately (large file, loaded on demand by client)
+    const bracketPath = join(processedDir, 'bracket.json');
+    writeFileSync(bracketPath, JSON.stringify(bracketData));
+    const bracketSizeKB = Math.round(JSON.stringify(bracketData).length / 1024);
+    console.log(`✅ Bracket data saved to: data/processed/bracket.json (${bracketSizeKB} KB)`);
     
     // Summary
     console.log('\n📈 Summary:');

@@ -27,6 +27,13 @@ cpSync(
 );
 console.log('✓ Copied latest.json');
 
+// Copy bracket.json (loaded on demand by knockout page)
+const bracketSrcPath = join(projectRoot, 'data', 'processed', 'bracket.json');
+if (existsSync(bracketSrcPath)) {
+  cpSync(bracketSrcPath, join(distDir, 'data', 'bracket.json'));
+  console.log('✓ Copied bracket.json');
+}
+
 // Copy profile pictures
 console.log('\nCopying profile pictures...');
 const profilesDir = join(projectRoot, 'data', 'profiles');
@@ -1523,6 +1530,235 @@ tr.section-break td {
 .meth-footer a {
   color: #002D72;
 }
+
+/* ============================================
+   KNOCKOUT BRACKET STYLES
+   ============================================ */
+
+.bracket-container {
+  padding: 24px;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.bracket-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.bracket-header h2 {
+  font-size: 20px;
+  color: #1a1a1a;
+}
+
+.bracket-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.bracket-reset-btn {
+  background: #f44336;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.bracket-reset-btn:hover {
+  background: #d32f2f;
+}
+
+.bracket-reset-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.bracket-scenario-count {
+  font-size: 13px;
+  color: #666;
+  background: #f5f5f5;
+  padding: 6px 12px;
+  border-radius: 4px;
+}
+
+.bracket-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr auto 1fr 1fr 1fr 1fr;
+  gap: 0;
+  min-width: 1200px;
+  align-items: center;
+}
+
+.bracket-round {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+  padding: 0 4px;
+}
+
+.bracket-round-label {
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 8px 0 12px;
+}
+
+.bracket-match {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  margin: 6px 0;
+  overflow: hidden;
+  cursor: pointer;
+  transition: box-shadow 0.15s, border-color 0.15s;
+}
+
+.bracket-match:hover {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-color: #002D72;
+}
+
+.bracket-match.locked {
+  border-color: #002D72;
+  box-shadow: 0 0 0 2px rgba(0,45,114,0.15);
+}
+
+.bracket-match.ghosted {
+  opacity: 0.6;
+}
+
+.bracket-match-team {
+  display: flex;
+  align-items: center;
+  padding: 6px 8px;
+  gap: 6px;
+  font-size: 12px;
+  position: relative;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.bracket-match-team:last-child {
+  border-bottom: none;
+}
+
+.bracket-match-team.winner {
+  background: #e8f5e9;
+  font-weight: 600;
+}
+
+.bracket-match-team.locked-winner {
+  background: #e3f2fd;
+  font-weight: 600;
+}
+
+.bracket-match-team .team-flag {
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.bracket-match-team .team-name {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+.bracket-match-team .team-prob {
+  font-size: 11px;
+  color: #666;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.bracket-match-team .team-badge-small {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.bracket-final {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 8px;
+}
+
+.bracket-trophy {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.bracket-winner-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: #002D72;
+  text-align: center;
+}
+
+.bracket-winner-prob {
+  font-size: 12px;
+  color: #666;
+  margin-top: 4px;
+}
+
+/* Connector lines */
+.bracket-connector {
+  position: relative;
+}
+
+/* Legend */
+.bracket-legend {
+  display: flex;
+  gap: 20px;
+  margin-top: 16px;
+  padding: 12px 16px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  font-size: 12px;
+  flex-wrap: wrap;
+}
+
+.bracket-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.bracket-legend-swatch {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+}
+
+.bracket-legend-swatch.swatch-locked {
+  background: #e3f2fd;
+  border-color: #002D72;
+}
+
+.bracket-legend-swatch.swatch-probable {
+  background: #e8f5e9;
+  opacity: 0.6;
+}
+
+.bracket-legend-swatch.swatch-empty {
+  background: white;
+}
 `;
 
 writeFileSync(join(distDir, 'css', 'styles.css'), css);
@@ -2940,6 +3176,10 @@ function route() {
     case 'matches':
       main.innerHTML = renderMatches(parseInt(param) || 1);
       break;
+    case 'knockout':
+      main.innerHTML = '<div class="loading">Loading bracket data...</div>';
+      loadAndRenderBracket();
+      break;
     case 'teams':
       if (param) {
         main.innerHTML = renderTeamDetail(param);
@@ -2956,6 +3196,357 @@ function route() {
     default:
       window.location.hash = '#standings';
   }
+}
+
+// ============================================================
+// KNOCKOUT BRACKET
+// ============================================================
+
+let bracketData = null;
+let lockedResults = {}; // { matchId: winnerTeamIndex }
+
+async function loadAndRenderBracket() {
+  const main = document.querySelector('.main');
+  
+  if (!bracketData) {
+    try {
+      const resp = await fetch('data/bracket.json', { cache: 'no-store' });
+      bracketData = await resp.json();
+    } catch (e) {
+      main.innerHTML = '<div class="card"><div class="card-title">Bracket data not available</div><p>Run npm run process to generate bracket data.</p></div>';
+      return;
+    }
+  }
+  
+  main.innerHTML = renderBracket();
+  attachBracketListeners();
+}
+
+function getFilteredRuns() {
+  if (!bracketData) return [];
+  if (Object.keys(lockedResults).length === 0) return bracketData.runs;
+  
+  return bracketData.runs.filter(run => {
+    for (const [matchId, winnerIdx] of Object.entries(lockedResults)) {
+      const pos = getWinnerPosition(matchId);
+      if (pos === -1) continue;
+      if (run[pos] !== winnerIdx) return false;
+    }
+    return true;
+  });
+}
+
+// Map match ID to position in the 63-element run array
+function getWinnerPosition(matchId) {
+  const r32Order = ['R32-1','R32-2','R32-3','R32-4','R32-5','R32-6','R32-7','R32-8',
+                    'R32-9','R32-10','R32-11','R32-12','R32-13','R32-14','R32-15','R32-16'];
+  const r16Order = ['R16-1','R16-2','R16-3','R16-4','R16-5','R16-6','R16-7','R16-8'];
+  const qfOrder = ['QF-1','QF-2','QF-3','QF-4'];
+  const sfOrder = ['SF-1','SF-2'];
+  
+  let idx = r32Order.indexOf(matchId);
+  if (idx !== -1) return 32 + idx;
+  
+  idx = r16Order.indexOf(matchId);
+  if (idx !== -1) return 48 + idx;
+  
+  idx = qfOrder.indexOf(matchId);
+  if (idx !== -1) return 56 + idx;
+  
+  idx = sfOrder.indexOf(matchId);
+  if (idx !== -1) return 60 + idx;
+  
+  if (matchId === 'F') return 62;
+  return -1;
+}
+
+// Get the two participant positions for a match
+function getParticipantPositions(matchId) {
+  const r32Order = ['R32-1','R32-2','R32-3','R32-4','R32-5','R32-6','R32-7','R32-8',
+                    'R32-9','R32-10','R32-11','R32-12','R32-13','R32-14','R32-15','R32-16'];
+  const idx = r32Order.indexOf(matchId);
+  if (idx !== -1) return [idx * 2, idx * 2 + 1];
+  
+  const topology = bracketData.bracketTopology;
+  
+  const r16Match = topology.r16.find(m => m.id === matchId);
+  if (r16Match) return r16Match.feeds.map(f => getWinnerPosition(f));
+  
+  const qfMatch = topology.qf.find(m => m.id === matchId);
+  if (qfMatch) return qfMatch.feeds.map(f => getWinnerPosition(f));
+  
+  const sfMatch = topology.sf.find(m => m.id === matchId);
+  if (sfMatch) return sfMatch.feeds.map(f => getWinnerPosition(f));
+  
+  const finalMatch = topology.final.find(m => m.id === matchId);
+  if (finalMatch) return finalMatch.feeds.map(f => getWinnerPosition(f));
+  
+  return [-1, -1];
+}
+
+function computeBracketProbabilities(runs) {
+  if (!runs.length) return {};
+  const probs = {};
+  const total = runs.length;
+  
+  const allMatchIds = [
+    ...['R32-1','R32-2','R32-3','R32-4','R32-5','R32-6','R32-7','R32-8',
+        'R32-9','R32-10','R32-11','R32-12','R32-13','R32-14','R32-15','R32-16'],
+    ...['R16-1','R16-2','R16-3','R16-4','R16-5','R16-6','R16-7','R16-8'],
+    ...['QF-1','QF-2','QF-3','QF-4'],
+    ...['SF-1','SF-2'],
+    'F'
+  ];
+  
+  for (const matchId of allMatchIds) {
+    const winPos = getWinnerPosition(matchId);
+    const [p1Pos, p2Pos] = getParticipantPositions(matchId);
+    
+    const teamCounts = {};
+    const winnerCounts = {};
+    const matchupCounts = {};
+    
+    for (const run of runs) {
+      const t1 = run[p1Pos];
+      const t2 = run[p2Pos];
+      const winner = run[winPos];
+      
+      if (t1 >= 0) teamCounts[t1] = (teamCounts[t1] || 0) + 1;
+      if (t2 >= 0) teamCounts[t2] = (teamCounts[t2] || 0) + 1;
+      if (winner >= 0) winnerCounts[winner] = (winnerCounts[winner] || 0) + 1;
+      if (t1 >= 0 && t2 >= 0) {
+        const key = Math.min(t1,t2) + '-' + Math.max(t1,t2);
+        matchupCounts[key] = (matchupCounts[key] || 0) + 1;
+      }
+    }
+    
+    let mostCommonMatchup = null;
+    let maxMatchupCount = 0;
+    for (const [key, count] of Object.entries(matchupCounts)) {
+      if (count > maxMatchupCount) {
+        maxMatchupCount = count;
+        mostCommonMatchup = key.split('-').map(Number);
+      }
+    }
+    
+    let mostLikelyWinner = null;
+    let maxWinCount = 0;
+    for (const [team, count] of Object.entries(winnerCounts)) {
+      if (count > maxWinCount) {
+        maxWinCount = count;
+        mostLikelyWinner = parseInt(team);
+      }
+    }
+    
+    probs[matchId] = {
+      teamCounts,
+      winnerCounts,
+      total,
+      mostCommonMatchup,
+      matchupFreq: maxMatchupCount / total,
+      mostLikelyWinner,
+      winnerProb: maxWinCount / total
+    };
+  }
+  
+  return probs;
+}
+
+function getTeamName(idx) {
+  return bracketData.indexToTeam[idx] || 'TBD';
+}
+
+function getTeamBadgeHtml(teamIdx) {
+  if (teamIdx < 0) return '<span class="team-flag">❓</span>';
+  const name = getTeamName(teamIdx);
+  const meta = teamMetadata[name] || {};
+  if (meta.badge) {
+    return \`<img src="team_badges/\${meta.badge}" alt="\${name}" class="team-badge-small">\`;
+  }
+  return \`<span class="team-flag">\${getFlag(name)}</span>\`;
+}
+
+function renderBracketMatch(matchId, probs, isLeft) {
+  const matchProb = probs[matchId];
+  if (!matchProb) return '<div class="bracket-match ghosted"><div class="bracket-match-team"><span class="team-name">TBD</span></div><div class="bracket-match-team"><span class="team-name">TBD</span></div></div>';
+  
+  const { mostCommonMatchup, mostLikelyWinner, winnerCounts, total } = matchProb;
+  const isLocked = lockedResults[matchId] !== undefined;
+  const lockedWinner = lockedResults[matchId];
+  
+  let team1Idx = mostCommonMatchup ? mostCommonMatchup[0] : -1;
+  let team2Idx = mostCommonMatchup ? mostCommonMatchup[1] : -1;
+  
+  const r32Order = ['R32-1','R32-2','R32-3','R32-4','R32-5','R32-6','R32-7','R32-8',
+                    'R32-9','R32-10','R32-11','R32-12','R32-13','R32-14','R32-15','R32-16'];
+  const isR32 = r32Order.includes(matchId);
+  
+  // For non-R32 matches, try to use locked feeder winners as participants
+  if (!isR32) {
+    const topology = bracketData.bracketTopology;
+    let feeds = null;
+    for (const round of [topology.r16, topology.qf, topology.sf, topology.final]) {
+      const m = round.find(x => x.id === matchId);
+      if (m) { feeds = m.feeds; break; }
+    }
+    if (feeds) {
+      const feed1Winner = lockedResults[feeds[0]];
+      const feed2Winner = lockedResults[feeds[1]];
+      if (feed1Winner !== undefined) team1Idx = feed1Winner;
+      if (feed2Winner !== undefined) team2Idx = feed2Winner;
+    }
+  }
+  
+  const team1WinProb = team1Idx >= 0 && winnerCounts[team1Idx] ? winnerCounts[team1Idx] / total : 0;
+  const team2WinProb = team2Idx >= 0 && winnerCounts[team2Idx] ? winnerCounts[team2Idx] / total : 0;
+  
+  const ghosted = !isLocked && !isR32 ? 'ghosted' : '';
+  const locked = isLocked ? 'locked' : '';
+  
+  const team1IsWinner = isLocked ? lockedWinner === team1Idx : mostLikelyWinner === team1Idx;
+  const team2IsWinner = isLocked ? lockedWinner === team2Idx : mostLikelyWinner === team2Idx;
+  
+  const team1Class = isLocked && team1IsWinner ? 'locked-winner' : (team1IsWinner ? 'winner' : '');
+  const team2Class = isLocked && team2IsWinner ? 'locked-winner' : (team2IsWinner ? 'winner' : '');
+  
+  return \`<div class="bracket-match \${ghosted} \${locked}" data-match-id="\${matchId}" data-team1="\${team1Idx}" data-team2="\${team2Idx}">
+    <div class="bracket-match-team \${team1Class}" data-team-idx="\${team1Idx}">
+      \${getTeamBadgeHtml(team1Idx)}
+      <span class="team-name">\${team1Idx >= 0 ? getTeamName(team1Idx) : 'TBD'}</span>
+      <span class="team-prob">\${team1Idx >= 0 ? Math.round(team1WinProb * 100) + '%' : ''}</span>
+    </div>
+    <div class="bracket-match-team \${team2Class}" data-team-idx="\${team2Idx}">
+      \${getTeamBadgeHtml(team2Idx)}
+      <span class="team-name">\${team2Idx >= 0 ? getTeamName(team2Idx) : 'TBD'}</span>
+      <span class="team-prob">\${team2Idx >= 0 ? Math.round(team2WinProb * 100) + '%' : ''}</span>
+    </div>
+  </div>\`;
+}
+
+function renderBracket() {
+  const filteredRuns = getFilteredRuns();
+  const probs = computeBracketProbabilities(filteredRuns);
+  const lockedCount = Object.keys(lockedResults).length;
+  
+  const leftR32 = ['R32-1','R32-2','R32-3','R32-4','R32-5','R32-6','R32-7','R32-8'];
+  const rightR32 = ['R32-9','R32-10','R32-11','R32-12','R32-13','R32-14','R32-15','R32-16'];
+  const leftR16 = ['R16-1','R16-2','R16-3','R16-4'];
+  const rightR16 = ['R16-5','R16-6','R16-7','R16-8'];
+  const leftQF = ['QF-1','QF-2'];
+  const rightQF = ['QF-3','QF-4'];
+  const leftSF = ['SF-1'];
+  const rightSF = ['SF-2'];
+  
+  const finalProb = probs['F'];
+  const winnerIdx = finalProb?.mostLikelyWinner ?? -1;
+  const winnerName = winnerIdx >= 0 ? getTeamName(winnerIdx) : 'TBD';
+  const winnerProbPct = finalProb ? Math.round(finalProb.winnerProb * 100) : 0;
+  
+  return \`
+    <div class="bracket-container">
+      <div class="bracket-header">
+        <h2>🏆 Knockout Bracket</h2>
+        <div class="bracket-controls">
+          <span class="bracket-scenario-count">\${filteredRuns.length.toLocaleString()} / \${bracketData.runs.length.toLocaleString()} scenarios</span>
+          <button class="bracket-reset-btn" onclick="resetBracket()" \${lockedCount === 0 ? 'disabled' : ''}>Reset (\${lockedCount})</button>
+        </div>
+      </div>
+      
+      <div class="bracket-grid">
+        <div class="bracket-round">
+          <div class="bracket-round-label">Round of 32</div>
+          \${leftR32.map(id => renderBracketMatch(id, probs, true)).join('')}
+        </div>
+        <div class="bracket-round">
+          <div class="bracket-round-label">Round of 16</div>
+          \${leftR16.map(id => renderBracketMatch(id, probs, true)).join('')}
+        </div>
+        <div class="bracket-round">
+          <div class="bracket-round-label">Quarter-Finals</div>
+          \${leftQF.map(id => renderBracketMatch(id, probs, true)).join('')}
+        </div>
+        <div class="bracket-round">
+          <div class="bracket-round-label">Semi-Finals</div>
+          \${leftSF.map(id => renderBracketMatch(id, probs, true)).join('')}
+        </div>
+        <div class="bracket-round bracket-final">
+          <div class="bracket-round-label">Final</div>
+          \${renderBracketMatch('F', probs, false)}
+          <div class="bracket-trophy">🏆</div>
+          <div class="bracket-winner-name">\${winnerIdx >= 0 ? getTeamBadgeHtml(winnerIdx) + ' ' + winnerName : 'TBD'}</div>
+          <div class="bracket-winner-prob">\${winnerProbPct}% to win</div>
+        </div>
+        <div class="bracket-round">
+          <div class="bracket-round-label">Semi-Finals</div>
+          \${rightSF.map(id => renderBracketMatch(id, probs, false)).join('')}
+        </div>
+        <div class="bracket-round">
+          <div class="bracket-round-label">Quarter-Finals</div>
+          \${rightQF.map(id => renderBracketMatch(id, probs, false)).join('')}
+        </div>
+        <div class="bracket-round">
+          <div class="bracket-round-label">Round of 16</div>
+          \${rightR16.map(id => renderBracketMatch(id, probs, false)).join('')}
+        </div>
+        <div class="bracket-round">
+          <div class="bracket-round-label">Round of 32</div>
+          \${rightR32.map(id => renderBracketMatch(id, probs, false)).join('')}
+        </div>
+      </div>
+      
+      <div class="bracket-legend">
+        <div class="bracket-legend-item">
+          <div class="bracket-legend-swatch swatch-locked"></div>
+          <span>Locked in (your pick)</span>
+        </div>
+        <div class="bracket-legend-item">
+          <div class="bracket-legend-swatch swatch-probable"></div>
+          <span>Most probable outcome</span>
+        </div>
+        <div class="bracket-legend-item">
+          <div class="bracket-legend-swatch swatch-empty"></div>
+          <span>Click to pick winner</span>
+        </div>
+      </div>
+    </div>
+  \`;
+}
+
+function attachBracketListeners() {
+  document.querySelectorAll('.bracket-match').forEach(el => {
+    el.addEventListener('click', (e) => {
+      const matchId = el.dataset.matchId;
+      const team1 = parseInt(el.dataset.team1);
+      const team2 = parseInt(el.dataset.team2);
+      
+      if (team1 < 0 || team2 < 0) return;
+      
+      const teamEl = e.target.closest('.bracket-match-team');
+      if (!teamEl) return;
+      
+      const clickedIdx = parseInt(teamEl.dataset.teamIdx);
+      if (clickedIdx < 0) return;
+      
+      // Toggle: if already locked to this team, unlock
+      if (lockedResults[matchId] === clickedIdx) {
+        delete lockedResults[matchId];
+      } else {
+        lockedResults[matchId] = clickedIdx;
+      }
+      
+      // Re-render
+      const main = document.querySelector('.main');
+      main.innerHTML = renderBracket();
+      attachBracketListeners();
+    });
+  });
+}
+
+function resetBracket() {
+  lockedResults = {};
+  const main = document.querySelector('.main');
+  main.innerHTML = renderBracket();
+  attachBracketListeners();
 }
 
 // Initialize
@@ -3018,6 +3609,7 @@ const html = `<!DOCTYPE html>
     <ul class="nav-tabs">
       <li><a href="#standings">Standings</a></li>
       <li><a href="#matches/1">Matches</a></li>
+      <li><a href="#knockout">Knockout</a></li>
       <li><a href="#teams">Teams</a></li>
       <li><a href="#timeline">Timeline</a></li>
       <li><a href="#methodology">How It Works</a></li>

@@ -685,6 +685,7 @@ export function simulateTournament(tournament, matchOdds, teamStrengths, eloRati
   ];
   
   const r32Winners = {};
+  const r32Matchups = [];
   
   for (const match of r32Bracket) {
     let team1, team2;
@@ -709,6 +710,7 @@ export function simulateTournament(tournament, matchOdds, teamStrengths, eloRati
       const winner = simulateKnockoutMatch(team1, team2, matchOdds, eloRatings, teamStrengths);
       r32Winners[match.id] = winner;
       results.r32.push(winner);
+      r32Matchups.push({ id: match.id, team1, team2, winner });
     }
   }
   
@@ -781,6 +783,14 @@ export function simulateTournament(tournament, matchOdds, teamStrengths, eloRati
     results.final = [finalist1, finalist2];
     results.winner = simulateKnockoutMatch(finalist1, finalist2, matchOdds, eloRatings, teamStrengths);
   }
+  
+  // Store full bracket path for probabilistic bracket feature
+  results.bracketPath = {
+    r32Matchups,
+    r16Winners: { ...r16Winners },
+    qfWinners: { ...qfWinners },
+    sfWinners: { ...sfWinners }
+  };
   
   return results;
 }
@@ -868,4 +878,197 @@ export function runMonteCarloSimulation(tournament, matchOdds, teamStrengths, it
   }
   
   return teamStats;
+}
+
+/**
+ * Run Monte Carlo simulation and return both aggregated stats AND full bracket paths.
+ * Bracket paths are stored in compact indexed format for client-side filtering.
+ * 
+ * @returns {{ teamStats: Object, bracketData: Object }}
+ *   - teamStats: same as runMonteCarloSimulation output
+ *   - bracketData: { teamIndex, bracketTopology, runs }
+ *     - teamIndex: { teamName: index } mapping
+ *     - bracketTopology: fixed bracket structure (which matches feed into which)
+ *     - runs: array of compact run arrays [r32 participants..., r32 winners..., r16 winners..., qf..., sf..., final]
+ */
+export function runMonteCarloWithPaths(tournament, matchOdds, teamStrengths, iterations = 10000, eloRatings = null) {
+  console.log(`\nRunning Monte Carlo with path recording (${iterations} iterations)...`);
+  
+  // Build team index for compact encoding
+  const teamIndex = {};
+  tournament.teams.forEach((team, idx) => {
+    teamIndex[normalizeTeamName(team.name)] = idx;
+  });
+  
+  const teamStats = {};
+  for (const team of tournament.teams) {
+    teamStats[normalizeTeamName(team.name)] = {
+      group_first: 0,
+      group_second: 0,
+      group_third: 0,
+      make_r16: 0,
+      make_quarters: 0,
+      make_semis: 0,
+      make_final: 0,
+      win_tournament: 0
+    };
+  }
+  
+  // Fixed bracket topology for client reference
+  const bracketTopology = {
+    r32: [
+      { id: 'R32-1' }, { id: 'R32-2' }, { id: 'R32-3' }, { id: 'R32-4' },
+      { id: 'R32-5' }, { id: 'R32-6' }, { id: 'R32-7' }, { id: 'R32-8' },
+      { id: 'R32-9' }, { id: 'R32-10' }, { id: 'R32-11' }, { id: 'R32-12' },
+      { id: 'R32-13' }, { id: 'R32-14' }, { id: 'R32-15' }, { id: 'R32-16' }
+    ],
+    r16: [
+      { id: 'R16-1', feeds: ['R32-2', 'R32-5'] },
+      { id: 'R16-2', feeds: ['R32-1', 'R32-3'] },
+      { id: 'R16-3', feeds: ['R32-4', 'R32-7'] },
+      { id: 'R16-4', feeds: ['R32-6', 'R32-8'] },
+      { id: 'R16-5', feeds: ['R32-9', 'R32-10'] },
+      { id: 'R16-6', feeds: ['R32-11', 'R32-13'] },
+      { id: 'R16-7', feeds: ['R32-12', 'R32-14'] },
+      { id: 'R16-8', feeds: ['R32-15', 'R32-16'] }
+    ],
+    qf: [
+      { id: 'QF-1', feeds: ['R16-1', 'R16-2'] },
+      { id: 'QF-2', feeds: ['R16-3', 'R16-4'] },
+      { id: 'QF-3', feeds: ['R16-5', 'R16-6'] },
+      { id: 'QF-4', feeds: ['R16-7', 'R16-8'] }
+    ],
+    sf: [
+      { id: 'SF-1', feeds: ['QF-1', 'QF-2'] },
+      { id: 'SF-2', feeds: ['QF-3', 'QF-4'] }
+    ],
+    final: [
+      { id: 'F', feeds: ['SF-1', 'SF-2'] }
+    ]
+  };
+  
+  // Collect all runs as compact arrays
+  // Format per run: 63 integers
+  //   [0-31]:  R32 participants (16 matches × 2 teams)
+  //   [32-47]: R32 winners (16 matches)
+  //   [48-55]: R16 winners (8 matches)
+  //   [56-59]: QF winners (4 matches)
+  //   [60-61]: SF winners (2 matches)
+  //   [62]:    Final winner
+  const runs = [];
+  
+  // R32 match order for consistent indexing
+  const r32Order = ['R32-1','R32-2','R32-3','R32-4','R32-5','R32-6','R32-7','R32-8',
+                    'R32-9','R32-10','R32-11','R32-12','R32-13','R32-14','R32-15','R32-16'];
+  const r16Order = ['R16-1','R16-2','R16-3','R16-4','R16-5','R16-6','R16-7','R16-8'];
+  const qfOrder = ['QF-1','QF-2','QF-3','QF-4'];
+  const sfOrder = ['SF-1','SF-2'];
+  
+  for (let i = 0; i < iterations; i++) {
+    if (i % 1000 === 0 && i > 0) {
+      process.stdout.write(`\r   Progress: ${i}/${iterations} simulations`);
+    }
+    
+    const result = simulateTournament(tournament, matchOdds, teamStrengths, eloRatings);
+    
+    // Aggregate stats (same as runMonteCarloSimulation)
+    for (const group of Object.keys(result.groupStage)) {
+      const teams = result.groupStage[group];
+      if (teams[0]) teamStats[normalizeTeamName(teams[0].name)].group_first++;
+      if (teams[1]) teamStats[normalizeTeamName(teams[1].name)].group_second++;
+      if (teams[2]) teamStats[normalizeTeamName(teams[2].name)].group_third++;
+    }
+    
+    if (result.r32) {
+      result.r32.forEach(team => {
+        const normalized = normalizeTeamName(team);
+        if (teamStats[normalized]) teamStats[normalized].make_r16++;
+      });
+    }
+    result.r16.forEach(team => {
+      const normalized = normalizeTeamName(team);
+      if (teamStats[normalized]) teamStats[normalized].make_quarters++;
+    });
+    result.quarters.forEach(team => {
+      const normalized = normalizeTeamName(team);
+      if (teamStats[normalized]) teamStats[normalized].make_semis++;
+    });
+    result.semis.forEach(team => {
+      const normalized = normalizeTeamName(team);
+      if (teamStats[normalized]) teamStats[normalized].make_final++;
+    });
+    if (result.winner) {
+      const normalized = normalizeTeamName(result.winner);
+      if (teamStats[normalized]) teamStats[normalized].win_tournament++;
+    }
+    
+    // Record bracket path as compact array
+    const path = [];
+    const bp = result.bracketPath;
+    
+    // R32 participants (32 values: 16 pairs)
+    for (const matchId of r32Order) {
+      const matchup = bp.r32Matchups.find(m => m.id === matchId);
+      if (matchup) {
+        path.push(teamIndex[normalizeTeamName(matchup.team1)] ?? -1);
+        path.push(teamIndex[normalizeTeamName(matchup.team2)] ?? -1);
+      } else {
+        path.push(-1, -1);
+      }
+    }
+    
+    // R32 winners (16 values)
+    for (const matchId of r32Order) {
+      const matchup = bp.r32Matchups.find(m => m.id === matchId);
+      path.push(matchup ? (teamIndex[normalizeTeamName(matchup.winner)] ?? -1) : -1);
+    }
+    
+    // R16 winners (8 values)
+    for (const matchId of r16Order) {
+      const winner = bp.r16Winners[matchId];
+      path.push(winner ? (teamIndex[normalizeTeamName(winner)] ?? -1) : -1);
+    }
+    
+    // QF winners (4 values)
+    for (const matchId of qfOrder) {
+      const winner = bp.qfWinners[matchId];
+      path.push(winner ? (teamIndex[normalizeTeamName(winner)] ?? -1) : -1);
+    }
+    
+    // SF winners (2 values)
+    for (const matchId of sfOrder) {
+      const winner = bp.sfWinners[matchId];
+      path.push(winner ? (teamIndex[normalizeTeamName(winner)] ?? -1) : -1);
+    }
+    
+    // Final winner (1 value)
+    path.push(result.winner ? (teamIndex[normalizeTeamName(result.winner)] ?? -1) : -1);
+    
+    runs.push(path);
+  }
+  
+  console.log(`\r   Progress: ${iterations}/${iterations} simulations - Complete!`);
+  
+  // Convert counts to probabilities
+  for (const team of Object.keys(teamStats)) {
+    for (const stat of Object.keys(teamStats[team])) {
+      teamStats[team][stat] = teamStats[team][stat] / iterations;
+    }
+  }
+  
+  // Invert team index for client-side lookup (index → name)
+  const indexToTeam = Object.entries(teamIndex).reduce((acc, [name, idx]) => {
+    acc[idx] = name;
+    return acc;
+  }, {});
+  
+  return {
+    teamStats,
+    bracketData: {
+      teamIndex,
+      indexToTeam,
+      bracketTopology,
+      runs
+    }
+  };
 }
