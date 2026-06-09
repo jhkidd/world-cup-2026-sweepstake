@@ -219,6 +219,33 @@ body {
   margin-bottom: 8px;
 }
 
+.card-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.card-header-row .card-subtitle {
+  margin-bottom: 0;
+}
+
+.how-it-works-link {
+  font-size: 13px;
+  color: #3498db;
+  text-decoration: none;
+  white-space: nowrap;
+  padding: 6px 12px;
+  border: 1px solid #3498db;
+  border-radius: 4px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.how-it-works-link:hover {
+  background: #3498db;
+  color: #fff;
+}
+
 .card-subtitle {
   font-size: 12px;
   color: #999;
@@ -1545,7 +1572,7 @@ tr.section-break td {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   flex-wrap: wrap;
   gap: 12px;
 }
@@ -1589,68 +1616,95 @@ tr.section-break td {
   border-radius: 4px;
 }
 
+/* Round labels row */
+.bracket-round-labels {
+  display: grid;
+  grid-template-columns: 160px 155px 155px 140px 100px 140px 155px 155px 160px;
+  min-width: 1320px;
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+.bracket-round-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 6px 0;
+}
+
+/* Main bracket grid */
 .bracket-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr auto 1fr 1fr 1fr 1fr;
+  grid-template-columns: 160px 155px 155px 140px 100px 140px 155px 155px 160px;
   gap: 0;
-  min-width: 1200px;
-  align-items: center;
+  min-width: 1320px;
+  min-height: 560px;
+  align-items: stretch;
 }
 
 .bracket-round {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  height: 100%;
-  padding: 0 4px;
+  padding: 0 6px;
+  position: relative;
 }
 
-.bracket-round-label {
-  text-align: center;
-  font-size: 11px;
-  font-weight: 600;
-  color: #666;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  padding: 8px 0 12px;
-}
-
+/* Match boxes */
 .bracket-match {
   background: white;
   border: 1px solid #e0e0e0;
-  border-radius: 6px;
-  margin: 6px 0;
-  overflow: hidden;
+  border-radius: 4px;
+  margin: 4px 0;
   cursor: pointer;
-  transition: box-shadow 0.15s, border-color 0.15s;
+  transition: transform 0.12s, box-shadow 0.15s, border-color 0.15s;
+  position: relative;
 }
 
 .bracket-match:hover {
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
   border-color: #002D72;
+  transform: scale(1.03);
+  z-index: 2;
+  position: relative;
 }
 
 .bracket-match.locked {
   border-color: #002D72;
-  box-shadow: 0 0 0 2px rgba(0,45,114,0.15);
+  border-width: 2px;
+  box-shadow: 0 0 0 2px rgba(0,45,114,0.12);
 }
 
 .bracket-match.ghosted {
-  opacity: 0.6;
+  opacity: 0.5;
+  border-style: dashed;
+  border-color: #bbb;
+}
+
+.bracket-match.ghosted:hover {
+  opacity: 0.85;
+  border-style: solid;
 }
 
 .bracket-match-team {
   display: flex;
   align-items: center;
-  padding: 6px 8px;
-  gap: 6px;
-  font-size: 12px;
+  padding: 5px 7px;
+  gap: 5px;
+  font-size: 11px;
   position: relative;
   border-bottom: 1px solid #f0f0f0;
+  transition: background 0.1s;
 }
 
 .bracket-match-team:last-child {
   border-bottom: none;
+}
+
+.bracket-match-team:hover {
+  background: #f8f9ff;
 }
 
 .bracket-match-team.winner {
@@ -1664,7 +1718,7 @@ tr.section-break td {
 }
 
 .bracket-match-team .team-flag {
-  font-size: 14px;
+  font-size: 13px;
   flex-shrink: 0;
 }
 
@@ -1677,48 +1731,80 @@ tr.section-break td {
 }
 
 .bracket-match-team .team-prob {
-  font-size: 11px;
-  color: #666;
-  font-weight: 500;
+  font-size: 10px;
+  color: #888;
+  font-weight: 600;
   flex-shrink: 0;
+  min-width: 26px;
+  text-align: right;
 }
 
 .bracket-match-team .team-badge-small {
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
   object-fit: contain;
   flex-shrink: 0;
 }
 
-.bracket-final {
+/* Connector lines - horizontal stubs from matches */
+.bracket-left .bracket-match::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -7px;
+  width: 7px;
+  height: 0;
+  border-top: 2px solid #999;
+}
+
+.bracket-right .bracket-match::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -7px;
+  width: 7px;
+  height: 0;
+  border-top: 2px solid #999;
+}
+
+.bracket-center .bracket-match::after {
+  display: none;
+}
+
+/* Final / center column */
+.bracket-center {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 12px 8px;
+  padding: 8px 4px;
 }
 
 .bracket-trophy {
-  font-size: 32px;
-  margin-bottom: 8px;
+  font-size: 28px;
+  margin: 8px 0 4px;
 }
 
 .bracket-winner-name {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
   color: #002D72;
   text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.bracket-winner-name img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
 }
 
 .bracket-winner-prob {
-  font-size: 12px;
+  font-size: 11px;
   color: #666;
-  margin-top: 4px;
-}
-
-/* Connector lines */
-.bracket-connector {
-  position: relative;
+  margin-top: 2px;
 }
 
 /* Legend */
@@ -1749,15 +1835,17 @@ tr.section-break td {
 .bracket-legend-swatch.swatch-locked {
   background: #e3f2fd;
   border-color: #002D72;
+  border-width: 2px;
 }
 
 .bracket-legend-swatch.swatch-probable {
   background: #e8f5e9;
-  opacity: 0.6;
 }
 
-.bracket-legend-swatch.swatch-empty {
+.bracket-legend-swatch.swatch-ghosted {
   background: white;
+  border-style: dashed;
+  opacity: 0.5;
 }
 `;
 
@@ -1998,8 +2086,13 @@ function renderStandings() {
 
   return \`
     <div class="card">
-      <div class="card-title">World Cup 2026 - Stage-by-Stage Probabilities</div>
-      <div class="card-subtitle">Based on 10,000 Monte Carlo simulations • Updated \${dateStr}</div>
+      <div class="card-header-row">
+        <div>
+          <div class="card-title">World Cup 2026 - Stage-by-Stage Probabilities</div>
+          <div class="card-subtitle">Based on 10,000 Monte Carlo simulations • Updated \${dateStr}</div>
+        </div>
+        <a href="#methodology" class="how-it-works-link">How It Works →</a>
+      </div>
       <table class="standings-table">
         <thead>
           <tr class="header-group">
@@ -3338,12 +3431,17 @@ function computeBracketProbabilities(runs) {
       }
     }
     
+    // For normalized probabilities: count runs where each team in the most common 
+    // matchup actually participates, so we can show conditional win probability
+    let matchupRunCount = maxMatchupCount; // runs where the most common matchup occurs
+    
     probs[matchId] = {
       teamCounts,
       winnerCounts,
       total,
       mostCommonMatchup,
       matchupFreq: maxMatchupCount / total,
+      matchupRunCount,
       mostLikelyWinner,
       winnerProb: maxWinCount / total
     };
@@ -3356,6 +3454,21 @@ function getTeamName(idx) {
   return bracketData.indexToTeam[idx] || 'TBD';
 }
 
+function getShortTeamName(idx) {
+  const name = getTeamName(idx);
+  const shortNames = {
+    'Bosnia and Herzegovina': 'Bosnia',
+    'Netherlands': 'Netherlands',
+    'South Korea': 'S. Korea',
+    'Ivory Coast': 'Ivory Coast',
+    'New Zealand': 'New Zealand',
+    'Saudi Arabia': 'Saudi Arabia',
+    'South Africa': 'S. Africa',
+    'DR Congo': 'DR Congo'
+  };
+  return shortNames[name] || name;
+}
+
 function getTeamBadgeHtml(teamIdx) {
   if (teamIdx < 0) return '<span class="team-flag">❓</span>';
   const name = getTeamName(teamIdx);
@@ -3366,45 +3479,89 @@ function getTeamBadgeHtml(teamIdx) {
   return \`<span class="team-flag">\${getFlag(name)}</span>\`;
 }
 
-function renderBracketMatch(matchId, probs, isLeft) {
+function renderBracketMatch(matchId, probs, isLeft, filteredRuns) {
   const matchProb = probs[matchId];
   if (!matchProb) return '<div class="bracket-match ghosted"><div class="bracket-match-team"><span class="team-name">TBD</span></div><div class="bracket-match-team"><span class="team-name">TBD</span></div></div>';
   
-  const { mostCommonMatchup, mostLikelyWinner, winnerCounts, total } = matchProb;
+  const { mostLikelyWinner, winnerCounts, matchupRunCount, total, teamCounts } = matchProb;
   const isLocked = lockedResults[matchId] !== undefined;
   const lockedWinner = lockedResults[matchId];
-  
-  let team1Idx = mostCommonMatchup ? mostCommonMatchup[0] : -1;
-  let team2Idx = mostCommonMatchup ? mostCommonMatchup[1] : -1;
   
   const r32Order = ['R32-1','R32-2','R32-3','R32-4','R32-5','R32-6','R32-7','R32-8',
                     'R32-9','R32-10','R32-11','R32-12','R32-13','R32-14','R32-15','R32-16'];
   const isR32 = r32Order.includes(matchId);
   
-  // For non-R32 matches, try to use locked feeder winners as participants
-  if (!isR32) {
+  // Determine displayed teams by finding the most common team in each POSITION independently
+  const [p1Pos, p2Pos] = getParticipantPositions(matchId);
+  let team1Idx = -1;
+  let team2Idx = -1;
+  
+  if (isR32) {
+    const p1Counts = {};
+    const p2Counts = {};
+    for (const run of filteredRuns) {
+      const t1 = run[p1Pos];
+      const t2 = run[p2Pos];
+      if (t1 >= 0) p1Counts[t1] = (p1Counts[t1] || 0) + 1;
+      if (t2 >= 0) p2Counts[t2] = (p2Counts[t2] || 0) + 1;
+    }
+    team1Idx = Object.entries(p1Counts).sort((a,b) => b[1]-a[1])[0]?.[0] ?? -1;
+    team2Idx = Object.entries(p2Counts).sort((a,b) => b[1]-a[1])[0]?.[0] ?? -1;
+    team1Idx = parseInt(team1Idx);
+    team2Idx = parseInt(team2Idx);
+  } else {
     const topology = bracketData.bracketTopology;
     let feeds = null;
     for (const round of [topology.r16, topology.qf, topology.sf, topology.final]) {
       const m = round.find(x => x.id === matchId);
       if (m) { feeds = m.feeds; break; }
     }
+    
     if (feeds) {
-      const feed1Winner = lockedResults[feeds[0]];
-      const feed2Winner = lockedResults[feeds[1]];
-      if (feed1Winner !== undefined) team1Idx = feed1Winner;
-      if (feed2Winner !== undefined) team2Idx = feed2Winner;
+      const feed1Locked = lockedResults[feeds[0]];
+      const feed2Locked = lockedResults[feeds[1]];
+      
+      if (feed1Locked !== undefined) {
+        team1Idx = feed1Locked;
+      } else {
+        const pos = getWinnerPosition(feeds[0]);
+        const counts = {};
+        for (const run of filteredRuns) {
+          const t = run[pos];
+          if (t >= 0) counts[t] = (counts[t] || 0) + 1;
+        }
+        const top = Object.entries(counts).sort((a,b) => b[1]-a[1])[0];
+        team1Idx = top ? parseInt(top[0]) : -1;
+      }
+      
+      if (feed2Locked !== undefined) {
+        team2Idx = feed2Locked;
+      } else {
+        const pos = getWinnerPosition(feeds[1]);
+        const counts = {};
+        for (const run of filteredRuns) {
+          const t = run[pos];
+          if (t >= 0) counts[t] = (counts[t] || 0) + 1;
+        }
+        const top = Object.entries(counts).sort((a,b) => b[1]-a[1])[0];
+        team2Idx = top ? parseInt(top[0]) : -1;
+      }
     }
   }
   
-  const team1WinProb = team1Idx >= 0 && winnerCounts[team1Idx] ? winnerCounts[team1Idx] / total : 0;
-  const team2WinProb = team2Idx >= 0 && winnerCounts[team2Idx] ? winnerCounts[team2Idx] / total : 0;
+  // Normalize probabilities: wins of each displayed team / total wins of both
+  const team1Wins = team1Idx >= 0 && winnerCounts[team1Idx] ? winnerCounts[team1Idx] : 0;
+  const team2Wins = team2Idx >= 0 && winnerCounts[team2Idx] ? winnerCounts[team2Idx] : 0;
+  const matchTotal = team1Wins + team2Wins;
+  const team1WinProb = matchTotal > 0 ? team1Wins / matchTotal : 0;
+  const team2WinProb = matchTotal > 0 ? team2Wins / matchTotal : 0;
   
   const ghosted = !isLocked && !isR32 ? 'ghosted' : '';
   const locked = isLocked ? 'locked' : '';
   
-  const team1IsWinner = isLocked ? lockedWinner === team1Idx : mostLikelyWinner === team1Idx;
-  const team2IsWinner = isLocked ? lockedWinner === team2Idx : mostLikelyWinner === team2Idx;
+  // Winner highlight
+  const team1IsWinner = isLocked ? lockedWinner === team1Idx : (mostLikelyWinner === team1Idx);
+  const team2IsWinner = isLocked ? lockedWinner === team2Idx : (mostLikelyWinner === team2Idx);
   
   const team1Class = isLocked && team1IsWinner ? 'locked-winner' : (team1IsWinner ? 'winner' : '');
   const team2Class = isLocked && team2IsWinner ? 'locked-winner' : (team2IsWinner ? 'winner' : '');
@@ -3412,13 +3569,13 @@ function renderBracketMatch(matchId, probs, isLeft) {
   return \`<div class="bracket-match \${ghosted} \${locked}" data-match-id="\${matchId}" data-team1="\${team1Idx}" data-team2="\${team2Idx}">
     <div class="bracket-match-team \${team1Class}" data-team-idx="\${team1Idx}">
       \${getTeamBadgeHtml(team1Idx)}
-      <span class="team-name">\${team1Idx >= 0 ? getTeamName(team1Idx) : 'TBD'}</span>
-      <span class="team-prob">\${team1Idx >= 0 ? Math.round(team1WinProb * 100) + '%' : ''}</span>
+      <span class="team-name">\${team1Idx >= 0 ? getShortTeamName(team1Idx) : 'TBD'}</span>
+      <span class="team-prob">\${team1Idx >= 0 && matchTotal > 0 ? Math.round(team1WinProb * 100) + '%' : ''}</span>
     </div>
     <div class="bracket-match-team \${team2Class}" data-team-idx="\${team2Idx}">
       \${getTeamBadgeHtml(team2Idx)}
-      <span class="team-name">\${team2Idx >= 0 ? getTeamName(team2Idx) : 'TBD'}</span>
-      <span class="team-prob">\${team2Idx >= 0 ? Math.round(team2WinProb * 100) + '%' : ''}</span>
+      <span class="team-name">\${team2Idx >= 0 ? getShortTeamName(team2Idx) : 'TBD'}</span>
+      <span class="team-prob">\${team2Idx >= 0 && matchTotal > 0 ? Math.round(team2WinProb * 100) + '%' : ''}</span>
     </div>
   </div>\`;
 }
@@ -3428,8 +3585,8 @@ function renderBracket() {
   const probs = computeBracketProbabilities(filteredRuns);
   const lockedCount = Object.keys(lockedResults).length;
   
-  const leftR32 = ['R32-1','R32-2','R32-3','R32-4','R32-5','R32-6','R32-7','R32-8'];
-  const rightR32 = ['R32-9','R32-10','R32-11','R32-12','R32-13','R32-14','R32-15','R32-16'];
+  const leftR32 = ['R32-2','R32-5','R32-1','R32-3','R32-4','R32-7','R32-6','R32-8'];
+  const rightR32 = ['R32-9','R32-10','R32-11','R32-13','R32-12','R32-14','R32-15','R32-16'];
   const leftR16 = ['R16-1','R16-2','R16-3','R16-4'];
   const rightR16 = ['R16-5','R16-6','R16-7','R16-8'];
   const leftQF = ['QF-1','QF-2'];
@@ -3452,45 +3609,48 @@ function renderBracket() {
         </div>
       </div>
       
+      <div class="bracket-round-labels">
+        <div class="bracket-round-label">Round of 32</div>
+        <div class="bracket-round-label">Round of 16</div>
+        <div class="bracket-round-label">Quarter-Finals</div>
+        <div class="bracket-round-label">Semi-Finals</div>
+        <div class="bracket-round-label">Final</div>
+        <div class="bracket-round-label">Semi-Finals</div>
+        <div class="bracket-round-label">Quarter-Finals</div>
+        <div class="bracket-round-label">Round of 16</div>
+        <div class="bracket-round-label">Round of 32</div>
+      </div>
+      
       <div class="bracket-grid">
-        <div class="bracket-round">
-          <div class="bracket-round-label">Round of 32</div>
-          \${leftR32.map(id => renderBracketMatch(id, probs, true)).join('')}
+        <div class="bracket-round bracket-left">
+          \${leftR32.map(id => renderBracketMatch(id, probs, true, filteredRuns)).join('')}
         </div>
-        <div class="bracket-round">
-          <div class="bracket-round-label">Round of 16</div>
-          \${leftR16.map(id => renderBracketMatch(id, probs, true)).join('')}
+        <div class="bracket-round bracket-left">
+          \${leftR16.map(id => renderBracketMatch(id, probs, true, filteredRuns)).join('')}
         </div>
-        <div class="bracket-round">
-          <div class="bracket-round-label">Quarter-Finals</div>
-          \${leftQF.map(id => renderBracketMatch(id, probs, true)).join('')}
+        <div class="bracket-round bracket-left">
+          \${leftQF.map(id => renderBracketMatch(id, probs, true, filteredRuns)).join('')}
         </div>
-        <div class="bracket-round">
-          <div class="bracket-round-label">Semi-Finals</div>
-          \${leftSF.map(id => renderBracketMatch(id, probs, true)).join('')}
+        <div class="bracket-round bracket-left">
+          \${leftSF.map(id => renderBracketMatch(id, probs, true, filteredRuns)).join('')}
         </div>
-        <div class="bracket-round bracket-final">
-          <div class="bracket-round-label">Final</div>
-          \${renderBracketMatch('F', probs, false)}
+        <div class="bracket-round bracket-center">
+          \${renderBracketMatch('F', probs, false, filteredRuns)}
           <div class="bracket-trophy">🏆</div>
           <div class="bracket-winner-name">\${winnerIdx >= 0 ? getTeamBadgeHtml(winnerIdx) + ' ' + winnerName : 'TBD'}</div>
           <div class="bracket-winner-prob">\${winnerProbPct}% to win</div>
         </div>
-        <div class="bracket-round">
-          <div class="bracket-round-label">Semi-Finals</div>
-          \${rightSF.map(id => renderBracketMatch(id, probs, false)).join('')}
+        <div class="bracket-round bracket-right">
+          \${rightSF.map(id => renderBracketMatch(id, probs, false, filteredRuns)).join('')}
         </div>
-        <div class="bracket-round">
-          <div class="bracket-round-label">Quarter-Finals</div>
-          \${rightQF.map(id => renderBracketMatch(id, probs, false)).join('')}
+        <div class="bracket-round bracket-right">
+          \${rightQF.map(id => renderBracketMatch(id, probs, false, filteredRuns)).join('')}
         </div>
-        <div class="bracket-round">
-          <div class="bracket-round-label">Round of 16</div>
-          \${rightR16.map(id => renderBracketMatch(id, probs, false)).join('')}
+        <div class="bracket-round bracket-right">
+          \${rightR16.map(id => renderBracketMatch(id, probs, false, filteredRuns)).join('')}
         </div>
-        <div class="bracket-round">
-          <div class="bracket-round-label">Round of 32</div>
-          \${rightR32.map(id => renderBracketMatch(id, probs, false)).join('')}
+        <div class="bracket-round bracket-right">
+          \${rightR32.map(id => renderBracketMatch(id, probs, false, filteredRuns)).join('')}
         </div>
       </div>
       
@@ -3501,11 +3661,11 @@ function renderBracket() {
         </div>
         <div class="bracket-legend-item">
           <div class="bracket-legend-swatch swatch-probable"></div>
-          <span>Most probable outcome</span>
+          <span>Most probable winner</span>
         </div>
         <div class="bracket-legend-item">
-          <div class="bracket-legend-swatch swatch-empty"></div>
-          <span>Click to pick winner</span>
+          <div class="bracket-legend-swatch swatch-ghosted"></div>
+          <span>Probabilistic (click to pick)</span>
         </div>
       </div>
     </div>
@@ -3612,7 +3772,6 @@ const html = `<!DOCTYPE html>
       <li><a href="#knockout">Knockout</a></li>
       <li><a href="#teams">Teams</a></li>
       <li><a href="#timeline">Timeline</a></li>
-      <li><a href="#methodology">How It Works</a></li>
     </ul>
   </nav>
   

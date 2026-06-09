@@ -72,6 +72,25 @@ async function searchPlayer(name) {
   }
 }
 
+async function getPlayerDetails(playerId) {
+  const url = `${API_BASE}/lookupplayer.php?id=${playerId}`;
+  try {
+    const response = await fetch(url);
+    if (!response.ok) return null;
+    const data = await response.json();
+    return data.players?.[0] || null;
+  } catch (error) {
+    console.error(`  Error fetching details for ${playerId}:`, error.message);
+    return null;
+  }
+}
+
+function hasCompleteStats(stats) {
+  if (!stats) return false;
+  // Consider stats complete if we have at least height or bio
+  return !!(stats.height || stats.bio);
+}
+
 async function downloadPhoto(url, playerName) {
   try {
     const response = await fetch(url);
@@ -139,13 +158,13 @@ async function main() {
     }
   }
   
-  // Find players missing stats
-  const missingPlayers = allPlayers.filter(p => !playerStats[p.name]);
+  // Find players missing stats OR with incomplete stats
+  const missingPlayers = allPlayers.filter(p => !hasCompleteStats(playerStats[p.name]));
   
   console.log(`Total players in squads: ${allPlayers.length}`);
   console.log(`Already have stats for: ${Object.keys(playerStats).length}`);
   console.log(`Missing stats for: ${missingPlayers.length}`);
-  console.log(`\nStarting search (estimated time: ${Math.ceil(missingPlayers.length * 2.5 / 60)} minutes)...\n`);
+  console.log(`\nStarting search (estimated time: ${Math.ceil(missingPlayers.length * 5 / 60)} minutes)...\n`);
   
   // Stats tracking
   let searched = 0;
@@ -192,9 +211,12 @@ async function main() {
       continue;
     }
     
-    // DOB matches - save stats
+    // DOB matches - fetch full details via lookupplayer
     matched++;
-    const stats = extractPlayerStats(result);
+    
+    await sleep(API_DELAY);
+    const fullDetails = await getPlayerDetails(result.idPlayer);
+    const stats = extractPlayerStats(fullDetails || result);
     playerStats[player.name] = stats;
     
     // Try to download photo if we don't have one
