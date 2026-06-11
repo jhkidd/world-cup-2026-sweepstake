@@ -193,7 +193,7 @@
         "date_of_birth": "2003-04-20"
       }
     ],
-    "fetched_at": "2026-06-11T01:12:40.423Z",
+    "fetched_at": "2026-06-11T07:55:06.028Z",
     "group": "A",
     "confederation": "CONCACAF"
   },
@@ -391,7 +391,7 @@
         "date_of_birth": "2000-10-02"
       }
     ],
-    "fetched_at": "2026-06-11T01:12:47.263Z",
+    "fetched_at": "2026-06-11T07:55:13.185Z",
     "group": "A",
     "confederation": "CAF"
   },
@@ -589,7 +589,7 @@
         "date_of_birth": "2002-05-09"
       }
     ],
-    "fetched_at": "2026-06-11T01:12:54.105Z",
+    "fetched_at": "2026-06-11T07:55:20.231Z",
     "group": "A",
     "confederation": "AFC"
   },
@@ -787,7 +787,7 @@
         "date_of_birth": "1999-04-29"
       }
     ],
-    "fetched_at": "2026-06-11T01:13:01.052Z",
+    "fetched_at": "2026-06-11T07:55:27.362Z",
     "group": "A",
     "confederation": "UEFA"
   },
@@ -985,7 +985,7 @@
         "date_of_birth": "2001-07-03"
       }
     ],
-    "fetched_at": "2026-06-11T01:13:07.898Z",
+    "fetched_at": "2026-06-11T07:55:34.407Z",
     "group": "B",
     "confederation": "CONCACAF"
   },
@@ -1183,7 +1183,7 @@
         "date_of_birth": "2007-09-21"
       }
     ],
-    "fetched_at": "2026-06-11T01:13:14.946Z",
+    "fetched_at": "2026-06-11T07:55:41.405Z",
     "group": "B",
     "confederation": "UEFA"
   },
@@ -1381,7 +1381,7 @@
         "date_of_birth": "1994-08-19"
       }
     ],
-    "fetched_at": "2026-06-11T01:13:21.794Z",
+    "fetched_at": "2026-06-11T07:55:48.387Z",
     "group": "B",
     "confederation": "AFC"
   },
@@ -1579,7 +1579,7 @@
         "date_of_birth": "2000-12-04"
       }
     ],
-    "fetched_at": "2026-06-11T01:13:28.627Z",
+    "fetched_at": "2026-06-11T07:55:55.438Z",
     "group": "B",
     "confederation": "UEFA"
   },
@@ -1777,7 +1777,7 @@
         "date_of_birth": "2006-08-03"
       }
     ],
-    "fetched_at": "2026-06-11T01:13:35.438Z",
+    "fetched_at": "2026-06-11T07:56:02.545Z",
     "group": "C",
     "confederation": "CONMEBOL"
   },
@@ -1975,7 +1975,7 @@
         "date_of_birth": "2004-11-30"
       }
     ],
-    "fetched_at": "2026-06-11T01:13:42.257Z",
+    "fetched_at": "2026-06-11T07:56:09.537Z",
     "group": "C",
     "confederation": "CAF"
   },
@@ -2173,7 +2173,7 @@
         "date_of_birth": "2001-07-07"
       }
     ],
-    "fetched_at": "2026-06-11T01:13:49.128Z",
+    "fetched_at": "2026-06-11T07:56:16.607Z",
     "group": "C",
     "confederation": "CONCACAF"
   },
@@ -2371,7 +2371,7 @@
         "date_of_birth": "1995-08-10"
       }
     ],
-    "fetched_at": "2026-06-11T01:13:55.977Z",
+    "fetched_at": "2026-06-11T07:56:23.956Z",
     "group": "C",
     "confederation": "UEFA"
   },
@@ -2569,7 +2569,7 @@
         "date_of_birth": "2001-04-19"
       }
     ],
-    "fetched_at": "2026-06-11T01:14:02.983Z",
+    "fetched_at": "2026-06-11T07:56:30.943Z",
     "group": "D",
     "confederation": "CONCACAF"
   },
@@ -2767,7 +2767,7 @@
         "date_of_birth": "1995-06-16"
       }
     ],
-    "fetched_at": "2026-06-11T01:14:09.965Z",
+    "fetched_at": "2026-06-11T07:56:37.924Z",
     "group": "D",
     "confederation": "CONMEBOL"
   },
@@ -2965,7 +2965,7 @@
         "date_of_birth": "2000-11-28"
       }
     ],
-    "fetched_at": "2026-06-11T01:14:17.134Z",
+    "fetched_at": "2026-06-11T07:56:44.890Z",
     "group": "D",
     "confederation": "AFC"
   },
@@ -3163,7 +3163,7 @@
         "date_of_birth": "2005-11-11"
       }
     ],
-    "fetched_at": "2026-06-11T01:14:23.959Z",
+    "fetched_at": "2026-06-11T07:56:51.915Z",
     "group": "D",
     "confederation": "UEFA"
   },
@@ -3361,7 +3361,7 @@
         "date_of_birth": "2002-10-17"
       }
     ],
-    "fetched_at": "2026-06-11T01:14:30.821Z",
+    "fetched_at": "2026-06-11T07:56:58.898Z",
     "group": "E",
     "confederation": "UEFA"
   },
@@ -3559,7 +3559,7 @@
         "date_of_birth": "1992-09-19"
       }
     ],
-    "fetched_at": "2026-06-11T01:14:38.024Z",
+    "fetched_at": "2026-06-11T07:57:06.056Z",
     "group": "E",
     "confederation": "CONCACAF"
   },
@@ -3757,7 +3757,7 @@
         "date_of_birth": "2006-11-14"
       }
     ],
-    "fetched_at": "2026-06-11T01:14:44.868Z",
+    "fetched_at": "2026-06-11T07:57:13.037Z",
     "group": "E",
     "confederation": "CAF"
   },
@@ -3955,7 +3955,7 @@
         "date_of_birth": "2005-03-19"
       }
     ],
-    "fetched_at": "2026-06-11T01:14:51.709Z",
+    "fetched_at": "2026-06-11T07:57:20.050Z",
     "group": "E",
     "confederation": "CONMEBOL"
   },
@@ -4153,7 +4153,7 @@
         "date_of_birth": "2002-02-01"
       }
     ],
-    "fetched_at": "2026-06-11T01:14:58.538Z",
+    "fetched_at": "2026-06-11T07:57:27.026Z",
     "group": "F",
     "confederation": "UEFA"
   },
@@ -4351,7 +4351,7 @@
         "date_of_birth": "2005-06-03"
       }
     ],
-    "fetched_at": "2026-06-11T01:15:05.939Z",
+    "fetched_at": "2026-06-11T07:57:34.117Z",
     "group": "F",
     "confederation": "AFC"
   },
@@ -4549,7 +4549,7 @@
         "date_of_birth": "2002-04-27"
       }
     ],
-    "fetched_at": "2026-06-11T01:15:12.834Z",
+    "fetched_at": "2026-06-11T07:57:41.129Z",
     "group": "F",
     "confederation": "UEFA"
   },
@@ -4747,7 +4747,7 @@
         "date_of_birth": "2005-02-02"
       }
     ],
-    "fetched_at": "2026-06-11T01:15:19.682Z",
+    "fetched_at": "2026-06-11T07:57:48.119Z",
     "group": "F",
     "confederation": "CAF"
   },
@@ -4945,7 +4945,7 @@
         "date_of_birth": "2005-02-03"
       }
     ],
-    "fetched_at": "2026-06-11T01:15:26.516Z",
+    "fetched_at": "2026-06-11T07:57:55.159Z",
     "group": "G",
     "confederation": "UEFA"
   },
@@ -5143,7 +5143,7 @@
         "date_of_birth": "2008-01-01"
       }
     ],
-    "fetched_at": "2026-06-11T01:15:33.379Z",
+    "fetched_at": "2026-06-11T07:58:02.367Z",
     "group": "G",
     "confederation": "CAF"
   },
@@ -5341,7 +5341,7 @@
         "date_of_birth": "2000-10-30"
       }
     ],
-    "fetched_at": "2026-06-11T01:15:40.210Z",
+    "fetched_at": "2026-06-11T07:58:09.479Z",
     "group": "G",
     "confederation": "AFC"
   },
@@ -5539,7 +5539,7 @@
         "date_of_birth": "2002-08-19"
       }
     ],
-    "fetched_at": "2026-06-11T01:15:47.077Z",
+    "fetched_at": "2026-06-11T07:58:16.489Z",
     "group": "G",
     "confederation": "OFC"
   },
@@ -5737,7 +5737,7 @@
         "date_of_birth": "2003-07-13"
       }
     ],
-    "fetched_at": "2026-06-11T01:15:53.905Z",
+    "fetched_at": "2026-06-11T07:58:23.500Z",
     "group": "H",
     "confederation": "UEFA"
   },
@@ -5935,7 +5935,7 @@
         "date_of_birth": "2002-05-03"
       }
     ],
-    "fetched_at": "2026-06-11T01:16:01.540Z",
+    "fetched_at": "2026-06-11T07:58:30.501Z",
     "group": "H",
     "confederation": "CAF"
   },
@@ -6133,7 +6133,7 @@
         "date_of_birth": "2000-05-14"
       }
     ],
-    "fetched_at": "2026-06-11T01:16:08.373Z",
+    "fetched_at": "2026-06-11T07:58:37.505Z",
     "group": "H",
     "confederation": "AFC"
   },
@@ -6331,7 +6331,7 @@
         "date_of_birth": "1998-06-30"
       }
     ],
-    "fetched_at": "2026-06-11T01:16:15.198Z",
+    "fetched_at": "2026-06-11T07:58:44.533Z",
     "group": "H",
     "confederation": "CONMEBOL"
   },
@@ -6529,7 +6529,7 @@
         "date_of_birth": "2002-09-02"
       }
     ],
-    "fetched_at": "2026-06-11T01:16:22.028Z",
+    "fetched_at": "2026-06-11T07:58:51.522Z",
     "group": "I",
     "confederation": "UEFA"
   },
@@ -6734,7 +6734,7 @@
         "date_of_birth": "1981-02-05"
       }
     ],
-    "fetched_at": "2026-06-11T01:16:28.863Z",
+    "fetched_at": "2026-06-11T07:58:58.513Z",
     "group": "I",
     "confederation": "CAF"
   },
@@ -6932,7 +6932,7 @@
         "date_of_birth": "1996-01-19"
       }
     ],
-    "fetched_at": "2026-06-11T01:16:35.673Z",
+    "fetched_at": "2026-06-11T07:59:05.491Z",
     "group": "I",
     "confederation": "AFC"
   },
@@ -7130,7 +7130,7 @@
         "date_of_birth": "2000-02-06"
       }
     ],
-    "fetched_at": "2026-06-11T01:16:42.542Z",
+    "fetched_at": "2026-06-11T07:59:12.518Z",
     "group": "I",
     "confederation": "UEFA"
   },
@@ -7328,7 +7328,7 @@
         "date_of_birth": "2002-12-18"
       }
     ],
-    "fetched_at": "2026-06-11T01:16:49.390Z",
+    "fetched_at": "2026-06-11T07:59:19.489Z",
     "group": "J",
     "confederation": "CONMEBOL"
   },
@@ -7526,7 +7526,7 @@
         "date_of_birth": "2002-09-06"
       }
     ],
-    "fetched_at": "2026-06-11T01:16:56.218Z",
+    "fetched_at": "2026-06-11T07:59:26.491Z",
     "group": "J",
     "confederation": "CAF"
   },
@@ -7724,7 +7724,7 @@
         "date_of_birth": "1997-07-07"
       }
     ],
-    "fetched_at": "2026-06-11T01:17:03.275Z",
+    "fetched_at": "2026-06-11T07:59:33.514Z",
     "group": "J",
     "confederation": "UEFA"
   },
@@ -7922,7 +7922,7 @@
         "date_of_birth": "2004-04-13"
       }
     ],
-    "fetched_at": "2026-06-11T01:17:10.154Z",
+    "fetched_at": "2026-06-11T07:59:40.494Z",
     "group": "J",
     "confederation": "AFC"
   },
@@ -8120,7 +8120,7 @@
         "date_of_birth": "2002-12-14"
       }
     ],
-    "fetched_at": "2026-06-11T01:17:16.970Z",
+    "fetched_at": "2026-06-11T07:59:47.480Z",
     "group": "K",
     "confederation": "UEFA"
   },
@@ -8318,205 +8318,16 @@
         "date_of_birth": "1994-06-24"
       }
     ],
-    "fetched_at": "2026-06-11T01:17:23.798Z",
+    "fetched_at": "2026-06-11T07:59:54.444Z",
     "group": "K",
     "confederation": "CAF"
   },
   "Uzbekistan": {
     "name": "Uzbekistan",
     "api_id": 8070,
-    "tla": "UZB",
-    "crest": "https://crests.football-data.org/8070.png",
     "flag": "🇺🇿",
-    "coach": {
-      "name": "Fabio Cannavaro",
-      "nationality": "Italy"
-    },
-    "squad": [
-      {
-        "id": 243911,
-        "name": "Abduvakhid Nematov",
-        "position": "Goalkeeper",
-        "nationality": "Uzbekistan",
-        "date_of_birth": "2001-03-20"
-      },
-      {
-        "id": 244395,
-        "name": "Botir Ergashev",
-        "position": "Goalkeeper",
-        "nationality": "Uzbekistan",
-        "date_of_birth": "1995-06-23"
-      },
-      {
-        "id": 244531,
-        "name": "Utkir Yusupov",
-        "position": "Goalkeeper",
-        "nationality": "Uzbekistan",
-        "date_of_birth": "1991-01-04"
-      },
-      {
-        "id": 132172,
-        "name": "Rustam Ashurmatov",
-        "position": "Defence",
-        "nationality": "Uzbekistan",
-        "date_of_birth": "1996-07-07"
-      },
-      {
-        "id": 132173,
-        "name": "Umar Eshmurodov",
-        "position": "Defence",
-        "nationality": "Uzbekistan",
-        "date_of_birth": "1992-11-30"
-      },
-      {
-        "id": 212868,
-        "name": "Abdukodir Khusanov",
-        "position": "Defence",
-        "nationality": "Uzbekistan",
-        "date_of_birth": "2004-02-29"
-      },
-      {
-        "id": 221787,
-        "name": "Jakhongir O'rozov",
-        "position": "Defence",
-        "nationality": "Uzbekistan",
-        "date_of_birth": "2004-01-18"
-      },
-      {
-        "id": 231904,
-        "name": "Farrukh Sayfiyev",
-        "position": "Defence",
-        "nationality": "Uzbekistan",
-        "date_of_birth": "1991-01-17"
-      },
-      {
-        "id": 243825,
-        "name": "Khodjiakbar Alijonov",
-        "position": "Defence",
-        "nationality": "Uzbekistan",
-        "date_of_birth": "1997-04-19"
-      },
-      {
-        "id": 243838,
-        "name": "Sherzod Nasrullayev",
-        "position": "Defence",
-        "nationality": "Uzbekistan",
-        "date_of_birth": "1998-07-23"
-      },
-      {
-        "id": 243928,
-        "name": "Abdulla Abdullayev",
-        "position": "Defence",
-        "nationality": "Uzbekistan",
-        "date_of_birth": "1997-09-01"
-      },
-      {
-        "id": 295345,
-        "name": "Bekhruz Karimov",
-        "position": "Defence",
-        "nationality": "Uzbekistan",
-        "date_of_birth": "2007-08-07"
-      },
-      {
-        "id": 295866,
-        "name": "Avazbek Ulmasaliev",
-        "position": "Defence",
-        "nationality": "Uzbekistan",
-        "date_of_birth": "2000-03-27"
-      },
-      {
-        "id": 49149,
-        "name": "Dostonbek Xamdamov",
-        "position": "Midfield",
-        "nationality": "Uzbekistan",
-        "date_of_birth": "1996-07-24"
-      },
-      {
-        "id": 117321,
-        "name": "Otabek Shukurov",
-        "position": "Midfield",
-        "nationality": "Uzbekistan",
-        "date_of_birth": "1996-06-22"
-      },
-      {
-        "id": 119221,
-        "name": "Oston Urunov",
-        "position": "Midfield",
-        "nationality": "Uzbekistan",
-        "date_of_birth": "2000-12-19"
-      },
-      {
-        "id": 132176,
-        "name": "Jamshid Iskanderov",
-        "position": "Midfield",
-        "nationality": "Uzbekistan",
-        "date_of_birth": "1993-10-16"
-      },
-      {
-        "id": 149716,
-        "name": "Akmal Mozgovoy",
-        "position": "Midfield",
-        "nationality": "Uzbekistan",
-        "date_of_birth": "2000-04-02"
-      },
-      {
-        "id": 214531,
-        "name": "Abbosbek Fayzullaev",
-        "position": "Midfield",
-        "nationality": "Uzbekistan",
-        "date_of_birth": "2003-10-03"
-      },
-      {
-        "id": 232740,
-        "name": "Azizjon Ganiev",
-        "position": "Midfield",
-        "nationality": "Uzbekistan",
-        "date_of_birth": "1998-02-22"
-      },
-      {
-        "id": 232753,
-        "name": "Odiljon Hamrobekov",
-        "position": "Midfield",
-        "nationality": "Uzbekistan",
-        "date_of_birth": "1996-02-13"
-      },
-      {
-        "id": 262464,
-        "name": "Sherzod Esanov",
-        "position": "Midfield",
-        "nationality": "Uzbekistan",
-        "date_of_birth": "2003-02-01"
-      },
-      {
-        "id": 49307,
-        "name": "Eldor Shomurodov",
-        "position": "Offence",
-        "nationality": "Uzbekistan",
-        "date_of_birth": "1995-06-29"
-      },
-      {
-        "id": 117326,
-        "name": "Jaloliddin Masharipov",
-        "position": "Offence",
-        "nationality": "Uzbekistan",
-        "date_of_birth": "1993-09-01"
-      },
-      {
-        "id": 183140,
-        "name": "Igor Sergeev",
-        "position": "Offence",
-        "nationality": "Uzbekistan",
-        "date_of_birth": "1993-04-30"
-      },
-      {
-        "id": 249659,
-        "name": "Azizbek Amonov",
-        "position": "Offence",
-        "nationality": "Uzbekistan",
-        "date_of_birth": "1997-10-30"
-      }
-    ],
-    "fetched_at": "2026-06-11T01:17:30.649Z",
+    "error": "fetch failed",
+    "fetched_at": "2026-06-11T08:00:02.340Z",
     "group": "K",
     "confederation": "AFC"
   },
@@ -8714,7 +8525,7 @@
         "date_of_birth": "2002-09-12"
       }
     ],
-    "fetched_at": "2026-06-11T01:17:37.764Z",
+    "fetched_at": "2026-06-11T08:00:10.142Z",
     "group": "K",
     "confederation": "CONMEBOL"
   },
@@ -8912,7 +8723,7 @@
         "date_of_birth": "2002-03-10"
       }
     ],
-    "fetched_at": "2026-06-11T01:17:44.610Z",
+    "fetched_at": "2026-06-11T08:00:17.158Z",
     "group": "L",
     "confederation": "UEFA"
   },
@@ -9110,7 +8921,7 @@
         "date_of_birth": "2003-03-31"
       }
     ],
-    "fetched_at": "2026-06-11T01:17:51.437Z",
+    "fetched_at": "2026-06-11T08:00:24.179Z",
     "group": "L",
     "confederation": "UEFA"
   },
@@ -9308,7 +9119,7 @@
         "date_of_birth": "2003-09-23"
       }
     ],
-    "fetched_at": "2026-06-11T01:17:58.264Z",
+    "fetched_at": "2026-06-11T08:00:31.225Z",
     "group": "L",
     "confederation": "CAF"
   },
@@ -9506,7 +9317,7 @@
         "date_of_birth": "2001-06-21"
       }
     ],
-    "fetched_at": "2026-06-11T01:18:05.128Z",
+    "fetched_at": "2026-06-11T08:00:38.265Z",
     "group": "L",
     "confederation": "CONCACAF"
   }
