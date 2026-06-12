@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { writeFileSync, mkdirSync } from 'fs';
+import { readFileSync, writeFileSync, mkdirSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
@@ -51,35 +51,48 @@ async function fetchTournamentWinnerOdds() {
 }
 
 async function fetchMatchResults() {
-  // Fetch from rezarahiminia/worldcup2026 GitHub repo (free, no API key needed)
-  const url = 'https://raw.githubusercontent.com/rezarahiminia/worldcup2026/main/football.matches.json';
+  // Primary source: worldcup26.ir API (free, no API key, live scores)
+  const url = 'https://worldcup26.ir/get/games';
   
   try {
     console.log(`Fetching: ${url}`);
     const response = await axios.get(url);
-    const matches = response.data;
+    const matches = response.data.games || response.data;
     
     // Filter to only completed matches
     const completed = matches.filter(m => 
-      m.status === 'completed' || m.status === 'finished' || m.finished === true
+      m.finished === 'TRUE' || m.finished === true || m.time_elapsed === 'finished'
     );
     
+    console.log(`   Found ${completed.length} completed matches from worldcup26.ir`);
+    
     return completed.map(m => ({
-      id: m.id || `${m.home_team}-${m.away_team}`,
-      home_team: m.home_team,
-      away_team: m.away_team,
-      home_score: m.home_score,
-      away_score: m.away_score,
-      status: m.status,
+      id: m.id || `${m.home_team_name_en}-${m.away_team_name_en}`,
+      home_team: m.home_team_name_en || m.home_team,
+      away_team: m.away_team_name_en || m.away_team,
+      home_score: parseInt(m.home_score) || 0,
+      away_score: parseInt(m.away_score) || 0,
+      status: 'completed',
       group: m.group,
-      stage: m.stage || 'group_stage',
-      date: m.date || m.datetime
+      stage: m.type === 'group' ? 'group_stage' : (m.type || 'group_stage'),
+      date: m.local_date,
+      matchday: parseInt(m.matchday) || null
     }));
   } catch (error) {
-    // If GitHub repo doesn't exist yet or network error, just return empty
-    console.log(`   Note: Could not fetch match results (${error.message})`);
-    console.log('   This is normal before tournament starts or if repo structure changes');
-    return [];
+    console.log(`   Note: Could not fetch from worldcup26.ir (${error.message})`);
+    console.log('   Falling back to local data/results.json if available');
+    
+    // Fallback: read from local results.json
+    try {
+      const localPath = join(projectRoot, 'data', 'results.json');
+      const localData = JSON.parse(readFileSync(localPath, 'utf-8'));
+      const results = localData.matches || [];
+      console.log(`   Loaded ${results.length} results from local fallback`);
+      return results;
+    } catch (fallbackError) {
+      console.log('   No local results available either');
+      return [];
+    }
   }
 }
 
