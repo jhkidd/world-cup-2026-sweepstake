@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync, readdirSync, mkdirSync } from 'fs';
+import { readFileSync, writeFileSync, readdirSync, mkdirSync, existsSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { addDays, parseISO, formatISO } from 'date-fns';
@@ -10,6 +10,24 @@ const projectRoot = join(__dirname, '..');
 
 function loadJSON(filepath) {
   return JSON.parse(readFileSync(filepath, 'utf-8'));
+}
+
+/**
+ * Load local results from data/results.json (manually maintained).
+ * This is the authoritative source for completed match results.
+ */
+function loadLocalResults() {
+  const resultsPath = join(projectRoot, 'data', 'results.json');
+  if (!existsSync(resultsPath)) {
+    return [];
+  }
+  try {
+    const data = loadJSON(resultsPath);
+    return data.matches || [];
+  } catch (e) {
+    console.warn('⚠ Could not load local results:', e.message);
+    return [];
+  }
 }
 
 function getLatestOddsFile() {
@@ -103,53 +121,67 @@ function mergeCompletedResults(matchOdds, completedResults, tournament) {
     const normalizedAway = normalizeTeamName(completed.away_team);
     
     // Find matching odds entry
-    const oddsMatch = merged.find(m => 
+    let oddsMatch = merged.find(m => 
       (normalizeTeamName(m.home_team) === normalizedHome && normalizeTeamName(m.away_team) === normalizedAway) ||
       (normalizeTeamName(m.away_team) === normalizedHome && normalizeTeamName(m.home_team) === normalizedAway)
     );
     
-    if (oddsMatch && oddsMatch.bookmakers && oddsMatch.bookmakers.length > 0) {
-      // Determine winner
-      let homeWinProb, drawProb, awayWinProb;
-      
-      if (completed.home_score > completed.away_score) {
-        homeWinProb = 1.0;  // Home won
-        drawProb = 0.0;
-        awayWinProb = 0.0;
-      } else if (completed.home_score < completed.away_score) {
-        homeWinProb = 0.0;
-        drawProb = 0.0;
-        awayWinProb = 1.0;  // Away won
-      } else {
-        homeWinProb = 0.0;
-        drawProb = 1.0;     // Draw
-        awayWinProb = 0.0;
-      }
-      
-      // Convert probabilities to odds (odds = 1 / probability, but handle 0)
-      const homeOdds = homeWinProb > 0 ? 1.0 / homeWinProb : 1000.0;
-      const drawOdds = drawProb > 0 ? 1.0 / drawProb : 1000.0;
-      const awayOdds = awayWinProb > 0 ? 1.0 / awayWinProb : 1000.0;
-      
-      // Override all bookmakers with the actual result
-      for (const bookmaker of oddsMatch.bookmakers) {
-        const h2hMarket = bookmaker.markets.find(m => m.key === 'h2h');
-        if (h2hMarket) {
-          h2hMarket.outcomes = [
-            { name: oddsMatch.home_team, price: homeOdds },
-            { name: 'Draw', price: drawOdds },
-            { name: oddsMatch.away_team, price: awayOdds }
-          ];
-        }
-      }
-      
-      // Store actual score for goal difference calculations
-      oddsMatch.actual_result = {
-        home_score: completed.home_score,
-        away_score: completed.away_score,
-        completed: true
+    // If no odds entry exists (match dropped from API), create a synthetic one
+    if (!oddsMatch) {
+      oddsMatch = {
+        id: completed.id || `${completed.home_team}-${completed.away_team}`,
+        sport_key: 'soccer_fifa_world_cup',
+        home_team: completed.home_team,
+        away_team: completed.away_team,
+        bookmakers: [{
+          key: 'result',
+          title: 'Actual Result',
+          markets: [{ key: 'h2h', outcomes: [] }]
+        }]
       };
+      merged.push(oddsMatch);
     }
+    
+    // Determine winner
+    let homeWinProb, drawProb, awayWinProb;
+    
+    if (completed.home_score > completed.away_score) {
+      homeWinProb = 1.0;  // Home won
+      drawProb = 0.0;
+      awayWinProb = 0.0;
+    } else if (completed.home_score < completed.away_score) {
+      homeWinProb = 0.0;
+      drawProb = 0.0;
+      awayWinProb = 1.0;  // Away won
+    } else {
+      homeWinProb = 0.0;
+      drawProb = 1.0;     // Draw
+      awayWinProb = 0.0;
+    }
+    
+    // Convert probabilities to odds (odds = 1 / probability, but handle 0)
+    const homeOdds = homeWinProb > 0 ? 1.0 / homeWinProb : 1000.0;
+    const drawOdds = drawProb > 0 ? 1.0 / drawProb : 1000.0;
+    const awayOdds = awayWinProb > 0 ? 1.0 / awayWinProb : 1000.0;
+    
+    // Override all bookmakers with the actual result
+    for (const bookmaker of oddsMatch.bookmakers) {
+      const h2hMarket = bookmaker.markets.find(m => m.key === 'h2h');
+      if (h2hMarket) {
+        h2hMarket.outcomes = [
+          { name: oddsMatch.home_team, price: homeOdds },
+          { name: 'Draw', price: drawOdds },
+          { name: oddsMatch.away_team, price: awayOdds }
+        ];
+      }
+    }
+    
+    // Store actual score for goal difference calculations
+    oddsMatch.actual_result = {
+      home_score: completed.home_score,
+      away_score: completed.away_score,
+      completed: true
+    };
   }
   
   return merged;
@@ -254,7 +286,7 @@ function getTeamRankings(tournament, teamProbs, sweepstake) {
   return teams;
 }
 
-function getMatchesForMatchday(matchday, oddsData, tournament, ownerLookup) {
+function getMatchesForMatchday(matchday, oddsData, tournament, ownerLookup, localResults = []) {
   const matches = [];
   
   for (const match of tournament.matches.group_stage) {
@@ -263,6 +295,33 @@ function getMatchesForMatchday(matchday, oddsData, tournament, ownerLookup) {
     // Normalize team names for matching
     const normalizedHome = normalizeTeamName(match.home);
     const normalizedAway = normalizeTeamName(match.away);
+    
+    // Check local results first (authoritative source for completed matches)
+    const localResult = localResults.find(r => {
+      const rHome = normalizeTeamName(r.home_team);
+      const rAway = normalizeTeamName(r.away_team);
+      return (rHome === normalizedHome && rAway === normalizedAway) ||
+             (rAway === normalizedHome && rHome === normalizedAway);
+    });
+    
+    let actualResult = null;
+    if (localResult) {
+      // Determine scores relative to tournament match home/away
+      const localHome = normalizeTeamName(localResult.home_team);
+      if (localHome === normalizedHome) {
+        actualResult = {
+          home_score: localResult.home_score,
+          away_score: localResult.away_score,
+          completed: true
+        };
+      } else {
+        actualResult = {
+          home_score: localResult.away_score,
+          away_score: localResult.home_score,
+          completed: true
+        };
+      }
+    }
     
     // Find odds for this match (with normalization)
     const oddsMatch = oddsData.matchOdds.find(m => {
@@ -274,7 +333,16 @@ function getMatchesForMatchday(matchday, oddsData, tournament, ownerLookup) {
     
     let homeWinProb = null, drawProb = null, awayWinProb = null;
     
-    if (oddsMatch && oddsMatch.bookmakers && oddsMatch.bookmakers.length > 0) {
+    if (actualResult) {
+      // Completed match - set probabilities to 100% for actual result
+      if (actualResult.home_score > actualResult.away_score) {
+        homeWinProb = 1.0; drawProb = 0.0; awayWinProb = 0.0;
+      } else if (actualResult.away_score > actualResult.home_score) {
+        homeWinProb = 0.0; drawProb = 0.0; awayWinProb = 1.0;
+      } else {
+        homeWinProb = 0.0; drawProb = 1.0; awayWinProb = 0.0;
+      }
+    } else if (oddsMatch && oddsMatch.bookmakers && oddsMatch.bookmakers.length > 0) {
       const market = oddsMatch.bookmakers[0].markets.find(m => m.key === 'h2h');
       if (market) {
         // Normalize outcome names for matching
@@ -296,6 +364,9 @@ function getMatchesForMatchday(matchday, oddsData, tournament, ownerLookup) {
       }
     }
     
+    // Use local result, or fall back to odds-merged result
+    const finalResult = actualResult || oddsMatch?.actual_result || null;
+    
     matches.push({
       matchday: match.matchday,
       group: match.group,
@@ -308,7 +379,7 @@ function getMatchesForMatchday(matchday, oddsData, tournament, ownerLookup) {
       draw_prob: drawProb,
       away_win_prob: awayWinProb,
       venue: match.venue_key,
-      actual_result: oddsMatch?.actual_result || null
+      actual_result: finalResult
     });
   }
   
@@ -323,7 +394,7 @@ function getMatchesForMatchday(matchday, oddsData, tournament, ownerLookup) {
   return matches;
 }
 
-function getAllMatchdays(oddsData, tournament, sweepstake) {
+function getAllMatchdays(oddsData, tournament, sweepstake, localResults = []) {
   // Build owner lookup
   const ownerLookup = {};
   for (const participant of sweepstake.participants) {
@@ -333,13 +404,13 @@ function getAllMatchdays(oddsData, tournament, sweepstake) {
   }
   
   return {
-    matchday1: getMatchesForMatchday(1, oddsData, tournament, ownerLookup),
-    matchday2: getMatchesForMatchday(2, oddsData, tournament, ownerLookup),
-    matchday3: getMatchesForMatchday(3, oddsData, tournament, ownerLookup)
+    matchday1: getMatchesForMatchday(1, oddsData, tournament, ownerLookup, localResults),
+    matchday2: getMatchesForMatchday(2, oddsData, tournament, ownerLookup, localResults),
+    matchday3: getMatchesForMatchday(3, oddsData, tournament, ownerLookup, localResults)
   };
 }
 
-function getUpcomingMatches(oddsData, tournament, sweepstake) {
+function getUpcomingMatches(oddsData, tournament, sweepstake, localResults = []) {
   // For backwards compatibility, returns only the next matchday
   const now = new Date();
   
@@ -369,7 +440,7 @@ function getUpcomingMatches(oddsData, tournament, sweepstake) {
     return []; // No upcoming matches
   }
   
-  return getMatchesForMatchday(earliestMatchday, oddsData, tournament, ownerLookup);
+  return getMatchesForMatchday(earliestMatchday, oddsData, tournament, ownerLookup, localResults);
 }
 
 function buildTimeline(allOddsFiles, sweepstake) {
@@ -408,6 +479,14 @@ async function main() {
     console.log('Loading data files...');
     const sweepstake = loadJSON(join(projectRoot, 'data', 'sweepstake.json'));
     const tournament = loadJSON(join(projectRoot, 'data', 'tournament.json'));
+    
+    // Load local results (authoritative source for completed matches)
+    const localResults = loadLocalResults();
+    if (localResults.length > 0) {
+      console.log(`✓ Loaded ${localResults.length} completed match results from data/results.json`);
+    } else {
+      console.log('ℹ No local results found (data/results.json)');
+    }
     
     // Load team details if available (optional - from fetch-team-data.js)
     let teamDetails = {};
@@ -461,12 +540,12 @@ async function main() {
     
     // Upcoming matches (next matchday only - for backwards compatibility)
     console.log('\nFinding upcoming matches...');
-    const upcomingMatches = getUpcomingMatches(oddsData, tournament, sweepstake);
+    const upcomingMatches = getUpcomingMatches(oddsData, tournament, sweepstake, localResults);
     console.log(`✓ Found ${upcomingMatches.length} matches in next matchday`);
     
     // All matchdays (for web site)
     console.log('\nProcessing all group stage matchdays...');
-    const allMatchdays = getAllMatchdays(oddsData, tournament, sweepstake);
+    const allMatchdays = getAllMatchdays(oddsData, tournament, sweepstake, localResults);
     console.log(`✓ Matchday 1: ${allMatchdays.matchday1.length} matches`);
     console.log(`✓ Matchday 2: ${allMatchdays.matchday2.length} matches`);
     console.log(`✓ Matchday 3: ${allMatchdays.matchday3.length} matches`);
@@ -490,8 +569,31 @@ async function main() {
     // Run Monte Carlo simulation with Elo ratings
     console.log('\n🎲 Running Monte Carlo simulation for stage probabilities...');
     
+    // Combine remote results (from odds API) with local results (authoritative)
+    const combinedResults = [...(oddsData.results || [])];
+    for (const localResult of localResults) {
+      // Add local results in the format mergeCompletedResults expects
+      const alreadyExists = combinedResults.find(r => 
+        normalizeTeamName(r.home_team) === normalizeTeamName(localResult.home_team) &&
+        normalizeTeamName(r.away_team) === normalizeTeamName(localResult.away_team)
+      );
+      if (!alreadyExists) {
+        combinedResults.push({
+          id: localResult.id,
+          home_team: localResult.home_team,
+          away_team: localResult.away_team,
+          home_score: localResult.home_score,
+          away_score: localResult.away_score,
+          status: 'completed',
+          group: localResult.group,
+          stage: localResult.stage || 'group_stage',
+          date: localResult.date
+        });
+      }
+    }
+    
     // Merge completed results with match odds (override odds to 100% for actual winners)
-    const matchOddsWithResults = mergeCompletedResults(oddsData.matchOdds, oddsData.results, tournament);
+    const matchOddsWithResults = mergeCompletedResults(oddsData.matchOdds, combinedResults, tournament);
     
     // Use Elo ratings directly for knockout matches, bookmaker H2H for group stage
     // Fall back to calibrated strengths if no Elo available

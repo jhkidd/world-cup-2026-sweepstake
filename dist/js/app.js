@@ -1042,8 +1042,8 @@ function renderTeamDetail(slug) {
       if (match.actual_result && match.group === team.group) {
         const homeTeam = match.home_team;
         const awayTeam = match.away_team;
-        const homeGoals = match.actual_result.home;
-        const awayGoals = match.actual_result.away;
+        const homeGoals = match.actual_result.home_score;
+        const awayGoals = match.actual_result.away_score;
         
         gamesPlayedMap[homeTeam] = (gamesPlayedMap[homeTeam] || 0) + 1;
         gamesPlayedMap[awayTeam] = (gamesPlayedMap[awayTeam] || 0) + 1;
