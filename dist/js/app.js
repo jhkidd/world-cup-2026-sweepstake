@@ -416,8 +416,15 @@ function renderMatches(matchday) {
 }
 
 function renderTimeline() {
-  // Get top 8 participants
-  const top8 = data.leaderboard.slice(0, 8);
+  // Include anyone who at any point had >3% win probability
+  const featuredNames = new Set();
+  data.timeline.forEach(t => {
+    Object.entries(t.participants).forEach(([name, prob]) => {
+      if (prob > 0.03) featuredNames.add(name);
+    });
+  });
+  // Sort by current probability descending
+  const featured = data.leaderboard.filter(p => featuredNames.has(p.name));
   
   // 17 distinct colors for all participants (no reuse)
   const allColors = [
@@ -440,25 +447,59 @@ function renderTimeline() {
     '#1F618D'  // Steel blue
   ];
 
-  const datasets = top8.map((p, i) => ({
+  const xMin = new Date('2026-06-01T00:00:00Z');
+
+  const datasets = featured.map((p, i) => ({
     label: p.name,
-    data: data.timeline.map(t => ({
-      x: new Date(t.date),
-      y: (t.participants[p.name] || 0) * 100
-    })),
+    data: data.timeline
+      .filter(t => new Date(t.date) >= xMin)
+      .map(t => ({
+        x: new Date(t.date),
+        y: (t.participants[p.name] || 0) * 100
+      })),
     borderColor: allColors[i],
     backgroundColor: allColors[i],
     tension: 0.3,
-    pointRadius: 3,
-    pointHoverRadius: 5,
+    pointRadius: 0,
+    pointHoverRadius: 3,
+    pointHitRadius: 10,
     borderWidth: 2.5,
     hoverBorderWidth: 3.5
   }));
 
-  // Store current odds for labels
+  // Determine x-axis end date based on tournament stage
+  // Group stages end June 28; final is July 19
+  const groupStageEnd = new Date('2026-06-29T00:00:00Z');
+  const finalEnd = new Date('2026-07-20T00:00:00Z');
+  const lastGroupMatch = new Date('2026-06-28T04:00:00Z');
+  const now = new Date();
+  const xMax = now > lastGroupMatch ? finalEnd : groupStageEnd;
+
+  // Store current odds and teams for labels
   const currentOdds = {};
-  top8.forEach(p => {
+  const participantTeams = {};
+  const teamFlags = {
+    'Mexico': '🇲🇽', 'South Africa': '🇿🇦', 'South Korea': '🇰🇷', 'Czechia': '🇨🇿',
+    'Canada': '🇨🇦', 'Bosnia and Herzegovina': '🇧🇦', 'Qatar': '🇶🇦', 'Switzerland': '🇨🇭',
+    'Brazil': '🇧🇷', 'Morocco': '🇲🇦', 'Haiti': '🇭🇹', 'Scotland': '🏴󠁧󠁢󠁳󠁣󠁴󠁿',
+    'USA': '🇺🇸', 'Paraguay': '🇵🇾', 'Australia': '🇦🇺', 'Türkiye': '🇹🇷',
+    'Germany': '🇩🇪', 'Curaçao': '🇨🇼', 'Ivory Coast': '🇨🇮', 'Ecuador': '🇪🇨',
+    'Netherlands': '🇳🇱', 'Japan': '🇯🇵', 'Sweden': '🇸🇪', 'Tunisia': '🇹🇳',
+    'Belgium': '🇧🇪', 'Egypt': '🇪🇬', 'Iran': '🇮🇷', 'New Zealand': '🇳🇿',
+    'Spain': '🇪🇸', 'Cape Verde': '🇨🇻', 'Saudi Arabia': '🇸🇦', 'Uruguay': '🇺🇾',
+    'France': '🇫🇷', 'Senegal': '🇸🇳', 'Iraq': '🇮🇶', 'Norway': '🇳🇴',
+    'Argentina': '🇦🇷', 'Algeria': '🇩🇿', 'Austria': '🇦🇹', 'Jordan': '🇯🇴',
+    'Portugal': '🇵🇹', 'DR Congo': '🇨🇩', 'Uzbekistan': '🇺🇿', 'Colombia': '🇨🇴',
+    'England': '🏴󠁧󠁢󠁥󠁮󠁧󠁿', 'Croatia': '🇭🇷', 'Ghana': '🇬🇭', 'Panama': '🇵🇦',
+    'Chile': '🇨🇱', 'Poland': '🇵🇱', 'Serbia': '🇷🇸', 'Denmark': '🇩🇰',
+    'Italy': '🇮🇹', 'Wales': '🏴󠁧󠁢󠁷󠁬󠁳󠁿', 'Cameroon': '🇨🇲', 'Peru': '🇵🇪'
+  };
+  featured.forEach(p => {
     currentOdds[p.name] = (p.total_probability * 100).toFixed(1);
+    participantTeams[p.name] = [
+      teamFlags[p.team1.name] || '🏴',
+      teamFlags[p.team2.name] || '🏴'
+    ];
   });
 
   // Render chart after DOM update
@@ -481,7 +522,9 @@ function renderTimeline() {
           scales: {
             x: {
               type: 'time',
-              time: { unit: 'day' }
+              time: { unit: 'day' },
+              min: xMin,
+              max: xMax
             },
             y: {
               title: { display: true, text: 'Win Probability (%)' },
@@ -522,6 +565,20 @@ function renderTimeline() {
         }
       });
 
+      // Reset highlight when mouse leaves the chart
+      ctx.addEventListener('mouseleave', () => {
+        if (activeDatasetIndex !== null) {
+          activeDatasetIndex = null;
+          chart.data.datasets.forEach((ds, i) => {
+            ds.borderColor = allColors[i];
+            ds.backgroundColor = allColors[i];
+            ds.borderWidth = 2.5;
+          });
+          chart.update('none');
+          updateEndLabels(chart, null);
+        }
+      });
+
       // Create end labels container - covers entire chart for proper positioning
       const container = document.getElementById('timeline-chart');
       const labelsDiv = document.createElement('div');
@@ -538,7 +595,7 @@ function renderTimeline() {
           return;
         }
 
-        const participant = top8[activeIndex];
+        const participant = featured[activeIndex];
         const meta = chart.getDatasetMeta(activeIndex);
         const lastPointMeta = meta.data[meta.data.length - 1];
         
@@ -548,6 +605,7 @@ function renderTimeline() {
         const y = lastPointMeta.y;
         const color = allColors[activeIndex];
         const odds = currentOdds[participant.name];
+        const flags = participantTeams[participant.name] || ['🏴', '🏴'];
         const profileName = participant.name.toLowerCase();
         const initials = participant.name.split(' ').map(n=>n[0]).join('');
 
@@ -561,6 +619,8 @@ function renderTimeline() {
               <span style="font-size:12px;font-weight:600;color:#333;">${participant.name}</span>
               <span style="font-size:11px;color:${color};font-weight:700;">${odds}%</span>
             </div>
+            <span style="font-size:20px;margin-left:4px;">${flags[0]}</span>
+            <span style="font-size:20px;">${flags[1]}</span>
           </div>
         `;
       }
