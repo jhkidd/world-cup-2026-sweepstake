@@ -50,49 +50,93 @@ async function fetchTournamentWinnerOdds() {
   return await fetchWithRetry(url);
 }
 
-async function fetchMatchResults() {
-  // Primary source: worldcup26.ir API (free, no API key, live scores)
+async function fetchMatchResultsFromWorldCup26() {
   const url = 'https://worldcup26.ir/get/games';
+  console.log(`   Trying worldcup26.ir...`);
+  console.log(`   Fetching: ${url}`);
+  const response = await axios.get(url, { timeout: 10000 });
+  const matches = response.data.games || response.data;
+  
+  const completed = matches.filter(m => 
+    m.finished === 'TRUE' || m.finished === true || m.time_elapsed === 'finished'
+  );
+  
+  console.log(`   ✓ Found ${completed.length} completed matches from worldcup26.ir`);
+  
+  return completed.map(m => ({
+    id: m.id || `${m.home_team_name_en}-${m.away_team_name_en}`,
+    home_team: m.home_team_name_en || m.home_team,
+    away_team: m.away_team_name_en || m.away_team,
+    home_score: parseInt(m.home_score) || 0,
+    away_score: parseInt(m.away_score) || 0,
+    status: 'completed',
+    group: m.group,
+    stage: m.type === 'group' ? 'group_stage' : (m.type || 'group_stage'),
+    date: m.local_date,
+    matchday: parseInt(m.matchday) || null
+  }));
+}
+
+async function fetchMatchResultsFromFootballData() {
+  const footballApiKey = process.env.FOOTBALL_DATA_API_KEY;
+  if (!footballApiKey) {
+    throw new Error('FOOTBALL_DATA_API_KEY not set');
+  }
+  
+  const url = `https://api.football-data.org/v4/competitions/WC/matches?status=FINISHED`;
+  console.log(`   Trying football-data.org...`);
+  console.log(`   Fetching: ${url}`);
+  const response = await axios.get(url, {
+    headers: { 'X-Auth-Token': footballApiKey },
+    timeout: 15000
+  });
+  
+  const matches = response.data.matches || [];
+  console.log(`   ✓ Found ${matches.length} completed matches from football-data.org`);
+  
+  return matches.map(m => ({
+    id: `${m.homeTeam.name}-${m.awayTeam.name}`,
+    home_team: m.homeTeam.name,
+    away_team: m.awayTeam.name,
+    home_score: m.score?.fullTime?.home ?? 0,
+    away_score: m.score?.fullTime?.away ?? 0,
+    status: 'completed',
+    group: m.group ? m.group.replace('GROUP_', '') : null,
+    stage: m.stage === 'GROUP_STAGE' ? 'group_stage' : (m.stage || 'group_stage').toLowerCase(),
+    date: m.utcDate ? m.utcDate.split('T')[0] : null,
+    matchday: m.matchday || null
+  }));
+}
+
+async function fetchMatchResults() {
+  // Try multiple sources in order, falling back as needed
+  // 1. football-data.org (reliable, works from GitHub Actions)
+  // 2. worldcup26.ir (free, no key, but DNS issues from GH Actions)
+  // 3. Local data/results.json fallback
   
   try {
-    console.log(`Fetching: ${url}`);
-    const response = await axios.get(url);
-    const matches = response.data.games || response.data;
-    
-    // Filter to only completed matches
-    const completed = matches.filter(m => 
-      m.finished === 'TRUE' || m.finished === true || m.time_elapsed === 'finished'
-    );
-    
-    console.log(`   Found ${completed.length} completed matches from worldcup26.ir`);
-    
-    return completed.map(m => ({
-      id: m.id || `${m.home_team_name_en}-${m.away_team_name_en}`,
-      home_team: m.home_team_name_en || m.home_team,
-      away_team: m.away_team_name_en || m.away_team,
-      home_score: parseInt(m.home_score) || 0,
-      away_score: parseInt(m.away_score) || 0,
-      status: 'completed',
-      group: m.group,
-      stage: m.type === 'group' ? 'group_stage' : (m.type || 'group_stage'),
-      date: m.local_date,
-      matchday: parseInt(m.matchday) || null
-    }));
+    return await fetchMatchResultsFromFootballData();
   } catch (error) {
-    console.log(`   Note: Could not fetch from worldcup26.ir (${error.message})`);
-    console.log('   Falling back to local data/results.json if available');
-    
-    // Fallback: read from local results.json
-    try {
-      const localPath = join(projectRoot, 'data', 'results.json');
-      const localData = JSON.parse(readFileSync(localPath, 'utf-8'));
-      const results = localData.matches || [];
-      console.log(`   Loaded ${results.length} results from local fallback`);
-      return results;
-    } catch (fallbackError) {
-      console.log('   No local results available either');
-      return [];
-    }
+    console.log(`   Note: football-data.org failed (${error.message})`);
+  }
+  
+  try {
+    return await fetchMatchResultsFromWorldCup26();
+  } catch (error) {
+    console.log(`   Note: worldcup26.ir failed (${error.message})`);
+  }
+  
+  // Final fallback: local results.json
+  console.log('   Falling back to local data/results.json...');
+  try {
+    const localPath = join(projectRoot, 'data', 'results.json');
+    const localData = JSON.parse(readFileSync(localPath, 'utf-8'));
+    const results = localData.matches || [];
+    console.log(`   Loaded ${results.length} results from local fallback`);
+    return results;
+  } catch (fallbackError) {
+    console.log('   No local results available either');
+    return [];
   }
 }
 
@@ -135,6 +179,18 @@ async function main() {
     
     writeFileSync(filepath, JSON.stringify(data, null, 2));
     console.log(`✅ Data saved to: data/odds/${filename}`);
+    
+    // Also update data/results.json so it stays current as a fallback
+    if (results.length > 0) {
+      const resultsPath = join(projectRoot, 'data', 'results.json');
+      const resultsData = {
+        description: "Auto-updated match results from external APIs. Used as fallback for completed matches.",
+        last_updated: new Date().toISOString(),
+        matches: results
+      };
+      writeFileSync(resultsPath, JSON.stringify(resultsData, null, 2));
+      console.log(`✅ Updated data/results.json with ${results.length} results`);
+    }
     
   } catch (error) {
     console.error('❌ Error fetching odds:', error.message);

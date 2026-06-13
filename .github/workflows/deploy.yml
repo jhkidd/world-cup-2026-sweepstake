@@ -37,6 +37,7 @@ jobs:
         run: npm run fetch
         env:
           THE_ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+          FOOTBALL_DATA_API_KEY: ${{ secrets.FOOTBALL_DATA_API_KEY }}
 
       - name: Fetch team details
         run: npm run fetch-teams
@@ -49,6 +50,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/odds/
+          git add data/results.json 2>/dev/null || true
           git add data/team_details.json 2>/dev/null || true
           git diff --staged --quiet || git commit -m "chore: update odds and team data [skip ci]"
           # Pull with merge strategy that accepts incoming changes for data files
