@@ -106,6 +106,274 @@ function normalizeTeamName(name) {
   return normalized;
 }
 
+/**
+ * Compute predictions vs results analysis for all completed matches.
+ * For each completed match, finds the last odds file before kickoff and
+ * extracts averaged bookmaker h2h probabilities.
+ */
+function computePredictionsVsResults(tournament, localResults, ownerLookup) {
+  const oddsDir = join(projectRoot, 'data', 'odds');
+  const oddsFiles = readdirSync(oddsDir)
+    .filter(f => f.endsWith('.json'))
+    .sort();
+  
+  if (oddsFiles.length === 0 || localResults.length === 0) {
+    return null;
+  }
+  
+  const matches = [];
+  
+  for (const result of localResults) {
+    // Find the tournament match to get kickoff time
+    const normalizedHome = normalizeTeamName(result.home_team);
+    const normalizedAway = normalizeTeamName(result.away_team);
+    
+    const tournamentMatch = tournament.matches.group_stage.find(m => {
+      const tHome = normalizeTeamName(m.home);
+      const tAway = normalizeTeamName(m.away);
+      return (tHome === normalizedHome && tAway === normalizedAway) ||
+             (tAway === normalizedHome && tHome === normalizedAway);
+    });
+    
+    if (!tournamentMatch) continue;
+    
+    const kickoffUtc = tournamentMatch.kickoff_utc;
+    // Convert kickoff to comparable timestamp (files are named YYYY-MM-DD_HH-MM-SS)
+    const kickoffTs = kickoffUtc.replace(/:/g, '-').replace('T', '_').replace('Z', '');
+    
+    // Find last odds file before kickoff
+    const preMatchFiles = oddsFiles.filter(f => f < kickoffTs);
+    if (preMatchFiles.length === 0) continue;
+    
+    const preMatchFile = preMatchFiles[preMatchFiles.length - 1];
+    const oddsData = JSON.parse(readFileSync(join(oddsDir, preMatchFile), 'utf-8'));
+    
+    // Find this match in the odds data
+    const oddsMatch = (oddsData.matchOdds || []).find(m => {
+      const oHome = normalizeTeamName(m.home_team);
+      const oAway = normalizeTeamName(m.away_team);
+      return (oHome === normalizedHome && oAway === normalizedAway) ||
+             (oAway === normalizedHome && oHome === normalizedAway);
+    });
+    
+    if (!oddsMatch || !oddsMatch.bookmakers || oddsMatch.bookmakers.length === 0) continue;
+    
+    // Average probabilities across all bookmakers
+    const homeProbs = [], drawProbs = [], awayProbs = [];
+    
+    // Determine which team is "home" in the odds (may differ from tournament)
+    const oddsHomeNorm = normalizeTeamName(oddsMatch.home_team);
+    const tournamentHomeNorm = normalizeTeamName(tournamentMatch.home);
+    const sameOrientation = (oddsHomeNorm === tournamentHomeNorm);
+    
+    for (const bookie of oddsMatch.bookmakers) {
+      const market = bookie.markets.find(m => m.key === 'h2h');
+      if (!market) continue;
+      
+      const oddsHome = market.outcomes.find(o => normalizeTeamName(o.name) === oddsHomeNorm);
+      const oddsDraw = market.outcomes.find(o => o.name === 'Draw');
+      const oddsAway = market.outcomes.find(o => 
+        normalizeTeamName(o.name) !== oddsHomeNorm && o.name !== 'Draw'
+      );
+      
+      if (oddsHome && oddsDraw && oddsAway) {
+        if (sameOrientation) {
+          homeProbs.push(1 / oddsHome.price);
+          drawProbs.push(1 / oddsDraw.price);
+          awayProbs.push(1 / oddsAway.price);
+        } else {
+          // Odds file has teams swapped relative to tournament
+          homeProbs.push(1 / oddsAway.price);
+          drawProbs.push(1 / oddsDraw.price);
+          awayProbs.push(1 / oddsHome.price);
+        }
+      }
+    }
+    
+    if (homeProbs.length === 0) continue;
+    
+    // Average and normalize
+    let homeWinProb = homeProbs.reduce((s, p) => s + p, 0) / homeProbs.length;
+    let drawProb = drawProbs.reduce((s, p) => s + p, 0) / drawProbs.length;
+    let awayWinProb = awayProbs.reduce((s, p) => s + p, 0) / awayProbs.length;
+    const total = homeWinProb + drawProb + awayWinProb;
+    homeWinProb /= total;
+    drawProb /= total;
+    awayWinProb /= total;
+    
+    // Determine actual outcome (relative to tournament home team)
+    const homeScore = result.home_team === tournamentMatch.home ? result.home_score :
+                      normalizeTeamName(result.home_team) === tournamentHomeNorm ? result.home_score : result.away_score;
+    const awayScore = result.home_team === tournamentMatch.home ? result.away_score :
+                      normalizeTeamName(result.home_team) === tournamentHomeNorm ? result.away_score : result.home_score;
+    
+    let actualOutcome;
+    if (homeScore > awayScore) actualOutcome = 'home_win';
+    else if (awayScore > homeScore) actualOutcome = 'away_win';
+    else actualOutcome = 'draw';
+    
+    // Predicted outcome = most likely
+    const predictedOutcome = homeWinProb >= drawProb && homeWinProb >= awayWinProb ? 'home_win' :
+                             awayWinProb >= homeWinProb && awayWinProb >= drawProb ? 'away_win' : 'draw';
+    
+    // Surprise (information content in bits)
+    const actualProb = actualOutcome === 'home_win' ? homeWinProb :
+                       actualOutcome === 'draw' ? drawProb : awayWinProb;
+    const surpriseBits = -Math.log2(Math.max(actualProb, 0.001)); // floor at 0.1% to avoid infinity
+    
+    // RPS (Ranked Probability Score) - ordinal: [home_win, draw, away_win]
+    const predCdf = [homeWinProb, homeWinProb + drawProb];
+    const actualVector = actualOutcome === 'home_win' ? [1, 0, 0] :
+                         actualOutcome === 'draw' ? [0, 1, 0] : [0, 0, 1];
+    const actualCdf = [actualVector[0], actualVector[0] + actualVector[1]];
+    const rps = 0.5 * ((predCdf[0] - actualCdf[0]) ** 2 + (predCdf[1] - actualCdf[1]) ** 2);
+    
+    // Find best bookmaker odds on the actual outcome
+    let bestOdds = 0;
+    let bestBookie = null;
+    for (const bookie of oddsMatch.bookmakers) {
+      const market = bookie.markets.find(m => m.key === 'h2h');
+      if (!market) continue;
+      
+      let targetOutcomeName;
+      if (actualOutcome === 'draw') {
+        targetOutcomeName = 'Draw';
+      } else if (actualOutcome === 'home_win') {
+        targetOutcomeName = sameOrientation ? oddsMatch.home_team : oddsMatch.away_team;
+      } else {
+        targetOutcomeName = sameOrientation ? oddsMatch.away_team : oddsMatch.home_team;
+      }
+      
+      const outcome = market.outcomes.find(o => 
+        o.name === targetOutcomeName || normalizeTeamName(o.name) === normalizeTeamName(targetOutcomeName)
+      );
+      if (outcome && outcome.price > bestOdds) {
+        bestOdds = outcome.price;
+        bestBookie = bookie.title;
+      }
+    }
+    
+    matches.push({
+      home_team: tournamentMatch.home,
+      away_team: tournamentMatch.away,
+      group: tournamentMatch.group || result.group,
+      date: kickoffUtc,
+      pre_match_probs: {
+        home_win: Math.round(homeWinProb * 10000) / 10000,
+        draw: Math.round(drawProb * 10000) / 10000,
+        away_win: Math.round(awayWinProb * 10000) / 10000
+      },
+      predicted_outcome: predictedOutcome,
+      actual_outcome: actualOutcome,
+      actual_score: { home: homeScore, away: awayScore },
+      surprise_bits: Math.round(surpriseBits * 100) / 100,
+      raw_probability: Math.round(actualProb * 1000) / 1000,
+      rps: Math.round(rps * 1000) / 1000,
+      best_bet: bestOdds > 0 ? { odds: bestOdds, return_10: Math.round(bestOdds * 10 * 100) / 100, bookie: bestBookie } : null,
+      home_owner: ownerLookup[normalizeTeamName(tournamentMatch.home)] || null,
+      away_owner: ownerLookup[normalizeTeamName(tournamentMatch.away)] || null
+    });
+  }
+  
+  if (matches.length === 0) return null;
+  
+  // Sort by surprise (most surprising first)
+  matches.sort((a, b) => b.surprise_bits - a.surprise_bits);
+  
+  // Summary stats
+  const avgRps = matches.reduce((s, m) => s + m.rps, 0) / matches.length;
+  const avgSurprise = matches.reduce((s, m) => s + m.surprise_bits, 0) / matches.length;
+  const correctPredictions = matches.filter(m => m.predicted_outcome === m.actual_outcome).length;
+  
+  // Team performance aggregation
+  const teamStats = {};
+  for (const match of matches) {
+    // Home team
+    if (!teamStats[match.home_team]) {
+      teamStats[match.home_team] = { matches: 0, expected_pts: 0, actual_pts: 0, total_rps: 0 };
+    }
+    teamStats[match.home_team].matches++;
+    teamStats[match.home_team].expected_pts += match.pre_match_probs.home_win * 3 + match.pre_match_probs.draw * 1;
+    teamStats[match.home_team].actual_pts += match.actual_outcome === 'home_win' ? 3 : match.actual_outcome === 'draw' ? 1 : 0;
+    teamStats[match.home_team].total_rps += match.rps;
+    
+    // Away team
+    if (!teamStats[match.away_team]) {
+      teamStats[match.away_team] = { matches: 0, expected_pts: 0, actual_pts: 0, total_rps: 0 };
+    }
+    teamStats[match.away_team].matches++;
+    teamStats[match.away_team].expected_pts += match.pre_match_probs.away_win * 3 + match.pre_match_probs.draw * 1;
+    teamStats[match.away_team].actual_pts += match.actual_outcome === 'away_win' ? 3 : match.actual_outcome === 'draw' ? 1 : 0;
+    teamStats[match.away_team].total_rps += match.rps;
+  }
+  
+  const teamPerformance = Object.entries(teamStats).map(([team, stats]) => ({
+    team,
+    matches_played: stats.matches,
+    avg_rps: Math.round((stats.total_rps / stats.matches) * 1000) / 1000,
+    expected_points: Math.round(stats.expected_pts * 100) / 100,
+    actual_points: stats.actual_pts,
+    delta: Math.round((stats.actual_pts - stats.expected_pts) * 100) / 100,
+    direction: stats.actual_pts > stats.expected_pts ? 'overperforming' :
+               stats.actual_pts < stats.expected_pts ? 'underperforming' : 'as_expected'
+  })).sort((a, b) => b.delta - a.delta);
+  
+  // Calibration bins - pool all outcome probabilities
+  const bins = [
+    { predicted_range: [0, 0.2], predictions: [], actuals: [] },
+    { predicted_range: [0.2, 0.4], predictions: [], actuals: [] },
+    { predicted_range: [0.4, 0.6], predictions: [], actuals: [] },
+    { predicted_range: [0.6, 0.8], predictions: [], actuals: [] },
+    { predicted_range: [0.8, 1.0], predictions: [], actuals: [] }
+  ];
+  
+  for (const match of matches) {
+    // Each match contributes 3 data points (one per outcome)
+    const probs = [
+      { prob: match.pre_match_probs.home_win, occurred: match.actual_outcome === 'home_win' },
+      { prob: match.pre_match_probs.draw, occurred: match.actual_outcome === 'draw' },
+      { prob: match.pre_match_probs.away_win, occurred: match.actual_outcome === 'away_win' }
+    ];
+    
+    for (const { prob, occurred } of probs) {
+      const bin = bins.find(b => prob >= b.predicted_range[0] && prob < b.predicted_range[1]);
+      if (bin) {
+        bin.predictions.push(prob);
+        bin.actuals.push(occurred ? 1 : 0);
+      } else if (prob >= 1.0) {
+        // Edge case: prob = 1.0 goes in last bin
+        bins[bins.length - 1].predictions.push(prob);
+        bins[bins.length - 1].actuals.push(occurred ? 1 : 0);
+      }
+    }
+  }
+  
+  const calibration = {
+    bins: bins.map(b => ({
+      predicted_range: b.predicted_range,
+      count: b.predictions.length,
+      avg_predicted: b.predictions.length > 0 ? 
+        Math.round((b.predictions.reduce((s, p) => s + p, 0) / b.predictions.length) * 1000) / 1000 : null,
+      actual_frequency: b.actuals.length > 0 ?
+        Math.round((b.actuals.reduce((s, a) => s + a, 0) / b.actuals.length) * 1000) / 1000 : null
+    }))
+  };
+  
+  return {
+    summary: {
+      matches_played: matches.length,
+      total_matches: 104,
+      average_rps: Math.round(avgRps * 1000) / 1000,
+      average_surprise_bits: Math.round(avgSurprise * 100) / 100,
+      correct_predictions: correctPredictions,
+      correct_pct: Math.round((correctPredictions / matches.length) * 100)
+    },
+    matches,
+    team_performance: teamPerformance,
+    calibration
+  };
+}
+
 function mergeCompletedResults(matchOdds, completedResults, tournament) {
   // Create a copy of matchOdds
   const merged = JSON.parse(JSON.stringify(matchOdds));
@@ -672,6 +940,24 @@ async function main() {
     teamRankings.sort((a, b) => b.simulated_win_probability - a.simulated_win_probability);
     teamRankings.forEach((t, i) => t.rank = i + 1);
     
+    // Compute predictions vs results analysis
+    console.log('\n📊 Computing predictions vs results analysis...');
+    const predictionsOwnerLookup = {};
+    for (const participant of sweepstake.participants) {
+      for (const team of participant.teams) {
+        predictionsOwnerLookup[normalizeTeamName(team)] = participant.name;
+      }
+    }
+    const predictionsVsResults = computePredictionsVsResults(tournament, localResults, predictionsOwnerLookup);
+    if (predictionsVsResults) {
+      console.log(`✓ Analysed ${predictionsVsResults.summary.matches_played} completed matches`);
+      console.log(`  Avg surprise: ${predictionsVsResults.summary.average_surprise_bits} bits`);
+      console.log(`  Avg RPS: ${predictionsVsResults.summary.average_rps}`);
+      console.log(`  Correct predictions: ${predictionsVsResults.summary.correct_predictions}/${predictionsVsResults.summary.matches_played} (${predictionsVsResults.summary.correct_pct}%)`);
+    } else {
+      console.log('ℹ No completed matches for predictions analysis');
+    }
+    
     // Build output
     const output = {
       timestamp: oddsData.timestamp,
@@ -683,6 +969,7 @@ async function main() {
       timeline,
       stage_probabilities: stageProbabilities,
       team_details: teamDetails,
+      predictions_vs_results: predictionsVsResults,
       elo_source: Object.keys(eloRatings).length > 0 ? 'eloratings.net' : null,
       validation: {
         mean_absolute_error: mae,

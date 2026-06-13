@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-13T12:33:43.977Z",
+  "timestamp": "2026-06-13T12:48:40.520Z",
   "tournament_stage": "Pre-Tournament",
   "leaderboard": [
     {
@@ -13,7 +13,7 @@
         "probability": 0.0008331112591605596
       },
       "total_probability": 0.1794615004138655,
-      "change_from_last_week": 0.002973535533749627,
+      "change_from_last_week": 0,
       "rank": 1
     },
     {
@@ -27,7 +27,7 @@
         "probability": 0.0009995004995004995
       },
       "total_probability": 0.17524192474192476,
-      "change_from_last_week": -0.0014124293785310604,
+      "change_from_last_week": 0,
       "rank": 2
     },
     {
@@ -41,7 +41,7 @@
         "probability": 0.0023460610749556276
       },
       "total_probability": 0.12696612186522918,
-      "change_from_last_week": -0.00002935420743638284,
+      "change_from_last_week": 0,
       "rank": 3
     },
     {
@@ -83,7 +83,7 @@
         "probability": 0.02914614121510673
       },
       "total_probability": 0.09025725232621784,
-      "change_from_last_week": -0.0005952380952380931,
+      "change_from_last_week": 0,
       "rank": 6
     },
     {
@@ -97,7 +97,7 @@
         "probability": 0.002327796234772979
       },
       "total_probability": 0.052453109517980996,
-      "change_from_last_week": -0.00011458333333333459,
+      "change_from_last_week": 0,
       "rank": 7
     },
     {
@@ -122,10 +122,10 @@
       },
       "team2": {
         "name": "Czechia",
-        "probability": 0.002336805243781988
+        "probability": 0.0022861295681063125
       },
-      "total_probability": 0.021674784337858643,
-      "change_from_last_week": -0.0004172531346444408,
+      "total_probability": 0.021624108662182968,
+      "change_from_last_week": 0,
       "rank": 9
     },
     {
@@ -139,7 +139,7 @@
         "probability": 0.003860708827596245
       },
       "total_probability": 0.02135693808853139,
-      "change_from_last_week": -0.0008491508491508468,
+      "change_from_last_week": 0,
       "rank": 10
     },
     {
@@ -167,7 +167,7 @@
         "probability": 0.0007498750624687656
       },
       "total_probability": 0.01888712996442955,
-      "change_from_last_week": 0.004792215393620134,
+      "change_from_last_week": 0,
       "rank": 12
     },
     {
@@ -181,7 +181,7 @@
         "probability": 0.0009995004995004995
       },
       "total_probability": 0.018495729760435644,
-      "change_from_last_week": 0.0010256410256410248,
+      "change_from_last_week": 0,
       "rank": 13
     },
     {
@@ -195,7 +195,7 @@
         "probability": 0.00482640979329721
       },
       "total_probability": 0.015165915966136714,
-      "change_from_last_week": -0.000931085043988273,
+      "change_from_last_week": 0,
       "rank": 14
     },
     {
@@ -209,7 +209,7 @@
         "probability": 0.004739829706717124
       },
       "total_probability": 0.014758823059043809,
-      "change_from_last_week": 0.0003519453519453524,
+      "change_from_last_week": 0,
       "rank": 15
     },
     {
@@ -237,7 +237,7 @@
         "probability": 0.0009995004995004995
       },
       "total_probability": 0.007801847400857302,
-      "change_from_last_week": -0.00007122507122507126,
+      "change_from_last_week": 0,
       "rank": 17
     },
     {
@@ -251,7 +251,7 @@
         "probability": 0.0008331112591605596
       },
       "total_probability": 0.004253714560241948,
-      "change_from_last_week": 0.00020905923344947692,
+      "change_from_last_week": 0,
       "rank": 18
     },
     {
@@ -265,7 +265,7 @@
         "probability": 0.002547587428065516
       },
       "total_probability": 0.004045591420081484,
-      "change_from_last_week": -0.00003968253968254006,
+      "change_from_last_week": 0,
       "rank": 19
     },
     {
@@ -279,7 +279,7 @@
         "probability": 0.0011657789613848204
       },
       "total_probability": 0.003549025390765913,
-      "change_from_last_week": -0.00002642706131078228,
+      "change_from_last_week": 0,
       "rank": 20
     }
   ],
@@ -293,7 +293,7 @@
       "owner": "Ian Whelan",
       "rank": 1,
       "bookmaker_win_probability": 0.17424242424242425,
-      "simulated_win_probability": 0.2496
+      "simulated_win_probability": 0.2506
     },
     {
       "name": "France",
@@ -304,7 +304,7 @@
       "owner": "Rajdeep Singh",
       "rank": 2,
       "bookmaker_win_probability": 0.17862838915470494,
-      "simulated_win_probability": 0.1736
+      "simulated_win_probability": 0.173
     },
     {
       "name": "Argentina",
@@ -315,7 +315,7 @@
       "owner": "Nicholas Burgoyne",
       "rank": 3,
       "bookmaker_win_probability": 0.09166666666666667,
-      "simulated_win_probability": 0.1447
+      "simulated_win_probability": 0.146
     },
     {
       "name": "England",
@@ -326,7 +326,7 @@
       "owner": "Tina Buckley",
       "rank": 4,
       "bookmaker_win_probability": 0.12462006079027355,
-      "simulated_win_probability": 0.0903
+      "simulated_win_probability": 0.0914
     },
     {
       "name": "Brazil",
@@ -337,7 +337,7 @@
       "owner": "Caitlin Kilcoyne",
       "rank": 5,
       "bookmaker_win_probability": 0.09545454545454546,
-      "simulated_win_probability": 0.0572
+      "simulated_win_probability": 0.0608
     },
     {
       "name": "Portugal",
@@ -348,7 +348,7 @@
       "owner": null,
       "rank": 6,
       "bookmaker_win_probability": 0.11458333333333334,
-      "simulated_win_probability": 0.048
+      "simulated_win_probability": 0.0491
     },
     {
       "name": "Netherlands",
@@ -359,7 +359,7 @@
       "owner": "Emma Ryan",
       "rank": 7,
       "bookmaker_win_probability": 0.05012531328320802,
-      "simulated_win_probability": 0.0454
+      "simulated_win_probability": 0.0395
     },
     {
       "name": "Belgium",
@@ -370,7 +370,7 @@
       "owner": "Catherine Swain",
       "rank": 8,
       "bookmaker_win_probability": 0.02811094452773613,
-      "simulated_win_probability": 0.0394
+      "simulated_win_probability": 0.0387
     },
     {
       "name": "Germany",
@@ -381,7 +381,7 @@
       "owner": "Nathan Nekrews",
       "rank": 9,
       "bookmaker_win_probability": 0.06111111111111111,
-      "simulated_win_probability": 0.0339
+      "simulated_win_probability": 0.033
     },
     {
       "name": "Colombia",
@@ -392,7 +392,7 @@
       "owner": "Logan Garwood",
       "rank": 10,
       "bookmaker_win_probability": 0.019337979094076654,
-      "simulated_win_probability": 0.0216
+      "simulated_win_probability": 0.0204
     },
     {
       "name": "Croatia",
@@ -403,7 +403,7 @@
       "owner": "Joshua Kidd",
       "rank": 11,
       "bookmaker_win_probability": 0.010018993352326686,
-      "simulated_win_probability": 0.0145
+      "simulated_win_probability": 0.0157
     },
     {
       "name": "Uruguay",
@@ -414,7 +414,7 @@
       "owner": null,
       "rank": 12,
       "bookmaker_win_probability": 0.012008141112618723,
-      "simulated_win_probability": 0.0107
+      "simulated_win_probability": 0.0112
     },
     {
       "name": "Morocco",
@@ -425,6 +425,17 @@
       "owner": "Yousaf Mahmood",
       "rank": 13,
       "bookmaker_win_probability": 0.017496229260935144,
+      "simulated_win_probability": 0.0106
+    },
+    {
+      "name": "Japan",
+      "group": "F",
+      "confederation": "AFC",
+      "win_probability": 0.017496229260935144,
+      "status": "active",
+      "owner": "Allan Chan",
+      "rank": 14,
+      "bookmaker_win_probability": 0.017496229260935144,
       "simulated_win_probability": 0.0098
     },
     {
@@ -434,20 +445,9 @@
       "win_probability": 0.018137254901960782,
       "status": "active",
       "owner": "Julie Hulme",
-      "rank": 14,
-      "bookmaker_win_probability": 0.018137254901960782,
-      "simulated_win_probability": 0.0094
-    },
-    {
-      "name": "Japan",
-      "group": "F",
-      "confederation": "AFC",
-      "win_probability": 0.017496229260935144,
-      "status": "active",
-      "owner": "Allan Chan",
       "rank": 15,
-      "bookmaker_win_probability": 0.017496229260935144,
-      "simulated_win_probability": 0.0077
+      "bookmaker_win_probability": 0.018137254901960782,
+      "simulated_win_probability": 0.0086
     },
     {
       "name": "Switzerland",
@@ -461,15 +461,26 @@
       "simulated_win_probability": 0.0067
     },
     {
+      "name": "Mexico",
+      "group": "A",
+      "confederation": "CONCACAF",
+      "win_probability": 0.017496229260935144,
+      "status": "active",
+      "owner": "Andrew Turner",
+      "rank": 17,
+      "bookmaker_win_probability": 0.017496229260935144,
+      "simulated_win_probability": 0.0056
+    },
+    {
       "name": "Senegal",
       "group": "I",
       "confederation": "CAF",
       "win_probability": 0.00807549504950495,
       "status": "active",
       "owner": null,
-      "rank": 17,
+      "rank": 18,
       "bookmaker_win_probability": 0.00807549504950495,
-      "simulated_win_probability": 0.006
+      "simulated_win_probability": 0.0051
     },
     {
       "name": "Norway",
@@ -478,31 +489,9 @@
       "win_probability": 0.02914614121510673,
       "status": "active",
       "owner": "Nathan Nekrews",
-      "rank": 18,
-      "bookmaker_win_probability": 0.02914614121510673,
-      "simulated_win_probability": 0.0059
-    },
-    {
-      "name": "Mexico",
-      "group": "A",
-      "confederation": "CONCACAF",
-      "win_probability": 0.017496229260935144,
-      "status": "active",
-      "owner": "Andrew Turner",
       "rank": 19,
-      "bookmaker_win_probability": 0.017496229260935144,
+      "bookmaker_win_probability": 0.02914614121510673,
       "simulated_win_probability": 0.005
-    },
-    {
-      "name": "Ecuador",
-      "group": "E",
-      "confederation": "CONMEBOL",
-      "win_probability": 0.010339506172839505,
-      "status": "active",
-      "owner": "Dave Moseley",
-      "rank": 20,
-      "bookmaker_win_probability": 0.010339506172839505,
-      "simulated_win_probability": 0.0039
     },
     {
       "name": "Turkey",
@@ -511,9 +500,20 @@
       "win_probability": 0.01117283950617284,
       "status": "active",
       "owner": "Tim Copland",
-      "rank": 21,
+      "rank": 20,
       "bookmaker_win_probability": 0.01117283950617284,
-      "simulated_win_probability": 0.0032
+      "simulated_win_probability": 0.0038
+    },
+    {
+      "name": "Ecuador",
+      "group": "E",
+      "confederation": "CONMEBOL",
+      "win_probability": 0.010339506172839505,
+      "status": "active",
+      "owner": "Dave Moseley",
+      "rank": 21,
+      "bookmaker_win_probability": 0.010339506172839505,
+      "simulated_win_probability": 0.0027
     },
     {
       "name": "Austria",
@@ -524,7 +524,7 @@
       "owner": "Shirlee Scott",
       "rank": 22,
       "bookmaker_win_probability": 0.0068023469013568025,
-      "simulated_win_probability": 0.0032
+      "simulated_win_probability": 0.0024
     },
     {
       "name": "Ivory Coast",
@@ -535,7 +535,7 @@
       "owner": "Dave Moseley",
       "rank": 23,
       "bookmaker_win_probability": 0.00482640979329721,
-      "simulated_win_probability": 0.0019
+      "simulated_win_probability": 0.0021
     },
     {
       "name": "Sweden",
@@ -549,25 +549,36 @@
       "simulated_win_probability": 0.0017
     },
     {
+      "name": "Iran",
+      "group": "G",
+      "confederation": "AFC",
+      "win_probability": 0.001498003992015968,
+      "status": "active",
+      "owner": "Anugrah Sebastian",
+      "rank": 25,
+      "bookmaker_win_probability": 0.001498003992015968,
+      "simulated_win_probability": 0.0011
+    },
+    {
+      "name": "Algeria",
+      "group": "J",
+      "confederation": "CAF",
+      "win_probability": 0.002327796234772979,
+      "status": "active",
+      "owner": "Emma Ryan",
+      "rank": 26,
+      "bookmaker_win_probability": 0.002327796234772979,
+      "simulated_win_probability": 0.001
+    },
+    {
       "name": "Egypt",
       "group": "G",
       "confederation": "CAF",
       "win_probability": 0.0023460610749556276,
       "status": "active",
       "owner": "Tina Buckley",
-      "rank": 25,
+      "rank": 27,
       "bookmaker_win_probability": 0.0023460610749556276,
-      "simulated_win_probability": 0.0016
-    },
-    {
-      "name": "Scotland",
-      "group": "C",
-      "confederation": "UEFA",
-      "win_probability": 0.004739829706717124,
-      "status": "active",
-      "owner": "Joshua Kidd",
-      "rank": 26,
-      "bookmaker_win_probability": 0.004739829706717124,
       "simulated_win_probability": 0.0009
     },
     {
@@ -577,9 +588,20 @@
       "win_probability": 0.00503208375548801,
       "status": "active",
       "owner": null,
-      "rank": 27,
+      "rank": 28,
       "bookmaker_win_probability": 0.00503208375548801,
-      "simulated_win_probability": 0.0006
+      "simulated_win_probability": 0.0005
+    },
+    {
+      "name": "Scotland",
+      "group": "C",
+      "confederation": "UEFA",
+      "win_probability": 0.004739829706717124,
+      "status": "active",
+      "owner": "Joshua Kidd",
+      "rank": 29,
+      "bookmaker_win_probability": 0.004739829706717124,
+      "simulated_win_probability": 0.0005
     },
     {
       "name": "South Korea",
@@ -588,53 +610,9 @@
       "win_probability": 0.0034206033010813885,
       "status": "active",
       "owner": "Peter Lees",
-      "rank": 28,
-      "bookmaker_win_probability": 0.0034206033010813885,
-      "simulated_win_probability": 0.0006
-    },
-    {
-      "name": "Paraguay",
-      "group": "D",
-      "confederation": "CONMEBOL",
-      "win_probability": 0.003860708827596245,
-      "status": "active",
-      "owner": "Yousaf Mahmood",
-      "rank": 29,
-      "bookmaker_win_probability": 0.003860708827596245,
-      "simulated_win_probability": 0.0005
-    },
-    {
-      "name": "Algeria",
-      "group": "J",
-      "confederation": "CAF",
-      "win_probability": 0.002327796234772979,
-      "status": "active",
-      "owner": "Emma Ryan",
       "rank": 30,
-      "bookmaker_win_probability": 0.002327796234772979,
+      "bookmaker_win_probability": 0.0034206033010813885,
       "simulated_win_probability": 0.0005
-    },
-    {
-      "name": "Iran",
-      "group": "G",
-      "confederation": "AFC",
-      "win_probability": 0.001498003992015968,
-      "status": "active",
-      "owner": "Anugrah Sebastian",
-      "rank": 31,
-      "bookmaker_win_probability": 0.001498003992015968,
-      "simulated_win_probability": 0.0005
-    },
-    {
-      "name": "Bosnia and Herzegovina",
-      "group": "B",
-      "confederation": "UEFA",
-      "win_probability": 0.002601787970070936,
-      "status": "active",
-      "owner": null,
-      "rank": 32,
-      "bookmaker_win_probability": 0.002601787970070936,
-      "simulated_win_probability": 0.0004
     },
     {
       "name": "Ghana",
@@ -643,9 +621,31 @@
       "win_probability": 0.002547587428065516,
       "status": "active",
       "owner": "Anugrah Sebastian",
-      "rank": 33,
+      "rank": 31,
       "bookmaker_win_probability": 0.002547587428065516,
+      "simulated_win_probability": 0.0005
+    },
+    {
+      "name": "Tunisia",
+      "group": "F",
+      "confederation": "CAF",
+      "win_probability": 0.001498003992015968,
+      "status": "active",
+      "owner": "Andrew Turner",
+      "rank": 32,
+      "bookmaker_win_probability": 0.001498003992015968,
       "simulated_win_probability": 0.0004
+    },
+    {
+      "name": "Bosnia and Herzegovina",
+      "group": "B",
+      "confederation": "UEFA",
+      "win_probability": 0.002601787970070936,
+      "status": "active",
+      "owner": null,
+      "rank": 33,
+      "bookmaker_win_probability": 0.002601787970070936,
+      "simulated_win_probability": 0.0003
     },
     {
       "name": "Australia",
@@ -656,29 +656,18 @@
       "owner": "Bryn Mills",
       "rank": 34,
       "bookmaker_win_probability": 0.0023832464293810926,
-      "simulated_win_probability": 0.0003
+      "simulated_win_probability": 0.0002
     },
     {
       "name": "Czechia",
       "group": "A",
       "confederation": "UEFA",
-      "win_probability": 0.002336805243781988,
+      "win_probability": 0.0022861295681063125,
       "status": "active",
       "owner": "Logan Garwood",
       "rank": 35,
-      "bookmaker_win_probability": 0.002336805243781988,
+      "bookmaker_win_probability": 0.0022861295681063125,
       "simulated_win_probability": 0.0002
-    },
-    {
-      "name": "Tunisia",
-      "group": "F",
-      "confederation": "CAF",
-      "win_probability": 0.001498003992015968,
-      "status": "active",
-      "owner": "Andrew Turner",
-      "rank": 36,
-      "bookmaker_win_probability": 0.001498003992015968,
-      "simulated_win_probability": 0.0001
     },
     {
       "name": "DR Congo",
@@ -687,8 +676,30 @@
       "win_probability": 0.0011657789613848204,
       "status": "active",
       "owner": "Bryn Mills",
-      "rank": 37,
+      "rank": 36,
       "bookmaker_win_probability": 0.0011657789613848204,
+      "simulated_win_probability": 0.0002
+    },
+    {
+      "name": "Paraguay",
+      "group": "D",
+      "confederation": "CONMEBOL",
+      "win_probability": 0.003860708827596245,
+      "status": "active",
+      "owner": "Yousaf Mahmood",
+      "rank": 37,
+      "bookmaker_win_probability": 0.003860708827596245,
+      "simulated_win_probability": 0.0001
+    },
+    {
+      "name": "Panama",
+      "group": "L",
+      "confederation": "CONCACAF",
+      "win_probability": 0.0009995004995004995,
+      "status": "active",
+      "owner": "Nicholas Burgoyne",
+      "rank": 38,
+      "bookmaker_win_probability": 0.0009995004995004995,
       "simulated_win_probability": 0.0001
     },
     {
@@ -698,7 +709,7 @@
       "win_probability": 0.001498003992015968,
       "status": "active",
       "owner": null,
-      "rank": 38,
+      "rank": 39,
       "bookmaker_win_probability": 0.001498003992015968,
       "simulated_win_probability": 0
     },
@@ -709,7 +720,7 @@
       "win_probability": 0.0009995004995004995,
       "status": "active",
       "owner": "Ian Whelan",
-      "rank": 39,
+      "rank": 40,
       "bookmaker_win_probability": 0.0009995004995004995,
       "simulated_win_probability": 0
     },
@@ -720,7 +731,7 @@
       "win_probability": 0.0009995004995004995,
       "status": "active",
       "owner": "Allan Chan",
-      "rank": 40,
+      "rank": 41,
       "bookmaker_win_probability": 0.0009995004995004995,
       "simulated_win_probability": 0
     },
@@ -731,7 +742,7 @@
       "win_probability": 0.0009995004995004995,
       "status": "active",
       "owner": "Shirlee Scott",
-      "rank": 41,
+      "rank": 42,
       "bookmaker_win_probability": 0.0009995004995004995,
       "simulated_win_probability": 0
     },
@@ -742,7 +753,7 @@
       "win_probability": 0.0009995004995004995,
       "status": "active",
       "owner": "Caitlin Kilcoyne",
-      "rank": 42,
+      "rank": 43,
       "bookmaker_win_probability": 0.0009995004995004995,
       "simulated_win_probability": 0
     },
@@ -753,17 +764,6 @@
       "win_probability": 0.0009995004995004995,
       "status": "active",
       "owner": null,
-      "rank": 43,
-      "bookmaker_win_probability": 0.0009995004995004995,
-      "simulated_win_probability": 0
-    },
-    {
-      "name": "Panama",
-      "group": "L",
-      "confederation": "CONCACAF",
-      "win_probability": 0.0009995004995004995,
-      "status": "active",
-      "owner": "Nicholas Burgoyne",
       "rank": 44,
       "bookmaker_win_probability": 0.0009995004995004995,
       "simulated_win_probability": 0
@@ -936,9 +936,9 @@
       "home_owner": "Bryn Mills",
       "away_owner": "Tim Copland",
       "commence_time": "2026-06-14T04:00:00Z",
-      "home_win_prob": 0.18160095579450417,
-      "draw_prob": 0.25089605734767023,
-      "away_win_prob": 0.5675029868578255,
+      "home_win_prob": 0.17558398220244714,
+      "draw_prob": 0.2462736373748609,
+      "away_win_prob": 0.5781423804226918,
       "venue": "vancouver",
       "actual_result": null
     },
@@ -992,9 +992,9 @@
       "home_owner": "Catherine Swain",
       "away_owner": "Andrew Turner",
       "commence_time": "2026-06-15T04:00:00Z",
-      "home_win_prob": 0.49868604384557047,
-      "draw_prob": 0.28693627753575907,
-      "away_win_prob": 0.21437767861867058,
+      "home_win_prob": 0.5085268132319704,
+      "draw_prob": 0.28354222313540167,
+      "away_win_prob": 0.2079309636326279,
       "venue": "monterrey",
       "actual_result": null
     },
@@ -1291,9 +1291,9 @@
         "home_owner": "Bryn Mills",
         "away_owner": "Tim Copland",
         "commence_time": "2026-06-14T04:00:00Z",
-        "home_win_prob": 0.18160095579450417,
-        "draw_prob": 0.25089605734767023,
-        "away_win_prob": 0.5675029868578255,
+        "home_win_prob": 0.17558398220244714,
+        "draw_prob": 0.2462736373748609,
+        "away_win_prob": 0.5781423804226918,
         "venue": "vancouver",
         "actual_result": null
       },
@@ -1347,9 +1347,9 @@
         "home_owner": "Catherine Swain",
         "away_owner": "Andrew Turner",
         "commence_time": "2026-06-15T04:00:00Z",
-        "home_win_prob": 0.49868604384557047,
-        "draw_prob": 0.28693627753575907,
-        "away_win_prob": 0.21437767861867058,
+        "home_win_prob": 0.5085268132319704,
+        "draw_prob": 0.28354222313540167,
+        "away_win_prob": 0.2079309636326279,
         "venue": "monterrey",
         "actual_result": null
       },
@@ -2093,9 +2093,9 @@
         "home_owner": "Tina Buckley",
         "away_owner": "Anugrah Sebastian",
         "commence_time": "2026-06-27T07:00:00Z",
-        "home_win_prob": 0.42000493542814843,
-        "draw_prob": 0.312165830385786,
-        "away_win_prob": 0.2678292341860657,
+        "home_win_prob": 0.4225066839504173,
+        "draw_prob": 0.31191768613789195,
+        "away_win_prob": 0.26557562991169087,
         "venue": "seattle",
         "actual_result": null
       },
@@ -4551,6 +4551,131 @@
       }
     },
     {
+      "date": "2026-06-12T09:21:05.233Z",
+      "participants": {
+        "Nicholas Burgoyne": 0.09266616716616717,
+        "Dave Moseley": 0.016097001010124987,
+        "Bryn Mills": 0.0035754524520766953,
+        "Anugrah Sebastian": 0.004085273959764024,
+        "Joshua Kidd": 0.014406877707098456,
+        "Ian Whelan": 0.17665435412045583,
+        "Yousaf Mahmood": 0.022206088937682236,
+        "Allan Chan": 0.01747008873479462,
+        "Julie Hulme": 0.014094914570809415,
+        "Caitlin Kilcoyne": 0.09645404595404596,
+        "Andrew Turner": 0.01899423325295111,
+        "Tim Copland": 0.011922714568641605,
+        "Tina Buckley": 0.12699547607266556,
+        "Emma Ryan": 0.053758169041790524,
+        "Logan Garwood": 0.022092037472503084,
+        "Nathan Nekrews": 0.09085249042145593,
+        "Catherine Swain": 0.03600792196494346,
+        "Peter Lees": 0.004044655326792471,
+        "Shirlee Scott": 0.007873072472082373,
+        "Rajdeep Singh": 0.17648796488011587
+      }
+    },
+    {
+      "date": "2026-06-12T13:22:41.938Z",
+      "participants": {
+        "Nicholas Burgoyne": 0.09266616716616717,
+        "Dave Moseley": 0.016097001010124987,
+        "Bryn Mills": 0.0035754524520766953,
+        "Anugrah Sebastian": 0.004085273959764024,
+        "Joshua Kidd": 0.014371315829431316,
+        "Ian Whelan": 0.17665435412045583,
+        "Yousaf Mahmood": 0.021654945166199483,
+        "Allan Chan": 0.017946279210985093,
+        "Julie Hulme": 0.014094914570809415,
+        "Caitlin Kilcoyne": 0.09645404595404596,
+        "Andrew Turner": 0.01899423325295111,
+        "Tim Copland": 0.011922714568641605,
+        "Tina Buckley": 0.12702745901509627,
+        "Emma Ryan": 0.053758169041790524,
+        "Logan Garwood": 0.02208619362023567,
+        "Nathan Nekrews": 0.09025725232621784,
+        "Catherine Swain": 0.03600792196494346,
+        "Peter Lees": 0.004176494483021871,
+        "Shirlee Scott": 0.00794999554900545,
+        "Rajdeep Singh": 0.17648796488011587
+      }
+    },
+    {
+      "date": "2026-06-12T18:49:54.077Z",
+      "participants": {
+        "Nicholas Burgoyne": 0.09266616716616717,
+        "Dave Moseley": 0.015592052329773079,
+        "Bryn Mills": 0.003549025390765913,
+        "Anugrah Sebastian": 0.0041073198151432115,
+        "Joshua Kidd": 0.014406877707098456,
+        "Ian Whelan": 0.17524192474192476,
+        "Yousaf Mahmood": 0.021787879695943584,
+        "Allan Chan": 0.018495729760435644,
+        "Julie Hulme": 0.014094914570809415,
+        "Caitlin Kilcoyne": 0.09645404595404596,
+        "Andrew Turner": 0.01899423325295111,
+        "Tim Copland": 0.011922714568641605,
+        "Tina Buckley": 0.12702745901509627,
+        "Emma Ryan": 0.05374614981102129,
+        "Logan Garwood": 0.0221658431622508,
+        "Nathan Nekrews": 0.09085249042145593,
+        "Catherine Swain": 0.03606949831962326,
+        "Peter Lees": 0.004176494483021871,
+        "Shirlee Scott": 0.00794999554900545,
+        "Rajdeep Singh": 0.17648796488011587
+      }
+    },
+    {
+      "date": "2026-06-13T01:13:59.433Z",
+      "participants": {
+        "Nicholas Burgoyne": 0.09266616716616717,
+        "Dave Moseley": 0.015544703844924596,
+        "Bryn Mills": 0.003549025390765913,
+        "Anugrah Sebastian": 0.004092445503080145,
+        "Joshua Kidd": 0.014526114591041223,
+        "Ian Whelan": 0.17524192474192476,
+        "Yousaf Mahmood": 0.02205748753908084,
+        "Allan Chan": 0.018495729760435644,
+        "Julie Hulme": 0.014462561629632944,
+        "Caitlin Kilcoyne": 0.09645404595404596,
+        "Andrew Turner": 0.01899423325295111,
+        "Tim Copland": 0.011922714568641605,
+        "Tina Buckley": 0.12700582803953928,
+        "Emma Ryan": 0.0525556736205451,
+        "Logan Garwood": 0.021665775328849633,
+        "Nathan Nekrews": 0.09085249042145593,
+        "Catherine Swain": 0.03600792196494346,
+        "Peter Lees": 0.004295731366964637,
+        "Shirlee Scott": 0.007873072472082373,
+        "Rajdeep Singh": 0.17648796488011587
+      }
+    },
+    {
+      "date": "2026-06-13T07:30:11.598Z",
+      "participants": {
+        "Nicholas Burgoyne": 0.09266616716616717,
+        "Dave Moseley": 0.015592052329773079,
+        "Bryn Mills": 0.003549025390765913,
+        "Anugrah Sebastian": 0.004071431213363137,
+        "Joshua Kidd": 0.014484097784318535,
+        "Ian Whelan": 0.17524192474192476,
+        "Yousaf Mahmood": 0.021521773253366554,
+        "Allan Chan": 0.018495729760435644,
+        "Julie Hulme": 0.019644705722005308,
+        "Caitlin Kilcoyne": 0.09645404595404596,
+        "Andrew Turner": 0.01899423325295111,
+        "Tim Copland": 0.011922714568641605,
+        "Tina Buckley": 0.12587725968212377,
+        "Emma Ryan": 0.05252173696896139,
+        "Logan Garwood": 0.021499108662182968,
+        "Nathan Nekrews": 0.09085249042145593,
+        "Catherine Swain": 0.03600792196494346,
+        "Peter Lees": 0.004107194413721801,
+        "Shirlee Scott": 0.007873072472082373,
+        "Rajdeep Singh": 0.1794615004138655
+      }
+    },
+    {
       "date": "2026-06-13T12:33:43.977Z",
       "participants": {
         "Nicholas Burgoyne": 0.09266616716616717,
@@ -4574,488 +4699,538 @@
         "Shirlee Scott": 0.007801847400857302,
         "Rajdeep Singh": 0.1794615004138655
       }
+    },
+    {
+      "date": "2026-06-13T12:42:17.262Z",
+      "participants": {
+        "Nicholas Burgoyne": 0.09266616716616717,
+        "Dave Moseley": 0.015165915966136714,
+        "Bryn Mills": 0.003549025390765913,
+        "Anugrah Sebastian": 0.004045591420081484,
+        "Joshua Kidd": 0.014758823059043809,
+        "Ian Whelan": 0.17524192474192476,
+        "Yousaf Mahmood": 0.02135693808853139,
+        "Allan Chan": 0.018495729760435644,
+        "Julie Hulme": 0.01888712996442955,
+        "Caitlin Kilcoyne": 0.09645404595404596,
+        "Andrew Turner": 0.01899423325295111,
+        "Tim Copland": 0.011922714568641605,
+        "Tina Buckley": 0.12696612186522918,
+        "Emma Ryan": 0.052453109517980996,
+        "Logan Garwood": 0.021624108662182968,
+        "Nathan Nekrews": 0.09025725232621784,
+        "Catherine Swain": 0.03600792196494346,
+        "Peter Lees": 0.004253714560241948,
+        "Shirlee Scott": 0.007801847400857302,
+        "Rajdeep Singh": 0.1794615004138655
+      }
+    },
+    {
+      "date": "2026-06-13T12:48:40.520Z",
+      "participants": {
+        "Nicholas Burgoyne": 0.09266616716616717,
+        "Dave Moseley": 0.015165915966136714,
+        "Bryn Mills": 0.003549025390765913,
+        "Anugrah Sebastian": 0.004045591420081484,
+        "Joshua Kidd": 0.014758823059043809,
+        "Ian Whelan": 0.17524192474192476,
+        "Yousaf Mahmood": 0.02135693808853139,
+        "Allan Chan": 0.018495729760435644,
+        "Julie Hulme": 0.01888712996442955,
+        "Caitlin Kilcoyne": 0.09645404595404596,
+        "Andrew Turner": 0.01899423325295111,
+        "Tim Copland": 0.011922714568641605,
+        "Tina Buckley": 0.12696612186522918,
+        "Emma Ryan": 0.052453109517980996,
+        "Logan Garwood": 0.021624108662182968,
+        "Nathan Nekrews": 0.09025725232621784,
+        "Catherine Swain": 0.03600792196494346,
+        "Peter Lees": 0.004253714560241948,
+        "Shirlee Scott": 0.007801847400857302,
+        "Rajdeep Singh": 0.1794615004138655
+      }
     }
   ],
   "stage_probabilities": {
     "Mexico": {
-      "group_first": 0.5766,
-      "group_second": 0.2741,
-      "group_third": 0.1358,
-      "make_r16": 0.554,
-      "make_quarters": 0.207,
-      "make_semis": 0.0745,
-      "make_final": 0.0232,
-      "win_tournament": 0.005
+      "group_first": 0.5872,
+      "group_second": 0.268,
+      "group_third": 0.132,
+      "make_r16": 0.5441,
+      "make_quarters": 0.2094,
+      "make_semis": 0.071,
+      "make_final": 0.0245,
+      "win_tournament": 0.0056
     },
     "South Africa": {
-      "group_first": 0.0123,
-      "group_second": 0.0852,
-      "group_third": 0.2145,
-      "make_r16": 0.0574,
-      "make_quarters": 0.0084,
-      "make_semis": 0.0017,
-      "make_final": 0,
+      "group_first": 0.012,
+      "group_second": 0.0899,
+      "group_third": 0.2146,
+      "make_r16": 0.0584,
+      "make_quarters": 0.0098,
+      "make_semis": 0.0014,
+      "make_final": 0.0003,
       "win_tournament": 0
     },
     "South Korea": {
-      "group_first": 0.3518,
-      "group_second": 0.4661,
-      "group_third": 0.1419,
-      "make_r16": 0.3964,
-      "make_quarters": 0.1004,
-      "make_semis": 0.0245,
-      "make_final": 0.0051,
-      "win_tournament": 0.0006
+      "group_first": 0.3434,
+      "group_second": 0.4717,
+      "group_third": 0.1443,
+      "make_r16": 0.399,
+      "make_quarters": 0.1006,
+      "make_semis": 0.0239,
+      "make_final": 0.0042,
+      "win_tournament": 0.0005
     },
     "Czechia": {
-      "group_first": 0.0593,
-      "group_second": 0.1746,
-      "group_third": 0.5078,
-      "make_r16": 0.1911,
-      "make_quarters": 0.044,
-      "make_semis": 0.0103,
-      "make_final": 0.0021,
+      "group_first": 0.0574,
+      "group_second": 0.1704,
+      "group_third": 0.5091,
+      "make_r16": 0.1884,
+      "make_quarters": 0.042,
+      "make_semis": 0.0095,
+      "make_final": 0.0018,
       "win_tournament": 0.0002
     },
     "Canada": {
-      "group_first": 0.2446,
-      "group_second": 0.393,
-      "group_third": 0.2846,
-      "make_r16": 0.3776,
-      "make_quarters": 0.1005,
-      "make_semis": 0.0263,
-      "make_final": 0.0049,
-      "win_tournament": 0.0006
+      "group_first": 0.2783,
+      "group_second": 0.3537,
+      "group_third": 0.2787,
+      "make_r16": 0.3575,
+      "make_quarters": 0.096,
+      "make_semis": 0.0259,
+      "make_final": 0.0033,
+      "win_tournament": 0.0005
     },
     "Bosnia and Herzegovina": {
-      "group_first": 0.1306,
-      "group_second": 0.301,
-      "group_third": 0.3905,
-      "make_r16": 0.2449,
-      "make_quarters": 0.0568,
-      "make_semis": 0.0132,
-      "make_final": 0.0016,
-      "win_tournament": 0.0004
+      "group_first": 0.1587,
+      "group_second": 0.2964,
+      "group_third": 0.374,
+      "make_r16": 0.2512,
+      "make_quarters": 0.0583,
+      "make_semis": 0.0136,
+      "make_final": 0.002,
+      "win_tournament": 0.0003
     },
     "Qatar": {
-      "group_first": 0.0258,
-      "group_second": 0.0809,
-      "group_third": 0.1855,
+      "group_first": 0.0221,
+      "group_second": 0.077,
+      "group_third": 0.2024,
       "make_r16": 0.0595,
-      "make_quarters": 0.011,
-      "make_semis": 0.0012,
-      "make_final": 0.0002,
+      "make_quarters": 0.0114,
+      "make_semis": 0.0017,
+      "make_final": 0.0003,
       "win_tournament": 0
     },
     "Switzerland": {
-      "group_first": 0.599,
-      "group_second": 0.2251,
-      "group_third": 0.1394,
-      "make_r16": 0.5503,
-      "make_quarters": 0.227,
-      "make_semis": 0.0927,
-      "make_final": 0.0236,
+      "group_first": 0.5409,
+      "group_second": 0.2729,
+      "group_third": 0.1449,
+      "make_r16": 0.5639,
+      "make_quarters": 0.229,
+      "make_semis": 0.0966,
+      "make_final": 0.0252,
       "win_tournament": 0.0067
     },
     "Brazil": {
-      "group_first": 0.6615,
-      "group_second": 0.236,
-      "group_third": 0.0876,
-      "make_r16": 0.6419,
-      "make_quarters": 0.4789,
-      "make_semis": 0.2577,
-      "make_final": 0.1455,
-      "win_tournament": 0.0572
+      "group_first": 0.6499,
+      "group_second": 0.247,
+      "group_third": 0.0866,
+      "make_r16": 0.6465,
+      "make_quarters": 0.4812,
+      "make_semis": 0.2659,
+      "make_final": 0.1489,
+      "win_tournament": 0.0608
     },
     "Morocco": {
-      "group_first": 0.2141,
-      "group_second": 0.4236,
-      "group_third": 0.2582,
-      "make_r16": 0.4061,
-      "make_quarters": 0.251,
-      "make_semis": 0.1063,
-      "make_final": 0.0387,
-      "win_tournament": 0.0098
+      "group_first": 0.2271,
+      "group_second": 0.4126,
+      "group_third": 0.2658,
+      "make_r16": 0.4113,
+      "make_quarters": 0.2576,
+      "make_semis": 0.1053,
+      "make_final": 0.0375,
+      "win_tournament": 0.0106
     },
     "Haiti": {
-      "group_first": 0.0159,
-      "group_second": 0.0785,
-      "group_third": 0.231,
+      "group_first": 0.0155,
+      "group_second": 0.0768,
+      "group_third": 0.2277,
       "make_r16": 0.0258,
-      "make_quarters": 0.004,
-      "make_semis": 0.0001,
+      "make_quarters": 0.003,
+      "make_semis": 0.0002,
       "make_final": 0,
       "win_tournament": 0
     },
     "Scotland": {
-      "group_first": 0.1085,
-      "group_second": 0.2619,
-      "group_third": 0.4232,
-      "make_r16": 0.2091,
-      "make_quarters": 0.086,
-      "make_semis": 0.0258,
-      "make_final": 0.0056,
-      "win_tournament": 0.0009
-    },
-    "USA": {
-      "group_first": 0.5995,
-      "group_second": 0.2973,
-      "group_third": 0.0851,
-      "make_r16": 0.5775,
-      "make_quarters": 0.2581,
-      "make_semis": 0.0965,
-      "make_final": 0.0287,
-      "win_tournament": 0.0094
-    },
-    "Paraguay": {
-      "group_first": 0.0347,
-      "group_second": 0.1701,
-      "group_third": 0.3737,
-      "make_r16": 0.1591,
-      "make_quarters": 0.0503,
-      "make_semis": 0.0127,
-      "make_final": 0.003,
+      "group_first": 0.1075,
+      "group_second": 0.2636,
+      "group_third": 0.4199,
+      "make_r16": 0.2022,
+      "make_quarters": 0.0814,
+      "make_semis": 0.0224,
+      "make_final": 0.0047,
       "win_tournament": 0.0005
     },
+    "USA": {
+      "group_first": 0.6014,
+      "group_second": 0.2971,
+      "group_third": 0.085,
+      "make_r16": 0.5798,
+      "make_quarters": 0.2635,
+      "make_semis": 0.0982,
+      "make_final": 0.0274,
+      "win_tournament": 0.0086
+    },
+    "Paraguay": {
+      "group_first": 0.0311,
+      "group_second": 0.1787,
+      "group_third": 0.3744,
+      "make_r16": 0.1552,
+      "make_quarters": 0.0523,
+      "make_semis": 0.0108,
+      "make_final": 0.0027,
+      "win_tournament": 0.0001
+    },
     "Australia": {
-      "group_first": 0.0668,
-      "group_second": 0.1655,
-      "group_third": 0.3253,
-      "make_r16": 0.1553,
-      "make_quarters": 0.0511,
-      "make_semis": 0.0103,
-      "make_final": 0.0015,
-      "win_tournament": 0.0003
+      "group_first": 0.0648,
+      "group_second": 0.1573,
+      "group_third": 0.3236,
+      "make_r16": 0.1447,
+      "make_quarters": 0.045,
+      "make_semis": 0.0115,
+      "make_final": 0.0022,
+      "win_tournament": 0.0002
     },
     "Turkey": {
-      "group_first": 0.299,
-      "group_second": 0.3671,
-      "group_third": 0.2159,
-      "make_r16": 0.4283,
-      "make_quarters": 0.1666,
-      "make_semis": 0.0467,
-      "make_final": 0.0131,
-      "win_tournament": 0.0032
+      "group_first": 0.3027,
+      "group_second": 0.3669,
+      "group_third": 0.217,
+      "make_r16": 0.4304,
+      "make_quarters": 0.167,
+      "make_semis": 0.0461,
+      "make_final": 0.0121,
+      "win_tournament": 0.0038
     },
     "Germany": {
-      "group_first": 0.6078,
-      "group_second": 0.2579,
-      "group_third": 0.116,
-      "make_r16": 0.6914,
-      "make_quarters": 0.3374,
-      "make_semis": 0.1942,
-      "make_final": 0.0908,
-      "win_tournament": 0.0339
+      "group_first": 0.611,
+      "group_second": 0.2586,
+      "group_third": 0.1136,
+      "make_r16": 0.6868,
+      "make_quarters": 0.3394,
+      "make_semis": 0.1965,
+      "make_final": 0.0975,
+      "win_tournament": 0.033
     },
     "Curacao": {
-      "group_first": 0.0075,
-      "group_second": 0.0364,
-      "group_third": 0.1442,
-      "make_r16": 0.0159,
-      "make_quarters": 0.0013,
+      "group_first": 0.0078,
+      "group_second": 0.04,
+      "group_third": 0.1439,
+      "make_r16": 0.0153,
+      "make_quarters": 0.0012,
       "make_semis": 0,
       "make_final": 0,
       "win_tournament": 0
     },
     "Ivory Coast": {
-      "group_first": 0.1553,
-      "group_second": 0.3188,
-      "group_third": 0.4238,
-      "make_r16": 0.3683,
-      "make_quarters": 0.1203,
-      "make_semis": 0.0384,
-      "make_final": 0.0113,
-      "win_tournament": 0.0019
+      "group_first": 0.1513,
+      "group_second": 0.3139,
+      "group_third": 0.4315,
+      "make_r16": 0.3611,
+      "make_quarters": 0.1195,
+      "make_semis": 0.042,
+      "make_final": 0.0104,
+      "win_tournament": 0.0021
     },
     "Ecuador": {
-      "group_first": 0.2294,
-      "group_second": 0.3869,
-      "group_third": 0.316,
-      "make_r16": 0.4132,
-      "make_quarters": 0.138,
-      "make_semis": 0.0535,
-      "make_final": 0.0148,
-      "win_tournament": 0.0039
+      "group_first": 0.2299,
+      "group_second": 0.3875,
+      "group_third": 0.311,
+      "make_r16": 0.4151,
+      "make_quarters": 0.1361,
+      "make_semis": 0.0506,
+      "make_final": 0.0124,
+      "win_tournament": 0.0027
     },
     "Netherlands": {
-      "group_first": 0.4927,
-      "group_second": 0.2755,
-      "group_third": 0.1549,
-      "make_r16": 0.5554,
-      "make_quarters": 0.4056,
-      "make_semis": 0.2177,
-      "make_final": 0.1123,
-      "win_tournament": 0.0454
+      "group_first": 0.4923,
+      "group_second": 0.2677,
+      "group_third": 0.1608,
+      "make_r16": 0.5584,
+      "make_quarters": 0.4062,
+      "make_semis": 0.2067,
+      "make_final": 0.1038,
+      "win_tournament": 0.0395
     },
     "Japan": {
-      "group_first": 0.277,
-      "group_second": 0.3168,
-      "group_third": 0.2484,
-      "make_r16": 0.3732,
-      "make_quarters": 0.2162,
-      "make_semis": 0.0843,
-      "make_final": 0.0301,
-      "win_tournament": 0.0077
+      "group_first": 0.2712,
+      "group_second": 0.3209,
+      "group_third": 0.2522,
+      "make_r16": 0.3728,
+      "make_quarters": 0.2158,
+      "make_semis": 0.0874,
+      "make_final": 0.0318,
+      "win_tournament": 0.0098
     },
     "Sweden": {
-      "group_first": 0.1609,
-      "group_second": 0.2563,
-      "group_third": 0.3277,
-      "make_r16": 0.2441,
-      "make_quarters": 0.1103,
-      "make_semis": 0.0368,
-      "make_final": 0.0094,
+      "group_first": 0.1645,
+      "group_second": 0.2539,
+      "group_third": 0.3259,
+      "make_r16": 0.2429,
+      "make_quarters": 0.1097,
+      "make_semis": 0.0335,
+      "make_final": 0.0086,
       "win_tournament": 0.0017
     },
     "Tunisia": {
-      "group_first": 0.0694,
-      "group_second": 0.1514,
-      "group_third": 0.269,
-      "make_r16": 0.1095,
-      "make_quarters": 0.0377,
-      "make_semis": 0.0103,
-      "make_final": 0.0013,
-      "win_tournament": 0.0001
+      "group_first": 0.072,
+      "group_second": 0.1575,
+      "group_third": 0.2611,
+      "make_r16": 0.1105,
+      "make_quarters": 0.0347,
+      "make_semis": 0.0083,
+      "make_final": 0.0017,
+      "win_tournament": 0.0004
     },
     "Belgium": {
-      "group_first": 0.6373,
-      "group_second": 0.2266,
-      "group_third": 0.1022,
-      "make_r16": 0.6709,
-      "make_quarters": 0.4327,
-      "make_semis": 0.233,
-      "make_final": 0.0875,
-      "win_tournament": 0.0394
+      "group_first": 0.6429,
+      "group_second": 0.2269,
+      "group_third": 0.0965,
+      "make_r16": 0.6819,
+      "make_quarters": 0.4311,
+      "make_semis": 0.2275,
+      "make_final": 0.0851,
+      "win_tournament": 0.0387
     },
     "Egypt": {
-      "group_first": 0.1956,
-      "group_second": 0.3509,
-      "group_third": 0.2722,
-      "make_r16": 0.3461,
-      "make_quarters": 0.1187,
-      "make_semis": 0.0323,
-      "make_final": 0.0051,
-      "win_tournament": 0.0016
+      "group_first": 0.1888,
+      "group_second": 0.3593,
+      "group_third": 0.2762,
+      "make_r16": 0.3508,
+      "make_quarters": 0.1212,
+      "make_semis": 0.0283,
+      "make_final": 0.0054,
+      "win_tournament": 0.0009
     },
     "Iran": {
-      "group_first": 0.1212,
-      "group_second": 0.2731,
-      "group_third": 0.3484,
-      "make_r16": 0.2552,
-      "make_quarters": 0.0763,
-      "make_semis": 0.0144,
-      "make_final": 0.0017,
-      "win_tournament": 0.0005
+      "group_first": 0.1229,
+      "group_second": 0.2765,
+      "group_third": 0.3451,
+      "make_r16": 0.2629,
+      "make_quarters": 0.0822,
+      "make_semis": 0.0188,
+      "make_final": 0.003,
+      "win_tournament": 0.0011
     },
     "New Zealand": {
-      "group_first": 0.0459,
-      "group_second": 0.1494,
-      "group_third": 0.2772,
-      "make_r16": 0.0744,
-      "make_quarters": 0.0105,
-      "make_semis": 0.0009,
+      "group_first": 0.0454,
+      "group_second": 0.1373,
+      "group_third": 0.2822,
+      "make_r16": 0.0768,
+      "make_quarters": 0.0106,
+      "make_semis": 0.0006,
       "make_final": 0,
       "win_tournament": 0
     },
     "Spain": {
-      "group_first": 0.7162,
-      "group_second": 0.2275,
-      "group_third": 0.0469,
-      "make_r16": 0.779,
-      "make_quarters": 0.5407,
-      "make_semis": 0.4359,
-      "make_final": 0.3407,
-      "win_tournament": 0.2496
+      "group_first": 0.7075,
+      "group_second": 0.2329,
+      "group_third": 0.0477,
+      "make_r16": 0.7768,
+      "make_quarters": 0.5517,
+      "make_semis": 0.4463,
+      "make_final": 0.3446,
+      "win_tournament": 0.2506
     },
     "Cape Verde": {
-      "group_first": 0.0264,
-      "group_second": 0.1435,
-      "group_third": 0.3911,
-      "make_r16": 0.0414,
-      "make_quarters": 0.0044,
-      "make_semis": 0.0003,
+      "group_first": 0.0293,
+      "group_second": 0.1374,
+      "group_third": 0.3907,
+      "make_r16": 0.0458,
+      "make_quarters": 0.0056,
+      "make_semis": 0.0002,
       "make_final": 0,
       "win_tournament": 0
     },
     "Saudi Arabia": {
-      "group_first": 0.0251,
-      "group_second": 0.1251,
-      "group_third": 0.3718,
-      "make_r16": 0.0648,
-      "make_quarters": 0.0104,
-      "make_semis": 0.0026,
-      "make_final": 0.0006,
+      "group_first": 0.0249,
+      "group_second": 0.1291,
+      "group_third": 0.3789,
+      "make_r16": 0.064,
+      "make_quarters": 0.0108,
+      "make_semis": 0.0018,
+      "make_final": 0.0001,
       "win_tournament": 0
     },
     "Uruguay": {
-      "group_first": 0.2323,
-      "group_second": 0.5039,
-      "group_third": 0.1902,
-      "make_r16": 0.3887,
-      "make_quarters": 0.1255,
-      "make_semis": 0.0654,
-      "make_final": 0.029,
-      "win_tournament": 0.0107
+      "group_first": 0.2383,
+      "group_second": 0.5006,
+      "group_third": 0.1827,
+      "make_r16": 0.3916,
+      "make_quarters": 0.1218,
+      "make_semis": 0.0615,
+      "make_final": 0.0281,
+      "win_tournament": 0.0112
     },
     "France": {
-      "group_first": 0.5932,
-      "group_second": 0.2713,
-      "group_third": 0.1175,
-      "make_r16": 0.7958,
-      "make_quarters": 0.6019,
-      "make_semis": 0.4549,
+      "group_first": 0.5926,
+      "group_second": 0.2704,
+      "group_third": 0.1159,
+      "make_r16": 0.7924,
+      "make_quarters": 0.5962,
+      "make_semis": 0.4545,
       "make_final": 0.3126,
-      "win_tournament": 0.1736
+      "win_tournament": 0.173
     },
     "Senegal": {
-      "group_first": 0.1371,
-      "group_second": 0.2858,
-      "group_third": 0.4298,
-      "make_r16": 0.3629,
-      "make_quarters": 0.1555,
-      "make_semis": 0.0649,
-      "make_final": 0.0203,
-      "win_tournament": 0.006
+      "group_first": 0.1348,
+      "group_second": 0.2916,
+      "group_third": 0.425,
+      "make_r16": 0.3597,
+      "make_quarters": 0.1612,
+      "make_semis": 0.0684,
+      "make_final": 0.0188,
+      "win_tournament": 0.0051
     },
     "Iraq": {
-      "group_first": 0.0088,
-      "group_second": 0.0487,
-      "group_third": 0.171,
-      "make_r16": 0.0325,
-      "make_quarters": 0.0059,
-      "make_semis": 0.001,
+      "group_first": 0.009,
+      "group_second": 0.045,
+      "group_third": 0.1791,
+      "make_r16": 0.0299,
+      "make_quarters": 0.0053,
+      "make_semis": 0.0007,
       "make_final": 0,
       "win_tournament": 0
     },
     "Norway": {
-      "group_first": 0.2609,
-      "group_second": 0.3942,
-      "group_third": 0.2817,
-      "make_r16": 0.4302,
-      "make_quarters": 0.1832,
-      "make_semis": 0.0754,
-      "make_final": 0.0242,
-      "win_tournament": 0.0059
+      "group_first": 0.2636,
+      "group_second": 0.393,
+      "group_third": 0.28,
+      "make_r16": 0.4385,
+      "make_quarters": 0.1812,
+      "make_semis": 0.0743,
+      "make_final": 0.024,
+      "win_tournament": 0.005
     },
     "Argentina": {
-      "group_first": 0.6304,
-      "group_second": 0.2485,
-      "group_third": 0.0964,
-      "make_r16": 0.6659,
-      "make_quarters": 0.3928,
-      "make_semis": 0.2935,
-      "make_final": 0.2115,
-      "win_tournament": 0.1447
+      "group_first": 0.6319,
+      "group_second": 0.2483,
+      "group_third": 0.0927,
+      "make_r16": 0.6636,
+      "make_quarters": 0.3837,
+      "make_semis": 0.2905,
+      "make_final": 0.2155,
+      "win_tournament": 0.146
     },
     "Algeria": {
-      "group_first": 0.1191,
-      "group_second": 0.2827,
-      "group_third": 0.4055,
-      "make_r16": 0.2081,
-      "make_quarters": 0.0584,
-      "make_semis": 0.0177,
-      "make_final": 0.0036,
-      "win_tournament": 0.0005
+      "group_first": 0.1151,
+      "group_second": 0.2894,
+      "group_third": 0.4012,
+      "make_r16": 0.2042,
+      "make_quarters": 0.0597,
+      "make_semis": 0.0189,
+      "make_final": 0.0042,
+      "win_tournament": 0.001
     },
     "Austria": {
-      "group_first": 0.2296,
-      "group_second": 0.3947,
-      "group_third": 0.2742,
-      "make_r16": 0.2706,
-      "make_quarters": 0.0778,
-      "make_semis": 0.0325,
-      "make_final": 0.0109,
-      "win_tournament": 0.0032
+      "group_first": 0.2317,
+      "group_second": 0.3814,
+      "group_third": 0.2806,
+      "make_r16": 0.2678,
+      "make_quarters": 0.0788,
+      "make_semis": 0.0306,
+      "make_final": 0.0089,
+      "win_tournament": 0.0024
     },
     "Jordan": {
-      "group_first": 0.0209,
-      "group_second": 0.0741,
-      "group_third": 0.2239,
-      "make_r16": 0.0321,
-      "make_quarters": 0.0047,
-      "make_semis": 0.001,
-      "make_final": 0.0001,
+      "group_first": 0.0213,
+      "group_second": 0.0809,
+      "group_third": 0.2255,
+      "make_r16": 0.0343,
+      "make_quarters": 0.0049,
+      "make_semis": 0.0008,
+      "make_final": 0,
       "win_tournament": 0
     },
     "Portugal": {
-      "group_first": 0.5538,
-      "group_second": 0.3116,
-      "group_third": 0.1024,
-      "make_r16": 0.6569,
-      "make_quarters": 0.474,
-      "make_semis": 0.2038,
-      "make_final": 0.1002,
-      "win_tournament": 0.048
+      "group_first": 0.5566,
+      "group_second": 0.3082,
+      "group_third": 0.1015,
+      "make_r16": 0.6508,
+      "make_quarters": 0.4625,
+      "make_semis": 0.2051,
+      "make_final": 0.0988,
+      "win_tournament": 0.0491
     },
     "DR Congo": {
-      "group_first": 0.0519,
-      "group_second": 0.1607,
-      "group_third": 0.3828,
-      "make_r16": 0.1034,
-      "make_quarters": 0.0307,
-      "make_semis": 0.0072,
-      "make_final": 0.0008,
-      "win_tournament": 0.0001
+      "group_first": 0.0524,
+      "group_second": 0.1532,
+      "group_third": 0.3903,
+      "make_r16": 0.1058,
+      "make_quarters": 0.0312,
+      "make_semis": 0.0074,
+      "make_final": 0.0013,
+      "win_tournament": 0.0002
     },
     "Uzbekistan": {
-      "group_first": 0.0397,
-      "group_second": 0.1231,
-      "group_third": 0.3451,
-      "make_r16": 0.059,
-      "make_quarters": 0.0114,
-      "make_semis": 0.0013,
-      "make_final": 0.0003,
+      "group_first": 0.043,
+      "group_second": 0.1317,
+      "group_third": 0.3292,
+      "make_r16": 0.0583,
+      "make_quarters": 0.0126,
+      "make_semis": 0.0019,
+      "make_final": 0.0002,
       "win_tournament": 0
     },
     "Colombia": {
-      "group_first": 0.3546,
-      "group_second": 0.4046,
-      "group_third": 0.1697,
-      "make_r16": 0.5286,
-      "make_quarters": 0.3446,
-      "make_semis": 0.1427,
-      "make_final": 0.052,
-      "win_tournament": 0.0216
+      "group_first": 0.348,
+      "group_second": 0.4069,
+      "group_third": 0.179,
+      "make_r16": 0.5285,
+      "make_quarters": 0.3486,
+      "make_semis": 0.1514,
+      "make_final": 0.0531,
+      "win_tournament": 0.0204
     },
     "England": {
-      "group_first": 0.636,
-      "group_second": 0.2421,
-      "group_third": 0.0908,
-      "make_r16": 0.7256,
-      "make_quarters": 0.5131,
-      "make_semis": 0.3319,
-      "make_final": 0.1843,
-      "win_tournament": 0.0903
+      "group_first": 0.6281,
+      "group_second": 0.2468,
+      "group_third": 0.0933,
+      "make_r16": 0.7224,
+      "make_quarters": 0.5107,
+      "make_semis": 0.3327,
+      "make_final": 0.1865,
+      "win_tournament": 0.0914
     },
     "Croatia": {
-      "group_first": 0.242,
-      "group_second": 0.412,
-      "group_third": 0.2338,
-      "make_r16": 0.461,
-      "make_quarters": 0.2783,
-      "make_semis": 0.1343,
-      "make_final": 0.0451,
-      "win_tournament": 0.0145
+      "group_first": 0.2422,
+      "group_second": 0.405,
+      "group_third": 0.2312,
+      "make_r16": 0.46,
+      "make_quarters": 0.273,
+      "make_semis": 0.1291,
+      "make_final": 0.0443,
+      "win_tournament": 0.0157
     },
     "Ghana": {
-      "group_first": 0.0749,
-      "group_second": 0.2031,
-      "group_third": 0.3612,
-      "make_r16": 0.1562,
-      "make_quarters": 0.0548,
-      "make_semis": 0.0132,
-      "make_final": 0.0026,
-      "win_tournament": 0.0004
+      "group_first": 0.0772,
+      "group_second": 0.1959,
+      "group_third": 0.3713,
+      "make_r16": 0.159,
+      "make_quarters": 0.0588,
+      "make_semis": 0.0148,
+      "make_final": 0.0018,
+      "win_tournament": 0.0005
     },
     "Panama": {
-      "group_first": 0.0471,
-      "group_second": 0.1428,
-      "group_third": 0.3142,
-      "make_r16": 0.0854,
-      "make_quarters": 0.0258,
-      "make_semis": 0.0042,
-      "make_final": 0.0001,
-      "win_tournament": 0
+      "group_first": 0.0525,
+      "group_second": 0.1523,
+      "group_third": 0.3042,
+      "make_r16": 0.0934,
+      "make_quarters": 0.0265,
+      "make_semis": 0.0049,
+      "make_final": 0.0004,
+      "win_tournament": 0.0001
     }
   },
   "team_details": {
@@ -5253,7 +5428,7 @@
           "date_of_birth": "2003-04-20"
         }
       ],
-      "fetched_at": "2026-06-12T07:50:50.747Z",
+      "fetched_at": "2026-06-13T12:42:25.035Z",
       "group": "A",
       "confederation": "CONCACAF"
     },
@@ -5451,7 +5626,7 @@
           "date_of_birth": "2000-10-02"
         }
       ],
-      "fetched_at": "2026-06-12T07:50:57.777Z",
+      "fetched_at": "2026-06-13T12:42:31.998Z",
       "group": "A",
       "confederation": "CAF"
     },
@@ -5649,7 +5824,7 @@
           "date_of_birth": "2002-05-09"
         }
       ],
-      "fetched_at": "2026-06-12T07:51:04.600Z",
+      "fetched_at": "2026-06-13T12:42:39.199Z",
       "group": "A",
       "confederation": "AFC"
     },
@@ -5847,7 +6022,7 @@
           "date_of_birth": "1999-04-29"
         }
       ],
-      "fetched_at": "2026-06-12T07:51:11.501Z",
+      "fetched_at": "2026-06-13T12:42:46.216Z",
       "group": "A",
       "confederation": "UEFA"
     },
@@ -6045,7 +6220,7 @@
           "date_of_birth": "2001-07-03"
         }
       ],
-      "fetched_at": "2026-06-12T07:51:18.554Z",
+      "fetched_at": "2026-06-13T12:42:53.244Z",
       "group": "B",
       "confederation": "CONCACAF"
     },
@@ -6243,7 +6418,7 @@
           "date_of_birth": "2007-09-21"
         }
       ],
-      "fetched_at": "2026-06-12T07:51:25.406Z",
+      "fetched_at": "2026-06-13T12:43:00.220Z",
       "group": "B",
       "confederation": "UEFA"
     },
@@ -6441,7 +6616,7 @@
           "date_of_birth": "1994-08-19"
         }
       ],
-      "fetched_at": "2026-06-12T07:51:32.427Z",
+      "fetched_at": "2026-06-13T12:43:07.386Z",
       "group": "B",
       "confederation": "AFC"
     },
@@ -6639,7 +6814,7 @@
           "date_of_birth": "2000-12-04"
         }
       ],
-      "fetched_at": "2026-06-12T07:51:39.447Z",
+      "fetched_at": "2026-06-13T12:43:14.424Z",
       "group": "B",
       "confederation": "UEFA"
     },
@@ -6837,7 +7012,7 @@
           "date_of_birth": "2006-08-03"
         }
       ],
-      "fetched_at": "2026-06-12T07:51:46.292Z",
+      "fetched_at": "2026-06-13T12:43:21.485Z",
       "group": "C",
       "confederation": "CONMEBOL"
     },
@@ -7035,7 +7210,7 @@
           "date_of_birth": "2004-11-30"
         }
       ],
-      "fetched_at": "2026-06-12T07:51:53.311Z",
+      "fetched_at": "2026-06-13T12:43:28.528Z",
       "group": "C",
       "confederation": "CAF"
     },
@@ -7233,7 +7408,7 @@
           "date_of_birth": "2001-07-07"
         }
       ],
-      "fetched_at": "2026-06-12T07:52:00.189Z",
+      "fetched_at": "2026-06-13T12:43:35.558Z",
       "group": "C",
       "confederation": "CONCACAF"
     },
@@ -7431,7 +7606,7 @@
           "date_of_birth": "1995-08-10"
         }
       ],
-      "fetched_at": "2026-06-12T07:52:07.219Z",
+      "fetched_at": "2026-06-13T12:43:42.591Z",
       "group": "C",
       "confederation": "UEFA"
     },
@@ -7629,7 +7804,7 @@
           "date_of_birth": "2001-04-19"
         }
       ],
-      "fetched_at": "2026-06-12T07:52:14.058Z",
+      "fetched_at": "2026-06-13T12:43:49.625Z",
       "group": "D",
       "confederation": "CONCACAF"
     },
@@ -7827,7 +8002,7 @@
           "date_of_birth": "1995-06-16"
         }
       ],
-      "fetched_at": "2026-06-12T07:52:20.933Z",
+      "fetched_at": "2026-06-13T12:43:56.595Z",
       "group": "D",
       "confederation": "CONMEBOL"
     },
@@ -8025,7 +8200,7 @@
           "date_of_birth": "2000-11-28"
         }
       ],
-      "fetched_at": "2026-06-12T07:52:27.857Z",
+      "fetched_at": "2026-06-13T12:44:03.609Z",
       "group": "D",
       "confederation": "AFC"
     },
@@ -8223,7 +8398,7 @@
           "date_of_birth": "2005-11-11"
         }
       ],
-      "fetched_at": "2026-06-12T07:52:34.722Z",
+      "fetched_at": "2026-06-13T12:44:10.814Z",
       "group": "D",
       "confederation": "UEFA"
     },
@@ -8421,7 +8596,7 @@
           "date_of_birth": "2002-10-17"
         }
       ],
-      "fetched_at": "2026-06-12T07:52:41.582Z",
+      "fetched_at": "2026-06-13T12:44:17.767Z",
       "group": "E",
       "confederation": "UEFA"
     },
@@ -8619,7 +8794,7 @@
           "date_of_birth": "1992-09-19"
         }
       ],
-      "fetched_at": "2026-06-12T07:52:48.449Z",
+      "fetched_at": "2026-06-13T12:44:24.794Z",
       "group": "E",
       "confederation": "CONCACAF"
     },
@@ -8817,7 +8992,7 @@
           "date_of_birth": "2006-11-14"
         }
       ],
-      "fetched_at": "2026-06-12T07:52:55.273Z",
+      "fetched_at": "2026-06-13T12:44:31.765Z",
       "group": "E",
       "confederation": "CAF"
     },
@@ -9015,7 +9190,7 @@
           "date_of_birth": "2005-03-19"
         }
       ],
-      "fetched_at": "2026-06-12T07:53:02.133Z",
+      "fetched_at": "2026-06-13T12:44:38.787Z",
       "group": "E",
       "confederation": "CONMEBOL"
     },
@@ -9213,7 +9388,7 @@
           "date_of_birth": "2002-02-01"
         }
       ],
-      "fetched_at": "2026-06-12T07:53:08.956Z",
+      "fetched_at": "2026-06-13T12:44:46.232Z",
       "group": "F",
       "confederation": "UEFA"
     },
@@ -9411,7 +9586,7 @@
           "date_of_birth": "2005-06-03"
         }
       ],
-      "fetched_at": "2026-06-12T07:53:15.996Z",
+      "fetched_at": "2026-06-13T12:44:53.201Z",
       "group": "F",
       "confederation": "AFC"
     },
@@ -9609,7 +9784,7 @@
           "date_of_birth": "2002-04-27"
         }
       ],
-      "fetched_at": "2026-06-12T07:53:22.867Z",
+      "fetched_at": "2026-06-13T12:45:00.189Z",
       "group": "F",
       "confederation": "UEFA"
     },
@@ -9807,7 +9982,7 @@
           "date_of_birth": "2005-02-02"
         }
       ],
-      "fetched_at": "2026-06-12T07:53:29.916Z",
+      "fetched_at": "2026-06-13T12:45:07.163Z",
       "group": "F",
       "confederation": "CAF"
     },
@@ -10005,7 +10180,7 @@
           "date_of_birth": "2005-02-03"
         }
       ],
-      "fetched_at": "2026-06-12T07:53:36.755Z",
+      "fetched_at": "2026-06-13T12:45:14.109Z",
       "group": "G",
       "confederation": "UEFA"
     },
@@ -10203,7 +10378,7 @@
           "date_of_birth": "2008-01-01"
         }
       ],
-      "fetched_at": "2026-06-12T07:53:43.775Z",
+      "fetched_at": "2026-06-13T12:45:21.078Z",
       "group": "G",
       "confederation": "CAF"
     },
@@ -10401,7 +10576,7 @@
           "date_of_birth": "2000-10-30"
         }
       ],
-      "fetched_at": "2026-06-12T07:53:50.783Z",
+      "fetched_at": "2026-06-13T12:45:28.090Z",
       "group": "G",
       "confederation": "AFC"
     },
@@ -10599,7 +10774,7 @@
           "date_of_birth": "2002-08-19"
         }
       ],
-      "fetched_at": "2026-06-12T07:53:57.611Z",
+      "fetched_at": "2026-06-13T12:45:35.055Z",
       "group": "G",
       "confederation": "OFC"
     },
@@ -10797,7 +10972,7 @@
           "date_of_birth": "2003-07-13"
         }
       ],
-      "fetched_at": "2026-06-12T07:54:04.500Z",
+      "fetched_at": "2026-06-13T12:45:42.012Z",
       "group": "H",
       "confederation": "UEFA"
     },
@@ -10995,7 +11170,7 @@
           "date_of_birth": "2002-05-03"
         }
       ],
-      "fetched_at": "2026-06-12T07:54:11.525Z",
+      "fetched_at": "2026-06-13T12:45:48.977Z",
       "group": "H",
       "confederation": "CAF"
     },
@@ -11193,7 +11368,7 @@
           "date_of_birth": "2000-05-14"
         }
       ],
-      "fetched_at": "2026-06-12T07:54:18.365Z",
+      "fetched_at": "2026-06-13T12:45:55.937Z",
       "group": "H",
       "confederation": "AFC"
     },
@@ -11391,7 +11566,7 @@
           "date_of_birth": "1998-06-30"
         }
       ],
-      "fetched_at": "2026-06-12T07:54:25.198Z",
+      "fetched_at": "2026-06-13T12:46:02.969Z",
       "group": "H",
       "confederation": "CONMEBOL"
     },
@@ -11589,7 +11764,7 @@
           "date_of_birth": "2002-09-02"
         }
       ],
-      "fetched_at": "2026-06-12T07:54:32.068Z",
+      "fetched_at": "2026-06-13T12:46:09.929Z",
       "group": "I",
       "confederation": "UEFA"
     },
@@ -11794,7 +11969,7 @@
           "date_of_birth": "1981-02-05"
         }
       ],
-      "fetched_at": "2026-06-12T07:54:38.886Z",
+      "fetched_at": "2026-06-13T12:46:16.903Z",
       "group": "I",
       "confederation": "CAF"
     },
@@ -11992,7 +12167,7 @@
           "date_of_birth": "1996-01-19"
         }
       ],
-      "fetched_at": "2026-06-12T07:54:45.724Z",
+      "fetched_at": "2026-06-13T12:46:23.855Z",
       "group": "I",
       "confederation": "AFC"
     },
@@ -12190,7 +12365,7 @@
           "date_of_birth": "2000-02-06"
         }
       ],
-      "fetched_at": "2026-06-12T07:54:52.562Z",
+      "fetched_at": "2026-06-13T12:46:30.820Z",
       "group": "I",
       "confederation": "UEFA"
     },
@@ -12388,7 +12563,7 @@
           "date_of_birth": "2002-12-18"
         }
       ],
-      "fetched_at": "2026-06-12T07:54:59.460Z",
+      "fetched_at": "2026-06-13T12:46:37.766Z",
       "group": "J",
       "confederation": "CONMEBOL"
     },
@@ -12586,7 +12761,7 @@
           "date_of_birth": "2002-09-06"
         }
       ],
-      "fetched_at": "2026-06-12T07:55:06.302Z",
+      "fetched_at": "2026-06-13T12:46:44.808Z",
       "group": "J",
       "confederation": "CAF"
     },
@@ -12784,7 +12959,7 @@
           "date_of_birth": "1997-07-07"
         }
       ],
-      "fetched_at": "2026-06-12T07:55:13.123Z",
+      "fetched_at": "2026-06-13T12:46:51.863Z",
       "group": "J",
       "confederation": "UEFA"
     },
@@ -12982,7 +13157,7 @@
           "date_of_birth": "2004-04-13"
         }
       ],
-      "fetched_at": "2026-06-12T07:55:19.960Z",
+      "fetched_at": "2026-06-13T12:46:58.838Z",
       "group": "J",
       "confederation": "AFC"
     },
@@ -13180,7 +13355,7 @@
           "date_of_birth": "2002-12-14"
         }
       ],
-      "fetched_at": "2026-06-12T07:55:26.857Z",
+      "fetched_at": "2026-06-13T12:47:05.824Z",
       "group": "K",
       "confederation": "UEFA"
     },
@@ -13378,7 +13553,7 @@
           "date_of_birth": "1994-06-24"
         }
       ],
-      "fetched_at": "2026-06-12T07:55:33.680Z",
+      "fetched_at": "2026-06-13T12:47:12.789Z",
       "group": "K",
       "confederation": "CAF"
     },
@@ -13576,7 +13751,7 @@
           "date_of_birth": "1997-10-30"
         }
       ],
-      "fetched_at": "2026-06-12T07:55:40.519Z",
+      "fetched_at": "2026-06-13T12:47:19.933Z",
       "group": "K",
       "confederation": "AFC"
     },
@@ -13774,7 +13949,7 @@
           "date_of_birth": "2002-09-12"
         }
       ],
-      "fetched_at": "2026-06-12T07:55:47.458Z",
+      "fetched_at": "2026-06-13T12:47:26.894Z",
       "group": "K",
       "confederation": "CONMEBOL"
     },
@@ -13972,7 +14147,7 @@
           "date_of_birth": "2002-03-10"
         }
       ],
-      "fetched_at": "2026-06-12T07:55:54.282Z",
+      "fetched_at": "2026-06-13T12:47:33.883Z",
       "group": "L",
       "confederation": "UEFA"
     },
@@ -14170,7 +14345,7 @@
           "date_of_birth": "2003-03-31"
         }
       ],
-      "fetched_at": "2026-06-12T07:56:01.121Z",
+      "fetched_at": "2026-06-13T12:47:40.846Z",
       "group": "L",
       "confederation": "UEFA"
     },
@@ -14368,7 +14543,7 @@
           "date_of_birth": "2003-09-23"
         }
       ],
-      "fetched_at": "2026-06-12T07:56:07.950Z",
+      "fetched_at": "2026-06-13T12:47:47.813Z",
       "group": "L",
       "confederation": "CAF"
     },
@@ -14566,17 +14741,260 @@
           "date_of_birth": "2001-06-21"
         }
       ],
-      "fetched_at": "2026-06-12T07:56:14.802Z",
+      "fetched_at": "2026-06-13T12:47:54.780Z",
       "group": "L",
       "confederation": "CONCACAF"
     }
   },
+  "predictions_vs_results": {
+    "summary": {
+      "matches_played": 4,
+      "total_matches": 104,
+      "average_rps": 0.162,
+      "average_surprise_bits": 1.25,
+      "correct_predictions": 3,
+      "correct_pct": 75
+    },
+    "matches": [
+      {
+        "home_team": "Canada",
+        "away_team": "Bosnia and Herzegovina",
+        "group": "B",
+        "date": "2026-06-12T19:00:00Z",
+        "pre_match_probs": {
+          "home_win": 0.5198,
+          "draw": 0.2763,
+          "away_win": 0.2039
+        },
+        "predicted_outcome": "home_win",
+        "actual_outcome": "draw",
+        "actual_score": {
+          "home": 1,
+          "away": 1
+        },
+        "surprise_bits": 1.86,
+        "raw_probability": 0.276,
+        "rps": 0.156,
+        "best_bet": {
+          "odds": 3.65,
+          "return_10": 36.5,
+          "bookie": "Smarkets"
+        },
+        "home_owner": null,
+        "away_owner": null
+      },
+      {
+        "home_team": "South Korea",
+        "away_team": "Czechia",
+        "group": "A",
+        "date": "2026-06-12T02:00:00Z",
+        "pre_match_probs": {
+          "home_win": 0.3654,
+          "draw": 0.3132,
+          "away_win": 0.3214
+        },
+        "predicted_outcome": "home_win",
+        "actual_outcome": "home_win",
+        "actual_score": {
+          "home": 2,
+          "away": 1
+        },
+        "surprise_bits": 1.45,
+        "raw_probability": 0.365,
+        "rps": 0.253,
+        "best_bet": {
+          "odds": 2.72,
+          "return_10": 27.2,
+          "bookie": "Betfair"
+        },
+        "home_owner": "Peter Lees",
+        "away_owner": "Logan Garwood"
+      },
+      {
+        "home_team": "USA",
+        "away_team": "Paraguay",
+        "group": "D",
+        "date": "2026-06-13T01:00:00Z",
+        "pre_match_probs": {
+          "home_win": 0.4555,
+          "draw": 0.2975,
+          "away_win": 0.2471
+        },
+        "predicted_outcome": "home_win",
+        "actual_outcome": "home_win",
+        "actual_score": {
+          "home": 4,
+          "away": 1
+        },
+        "surprise_bits": 1.13,
+        "raw_probability": 0.455,
+        "rps": 0.179,
+        "best_bet": {
+          "odds": 2.16,
+          "return_10": 21.6,
+          "bookie": "Matchbook"
+        },
+        "home_owner": "Julie Hulme",
+        "away_owner": "Yousaf Mahmood"
+      },
+      {
+        "home_team": "Mexico",
+        "away_team": "South Africa",
+        "group": "A",
+        "date": "2026-06-11T19:00:00Z",
+        "pre_match_probs": {
+          "home_win": 0.6771,
+          "draw": 0.2111,
+          "away_win": 0.1117
+        },
+        "predicted_outcome": "home_win",
+        "actual_outcome": "home_win",
+        "actual_score": {
+          "home": 2,
+          "away": 0
+        },
+        "surprise_bits": 0.56,
+        "raw_probability": 0.677,
+        "rps": 0.058,
+        "best_bet": {
+          "odds": 1.45,
+          "return_10": 14.5,
+          "bookie": "Matchbook"
+        },
+        "home_owner": "Andrew Turner",
+        "away_owner": null
+      }
+    ],
+    "team_performance": [
+      {
+        "team": "South Korea",
+        "matches_played": 1,
+        "avg_rps": 0.253,
+        "expected_points": 1.41,
+        "actual_points": 3,
+        "delta": 1.59,
+        "direction": "overperforming"
+      },
+      {
+        "team": "USA",
+        "matches_played": 1,
+        "avg_rps": 0.179,
+        "expected_points": 1.66,
+        "actual_points": 3,
+        "delta": 1.34,
+        "direction": "overperforming"
+      },
+      {
+        "team": "Mexico",
+        "matches_played": 1,
+        "avg_rps": 0.058,
+        "expected_points": 2.24,
+        "actual_points": 3,
+        "delta": 0.76,
+        "direction": "overperforming"
+      },
+      {
+        "team": "Bosnia and Herzegovina",
+        "matches_played": 1,
+        "avg_rps": 0.156,
+        "expected_points": 0.89,
+        "actual_points": 1,
+        "delta": 0.11,
+        "direction": "overperforming"
+      },
+      {
+        "team": "South Africa",
+        "matches_played": 1,
+        "avg_rps": 0.058,
+        "expected_points": 0.55,
+        "actual_points": 0,
+        "delta": -0.55,
+        "direction": "underperforming"
+      },
+      {
+        "team": "Canada",
+        "matches_played": 1,
+        "avg_rps": 0.156,
+        "expected_points": 1.84,
+        "actual_points": 1,
+        "delta": -0.84,
+        "direction": "underperforming"
+      },
+      {
+        "team": "Paraguay",
+        "matches_played": 1,
+        "avg_rps": 0.179,
+        "expected_points": 1.04,
+        "actual_points": 0,
+        "delta": -1.04,
+        "direction": "underperforming"
+      },
+      {
+        "team": "Czechia",
+        "matches_played": 1,
+        "avg_rps": 0.253,
+        "expected_points": 1.28,
+        "actual_points": 0,
+        "delta": -1.28,
+        "direction": "underperforming"
+      }
+    ],
+    "calibration": {
+      "bins": [
+        {
+          "predicted_range": [
+            0,
+            0.2
+          ],
+          "count": 1,
+          "avg_predicted": 0.112,
+          "actual_frequency": 0
+        },
+        {
+          "predicted_range": [
+            0.2,
+            0.4
+          ],
+          "count": 8,
+          "avg_predicted": 0.279,
+          "actual_frequency": 0.25
+        },
+        {
+          "predicted_range": [
+            0.4,
+            0.6
+          ],
+          "count": 2,
+          "avg_predicted": 0.488,
+          "actual_frequency": 0.5
+        },
+        {
+          "predicted_range": [
+            0.6,
+            0.8
+          ],
+          "count": 1,
+          "avg_predicted": 0.677,
+          "actual_frequency": 1
+        },
+        {
+          "predicted_range": [
+            0.8,
+            1
+          ],
+          "count": 0,
+          "avg_predicted": null,
+          "actual_frequency": null
+        }
+      ]
+    }
+  },
   "elo_source": "eloratings.net",
   "validation": {
-    "mean_absolute_error": 0.033904885890545605,
+    "mean_absolute_error": 0.034314885890545606,
     "max_deviation": {
       "team": "Spain",
-      "diff": 0.07535757575757573
+      "diff": 0.07635757575757574
     }
   },
   "bracket": {

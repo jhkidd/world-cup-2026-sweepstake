@@ -1114,6 +1114,381 @@ tr.section-break td {
 }
 
 /* ============================================
+   PREDICTIONS VS REALITY TAB
+   ============================================ */
+
+.predictions-page {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.predictions-page .section-subtitle {
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.progress-bar-container {
+  background: #E4E4E6;
+  border-radius: 4px;
+  height: 6px;
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+
+.progress-bar-container .progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #28346E, #E3A344);
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+.stat-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.stat-card {
+  background: white;
+  border: 1px solid #E4E4E6;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+.stat-card .stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #28346E;
+}
+
+.stat-card .stat-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #333;
+  margin-top: 4px;
+}
+
+.stat-card .stat-note {
+  font-size: 0.75rem;
+  color: #999;
+  margin-top: 2px;
+}
+
+.subsection-title {
+  font-size: 1.3rem;
+  color: #28346E;
+  margin: 24px 0 4px;
+}
+
+.subsection-subtitle {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 12px;
+}
+
+/* Upsets Table */
+.upsets-table-wrapper {
+  overflow-x: auto;
+  margin-bottom: 32px;
+}
+
+.upsets-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.upsets-table thead th {
+  background: #28346E;
+  color: white;
+  padding: 10px 12px;
+  text-align: left;
+  font-weight: 500;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.upsets-table tbody tr {
+  border-bottom: 1px solid #eee;
+  transition: background 0.15s;
+}
+
+.upsets-table tbody tr:hover {
+  background: #f7f8fc;
+}
+
+.upsets-table tbody tr.correct {
+  background: rgba(76, 175, 80, 0.06);
+}
+
+.upsets-table tbody tr.adjacent-miss {
+  background: rgba(255, 193, 7, 0.06);
+}
+
+.upsets-table tbody tr.max-miss {
+  background: rgba(244, 67, 54, 0.06);
+}
+
+.upsets-table td {
+  padding: 10px 12px;
+  vertical-align: middle;
+}
+
+.rank-cell {
+  font-weight: 700;
+  color: #28346E;
+  width: 30px;
+}
+
+.match-cell {
+  white-space: nowrap;
+}
+
+.match-cell .mini-flag {
+  font-size: 1.1rem;
+}
+
+.match-cell .team-short {
+  font-weight: 500;
+  margin: 0 4px;
+}
+
+.match-cell .vs-text {
+  color: #999;
+  font-size: 0.8rem;
+  margin: 0 4px;
+}
+
+.bar-cell {
+  min-width: 150px;
+  width: 20%;
+}
+
+.mini-split-bar {
+  display: flex;
+  height: 14px;
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+}
+
+.mini-bar-section.left-win {
+  background: #28346E;
+}
+
+.mini-bar-section.draw {
+  background: #999;
+}
+
+.mini-bar-section.right-win {
+  background: #E3A344;
+}
+
+.actual-marker {
+  position: absolute;
+  top: -3px;
+  width: 3px;
+  height: 20px;
+  background: #f44336;
+  border-radius: 2px;
+  transform: translateX(-50%);
+}
+
+.result-cell .score {
+  font-weight: 700;
+  margin-right: 8px;
+  color: #28346E;
+}
+
+.result-cell .outcome-label {
+  font-size: 0.75rem;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-weight: 500;
+}
+
+.result-cell .outcome-label.home_win {
+  background: rgba(40, 52, 110, 0.1);
+  color: #28346E;
+}
+
+.result-cell .outcome-label.draw {
+  background: rgba(153, 153, 153, 0.15);
+  color: #666;
+}
+
+.result-cell .outcome-label.away_win {
+  background: rgba(227, 163, 68, 0.15);
+  color: #b37e2d;
+}
+
+.surprise-cell {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.surprise-cell .bits-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #28346E;
+}
+
+.surprise-cell .bits-unit {
+  font-size: 0.75rem;
+  color: #999;
+  margin-left: 2px;
+}
+
+.surprise-cell .raw-prob {
+  display: block;
+  font-size: 0.75rem;
+  color: #999;
+}
+
+.bet-cell {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.bet-cell .bet-return {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #2e7d32;
+}
+
+.bet-cell .bet-bookie {
+  display: block;
+  font-size: 0.7rem;
+  color: #666;
+}
+
+.bet-cell .bet-odds {
+  font-size: 0.7rem;
+  color: #999;
+}
+
+.bet-cell .bet-na {
+  color: #ccc;
+}
+
+/* Grid layout for calibration + team perf */
+.predictions-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 8px;
+  margin-bottom: 32px;
+}
+
+@media (max-width: 900px) {
+  .predictions-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.calibration-chart-container {
+  background: white;
+  border: 1px solid #E4E4E6;
+  border-radius: 8px;
+  padding: 16px;
+  height: 300px;
+}
+
+.team-perf-tables {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.team-perf-section {
+  background: white;
+  border: 1px solid #E4E4E6;
+  border-radius: 8px;
+  padding: 12px 16px;
+}
+
+.perf-heading {
+  font-size: 0.9rem;
+  margin: 0 0 8px;
+}
+
+.perf-heading.overperforming {
+  color: #2e7d32;
+}
+
+.perf-heading.underperforming {
+  color: #c62828;
+}
+
+.perf-table {
+  width: 100%;
+  font-size: 0.8rem;
+  border-collapse: collapse;
+}
+
+.perf-table thead th {
+  font-weight: 600;
+  text-align: left;
+  padding: 4px 6px;
+  border-bottom: 1px solid #eee;
+  color: #666;
+}
+
+.perf-table tbody td {
+  padding: 4px 6px;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.perf-table .delta.overperforming {
+  color: #2e7d32;
+  font-weight: 600;
+}
+
+.perf-table .delta.underperforming {
+  color: #c62828;
+  font-weight: 600;
+}
+
+/* RPS Explainer */
+.rps-explainer {
+  background: white;
+  border: 1px solid #E4E4E6;
+  border-radius: 8px;
+  margin: 24px 0;
+}
+
+.rps-explainer summary {
+  padding: 12px 16px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #28346E;
+  font-size: 0.9rem;
+}
+
+.rps-explainer .explainer-content {
+  padding: 0 16px 16px;
+  font-size: 0.85rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+.rps-explainer h4 {
+  color: #28346E;
+  margin: 12px 0 4px;
+}
+
+.rps-explainer code {
+  background: #f5f5f5;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.8rem;
+}
+
+/* ============================================
    METHODOLOGY PAGE STYLES
    ============================================ */
 
@@ -2434,6 +2809,286 @@ function renderTimeline() {
   \`;
 }
 
+// ============================================================
+// PREDICTIONS VS REALITY
+// ============================================================
+
+function renderPredictions() {
+  const pvr = data.predictions_vs_results;
+  
+  if (!pvr || pvr.matches.length === 0) {
+    return \`
+      <div class="predictions-page">
+        <div class="section-title">Predictions vs Reality</div>
+        <p class="section-subtitle">No completed matches yet. Check back once games start!</p>
+      </div>
+    \`;
+  }
+  
+  const { summary, matches, team_performance, calibration } = pvr;
+  
+  // Flag lookup
+  const flagEmoji = {
+    'Mexico': '🇲🇽', 'South Africa': '🇿🇦', 'South Korea': '🇰🇷', 'Czechia': '🇨🇿',
+    'Canada': '🇨🇦', 'Bosnia and Herzegovina': '🇧🇦', 'Qatar': '🇶🇦', 'Switzerland': '🇨🇭',
+    'Brazil': '🇧🇷', 'Morocco': '🇲🇦', 'Haiti': '🇭🇹', 'Scotland': '🏴󠁧󠁢󠁳󠁣󠁴󠁿',
+    'USA': '🇺🇸', 'Paraguay': '🇵🇾', 'Australia': '🇦🇺', 'Türkiye': '🇹🇷',
+    'Germany': '🇩🇪', 'Curaçao': '🇨🇼', 'Ivory Coast': '🇨🇮', 'Ecuador': '🇪🇨',
+    'Netherlands': '🇳🇱', 'Japan': '🇯🇵', 'Sweden': '🇸🇪', 'Tunisia': '🇹🇳',
+    'Belgium': '🇧🇪', 'Egypt': '🇪🇬', 'Iran': '🇮🇷', 'New Zealand': '🇳🇿',
+    'Spain': '🇪🇸', 'Cape Verde': '🇨🇻', 'Saudi Arabia': '🇸🇦', 'Uruguay': '🇺🇾',
+    'France': '🇫🇷', 'Senegal': '🇸🇳', 'Iraq': '🇮🇶', 'Norway': '🇳🇴',
+    'Argentina': '🇦🇷', 'Algeria': '🇩🇿', 'Austria': '🇦🇹', 'Jordan': '🇯🇴',
+    'Portugal': '🇵🇹', 'DR Congo': '🇨🇩', 'Uzbekistan': '🇺🇿', 'Colombia': '🇨🇴',
+    'England': '🏴󠁧󠁢󠁥󠁮󠁧󠁿', 'Croatia': '🇭🇷', 'Ghana': '🇬🇭', 'Panama': '🇵🇦'
+  };
+  
+  function outcomeLabel(outcome) {
+    if (outcome === 'home_win') return 'Home Win';
+    if (outcome === 'away_win') return 'Away Win';
+    return 'Draw';
+  }
+  
+  function ordinalDistance(predicted, actual) {
+    const order = ['home_win', 'draw', 'away_win'];
+    return Math.abs(order.indexOf(predicted) - order.indexOf(actual));
+  }
+  
+  // Build upsets table rows
+  const upsetsRows = matches.map((m, i) => {
+    const homeFlag = flagEmoji[m.home_team] || '🏴';
+    const awayFlag = flagEmoji[m.away_team] || '🏴';
+    const distance = ordinalDistance(m.predicted_outcome, m.actual_outcome);
+    const rowClass = distance === 0 ? 'correct' : distance === 1 ? 'adjacent-miss' : 'max-miss';
+    
+    const hPct = Math.round(m.pre_match_probs.home_win * 100);
+    const dPct = Math.round(m.pre_match_probs.draw * 100);
+    const aPct = Math.round(m.pre_match_probs.away_win * 100);
+    
+    // Mini bar showing which outcome occurred
+    const actualMarkerPos = m.actual_outcome === 'home_win' ? (hPct / 2) :
+                            m.actual_outcome === 'draw' ? (hPct + dPct / 2) :
+                            (hPct + dPct + aPct / 2);
+    
+    const scoreText = \`\${m.actual_score.home}-\${m.actual_score.away}\`;
+    
+    return \`
+      <tr class="\${rowClass}">
+        <td class="rank-cell">\${i + 1}</td>
+        <td class="match-cell">
+          <span class="mini-flag">\${homeFlag}</span>
+          <span class="team-short">\${m.home_team}</span>
+          <span class="vs-text">vs</span>
+          <span class="team-short">\${m.away_team}</span>
+          <span class="mini-flag">\${awayFlag}</span>
+        </td>
+        <td class="bar-cell">
+          <div class="mini-split-bar">
+            <div class="mini-bar-section left-win" style="flex-basis: \${hPct}%;"></div>
+            <div class="mini-bar-section draw" style="flex-basis: \${dPct}%;"></div>
+            <div class="mini-bar-section right-win" style="flex-basis: \${aPct}%;"></div>
+            <div class="actual-marker" style="left: \${actualMarkerPos}%;" title="Actual outcome"></div>
+          </div>
+        </td>
+        <td class="result-cell">
+          <span class="score">\${scoreText}</span>
+          <span class="outcome-label \${m.actual_outcome}">\${outcomeLabel(m.actual_outcome)}</span>
+        </td>
+        <td class="surprise-cell">
+          <span class="bits-value">\${m.surprise_bits.toFixed(2)}</span>
+          <span class="bits-unit">bits</span>
+          <span class="raw-prob">\${Math.round(m.raw_probability * 100)}%</span>
+        </td>
+        <td class="bet-cell">
+          \${m.best_bet ? \`
+            <span class="bet-return">£\${m.best_bet.return_10.toFixed(0)}</span>
+            <span class="bet-bookie">\${m.best_bet.bookie}</span>
+            <span class="bet-odds">\${m.best_bet.odds.toFixed(2)}×</span>
+          \` : '<span class="bet-na">—</span>'}
+        </td>
+      </tr>
+    \`;
+  }).join('');
+  
+  // Team performance tables
+  const overperformers = team_performance.filter(t => t.direction === 'overperforming').slice(0, 5);
+  const underperformers = team_performance.filter(t => t.direction === 'underperforming').slice(0, 5);
+  
+  function teamPerfRow(t) {
+    const flag = flagEmoji[t.team] || '🏴';
+    return \`
+      <tr>
+        <td>\${flag} \${t.team}</td>
+        <td>\${t.matches_played}</td>
+        <td>\${t.expected_points.toFixed(1)}</td>
+        <td>\${t.actual_points}</td>
+        <td class="delta \${t.direction}">\${t.delta > 0 ? '+' : ''}\${t.delta.toFixed(1)}</td>
+      </tr>
+    \`;
+  }
+  
+  // Render calibration chart after DOM update
+  setTimeout(() => {
+    const ctx = document.getElementById('calibration-canvas');
+    if (!ctx || !window.Chart) return;
+    
+    const validBins = calibration.bins.filter(b => b.count > 0);
+    
+    new Chart(ctx, {
+      type: 'scatter',
+      data: {
+        datasets: [
+          {
+            label: 'Bookie calibration',
+            data: validBins.map(b => ({ x: b.avg_predicted * 100, y: b.actual_frequency * 100 })),
+            backgroundColor: '#28346E',
+            borderColor: '#28346E',
+            clip: false,
+            pointRadius: validBins.map(b => 6 + Math.min(b.count, 10)),
+            pointHoverRadius: 8
+          },
+          {
+            label: 'Perfect calibration',
+            data: [{ x: 0, y: 0 }, { x: 100, y: 100 }],
+            type: 'line',
+            borderColor: '#ccc',
+            borderDash: [5, 5],
+            borderWidth: 1.5,
+            pointRadius: 0,
+            fill: false
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: (ctx) => {
+                if (ctx.datasetIndex === 1) return '';
+                const bin = validBins[ctx.dataIndex];
+                return \`Predicted: \${(bin.avg_predicted * 100).toFixed(0)}% | Actual: \${(bin.actual_frequency * 100).toFixed(0)}% (n=\${bin.count})\`;
+              }
+            }
+          }
+        },
+        scales: {
+          x: {
+            title: { display: true, text: 'Predicted Probability (%)', font: { size: 12 } },
+            min: 0, max: 100,
+            grid: { color: '#f0f0f0' }
+          },
+          y: {
+            title: { display: true, text: 'Actual Frequency (%)', font: { size: 12 } },
+            min: 0, max: 100,
+            grid: { color: '#f0f0f0' }
+          }
+        }
+      }
+    });
+  }, 100);
+  
+  return \`
+    <div class="predictions-page">
+      <div class="section-title">Predictions vs Reality</div>
+      <p class="section-subtitle">How accurate are the bookmakers? • \${summary.matches_played} of \${summary.total_matches} matches played</p>
+      
+      <div class="progress-bar-container">
+        <div class="progress-bar" style="width: \${(summary.matches_played / summary.total_matches * 100).toFixed(1)}%"></div>
+      </div>
+      
+      <div class="stat-cards">
+        <div class="stat-card">
+          <div class="stat-value">\${summary.average_surprise_bits.toFixed(2)}</div>
+          <div class="stat-label">Avg Surprise (bits)</div>
+          <div class="stat-note">Lower = more predictable</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">\${summary.correct_pct}%</div>
+          <div class="stat-label">Correct Predictions</div>
+          <div class="stat-note">\${summary.correct_predictions} of \${summary.matches_played} matches</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">\${summary.average_rps.toFixed(3)}</div>
+          <div class="stat-label">Avg RPS</div>
+          <div class="stat-note">0 = perfect, 1 = worst</div>
+        </div>
+      </div>
+      
+      <h2 class="subsection-title">Biggest Upsets</h2>
+      <p class="subsection-subtitle">Matches ranked by information content — how surprising was the actual result?</p>
+      
+      <div class="upsets-table-wrapper">
+        <table class="upsets-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Match</th>
+              <th>Pre-Match Odds</th>
+              <th>Result</th>
+              <th>Surprise</th>
+              <th>Best Bet (£10)</th>
+            </tr>
+          </thead>
+          <tbody>
+            \${upsetsRows}
+          </tbody>
+        </table>
+      </div>
+      
+      <div class="predictions-grid">
+        <div class="predictions-grid-left">
+          <h2 class="subsection-title">Calibration</h2>
+          <p class="subsection-subtitle">Are predicted probabilities accurate? Dots on the diagonal = perfectly calibrated.</p>
+          <div class="calibration-chart-container">
+            <canvas id="calibration-canvas"></canvas>
+          </div>
+        </div>
+        
+        <div class="predictions-grid-right">
+          <h2 class="subsection-title">Team Performance</h2>
+          <p class="subsection-subtitle">Expected points (from pre-match odds) vs actual points earned.</p>
+          
+          <div class="team-perf-tables">
+            <div class="team-perf-section">
+              <h3 class="perf-heading overperforming">🔥 Most Underestimated</h3>
+              <table class="perf-table">
+                <thead><tr><th>Team</th><th>GP</th><th>xPts</th><th>Pts</th><th>Δ</th></tr></thead>
+                <tbody>\${overperformers.map(teamPerfRow).join('')}</tbody>
+              </table>
+            </div>
+            <div class="team-perf-section">
+              <h3 class="perf-heading underperforming">📉 Most Overestimated</h3>
+              <table class="perf-table">
+                <thead><tr><th>Team</th><th>GP</th><th>xPts</th><th>Pts</th><th>Δ</th></tr></thead>
+                <tbody>\${underperformers.map(teamPerfRow).join('')}</tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <details class="rps-explainer">
+        <summary>How is this calculated?</summary>
+        <div class="explainer-content">
+          <h4>Surprise (bits)</h4>
+          <p>Information content: <code>-log₂(P)</code> where P is the pre-match probability of the actual outcome. A 50% outcome = 1 bit. A 10% outcome = 3.3 bits. Higher = more surprising.</p>
+          
+          <h4>Ranked Probability Score (RPS)</h4>
+          <p>Measures prediction quality respecting the ordinal nature of outcomes (Home Win ↔ Draw ↔ Away Win). Penalizes a prediction more if the actual result is further away from what was predicted.</p>
+          <p><code>RPS = ½ × Σ(CDF_predicted - CDF_actual)²</code></p>
+          <p>Range: 0 (perfect) to 1 (worst). Predicting 80% home win when the away team wins scores worse than when it's a draw.</p>
+          
+          <h4>Expected Points (xPts)</h4>
+          <p><code>xPts = P(win) × 3 + P(draw) × 1</code> per match. Teams above their expected points are overperforming relative to pre-match bookmaker odds.</p>
+        </div>
+      </details>
+    </div>
+  \`;
+}
+
 // Methodology Explainer Page
 function renderMethodology() {
   // Elo ratings with confederation mapping for colors
@@ -3283,6 +3938,9 @@ function route() {
     case 'timeline':
       main.innerHTML = renderTimeline();
       break;
+    case 'predictions':
+      main.innerHTML = renderPredictions();
+      break;
     case 'methodology':
       main.innerHTML = renderMethodology();
       break;
@@ -3771,6 +4429,7 @@ const html = `<!DOCTYPE html>
       <li><a href="#matches/1">Matches</a></li>
       <li><a href="#knockout">Knockout</a></li>
       <li><a href="#teams">Teams</a></li>
+      <li><a href="#predictions">Bookie Accuracy</a></li>
       <li><a href="#timeline">Timeline</a></li>
     </ul>
   </nav>

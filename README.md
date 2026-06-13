@@ -24,6 +24,22 @@ Professional-grade FiveThirtyEight-style visualizations for tracking an office W
    - Profile pictures at line endpoints with collision avoidance
    - Tournament phase background shading
 
+### Interactive Dashboard (GitHub Pages)
+
+The project also generates a full interactive dashboard at the GitHub Pages site, with these tabs:
+
+4. **Standings** — Live sweepstake leaderboard with win probabilities
+5. **Matches** — Group stage fixtures with odds bars and results
+6. **Knockout** — Probabilistic bracket for the knockout stage
+7. **Teams** — Individual team detail pages
+8. **Bookie Accuracy** — How well do bookmaker predictions match reality?
+   - **Summary cards**: Average surprise (bits), correct prediction rate, and Ranked Probability Score (RPS)
+   - **Biggest Upsets table**: Matches ranked by information content (most surprising first), with pre-match probability bars, colour-coded rows (green = correct, amber = adjacent miss, red = max miss), and a "Best Bet" column showing what a £10 stake on the actual outcome would have returned (and which bookmaker offered the best odds)
+   - **Calibration chart**: Scatter plot comparing predicted probabilities against actual frequencies — dots on the diagonal mean perfectly calibrated bookmakers
+   - **Team Performance**: Side-by-side tables of the most underestimated and overestimated teams, comparing expected points (from pre-match odds) against actual points earned
+   - **Methodology explainer**: Collapsible section explaining surprise bits, RPS, and expected points formulas
+9. **Timeline** — Historical probability evolution chart
+
 ### Technical Highlights
 
 - **Monte Carlo Simulation**: 10,000 iterations for statistical accuracy
@@ -121,9 +137,19 @@ Saves timestamped JSON files to `data/odds/` for historical tracking.
 - Tracks advancement probabilities for each stage
 
 **Completed Match Handling:**
-- Reads `data/completed-matches.json` for actual results
+- Automatically fetches results from football-data.org (primary) and worldcup26.ir (fallback)
+- Saves to `data/results.json` for offline use
 - Overrides simulated outcomes with 100% probability for winners
 - Updates goal difference for accurate group standings
+
+**Bookie Accuracy Analysis:**
+- For each completed match, looks up the last pre-match odds snapshot (from `data/odds/`)
+- Averages h2h probabilities across all bookmakers, normalizes to sum to 1
+- Computes surprise in bits: `-log₂(P(actual_outcome))` — higher = more surprising
+- Computes Ranked Probability Score (RPS) respecting ordinal outcomes (home win ↔ draw ↔ away win)
+- Finds the best available bookmaker odds on the actual outcome for "best bet" calculations
+- Aggregates team-level expected vs actual points
+- Generates calibration bins comparing predicted probabilities to actual frequencies
 
 **Output:**
 - Participant rankings with total win probability
@@ -317,10 +343,10 @@ Show each group as a 4×4 matrix of head-to-head win probabilities. Instantly re
 **Tournament Path to Glory**
 For each remaining team, trace the most likely sequence of opponents to reach the final. Show the cumulative probability at each stage. Helps participants understand why their team's odds shifted after a result.
 
-**Upset Tracker**
+**Upset Tracker** ✅ *Implemented in the Bookie Accuracy tab.*
 Every time an underdog wins, log it. Rank upsets by how improbable they were (pre-match odds). A running "shock of the tournament" leaderboard — great for engagement between games.
 
-**Expected vs Actual Points**
+**Expected vs Actual Points** ✅ *Implemented in the Bookie Accuracy tab.*
 For each team, compare actual group stage points against their pre-tournament expected points. Teams above the line are overperforming — teams below are underachieving. Identifies who is riding their luck.
 
 **Probabilistic Bracket**
@@ -343,7 +369,7 @@ ISC
 
 ---
 
-**Last Updated:** May 2026  
+**Last Updated:** June 2026  
 **World Cup Dates:** June 11 – July 19, 2026  
 **Current Leader:** Ian Whelan (17.52% – Spain + Qatar)
 
