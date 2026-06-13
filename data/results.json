@@ -1,9 +1,9 @@
 {
   "description": "Auto-updated match results from external APIs. Used as fallback for completed matches.",
-  "last_updated": "2026-06-13T12:33:43.987Z",
+  "last_updated": "2026-06-13T12:48:40.526Z",
   "matches": [
     {
-      "id": "1",
+      "id": "Mexico-South Africa",
       "home_team": "Mexico",
       "away_team": "South Africa",
       "home_score": 2,
@@ -11,35 +11,35 @@
       "status": "completed",
       "group": "A",
       "stage": "group_stage",
-      "date": "06/11/2026 13:00",
+      "date": "2026-06-11",
       "matchday": 1
     },
     {
-      "id": "2",
+      "id": "South Korea-Czechia",
       "home_team": "South Korea",
-      "away_team": "Czech Republic",
+      "away_team": "Czechia",
       "home_score": 2,
       "away_score": 1,
       "status": "completed",
       "group": "A",
       "stage": "group_stage",
-      "date": "06/11/2026 20:00",
+      "date": "2026-06-12",
       "matchday": 1
     },
     {
-      "id": "3",
+      "id": "Canada-Bosnia-Herzegovina",
       "home_team": "Canada",
-      "away_team": "Bosnia and Herzegovina",
+      "away_team": "Bosnia-Herzegovina",
       "home_score": 1,
       "away_score": 1,
       "status": "completed",
       "group": "B",
       "stage": "group_stage",
-      "date": "06/12/2026 15:00",
+      "date": "2026-06-12",
       "matchday": 1
     },
     {
-      "id": "4",
+      "id": "United States-Paraguay",
       "home_team": "United States",
       "away_team": "Paraguay",
       "home_score": 4,
@@ -47,7 +47,7 @@
       "status": "completed",
       "group": "D",
       "stage": "group_stage",
-      "date": "06/12/2026 18:00",
+      "date": "2026-06-13",
       "matchday": 1
     }
   ]
