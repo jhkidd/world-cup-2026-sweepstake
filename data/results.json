@@ -1,6 +1,6 @@
 {
   "description": "Auto-updated match results from external APIs. Used as fallback for completed matches.",
-  "last_updated": "2026-06-15T14:19:21.150Z",
+  "last_updated": "2026-06-15T19:27:26.116Z",
   "matches": [
     {
       "id": "Mexico-South Africa",
@@ -142,6 +142,18 @@
       "away_score": 1,
       "status": "completed",
       "group": "F",
+      "stage": "group_stage",
+      "date": "2026-06-15",
+      "matchday": 1
+    },
+    {
+      "id": "Spain-Cape Verde Islands",
+      "home_team": "Spain",
+      "away_team": "Cape Verde Islands",
+      "home_score": 0,
+      "away_score": 0,
+      "status": "completed",
+      "group": "H",
       "stage": "group_stage",
       "date": "2026-06-15",
       "matchday": 1
