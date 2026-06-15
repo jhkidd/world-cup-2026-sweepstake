@@ -15,6 +15,7 @@ function normalizeTeamName(name) {
   if (normalized === 'Curaçao' || normalized === 'Curacao') return 'Curacao';
   if (normalized === 'Czech Republic' || normalized === 'Czechia') return 'Czechia';
   if (normalized === 'Bosnia & Herzegovina' || normalized === 'Bosnia and Herzegovina' || normalized === 'Bosnia') return 'Bosnia and Herzegovina';
+  if (normalized === 'Côte d\'Ivoire' || normalized === 'Cote d\'Ivoire' || normalized === 'Cote D\'Ivoire' || normalized === 'Ivory Coast') return 'Ivory Coast';
   if (normalized === 'United States' || normalized === 'United States of America') return 'USA';
   return normalized;
 }
