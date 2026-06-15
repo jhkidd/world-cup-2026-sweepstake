@@ -1,6 +1,6 @@
 {
   "description": "Auto-updated match results from external APIs. Used as fallback for completed matches.",
-  "last_updated": "2026-06-15T08:18:00.046Z",
+  "last_updated": "2026-06-15T08:33:00.670Z",
   "matches": [
     {
       "id": "Mexico-South Africa",
@@ -118,6 +118,18 @@
       "away_score": 2,
       "status": "completed",
       "group": "F",
+      "stage": "group_stage",
+      "date": "2026-06-14",
+      "matchday": 1
+    },
+    {
+      "id": "Ivory Coast-Ecuador",
+      "home_team": "Ivory Coast",
+      "away_team": "Ecuador",
+      "home_score": 1,
+      "away_score": 0,
+      "status": "completed",
+      "group": "E",
       "stage": "group_stage",
       "date": "2026-06-14",
       "matchday": 1
