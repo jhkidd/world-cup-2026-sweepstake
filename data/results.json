@@ -1,6 +1,6 @@
 {
   "description": "Auto-updated match results from external APIs. Used as fallback for completed matches.",
-  "last_updated": "2026-06-15T01:18:14.121Z",
+  "last_updated": "2026-06-15T08:18:00.046Z",
   "matches": [
     {
       "id": "Mexico-South Africa",
@@ -120,6 +120,18 @@
       "group": "F",
       "stage": "group_stage",
       "date": "2026-06-14",
+      "matchday": 1
+    },
+    {
+      "id": "Sweden-Tunisia",
+      "home_team": "Sweden",
+      "away_team": "Tunisia",
+      "home_score": 5,
+      "away_score": 1,
+      "status": "completed",
+      "group": "F",
+      "stage": "group_stage",
+      "date": "2026-06-15",
       "matchday": 1
     }
   ]
