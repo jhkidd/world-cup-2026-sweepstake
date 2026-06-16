@@ -1,6 +1,6 @@
 {
   "description": "Auto-updated match results from external APIs. Used as fallback for completed matches.",
-  "last_updated": "2026-06-15T19:27:26.116Z",
+  "last_updated": "2026-06-16T01:20:13.174Z",
   "matches": [
     {
       "id": "Mexico-South Africa",
@@ -152,6 +152,30 @@
       "away_team": "Cape Verde Islands",
       "home_score": 0,
       "away_score": 0,
+      "status": "completed",
+      "group": "H",
+      "stage": "group_stage",
+      "date": "2026-06-15",
+      "matchday": 1
+    },
+    {
+      "id": "Belgium-Egypt",
+      "home_team": "Belgium",
+      "away_team": "Egypt",
+      "home_score": 1,
+      "away_score": 1,
+      "status": "completed",
+      "group": "G",
+      "stage": "group_stage",
+      "date": "2026-06-15",
+      "matchday": 1
+    },
+    {
+      "id": "Saudi Arabia-Uruguay",
+      "home_team": "Saudi Arabia",
+      "away_team": "Uruguay",
+      "home_score": 1,
+      "away_score": 1,
       "status": "completed",
       "group": "H",
       "stage": "group_stage",
