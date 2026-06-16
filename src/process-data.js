@@ -104,6 +104,7 @@ function normalizeTeamName(name) {
   if (normalized === 'Bosnia & Herzegovina' || normalized === 'Bosnia and Herzegovina' || normalized === 'Bosnia' || normalized === 'Bosnia-Herzegovina') return 'Bosnia and Herzegovina';
   if (normalized === 'Côte d\'Ivoire' || normalized === 'Cote d\'Ivoire' || normalized === 'Cote D\'Ivoire' || normalized === 'Ivory Coast') return 'Ivory Coast';
   if (normalized === 'United States' || normalized === 'United States of America') return 'USA';
+  if (normalized === 'Cape Verde Islands') return 'Cape Verde';
   return normalized;
 }
 
