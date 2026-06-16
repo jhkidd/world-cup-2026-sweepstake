@@ -1,6 +1,6 @@
 {
   "description": "Auto-updated match results from external APIs. Used as fallback for completed matches.",
-  "last_updated": "2026-06-16T01:20:13.174Z",
+  "last_updated": "2026-06-16T08:11:04.837Z",
   "matches": [
     {
       "id": "Mexico-South Africa",
@@ -180,6 +180,18 @@
       "group": "H",
       "stage": "group_stage",
       "date": "2026-06-15",
+      "matchday": 1
+    },
+    {
+      "id": "Iran-New Zealand",
+      "home_team": "Iran",
+      "away_team": "New Zealand",
+      "home_score": 2,
+      "away_score": 2,
+      "status": "completed",
+      "group": "G",
+      "stage": "group_stage",
+      "date": "2026-06-16",
       "matchday": 1
     }
   ]
