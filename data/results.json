@@ -1,6 +1,6 @@
 {
   "description": "Auto-updated match results from external APIs. Used as fallback for completed matches.",
-  "last_updated": "2026-06-16T19:20:28.913Z",
+  "last_updated": "2026-06-17T01:15:19.713Z",
   "matches": [
     {
       "id": "Mexico-South Africa",
@@ -190,6 +190,30 @@
       "away_score": 2,
       "status": "completed",
       "group": "G",
+      "stage": "group_stage",
+      "date": "2026-06-16",
+      "matchday": 1
+    },
+    {
+      "id": "France-Senegal",
+      "home_team": "France",
+      "away_team": "Senegal",
+      "home_score": 3,
+      "away_score": 1,
+      "status": "completed",
+      "group": "I",
+      "stage": "group_stage",
+      "date": "2026-06-16",
+      "matchday": 1
+    },
+    {
+      "id": "Iraq-Norway",
+      "home_team": "Iraq",
+      "away_team": "Norway",
+      "home_score": 1,
+      "away_score": 4,
+      "status": "completed",
+      "group": "I",
       "stage": "group_stage",
       "date": "2026-06-16",
       "matchday": 1
