@@ -2972,7 +2972,7 @@ function renderPredictions() {
   
   // Team performance tables
   const overperformers = team_performance.filter(t => t.direction === 'overperforming').slice(0, 5);
-  const underperformers = team_performance.filter(t => t.direction === 'underperforming').slice(0, 5);
+  const underperformers = team_performance.filter(t => t.direction === 'underperforming').sort((a, b) => a.delta - b.delta).slice(0, 5);
   
   function teamPerfRow(t) {
     const flag = flagEmoji[t.team] || '🏴';

@@ -1,18 +1,18 @@
 {
-  "timestamp": "2026-06-13T13:18:56.731Z",
+  "timestamp": "2026-06-16T08:11:04.831Z",
   "tournament_stage": "Pre-Tournament",
   "leaderboard": [
     {
       "name": "Rajdeep Singh",
       "team1": {
         "name": "France",
-        "probability": 0.17862838915470494
+        "probability": 0.18181818181818182
       },
       "team2": {
         "name": "New Zealand",
         "probability": 0.0008331112591605596
       },
-      "total_probability": 0.1794615004138655,
+      "total_probability": 0.18265129307734237,
       "change_from_last_week": 0,
       "rank": 1
     },
@@ -20,13 +20,13 @@
       "name": "Ian Whelan",
       "team1": {
         "name": "Spain",
-        "probability": 0.17424242424242425
+        "probability": 0.16666666666666669
       },
       "team2": {
         "name": "Qatar",
         "probability": 0.0009995004995004995
       },
-      "total_probability": 0.17524192474192476,
+      "total_probability": 0.1676661671661672,
       "change_from_last_week": 0,
       "rank": 2
     },
@@ -34,55 +34,55 @@
       "name": "Tina Buckley",
       "team1": {
         "name": "England",
-        "probability": 0.12462006079027355
+        "probability": 0.12577639751552794
       },
       "team2": {
         "name": "Egypt",
-        "probability": 0.0023460610749556276
+        "probability": 0.003449100650593188
       },
-      "total_probability": 0.12696612186522918,
-      "change_from_last_week": 0,
+      "total_probability": 0.12922549816612114,
+      "change_from_last_week": -0.00012541806020066604,
       "rank": 3
     },
     {
-      "name": "Caitlin Kilcoyne",
+      "name": "Nathan Nekrews",
       "team1": {
-        "name": "Brazil",
-        "probability": 0.09545454545454546
+        "name": "Germany",
+        "probability": 0.0707196029776675
       },
       "team2": {
-        "name": "Saudi Arabia",
-        "probability": 0.0009995004995004995
+        "name": "Norway",
+        "probability": 0.029741379310344828
       },
-      "total_probability": 0.09645404595404596,
-      "change_from_last_week": 0,
+      "total_probability": 0.10046098228801233,
+      "change_from_last_week": 0.000595238095238107,
       "rank": 4
     },
     {
       "name": "Nicholas Burgoyne",
       "team1": {
         "name": "Argentina",
-        "probability": 0.09166666666666667
+        "probability": 0.09
       },
       "team2": {
         "name": "Panama",
         "probability": 0.0009995004995004995
       },
-      "total_probability": 0.09266616716616717,
+      "total_probability": 0.0909995004995005,
       "change_from_last_week": 0,
       "rank": 5
     },
     {
-      "name": "Nathan Nekrews",
+      "name": "Caitlin Kilcoyne",
       "team1": {
-        "name": "Germany",
-        "probability": 0.06111111111111111
+        "name": "Brazil",
+        "probability": 0.08116883116883117
       },
       "team2": {
-        "name": "Norway",
-        "probability": 0.02914614121510673
+        "name": "Saudi Arabia",
+        "probability": 0.001498003992015968
       },
-      "total_probability": 0.09025725232621784,
+      "total_probability": 0.08266683516084714,
       "change_from_last_week": 0,
       "rank": 6
     },
@@ -90,13 +90,13 @@
       "name": "Emma Ryan",
       "team1": {
         "name": "Netherlands",
-        "probability": 0.05012531328320802
+        "probability": 0.05131578947368421
       },
       "team2": {
         "name": "Algeria",
-        "probability": 0.002327796234772979
+        "probability": 0.0024423795681063126
       },
-      "total_probability": 0.052453109517980996,
+      "total_probability": 0.053758169041790524,
       "change_from_last_week": 0,
       "rank": 7
     },
@@ -104,125 +104,125 @@
       "name": "Catherine Swain",
       "team1": {
         "name": "Belgium",
-        "probability": 0.02811094452773613
+        "probability": 0.021286031042128603
       },
       "team2": {
         "name": "Sweden",
-        "probability": 0.007839506172839506
+        "probability": 0.009506172839506173
       },
-      "total_probability": 0.035950450700575634,
-      "change_from_last_week": -0.00005747126436782268,
+      "total_probability": 0.030792203881634776,
+      "change_from_last_week": -0.000909090909090908,
       "rank": 8
-    },
-    {
-      "name": "Logan Garwood",
-      "team1": {
-        "name": "Colombia",
-        "probability": 0.019337979094076654
-      },
-      "team2": {
-        "name": "Czechia",
-        "probability": 0.0022861295681063125
-      },
-      "total_probability": 0.021624108662182968,
-      "change_from_last_week": 0,
-      "rank": 9
     },
     {
       "name": "Yousaf Mahmood",
       "team1": {
         "name": "Morocco",
-        "probability": 0.017496229260935144
+        "probability": 0.02661064425770308
       },
       "team2": {
         "name": "Paraguay",
-        "probability": 0.003860708827596245
+        "probability": 0.0019245014245014246
       },
-      "total_probability": 0.02135693808853139,
+      "total_probability": 0.028535145682204506,
       "change_from_last_week": 0,
-      "rank": 10
+      "rank": 9
     },
     {
       "name": "Julie Hulme",
       "team1": {
         "name": "USA",
-        "probability": 0.01889483065953654
+        "probability": 0.02261178861788618
       },
       "team2": {
         "name": "Jordan",
         "probability": 0.0007498750624687656
       },
-      "total_probability": 0.019644705722005308,
-      "change_from_last_week": 0.000757575757575759,
-      "rank": 11
-    },
-    {
-      "name": "Andrew Turner",
-      "team1": {
-        "name": "Mexico",
-        "probability": 0.017496229260935144
-      },
-      "team2": {
-        "name": "Tunisia",
-        "probability": 0.001498003992015968
-      },
-      "total_probability": 0.01899423325295111,
-      "change_from_last_week": 0,
-      "rank": 12
+      "total_probability": 0.023361663680354947,
+      "change_from_last_week": 0.00041666666666666935,
+      "rank": 10
     },
     {
       "name": "Allan Chan",
       "team1": {
         "name": "Japan",
-        "probability": 0.016946778711484593
+        "probability": 0.020528455284552848
       },
       "team2": {
         "name": "Haiti",
-        "probability": 0.0009995004995004995
+        "probability": 0.0007498750624687656
       },
-      "total_probability": 0.017946279210985093,
-      "change_from_last_week": -0.000549450549450551,
-      "rank": 13
+      "total_probability": 0.021278330347021614,
+      "change_from_last_week": 0,
+      "rank": 11
     },
     {
-      "name": "Dave Moseley",
+      "name": "Logan Garwood",
       "team1": {
-        "name": "Ecuador",
-        "probability": 0.010718294051627384
+        "name": "Colombia",
+        "probability": 0.018445121951219515
       },
       "team2": {
-        "name": "Ivory Coast",
-        "probability": 0.00482640979329721
+        "name": "Czechia",
+        "probability": 0.0021987639767084627
       },
-      "total_probability": 0.015544703844924596,
-      "change_from_last_week": 0.0003787878787878812,
-      "rank": 14
+      "total_probability": 0.020643885927927978,
+      "change_from_last_week": -0.0004604276069017227,
+      "rank": 12
+    },
+    {
+      "name": "Andrew Turner",
+      "team1": {
+        "name": "Mexico",
+        "probability": 0.01605392156862745
+      },
+      "team2": {
+        "name": "Tunisia",
+        "probability": 0.001498003992015968
+      },
+      "total_probability": 0.017551925560643417,
+      "change_from_last_week": -0.00041666666666666935,
+      "rank": 13
     },
     {
       "name": "Joshua Kidd",
       "team1": {
         "name": "Croatia",
-        "probability": 0.010018993352326686
+        "probability": 0.009506172839506173
       },
       "team2": {
         "name": "Scotland",
-        "probability": 0.004739829706717124
+        "probability": 0.004501734468621886
       },
-      "total_probability": 0.014758823059043809,
+      "total_probability": 0.01400790730812806,
+      "change_from_last_week": 0,
+      "rank": 14
+    },
+    {
+      "name": "Dave Moseley",
+      "team1": {
+        "name": "Ecuador",
+        "probability": 0.006089036055923473
+      },
+      "team2": {
+        "name": "Ivory Coast",
+        "probability": 0.005811258278145695
+      },
+      "total_probability": 0.011900294334069169,
       "change_from_last_week": 0,
       "rank": 15
     },
     {
-      "name": "Tim Copland",
+      "name": "Bryn Mills",
       "team1": {
-        "name": "Turkey",
-        "probability": 0.01117283950617284
+        "name": "Australia",
+        "probability": 0.00807549504950495
       },
       "team2": {
-        "name": "Curaçao",
-        "probability": 0.0007498750624687656
+        "name": "DR Congo",
+        "probability": 0.0011657789613848204
       },
-      "total_probability": 0.011922714568641605,
+      "total_probability": 0.00924127401088977,
       "change_from_last_week": 0,
       "rank": 16
     },
@@ -230,29 +230,43 @@
       "name": "Shirlee Scott",
       "team1": {
         "name": "Austria",
-        "probability": 0.0068023469013568025
+        "probability": 0.006950495049504951
       },
       "team2": {
         "name": "Cape Verde",
         "probability": 0.0009995004995004995
       },
-      "total_probability": 0.007801847400857302,
+      "total_probability": 0.00794999554900545,
       "change_from_last_week": 0,
       "rank": 17
+    },
+    {
+      "name": "Tim Copland",
+      "team1": {
+        "name": "Turkey",
+        "probability": 0.005811258278145695
+      },
+      "team2": {
+        "name": "Curaçao",
+        "probability": 0.0007498750624687656
+      },
+      "total_probability": 0.006561133340614461,
+      "change_from_last_week": -0.00013157894736842094,
+      "rank": 18
     },
     {
       "name": "Peter Lees",
       "team1": {
         "name": "South Korea",
-        "probability": 0.0034206033010813885
+        "probability": 0.003658698539176627
       },
       "team2": {
         "name": "Uzbekistan",
         "probability": 0.0008331112591605596
       },
-      "total_probability": 0.004253714560241948,
-      "change_from_last_week": 0,
-      "rank": 18
+      "total_probability": 0.0044918097983371865,
+      "change_from_last_week": 0.000053763440860215596,
+      "rank": 19
     },
     {
       "name": "Anugrah Sebastian",
@@ -262,24 +276,10 @@
       },
       "team2": {
         "name": "Ghana",
-        "probability": 0.002547587428065516
+        "probability": 0.0020342575220624
       },
-      "total_probability": 0.004045591420081484,
-      "change_from_last_week": 0,
-      "rank": 19
-    },
-    {
-      "name": "Bryn Mills",
-      "team1": {
-        "name": "Australia",
-        "probability": 0.0023832464293810926
-      },
-      "team2": {
-        "name": "DR Congo",
-        "probability": 0.0011657789613848204
-      },
-      "total_probability": 0.003549025390765913,
-      "change_from_last_week": 0,
+      "total_probability": 0.003532261514078368,
+      "change_from_last_week": 0.000028360748723766423,
       "rank": 20
     }
   ],
@@ -288,298 +288,364 @@
       "name": "Spain",
       "group": "H",
       "confederation": "UEFA",
-      "win_probability": 0.17424242424242425,
+      "win_probability": 0.16666666666666669,
       "status": "active",
       "owner": "Ian Whelan",
       "rank": 1,
-      "bookmaker_win_probability": 0.17424242424242425,
-      "simulated_win_probability": 0.2559
+      "bookmaker_win_probability": 0.16666666666666669,
+      "simulated_win_probability": 0.2658
     },
     {
       "name": "France",
       "group": "I",
       "confederation": "UEFA",
-      "win_probability": 0.17862838915470494,
+      "win_probability": 0.18181818181818182,
       "status": "active",
       "owner": "Rajdeep Singh",
       "rank": 2,
-      "bookmaker_win_probability": 0.17862838915470494,
-      "simulated_win_probability": 0.1651
+      "bookmaker_win_probability": 0.18181818181818182,
+      "simulated_win_probability": 0.1653
     },
     {
       "name": "Argentina",
       "group": "J",
       "confederation": "CONMEBOL",
-      "win_probability": 0.09166666666666667,
+      "win_probability": 0.09,
       "status": "active",
       "owner": "Nicholas Burgoyne",
       "rank": 3,
-      "bookmaker_win_probability": 0.09166666666666667,
-      "simulated_win_probability": 0.1473
+      "bookmaker_win_probability": 0.09,
+      "simulated_win_probability": 0.1503
     },
     {
       "name": "England",
       "group": "L",
       "confederation": "UEFA",
-      "win_probability": 0.12462006079027355,
+      "win_probability": 0.12577639751552794,
       "status": "active",
       "owner": "Tina Buckley",
       "rank": 4,
-      "bookmaker_win_probability": 0.12462006079027355,
-      "simulated_win_probability": 0.0884
+      "bookmaker_win_probability": 0.12577639751552794,
+      "simulated_win_probability": 0.0879
     },
     {
       "name": "Brazil",
       "group": "C",
       "confederation": "CONMEBOL",
-      "win_probability": 0.09545454545454546,
+      "win_probability": 0.08116883116883117,
       "status": "active",
       "owner": "Caitlin Kilcoyne",
       "rank": 5,
-      "bookmaker_win_probability": 0.09545454545454546,
-      "simulated_win_probability": 0.0614
+      "bookmaker_win_probability": 0.08116883116883117,
+      "simulated_win_probability": 0.0506
     },
     {
       "name": "Portugal",
       "group": "K",
       "confederation": "UEFA",
-      "win_probability": 0.11458333333333334,
+      "win_probability": 0.11569148936170212,
       "status": "active",
       "owner": null,
       "rank": 6,
-      "bookmaker_win_probability": 0.11458333333333334,
-      "simulated_win_probability": 0.0474
-    },
-    {
-      "name": "Netherlands",
-      "group": "F",
-      "confederation": "UEFA",
-      "win_probability": 0.05012531328320802,
-      "status": "active",
-      "owner": "Emma Ryan",
-      "rank": 7,
-      "bookmaker_win_probability": 0.05012531328320802,
-      "simulated_win_probability": 0.0438
-    },
-    {
-      "name": "Belgium",
-      "group": "G",
-      "confederation": "UEFA",
-      "win_probability": 0.02811094452773613,
-      "status": "active",
-      "owner": "Catherine Swain",
-      "rank": 8,
-      "bookmaker_win_probability": 0.02811094452773613,
-      "simulated_win_probability": 0.0372
+      "bookmaker_win_probability": 0.11569148936170212,
+      "simulated_win_probability": 0.0484
     },
     {
       "name": "Germany",
       "group": "E",
       "confederation": "UEFA",
-      "win_probability": 0.06111111111111111,
+      "win_probability": 0.0707196029776675,
       "status": "active",
       "owner": "Nathan Nekrews",
+      "rank": 7,
+      "bookmaker_win_probability": 0.0707196029776675,
+      "simulated_win_probability": 0.0362
+    },
+    {
+      "name": "Netherlands",
+      "group": "F",
+      "confederation": "UEFA",
+      "win_probability": 0.05131578947368421,
+      "status": "active",
+      "owner": "Emma Ryan",
+      "rank": 8,
+      "bookmaker_win_probability": 0.05131578947368421,
+      "simulated_win_probability": 0.0358
+    },
+    {
+      "name": "Belgium",
+      "group": "G",
+      "confederation": "UEFA",
+      "win_probability": 0.021286031042128603,
+      "status": "active",
+      "owner": "Catherine Swain",
       "rank": 9,
-      "bookmaker_win_probability": 0.06111111111111111,
-      "simulated_win_probability": 0.0317
+      "bookmaker_win_probability": 0.021286031042128603,
+      "simulated_win_probability": 0.0301
     },
     {
       "name": "Colombia",
       "group": "K",
       "confederation": "CONMEBOL",
-      "win_probability": 0.019337979094076654,
+      "win_probability": 0.018445121951219515,
       "status": "active",
       "owner": "Logan Garwood",
       "rank": 10,
-      "bookmaker_win_probability": 0.019337979094076654,
-      "simulated_win_probability": 0.0223
-    },
-    {
-      "name": "Croatia",
-      "group": "L",
-      "confederation": "UEFA",
-      "win_probability": 0.010018993352326686,
-      "status": "active",
-      "owner": "Joshua Kidd",
-      "rank": 11,
-      "bookmaker_win_probability": 0.010018993352326686,
-      "simulated_win_probability": 0.0151
-    },
-    {
-      "name": "Uruguay",
-      "group": "H",
-      "confederation": "CONMEBOL",
-      "win_probability": 0.012008141112618723,
-      "status": "active",
-      "owner": null,
-      "rank": 12,
-      "bookmaker_win_probability": 0.012008141112618723,
-      "simulated_win_probability": 0.012
+      "bookmaker_win_probability": 0.018445121951219515,
+      "simulated_win_probability": 0.0214
     },
     {
       "name": "Morocco",
       "group": "C",
       "confederation": "CAF",
-      "win_probability": 0.017496229260935144,
+      "win_probability": 0.02661064425770308,
       "status": "active",
       "owner": "Yousaf Mahmood",
-      "rank": 13,
-      "bookmaker_win_probability": 0.017496229260935144,
-      "simulated_win_probability": 0.0116
+      "rank": 11,
+      "bookmaker_win_probability": 0.02661064425770308,
+      "simulated_win_probability": 0.0191
+    },
+    {
+      "name": "Croatia",
+      "group": "L",
+      "confederation": "UEFA",
+      "win_probability": 0.009506172839506173,
+      "status": "active",
+      "owner": "Joshua Kidd",
+      "rank": 12,
+      "bookmaker_win_probability": 0.009506172839506173,
+      "simulated_win_probability": 0.013
     },
     {
       "name": "Japan",
       "group": "F",
       "confederation": "AFC",
-      "win_probability": 0.016946778711484593,
+      "win_probability": 0.020528455284552848,
       "status": "active",
       "owner": "Allan Chan",
+      "rank": 13,
+      "bookmaker_win_probability": 0.020528455284552848,
+      "simulated_win_probability": 0.0122
+    },
+    {
+      "name": "Uruguay",
+      "group": "H",
+      "confederation": "CONMEBOL",
+      "win_probability": 0.011308840413318026,
+      "status": "active",
+      "owner": null,
       "rank": 14,
-      "bookmaker_win_probability": 0.016946778711484593,
-      "simulated_win_probability": 0.0091
+      "bookmaker_win_probability": 0.011308840413318026,
+      "simulated_win_probability": 0.0094
     },
     {
       "name": "USA",
       "group": "D",
       "confederation": "CONCACAF",
-      "win_probability": 0.01889483065953654,
+      "win_probability": 0.02261178861788618,
       "status": "active",
       "owner": "Julie Hulme",
       "rank": 15,
-      "bookmaker_win_probability": 0.01889483065953654,
-      "simulated_win_probability": 0.0079
-    },
-    {
-      "name": "Senegal",
-      "group": "I",
-      "confederation": "CAF",
-      "win_probability": 0.00807549504950495,
-      "status": "active",
-      "owner": null,
-      "rank": 16,
-      "bookmaker_win_probability": 0.00807549504950495,
-      "simulated_win_probability": 0.0069
-    },
-    {
-      "name": "Mexico",
-      "group": "A",
-      "confederation": "CONCACAF",
-      "win_probability": 0.017496229260935144,
-      "status": "active",
-      "owner": "Andrew Turner",
-      "rank": 17,
-      "bookmaker_win_probability": 0.017496229260935144,
-      "simulated_win_probability": 0.0061
-    },
-    {
-      "name": "Norway",
-      "group": "I",
-      "confederation": "UEFA",
-      "win_probability": 0.02914614121510673,
-      "status": "active",
-      "owner": "Nathan Nekrews",
-      "rank": 18,
-      "bookmaker_win_probability": 0.02914614121510673,
-      "simulated_win_probability": 0.0059
+      "bookmaker_win_probability": 0.02261178861788618,
+      "simulated_win_probability": 0.0091
     },
     {
       "name": "Switzerland",
       "group": "B",
       "confederation": "UEFA",
-      "win_probability": 0.01568627450980392,
+      "win_probability": 0.014349376114081996,
+      "status": "active",
+      "owner": null,
+      "rank": 16,
+      "bookmaker_win_probability": 0.014349376114081996,
+      "simulated_win_probability": 0.0064
+    },
+    {
+      "name": "Norway",
+      "group": "I",
+      "confederation": "UEFA",
+      "win_probability": 0.029741379310344828,
+      "status": "active",
+      "owner": "Nathan Nekrews",
+      "rank": 17,
+      "bookmaker_win_probability": 0.029741379310344828,
+      "simulated_win_probability": 0.0061
+    },
+    {
+      "name": "Mexico",
+      "group": "A",
+      "confederation": "CONCACAF",
+      "win_probability": 0.01605392156862745,
+      "status": "active",
+      "owner": "Andrew Turner",
+      "rank": 18,
+      "bookmaker_win_probability": 0.01605392156862745,
+      "simulated_win_probability": 0.0056
+    },
+    {
+      "name": "Senegal",
+      "group": "I",
+      "confederation": "CAF",
+      "win_probability": 0.009117161716171617,
       "status": "active",
       "owner": null,
       "rank": 19,
-      "bookmaker_win_probability": 0.01568627450980392,
-      "simulated_win_probability": 0.0052
-    },
-    {
-      "name": "Turkey",
-      "group": "D",
-      "confederation": "UEFA",
-      "win_probability": 0.01117283950617284,
-      "status": "active",
-      "owner": "Tim Copland",
-      "rank": 20,
-      "bookmaker_win_probability": 0.01117283950617284,
-      "simulated_win_probability": 0.0033
-    },
-    {
-      "name": "Ecuador",
-      "group": "E",
-      "confederation": "CONMEBOL",
-      "win_probability": 0.010718294051627384,
-      "status": "active",
-      "owner": "Dave Moseley",
-      "rank": 21,
-      "bookmaker_win_probability": 0.010718294051627384,
-      "simulated_win_probability": 0.0032
-    },
-    {
-      "name": "Austria",
-      "group": "J",
-      "confederation": "UEFA",
-      "win_probability": 0.0068023469013568025,
-      "status": "active",
-      "owner": "Shirlee Scott",
-      "rank": 22,
-      "bookmaker_win_probability": 0.0068023469013568025,
-      "simulated_win_probability": 0.0023
+      "bookmaker_win_probability": 0.009117161716171617,
+      "simulated_win_probability": 0.005
     },
     {
       "name": "Ivory Coast",
       "group": "E",
       "confederation": "CAF",
-      "win_probability": 0.00482640979329721,
+      "win_probability": 0.005811258278145695,
       "status": "active",
       "owner": "Dave Moseley",
-      "rank": 23,
-      "bookmaker_win_probability": 0.00482640979329721,
-      "simulated_win_probability": 0.0018
+      "rank": 20,
+      "bookmaker_win_probability": 0.005811258278145695,
+      "simulated_win_probability": 0.0033
+    },
+    {
+      "name": "Austria",
+      "group": "J",
+      "confederation": "UEFA",
+      "win_probability": 0.006950495049504951,
+      "status": "active",
+      "owner": "Shirlee Scott",
+      "rank": 21,
+      "bookmaker_win_probability": 0.006950495049504951,
+      "simulated_win_probability": 0.003
     },
     {
       "name": "Egypt",
       "group": "G",
       "confederation": "CAF",
-      "win_probability": 0.0023460610749556276,
+      "win_probability": 0.003449100650593188,
       "status": "active",
       "owner": "Tina Buckley",
-      "rank": 24,
-      "bookmaker_win_probability": 0.0023460610749556276,
-      "simulated_win_probability": 0.0018
+      "rank": 22,
+      "bookmaker_win_probability": 0.003449100650593188,
+      "simulated_win_probability": 0.0029
     },
     {
       "name": "Sweden",
       "group": "F",
       "confederation": "UEFA",
-      "win_probability": 0.007839506172839506,
+      "win_probability": 0.009506172839506173,
       "status": "active",
       "owner": "Catherine Swain",
-      "rank": 25,
-      "bookmaker_win_probability": 0.007839506172839506,
-      "simulated_win_probability": 0.0016
+      "rank": 23,
+      "bookmaker_win_probability": 0.009506172839506173,
+      "simulated_win_probability": 0.0023
     },
     {
-      "name": "Algeria",
-      "group": "J",
-      "confederation": "CAF",
-      "win_probability": 0.002327796234772979,
+      "name": "Ecuador",
+      "group": "E",
+      "confederation": "CONMEBOL",
+      "win_probability": 0.006089036055923473,
       "status": "active",
-      "owner": "Emma Ryan",
+      "owner": "Dave Moseley",
+      "rank": 24,
+      "bookmaker_win_probability": 0.006089036055923473,
+      "simulated_win_probability": 0.0022
+    },
+    {
+      "name": "Turkey",
+      "group": "D",
+      "confederation": "UEFA",
+      "win_probability": 0.005811258278145695,
+      "status": "active",
+      "owner": "Tim Copland",
+      "rank": 25,
+      "bookmaker_win_probability": 0.005811258278145695,
+      "simulated_win_probability": 0.0018
+    },
+    {
+      "name": "South Korea",
+      "group": "A",
+      "confederation": "AFC",
+      "win_probability": 0.003658698539176627,
+      "status": "active",
+      "owner": "Peter Lees",
       "rank": 26,
-      "bookmaker_win_probability": 0.002327796234772979,
+      "bookmaker_win_probability": 0.003658698539176627,
       "simulated_win_probability": 0.0014
     },
     {
       "name": "Scotland",
       "group": "C",
       "confederation": "UEFA",
-      "win_probability": 0.004739829706717124,
+      "win_probability": 0.004501734468621886,
       "status": "active",
       "owner": "Joshua Kidd",
       "rank": 27,
-      "bookmaker_win_probability": 0.004739829706717124,
-      "simulated_win_probability": 0.0008
+      "bookmaker_win_probability": 0.004501734468621886,
+      "simulated_win_probability": 0.001
+    },
+    {
+      "name": "Algeria",
+      "group": "J",
+      "confederation": "CAF",
+      "win_probability": 0.0024423795681063126,
+      "status": "active",
+      "owner": "Emma Ryan",
+      "rank": 28,
+      "bookmaker_win_probability": 0.0024423795681063126,
+      "simulated_win_probability": 0.001
+    },
+    {
+      "name": "Australia",
+      "group": "D",
+      "confederation": "AFC",
+      "win_probability": 0.00807549504950495,
+      "status": "active",
+      "owner": "Bryn Mills",
+      "rank": 29,
+      "bookmaker_win_probability": 0.00807549504950495,
+      "simulated_win_probability": 0.0009
+    },
+    {
+      "name": "Canada",
+      "group": "B",
+      "confederation": "CONCACAF",
+      "win_probability": 0.005284043441938178,
+      "status": "active",
+      "owner": null,
+      "rank": 30,
+      "bookmaker_win_probability": 0.005284043441938178,
+      "simulated_win_probability": 0.0007
+    },
+    {
+      "name": "Paraguay",
+      "group": "D",
+      "confederation": "CONMEBOL",
+      "win_probability": 0.0019245014245014246,
+      "status": "active",
+      "owner": "Yousaf Mahmood",
+      "rank": 31,
+      "bookmaker_win_probability": 0.0019245014245014246,
+      "simulated_win_probability": 0.0006
+    },
+    {
+      "name": "Czechia",
+      "group": "A",
+      "confederation": "UEFA",
+      "win_probability": 0.0021987639767084627,
+      "status": "active",
+      "owner": "Logan Garwood",
+      "rank": 32,
+      "bookmaker_win_probability": 0.0021987639767084627,
+      "simulated_win_probability": 0.0005
+    },
+    {
+      "name": "Ghana",
+      "group": "L",
+      "confederation": "CAF",
+      "win_probability": 0.0020342575220624,
+      "status": "active",
+      "owner": "Anugrah Sebastian",
+      "rank": 33,
+      "bookmaker_win_probability": 0.0020342575220624,
+      "simulated_win_probability": 0.0003
     },
     {
       "name": "Iran",
@@ -588,86 +654,20 @@
       "win_probability": 0.001498003992015968,
       "status": "active",
       "owner": "Anugrah Sebastian",
-      "rank": 28,
+      "rank": 34,
       "bookmaker_win_probability": 0.001498003992015968,
-      "simulated_win_probability": 0.0007
-    },
-    {
-      "name": "Ghana",
-      "group": "L",
-      "confederation": "CAF",
-      "win_probability": 0.002547587428065516,
-      "status": "active",
-      "owner": "Anugrah Sebastian",
-      "rank": 29,
-      "bookmaker_win_probability": 0.002547587428065516,
-      "simulated_win_probability": 0.0005
-    },
-    {
-      "name": "Paraguay",
-      "group": "D",
-      "confederation": "CONMEBOL",
-      "win_probability": 0.003860708827596245,
-      "status": "active",
-      "owner": "Yousaf Mahmood",
-      "rank": 30,
-      "bookmaker_win_probability": 0.003860708827596245,
-      "simulated_win_probability": 0.0004
-    },
-    {
-      "name": "South Korea",
-      "group": "A",
-      "confederation": "AFC",
-      "win_probability": 0.0034206033010813885,
-      "status": "active",
-      "owner": "Peter Lees",
-      "rank": 31,
-      "bookmaker_win_probability": 0.0034206033010813885,
-      "simulated_win_probability": 0.0004
-    },
-    {
-      "name": "Canada",
-      "group": "B",
-      "confederation": "CONCACAF",
-      "win_probability": 0.00503208375548801,
-      "status": "active",
-      "owner": null,
-      "rank": 32,
-      "bookmaker_win_probability": 0.00503208375548801,
-      "simulated_win_probability": 0.0003
+      "simulated_win_probability": 0.0002
     },
     {
       "name": "Bosnia and Herzegovina",
       "group": "B",
       "confederation": "UEFA",
-      "win_probability": 0.002601787970070936,
+      "win_probability": 0.00249203187250996,
       "status": "active",
       "owner": null,
-      "rank": 33,
-      "bookmaker_win_probability": 0.002601787970070936,
-      "simulated_win_probability": 0.0002
-    },
-    {
-      "name": "Australia",
-      "group": "D",
-      "confederation": "AFC",
-      "win_probability": 0.0023832464293810926,
-      "status": "active",
-      "owner": "Bryn Mills",
-      "rank": 34,
-      "bookmaker_win_probability": 0.0023832464293810926,
-      "simulated_win_probability": 0.0002
-    },
-    {
-      "name": "Tunisia",
-      "group": "F",
-      "confederation": "CAF",
-      "win_probability": 0.001498003992015968,
-      "status": "active",
-      "owner": "Andrew Turner",
       "rank": 35,
-      "bookmaker_win_probability": 0.001498003992015968,
-      "simulated_win_probability": 0.0002
+      "bookmaker_win_probability": 0.00249203187250996,
+      "simulated_win_probability": 0.0001
     },
     {
       "name": "DR Congo",
@@ -678,61 +678,28 @@
       "owner": "Bryn Mills",
       "rank": 36,
       "bookmaker_win_probability": 0.0011657789613848204,
-      "simulated_win_probability": 0.0002
+      "simulated_win_probability": 0.0001
     },
     {
-      "name": "South Africa",
-      "group": "A",
+      "name": "Tunisia",
+      "group": "F",
       "confederation": "CAF",
       "win_probability": 0.001498003992015968,
       "status": "active",
-      "owner": null,
+      "owner": "Andrew Turner",
       "rank": 37,
       "bookmaker_win_probability": 0.001498003992015968,
-      "simulated_win_probability": 0.0001
-    },
-    {
-      "name": "Cape Verde",
-      "group": "H",
-      "confederation": "CAF",
-      "win_probability": 0.0009995004995004995,
-      "status": "active",
-      "owner": "Shirlee Scott",
-      "rank": 38,
-      "bookmaker_win_probability": 0.0009995004995004995,
-      "simulated_win_probability": 0.0001
+      "simulated_win_probability": 0
     },
     {
       "name": "Saudi Arabia",
       "group": "H",
       "confederation": "AFC",
-      "win_probability": 0.0009995004995004995,
+      "win_probability": 0.001498003992015968,
       "status": "active",
       "owner": "Caitlin Kilcoyne",
-      "rank": 39,
-      "bookmaker_win_probability": 0.0009995004995004995,
-      "simulated_win_probability": 0.0001
-    },
-    {
-      "name": "Panama",
-      "group": "L",
-      "confederation": "CONCACAF",
-      "win_probability": 0.0009995004995004995,
-      "status": "active",
-      "owner": "Nicholas Burgoyne",
-      "rank": 40,
-      "bookmaker_win_probability": 0.0009995004995004995,
-      "simulated_win_probability": 0.0001
-    },
-    {
-      "name": "Czechia",
-      "group": "A",
-      "confederation": "UEFA",
-      "win_probability": 0.0022861295681063125,
-      "status": "active",
-      "owner": "Logan Garwood",
-      "rank": 41,
-      "bookmaker_win_probability": 0.0022861295681063125,
+      "rank": 38,
+      "bookmaker_win_probability": 0.001498003992015968,
       "simulated_win_probability": 0
     },
     {
@@ -742,18 +709,18 @@
       "win_probability": 0.0009995004995004995,
       "status": "active",
       "owner": "Ian Whelan",
-      "rank": 42,
+      "rank": 39,
       "bookmaker_win_probability": 0.0009995004995004995,
       "simulated_win_probability": 0
     },
     {
-      "name": "Haiti",
-      "group": "C",
-      "confederation": "CONCACAF",
+      "name": "Cape Verde",
+      "group": "H",
+      "confederation": "CAF",
       "win_probability": 0.0009995004995004995,
       "status": "active",
-      "owner": "Allan Chan",
-      "rank": 43,
+      "owner": "Shirlee Scott",
+      "rank": 40,
       "bookmaker_win_probability": 0.0009995004995004995,
       "simulated_win_probability": 0
     },
@@ -764,8 +731,30 @@
       "win_probability": 0.0009995004995004995,
       "status": "active",
       "owner": null,
-      "rank": 44,
+      "rank": 41,
       "bookmaker_win_probability": 0.0009995004995004995,
+      "simulated_win_probability": 0
+    },
+    {
+      "name": "Panama",
+      "group": "L",
+      "confederation": "CONCACAF",
+      "win_probability": 0.0009995004995004995,
+      "status": "active",
+      "owner": "Nicholas Burgoyne",
+      "rank": 42,
+      "bookmaker_win_probability": 0.0009995004995004995,
+      "simulated_win_probability": 0
+    },
+    {
+      "name": "South Africa",
+      "group": "A",
+      "confederation": "CAF",
+      "win_probability": 0.0008331112591605596,
+      "status": "active",
+      "owner": null,
+      "rank": 43,
+      "bookmaker_win_probability": 0.0008331112591605596,
       "simulated_win_probability": 0
     },
     {
@@ -775,7 +764,7 @@
       "win_probability": 0.0008331112591605596,
       "status": "active",
       "owner": "Rajdeep Singh",
-      "rank": 45,
+      "rank": 44,
       "bookmaker_win_probability": 0.0008331112591605596,
       "simulated_win_probability": 0
     },
@@ -786,8 +775,19 @@
       "win_probability": 0.0008331112591605596,
       "status": "active",
       "owner": "Peter Lees",
-      "rank": 46,
+      "rank": 45,
       "bookmaker_win_probability": 0.0008331112591605596,
+      "simulated_win_probability": 0
+    },
+    {
+      "name": "Haiti",
+      "group": "C",
+      "confederation": "CONCACAF",
+      "win_probability": 0.0007498750624687656,
+      "status": "active",
+      "owner": "Allan Chan",
+      "rank": 46,
+      "bookmaker_win_probability": 0.0007498750624687656,
       "simulated_win_probability": 0
     },
     {
@@ -894,11 +894,15 @@
       "home_owner": "Ian Whelan",
       "away_owner": null,
       "commence_time": "2026-06-13T19:00:00Z",
-      "home_win_prob": 0.0636042402826855,
-      "draw_prob": 0.14134275618374556,
-      "away_win_prob": 0.7950530035335689,
+      "home_win_prob": 0,
+      "draw_prob": 1,
+      "away_win_prob": 0,
       "venue": "san_francisco",
-      "actual_result": null
+      "actual_result": {
+        "home_score": 1,
+        "away_score": 1,
+        "completed": true
+      }
     },
     {
       "matchday": 1,
@@ -908,11 +912,15 @@
       "home_owner": "Caitlin Kilcoyne",
       "away_owner": "Yousaf Mahmood",
       "commence_time": "2026-06-13T23:00:00Z",
-      "home_win_prob": 0.5687203791469194,
-      "draw_prob": 0.2606635071090047,
-      "away_win_prob": 0.17061611374407581,
+      "home_win_prob": 0,
+      "draw_prob": 1,
+      "away_win_prob": 0,
       "venue": "new_york",
-      "actual_result": null
+      "actual_result": {
+        "home_score": 1,
+        "away_score": 1,
+        "completed": true
+      }
     },
     {
       "matchday": 1,
@@ -922,11 +930,15 @@
       "home_owner": "Allan Chan",
       "away_owner": "Joshua Kidd",
       "commence_time": "2026-06-14T01:00:00Z",
-      "home_win_prob": 0.16843879668049794,
-      "draw_prob": 0.21395228215767634,
-      "away_win_prob": 0.6176089211618258,
+      "home_win_prob": 0,
+      "draw_prob": 0,
+      "away_win_prob": 1,
       "venue": "boston",
-      "actual_result": null
+      "actual_result": {
+        "home_score": 0,
+        "away_score": 1,
+        "completed": true
+      }
     },
     {
       "matchday": 1,
@@ -936,11 +948,15 @@
       "home_owner": "Bryn Mills",
       "away_owner": "Tim Copland",
       "commence_time": "2026-06-14T04:00:00Z",
-      "home_win_prob": 0.17625701861780724,
-      "draw_prob": 0.25381010680964244,
-      "away_win_prob": 0.5699328745725505,
+      "home_win_prob": 1,
+      "draw_prob": 0,
+      "away_win_prob": 0,
       "venue": "vancouver",
-      "actual_result": null
+      "actual_result": {
+        "home_score": 2,
+        "away_score": 0,
+        "completed": true
+      }
     },
     {
       "matchday": 1,
@@ -950,11 +966,15 @@
       "home_owner": "Nathan Nekrews",
       "away_owner": "Tim Copland",
       "commence_time": "2026-06-14T18:00:00Z",
-      "home_win_prob": 0.9213829301688726,
-      "draw_prob": 0.05043359196713829,
-      "away_win_prob": 0.028183477863989045,
+      "home_win_prob": 1,
+      "draw_prob": 0,
+      "away_win_prob": 0,
       "venue": "houston",
-      "actual_result": null
+      "actual_result": {
+        "home_score": 7,
+        "away_score": 1,
+        "completed": true
+      }
     },
     {
       "matchday": 1,
@@ -964,11 +984,15 @@
       "home_owner": "Emma Ryan",
       "away_owner": "Allan Chan",
       "commence_time": "2026-06-14T21:00:00Z",
-      "home_win_prob": 0.47646057855927393,
-      "draw_prob": 0.2654566080544526,
-      "away_win_prob": 0.25808281338627337,
+      "home_win_prob": 0,
+      "draw_prob": 1,
+      "away_win_prob": 0,
       "venue": "dallas",
-      "actual_result": null
+      "actual_result": {
+        "home_score": 2,
+        "away_score": 2,
+        "completed": true
+      }
     },
     {
       "matchday": 1,
@@ -978,11 +1002,15 @@
       "home_owner": "Dave Moseley",
       "away_owner": "Dave Moseley",
       "commence_time": "2026-06-15T00:00:00Z",
-      "home_win_prob": 0.2581105896755764,
-      "draw_prob": 0.3378902264843909,
-      "away_win_prob": 0.40399918384003264,
+      "home_win_prob": 1,
+      "draw_prob": 0,
+      "away_win_prob": 0,
       "venue": "philadelphia",
-      "actual_result": null
+      "actual_result": {
+        "home_score": 1,
+        "away_score": 0,
+        "completed": true
+      }
     },
     {
       "matchday": 1,
@@ -992,11 +1020,15 @@
       "home_owner": "Catherine Swain",
       "away_owner": "Andrew Turner",
       "commence_time": "2026-06-15T04:00:00Z",
-      "home_win_prob": 0.5085268132319704,
-      "draw_prob": 0.28354222313540167,
-      "away_win_prob": 0.2079309636326279,
+      "home_win_prob": 1,
+      "draw_prob": 0,
+      "away_win_prob": 0,
       "venue": "monterrey",
-      "actual_result": null
+      "actual_result": {
+        "home_score": 5,
+        "away_score": 1,
+        "completed": true
+      }
     },
     {
       "matchday": 1,
@@ -1006,11 +1038,15 @@
       "home_owner": "Ian Whelan",
       "away_owner": "Shirlee Scott",
       "commence_time": "2026-06-15T17:00:00Z",
-      "home_win_prob": 0.8805232094432924,
-      "draw_prob": 0.07851331950869357,
-      "away_win_prob": 0.04096347104801404,
+      "home_win_prob": 0,
+      "draw_prob": 1,
+      "away_win_prob": 0,
       "venue": "atlanta",
-      "actual_result": null
+      "actual_result": {
+        "home_score": 0,
+        "away_score": 0,
+        "completed": true
+      }
     },
     {
       "matchday": 1,
@@ -1020,11 +1056,15 @@
       "home_owner": "Catherine Swain",
       "away_owner": "Tina Buckley",
       "commence_time": "2026-06-15T23:00:00Z",
-      "home_win_prob": 0.5887158108222305,
-      "draw_prob": 0.24323258499760572,
-      "away_win_prob": 0.16805160418016396,
+      "home_win_prob": 0,
+      "draw_prob": 1,
+      "away_win_prob": 0,
       "venue": "vancouver",
-      "actual_result": null
+      "actual_result": {
+        "home_score": 1,
+        "away_score": 1,
+        "completed": true
+      }
     },
     {
       "matchday": 1,
@@ -1034,11 +1074,15 @@
       "home_owner": "Caitlin Kilcoyne",
       "away_owner": null,
       "commence_time": "2026-06-15T23:00:00Z",
-      "home_win_prob": 0.12362093929073965,
-      "draw_prob": 0.21412402879458367,
-      "away_win_prob": 0.6622550319146767,
+      "home_win_prob": 0,
+      "draw_prob": 1,
+      "away_win_prob": 0,
       "venue": "miami",
-      "actual_result": null
+      "actual_result": {
+        "home_score": 1,
+        "away_score": 1,
+        "completed": true
+      }
     },
     {
       "matchday": 1,
@@ -1048,11 +1092,15 @@
       "home_owner": "Anugrah Sebastian",
       "away_owner": "Rajdeep Singh",
       "commence_time": "2026-06-16T05:00:00Z",
-      "home_win_prob": 0.5171227705162839,
-      "draw_prob": 0.2794006610849175,
-      "away_win_prob": 0.20347656839879866,
+      "home_win_prob": 0,
+      "draw_prob": 1,
+      "away_win_prob": 0,
       "venue": "los_angeles",
-      "actual_result": null
+      "actual_result": {
+        "home_score": 2,
+        "away_score": 2,
+        "completed": true
+      }
     },
     {
       "matchday": 1,
@@ -1062,9 +1110,9 @@
       "home_owner": "Rajdeep Singh",
       "away_owner": null,
       "commence_time": "2026-06-16T20:00:00Z",
-      "home_win_prob": 0.6500776404176282,
-      "draw_prob": 0.2161921021250311,
-      "away_win_prob": 0.13373025745734066,
+      "home_win_prob": 0.6434584204004554,
+      "draw_prob": 0.21399079108005908,
+      "away_win_prob": 0.14255078851948552,
       "venue": "new_york",
       "actual_result": null
     },
@@ -1076,9 +1124,9 @@
       "home_owner": null,
       "away_owner": "Nathan Nekrews",
       "commence_time": "2026-06-16T23:00:00Z",
-      "home_win_prob": 0.05989586697846282,
-      "draw_prob": 0.13003707962429426,
-      "away_win_prob": 0.810067053397243,
+      "home_win_prob": 0.06029295098779049,
+      "draw_prob": 0.13089916990770303,
+      "away_win_prob": 0.8088078791045066,
       "venue": "boston",
       "actual_result": null
     },
@@ -1104,9 +1152,9 @@
       "home_owner": "Shirlee Scott",
       "away_owner": "Julie Hulme",
       "commence_time": "2026-06-17T08:00:00Z",
-      "home_win_prob": 0.725753243897075,
-      "draw_prob": 0.1702221244776776,
-      "away_win_prob": 0.10402463162524742,
+      "home_win_prob": 0.6866642573183954,
+      "draw_prob": 0.19660281893747744,
+      "away_win_prob": 0.11673292374412723,
       "venue": "san_francisco",
       "actual_result": null
     },
@@ -1118,9 +1166,9 @@
       "home_owner": null,
       "away_owner": "Bryn Mills",
       "commence_time": "2026-06-17T19:00:00Z",
-      "home_win_prob": 0.7397207634174459,
-      "draw_prob": 0.17080824900730116,
-      "away_win_prob": 0.08947098757525299,
+      "home_win_prob": 0.7397444519166105,
+      "draw_prob": 0.1735036987222596,
+      "away_win_prob": 0.0867518493611298,
       "venue": "houston",
       "actual_result": null
     },
@@ -1132,9 +1180,9 @@
       "home_owner": "Tina Buckley",
       "away_owner": "Joshua Kidd",
       "commence_time": "2026-06-17T22:00:00Z",
-      "home_win_prob": 0.5601138393532957,
-      "draw_prob": 0.25280813830270366,
-      "away_win_prob": 0.18707802234400076,
+      "home_win_prob": 0.5562078981521539,
+      "draw_prob": 0.2580186638650269,
+      "away_win_prob": 0.1857734379828194,
       "venue": "dallas",
       "actual_result": null
     },
@@ -1146,9 +1194,9 @@
       "home_owner": "Anugrah Sebastian",
       "away_owner": "Nicholas Burgoyne",
       "commence_time": "2026-06-18T00:00:00Z",
-      "home_win_prob": 0.43421052631578944,
-      "draw_prob": 0.28289473684210525,
-      "away_win_prob": 0.28289473684210525,
+      "home_win_prob": 0.4359404280501035,
+      "draw_prob": 0.2883913600946839,
+      "away_win_prob": 0.27566821185521256,
       "venue": "toronto",
       "actual_result": null
     },
@@ -1160,9 +1208,9 @@
       "home_owner": "Peter Lees",
       "away_owner": "Logan Garwood",
       "commence_time": "2026-06-18T04:00:00Z",
-      "home_win_prob": 0.10238645111624327,
-      "draw_prob": 0.20477290223248654,
-      "away_win_prob": 0.6928406466512702,
+      "home_win_prob": 0.09752321981424149,
+      "draw_prob": 0.20588235294117646,
+      "away_win_prob": 0.6965944272445821,
       "venue": "mexico_city",
       "actual_result": null
     }
@@ -1249,11 +1297,15 @@
         "home_owner": "Ian Whelan",
         "away_owner": null,
         "commence_time": "2026-06-13T19:00:00Z",
-        "home_win_prob": 0.0636042402826855,
-        "draw_prob": 0.14134275618374556,
-        "away_win_prob": 0.7950530035335689,
+        "home_win_prob": 0,
+        "draw_prob": 1,
+        "away_win_prob": 0,
         "venue": "san_francisco",
-        "actual_result": null
+        "actual_result": {
+          "home_score": 1,
+          "away_score": 1,
+          "completed": true
+        }
       },
       {
         "matchday": 1,
@@ -1263,11 +1315,15 @@
         "home_owner": "Caitlin Kilcoyne",
         "away_owner": "Yousaf Mahmood",
         "commence_time": "2026-06-13T23:00:00Z",
-        "home_win_prob": 0.5687203791469194,
-        "draw_prob": 0.2606635071090047,
-        "away_win_prob": 0.17061611374407581,
+        "home_win_prob": 0,
+        "draw_prob": 1,
+        "away_win_prob": 0,
         "venue": "new_york",
-        "actual_result": null
+        "actual_result": {
+          "home_score": 1,
+          "away_score": 1,
+          "completed": true
+        }
       },
       {
         "matchday": 1,
@@ -1277,11 +1333,15 @@
         "home_owner": "Allan Chan",
         "away_owner": "Joshua Kidd",
         "commence_time": "2026-06-14T01:00:00Z",
-        "home_win_prob": 0.16843879668049794,
-        "draw_prob": 0.21395228215767634,
-        "away_win_prob": 0.6176089211618258,
+        "home_win_prob": 0,
+        "draw_prob": 0,
+        "away_win_prob": 1,
         "venue": "boston",
-        "actual_result": null
+        "actual_result": {
+          "home_score": 0,
+          "away_score": 1,
+          "completed": true
+        }
       },
       {
         "matchday": 1,
@@ -1291,11 +1351,15 @@
         "home_owner": "Bryn Mills",
         "away_owner": "Tim Copland",
         "commence_time": "2026-06-14T04:00:00Z",
-        "home_win_prob": 0.17625701861780724,
-        "draw_prob": 0.25381010680964244,
-        "away_win_prob": 0.5699328745725505,
+        "home_win_prob": 1,
+        "draw_prob": 0,
+        "away_win_prob": 0,
         "venue": "vancouver",
-        "actual_result": null
+        "actual_result": {
+          "home_score": 2,
+          "away_score": 0,
+          "completed": true
+        }
       },
       {
         "matchday": 1,
@@ -1305,11 +1369,15 @@
         "home_owner": "Nathan Nekrews",
         "away_owner": "Tim Copland",
         "commence_time": "2026-06-14T18:00:00Z",
-        "home_win_prob": 0.9213829301688726,
-        "draw_prob": 0.05043359196713829,
-        "away_win_prob": 0.028183477863989045,
+        "home_win_prob": 1,
+        "draw_prob": 0,
+        "away_win_prob": 0,
         "venue": "houston",
-        "actual_result": null
+        "actual_result": {
+          "home_score": 7,
+          "away_score": 1,
+          "completed": true
+        }
       },
       {
         "matchday": 1,
@@ -1319,11 +1387,15 @@
         "home_owner": "Emma Ryan",
         "away_owner": "Allan Chan",
         "commence_time": "2026-06-14T21:00:00Z",
-        "home_win_prob": 0.47646057855927393,
-        "draw_prob": 0.2654566080544526,
-        "away_win_prob": 0.25808281338627337,
+        "home_win_prob": 0,
+        "draw_prob": 1,
+        "away_win_prob": 0,
         "venue": "dallas",
-        "actual_result": null
+        "actual_result": {
+          "home_score": 2,
+          "away_score": 2,
+          "completed": true
+        }
       },
       {
         "matchday": 1,
@@ -1333,11 +1405,15 @@
         "home_owner": "Dave Moseley",
         "away_owner": "Dave Moseley",
         "commence_time": "2026-06-15T00:00:00Z",
-        "home_win_prob": 0.2581105896755764,
-        "draw_prob": 0.3378902264843909,
-        "away_win_prob": 0.40399918384003264,
+        "home_win_prob": 1,
+        "draw_prob": 0,
+        "away_win_prob": 0,
         "venue": "philadelphia",
-        "actual_result": null
+        "actual_result": {
+          "home_score": 1,
+          "away_score": 0,
+          "completed": true
+        }
       },
       {
         "matchday": 1,
@@ -1347,11 +1423,15 @@
         "home_owner": "Catherine Swain",
         "away_owner": "Andrew Turner",
         "commence_time": "2026-06-15T04:00:00Z",
-        "home_win_prob": 0.5085268132319704,
-        "draw_prob": 0.28354222313540167,
-        "away_win_prob": 0.2079309636326279,
+        "home_win_prob": 1,
+        "draw_prob": 0,
+        "away_win_prob": 0,
         "venue": "monterrey",
-        "actual_result": null
+        "actual_result": {
+          "home_score": 5,
+          "away_score": 1,
+          "completed": true
+        }
       },
       {
         "matchday": 1,
@@ -1361,11 +1441,15 @@
         "home_owner": "Ian Whelan",
         "away_owner": "Shirlee Scott",
         "commence_time": "2026-06-15T17:00:00Z",
-        "home_win_prob": 0.8805232094432924,
-        "draw_prob": 0.07851331950869357,
-        "away_win_prob": 0.04096347104801404,
+        "home_win_prob": 0,
+        "draw_prob": 1,
+        "away_win_prob": 0,
         "venue": "atlanta",
-        "actual_result": null
+        "actual_result": {
+          "home_score": 0,
+          "away_score": 0,
+          "completed": true
+        }
       },
       {
         "matchday": 1,
@@ -1375,11 +1459,15 @@
         "home_owner": "Catherine Swain",
         "away_owner": "Tina Buckley",
         "commence_time": "2026-06-15T23:00:00Z",
-        "home_win_prob": 0.5887158108222305,
-        "draw_prob": 0.24323258499760572,
-        "away_win_prob": 0.16805160418016396,
+        "home_win_prob": 0,
+        "draw_prob": 1,
+        "away_win_prob": 0,
         "venue": "vancouver",
-        "actual_result": null
+        "actual_result": {
+          "home_score": 1,
+          "away_score": 1,
+          "completed": true
+        }
       },
       {
         "matchday": 1,
@@ -1389,11 +1477,15 @@
         "home_owner": "Caitlin Kilcoyne",
         "away_owner": null,
         "commence_time": "2026-06-15T23:00:00Z",
-        "home_win_prob": 0.12362093929073965,
-        "draw_prob": 0.21412402879458367,
-        "away_win_prob": 0.6622550319146767,
+        "home_win_prob": 0,
+        "draw_prob": 1,
+        "away_win_prob": 0,
         "venue": "miami",
-        "actual_result": null
+        "actual_result": {
+          "home_score": 1,
+          "away_score": 1,
+          "completed": true
+        }
       },
       {
         "matchday": 1,
@@ -1403,11 +1495,15 @@
         "home_owner": "Anugrah Sebastian",
         "away_owner": "Rajdeep Singh",
         "commence_time": "2026-06-16T05:00:00Z",
-        "home_win_prob": 0.5171227705162839,
-        "draw_prob": 0.2794006610849175,
-        "away_win_prob": 0.20347656839879866,
+        "home_win_prob": 0,
+        "draw_prob": 1,
+        "away_win_prob": 0,
         "venue": "los_angeles",
-        "actual_result": null
+        "actual_result": {
+          "home_score": 2,
+          "away_score": 2,
+          "completed": true
+        }
       },
       {
         "matchday": 1,
@@ -1417,9 +1513,9 @@
         "home_owner": "Rajdeep Singh",
         "away_owner": null,
         "commence_time": "2026-06-16T20:00:00Z",
-        "home_win_prob": 0.6500776404176282,
-        "draw_prob": 0.2161921021250311,
-        "away_win_prob": 0.13373025745734066,
+        "home_win_prob": 0.6434584204004554,
+        "draw_prob": 0.21399079108005908,
+        "away_win_prob": 0.14255078851948552,
         "venue": "new_york",
         "actual_result": null
       },
@@ -1431,9 +1527,9 @@
         "home_owner": null,
         "away_owner": "Nathan Nekrews",
         "commence_time": "2026-06-16T23:00:00Z",
-        "home_win_prob": 0.05989586697846282,
-        "draw_prob": 0.13003707962429426,
-        "away_win_prob": 0.810067053397243,
+        "home_win_prob": 0.06029295098779049,
+        "draw_prob": 0.13089916990770303,
+        "away_win_prob": 0.8088078791045066,
         "venue": "boston",
         "actual_result": null
       },
@@ -1459,9 +1555,9 @@
         "home_owner": "Shirlee Scott",
         "away_owner": "Julie Hulme",
         "commence_time": "2026-06-17T08:00:00Z",
-        "home_win_prob": 0.725753243897075,
-        "draw_prob": 0.1702221244776776,
-        "away_win_prob": 0.10402463162524742,
+        "home_win_prob": 0.6866642573183954,
+        "draw_prob": 0.19660281893747744,
+        "away_win_prob": 0.11673292374412723,
         "venue": "san_francisco",
         "actual_result": null
       },
@@ -1473,9 +1569,9 @@
         "home_owner": null,
         "away_owner": "Bryn Mills",
         "commence_time": "2026-06-17T19:00:00Z",
-        "home_win_prob": 0.7397207634174459,
-        "draw_prob": 0.17080824900730116,
-        "away_win_prob": 0.08947098757525299,
+        "home_win_prob": 0.7397444519166105,
+        "draw_prob": 0.1735036987222596,
+        "away_win_prob": 0.0867518493611298,
         "venue": "houston",
         "actual_result": null
       },
@@ -1487,9 +1583,9 @@
         "home_owner": "Tina Buckley",
         "away_owner": "Joshua Kidd",
         "commence_time": "2026-06-17T22:00:00Z",
-        "home_win_prob": 0.5601138393532957,
-        "draw_prob": 0.25280813830270366,
-        "away_win_prob": 0.18707802234400076,
+        "home_win_prob": 0.5562078981521539,
+        "draw_prob": 0.2580186638650269,
+        "away_win_prob": 0.1857734379828194,
         "venue": "dallas",
         "actual_result": null
       },
@@ -1501,9 +1597,9 @@
         "home_owner": "Anugrah Sebastian",
         "away_owner": "Nicholas Burgoyne",
         "commence_time": "2026-06-18T00:00:00Z",
-        "home_win_prob": 0.43421052631578944,
-        "draw_prob": 0.28289473684210525,
-        "away_win_prob": 0.28289473684210525,
+        "home_win_prob": 0.4359404280501035,
+        "draw_prob": 0.2883913600946839,
+        "away_win_prob": 0.27566821185521256,
         "venue": "toronto",
         "actual_result": null
       },
@@ -1515,9 +1611,9 @@
         "home_owner": "Peter Lees",
         "away_owner": "Logan Garwood",
         "commence_time": "2026-06-18T04:00:00Z",
-        "home_win_prob": 0.10238645111624327,
-        "draw_prob": 0.20477290223248654,
-        "away_win_prob": 0.6928406466512702,
+        "home_win_prob": 0.09752321981424149,
+        "draw_prob": 0.20588235294117646,
+        "away_win_prob": 0.6965944272445821,
         "venue": "mexico_city",
         "actual_result": null
       }
@@ -1531,9 +1627,9 @@
         "home_owner": "Logan Garwood",
         "away_owner": null,
         "commence_time": "2026-06-18T17:00:00Z",
-        "home_win_prob": 0.5509534229446703,
-        "draw_prob": 0.24976555173491718,
-        "away_win_prob": 0.19928102532041264,
+        "home_win_prob": 0.5565105285775677,
+        "draw_prob": 0.2526858616244091,
+        "away_win_prob": 0.1908036097980232,
         "venue": "atlanta",
         "actual_result": null
       },
@@ -1545,9 +1641,9 @@
         "home_owner": null,
         "away_owner": null,
         "commence_time": "2026-06-18T23:00:00Z",
-        "home_win_prob": 0.5973143590841001,
-        "draw_prob": 0.24202867536914188,
-        "away_win_prob": 0.16065696554675798,
+        "home_win_prob": 0.6142467934762326,
+        "draw_prob": 0.23636838635034768,
+        "away_win_prob": 0.14938482017341975,
         "venue": "los_angeles",
         "actual_result": null
       },
@@ -1559,9 +1655,9 @@
         "home_owner": null,
         "away_owner": "Ian Whelan",
         "commence_time": "2026-06-19T02:00:00Z",
-        "home_win_prob": 0.7198824681684624,
-        "draw_prob": 0.19098922624877573,
-        "away_win_prob": 0.08912830558276201,
+        "home_win_prob": 0.7596399966972174,
+        "draw_prob": 0.1624969036413178,
+        "away_win_prob": 0.07786309966146478,
         "venue": "vancouver",
         "actual_result": null
       },
@@ -1573,9 +1669,9 @@
         "home_owner": "Andrew Turner",
         "away_owner": "Peter Lees",
         "commence_time": "2026-06-19T03:00:00Z",
-        "home_win_prob": 0.4795439302481556,
-        "draw_prob": 0.2819137044489157,
-        "away_win_prob": 0.2385423653029287,
+        "home_win_prob": 0.4670169841418786,
+        "draw_prob": 0.2965187200900816,
+        "away_win_prob": 0.23646429576803976,
         "venue": "guadalajara",
         "actual_result": null
       },
@@ -1587,9 +1683,9 @@
         "home_owner": "Joshua Kidd",
         "away_owner": "Yousaf Mahmood",
         "commence_time": "2026-06-19T23:00:00Z",
-        "home_win_prob": 0.21853173722228866,
-        "draw_prob": 0.28376509161700164,
-        "away_win_prob": 0.4977031711607097,
+        "home_win_prob": 0.1704280155642023,
+        "draw_prob": 0.26147859922178984,
+        "away_win_prob": 0.5680933852140078,
         "venue": "boston",
         "actual_result": null
       },
@@ -1601,9 +1697,9 @@
         "home_owner": "Julie Hulme",
         "away_owner": "Bryn Mills",
         "commence_time": "2026-06-19T23:00:00Z",
-        "home_win_prob": 0.6088400411164703,
-        "draw_prob": 0.22179172926385704,
-        "away_win_prob": 0.16936822961967266,
+        "home_win_prob": 0.582141814998541,
+        "draw_prob": 0.22176831047563464,
+        "away_win_prob": 0.19608987452582433,
         "venue": "seattle",
         "actual_result": null
       },
@@ -1615,9 +1711,9 @@
         "home_owner": "Caitlin Kilcoyne",
         "away_owner": "Allan Chan",
         "commence_time": "2026-06-20T02:00:00Z",
-        "home_win_prob": 0.8927508629925008,
-        "draw_prob": 0.07570527318176408,
-        "away_win_prob": 0.031543863825735034,
+        "home_win_prob": 0.8761310054798013,
+        "draw_prob": 0.08602013508347141,
+        "away_win_prob": 0.03784885943672742,
         "venue": "philadelphia",
         "actual_result": null
       },
@@ -1629,9 +1725,9 @@
         "home_owner": "Tim Copland",
         "away_owner": "Yousaf Mahmood",
         "commence_time": "2026-06-20T08:00:00Z",
-        "home_win_prob": 0.46444285660561846,
-        "draw_prob": 0.2886690985671844,
-        "away_win_prob": 0.24688804482719717,
+        "home_win_prob": 0.4599092284417549,
+        "draw_prob": 0.2931921331316188,
+        "away_win_prob": 0.24689863842662632,
         "venue": "san_francisco",
         "actual_result": null
       },
@@ -1643,9 +1739,9 @@
         "home_owner": "Emma Ryan",
         "away_owner": "Catherine Swain",
         "commence_time": "2026-06-20T19:00:00Z",
-        "home_win_prob": 0.5757588829932561,
-        "draw_prob": 0.2437628517607811,
-        "away_win_prob": 0.18047826524596294,
+        "home_win_prob": 0.5561735261401557,
+        "draw_prob": 0.24916573971078976,
+        "away_win_prob": 0.19466073414905452,
         "venue": "houston",
         "actual_result": null
       },
@@ -1657,9 +1753,9 @@
         "home_owner": "Nathan Nekrews",
         "away_owner": "Dave Moseley",
         "commence_time": "2026-06-20T21:00:00Z",
-        "home_win_prob": 0.6188755815104425,
-        "draw_prob": 0.22792734831238248,
-        "away_win_prob": 0.1531970701771751,
+        "home_win_prob": 0.6206590808334566,
+        "draw_prob": 0.2231417171567903,
+        "away_win_prob": 0.1561992020097532,
         "venue": "toronto",
         "actual_result": null
       },
@@ -1671,9 +1767,9 @@
         "home_owner": "Dave Moseley",
         "away_owner": "Tim Copland",
         "commence_time": "2026-06-21T04:00:00Z",
-        "home_win_prob": 0.7749077490774907,
-        "draw_prob": 0.15756457564575643,
-        "away_win_prob": 0.06752767527675275,
+        "home_win_prob": 0.868658165926299,
+        "draw_prob": 0.09017499055806341,
+        "away_win_prob": 0.041166843515637645,
         "venue": "kansas_city",
         "actual_result": null
       },
@@ -1685,9 +1781,9 @@
         "home_owner": "Andrew Turner",
         "away_owner": "Allan Chan",
         "commence_time": "2026-06-21T06:00:00Z",
-        "home_win_prob": 0.1805157593123209,
-        "draw_prob": 0.26074498567335247,
-        "away_win_prob": 0.5587392550143266,
+        "home_win_prob": 0.13913043478260867,
+        "draw_prob": 0.23478260869565215,
+        "away_win_prob": 0.6260869565217391,
         "venue": "monterrey",
         "actual_result": null
       },
@@ -1699,9 +1795,9 @@
         "home_owner": "Ian Whelan",
         "away_owner": "Caitlin Kilcoyne",
         "commence_time": "2026-06-21T17:00:00Z",
-        "home_win_prob": 0.8546655656482247,
-        "draw_prob": 0.10445912469033856,
-        "away_win_prob": 0.040875309661436834,
+        "home_win_prob": 0.8633067374275276,
+        "draw_prob": 0.09905308882063212,
+        "away_win_prob": 0.03764017375184021,
         "venue": "atlanta",
         "actual_result": null
       },
@@ -1713,9 +1809,9 @@
         "home_owner": "Catherine Swain",
         "away_owner": "Anugrah Sebastian",
         "commence_time": "2026-06-21T23:00:00Z",
-        "home_win_prob": 0.6772140389161667,
-        "draw_prob": 0.1962538643389707,
-        "away_win_prob": 0.1265320967448627,
+        "home_win_prob": 0.6903693476009665,
+        "draw_prob": 0.19744563341387641,
+        "away_win_prob": 0.11218501898515704,
         "venue": "los_angeles",
         "actual_result": null
       },
@@ -1727,9 +1823,9 @@
         "home_owner": null,
         "away_owner": "Shirlee Scott",
         "commence_time": "2026-06-21T23:00:00Z",
-        "home_win_prob": 0.6697108066971081,
-        "draw_prob": 0.21308980213089804,
-        "away_win_prob": 0.11719939117199392,
+        "home_win_prob": 0.6276515371651071,
+        "draw_prob": 0.23380019759400242,
+        "away_win_prob": 0.1385482652408903,
         "venue": "miami",
         "actual_result": null
       },
@@ -1741,9 +1837,9 @@
         "home_owner": "Rajdeep Singh",
         "away_owner": "Tina Buckley",
         "commence_time": "2026-06-22T05:00:00Z",
-        "home_win_prob": 0.18622848200312986,
-        "draw_prob": 0.2660406885758998,
-        "away_win_prob": 0.5477308294209702,
+        "home_win_prob": 0.17531441942088333,
+        "draw_prob": 0.2511260602515355,
+        "away_win_prob": 0.5735595203275812,
         "venue": "vancouver",
         "actual_result": null
       },
@@ -1755,9 +1851,9 @@
         "home_owner": "Nicholas Burgoyne",
         "away_owner": "Shirlee Scott",
         "commence_time": "2026-06-22T19:00:00Z",
-        "home_win_prob": 0.5764063448036751,
-        "draw_prob": 0.2457311259426194,
-        "away_win_prob": 0.17786252925370546,
+        "home_win_prob": 0.5841252096143097,
+        "draw_prob": 0.24594745667970933,
+        "away_win_prob": 0.169927333705981,
         "venue": "dallas",
         "actual_result": null
       },
@@ -1783,9 +1879,9 @@
         "home_owner": "Nathan Nekrews",
         "away_owner": null,
         "commence_time": "2026-06-23T01:00:00Z",
-        "home_win_prob": 0.4433525465368988,
-        "draw_prob": 0.27629216668241524,
-        "away_win_prob": 0.28035528678068605,
+        "home_win_prob": 0.4392764857881136,
+        "draw_prob": 0.28036175710594313,
+        "away_win_prob": 0.28036175710594313,
         "venue": "new_york",
         "actual_result": null
       },
@@ -1797,9 +1893,9 @@
         "home_owner": "Julie Hulme",
         "away_owner": "Emma Ryan",
         "commence_time": "2026-06-23T07:00:00Z",
-        "home_win_prob": 0.1519103069964392,
-        "draw_prob": 0.23157058993359636,
-        "away_win_prob": 0.6165191030699643,
+        "home_win_prob": 0.14084568966464786,
+        "draw_prob": 0.22109497796194724,
+        "away_win_prob": 0.6380593323734048,
         "venue": "san_francisco",
         "actual_result": null
       },
@@ -1811,9 +1907,9 @@
         "home_owner": null,
         "away_owner": "Peter Lees",
         "commence_time": "2026-06-23T19:00:00Z",
-        "home_win_prob": 0.7497671530580564,
-        "draw_prob": 0.16168891648556347,
-        "away_win_prob": 0.08854393045637998,
+        "home_win_prob": 0.7512991833704529,
+        "draw_prob": 0.1633259094283593,
+        "away_win_prob": 0.08537490720118782,
         "venue": "houston",
         "actual_result": null
       },
@@ -1825,9 +1921,9 @@
         "home_owner": "Tina Buckley",
         "away_owner": "Anugrah Sebastian",
         "commence_time": "2026-06-23T21:00:00Z",
-        "home_win_prob": 0.7081625046589638,
-        "draw_prob": 0.19120387625792024,
-        "away_win_prob": 0.10063361908311591,
+        "home_win_prob": 0.7228418009087153,
+        "draw_prob": 0.18174308137133413,
+        "away_win_prob": 0.09541511771995043,
         "venue": "boston",
         "actual_result": null
       },
@@ -1853,9 +1949,9 @@
         "home_owner": "Logan Garwood",
         "away_owner": "Bryn Mills",
         "commence_time": "2026-06-24T04:00:00Z",
-        "home_win_prob": 0.6289022074126304,
-        "draw_prob": 0.23723146558096683,
-        "away_win_prob": 0.13386632700640272,
+        "home_win_prob": 0.6464158082825311,
+        "draw_prob": 0.22861046878284635,
+        "away_win_prob": 0.12497372293462265,
         "venue": "guadalajara",
         "actual_result": null
       }
@@ -1869,9 +1965,9 @@
         "home_owner": null,
         "away_owner": null,
         "commence_time": "2026-06-24T23:00:00Z",
-        "home_win_prob": 0.44715447154471544,
-        "draw_prob": 0.28455284552845533,
-        "away_win_prob": 0.2682926829268293,
+        "home_win_prob": 0.45092838196286467,
+        "draw_prob": 0.27851458885941643,
+        "away_win_prob": 0.2705570291777188,
         "venue": "vancouver",
         "actual_result": null
       },
@@ -1883,9 +1979,9 @@
         "home_owner": null,
         "away_owner": "Ian Whelan",
         "commence_time": "2026-06-24T23:00:00Z",
-        "home_win_prob": 0.5822159491884262,
-        "draw_prob": 0.2484121383203952,
-        "away_win_prob": 0.16937191249117856,
+        "home_win_prob": 0.5915157421695227,
+        "draw_prob": 0.24594601911259104,
+        "away_win_prob": 0.16253823871788625,
         "venue": "seattle",
         "actual_result": null
       },
@@ -1897,9 +1993,9 @@
         "home_owner": "Joshua Kidd",
         "away_owner": "Caitlin Kilcoyne",
         "commence_time": "2026-06-24T23:00:00Z",
-        "home_win_prob": 0.12663755458515283,
-        "draw_prob": 0.21834061135371183,
-        "away_win_prob": 0.6550218340611355,
+        "home_win_prob": 0.1365434456417951,
+        "draw_prob": 0.19506206520256442,
+        "away_win_prob": 0.6683944891556405,
         "venue": "miami",
         "actual_result": null
       },
@@ -1911,9 +2007,9 @@
         "home_owner": "Yousaf Mahmood",
         "away_owner": "Allan Chan",
         "commence_time": "2026-06-24T23:00:00Z",
-        "home_win_prob": 0.6950477845351868,
-        "draw_prob": 0.18766290182450046,
-        "away_win_prob": 0.11728931364031278,
+        "home_win_prob": 0.7238489169478611,
+        "draw_prob": 0.177860019592903,
+        "away_win_prob": 0.09829106345923588,
         "venue": "atlanta",
         "actual_result": null
       },
@@ -1939,9 +2035,9 @@
         "home_owner": "Logan Garwood",
         "away_owner": "Andrew Turner",
         "commence_time": "2026-06-25T03:00:00Z",
-        "home_win_prob": 0.208955223880597,
-        "draw_prob": 0.26865671641791045,
-        "away_win_prob": 0.5223880597014926,
+        "home_win_prob": 0.21076011846001974,
+        "draw_prob": 0.27097729516288255,
+        "away_win_prob": 0.5182625863770978,
         "venue": "mexico_city",
         "actual_result": null
       },
@@ -1953,9 +2049,9 @@
         "home_owner": "Dave Moseley",
         "away_owner": "Nathan Nekrews",
         "commence_time": "2026-06-25T21:00:00Z",
-        "home_win_prob": 0.19759783029833397,
-        "draw_prob": 0.25029058504455637,
-        "away_win_prob": 0.5521115846571096,
+        "home_win_prob": 0.20256293501593706,
+        "draw_prob": 0.25883041696480846,
+        "away_win_prob": 0.5386066480192546,
         "venue": "new_york",
         "actual_result": null
       },
@@ -1967,9 +2063,9 @@
         "home_owner": "Tim Copland",
         "away_owner": "Dave Moseley",
         "commence_time": "2026-06-25T21:00:00Z",
-        "home_win_prob": 0.07142857142857142,
-        "draw_prob": 0.15476190476190474,
-        "away_win_prob": 0.7738095238095237,
+        "home_win_prob": 0.044345898004434586,
+        "draw_prob": 0.12416851441241686,
+        "away_win_prob": 0.8314855875831485,
         "venue": "philadelphia",
         "actual_result": null
       },
@@ -1981,9 +2077,9 @@
         "home_owner": "Allan Chan",
         "away_owner": "Catherine Swain",
         "commence_time": "2026-06-26T01:00:00Z",
-        "home_win_prob": 0.4495212890168911,
-        "draw_prob": 0.2833346306530708,
-        "away_win_prob": 0.26714408033003817,
+        "home_win_prob": 0.4497354497354497,
+        "draw_prob": 0.2751322751322752,
+        "away_win_prob": 0.2751322751322752,
         "venue": "dallas",
         "actual_result": null
       },
@@ -1995,9 +2091,9 @@
         "home_owner": "Andrew Turner",
         "away_owner": "Emma Ryan",
         "commence_time": "2026-06-26T01:00:00Z",
-        "home_win_prob": 0.14371257485029942,
-        "draw_prob": 0.23353293413173654,
-        "away_win_prob": 0.6227544910179641,
+        "home_win_prob": 0.11711182858820077,
+        "draw_prob": 0.17845611975344877,
+        "away_win_prob": 0.7044320516583504,
         "venue": "kansas_city",
         "actual_result": null
       },
@@ -2009,9 +2105,9 @@
         "home_owner": "Tim Copland",
         "away_owner": "Julie Hulme",
         "commence_time": "2026-06-26T06:00:00Z",
-        "home_win_prob": 0.3593429158110883,
-        "draw_prob": 0.2669404517453799,
-        "away_win_prob": 0.37371663244353187,
+        "home_win_prob": 0.3400000000000001,
+        "draw_prob": 0.2671428571428572,
+        "away_win_prob": 0.3928571428571429,
         "venue": "los_angeles",
         "actual_result": null
       },
@@ -2023,9 +2119,9 @@
         "home_owner": "Yousaf Mahmood",
         "away_owner": "Bryn Mills",
         "commence_time": "2026-06-26T06:00:00Z",
-        "home_win_prob": 0.44887780548628425,
-        "draw_prob": 0.2917705735660848,
-        "away_win_prob": 0.2593516209476309,
+        "home_win_prob": 0.43398484244116475,
+        "draw_prob": 0.29158356601515756,
+        "away_win_prob": 0.2744315915436777,
         "venue": "san_francisco",
         "actual_result": null
       },
@@ -2037,9 +2133,9 @@
         "home_owner": "Nathan Nekrews",
         "away_owner": "Rajdeep Singh",
         "commence_time": "2026-06-26T20:00:00Z",
-        "home_win_prob": 0.21594816186194127,
-        "draw_prob": 0.2676540597725469,
-        "away_win_prob": 0.5163977783655117,
+        "home_win_prob": 0.22505253773164366,
+        "draw_prob": 0.2546647137489652,
+        "away_win_prob": 0.5202827485193913,
         "venue": "boston",
         "actual_result": null
       },
@@ -2051,9 +2147,9 @@
         "home_owner": null,
         "away_owner": null,
         "commence_time": "2026-06-26T20:00:00Z",
-        "home_win_prob": 0.6674116604369774,
-        "draw_prob": 0.21579129898655158,
-        "away_win_prob": 0.11679704057647104,
+        "home_win_prob": 0.6775907883082374,
+        "draw_prob": 0.21080602302922938,
+        "away_win_prob": 0.11160318866253321,
         "venue": "toronto",
         "actual_result": null
       },
@@ -2065,9 +2161,9 @@
         "home_owner": "Shirlee Scott",
         "away_owner": "Caitlin Kilcoyne",
         "commence_time": "2026-06-27T02:00:00Z",
-        "home_win_prob": 0.3787575150300601,
-        "draw_prob": 0.2705410821643286,
-        "away_win_prob": 0.3507014028056112,
+        "home_win_prob": 0.34793286942284074,
+        "draw_prob": 0.2762996316004912,
+        "away_win_prob": 0.375767498976668,
         "venue": "houston",
         "actual_result": null
       },
@@ -2079,9 +2175,9 @@
         "home_owner": null,
         "away_owner": "Ian Whelan",
         "commence_time": "2026-06-27T02:00:00Z",
-        "home_win_prob": 0.18510945393312486,
-        "draw_prob": 0.24356507096463795,
-        "away_win_prob": 0.5713254751022372,
+        "home_win_prob": 0.16805160418016396,
+        "draw_prob": 0.24323258499760572,
+        "away_win_prob": 0.5887158108222305,
         "venue": "guadalajara",
         "actual_result": null
       },
@@ -2093,9 +2189,9 @@
         "home_owner": "Tina Buckley",
         "away_owner": "Anugrah Sebastian",
         "commence_time": "2026-06-27T07:00:00Z",
-        "home_win_prob": 0.4207212364052662,
-        "draw_prob": 0.314825414997138,
-        "away_win_prob": 0.2644533485975959,
+        "home_win_prob": 0.46919079435783223,
+        "draw_prob": 0.2932442464736451,
+        "away_win_prob": 0.2375649591685226,
         "venue": "seattle",
         "actual_result": null
       },
@@ -2107,9 +2203,9 @@
         "home_owner": "Rajdeep Singh",
         "away_owner": "Catherine Swain",
         "commence_time": "2026-06-27T07:00:00Z",
-        "home_win_prob": 0.0852723426758329,
-        "draw_prob": 0.18759915388683238,
-        "away_win_prob": 0.7271285034373347,
+        "home_win_prob": 0.07234631350069183,
+        "draw_prob": 0.15675034591816564,
+        "away_win_prob": 0.7709033405811425,
         "venue": "vancouver",
         "actual_result": null
       },
@@ -2121,9 +2217,9 @@
         "home_owner": "Nicholas Burgoyne",
         "away_owner": "Tina Buckley",
         "commence_time": "2026-06-27T22:00:00Z",
-        "home_win_prob": 0.09352614313449824,
-        "draw_prob": 0.170047532971815,
-        "away_win_prob": 0.7364263238936869,
+        "home_win_prob": 0.0847457627118644,
+        "draw_prob": 0.1694915254237288,
+        "away_win_prob": 0.7457627118644068,
         "venue": "new_york",
         "actual_result": null
       },
@@ -2135,9 +2231,9 @@
         "home_owner": "Joshua Kidd",
         "away_owner": "Anugrah Sebastian",
         "commence_time": "2026-06-27T22:00:00Z",
-        "home_win_prob": 0.5670771224886585,
-        "draw_prob": 0.2525383452149492,
-        "away_win_prob": 0.1803845322963923,
+        "home_win_prob": 0.5791912384161753,
+        "draw_prob": 0.25021061499578773,
+        "away_win_prob": 0.1705981465880371,
         "venue": "philadelphia",
         "actual_result": null
       },
@@ -2149,9 +2245,9 @@
         "home_owner": "Logan Garwood",
         "away_owner": null,
         "commence_time": "2026-06-28T02:30:00Z",
-        "home_win_prob": 0.2671232876712329,
-        "draw_prob": 0.28767123287671237,
-        "away_win_prob": 0.4452054794520548,
+        "home_win_prob": 0.2682499513334631,
+        "draw_prob": 0.28888456297449877,
+        "away_win_prob": 0.4428654856920381,
         "venue": "miami",
         "actual_result": null
       },
@@ -4749,488 +4845,863 @@
         "Shirlee Scott": 0.007801847400857302,
         "Rajdeep Singh": 0.1794615004138655
       }
+    },
+    {
+      "date": "2026-06-13T18:03:29.073Z",
+      "participants": {
+        "Nicholas Burgoyne": 0.09266616716616717,
+        "Dave Moseley": 0.015165915966136714,
+        "Bryn Mills": 0.0035237728655133876,
+        "Anugrah Sebastian": 0.004039486413976477,
+        "Joshua Kidd": 0.014845403145623895,
+        "Ian Whelan": 0.17524192474192476,
+        "Yousaf Mahmood": 0.02079567139823244,
+        "Allan Chan": 0.018495729760435644,
+        "Julie Hulme": 0.01888712996442955,
+        "Caitlin Kilcoyne": 0.09645404595404596,
+        "Andrew Turner": 0.01899423325295111,
+        "Tim Copland": 0.011922714568641605,
+        "Tina Buckley": 0.12695686603405554,
+        "Emma Ryan": 0.05241935424371939,
+        "Logan Garwood": 0.021054833079609515,
+        "Nathan Nekrews": 0.09025725232621784,
+        "Catherine Swain": 0.03589668725971542,
+        "Peter Lees": 0.004214032020559409,
+        "Shirlee Scott": 0.0077357098347197355,
+        "Rajdeep Singh": 0.1794615004138655
+      }
+    },
+    {
+      "date": "2026-06-13T18:38:25.565Z",
+      "participants": {
+        "Nicholas Burgoyne": 0.09266616716616717,
+        "Dave Moseley": 0.015165915966136714,
+        "Bryn Mills": 0.0035237728655133876,
+        "Anugrah Sebastian": 0.004039486413976477,
+        "Joshua Kidd": 0.014845403145623895,
+        "Ian Whelan": 0.17524192474192476,
+        "Yousaf Mahmood": 0.02134512194768299,
+        "Allan Chan": 0.018495729760435644,
+        "Julie Hulme": 0.01888712996442955,
+        "Caitlin Kilcoyne": 0.09645404595404596,
+        "Andrew Turner": 0.01899423325295111,
+        "Tim Copland": 0.011922714568641605,
+        "Tina Buckley": 0.12696612186522918,
+        "Emma Ryan": 0.05241935424371939,
+        "Logan Garwood": 0.021054833079609515,
+        "Nathan Nekrews": 0.09025725232621784,
+        "Catherine Swain": 0.03589668725971542,
+        "Peter Lees": 0.004214032020559409,
+        "Shirlee Scott": 0.0077357098347197355,
+        "Rajdeep Singh": 0.1794615004138655
+      }
+    },
+    {
+      "date": "2026-06-13T18:58:53.896Z",
+      "participants": {
+        "Nicholas Burgoyne": 0.09266616716616717,
+        "Dave Moseley": 0.015165915966136714,
+        "Bryn Mills": 0.0035237728655133876,
+        "Anugrah Sebastian": 0.004039486413976477,
+        "Joshua Kidd": 0.014845403145623895,
+        "Ian Whelan": 0.17524192474192476,
+        "Yousaf Mahmood": 0.02134512194768299,
+        "Allan Chan": 0.018495729760435644,
+        "Julie Hulme": 0.01888712996442955,
+        "Caitlin Kilcoyne": 0.09645404595404596,
+        "Andrew Turner": 0.01899423325295111,
+        "Tim Copland": 0.011922714568641605,
+        "Tina Buckley": 0.12695686603405554,
+        "Emma Ryan": 0.05241935424371939,
+        "Logan Garwood": 0.021054833079609515,
+        "Nathan Nekrews": 0.09025725232621784,
+        "Catherine Swain": 0.03589668725971542,
+        "Peter Lees": 0.004214032020559409,
+        "Shirlee Scott": 0.0077357098347197355,
+        "Rajdeep Singh": 0.1794615004138655
+      }
+    },
+    {
+      "date": "2026-06-14T01:15:40.333Z",
+      "participants": {
+        "Nicholas Burgoyne": 0.09266616716616717,
+        "Dave Moseley": 0.015317431117651867,
+        "Bryn Mills": 0.003975161754402276,
+        "Anugrah Sebastian": 0.003448821205991077,
+        "Joshua Kidd": 0.014996918297139047,
+        "Ian Whelan": 0.17524192474192476,
+        "Yousaf Mahmood": 0.028584596231655053,
+        "Allan Chan": 0.018495729760435644,
+        "Julie Hulme": 0.02203590610459737,
+        "Caitlin Kilcoyne": 0.08645404595404595,
+        "Andrew Turner": 0.01899423325295111,
+        "Tim Copland": 0.011922714568641605,
+        "Tina Buckley": 0.1272615825152426,
+        "Emma Ryan": 0.05381025237512386,
+        "Logan Garwood": 0.021140202136609776,
+        "Nathan Nekrews": 0.08847130488809649,
+        "Catherine Swain": 0.03584628403390897,
+        "Peter Lees": 0.004253714560241948,
+        "Shirlee Scott": 0.0077357098347197355,
+        "Rajdeep Singh": 0.1779490987199756
+      }
+    },
+    {
+      "date": "2026-06-14T07:47:32.231Z",
+      "participants": {
+        "Nicholas Burgoyne": 0.09266616716616717,
+        "Dave Moseley": 0.015317431117651867,
+        "Bryn Mills": 0.008894051788667548,
+        "Anugrah Sebastian": 0.003471955965967942,
+        "Joshua Kidd": 0.014892751630472382,
+        "Ian Whelan": 0.17524192474192476,
+        "Yousaf Mahmood": 0.028584596231655053,
+        "Allan Chan": 0.01888712996442955,
+        "Julie Hulme": 0.022944997013688278,
+        "Caitlin Kilcoyne": 0.08645404595404595,
+        "Andrew Turner": 0.01844478270350056,
+        "Tim Copland": 0.006838911118392239,
+        "Tina Buckley": 0.1272615825152426,
+        "Emma Ryan": 0.05381025237512386,
+        "Logan Garwood": 0.02161639261280025,
+        "Nathan Nekrews": 0.08847130488809649,
+        "Catherine Swain": 0.03600792196494346,
+        "Peter Lees": 0.004253714560241948,
+        "Shirlee Scott": 0.0077357098347197355,
+        "Rajdeep Singh": 0.1794615004138655
+      }
+    },
+    {
+      "date": "2026-06-14T12:50:36.576Z",
+      "participants": {
+        "Nicholas Burgoyne": 0.09266616716616717,
+        "Dave Moseley": 0.015317431117651867,
+        "Bryn Mills": 0.008894051788667548,
+        "Anugrah Sebastian": 0.003517743511755488,
+        "Joshua Kidd": 0.014758823059043809,
+        "Ian Whelan": 0.17524192474192476,
+        "Yousaf Mahmood": 0.028135045782104608,
+        "Allan Chan": 0.01824610432340391,
+        "Julie Hulme": 0.022944997013688278,
+        "Caitlin Kilcoyne": 0.08491558441558442,
+        "Andrew Turner": 0.017968592227310086,
+        "Tim Copland": 0.006838911118392239,
+        "Tina Buckley": 0.1283303842264914,
+        "Emma Ryan": 0.05377056983544132,
+        "Logan Garwood": 0.02153102355579999,
+        "Nathan Nekrews": 0.08896537603434156,
+        "Catherine Swain": 0.03589668725971542,
+        "Peter Lees": 0.00438764313167052,
+        "Shirlee Scott": 0.00794999554900545,
+        "Rajdeep Singh": 0.1794615004138655
+      }
+    },
+    {
+      "date": "2026-06-14T18:38:45.862Z",
+      "participants": {
+        "Nicholas Burgoyne": 0.09266616716616717,
+        "Dave Moseley": 0.015573841374062123,
+        "Bryn Mills": 0.008894051788667548,
+        "Anugrah Sebastian": 0.0035475054165173925,
+        "Joshua Kidd": 0.014484097784318535,
+        "Ian Whelan": 0.17524192474192476,
+        "Yousaf Mahmood": 0.028135045782104608,
+        "Allan Chan": 0.019644705722005308,
+        "Julie Hulme": 0.022944997013688278,
+        "Caitlin Kilcoyne": 0.08491558441558442,
+        "Andrew Turner": 0.01844478270350056,
+        "Tim Copland": 0.006838911118392239,
+        "Tina Buckley": 0.12719028126747076,
+        "Emma Ryan": 0.05377056983544132,
+        "Logan Garwood": 0.02118958485265916,
+        "Nathan Nekrews": 0.0905097775787431,
+        "Catherine Swain": 0.03589668725971542,
+        "Peter Lees": 0.0044918097983371865,
+        "Shirlee Scott": 0.008033328882338785,
+        "Rajdeep Singh": 0.1779490987199756
+      }
+    },
+    {
+      "date": "2026-06-15T01:18:14.115Z",
+      "participants": {
+        "Nicholas Burgoyne": 0.0909995004995005,
+        "Dave Moseley": 0.01297172290549774,
+        "Bryn Mills": 0.009057450481478007,
+        "Anugrah Sebastian": 0.0035249150550716096,
+        "Joshua Kidd": 0.014406877707098456,
+        "Ian Whelan": 0.17524192474192476,
+        "Yousaf Mahmood": 0.02752626478430759,
+        "Allan Chan": 0.019644705722005308,
+        "Julie Hulme": 0.022944997013688278,
+        "Caitlin Kilcoyne": 0.08491558441558442,
+        "Andrew Turner": 0.017968592227310086,
+        "Tim Copland": 0.006692712287982882,
+        "Tina Buckley": 0.12707484115203066,
+        "Emma Ryan": 0.05141847748334896,
+        "Logan Garwood": 0.02111115348011014,
+        "Nathan Nekrews": 0.09701944438252755,
+        "Catherine Swain": 0.03606949831962326,
+        "Peter Lees": 0.004610857417384805,
+        "Shirlee Scott": 0.00794999554900545,
+        "Rajdeep Singh": 0.1794615004138655
+      }
+    },
+    {
+      "date": "2026-06-15T08:18:00.041Z",
+      "participants": {
+        "Nicholas Burgoyne": 0.0909995004995005,
+        "Dave Moseley": 0.012178072111846946,
+        "Bryn Mills": 0.009057450481478007,
+        "Anugrah Sebastian": 0.0035475054165173925,
+        "Joshua Kidd": 0.014305526355747104,
+        "Ian Whelan": 0.17524192474192476,
+        "Yousaf Mahmood": 0.028009484058604737,
+        "Allan Chan": 0.019644705722005308,
+        "Julie Hulme": 0.022944997013688278,
+        "Caitlin Kilcoyne": 0.08349108299108299,
+        "Andrew Turner": 0.017968592227310086,
+        "Tim Copland": 0.006692712287982882,
+        "Tina Buckley": 0.12707484115203066,
+        "Emma Ryan": 0.05147342253829402,
+        "Logan Garwood": 0.02107236873544304,
+        "Nathan Nekrews": 0.09761468247776565,
+        "Catherine Swain": 0.03691536298127739,
+        "Peter Lees": 0.0046769949835223715,
+        "Shirlee Scott": 0.00794999554900545,
+        "Rajdeep Singh": 0.1794615004138655
+      }
+    },
+    {
+      "date": "2026-06-15T08:26:01.964Z",
+      "participants": {
+        "Nicholas Burgoyne": 0.0909995004995005,
+        "Dave Moseley": 0.012178072111846946,
+        "Bryn Mills": 0.009057450481478007,
+        "Anugrah Sebastian": 0.0035475054165173925,
+        "Joshua Kidd": 0.014305526355747104,
+        "Ian Whelan": 0.17524192474192476,
+        "Yousaf Mahmood": 0.028009484058604737,
+        "Allan Chan": 0.019644705722005308,
+        "Julie Hulme": 0.022944997013688278,
+        "Caitlin Kilcoyne": 0.08349108299108299,
+        "Andrew Turner": 0.017968592227310086,
+        "Tim Copland": 0.006692712287982882,
+        "Tina Buckley": 0.12707484115203066,
+        "Emma Ryan": 0.05147342253829402,
+        "Logan Garwood": 0.02107236873544304,
+        "Nathan Nekrews": 0.09761468247776565,
+        "Catherine Swain": 0.03691536298127739,
+        "Peter Lees": 0.0046769949835223715,
+        "Shirlee Scott": 0.00794999554900545,
+        "Rajdeep Singh": 0.1794615004138655
+      }
+    },
+    {
+      "date": "2026-06-15T08:33:00.664Z",
+      "participants": {
+        "Nicholas Burgoyne": 0.0909995004995005,
+        "Dave Moseley": 0.011900294334069169,
+        "Bryn Mills": 0.009057450481478007,
+        "Anugrah Sebastian": 0.0035475054165173925,
+        "Joshua Kidd": 0.014305526355747104,
+        "Ian Whelan": 0.17524192474192476,
+        "Yousaf Mahmood": 0.027994020141078966,
+        "Allan Chan": 0.019644705722005308,
+        "Julie Hulme": 0.022944997013688278,
+        "Caitlin Kilcoyne": 0.08349108299108299,
+        "Andrew Turner": 0.017968592227310086,
+        "Tim Copland": 0.006692712287982882,
+        "Tina Buckley": 0.1270504211276106,
+        "Emma Ryan": 0.05147342253829402,
+        "Logan Garwood": 0.02107236873544304,
+        "Nathan Nekrews": 0.09761468247776565,
+        "Catherine Swain": 0.03691536298127739,
+        "Peter Lees": 0.0046769949835223715,
+        "Shirlee Scott": 0.00794999554900545,
+        "Rajdeep Singh": 0.1794615004138655
+      }
+    },
+    {
+      "date": "2026-06-15T14:19:21.143Z",
+      "participants": {
+        "Nicholas Burgoyne": 0.0909995004995005,
+        "Dave Moseley": 0.011885674451028233,
+        "Bryn Mills": 0.00924127401088977,
+        "Anugrah Sebastian": 0.0035249150550716096,
+        "Joshua Kidd": 0.014305526355747104,
+        "Ian Whelan": 0.17524192474192476,
+        "Yousaf Mahmood": 0.027994020141078966,
+        "Allan Chan": 0.019644705722005308,
+        "Julie Hulme": 0.022944997013688278,
+        "Caitlin Kilcoyne": 0.08216833166833167,
+        "Andrew Turner": 0.017968592227310086,
+        "Tim Copland": 0.006838911118392239,
+        "Tina Buckley": 0.1271008624895274,
+        "Emma Ryan": 0.0525556736205451,
+        "Logan Garwood": 0.02111115348011014,
+        "Nathan Nekrews": 0.09761468247776565,
+        "Catherine Swain": 0.03785521260533754,
+        "Peter Lees": 0.0046769949835223715,
+        "Shirlee Scott": 0.00794999554900545,
+        "Rajdeep Singh": 0.1794615004138655
+      }
+    },
+    {
+      "date": "2026-06-15T19:27:26.110Z",
+      "participants": {
+        "Nicholas Burgoyne": 0.09266616716616717,
+        "Dave Moseley": 0.011885674451028233,
+        "Bryn Mills": 0.00924127401088977,
+        "Anugrah Sebastian": 0.003478060972072948,
+        "Joshua Kidd": 0.014275038550869056,
+        "Ian Whelan": 0.1654380031732973,
+        "Yousaf Mahmood": 0.028535145682204506,
+        "Allan Chan": 0.021278330347021614,
+        "Julie Hulme": 0.023814562231079583,
+        "Caitlin Kilcoyne": 0.08216833166833167,
+        "Andrew Turner": 0.017968592227310086,
+        "Tim Copland": 0.006838911118392239,
+        "Tina Buckley": 0.12890811531892837,
+        "Emma Ryan": 0.05377056983544132,
+        "Logan Garwood": 0.02218958485265916,
+        "Nathan Nekrews": 0.09986574419277422,
+        "Catherine Swain": 0.03508162040983866,
+        "Peter Lees": 0.004549281062705002,
+        "Shirlee Scott": 0.00794999554900545,
+        "Rajdeep Singh": 0.18102791645396574
+      }
+    },
+    {
+      "date": "2026-06-16T01:20:13.168Z",
+      "participants": {
+        "Nicholas Burgoyne": 0.0909995004995005,
+        "Dave Moseley": 0.011900294334069169,
+        "Bryn Mills": 0.00924127401088977,
+        "Anugrah Sebastian": 0.0035039007653546016,
+        "Joshua Kidd": 0.01400790730812806,
+        "Ian Whelan": 0.1676661671661672,
+        "Yousaf Mahmood": 0.028535145682204506,
+        "Allan Chan": 0.021278330347021614,
+        "Julie Hulme": 0.022944997013688278,
+        "Caitlin Kilcoyne": 0.08266683516084714,
+        "Andrew Turner": 0.017968592227310086,
+        "Tim Copland": 0.006692712287982882,
+        "Tina Buckley": 0.1293509162263218,
+        "Emma Ryan": 0.053758169041790524,
+        "Logan Garwood": 0.0211043135348297,
+        "Nathan Nekrews": 0.09986574419277422,
+        "Catherine Swain": 0.031701294790725684,
+        "Peter Lees": 0.004438046357476971,
+        "Shirlee Scott": 0.00794999554900545,
+        "Rajdeep Singh": 0.18265129307734237
+      }
+    },
+    {
+      "date": "2026-06-16T08:11:04.831Z",
+      "participants": {
+        "Nicholas Burgoyne": 0.0909995004995005,
+        "Dave Moseley": 0.011900294334069169,
+        "Bryn Mills": 0.00924127401088977,
+        "Anugrah Sebastian": 0.003532261514078368,
+        "Joshua Kidd": 0.01400790730812806,
+        "Ian Whelan": 0.1676661671661672,
+        "Yousaf Mahmood": 0.028535145682204506,
+        "Allan Chan": 0.021278330347021614,
+        "Julie Hulme": 0.023361663680354947,
+        "Caitlin Kilcoyne": 0.08266683516084714,
+        "Andrew Turner": 0.017551925560643417,
+        "Tim Copland": 0.006561133340614461,
+        "Tina Buckley": 0.12922549816612114,
+        "Emma Ryan": 0.053758169041790524,
+        "Logan Garwood": 0.020643885927927978,
+        "Nathan Nekrews": 0.10046098228801233,
+        "Catherine Swain": 0.030792203881634776,
+        "Peter Lees": 0.0044918097983371865,
+        "Shirlee Scott": 0.00794999554900545,
+        "Rajdeep Singh": 0.18265129307734237
+      }
     }
   ],
   "stage_probabilities": {
     "Mexico": {
-      "group_first": 0.5835,
-      "group_second": 0.2692,
-      "group_third": 0.1334,
-      "make_r16": 0.5471,
-      "make_quarters": 0.1995,
-      "make_semis": 0.0717,
-      "make_final": 0.0242,
-      "win_tournament": 0.0061
+      "group_first": 0.5847,
+      "group_second": 0.2662,
+      "group_third": 0.1353,
+      "make_r16": 0.5326,
+      "make_quarters": 0.205,
+      "make_semis": 0.0736,
+      "make_final": 0.0269,
+      "win_tournament": 0.0056
     },
     "South Africa": {
-      "group_first": 0.0128,
-      "group_second": 0.0814,
-      "group_third": 0.224,
-      "make_r16": 0.0546,
-      "make_quarters": 0.0079,
-      "make_semis": 0.0013,
+      "group_first": 0.0122,
+      "group_second": 0.0842,
+      "group_third": 0.2151,
+      "make_r16": 0.053,
+      "make_quarters": 0.0067,
+      "make_semis": 0.0008,
       "make_final": 0.0001,
-      "win_tournament": 0.0001
-    },
-    "South Korea": {
-      "group_first": 0.3433,
-      "group_second": 0.4736,
-      "group_third": 0.145,
-      "make_r16": 0.3929,
-      "make_quarters": 0.0973,
-      "make_semis": 0.021,
-      "make_final": 0.003,
-      "win_tournament": 0.0004
-    },
-    "Czechia": {
-      "group_first": 0.0604,
-      "group_second": 0.1758,
-      "group_third": 0.4976,
-      "make_r16": 0.1891,
-      "make_quarters": 0.0408,
-      "make_semis": 0.0101,
-      "make_final": 0.0017,
       "win_tournament": 0
     },
+    "South Korea": {
+      "group_first": 0.3416,
+      "group_second": 0.472,
+      "group_third": 0.1453,
+      "make_r16": 0.3821,
+      "make_quarters": 0.0961,
+      "make_semis": 0.0234,
+      "make_final": 0.0055,
+      "win_tournament": 0.0014
+    },
+    "Czechia": {
+      "group_first": 0.0615,
+      "group_second": 0.1776,
+      "group_third": 0.5043,
+      "make_r16": 0.1753,
+      "make_quarters": 0.039,
+      "make_semis": 0.0091,
+      "make_final": 0.0015,
+      "win_tournament": 0.0005
+    },
     "Canada": {
-      "group_first": 0.2812,
-      "group_second": 0.3542,
-      "group_third": 0.2746,
-      "make_r16": 0.37,
-      "make_quarters": 0.0994,
-      "make_semis": 0.0275,
-      "make_final": 0.0039,
-      "win_tournament": 0.0003
+      "group_first": 0.3685,
+      "group_second": 0.29,
+      "group_third": 0.2463,
+      "make_r16": 0.3464,
+      "make_quarters": 0.0942,
+      "make_semis": 0.0262,
+      "make_final": 0.0041,
+      "win_tournament": 0.0007
     },
     "Bosnia and Herzegovina": {
-      "group_first": 0.1631,
-      "group_second": 0.2997,
-      "group_third": 0.3637,
-      "make_r16": 0.252,
-      "make_quarters": 0.0554,
-      "make_semis": 0.0131,
-      "make_final": 0.0018,
-      "win_tournament": 0.0002
+      "group_first": 0.2136,
+      "group_second": 0.2708,
+      "group_third": 0.2937,
+      "make_r16": 0.239,
+      "make_quarters": 0.0527,
+      "make_semis": 0.0129,
+      "make_final": 0.0013,
+      "win_tournament": 0.0001
     },
     "Qatar": {
-      "group_first": 0.0242,
-      "group_second": 0.0734,
-      "group_third": 0.2064,
-      "make_r16": 0.0602,
-      "make_quarters": 0.0115,
-      "make_semis": 0.0015,
+      "group_first": 0.0315,
+      "group_second": 0.1214,
+      "group_third": 0.2375,
+      "make_r16": 0.0772,
+      "make_quarters": 0.0126,
+      "make_semis": 0.0013,
       "make_final": 0.0002,
       "win_tournament": 0
     },
     "Switzerland": {
-      "group_first": 0.5315,
-      "group_second": 0.2727,
-      "group_third": 0.1553,
-      "make_r16": 0.5553,
-      "make_quarters": 0.2272,
-      "make_semis": 0.0926,
-      "make_final": 0.0243,
-      "win_tournament": 0.0052
+      "group_first": 0.3864,
+      "group_second": 0.3178,
+      "group_third": 0.2225,
+      "make_r16": 0.4885,
+      "make_quarters": 0.1974,
+      "make_semis": 0.0811,
+      "make_final": 0.0228,
+      "win_tournament": 0.0064
     },
     "Brazil": {
-      "group_first": 0.6575,
-      "group_second": 0.2412,
-      "group_third": 0.0851,
-      "make_r16": 0.6417,
-      "make_quarters": 0.4823,
-      "make_semis": 0.2675,
-      "make_final": 0.1534,
-      "win_tournament": 0.0614
+      "group_first": 0.523,
+      "group_second": 0.3323,
+      "group_third": 0.1292,
+      "make_r16": 0.63,
+      "make_quarters": 0.4616,
+      "make_semis": 0.2525,
+      "make_final": 0.1233,
+      "win_tournament": 0.0506
     },
     "Morocco": {
-      "group_first": 0.2199,
-      "group_second": 0.4187,
-      "group_third": 0.2607,
-      "make_r16": 0.409,
-      "make_quarters": 0.254,
-      "make_semis": 0.1049,
-      "make_final": 0.0379,
-      "win_tournament": 0.0116
+      "group_first": 0.3452,
+      "group_second": 0.4189,
+      "group_third": 0.1912,
+      "make_r16": 0.4572,
+      "make_quarters": 0.2985,
+      "make_semis": 0.1354,
+      "make_final": 0.0693,
+      "win_tournament": 0.0191
     },
     "Haiti": {
-      "group_first": 0.0144,
-      "group_second": 0.0758,
-      "group_third": 0.2301,
-      "make_r16": 0.0244,
-      "make_quarters": 0.0039,
-      "make_semis": 0.0003,
-      "make_final": 0.0001,
+      "group_first": 0.0044,
+      "group_second": 0.0125,
+      "group_third": 0.0928,
+      "make_r16": 0.0111,
+      "make_quarters": 0.0012,
+      "make_semis": 0.0002,
+      "make_final": 0,
       "win_tournament": 0
     },
     "Scotland": {
-      "group_first": 0.1082,
-      "group_second": 0.2643,
-      "group_third": 0.4241,
-      "make_r16": 0.2116,
-      "make_quarters": 0.0856,
-      "make_semis": 0.0233,
-      "make_final": 0.0053,
-      "win_tournament": 0.0008
+      "group_first": 0.1274,
+      "group_second": 0.2363,
+      "group_third": 0.5868,
+      "make_r16": 0.2465,
+      "make_quarters": 0.0939,
+      "make_semis": 0.0244,
+      "make_final": 0.0052,
+      "win_tournament": 0.001
     },
     "USA": {
-      "group_first": 0.6009,
-      "group_second": 0.2989,
-      "group_third": 0.0835,
-      "make_r16": 0.5737,
-      "make_quarters": 0.2538,
-      "make_semis": 0.0934,
-      "make_final": 0.0253,
-      "win_tournament": 0.0079
+      "group_first": 0.6735,
+      "group_second": 0.2032,
+      "group_third": 0.1047,
+      "make_r16": 0.5555,
+      "make_quarters": 0.2577,
+      "make_semis": 0.0973,
+      "make_final": 0.026,
+      "win_tournament": 0.0091
     },
     "Paraguay": {
-      "group_first": 0.0318,
-      "group_second": 0.1808,
-      "group_third": 0.3713,
-      "make_r16": 0.1656,
-      "make_quarters": 0.0551,
-      "make_semis": 0.0126,
-      "make_final": 0.0029,
-      "win_tournament": 0.0004
+      "group_first": 0.0317,
+      "group_second": 0.1958,
+      "group_third": 0.2551,
+      "make_r16": 0.1477,
+      "make_quarters": 0.0468,
+      "make_semis": 0.0091,
+      "make_final": 0.0021,
+      "win_tournament": 0.0006
     },
     "Australia": {
-      "group_first": 0.0648,
-      "group_second": 0.168,
-      "group_third": 0.32,
-      "make_r16": 0.1528,
-      "make_quarters": 0.0459,
-      "make_semis": 0.0087,
-      "make_final": 0.0012,
-      "win_tournament": 0.0002
+      "group_first": 0.2259,
+      "group_second": 0.3862,
+      "group_third": 0.2927,
+      "make_r16": 0.3261,
+      "make_quarters": 0.1086,
+      "make_semis": 0.0235,
+      "make_final": 0.005,
+      "win_tournament": 0.0009
     },
     "Turkey": {
-      "group_first": 0.3025,
-      "group_second": 0.3523,
-      "group_third": 0.2252,
-      "make_r16": 0.4133,
-      "make_quarters": 0.1633,
-      "make_semis": 0.0463,
-      "make_final": 0.0113,
-      "win_tournament": 0.0033
+      "group_first": 0.0689,
+      "group_second": 0.2148,
+      "group_third": 0.3475,
+      "make_r16": 0.2222,
+      "make_quarters": 0.0791,
+      "make_semis": 0.0201,
+      "make_final": 0.0063,
+      "win_tournament": 0.0018
     },
     "Germany": {
-      "group_first": 0.6181,
-      "group_second": 0.2597,
-      "group_third": 0.109,
-      "make_r16": 0.706,
-      "make_quarters": 0.3507,
-      "make_semis": 0.1994,
-      "make_final": 0.094,
-      "win_tournament": 0.0317
+      "group_first": 0.7347,
+      "group_second": 0.1904,
+      "group_third": 0.0747,
+      "make_r16": 0.7297,
+      "make_quarters": 0.3642,
+      "make_semis": 0.2114,
+      "make_final": 0.1031,
+      "win_tournament": 0.0362
     },
     "Curacao": {
-      "group_first": 0.0051,
-      "group_second": 0.0365,
-      "group_third": 0.1422,
-      "make_r16": 0.0131,
-      "make_quarters": 0.001,
-      "make_semis": 0.0001,
+      "group_first": 0.0001,
+      "group_second": 0.0057,
+      "group_third": 0.0521,
+      "make_r16": 0.0031,
+      "make_quarters": 0.0004,
+      "make_semis": 0,
       "make_final": 0,
       "win_tournament": 0
     },
     "Ivory Coast": {
-      "group_first": 0.1482,
-      "group_second": 0.3191,
-      "group_third": 0.4327,
-      "make_r16": 0.3659,
-      "make_quarters": 0.1203,
-      "make_semis": 0.039,
-      "make_final": 0.0114,
-      "win_tournament": 0.0018
+      "group_first": 0.2359,
+      "group_second": 0.6177,
+      "group_third": 0.1357,
+      "make_r16": 0.4374,
+      "make_quarters": 0.1545,
+      "make_semis": 0.0631,
+      "make_final": 0.0153,
+      "win_tournament": 0.0033
     },
     "Ecuador": {
-      "group_first": 0.2286,
-      "group_second": 0.3847,
-      "group_third": 0.3161,
-      "make_r16": 0.4043,
-      "make_quarters": 0.1378,
-      "make_semis": 0.0521,
-      "make_final": 0.0148,
-      "win_tournament": 0.0032
+      "group_first": 0.0293,
+      "group_second": 0.1862,
+      "group_third": 0.7375,
+      "make_r16": 0.3552,
+      "make_quarters": 0.1173,
+      "make_semis": 0.0363,
+      "make_final": 0.0098,
+      "win_tournament": 0.0022
     },
     "Netherlands": {
-      "group_first": 0.4947,
-      "group_second": 0.2708,
-      "group_third": 0.1549,
-      "make_r16": 0.5539,
-      "make_quarters": 0.4137,
-      "make_semis": 0.2234,
-      "make_final": 0.1101,
-      "win_tournament": 0.0438
+      "group_first": 0.3833,
+      "group_second": 0.3491,
+      "group_third": 0.2075,
+      "make_r16": 0.5585,
+      "make_quarters": 0.3855,
+      "make_semis": 0.1971,
+      "make_final": 0.0956,
+      "win_tournament": 0.0358
     },
     "Japan": {
-      "group_first": 0.2756,
-      "group_second": 0.3173,
-      "group_third": 0.2542,
-      "make_r16": 0.3716,
-      "make_quarters": 0.2185,
-      "make_semis": 0.0879,
-      "make_final": 0.0321,
-      "win_tournament": 0.0091
+      "group_first": 0.2832,
+      "group_second": 0.3506,
+      "group_third": 0.2812,
+      "make_r16": 0.4232,
+      "make_quarters": 0.2479,
+      "make_semis": 0.0969,
+      "make_final": 0.0384,
+      "win_tournament": 0.0122
     },
     "Sweden": {
-      "group_first": 0.162,
-      "group_second": 0.2578,
-      "group_third": 0.3234,
-      "make_r16": 0.2428,
-      "make_quarters": 0.109,
-      "make_semis": 0.0331,
-      "make_final": 0.0101,
-      "win_tournament": 0.0016
+      "group_first": 0.3243,
+      "group_second": 0.2698,
+      "group_third": 0.3854,
+      "make_r16": 0.3847,
+      "make_quarters": 0.1736,
+      "make_semis": 0.0559,
+      "make_final": 0.0129,
+      "win_tournament": 0.0023
     },
     "Tunisia": {
-      "group_first": 0.0677,
-      "group_second": 0.1541,
-      "group_third": 0.2675,
-      "make_r16": 0.1094,
-      "make_quarters": 0.0365,
-      "make_semis": 0.0084,
-      "make_final": 0.0015,
-      "win_tournament": 0.0002
+      "group_first": 0.0092,
+      "group_second": 0.0305,
+      "group_third": 0.1259,
+      "make_r16": 0.0362,
+      "make_quarters": 0.0105,
+      "make_semis": 0.0027,
+      "make_final": 0.0002,
+      "win_tournament": 0
     },
     "Belgium": {
-      "group_first": 0.6405,
-      "group_second": 0.2279,
-      "group_third": 0.0993,
-      "make_r16": 0.6726,
-      "make_quarters": 0.425,
-      "make_semis": 0.2192,
-      "make_final": 0.0815,
-      "win_tournament": 0.0372
+      "group_first": 0.5693,
+      "group_second": 0.2832,
+      "group_third": 0.1047,
+      "make_r16": 0.6682,
+      "make_quarters": 0.4094,
+      "make_semis": 0.1918,
+      "make_final": 0.0665,
+      "win_tournament": 0.0301
     },
     "Egypt": {
-      "group_first": 0.1891,
-      "group_second": 0.3471,
-      "group_third": 0.2879,
-      "make_r16": 0.3522,
-      "make_quarters": 0.1307,
-      "make_semis": 0.0336,
-      "make_final": 0.0063,
-      "win_tournament": 0.0018
+      "group_first": 0.2821,
+      "group_second": 0.387,
+      "group_third": 0.1989,
+      "make_r16": 0.4093,
+      "make_quarters": 0.15,
+      "make_semis": 0.0498,
+      "make_final": 0.0121,
+      "win_tournament": 0.0029
     },
     "Iran": {
-      "group_first": 0.1235,
-      "group_second": 0.2811,
-      "group_third": 0.3414,
-      "make_r16": 0.2615,
-      "make_quarters": 0.0824,
-      "make_semis": 0.0184,
-      "make_final": 0.0025,
-      "win_tournament": 0.0007
+      "group_first": 0.0922,
+      "group_second": 0.1795,
+      "group_third": 0.3771,
+      "make_r16": 0.1758,
+      "make_quarters": 0.0521,
+      "make_semis": 0.0101,
+      "make_final": 0.0011,
+      "win_tournament": 0.0002
     },
     "New Zealand": {
-      "group_first": 0.0469,
-      "group_second": 0.1439,
-      "group_third": 0.2714,
-      "make_r16": 0.0746,
-      "make_quarters": 0.0104,
+      "group_first": 0.0564,
+      "group_second": 0.1503,
+      "group_third": 0.3193,
+      "make_r16": 0.0665,
+      "make_quarters": 0.0097,
       "make_semis": 0.001,
       "make_final": 0,
       "win_tournament": 0
     },
     "Spain": {
-      "group_first": 0.7098,
-      "group_second": 0.2359,
-      "group_third": 0.0453,
-      "make_r16": 0.7771,
-      "make_quarters": 0.5405,
-      "make_semis": 0.4393,
-      "make_final": 0.3464,
-      "win_tournament": 0.2559
+      "group_first": 0.7906,
+      "group_second": 0.1488,
+      "group_third": 0.0497,
+      "make_r16": 0.7901,
+      "make_quarters": 0.5516,
+      "make_semis": 0.4511,
+      "make_final": 0.3609,
+      "win_tournament": 0.2658
     },
     "Cape Verde": {
-      "group_first": 0.0275,
-      "group_second": 0.1314,
-      "group_third": 0.396,
-      "make_r16": 0.0472,
-      "make_quarters": 0.0059,
-      "make_semis": 0.0006,
+      "group_first": 0.0403,
+      "group_second": 0.1831,
+      "group_third": 0.2878,
+      "make_r16": 0.0458,
+      "make_quarters": 0.0049,
+      "make_semis": 0.0004,
       "make_final": 0.0001,
-      "win_tournament": 0.0001
+      "win_tournament": 0
     },
     "Saudi Arabia": {
-      "group_first": 0.0243,
-      "group_second": 0.1292,
-      "group_third": 0.375,
-      "make_r16": 0.0652,
-      "make_quarters": 0.0122,
-      "make_semis": 0.0028,
-      "make_final": 0.0003,
-      "win_tournament": 0.0001
+      "group_first": 0.0283,
+      "group_second": 0.2276,
+      "group_third": 0.3717,
+      "make_r16": 0.0826,
+      "make_quarters": 0.0102,
+      "make_semis": 0.0016,
+      "make_final": 0.0002,
+      "win_tournament": 0
     },
     "Uruguay": {
-      "group_first": 0.2384,
-      "group_second": 0.5035,
-      "group_third": 0.1837,
-      "make_r16": 0.3928,
-      "make_quarters": 0.1289,
-      "make_semis": 0.0663,
-      "make_final": 0.029,
-      "win_tournament": 0.012
+      "group_first": 0.1408,
+      "group_second": 0.4405,
+      "group_third": 0.2908,
+      "make_r16": 0.3364,
+      "make_quarters": 0.1185,
+      "make_semis": 0.0607,
+      "make_final": 0.0235,
+      "win_tournament": 0.0094
     },
     "France": {
-      "group_first": 0.5905,
-      "group_second": 0.2751,
-      "group_third": 0.1155,
-      "make_r16": 0.7942,
-      "make_quarters": 0.5951,
-      "make_semis": 0.4444,
-      "make_final": 0.3056,
-      "win_tournament": 0.1651
+      "group_first": 0.5784,
+      "group_second": 0.2715,
+      "group_third": 0.1325,
+      "make_r16": 0.7799,
+      "make_quarters": 0.5797,
+      "make_semis": 0.4361,
+      "make_final": 0.2968,
+      "win_tournament": 0.1653
     },
     "Senegal": {
-      "group_first": 0.1264,
-      "group_second": 0.2855,
-      "group_third": 0.4292,
-      "make_r16": 0.3599,
-      "make_quarters": 0.1569,
-      "make_semis": 0.0677,
-      "make_final": 0.0214,
-      "win_tournament": 0.0069
+      "group_first": 0.1359,
+      "group_second": 0.296,
+      "group_third": 0.4208,
+      "make_r16": 0.3689,
+      "make_quarters": 0.153,
+      "make_semis": 0.0674,
+      "make_final": 0.0203,
+      "win_tournament": 0.005
     },
     "Iraq": {
-      "group_first": 0.0091,
-      "group_second": 0.0439,
-      "group_third": 0.1842,
-      "make_r16": 0.0293,
-      "make_quarters": 0.0062,
-      "make_semis": 0.0013,
+      "group_first": 0.0104,
+      "group_second": 0.0452,
+      "group_third": 0.1724,
+      "make_r16": 0.0303,
+      "make_quarters": 0.005,
+      "make_semis": 0.0007,
       "make_final": 0,
       "win_tournament": 0
     },
     "Norway": {
-      "group_first": 0.274,
-      "group_second": 0.3955,
-      "group_third": 0.2711,
-      "make_r16": 0.4374,
-      "make_quarters": 0.183,
-      "make_semis": 0.0785,
-      "make_final": 0.0235,
-      "win_tournament": 0.0059
+      "group_first": 0.2753,
+      "group_second": 0.3873,
+      "group_third": 0.2743,
+      "make_r16": 0.4358,
+      "make_quarters": 0.1751,
+      "make_semis": 0.0758,
+      "make_final": 0.0245,
+      "win_tournament": 0.0061
     },
     "Argentina": {
-      "group_first": 0.6359,
-      "group_second": 0.2397,
-      "group_third": 0.1002,
-      "make_r16": 0.6687,
-      "make_quarters": 0.3957,
-      "make_semis": 0.3019,
-      "make_final": 0.2175,
-      "win_tournament": 0.1473
+      "group_first": 0.646,
+      "group_second": 0.237,
+      "group_third": 0.0906,
+      "make_r16": 0.6957,
+      "make_quarters": 0.4036,
+      "make_semis": 0.3095,
+      "make_final": 0.2244,
+      "win_tournament": 0.1503
     },
     "Algeria": {
-      "group_first": 0.124,
-      "group_second": 0.2828,
-      "group_third": 0.4009,
-      "make_r16": 0.2136,
-      "make_quarters": 0.0627,
-      "make_semis": 0.0203,
-      "make_final": 0.0054,
-      "win_tournament": 0.0014
+      "group_first": 0.1186,
+      "group_second": 0.2875,
+      "group_third": 0.4015,
+      "make_r16": 0.213,
+      "make_quarters": 0.0604,
+      "make_semis": 0.0206,
+      "make_final": 0.0035,
+      "win_tournament": 0.001
     },
     "Austria": {
-      "group_first": 0.217,
-      "group_second": 0.3943,
-      "group_third": 0.2814,
-      "make_r16": 0.2635,
-      "make_quarters": 0.0744,
-      "make_semis": 0.0275,
-      "make_final": 0.0077,
-      "win_tournament": 0.0023
+      "group_first": 0.2106,
+      "group_second": 0.3918,
+      "group_third": 0.2819,
+      "make_r16": 0.2806,
+      "make_quarters": 0.0802,
+      "make_semis": 0.0303,
+      "make_final": 0.0093,
+      "win_tournament": 0.003
     },
     "Jordan": {
-      "group_first": 0.0231,
-      "group_second": 0.0832,
-      "group_third": 0.2175,
-      "make_r16": 0.0329,
-      "make_quarters": 0.0044,
-      "make_semis": 0.001,
-      "make_final": 0,
+      "group_first": 0.0248,
+      "group_second": 0.0837,
+      "group_third": 0.226,
+      "make_r16": 0.0364,
+      "make_quarters": 0.0038,
+      "make_semis": 0.0007,
+      "make_final": 0.0001,
       "win_tournament": 0
     },
     "Portugal": {
-      "group_first": 0.5419,
-      "group_second": 0.3124,
-      "group_third": 0.1106,
-      "make_r16": 0.64,
-      "make_quarters": 0.4584,
-      "make_semis": 0.2093,
-      "make_final": 0.0992,
-      "win_tournament": 0.0474
+      "group_first": 0.556,
+      "group_second": 0.3131,
+      "group_third": 0.0991,
+      "make_r16": 0.6538,
+      "make_quarters": 0.468,
+      "make_semis": 0.2037,
+      "make_final": 0.102,
+      "win_tournament": 0.0484
     },
     "DR Congo": {
-      "group_first": 0.0554,
-      "group_second": 0.1631,
-      "group_third": 0.383,
-      "make_r16": 0.1105,
-      "make_quarters": 0.0357,
-      "make_semis": 0.0079,
-      "make_final": 0.001,
-      "win_tournament": 0.0002
+      "group_first": 0.0477,
+      "group_second": 0.1488,
+      "group_third": 0.3941,
+      "make_r16": 0.0995,
+      "make_quarters": 0.0304,
+      "make_semis": 0.0069,
+      "make_final": 0.0014,
+      "win_tournament": 0.0001
     },
     "Uzbekistan": {
-      "group_first": 0.0378,
-      "group_second": 0.1275,
-      "group_third": 0.3328,
-      "make_r16": 0.0587,
-      "make_quarters": 0.0113,
-      "make_semis": 0.0012,
-      "make_final": 0,
+      "group_first": 0.0366,
+      "group_second": 0.128,
+      "group_third": 0.3394,
+      "make_r16": 0.0518,
+      "make_quarters": 0.0107,
+      "make_semis": 0.0017,
+      "make_final": 0.0002,
       "win_tournament": 0
     },
     "Colombia": {
-      "group_first": 0.3649,
-      "group_second": 0.397,
-      "group_third": 0.1736,
-      "make_r16": 0.5273,
-      "make_quarters": 0.3391,
-      "make_semis": 0.1441,
-      "make_final": 0.0553,
-      "win_tournament": 0.0223
+      "group_first": 0.3597,
+      "group_second": 0.4101,
+      "group_third": 0.1674,
+      "make_r16": 0.5416,
+      "make_quarters": 0.3531,
+      "make_semis": 0.1459,
+      "make_final": 0.0547,
+      "win_tournament": 0.0214
     },
     "England": {
-      "group_first": 0.6267,
-      "group_second": 0.2431,
-      "group_third": 0.0948,
-      "make_r16": 0.7199,
-      "make_quarters": 0.5058,
-      "make_semis": 0.3257,
-      "make_final": 0.177,
-      "win_tournament": 0.0884
+      "group_first": 0.6264,
+      "group_second": 0.2521,
+      "group_third": 0.0926,
+      "make_r16": 0.7166,
+      "make_quarters": 0.5051,
+      "make_semis": 0.3313,
+      "make_final": 0.1782,
+      "win_tournament": 0.0879
     },
     "Croatia": {
-      "group_first": 0.2473,
-      "group_second": 0.4072,
-      "group_third": 0.2291,
-      "make_r16": 0.4725,
-      "make_quarters": 0.2802,
-      "make_semis": 0.1321,
-      "make_final": 0.0474,
-      "win_tournament": 0.0151
+      "group_first": 0.2587,
+      "group_second": 0.4075,
+      "group_third": 0.2249,
+      "make_r16": 0.4683,
+      "make_quarters": 0.2776,
+      "make_semis": 0.1316,
+      "make_final": 0.0432,
+      "win_tournament": 0.013
     },
     "Ghana": {
-      "group_first": 0.0737,
-      "group_second": 0.1977,
-      "group_third": 0.3693,
-      "make_r16": 0.1536,
-      "make_quarters": 0.056,
-      "make_semis": 0.0115,
-      "make_final": 0.0021,
-      "win_tournament": 0.0005
+      "group_first": 0.0713,
+      "group_second": 0.1922,
+      "group_third": 0.3711,
+      "make_r16": 0.1467,
+      "make_quarters": 0.054,
+      "make_semis": 0.0124,
+      "make_final": 0.0017,
+      "win_tournament": 0.0003
     },
     "Panama": {
-      "group_first": 0.0523,
-      "group_second": 0.152,
-      "group_third": 0.3068,
-      "make_r16": 0.0945,
-      "make_quarters": 0.0287,
-      "make_semis": 0.0052,
-      "make_final": 0.0002,
-      "win_tournament": 0.0001
+      "group_first": 0.0436,
+      "group_second": 0.1482,
+      "group_third": 0.3114,
+      "make_r16": 0.088,
+      "make_quarters": 0.0289,
+      "make_semis": 0.0046,
+      "make_final": 0.0004,
+      "win_tournament": 0
     }
   },
   "team_details": {
@@ -5428,7 +5899,7 @@
           "date_of_birth": "2003-04-20"
         }
       ],
-      "fetched_at": "2026-06-13T13:19:04.642Z",
+      "fetched_at": "2026-06-16T08:11:12.786Z",
       "group": "A",
       "confederation": "CONCACAF"
     },
@@ -5626,7 +6097,7 @@
           "date_of_birth": "2000-10-02"
         }
       ],
-      "fetched_at": "2026-06-13T13:19:11.694Z",
+      "fetched_at": "2026-06-16T08:11:19.853Z",
       "group": "A",
       "confederation": "CAF"
     },
@@ -5824,7 +6295,7 @@
           "date_of_birth": "2002-05-09"
         }
       ],
-      "fetched_at": "2026-06-13T13:19:18.764Z",
+      "fetched_at": "2026-06-16T08:11:26.887Z",
       "group": "A",
       "confederation": "AFC"
     },
@@ -6022,7 +6493,7 @@
           "date_of_birth": "1999-04-29"
         }
       ],
-      "fetched_at": "2026-06-13T13:19:25.827Z",
+      "fetched_at": "2026-06-16T08:11:33.955Z",
       "group": "A",
       "confederation": "UEFA"
     },
@@ -6220,7 +6691,7 @@
           "date_of_birth": "2001-07-03"
         }
       ],
-      "fetched_at": "2026-06-13T13:19:32.865Z",
+      "fetched_at": "2026-06-16T08:11:40.977Z",
       "group": "B",
       "confederation": "CONCACAF"
     },
@@ -6418,7 +6889,7 @@
           "date_of_birth": "2007-09-21"
         }
       ],
-      "fetched_at": "2026-06-13T13:19:39.919Z",
+      "fetched_at": "2026-06-16T08:11:48.048Z",
       "group": "B",
       "confederation": "UEFA"
     },
@@ -6616,7 +7087,7 @@
           "date_of_birth": "1994-08-19"
         }
       ],
-      "fetched_at": "2026-06-13T13:19:46.910Z",
+      "fetched_at": "2026-06-16T08:11:55.080Z",
       "group": "B",
       "confederation": "AFC"
     },
@@ -6814,7 +7285,7 @@
           "date_of_birth": "2000-12-04"
         }
       ],
-      "fetched_at": "2026-06-13T13:19:53.910Z",
+      "fetched_at": "2026-06-16T08:12:02.131Z",
       "group": "B",
       "confederation": "UEFA"
     },
@@ -7012,7 +7483,7 @@
           "date_of_birth": "2006-08-03"
         }
       ],
-      "fetched_at": "2026-06-13T13:20:01.284Z",
+      "fetched_at": "2026-06-16T08:12:09.123Z",
       "group": "C",
       "confederation": "CONMEBOL"
     },
@@ -7210,7 +7681,7 @@
           "date_of_birth": "2004-11-30"
         }
       ],
-      "fetched_at": "2026-06-13T13:20:08.288Z",
+      "fetched_at": "2026-06-16T08:12:16.196Z",
       "group": "C",
       "confederation": "CAF"
     },
@@ -7289,6 +7760,13 @@
           "date_of_birth": "1993-10-14"
         },
         {
+          "id": 253661,
+          "name": "Garven-Michee Metusala",
+          "position": "Defence",
+          "nationality": "Haiti",
+          "date_of_birth": "1999-12-31"
+        },
+        {
           "id": 256398,
           "name": "Keeto Thermoncy",
           "position": "Defence",
@@ -7301,13 +7779,6 @@
           "position": "Defence",
           "nationality": "Haiti",
           "date_of_birth": "2001-08-24"
-        },
-        {
-          "id": 433,
-          "name": "Leverton Pierre",
-          "position": "Midfield",
-          "nationality": "Haiti",
-          "date_of_birth": "1998-03-09"
         },
         {
           "id": 788,
@@ -7408,7 +7879,7 @@
           "date_of_birth": "2001-07-07"
         }
       ],
-      "fetched_at": "2026-06-13T13:20:15.273Z",
+      "fetched_at": "2026-06-16T08:12:23.193Z",
       "group": "C",
       "confederation": "CONCACAF"
     },
@@ -7606,7 +8077,7 @@
           "date_of_birth": "1995-08-10"
         }
       ],
-      "fetched_at": "2026-06-13T13:20:22.257Z",
+      "fetched_at": "2026-06-16T08:12:30.271Z",
       "group": "C",
       "confederation": "UEFA"
     },
@@ -7804,7 +8275,7 @@
           "date_of_birth": "2001-04-19"
         }
       ],
-      "fetched_at": "2026-06-13T13:20:29.317Z",
+      "fetched_at": "2026-06-16T08:12:37.302Z",
       "group": "D",
       "confederation": "CONCACAF"
     },
@@ -8002,7 +8473,7 @@
           "date_of_birth": "1995-06-16"
         }
       ],
-      "fetched_at": "2026-06-13T13:20:36.308Z",
+      "fetched_at": "2026-06-16T08:12:44.321Z",
       "group": "D",
       "confederation": "CONMEBOL"
     },
@@ -8200,7 +8671,7 @@
           "date_of_birth": "2000-11-28"
         }
       ],
-      "fetched_at": "2026-06-13T13:20:43.350Z",
+      "fetched_at": "2026-06-16T08:12:51.308Z",
       "group": "D",
       "confederation": "AFC"
     },
@@ -8398,7 +8869,7 @@
           "date_of_birth": "2005-11-11"
         }
       ],
-      "fetched_at": "2026-06-13T13:20:50.332Z",
+      "fetched_at": "2026-06-16T08:12:58.328Z",
       "group": "D",
       "confederation": "UEFA"
     },
@@ -8596,7 +9067,7 @@
           "date_of_birth": "2002-10-17"
         }
       ],
-      "fetched_at": "2026-06-13T13:20:57.335Z",
+      "fetched_at": "2026-06-16T08:13:05.385Z",
       "group": "E",
       "confederation": "UEFA"
     },
@@ -8794,7 +9265,7 @@
           "date_of_birth": "1992-09-19"
         }
       ],
-      "fetched_at": "2026-06-13T13:21:04.317Z",
+      "fetched_at": "2026-06-16T08:13:12.363Z",
       "group": "E",
       "confederation": "CONCACAF"
     },
@@ -8992,7 +9463,7 @@
           "date_of_birth": "2006-11-14"
         }
       ],
-      "fetched_at": "2026-06-13T13:21:11.305Z",
+      "fetched_at": "2026-06-16T08:13:19.412Z",
       "group": "E",
       "confederation": "CAF"
     },
@@ -9190,7 +9661,7 @@
           "date_of_birth": "2005-03-19"
         }
       ],
-      "fetched_at": "2026-06-13T13:21:18.345Z",
+      "fetched_at": "2026-06-16T08:13:26.449Z",
       "group": "E",
       "confederation": "CONMEBOL"
     },
@@ -9388,7 +9859,7 @@
           "date_of_birth": "2002-02-01"
         }
       ],
-      "fetched_at": "2026-06-13T13:21:25.335Z",
+      "fetched_at": "2026-06-16T08:13:33.501Z",
       "group": "F",
       "confederation": "UEFA"
     },
@@ -9586,7 +10057,7 @@
           "date_of_birth": "2005-06-03"
         }
       ],
-      "fetched_at": "2026-06-13T13:21:32.383Z",
+      "fetched_at": "2026-06-16T08:13:40.535Z",
       "group": "F",
       "confederation": "AFC"
     },
@@ -9784,7 +10255,7 @@
           "date_of_birth": "2002-04-27"
         }
       ],
-      "fetched_at": "2026-06-13T13:21:39.379Z",
+      "fetched_at": "2026-06-16T08:13:47.595Z",
       "group": "F",
       "confederation": "UEFA"
     },
@@ -9982,7 +10453,7 @@
           "date_of_birth": "2005-02-02"
         }
       ],
-      "fetched_at": "2026-06-13T13:21:46.373Z",
+      "fetched_at": "2026-06-16T08:13:54.694Z",
       "group": "F",
       "confederation": "CAF"
     },
@@ -10180,7 +10651,7 @@
           "date_of_birth": "2005-02-03"
         }
       ],
-      "fetched_at": "2026-06-13T13:21:53.364Z",
+      "fetched_at": "2026-06-16T08:14:01.833Z",
       "group": "G",
       "confederation": "UEFA"
     },
@@ -10378,7 +10849,7 @@
           "date_of_birth": "2008-01-01"
         }
       ],
-      "fetched_at": "2026-06-13T13:22:00.373Z",
+      "fetched_at": "2026-06-16T08:14:08.850Z",
       "group": "G",
       "confederation": "CAF"
     },
@@ -10576,7 +11047,7 @@
           "date_of_birth": "2000-10-30"
         }
       ],
-      "fetched_at": "2026-06-13T13:22:07.373Z",
+      "fetched_at": "2026-06-16T08:14:15.957Z",
       "group": "G",
       "confederation": "AFC"
     },
@@ -10774,7 +11245,7 @@
           "date_of_birth": "2002-08-19"
         }
       ],
-      "fetched_at": "2026-06-13T13:22:14.442Z",
+      "fetched_at": "2026-06-16T08:14:23.002Z",
       "group": "G",
       "confederation": "OFC"
     },
@@ -10972,7 +11443,7 @@
           "date_of_birth": "2003-07-13"
         }
       ],
-      "fetched_at": "2026-06-13T13:22:21.445Z",
+      "fetched_at": "2026-06-16T08:14:30.007Z",
       "group": "H",
       "confederation": "UEFA"
     },
@@ -11170,7 +11641,7 @@
           "date_of_birth": "2002-05-03"
         }
       ],
-      "fetched_at": "2026-06-13T13:22:28.541Z",
+      "fetched_at": "2026-06-16T08:14:37.083Z",
       "group": "H",
       "confederation": "CAF"
     },
@@ -11368,14 +11839,14 @@
           "date_of_birth": "2000-05-14"
         }
       ],
-      "fetched_at": "2026-06-13T13:22:35.568Z",
+      "fetched_at": "2026-06-16T08:14:44.071Z",
       "group": "H",
       "confederation": "AFC"
     },
     "Uruguay": {
       "name": "Uruguay",
       "api_id": 758,
-      "tla": "URY",
+      "tla": "URU",
       "crest": "https://crests.football-data.org/758.svg",
       "flag": "🇺🇾",
       "coach": {
@@ -11566,7 +12037,7 @@
           "date_of_birth": "1998-06-30"
         }
       ],
-      "fetched_at": "2026-06-13T13:22:42.914Z",
+      "fetched_at": "2026-06-16T08:14:51.088Z",
       "group": "H",
       "confederation": "CONMEBOL"
     },
@@ -11764,7 +12235,7 @@
           "date_of_birth": "2002-09-02"
         }
       ],
-      "fetched_at": "2026-06-13T13:22:50.041Z",
+      "fetched_at": "2026-06-16T08:14:58.113Z",
       "group": "I",
       "confederation": "UEFA"
     },
@@ -11969,7 +12440,7 @@
           "date_of_birth": "1981-02-05"
         }
       ],
-      "fetched_at": "2026-06-13T13:22:57.201Z",
+      "fetched_at": "2026-06-16T08:15:05.213Z",
       "group": "I",
       "confederation": "CAF"
     },
@@ -12167,7 +12638,7 @@
           "date_of_birth": "1996-01-19"
         }
       ],
-      "fetched_at": "2026-06-13T13:23:04.192Z",
+      "fetched_at": "2026-06-16T08:15:12.214Z",
       "group": "I",
       "confederation": "AFC"
     },
@@ -12365,7 +12836,7 @@
           "date_of_birth": "2000-02-06"
         }
       ],
-      "fetched_at": "2026-06-13T13:23:11.255Z",
+      "fetched_at": "2026-06-16T08:15:19.289Z",
       "group": "I",
       "confederation": "UEFA"
     },
@@ -12563,7 +13034,7 @@
           "date_of_birth": "2002-12-18"
         }
       ],
-      "fetched_at": "2026-06-13T13:23:18.346Z",
+      "fetched_at": "2026-06-16T08:15:26.437Z",
       "group": "J",
       "confederation": "CONMEBOL"
     },
@@ -12761,7 +13232,7 @@
           "date_of_birth": "2002-09-06"
         }
       ],
-      "fetched_at": "2026-06-13T13:23:25.354Z",
+      "fetched_at": "2026-06-16T08:15:33.443Z",
       "group": "J",
       "confederation": "CAF"
     },
@@ -12959,7 +13430,7 @@
           "date_of_birth": "1997-07-07"
         }
       ],
-      "fetched_at": "2026-06-13T13:23:32.396Z",
+      "fetched_at": "2026-06-16T08:15:40.431Z",
       "group": "J",
       "confederation": "UEFA"
     },
@@ -13157,7 +13628,7 @@
           "date_of_birth": "2004-04-13"
         }
       ],
-      "fetched_at": "2026-06-13T13:23:39.556Z",
+      "fetched_at": "2026-06-16T08:15:47.413Z",
       "group": "J",
       "confederation": "AFC"
     },
@@ -13355,7 +13826,7 @@
           "date_of_birth": "2002-12-14"
         }
       ],
-      "fetched_at": "2026-06-13T13:23:46.616Z",
+      "fetched_at": "2026-06-16T08:15:54.400Z",
       "group": "K",
       "confederation": "UEFA"
     },
@@ -13553,7 +14024,7 @@
           "date_of_birth": "1994-06-24"
         }
       ],
-      "fetched_at": "2026-06-13T13:23:53.621Z",
+      "fetched_at": "2026-06-16T08:16:01.478Z",
       "group": "K",
       "confederation": "CAF"
     },
@@ -13751,7 +14222,7 @@
           "date_of_birth": "1997-10-30"
         }
       ],
-      "fetched_at": "2026-06-13T13:24:00.788Z",
+      "fetched_at": "2026-06-16T08:16:08.664Z",
       "group": "K",
       "confederation": "AFC"
     },
@@ -13949,7 +14420,7 @@
           "date_of_birth": "2002-09-12"
         }
       ],
-      "fetched_at": "2026-06-13T13:24:08.113Z",
+      "fetched_at": "2026-06-16T08:16:15.652Z",
       "group": "K",
       "confederation": "CONMEBOL"
     },
@@ -14147,7 +14618,7 @@
           "date_of_birth": "2002-03-10"
         }
       ],
-      "fetched_at": "2026-06-13T13:24:15.106Z",
+      "fetched_at": "2026-06-16T08:16:22.748Z",
       "group": "L",
       "confederation": "UEFA"
     },
@@ -14345,7 +14816,7 @@
           "date_of_birth": "2003-03-31"
         }
       ],
-      "fetched_at": "2026-06-13T13:24:22.089Z",
+      "fetched_at": "2026-06-16T08:16:29.742Z",
       "group": "L",
       "confederation": "UEFA"
     },
@@ -14543,7 +15014,7 @@
           "date_of_birth": "2003-09-23"
         }
       ],
-      "fetched_at": "2026-06-13T13:24:29.137Z",
+      "fetched_at": "2026-06-16T08:16:36.718Z",
       "group": "L",
       "confederation": "CAF"
     },
@@ -14741,21 +15212,156 @@
           "date_of_birth": "2001-06-21"
         }
       ],
-      "fetched_at": "2026-06-13T13:24:36.184Z",
+      "fetched_at": "2026-06-16T08:16:43.706Z",
       "group": "L",
       "confederation": "CONCACAF"
     }
   },
   "predictions_vs_results": {
     "summary": {
-      "matches_played": 4,
+      "matches_played": 16,
       "total_matches": 104,
-      "average_rps": 0.162,
-      "average_surprise_bits": 1.25,
-      "correct_predictions": 3,
-      "correct_pct": 75
+      "average_rps": 0.201,
+      "average_surprise_bits": 1.7,
+      "correct_predictions": 6,
+      "correct_pct": 38
     },
     "matches": [
+      {
+        "home_team": "Spain",
+        "away_team": "Cape Verde",
+        "group": "H",
+        "date": "2026-06-15T17:00:00Z",
+        "pre_match_probs": {
+          "home_win": 0.8996,
+          "draw": 0.0712,
+          "away_win": 0.0292
+        },
+        "predicted_outcome": "home_win",
+        "actual_outcome": "draw",
+        "actual_score": {
+          "home": 0,
+          "away": 0
+        },
+        "surprise_bits": 3.81,
+        "raw_probability": 0.071,
+        "rps": 0.405,
+        "best_bet": {
+          "odds": 18,
+          "return_10": 180,
+          "bookie": "Betfair"
+        },
+        "home_owner": "Ian Whelan",
+        "away_owner": "Shirlee Scott"
+      },
+      {
+        "home_team": "Qatar",
+        "away_team": "Switzerland",
+        "group": "B",
+        "date": "2026-06-13T19:00:00Z",
+        "pre_match_probs": {
+          "home_win": 0.0636,
+          "draw": 0.1369,
+          "away_win": 0.7995
+        },
+        "predicted_outcome": "away_win",
+        "actual_outcome": "draw",
+        "actual_score": {
+          "home": 1,
+          "away": 1
+        },
+        "surprise_bits": 2.87,
+        "raw_probability": 0.137,
+        "rps": 0.322,
+        "best_bet": {
+          "odds": 8.5,
+          "return_10": 85,
+          "bookie": "Sky Bet"
+        },
+        "home_owner": "Ian Whelan",
+        "away_owner": null
+      },
+      {
+        "home_team": "Australia",
+        "away_team": "Türkiye",
+        "group": "D",
+        "date": "2026-06-14T04:00:00Z",
+        "pre_match_probs": {
+          "home_win": 0.1819,
+          "draw": 0.2539,
+          "away_win": 0.5642
+        },
+        "predicted_outcome": "away_win",
+        "actual_outcome": "home_win",
+        "actual_score": {
+          "home": 2,
+          "away": 0
+        },
+        "surprise_bits": 2.46,
+        "raw_probability": 0.182,
+        "rps": 0.494,
+        "best_bet": {
+          "odds": 5.7,
+          "return_10": 57,
+          "bookie": "Betfair"
+        },
+        "home_owner": "Bryn Mills",
+        "away_owner": "Tim Copland"
+      },
+      {
+        "home_team": "Saudi Arabia",
+        "away_team": "Uruguay",
+        "group": "H",
+        "date": "2026-06-15T23:00:00Z",
+        "pre_match_probs": {
+          "home_win": 0.1135,
+          "draw": 0.2203,
+          "away_win": 0.6662
+        },
+        "predicted_outcome": "away_win",
+        "actual_outcome": "draw",
+        "actual_score": {
+          "home": 1,
+          "away": 1
+        },
+        "surprise_bits": 2.18,
+        "raw_probability": 0.22,
+        "rps": 0.228,
+        "best_bet": {
+          "odds": 4.6,
+          "return_10": 46,
+          "bookie": "Betfair"
+        },
+        "home_owner": "Caitlin Kilcoyne",
+        "away_owner": null
+      },
+      {
+        "home_team": "Brazil",
+        "away_team": "Morocco",
+        "group": "C",
+        "date": "2026-06-13T23:00:00Z",
+        "pre_match_probs": {
+          "home_win": 0.573,
+          "draw": 0.254,
+          "away_win": 0.173
+        },
+        "predicted_outcome": "home_win",
+        "actual_outcome": "draw",
+        "actual_score": {
+          "home": 1,
+          "away": 1
+        },
+        "surprise_bits": 1.98,
+        "raw_probability": 0.254,
+        "rps": 0.179,
+        "best_bet": {
+          "odds": 4,
+          "return_10": 40,
+          "bookie": "William Hill"
+        },
+        "home_owner": "Caitlin Kilcoyne",
+        "away_owner": "Yousaf Mahmood"
+      },
       {
         "home_team": "Canada",
         "away_team": "Bosnia and Herzegovina",
@@ -14782,6 +15388,114 @@
         },
         "home_owner": null,
         "away_owner": null
+      },
+      {
+        "home_team": "Netherlands",
+        "away_team": "Japan",
+        "group": "F",
+        "date": "2026-06-14T21:00:00Z",
+        "pre_match_probs": {
+          "home_win": 0.4547,
+          "draw": 0.2817,
+          "away_win": 0.2637
+        },
+        "predicted_outcome": "home_win",
+        "actual_outcome": "draw",
+        "actual_score": {
+          "home": 2,
+          "away": 2
+        },
+        "surprise_bits": 1.83,
+        "raw_probability": 0.282,
+        "rps": 0.138,
+        "best_bet": {
+          "odds": 3.5,
+          "return_10": 35,
+          "bookie": "Betfair"
+        },
+        "home_owner": "Emma Ryan",
+        "away_owner": "Allan Chan"
+      },
+      {
+        "home_team": "Iran",
+        "away_team": "New Zealand",
+        "group": "G",
+        "date": "2026-06-16T05:00:00Z",
+        "pre_match_probs": {
+          "home_win": 0.2797,
+          "draw": 0.2904,
+          "away_win": 0.4299
+        },
+        "predicted_outcome": "away_win",
+        "actual_outcome": "draw",
+        "actual_score": {
+          "home": 2,
+          "away": 2
+        },
+        "surprise_bits": 1.78,
+        "raw_probability": 0.29,
+        "rps": 0.132,
+        "best_bet": {
+          "odds": 3.4,
+          "return_10": 34,
+          "bookie": "Betfair"
+        },
+        "home_owner": "Anugrah Sebastian",
+        "away_owner": "Rajdeep Singh"
+      },
+      {
+        "home_team": "Ivory Coast",
+        "away_team": "Ecuador",
+        "group": "E",
+        "date": "2026-06-15T00:00:00Z",
+        "pre_match_probs": {
+          "home_win": 0.2933,
+          "draw": 0.3361,
+          "away_win": 0.3706
+        },
+        "predicted_outcome": "away_win",
+        "actual_outcome": "home_win",
+        "actual_score": {
+          "home": 1,
+          "away": 0
+        },
+        "surprise_bits": 1.77,
+        "raw_probability": 0.293,
+        "rps": 0.318,
+        "best_bet": {
+          "odds": 3.45,
+          "return_10": 34.5,
+          "bookie": "Smarkets"
+        },
+        "home_owner": "Dave Moseley",
+        "away_owner": "Dave Moseley"
+      },
+      {
+        "home_team": "Belgium",
+        "away_team": "Egypt",
+        "group": "G",
+        "date": "2026-06-15T23:00:00Z",
+        "pre_match_probs": {
+          "home_win": 0.3927,
+          "draw": 0.2929,
+          "away_win": 0.3144
+        },
+        "predicted_outcome": "home_win",
+        "actual_outcome": "draw",
+        "actual_score": {
+          "home": 1,
+          "away": 1
+        },
+        "surprise_bits": 1.77,
+        "raw_probability": 0.293,
+        "rps": 0.127,
+        "best_bet": {
+          "odds": 3.45,
+          "return_10": 34.5,
+          "bookie": "Matchbook"
+        },
+        "home_owner": "Catherine Swain",
+        "away_owner": "Tina Buckley"
       },
       {
         "home_team": "South Korea",
@@ -14838,6 +15552,60 @@
         "away_owner": "Yousaf Mahmood"
       },
       {
+        "home_team": "Sweden",
+        "away_team": "Tunisia",
+        "group": "F",
+        "date": "2026-06-15T04:00:00Z",
+        "pre_match_probs": {
+          "home_win": 0.5094,
+          "draw": 0.2794,
+          "away_win": 0.2112
+        },
+        "predicted_outcome": "home_win",
+        "actual_outcome": "home_win",
+        "actual_score": {
+          "home": 5,
+          "away": 1
+        },
+        "surprise_bits": 0.97,
+        "raw_probability": 0.509,
+        "rps": 0.143,
+        "best_bet": {
+          "odds": 1.95,
+          "return_10": 19.5,
+          "bookie": "Unibet (UK)"
+        },
+        "home_owner": "Catherine Swain",
+        "away_owner": "Andrew Turner"
+      },
+      {
+        "home_team": "Haiti",
+        "away_team": "Scotland",
+        "group": "C",
+        "date": "2026-06-14T01:00:00Z",
+        "pre_match_probs": {
+          "home_win": 0.1612,
+          "draw": 0.2142,
+          "away_win": 0.6245
+        },
+        "predicted_outcome": "away_win",
+        "actual_outcome": "away_win",
+        "actual_score": {
+          "home": 0,
+          "away": 1
+        },
+        "surprise_bits": 0.68,
+        "raw_probability": 0.625,
+        "rps": 0.083,
+        "best_bet": {
+          "odds": 1.57,
+          "return_10": 15.7,
+          "bookie": "Matchbook"
+        },
+        "home_owner": "Allan Chan",
+        "away_owner": "Joshua Kidd"
+      },
+      {
         "home_team": "Mexico",
         "away_team": "South Africa",
         "group": "A",
@@ -14863,9 +15631,54 @@
         },
         "home_owner": "Andrew Turner",
         "away_owner": null
+      },
+      {
+        "home_team": "Germany",
+        "away_team": "Curaçao",
+        "group": "E",
+        "date": "2026-06-14T18:00:00Z",
+        "pre_match_probs": {
+          "home_win": 0.9241,
+          "draw": 0.0532,
+          "away_win": 0.0226
+        },
+        "predicted_outcome": "home_win",
+        "actual_outcome": "home_win",
+        "actual_score": {
+          "home": 7,
+          "away": 1
+        },
+        "surprise_bits": 0.11,
+        "raw_probability": 0.924,
+        "rps": 0.003,
+        "best_bet": {
+          "odds": 1.06,
+          "return_10": 10.6,
+          "bookie": "Betfair"
+        },
+        "home_owner": "Nathan Nekrews",
+        "away_owner": "Tim Copland"
       }
     ],
     "team_performance": [
+      {
+        "team": "Australia",
+        "matches_played": 1,
+        "avg_rps": 0.494,
+        "expected_points": 0.8,
+        "actual_points": 3,
+        "delta": 2.2,
+        "direction": "overperforming"
+      },
+      {
+        "team": "Ivory Coast",
+        "matches_played": 1,
+        "avg_rps": 0.318,
+        "expected_points": 1.22,
+        "actual_points": 3,
+        "delta": 1.78,
+        "direction": "overperforming"
+      },
       {
         "team": "South Korea",
         "matches_played": 1,
@@ -14885,12 +15698,75 @@
         "direction": "overperforming"
       },
       {
+        "team": "Sweden",
+        "matches_played": 1,
+        "avg_rps": 0.143,
+        "expected_points": 1.81,
+        "actual_points": 3,
+        "delta": 1.19,
+        "direction": "overperforming"
+      },
+      {
+        "team": "Scotland",
+        "matches_played": 1,
+        "avg_rps": 0.083,
+        "expected_points": 2.09,
+        "actual_points": 3,
+        "delta": 0.91,
+        "direction": "overperforming"
+      },
+      {
+        "team": "Cape Verde",
+        "matches_played": 1,
+        "avg_rps": 0.405,
+        "expected_points": 0.16,
+        "actual_points": 1,
+        "delta": 0.84,
+        "direction": "overperforming"
+      },
+      {
         "team": "Mexico",
         "matches_played": 1,
         "avg_rps": 0.058,
         "expected_points": 2.24,
         "actual_points": 3,
         "delta": 0.76,
+        "direction": "overperforming"
+      },
+      {
+        "team": "Qatar",
+        "matches_played": 1,
+        "avg_rps": 0.322,
+        "expected_points": 0.33,
+        "actual_points": 1,
+        "delta": 0.67,
+        "direction": "overperforming"
+      },
+      {
+        "team": "Saudi Arabia",
+        "matches_played": 1,
+        "avg_rps": 0.228,
+        "expected_points": 0.56,
+        "actual_points": 1,
+        "delta": 0.44,
+        "direction": "overperforming"
+      },
+      {
+        "team": "Morocco",
+        "matches_played": 1,
+        "avg_rps": 0.179,
+        "expected_points": 0.77,
+        "actual_points": 1,
+        "delta": 0.23,
+        "direction": "overperforming"
+      },
+      {
+        "team": "Germany",
+        "matches_played": 1,
+        "avg_rps": 0.003,
+        "expected_points": 2.83,
+        "actual_points": 3,
+        "delta": 0.17,
         "direction": "overperforming"
       },
       {
@@ -14903,12 +15779,84 @@
         "direction": "overperforming"
       },
       {
+        "team": "Japan",
+        "matches_played": 1,
+        "avg_rps": 0.138,
+        "expected_points": 1.07,
+        "actual_points": 1,
+        "delta": -0.07,
+        "direction": "underperforming"
+      },
+      {
+        "team": "Curaçao",
+        "matches_played": 1,
+        "avg_rps": 0.003,
+        "expected_points": 0.12,
+        "actual_points": 0,
+        "delta": -0.12,
+        "direction": "underperforming"
+      },
+      {
+        "team": "Iran",
+        "matches_played": 1,
+        "avg_rps": 0.132,
+        "expected_points": 1.13,
+        "actual_points": 1,
+        "delta": -0.13,
+        "direction": "underperforming"
+      },
+      {
+        "team": "Egypt",
+        "matches_played": 1,
+        "avg_rps": 0.127,
+        "expected_points": 1.24,
+        "actual_points": 1,
+        "delta": -0.24,
+        "direction": "underperforming"
+      },
+      {
+        "team": "Belgium",
+        "matches_played": 1,
+        "avg_rps": 0.127,
+        "expected_points": 1.47,
+        "actual_points": 1,
+        "delta": -0.47,
+        "direction": "underperforming"
+      },
+      {
         "team": "South Africa",
         "matches_played": 1,
         "avg_rps": 0.058,
         "expected_points": 0.55,
         "actual_points": 0,
         "delta": -0.55,
+        "direction": "underperforming"
+      },
+      {
+        "team": "New Zealand",
+        "matches_played": 1,
+        "avg_rps": 0.132,
+        "expected_points": 1.58,
+        "actual_points": 1,
+        "delta": -0.58,
+        "direction": "underperforming"
+      },
+      {
+        "team": "Netherlands",
+        "matches_played": 1,
+        "avg_rps": 0.138,
+        "expected_points": 1.65,
+        "actual_points": 1,
+        "delta": -0.65,
+        "direction": "underperforming"
+      },
+      {
+        "team": "Haiti",
+        "matches_played": 1,
+        "avg_rps": 0.083,
+        "expected_points": 0.7,
+        "actual_points": 0,
+        "delta": -0.7,
         "direction": "underperforming"
       },
       {
@@ -14921,12 +15869,39 @@
         "direction": "underperforming"
       },
       {
+        "team": "Tunisia",
+        "matches_played": 1,
+        "avg_rps": 0.143,
+        "expected_points": 0.91,
+        "actual_points": 0,
+        "delta": -0.91,
+        "direction": "underperforming"
+      },
+      {
+        "team": "Brazil",
+        "matches_played": 1,
+        "avg_rps": 0.179,
+        "expected_points": 1.97,
+        "actual_points": 1,
+        "delta": -0.97,
+        "direction": "underperforming"
+      },
+      {
         "team": "Paraguay",
         "matches_played": 1,
         "avg_rps": 0.179,
         "expected_points": 1.04,
         "actual_points": 0,
         "delta": -1.04,
+        "direction": "underperforming"
+      },
+      {
+        "team": "Uruguay",
+        "matches_played": 1,
+        "avg_rps": 0.228,
+        "expected_points": 2.22,
+        "actual_points": 1,
+        "delta": -1.22,
         "direction": "underperforming"
       },
       {
@@ -14937,6 +15912,42 @@
         "actual_points": 0,
         "delta": -1.28,
         "direction": "underperforming"
+      },
+      {
+        "team": "Ecuador",
+        "matches_played": 1,
+        "avg_rps": 0.318,
+        "expected_points": 1.45,
+        "actual_points": 0,
+        "delta": -1.45,
+        "direction": "underperforming"
+      },
+      {
+        "team": "Switzerland",
+        "matches_played": 1,
+        "avg_rps": 0.322,
+        "expected_points": 2.54,
+        "actual_points": 1,
+        "delta": -1.54,
+        "direction": "underperforming"
+      },
+      {
+        "team": "Spain",
+        "matches_played": 1,
+        "avg_rps": 0.405,
+        "expected_points": 2.77,
+        "actual_points": 1,
+        "delta": -1.77,
+        "direction": "underperforming"
+      },
+      {
+        "team": "Türkiye",
+        "matches_played": 1,
+        "avg_rps": 0.494,
+        "expected_points": 1.95,
+        "actual_points": 0,
+        "delta": -1.95,
+        "direction": "underperforming"
       }
     ],
     "calibration": {
@@ -14946,55 +15957,55 @@
             0,
             0.2
           ],
-          "count": 1,
-          "avg_predicted": 0.112,
-          "actual_frequency": 0
+          "count": 11,
+          "avg_predicted": 0.102,
+          "actual_frequency": 0.273
         },
         {
           "predicted_range": [
             0.2,
             0.4
           ],
-          "count": 8,
-          "avg_predicted": 0.279,
-          "actual_frequency": 0.25
+          "count": 24,
+          "avg_predicted": 0.283,
+          "actual_frequency": 0.333
         },
         {
           "predicted_range": [
             0.4,
             0.6
           ],
-          "count": 2,
-          "avg_predicted": 0.488,
-          "actual_frequency": 0.5
+          "count": 7,
+          "avg_predicted": 0.501,
+          "actual_frequency": 0.286
         },
         {
           "predicted_range": [
             0.6,
             0.8
           ],
-          "count": 1,
-          "avg_predicted": 0.677,
-          "actual_frequency": 1
+          "count": 4,
+          "avg_predicted": 0.692,
+          "actual_frequency": 0.5
         },
         {
           "predicted_range": [
             0.8,
             1
           ],
-          "count": 0,
-          "avg_predicted": null,
-          "actual_frequency": null
+          "count": 2,
+          "avg_predicted": 0.912,
+          "actual_frequency": 0.5
         }
       ]
     }
   },
   "elo_source": "eloratings.net",
   "validation": {
-    "mean_absolute_error": 0.0356348858905456,
+    "mean_absolute_error": 0.0392875649216976,
     "max_deviation": {
       "team": "Spain",
-      "diff": 0.08165757575757576
+      "diff": 0.0991333333333333
     }
   },
   "bracket": {
