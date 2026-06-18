@@ -1,6 +1,6 @@
 {
   "description": "Auto-updated match results from external APIs. Used as fallback for completed matches.",
-  "last_updated": "2026-06-18T11:13:39.525Z",
+  "last_updated": "2026-06-18T13:23:05.449Z",
   "matches": [
     {
       "id": "Mexico-South Africa",
@@ -260,6 +260,18 @@
       "away_team": "Croatia",
       "home_score": 4,
       "away_score": 2,
+      "status": "completed",
+      "group": "L",
+      "stage": "group_stage",
+      "date": "2026-06-17",
+      "matchday": 1
+    },
+    {
+      "id": "Ghana-Panama",
+      "home_team": "Ghana",
+      "away_team": "Panama",
+      "home_score": 1,
+      "away_score": 0,
       "status": "completed",
       "group": "L",
       "stage": "group_stage",
