@@ -2730,7 +2730,56 @@ function renderTimeline() {
           },
           plugins: {
             legend: { display: false },
-            tooltip: { enabled: false }
+            tooltip: { enabled: false },
+            annotation: {
+              annotations: {
+                md1: {
+                  type: 'line',
+                  xMin: '2026-06-11',
+                  xMax: '2026-06-11',
+                  borderColor: 'rgba(100,100,100,0.4)',
+                  borderWidth: 1,
+                  borderDash: [4, 4],
+                  label: { display: true, content: 'MD1', position: 'start', font: { size: 10 }, color: '#666', backgroundColor: 'transparent' }
+                },
+                md2: {
+                  type: 'line',
+                  xMin: '2026-06-18',
+                  xMax: '2026-06-18',
+                  borderColor: 'rgba(100,100,100,0.4)',
+                  borderWidth: 1,
+                  borderDash: [4, 4],
+                  label: { display: true, content: 'MD2', position: 'start', font: { size: 10 }, color: '#666', backgroundColor: 'transparent' }
+                },
+                md3: {
+                  type: 'line',
+                  xMin: '2026-06-24',
+                  xMax: '2026-06-24',
+                  borderColor: 'rgba(100,100,100,0.4)',
+                  borderWidth: 1,
+                  borderDash: [4, 4],
+                  label: { display: true, content: 'MD3', position: 'start', font: { size: 10 }, color: '#666', backgroundColor: 'transparent' }
+                },
+                knockouts: {
+                  type: 'line',
+                  xMin: '2026-06-28',
+                  xMax: '2026-06-28',
+                  borderColor: 'rgba(100,100,100,0.6)',
+                  borderWidth: 1.5,
+                  borderDash: [4, 4],
+                  label: { display: true, content: 'Knockouts', position: 'start', font: { size: 10 }, color: '#666', backgroundColor: 'transparent' }
+                },
+                final: {
+                  type: 'line',
+                  xMin: '2026-07-19',
+                  xMax: '2026-07-19',
+                  borderColor: 'rgba(100,100,100,0.6)',
+                  borderWidth: 1.5,
+                  borderDash: [4, 4],
+                  label: { display: true, content: 'Final', position: 'start', font: { size: 10 }, color: '#666', backgroundColor: 'transparent' }
+                }
+              }
+            }
           },
           onHover: (event, elements, chart) => {
             const newIndex = elements.length > 0 ? elements[0].datasetIndex : null;
@@ -4423,6 +4472,7 @@ const html = `<!DOCTYPE html>
   <link rel="stylesheet" href="css/styles.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1/dist/chartjs-plugin-annotation.min.js"></script>
 </head>
 <body>
   <header class="header">
