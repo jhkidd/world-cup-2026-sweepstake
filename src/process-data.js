@@ -3,6 +3,7 @@ import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { addDays, parseISO, formatISO } from 'date-fns';
 import { runMonteCarloSimulation, runMonteCarloWithPaths, deriveTeamStrengths, calibrateDampingFactor } from './monte-carlo.js';
+import { normalizeTeamName } from './shared/team-names.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -93,20 +94,6 @@ function averageMatchOdds(bookmakers, teamName) {
     win: probs.win.length > 0 ? probs.win.reduce((s, p) => s + p, 0) / probs.win.length : null,
     draw: probs.draw.length > 0 ? probs.draw.reduce((s, p) => s + p, 0) / probs.draw.length : null
   };
-}
-
-function normalizeTeamName(name) {
-  // Handle common variations
-  const normalized = name.trim();
-  if (normalized === 'Türkiye' || normalized === 'Turkey') return 'Turkey';
-  if (normalized === 'Curaçao' || normalized === 'Curacao') return 'Curaçao';
-  if (normalized === 'Czech Republic' || normalized === 'Czechia') return 'Czechia';
-  if (normalized === 'Bosnia & Herzegovina' || normalized === 'Bosnia and Herzegovina' || normalized === 'Bosnia' || normalized === 'Bosnia-Herzegovina') return 'Bosnia and Herzegovina';
-  if (normalized === 'Côte d\'Ivoire' || normalized === 'Cote d\'Ivoire' || normalized === 'Cote D\'Ivoire' || normalized === 'Ivory Coast') return 'Ivory Coast';
-  if (normalized === 'United States' || normalized === 'United States of America') return 'USA';
-  if (normalized === 'Cape Verde Islands') return 'Cape Verde';
-  if (normalized === 'Democratic Republic of Congo' || normalized === 'Congo DR' || normalized === 'Democratic Republic of the Congo') return 'DR Congo';
-  return normalized;
 }
 
 /**

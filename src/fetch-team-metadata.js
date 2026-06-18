@@ -9,6 +9,8 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { SPORTSDB_TEAM_IDS } from './shared/team-ids.js';
+import { slugify, sleep } from './shared/utils.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -21,69 +23,6 @@ const API_BASE = 'https://www.thesportsdb.com/api/v1/json/3';
 
 // Rate limit: 30 calls/min = 2.5s between calls
 const API_DELAY = 2500;
-
-// TheSportsDB team IDs (same as fetch-player-photos.js)
-const TEAM_IDS = {
-  'Algeria': 134516,
-  'Argentina': 134509,
-  'Australia': 134500,
-  'Austria': 135986,
-  'Belgium': 134515,
-  'Bosnia and Herzegovina': 134510,
-  'Brazil': 134496,
-  'Canada': 140073,
-  'Cape Verde': 136477,
-  'Colombia': 134501,
-  'Croatia': 133912,
-  'Curaçao': 140271,
-  'Czechia': 133904,
-  'DR Congo': 136475,
-  'Ecuador': 134507,
-  'Egypt': 136138,
-  'England': 133914,
-  'France': 133913,
-  'Germany': 133907,
-  'Ghana': 134513,
-  'Haiti': 140175,
-  'Iran': 134511,
-  'Iraq': 140148,
-  'Ivory Coast': 134502,
-  'Japan': 134503,
-  'Jordan': 140145,
-  'Mexico': 134497,
-  'Morocco': 136139,
-  'Netherlands': 133905,
-  'New Zealand': 137449,
-  'Norway': 136516,
-  'Panama': 136141,
-  'Paraguay': 136471,
-  'Portugal': 133908,
-  'Qatar': 136472,
-  'Saudi Arabia': 136137,
-  'Scotland': 136450,
-  'Senegal': 136143,
-  'South Africa': 136482,
-  'South Korea': 134517,
-  'Spain': 133909,
-  'Sweden': 133916,
-  'Switzerland': 134506,
-  'Tunisia': 136142,
-  'Türkiye': 135985,
-  'Uruguay': 134504,
-  'USA': 134514,
-  'Uzbekistan': 140151
-};
-
-const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
-
-function slugify(name) {
-  return name
-    .toLowerCase()
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-|-$/g, '');
-}
 
 async function fetchWithRetry(url, retries = 3) {
   for (let i = 0; i < retries; i++) {
@@ -144,7 +83,7 @@ async function main() {
     console.log(`Loaded existing metadata for ${Object.keys(metadata).length} teams\n`);
   }
   
-  const teams = Object.entries(TEAM_IDS);
+  const teams = Object.entries(SPORTSDB_TEAM_IDS);
   let downloaded = 0;
   let skipped = 0;
   

@@ -10,6 +10,9 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { SPORTSDB_TEAM_IDS } from './shared/team-ids.js';
+import { normalizeTeamName } from './shared/team-names.js';
+import { sleep } from './shared/utils.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -22,81 +25,6 @@ const API_BASE = 'https://www.thesportsdb.com/api/v1/json/3';
 
 // Rate limit: 30 calls per minute = 2 seconds between calls
 const API_DELAY = 2500;
-
-// TheSportsDB team IDs for World Cup 2026 teams
-const TEAM_IDS = {
-  'Algeria': 134516,
-  'Argentina': 134509,
-  'Australia': 134500,
-  'Austria': 135986,
-  'Belgium': 134515,
-  'Bosnia and Herzegovina': 134510,
-  'Brazil': 134496,
-  'Canada': 140073,
-  'Cape Verde': 136477,
-  'Colombia': 134501,
-  'Croatia': 133912,
-  'Curaçao': 140271,
-  'Czechia': 133904,
-  'DR Congo': 136475,
-  'Ecuador': 134507,
-  'Egypt': 136138,
-  'England': 133914,
-  'France': 133913,
-  'Germany': 133907,
-  'Ghana': 134513,
-  'Haiti': 140175,
-  'Iran': 134511,
-  'Iraq': 140148,
-  'Ivory Coast': 134502,
-  'Japan': 134503,
-  'Jordan': 140145,
-  'Mexico': 134497,
-  'Morocco': 136139,
-  'Netherlands': 133905,
-  'New Zealand': 137449,
-  'Norway': 136516,
-  'Panama': 136141,
-  'Paraguay': 136471,
-  'Portugal': 133908,
-  'Qatar': 136472,
-  'Saudi Arabia': 136137,
-  'Scotland': 136450,
-  'Senegal': 136143,
-  'South Africa': 136482,
-  'South Korea': 134517,
-  'Spain': 133909,
-  'Sweden': 133916,
-  'Switzerland': 134506,
-  'Tunisia': 136142,
-  'Türkiye': 135985,
-  'Uruguay': 134504,
-  'USA': 134514,
-  'Uzbekistan': 140151
-};
-
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-function normalizeCountryName(name) {
-  const mapping = {
-    'turkey': 'türkiye',
-    'turkiye': 'türkiye',
-    'czech republic': 'czechia',
-    'curacao': 'curaçao',
-    'cote d\'ivoire': 'ivory coast',
-    'côte d\'ivoire': 'ivory coast',
-    'korea republic': 'south korea',
-    'republic of korea': 'south korea',
-    'democratic republic of congo': 'dr congo',
-    'congo dr': 'dr congo',
-    'united states': 'usa',
-    'united states of america': 'usa'
-  };
-  const lower = name.toLowerCase();
-  return mapping[lower] || lower;
-}
 
 async function fetchTeamPlayers(teamId) {
   const url = `${API_BASE}/lookup_all_players.php?id=${teamId}`;
@@ -161,12 +89,12 @@ async function main() {
   let fetchedCount = 0;
   let matchedCount = 0;
   
-  for (const [country, teamId] of Object.entries(TEAM_IDS)) {
-    const normalizedCountry = normalizeCountryName(country);
+  for (const [country, teamId] of Object.entries(SPORTSDB_TEAM_IDS)) {
+    const normalizedCountry = normalizeTeamName(country);
     
     // Get squad for this country from our data
     const countryData = Object.entries(teamDetails).find(
-      ([k]) => normalizeCountryName(k) === normalizedCountry
+      ([k]) => normalizeTeamName(k) === normalizedCountry
     );
     
     if (!countryData || !countryData[1].squad) {

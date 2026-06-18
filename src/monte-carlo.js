@@ -2,23 +2,11 @@
 import { readFileSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
+import { normalizeTeamName } from './shared/team-names.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const projectRoot = join(__dirname, '..');
-
-// Normalize team names to match odds data
-function normalizeTeamName(name) {
-  const normalized = name.trim();
-  // Handle special cases
-  if (normalized === 'Türkiye' || normalized === 'Turkey') return 'Turkey';
-  if (normalized === 'Curaçao' || normalized === 'Curacao') return 'Curacao';
-  if (normalized === 'Czech Republic' || normalized === 'Czechia') return 'Czechia';
-  if (normalized === 'Bosnia & Herzegovina' || normalized === 'Bosnia and Herzegovina' || normalized === 'Bosnia') return 'Bosnia and Herzegovina';
-  if (normalized === 'Côte d\'Ivoire' || normalized === 'Cote d\'Ivoire' || normalized === 'Cote D\'Ivoire' || normalized === 'Ivory Coast') return 'Ivory Coast';
-  if (normalized === 'United States' || normalized === 'United States of America') return 'USA';
-  return normalized;
-}
 
 // ============================================================================
 // ELO RATING FUNCTIONS

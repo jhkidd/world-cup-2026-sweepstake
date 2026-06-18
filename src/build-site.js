@@ -1,6 +1,8 @@
 import { existsSync, mkdirSync, cpSync, rmSync, writeFileSync, readFileSync, readdirSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
+import { FLAG_EMOJIS } from './shared/flags.js';
+import { normalizeTeamName } from './shared/team-names.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -2243,28 +2245,7 @@ const playerStats = ${JSON.stringify(playerStats)};
 const teamMetadata = ${JSON.stringify(teamMetadata)};
 
 // Flag emojis
-const flagEmojis = {
-  'Argentina': '🇦🇷', 'Australia': '🇦🇺', 'Austria': '🇦🇹', 'Algeria': '🇩🇿',
-  'Belgium': '🇧🇪', 'Brazil': '🇧🇷', 'Bosnia and Herzegovina': '🇧🇦',
-  'Canada': '🇨🇦', 'Colombia': '🇨🇴', 'Croatia': '🇭🇷', 'Czechia': '🇨🇿', 'Curaçao': '🇨🇼',
-  'DR Congo': '🇨🇩', 'Denmark': '🇩🇰',
-  'England': '🏴󠁧󠁢󠁥󠁮󠁧󠁿', 'Ecuador': '🇪🇨', 'Egypt': '🇪🇬',
-  'France': '🇫🇷',
-  'Germany': '🇩🇪', 'Ghana': '🇬🇭',
-  'Haiti': '🇭🇹',
-  'Iran': '🇮🇷', 'Iraq': '🇮🇶', 'Ivory Coast': '🇨🇮', 'Italy': '🇮🇹',
-  'Japan': '🇯🇵', 'Jordan': '🇯🇴',
-  'Kosovo': '🇽🇰',
-  'Mexico': '🇲🇽', 'Morocco': '🇲🇦',
-  'Netherlands': '🇳🇱', 'New Zealand': '🇳🇿', 'Norway': '🇳🇴',
-  'Panama': '🇵🇦', 'Paraguay': '🇵🇾', 'Portugal': '🇵🇹', 'Poland': '🇵🇱',
-  'Qatar': '🇶🇦',
-  'Saudi Arabia': '🇸🇦', 'Scotland': '🏴󠁧󠁢󠁳󠁣󠁴󠁿', 'Senegal': '🇸🇳', 'South Africa': '🇿🇦', 'South Korea': '🇰🇷',
-  'Spain': '🇪🇸', 'Sweden': '🇸🇪', 'Switzerland': '🇨🇭',
-  'Tunisia': '🇹🇳', 'Turkey': '🇹🇷', 'Türkiye': '🇹🇷',
-  'Uruguay': '🇺🇾', 'USA': '🇺🇸', 'Uzbekistan': '🇺🇿',
-  'Cape Verde': '🇨🇻'
-};
+const flagEmojis = ${JSON.stringify({...FLAG_EMOJIS, 'Denmark': '🇩🇰', 'Italy': '🇮🇹', 'Kosovo': '🇽🇰', 'Poland': '🇵🇱'})};
 
 function getFlag(teamName) {
   return flagEmojis[teamName] || '🏴';
@@ -2709,22 +2690,7 @@ function renderTimeline() {
   // Store current odds and teams for labels
   const currentOdds = {};
   const participantTeams = {};
-  const teamFlags = {
-    'Mexico': '🇲🇽', 'South Africa': '🇿🇦', 'South Korea': '🇰🇷', 'Czechia': '🇨🇿',
-    'Canada': '🇨🇦', 'Bosnia and Herzegovina': '🇧🇦', 'Qatar': '🇶🇦', 'Switzerland': '🇨🇭',
-    'Brazil': '🇧🇷', 'Morocco': '🇲🇦', 'Haiti': '🇭🇹', 'Scotland': '🏴󠁧󠁢󠁳󠁣󠁴󠁿',
-    'USA': '🇺🇸', 'Paraguay': '🇵🇾', 'Australia': '🇦🇺', 'Türkiye': '🇹🇷',
-    'Germany': '🇩🇪', 'Curaçao': '🇨🇼', 'Ivory Coast': '🇨🇮', 'Ecuador': '🇪🇨',
-    'Netherlands': '🇳🇱', 'Japan': '🇯🇵', 'Sweden': '🇸🇪', 'Tunisia': '🇹🇳',
-    'Belgium': '🇧🇪', 'Egypt': '🇪🇬', 'Iran': '🇮🇷', 'New Zealand': '🇳🇿',
-    'Spain': '🇪🇸', 'Cape Verde': '🇨🇻', 'Saudi Arabia': '🇸🇦', 'Uruguay': '🇺🇾',
-    'France': '🇫🇷', 'Senegal': '🇸🇳', 'Iraq': '🇮🇶', 'Norway': '🇳🇴',
-    'Argentina': '🇦🇷', 'Algeria': '🇩🇿', 'Austria': '🇦🇹', 'Jordan': '🇯🇴',
-    'Portugal': '🇵🇹', 'DR Congo': '🇨🇩', 'Uzbekistan': '🇺🇿', 'Colombia': '🇨🇴',
-    'England': '🏴󠁧󠁢󠁥󠁮󠁧󠁿', 'Croatia': '🇭🇷', 'Ghana': '🇬🇭', 'Panama': '🇵🇦',
-    'Chile': '🇨🇱', 'Poland': '🇵🇱', 'Serbia': '🇷🇸', 'Denmark': '🇩🇰',
-    'Italy': '🇮🇹', 'Wales': '🏴󠁧󠁢󠁷󠁬󠁳󠁿', 'Cameroon': '🇨🇲', 'Peru': '🇵🇪'
-  };
+  const teamFlags = ${JSON.stringify({...FLAG_EMOJIS, 'Chile': '🇨🇱', 'Poland': '🇵🇱', 'Serbia': '🇷🇸', 'Denmark': '🇩🇰', 'Italy': '🇮🇹', 'Wales': '🏴󠁧󠁢󠁷󠁬󠁳󠁿', 'Cameroon': '🇨🇲', 'Peru': '🇵🇪'})};
   featured.forEach(p => {
     currentOdds[p.name] = (p.total_probability * 100).toFixed(1);
     participantTeams[p.name] = [
@@ -2888,20 +2854,7 @@ function renderPredictions() {
   const { summary, matches, team_performance, calibration } = pvr;
   
   // Flag lookup
-  const flagEmoji = {
-    'Mexico': '🇲🇽', 'South Africa': '🇿🇦', 'South Korea': '🇰🇷', 'Czechia': '🇨🇿',
-    'Canada': '🇨🇦', 'Bosnia and Herzegovina': '🇧🇦', 'Qatar': '🇶🇦', 'Switzerland': '🇨🇭',
-    'Brazil': '🇧🇷', 'Morocco': '🇲🇦', 'Haiti': '🇭🇹', 'Scotland': '🏴󠁧󠁢󠁳󠁣󠁴󠁿',
-    'USA': '🇺🇸', 'Paraguay': '🇵🇾', 'Australia': '🇦🇺', 'Türkiye': '🇹🇷',
-    'Germany': '🇩🇪', 'Curaçao': '🇨🇼', 'Ivory Coast': '🇨🇮', 'Ecuador': '🇪🇨',
-    'Netherlands': '🇳🇱', 'Japan': '🇯🇵', 'Sweden': '🇸🇪', 'Tunisia': '🇹🇳',
-    'Belgium': '🇧🇪', 'Egypt': '🇪🇬', 'Iran': '🇮🇷', 'New Zealand': '🇳🇿',
-    'Spain': '🇪🇸', 'Cape Verde': '🇨🇻', 'Saudi Arabia': '🇸🇦', 'Uruguay': '🇺🇾',
-    'France': '🇫🇷', 'Senegal': '🇸🇳', 'Iraq': '🇮🇶', 'Norway': '🇳🇴',
-    'Argentina': '🇦🇷', 'Algeria': '🇩🇿', 'Austria': '🇦🇹', 'Jordan': '🇯🇴',
-    'Portugal': '🇵🇹', 'DR Congo': '🇨🇩', 'Uzbekistan': '🇺🇿', 'Colombia': '🇨🇴',
-    'England': '🏴󠁧󠁢󠁥󠁮󠁧󠁿', 'Croatia': '🇭🇷', 'Ghana': '🇬🇭', 'Panama': '🇵🇦'
-  };
+  const flagEmoji = ${JSON.stringify(FLAG_EMOJIS)};
   
   function outcomeLabel(outcome) {
     if (outcome === 'home_win') return 'Home Win';
@@ -3765,29 +3718,22 @@ function renderTeamDetail(slug) {
     return age;
   };
 
-  // Nationality to flag emoji mapping
-  const nationalityFlags = {
-    'Spain': '🇪🇸', 'Germany': '🇩🇪', 'France': '🇫🇷', 'England': '🏴󠁧󠁢󠁥󠁮󠁧󠁿', 'Italy': '🇮🇹',
-    'Brazil': '🇧🇷', 'Argentina': '🇦🇷', 'Portugal': '🇵🇹', 'Netherlands': '🇳🇱', 'Belgium': '🇧🇪',
-    'Croatia': '🇭🇷', 'Uruguay': '🇺🇾', 'Colombia': '🇨🇴', 'Mexico': '🇲🇽', 'USA': '🇺🇸',
-    'Japan': '🇯🇵', 'South Korea': '🇰🇷', 'Australia': '🇦🇺', 'Morocco': '🇲🇦', 'Senegal': '🇸🇳',
-    'Ghana': '🇬🇭', 'Cameroon': '🇨🇲', 'Nigeria': '🇳🇬', 'Egypt': '🇪🇬', 'Tunisia': '🇹🇳',
-    'Algeria': '🇩🇿', 'Poland': '🇵🇱', 'Denmark': '🇩🇰', 'Sweden': '🇸🇪', 'Norway': '🇳🇴',
-    'Switzerland': '🇨🇭', 'Austria': '🇦🇹', 'Wales': '🏴󠁧󠁢󠁷󠁬󠁳󠁿', 'Scotland': '🏴󠁧󠁢󠁳󠁣󠁴󠁿',
-    'Ireland': '🇮🇪', 'Serbia': '🇷🇸', 'Czech Republic': '🇨🇿', 'Czechia': '🇨🇿', 'Turkey': '🇹🇷',
+  // Nationality to flag emoji mapping (extends shared flags with non-WC nations for player nationalities)
+  const nationalityFlags = ${JSON.stringify({
+    ...FLAG_EMOJIS,
+    'Italy': '🇮🇹', 'Cameroon': '🇨🇲', 'Nigeria': '🇳🇬', 'Poland': '🇵🇱', 'Denmark': '🇩🇰',
+    'Wales': '🏴󠁧󠁢󠁷󠁬󠁳󠁿', 'Ireland': '🇮🇪', 'Serbia': '🇷🇸', 'Czech Republic': '🇨🇿',
     'Greece': '🇬🇷', 'Russia': '🇷🇺', 'Ukraine': '🇺🇦', 'Romania': '🇷🇴', 'Hungary': '🇭🇺',
-    'Slovakia': '🇸🇰', 'Slovenia': '🇸🇮', 'Bosnia and Herzegovina': '🇧🇦', 'Montenegro': '🇲🇪',
+    'Slovakia': '🇸🇰', 'Slovenia': '🇸🇮', 'Montenegro': '🇲🇪',
     'North Macedonia': '🇲🇰', 'Albania': '🇦🇱', 'Kosovo': '🇽🇰', 'Finland': '🇫🇮', 'Iceland': '🇮🇸',
-    'Canada': '🇨🇦', 'Chile': '🇨🇱', 'Peru': '🇵🇪', 'Ecuador': '🇪🇨', 'Venezuela': '🇻🇪',
-    'Paraguay': '🇵🇾', 'Bolivia': '🇧🇴', 'Costa Rica': '🇨🇷', 'Panama': '🇵🇦', 'Honduras': '🇭🇳',
-    'Jamaica': '🇯🇲', 'Haiti': '🇭🇹', 'Trinidad and Tobago': '🇹🇹', 'Curaçao': '🇨🇼',
-    'Iran': '🇮🇷', 'Saudi Arabia': '🇸🇦', 'Qatar': '🇶🇦', 'Iraq': '🇮🇶', 'Jordan': '🇯🇴',
-    'United Arab Emirates': '🇦🇪', 'Uzbekistan': '🇺🇿', 'China': '🇨🇳', 'Thailand': '🇹🇭',
-    'Vietnam': '🇻🇳', 'Indonesia': '🇮🇩', 'Malaysia': '🇲🇾', 'New Zealand': '🇳🇿',
-    'South Africa': '🇿🇦', 'DR Congo': '🇨🇩', 'Ivory Coast': '🇨🇮', 'Mali': '🇲🇱',
-    'Burkina Faso': '🇧🇫', 'Guinea': '🇬🇳', 'Cape Verde': '🇨🇻', 'Gabon': '🇬🇦',
+    'Chile': '🇨🇱', 'Peru': '🇵🇪', 'Venezuela': '🇻🇪',
+    'Bolivia': '🇧🇴', 'Costa Rica': '🇨🇷', 'Honduras': '🇭🇳',
+    'Jamaica': '🇯🇲', 'Trinidad and Tobago': '🇹🇹',
+    'United Arab Emirates': '🇦🇪', 'China': '🇨🇳', 'Thailand': '🇹🇭',
+    'Vietnam': '🇻🇳', 'Indonesia': '🇮🇩', 'Malaysia': '🇲🇾',
+    'Mali': '🇲🇱', 'Burkina Faso': '🇧🇫', 'Guinea': '🇬🇳', 'Gabon': '🇬🇦',
     'Congo': '🇨🇬', 'Angola': '🇦🇴', 'Zambia': '🇿🇲', 'Zimbabwe': '🇿🇼'
-  };
+  })};
   const getNationalityFlag = (nat) => nationalityFlags[nat] || '🌍';
 
   const squadHtml = details.squad && details.squad.length > 0 ? \`

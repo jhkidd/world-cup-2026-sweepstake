@@ -91,24 +91,42 @@ Simple top nav bar with tournament phase indicator:
 name: Deploy to GitHub Pages
 on:
   push:
-    branches: [main]
+    branches: [master]
+  workflow_dispatch:
   schedule:
     - cron: '0 */6 * * *'  # Rebuild every 6 hours
 
 jobs:
-  build-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
       - run: npm ci
       - run: npm run fetch
+      - run: npm run fetch-teams
+      - name: Commit new data
+        run: |
+          git config user.name "github-actions[bot]"
+          git add data/odds/ data/results.json data/team_details.json
+          git diff --staged --quiet || git commit -m "chore: update odds and team data [skip ci]"
+          git push || true
       - run: npm run process
-      - run: npm run build-site  # New script to generate HTML
-      - uses: peaceiris/actions-gh-pages@v3
+      - run: npm run build-site
+      - uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          path: './dist'
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    environment:
+      name: github-pages
+    steps:
+      - uses: actions/deploy-pages@v4
 ```
 
 **Access Control:**

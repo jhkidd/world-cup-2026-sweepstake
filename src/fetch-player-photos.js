@@ -11,6 +11,8 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import sharp from 'sharp';
+import { SPORTSDB_TEAM_IDS } from './shared/team-ids.js';
+import { slugify, sleep } from './shared/utils.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -26,71 +28,6 @@ const API_DELAY = 2500;
 
 // Image settings
 const IMAGE_SIZE = 100; // 100x100 px for circular avatars
-
-// TheSportsDB team IDs for World Cup 2026 teams (from website URLs)
-const TEAM_IDS = {
-  'Algeria': 134516,
-  'Argentina': 134509,
-  'Australia': 134500,
-  'Austria': 135986,
-  'Belgium': 134515,
-  'Bosnia and Herzegovina': 134510,
-  'Brazil': 134496,
-  'Canada': 140073,
-  'Cape Verde': 136477,
-  'Colombia': 134501,
-  'Croatia': 133912,
-  'Curaçao': 140271,
-  'Czechia': 133904,
-  'DR Congo': 136475,
-  'Ecuador': 134507,
-  'Egypt': 136138,
-  'England': 133914,
-  'France': 133913,
-  'Germany': 133907,
-  'Ghana': 134513,
-  'Haiti': 140175,
-  'Iran': 134511,
-  'Iraq': 140148,
-  'Ivory Coast': 134502,
-  'Japan': 134503,
-  'Jordan': 140145,
-  'Mexico': 134497,
-  'Morocco': 136139,
-  'Netherlands': 133905,
-  'New Zealand': 137449,
-  'Norway': 136516,
-  'Panama': 136141,
-  'Paraguay': 136471,
-  'Portugal': 133908,
-  'Qatar': 136472,
-  'Saudi Arabia': 136137,
-  'Scotland': 136450,
-  'Senegal': 136143,
-  'South Africa': 136482,
-  'South Korea': 134517,
-  'Spain': 133909,
-  'Sweden': 133916,
-  'Switzerland': 134506,
-  'Tunisia': 136142,
-  'Türkiye': 135985,
-  'Uruguay': 134504,
-  'USA': 134514,
-  'Uzbekistan': 140151
-};
-
-// Sleep helper
-const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
-
-// Generate slug from player name
-function slugify(name) {
-  return name
-    .toLowerCase()
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '') // Remove diacritics
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-|-$/g, '');
-}
 
 // Normalize name for matching
 function normalizeName(name) {
@@ -185,7 +122,7 @@ async function main() {
     ourTeamDetails = JSON.parse(fs.readFileSync(teamDetailsPath, 'utf8'));
   }
   
-  const teams = Object.keys(TEAM_IDS);
+  const teams = Object.keys(SPORTSDB_TEAM_IDS);
   console.log(`Processing ${teams.length} teams...\n`);
   
   let totalPlayers = 0;
@@ -195,7 +132,7 @@ async function main() {
   let apiCalls = 0;
   
   for (const teamName of teams) {
-    const teamId = TEAM_IDS[teamName];
+    const teamId = SPORTSDB_TEAM_IDS[teamName];
     console.log(`\n📍 ${teamName} (ID: ${teamId})`);
     
     // Get players from TheSportsDB
