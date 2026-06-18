@@ -105,6 +105,7 @@ function normalizeTeamName(name) {
   if (normalized === 'Côte d\'Ivoire' || normalized === 'Cote d\'Ivoire' || normalized === 'Cote D\'Ivoire' || normalized === 'Ivory Coast') return 'Ivory Coast';
   if (normalized === 'United States' || normalized === 'United States of America') return 'USA';
   if (normalized === 'Cape Verde Islands') return 'Cape Verde';
+  if (normalized === 'Democratic Republic of Congo' || normalized === 'Congo DR' || normalized === 'Democratic Republic of the Congo') return 'DR Congo';
   return normalized;
 }
 
