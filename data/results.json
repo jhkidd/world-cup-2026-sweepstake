@@ -1,6 +1,6 @@
 {
   "description": "Auto-updated match results from external APIs. Used as fallback for completed matches.",
-  "last_updated": "2026-06-18T01:14:40.774Z",
+  "last_updated": "2026-06-18T07:55:27.339Z",
   "matches": [
     {
       "id": "Mexico-South Africa",
@@ -30,8 +30,8 @@
       "id": "Canada-Bosnia-Herzegovina",
       "home_team": "Canada",
       "away_team": "Bosnia-Herzegovina",
-      "home_score": 0,
-      "away_score": 0,
+      "home_score": 1,
+      "away_score": 1,
       "status": "completed",
       "group": "B",
       "stage": "group_stage",
@@ -276,6 +276,18 @@
       "group": "L",
       "stage": "group_stage",
       "date": "2026-06-17",
+      "matchday": 1
+    },
+    {
+      "id": "Uzbekistan-Colombia",
+      "home_team": "Uzbekistan",
+      "away_team": "Colombia",
+      "home_score": 1,
+      "away_score": 3,
+      "status": "completed",
+      "group": "K",
+      "stage": "group_stage",
+      "date": "2026-06-18",
       "matchday": 1
     }
   ]
