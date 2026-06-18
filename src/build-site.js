@@ -2740,7 +2740,7 @@ function renderTimeline() {
                   borderColor: 'rgba(100,100,100,0.4)',
                   borderWidth: 1,
                   borderDash: [4, 4],
-                  label: { display: true, content: 'MD1', position: 'start', font: { size: 10 }, color: '#666', backgroundColor: 'transparent' }
+                  label: { display: true, content: 'Matchday 1', position: 'start', font: { size: 10 }, color: '#666', backgroundColor: 'transparent' }
                 },
                 md2: {
                   type: 'line',
@@ -2749,7 +2749,7 @@ function renderTimeline() {
                   borderColor: 'rgba(100,100,100,0.4)',
                   borderWidth: 1,
                   borderDash: [4, 4],
-                  label: { display: true, content: 'MD2', position: 'start', font: { size: 10 }, color: '#666', backgroundColor: 'transparent' }
+                  label: { display: true, content: 'Matchday 2', position: 'start', font: { size: 10 }, color: '#666', backgroundColor: 'transparent' }
                 },
                 md3: {
                   type: 'line',
@@ -2758,7 +2758,7 @@ function renderTimeline() {
                   borderColor: 'rgba(100,100,100,0.4)',
                   borderWidth: 1,
                   borderDash: [4, 4],
-                  label: { display: true, content: 'MD3', position: 'start', font: { size: 10 }, color: '#666', backgroundColor: 'transparent' }
+                  label: { display: true, content: 'Matchday 3', position: 'start', font: { size: 10 }, color: '#666', backgroundColor: 'transparent' }
                 },
                 knockouts: {
                   type: 'line',
