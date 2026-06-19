@@ -1,6 +1,6 @@
 {
   "description": "Auto-updated match results from external APIs. Used as fallback for completed matches.",
-  "last_updated": "2026-06-18T18:57:22.398Z",
+  "last_updated": "2026-06-19T01:20:15.078Z",
   "matches": [
     {
       "id": "Mexico-South Africa",
@@ -30,8 +30,8 @@
       "id": "Canada-Bosnia-Herzegovina",
       "home_team": "Canada",
       "away_team": "Bosnia-Herzegovina",
-      "home_score": 0,
-      "away_score": 0,
+      "home_score": 1,
+      "away_score": 1,
       "status": "completed",
       "group": "B",
       "stage": "group_stage",
@@ -298,6 +298,30 @@
       "away_score": 1,
       "status": "completed",
       "group": "A",
+      "stage": "group_stage",
+      "date": "2026-06-18",
+      "matchday": 2
+    },
+    {
+      "id": "Switzerland-Bosnia-Herzegovina",
+      "home_team": "Switzerland",
+      "away_team": "Bosnia-Herzegovina",
+      "home_score": 4,
+      "away_score": 1,
+      "status": "completed",
+      "group": "B",
+      "stage": "group_stage",
+      "date": "2026-06-18",
+      "matchday": 2
+    },
+    {
+      "id": "Canada-Qatar",
+      "home_team": "Canada",
+      "away_team": "Qatar",
+      "home_score": 6,
+      "away_score": 0,
+      "status": "completed",
+      "group": "B",
       "stage": "group_stage",
       "date": "2026-06-18",
       "matchday": 2
