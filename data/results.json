@@ -1,6 +1,6 @@
 {
   "description": "Auto-updated match results from external APIs. Used as fallback for completed matches.",
-  "last_updated": "2026-06-20T01:09:35.377Z",
+  "last_updated": "2026-06-20T07:31:29.763Z",
   "matches": [
     {
       "id": "Mexico-South Africa",
@@ -360,6 +360,30 @@
       "group": "C",
       "stage": "group_stage",
       "date": "2026-06-19",
+      "matchday": 2
+    },
+    {
+      "id": "Brazil-Haiti",
+      "home_team": "Brazil",
+      "away_team": "Haiti",
+      "home_score": 3,
+      "away_score": 0,
+      "status": "completed",
+      "group": "C",
+      "stage": "group_stage",
+      "date": "2026-06-20",
+      "matchday": 2
+    },
+    {
+      "id": "Turkey-Paraguay",
+      "home_team": "Turkey",
+      "away_team": "Paraguay",
+      "home_score": 0,
+      "away_score": 1,
+      "status": "completed",
+      "group": "D",
+      "stage": "group_stage",
+      "date": "2026-06-20",
       "matchday": 2
     }
   ]
