@@ -1,6 +1,6 @@
 {
   "description": "Auto-updated match results from external APIs. Used as fallback for completed matches.",
-  "last_updated": "2026-06-20T18:38:58.312Z",
+  "last_updated": "2026-06-21T01:17:38.680Z",
   "matches": [
     {
       "id": "Mexico-South Africa",
@@ -382,6 +382,30 @@
       "away_score": 1,
       "status": "completed",
       "group": "D",
+      "stage": "group_stage",
+      "date": "2026-06-20",
+      "matchday": 2
+    },
+    {
+      "id": "Netherlands-Sweden",
+      "home_team": "Netherlands",
+      "away_team": "Sweden",
+      "home_score": 5,
+      "away_score": 1,
+      "status": "completed",
+      "group": "F",
+      "stage": "group_stage",
+      "date": "2026-06-20",
+      "matchday": 2
+    },
+    {
+      "id": "Germany-Ivory Coast",
+      "home_team": "Germany",
+      "away_team": "Ivory Coast",
+      "home_score": 2,
+      "away_score": 1,
+      "status": "completed",
+      "group": "E",
       "stage": "group_stage",
       "date": "2026-06-20",
       "matchday": 2
