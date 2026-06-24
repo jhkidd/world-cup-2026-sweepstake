@@ -1,6 +1,6 @@
 {
   "description": "Auto-updated match results from external APIs. Used as fallback for completed matches.",
-  "last_updated": "2026-06-24T01:02:16.315Z",
+  "last_updated": "2026-06-24T07:23:28.160Z",
   "matches": [
     {
       "id": "Mexico-South Africa",
@@ -564,6 +564,18 @@
       "group": "L",
       "stage": "group_stage",
       "date": "2026-06-23",
+      "matchday": 2
+    },
+    {
+      "id": "Colombia-Congo DR",
+      "home_team": "Colombia",
+      "away_team": "Congo DR",
+      "home_score": 1,
+      "away_score": 0,
+      "status": "completed",
+      "group": "K",
+      "stage": "group_stage",
+      "date": "2026-06-24",
       "matchday": 2
     }
   ]
