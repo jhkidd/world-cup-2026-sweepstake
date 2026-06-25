@@ -1,6 +1,6 @@
 {
   "description": "Auto-updated match results from external APIs. Used as fallback for completed matches.",
-  "last_updated": "2026-06-24T18:43:27.206Z",
+  "last_updated": "2026-06-25T01:06:26.234Z",
   "matches": [
     {
       "id": "Mexico-South Africa",
@@ -30,8 +30,8 @@
       "id": "Canada-Bosnia-Herzegovina",
       "home_team": "Canada",
       "away_team": "Bosnia-Herzegovina",
-      "home_score": 0,
-      "away_score": 0,
+      "home_score": 1,
+      "away_score": 1,
       "status": "completed",
       "group": "B",
       "stage": "group_stage",
@@ -577,6 +577,54 @@
       "stage": "group_stage",
       "date": "2026-06-24",
       "matchday": 2
+    },
+    {
+      "id": "Switzerland-Canada",
+      "home_team": "Switzerland",
+      "away_team": "Canada",
+      "home_score": 2,
+      "away_score": 1,
+      "status": "completed",
+      "group": "B",
+      "stage": "group_stage",
+      "date": "2026-06-24",
+      "matchday": 3
+    },
+    {
+      "id": "Bosnia-Herzegovina-Qatar",
+      "home_team": "Bosnia-Herzegovina",
+      "away_team": "Qatar",
+      "home_score": 3,
+      "away_score": 1,
+      "status": "completed",
+      "group": "B",
+      "stage": "group_stage",
+      "date": "2026-06-24",
+      "matchday": 3
+    },
+    {
+      "id": "Morocco-Haiti",
+      "home_team": "Morocco",
+      "away_team": "Haiti",
+      "home_score": 4,
+      "away_score": 2,
+      "status": "completed",
+      "group": "C",
+      "stage": "group_stage",
+      "date": "2026-06-24",
+      "matchday": 3
+    },
+    {
+      "id": "Scotland-Brazil",
+      "home_team": "Scotland",
+      "away_team": "Brazil",
+      "home_score": 0,
+      "away_score": 3,
+      "status": "completed",
+      "group": "C",
+      "stage": "group_stage",
+      "date": "2026-06-24",
+      "matchday": 3
     }
   ]
 }
