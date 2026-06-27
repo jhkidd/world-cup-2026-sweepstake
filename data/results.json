@@ -1,6 +1,6 @@
 {
   "description": "Auto-updated match results from external APIs. Used as fallback for completed matches.",
-  "last_updated": "2026-06-27T01:04:56.299Z",
+  "last_updated": "2026-06-27T07:15:46.491Z",
   "matches": [
     {
       "id": "Mexico-South Africa",
@@ -744,6 +744,54 @@
       "group": "I",
       "stage": "group_stage",
       "date": "2026-06-26",
+      "matchday": 3
+    },
+    {
+      "id": "Uruguay-Spain",
+      "home_team": "Uruguay",
+      "away_team": "Spain",
+      "home_score": 0,
+      "away_score": 1,
+      "status": "completed",
+      "group": "H",
+      "stage": "group_stage",
+      "date": "2026-06-27",
+      "matchday": 3
+    },
+    {
+      "id": "Cape Verde Islands-Saudi Arabia",
+      "home_team": "Cape Verde Islands",
+      "away_team": "Saudi Arabia",
+      "home_score": 0,
+      "away_score": 0,
+      "status": "completed",
+      "group": "H",
+      "stage": "group_stage",
+      "date": "2026-06-27",
+      "matchday": 3
+    },
+    {
+      "id": "New Zealand-Belgium",
+      "home_team": "New Zealand",
+      "away_team": "Belgium",
+      "home_score": 1,
+      "away_score": 5,
+      "status": "completed",
+      "group": "G",
+      "stage": "group_stage",
+      "date": "2026-06-27",
+      "matchday": 3
+    },
+    {
+      "id": "Egypt-Iran",
+      "home_team": "Egypt",
+      "away_team": "Iran",
+      "home_score": 1,
+      "away_score": 1,
+      "status": "completed",
+      "group": "G",
+      "stage": "group_stage",
+      "date": "2026-06-27",
       "matchday": 3
     }
   ]
