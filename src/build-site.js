@@ -2372,9 +2372,9 @@ function renderStandings() {
         const homeScore = match.actual_result.home_score;
         const awayScore = match.actual_result.away_score;
         
-        // Initialize if needed
-        if (!teamPoints[homeTeam]) { teamPoints[homeTeam] = 0; teamGames[homeTeam] = 0; }
-        if (!teamPoints[awayTeam]) { teamPoints[awayTeam] = 0; teamGames[awayTeam] = 0; }
+        // Initialize if needed (use 'in' check — 0 points is falsy but valid)
+        if (!(homeTeam in teamPoints)) { teamPoints[homeTeam] = 0; teamGames[homeTeam] = 0; }
+        if (!(awayTeam in teamPoints)) { teamPoints[awayTeam] = 0; teamGames[awayTeam] = 0; }
         
         // Count game
         teamGames[homeTeam]++;

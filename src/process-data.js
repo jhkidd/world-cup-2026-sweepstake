@@ -629,10 +629,10 @@ function getMatchesForMatchday(matchday, oddsData, tournament, ownerLookup, loca
     matches.push({
       matchday: match.matchday,
       group: match.group,
-      home_team: match.home,
-      away_team: match.away,
-      home_owner: ownerLookup[normalizeTeamName(match.home)] || null,
-      away_owner: ownerLookup[normalizeTeamName(match.away)] || null,
+      home_team: normalizedHome,
+      away_team: normalizedAway,
+      home_owner: ownerLookup[normalizedHome] || null,
+      away_owner: ownerLookup[normalizedAway] || null,
       commence_time: match.kickoff_utc,
       home_win_prob: homeWinProb,
       draw_prob: drawProb,
@@ -797,14 +797,38 @@ async function main() {
     const teamRankings = getTeamRankings(tournament, teamProbs, sweepstake);
     console.log(`✓ Ranked ${teamRankings.length} teams`);
     
+    // Combine remote results (from odds API) with local results (authoritative)
+    // This must happen before getAllMatchdays so matchday 2/3 results are available
+    const combinedResults = [...(oddsData.results || [])];
+    for (const localResult of localResults) {
+      const alreadyExists = combinedResults.find(r => 
+        normalizeTeamName(r.home_team) === normalizeTeamName(localResult.home_team) &&
+        normalizeTeamName(r.away_team) === normalizeTeamName(localResult.away_team)
+      );
+      if (!alreadyExists) {
+        combinedResults.push({
+          id: localResult.id,
+          home_team: localResult.home_team,
+          away_team: localResult.away_team,
+          home_score: localResult.home_score,
+          away_score: localResult.away_score,
+          status: 'completed',
+          group: localResult.group,
+          stage: localResult.stage || 'group_stage',
+          date: localResult.date
+        });
+      }
+    }
+    console.log(`✓ Combined ${combinedResults.length} match results (${localResults.length} local + ${(oddsData.results || []).length} from API)`);
+
     // Upcoming matches (next matchday only - for backwards compatibility)
     console.log('\nFinding upcoming matches...');
-    const upcomingMatches = getUpcomingMatches(oddsData, tournament, sweepstake, localResults);
+    const upcomingMatches = getUpcomingMatches(oddsData, tournament, sweepstake, combinedResults);
     console.log(`✓ Found ${upcomingMatches.length} matches in next matchday`);
     
     // All matchdays (for web site)
     console.log('\nProcessing all group stage matchdays...');
-    const allMatchdays = getAllMatchdays(oddsData, tournament, sweepstake, localResults);
+    const allMatchdays = getAllMatchdays(oddsData, tournament, sweepstake, combinedResults);
     console.log(`✓ Matchday 1: ${allMatchdays.matchday1.length} matches`);
     console.log(`✓ Matchday 2: ${allMatchdays.matchday2.length} matches`);
     console.log(`✓ Matchday 3: ${allMatchdays.matchday3.length} matches`);
@@ -827,29 +851,6 @@ async function main() {
     
     // Run Monte Carlo simulation with Elo ratings
     console.log('\n🎲 Running Monte Carlo simulation for stage probabilities...');
-    
-    // Combine remote results (from odds API) with local results (authoritative)
-    const combinedResults = [...(oddsData.results || [])];
-    for (const localResult of localResults) {
-      // Add local results in the format mergeCompletedResults expects
-      const alreadyExists = combinedResults.find(r => 
-        normalizeTeamName(r.home_team) === normalizeTeamName(localResult.home_team) &&
-        normalizeTeamName(r.away_team) === normalizeTeamName(localResult.away_team)
-      );
-      if (!alreadyExists) {
-        combinedResults.push({
-          id: localResult.id,
-          home_team: localResult.home_team,
-          away_team: localResult.away_team,
-          home_score: localResult.home_score,
-          away_score: localResult.away_score,
-          status: 'completed',
-          group: localResult.group,
-          stage: localResult.stage || 'group_stage',
-          date: localResult.date
-        });
-      }
-    }
     
     // Merge completed results with match odds (override odds to 100% for actual winners)
     const matchOddsWithResults = mergeCompletedResults(oddsData.matchOdds, combinedResults, tournament);

@@ -1,6 +1,5 @@
 {
   "description": "Auto-updated match results from external APIs. Used as fallback for completed matches.",
-  "last_updated": "2026-06-28T07:32:16.588Z",
   "matches": [
     {
       "id": "Mexico-South Africa",
@@ -866,5 +865,6 @@
       "date": "2026-06-28",
       "matchday": 3
     }
-  ]
+  ],
+  "last_updated": "2026-06-28T10:17:30.647Z"
 }
