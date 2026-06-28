@@ -286,6 +286,21 @@ tr.section-break td {
   border-bottom: 1px solid #e0e0e0;
 }
 
+.knockout-round-section {
+  margin-bottom: 32px;
+}
+
+.knockout-round-section .group-title {
+  font-size: 16px;
+}
+
+.knockout-tbd {
+  color: #7F8C8D;
+  font-style: italic;
+  font-size: 13px;
+  padding: 16px 0;
+}
+
 .match-row {
   display: flex;
   align-items: center;

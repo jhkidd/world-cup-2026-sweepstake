@@ -394,6 +394,144 @@ function renderMatches(matchday) {
   `;
 }
 
+function renderKnockoutMatches() {
+  const knockout = data.knockout_matches || {};
+  const rounds = [
+    { key: 'round_of_32', label: 'Round of 32' },
+    { key: 'round_of_16', label: 'Round of 16' },
+    { key: 'quarter_finals', label: 'Quarter-Finals' },
+    { key: 'semi_finals', label: 'Semi-Finals' },
+    { key: 'third_place', label: 'Third-Place Play-off' },
+    { key: 'final', label: 'Final' }
+  ];
+
+  const renderMatch = (match) => {
+    const homeFlag = flagEmojis[match.home_team] || '🏴';
+    const awayFlag = flagEmojis[match.away_team] || '🏴';
+    const homeSlug = match.home_team.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+    const awaySlug = match.away_team.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+
+    const matchDate = new Date(match.commence_time);
+    const dateStr = matchDate.toLocaleDateString('en-GB', {
+      day: 'numeric',
+      month: 'short',
+      timeZone: 'America/New_York'
+    });
+
+    if (match.actual_result) {
+      const homeScore = match.actual_result.home_score;
+      const awayScore = match.actual_result.away_score;
+      let barClass, resultText;
+
+      if (homeScore > awayScore) {
+        barClass = 'home-win';
+        resultText = `${match.home_team} won ${homeScore}-${awayScore}`;
+      } else if (awayScore > homeScore) {
+        barClass = 'away-win';
+        resultText = `${match.away_team} won ${awayScore}-${homeScore}`;
+      } else {
+        barClass = 'draw-result';
+        resultText = `tie ${homeScore}-${awayScore}`;
+      }
+
+      return `
+        <div class="match-row completed">
+          <div class="match-home">
+            <span class="owner">${getFirstName(match.home_owner)}</span>
+            <a href="#teams/${homeSlug}" class="team-name team-link">${match.home_team}</a>
+            <span class="team-flag">${homeFlag}</span>
+          </div>
+          <div class="match-bar">
+            <div class="result-bar ${barClass}">
+              <span class="result-text">${resultText}</span>
+            </div>
+          </div>
+          <div class="match-away">
+            <span class="team-flag">${awayFlag}</span>
+            <a href="#teams/${awaySlug}" class="team-name team-link">${match.away_team}</a>
+            <span class="owner">${getFirstName(match.away_owner)}</span>
+          </div>
+          <span class="match-date">${dateStr}</span>
+        </div>
+      `;
+    }
+
+    // Upcoming match with probabilities
+    const homeWin = ((match.home_win_prob || 0) * 100).toFixed(0);
+    const draw = ((match.draw_prob || 0) * 100).toFixed(0);
+    const awayWin = ((match.away_win_prob || 0) * 100).toFixed(0);
+    const homeFav = match.home_win_prob > match.away_win_prob;
+    const awayFav = match.away_win_prob > match.home_win_prob;
+
+    return `
+      <div class="match-row">
+        <div class="match-home">
+          <span class="owner">${getFirstName(match.home_owner)}</span>
+          <a href="#teams/${homeSlug}" class="team-name team-link ${homeFav ? 'favorite' : ''}">${match.home_team}</a>
+          <span class="team-flag">${homeFlag}</span>
+        </div>
+        <div class="match-bar">
+          <div class="split-bar">
+            <div class="home" style="width:${homeWin}%">${homeWin > 12 ? homeWin + '%' : ''}</div>
+            <div class="draw" style="width:${draw}%">${draw > 12 ? draw + '%' : ''}</div>
+            <div class="away" style="width:${awayWin}%">${awayWin > 12 ? awayWin + '%' : ''}</div>
+          </div>
+        </div>
+        <div class="match-away">
+          <span class="team-flag">${awayFlag}</span>
+          <a href="#teams/${awaySlug}" class="team-name team-link ${awayFav ? 'favorite' : ''}">${match.away_team}</a>
+          <span class="owner">${getFirstName(match.away_owner)}</span>
+        </div>
+        <span class="match-date">${dateStr}</span>
+      </div>
+    `;
+  };
+
+  const roundSections = rounds.map(round => {
+    const matches = knockout[round.key] || [];
+    if (matches.length === 0) {
+      return `
+        <div class="knockout-round-section">
+          <div class="group-title">${round.label}</div>
+          <div class="knockout-tbd">Matches to be determined</div>
+        </div>
+      `;
+    }
+
+    // Split matches into two columns (first half left, second half right)
+    const half = Math.ceil(matches.length / 2);
+    const leftMatches = matches.slice(0, half);
+    const rightMatches = matches.slice(half);
+
+    return `
+      <div class="knockout-round-section">
+        <div class="group-title">${round.label}</div>
+        <div class="matches-container">
+          <div class="matches-column">${leftMatches.map(renderMatch).join('')}</div>
+          <div class="matches-column">${rightMatches.map(renderMatch).join('')}</div>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  const date = new Date(data.timestamp);
+  const dateStr = date.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+
+  return `
+    <div class="card">
+      <div class="card-title">Upcoming Matches - Knockout</div>
+      <div class="card-subtitle">Updated ${dateStr} • Match odds from bookmakers</div>
+      <div class="legend">
+        <div class="legend-item"><div class="legend-box home"></div> Left team win</div>
+        <div class="legend-item"><div class="legend-box draw"></div> Draw</div>
+        <div class="legend-item"><div class="legend-box away"></div> Right team win</div>
+        <div class="legend-note">Bold name = favourite</div>
+      </div>
+      ${roundSections}
+    </div>
+  `;
+}
+
 function renderTimeline() {
   // Include anyone who at any point had >3% win probability
   const featuredNames = new Set();
@@ -1714,7 +1852,7 @@ function route() {
   // Update secondary nav active states
   document.querySelectorAll('.nav-secondary .nav-tabs a').forEach(a => {
     const href = a.getAttribute('href');
-    const matchday = param || '1';
+    const matchday = param || 'knockout';
     a.classList.toggle('active', href === '#matches/' + matchday);
   });
 
@@ -1730,7 +1868,11 @@ function route() {
       main.innerHTML = renderStandings();
       break;
     case 'matches':
-      main.innerHTML = renderMatches(parseInt(param) || 1);
+      if (param === 'knockout') {
+        main.innerHTML = renderKnockoutMatches();
+      } else {
+        main.innerHTML = renderMatches(parseInt(param) || 1);
+      }
       break;
     case 'knockout':
       main.innerHTML = '<div class="loading">Loading bracket data...</div>';

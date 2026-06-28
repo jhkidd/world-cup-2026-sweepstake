@@ -669,6 +669,93 @@ function getAllMatchdays(oddsData, tournament, sweepstake, localResults = []) {
   };
 }
 
+function getKnockoutMatches(oddsData, sweepstake) {
+  // Build owner lookup
+  const ownerLookup = {};
+  for (const participant of sweepstake.participants) {
+    for (const team of participant.teams) {
+      ownerLookup[normalizeTeamName(team)] = participant.name;
+    }
+  }
+
+  const matchOdds = oddsData.matchOdds || [];
+  if (matchOdds.length === 0) return { round_of_32: [], round_of_16: [], quarter_finals: [], semi_finals: [], third_place: [], final: [] };
+
+  // Determine round based on number of matches and dates
+  // Round of 32 = 16 matches, Round of 16 = 8, QF = 4, SF = 2, Final = 1
+  // For now, categorize by commence_time clusters and match count
+  const matches = matchOdds.map(m => {
+    const normalizedHome = normalizeTeamName(m.home_team);
+    const normalizedAway = normalizeTeamName(m.away_team);
+
+    // Extract probabilities from first bookmaker's h2h market
+    let homeWinProb = null, drawProb = null, awayWinProb = null;
+    if (m.bookmakers && m.bookmakers.length > 0) {
+      const market = m.bookmakers[0].markets.find(mk => mk.key === 'h2h');
+      if (market) {
+        const homeOutcome = market.outcomes.find(o => normalizeTeamName(o.name) === normalizedHome);
+        const awayOutcome = market.outcomes.find(o => normalizeTeamName(o.name) === normalizedAway);
+        const drawOutcome = market.outcomes.find(o => o.name === 'Draw');
+
+        homeWinProb = homeOutcome ? (1 / homeOutcome.price) : null;
+        awayWinProb = awayOutcome ? (1 / awayOutcome.price) : null;
+        drawProb = drawOutcome ? (1 / drawOutcome.price) : null;
+
+        // Normalize probabilities
+        if (homeWinProb !== null && awayWinProb !== null && drawProb !== null) {
+          const total = homeWinProb + awayWinProb + drawProb;
+          homeWinProb /= total;
+          awayWinProb /= total;
+          drawProb /= total;
+        }
+      }
+    }
+
+    return {
+      home_team: normalizedHome,
+      away_team: normalizedAway,
+      home_owner: ownerLookup[normalizedHome] || null,
+      away_owner: ownerLookup[normalizedAway] || null,
+      commence_time: m.commence_time,
+      home_win_prob: homeWinProb,
+      draw_prob: drawProb,
+      away_win_prob: awayWinProb,
+      actual_result: null
+    };
+  });
+
+  // Sort by date
+  matches.sort((a, b) => new Date(a.commence_time) - new Date(b.commence_time));
+
+  // Assign rounds based on match count (16 = R32, 8 = R16, 4 = QF, 2 = SF, 1 = Final)
+  // Group by date clusters to identify rounds
+  const result = { round_of_32: [], round_of_16: [], quarter_finals: [], semi_finals: [], third_place: [], final: [] };
+  
+  if (matches.length >= 16) {
+    result.round_of_32 = matches.slice(0, 16);
+    if (matches.length >= 24) {
+      result.round_of_16 = matches.slice(16, 24);
+    }
+    if (matches.length >= 28) {
+      result.quarter_finals = matches.slice(24, 28);
+    }
+    if (matches.length >= 30) {
+      result.semi_finals = matches.slice(28, 30);
+    }
+    if (matches.length >= 31) {
+      result.third_place = matches.slice(30, 31);
+    }
+    if (matches.length >= 32) {
+      result.final = matches.slice(31, 32);
+    }
+  } else {
+    // Fewer than 16 — assign all to the earliest applicable round
+    result.round_of_32 = matches;
+  }
+
+  return result;
+}
+
 function getUpcomingMatches(oddsData, tournament, sweepstake, localResults = []) {
   // For backwards compatibility, returns only the next matchday
   const now = new Date();
@@ -832,6 +919,12 @@ async function main() {
     console.log(`✓ Matchday 1: ${allMatchdays.matchday1.length} matches`);
     console.log(`✓ Matchday 2: ${allMatchdays.matchday2.length} matches`);
     console.log(`✓ Matchday 3: ${allMatchdays.matchday3.length} matches`);
+
+    // Knockout matches
+    console.log('\nProcessing knockout match odds...');
+    const knockoutMatches = getKnockoutMatches(oddsData, sweepstake);
+    const knockoutTotal = Object.values(knockoutMatches).reduce((sum, arr) => sum + arr.length, 0);
+    console.log(`✓ Found ${knockoutTotal} knockout matches (R32: ${knockoutMatches.round_of_32.length}, R16: ${knockoutMatches.round_of_16.length}, QF: ${knockoutMatches.quarter_finals.length}, SF: ${knockoutMatches.semi_finals.length}, F: ${knockoutMatches.final.length})`);
     
     // Build timeline
     console.log('\nBuilding historical timeline...');
@@ -957,6 +1050,7 @@ async function main() {
       teams: teamRankings,
       upcoming_matches: upcomingMatches,
       matchdays: allMatchdays,
+      knockout_matches: knockoutMatches,
       timeline,
       stage_probabilities: stageProbabilities,
       team_details: teamDetails,
