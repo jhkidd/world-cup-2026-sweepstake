@@ -603,8 +603,105 @@ function resolveSlot(slotDesc, groups, thirdPlaceAssignments) {
   return null;
 }
 
+/**
+ * Maps confirmed R32 knockout matches from odds API to their R32 slot IDs.
+ * Uses group positions to identify which slot each match belongs to.
+ * Returns null if not all 16 R32 matches can be resolved.
+ */
+export function resolveKnownR32Matchups(knockoutMatchOdds, groups) {
+  if (!knockoutMatchOdds || knockoutMatchOdds.length === 0) return null;
+
+  const groupWinners = {};
+  const groupRunners = {};
+  for (const group of Object.keys(groups)) {
+    groupWinners[group] = normalizeTeamName(groups[group][0].name);
+    groupRunners[group] = normalizeTeamName(groups[group][1].name);
+  }
+
+  // R32 slot definitions: slot1 identity determines the slot
+  const slotIdentifiers = [
+    { id: 'R32-1', check: (t1, t2) => (t1 === groupRunners.A && t2 === groupRunners.B) || (t2 === groupRunners.A && t1 === groupRunners.B) },
+    { id: 'R32-2', check: (t1, t2) => t1 === groupWinners.E || t2 === groupWinners.E },
+    { id: 'R32-3', check: (t1, t2) => (t1 === groupWinners.F || t2 === groupWinners.F) && (t1 === groupRunners.C || t2 === groupRunners.C) },
+    { id: 'R32-4', check: (t1, t2) => (t1 === groupWinners.C || t2 === groupWinners.C) && (t1 === groupRunners.F || t2 === groupRunners.F) },
+    { id: 'R32-5', check: (t1, t2) => t1 === groupWinners.I || t2 === groupWinners.I },
+    { id: 'R32-6', check: (t1, t2) => (t1 === groupRunners.E && t2 === groupRunners.I) || (t2 === groupRunners.E && t1 === groupRunners.I) },
+    { id: 'R32-7', check: (t1, t2) => t1 === groupWinners.A || t2 === groupWinners.A },
+    { id: 'R32-8', check: (t1, t2) => t1 === groupWinners.L || t2 === groupWinners.L },
+    { id: 'R32-9', check: (t1, t2) => t1 === groupWinners.D || t2 === groupWinners.D },
+    { id: 'R32-10', check: (t1, t2) => t1 === groupWinners.G || t2 === groupWinners.G },
+    { id: 'R32-11', check: (t1, t2) => (t1 === groupRunners.K && t2 === groupRunners.L) || (t2 === groupRunners.K && t1 === groupRunners.L) },
+    { id: 'R32-12', check: (t1, t2) => (t1 === groupWinners.H || t2 === groupWinners.H) && (t1 === groupRunners.J || t2 === groupRunners.J) },
+    { id: 'R32-13', check: (t1, t2) => t1 === groupWinners.B || t2 === groupWinners.B },
+    { id: 'R32-14', check: (t1, t2) => (t1 === groupWinners.J || t2 === groupWinners.J) && (t1 === groupRunners.H || t2 === groupRunners.H) },
+    { id: 'R32-15', check: (t1, t2) => t1 === groupWinners.K || t2 === groupWinners.K },
+    { id: 'R32-16', check: (t1, t2) => (t1 === groupRunners.D && t2 === groupRunners.G) || (t2 === groupRunners.D && t1 === groupRunners.G) },
+  ];
+
+  const resolved = {};
+
+  for (const oddsMatch of knockoutMatchOdds) {
+    // Skip matches with actual results (already played knockout games)
+    const t1 = normalizeTeamName(oddsMatch.home_team);
+    const t2 = normalizeTeamName(oddsMatch.away_team);
+
+    for (const slot of slotIdentifiers) {
+      if (!resolved[slot.id] && slot.check(t1, t2)) {
+        // Determine which team is slot1 (the "expected" home team per bracket structure)
+        const r32Def = r32SlotDefinitions.find(d => d.id === slot.id);
+        let team1 = t1, team2 = t2;
+        if (r32Def) {
+          // slot1 should be the group winner or first runner-up listed
+          const slot1Team = resolveSlotTeam(r32Def.slot1, groupWinners, groupRunners);
+          if (slot1Team && normalizeTeamName(slot1Team) === t2) {
+            team1 = t2; team2 = t1;
+          }
+        }
+        resolved[slot.id] = { team1, team2 };
+        break;
+      }
+    }
+  }
+
+  if (Object.keys(resolved).length === 16) {
+    return resolved;
+  }
+  return null;
+}
+
+// Helper: resolve the team for a slot1/slot2 description using group positions
+function resolveSlotTeam(slotDesc, groupWinners, groupRunners) {
+  if (slotDesc.startsWith('Winner Group ')) {
+    return groupWinners[slotDesc.replace('Winner Group ', '')];
+  }
+  if (slotDesc.startsWith('Runner-up Group ')) {
+    return groupRunners[slotDesc.replace('Runner-up Group ', '')];
+  }
+  return null;
+}
+
+// R32 slot definitions used for resolving known matchups
+const r32SlotDefinitions = [
+  { id: 'R32-1',  slot1: 'Runner-up Group A', slot2: 'Runner-up Group B' },
+  { id: 'R32-2',  slot1: 'Winner Group E', slot2: '3rd' },
+  { id: 'R32-3',  slot1: 'Winner Group F', slot2: 'Runner-up Group C' },
+  { id: 'R32-4',  slot1: 'Winner Group C', slot2: 'Runner-up Group F' },
+  { id: 'R32-5',  slot1: 'Winner Group I', slot2: '3rd' },
+  { id: 'R32-6',  slot1: 'Runner-up Group E', slot2: 'Runner-up Group I' },
+  { id: 'R32-7',  slot1: 'Winner Group A', slot2: '3rd' },
+  { id: 'R32-8',  slot1: 'Winner Group L', slot2: '3rd' },
+  { id: 'R32-9',  slot1: 'Winner Group D', slot2: '3rd' },
+  { id: 'R32-10', slot1: 'Winner Group G', slot2: '3rd' },
+  { id: 'R32-11', slot1: 'Runner-up Group K', slot2: 'Runner-up Group L' },
+  { id: 'R32-12', slot1: 'Winner Group H', slot2: 'Runner-up Group J' },
+  { id: 'R32-13', slot1: 'Winner Group B', slot2: '3rd' },
+  { id: 'R32-14', slot1: 'Winner Group J', slot2: 'Runner-up Group H' },
+  { id: 'R32-15', slot1: 'Winner Group K', slot2: '3rd' },
+  { id: 'R32-16', slot1: 'Runner-up Group D', slot2: 'Runner-up Group G' },
+];
+
 // Simulate entire tournament with proper FIFA bracket structure
-export function simulateTournament(tournament, matchOdds, teamStrengths, eloRatings = null) {
+export function simulateTournament(tournament, matchOdds, teamStrengths, eloRatings = null, knownR32Matchups = null) {
   const results = {
     groupStage: {},
     qualified: [],
@@ -639,68 +736,80 @@ export function simulateTournament(tournament, matchOdds, teamStrengths, eloRati
   best3rd.forEach(t => qualifiedTeams.push(t.name));
   results.qualified = qualifiedTeams;
   
-  // 3. Assign 3rd-place teams to R32 slots
-  const thirdPlaceSlots = {
-    'R32-2': { eligible_groups: ['A','B','C','D','F'] },      // M74
-    'R32-5': { eligible_groups: ['C','D','F','G','H'] },      // M77
-    'R32-7': { eligible_groups: ['C','E','F','H','I'] },      // M79
-    'R32-8': { eligible_groups: ['E','H','I','J','K'] },      // M80
-    'R32-9': { eligible_groups: ['B','E','F','I','J'] },      // M81
-    'R32-10': { eligible_groups: ['A','E','H','I','J'] },     // M82
-    'R32-13': { eligible_groups: ['E','F','G','I','J'] },     // M85
-    'R32-15': { eligible_groups: ['D','E','I','J','L'] }      // M87
-  };
-  
-  const thirdPlaceAssignments = assignThirdPlaceTeams(best3rd, thirdPlaceSlots);
-  
-  // 4. Build R32 bracket based on FIFA structure
-  // R32 matchups (from tournament.json)
-  const r32Bracket = [
-    { id: 'R32-1',  slot1: 'Runner-up Group A', slot2: 'Runner-up Group B' },
-    { id: 'R32-2',  slot1: 'Winner Group E', slot2: '3rd' },  // 3rd from A/B/C/D/F
-    { id: 'R32-3',  slot1: 'Winner Group F', slot2: 'Runner-up Group C' },
-    { id: 'R32-4',  slot1: 'Winner Group C', slot2: 'Runner-up Group F' },
-    { id: 'R32-5',  slot1: 'Winner Group I', slot2: '3rd' },  // 3rd from C/D/F/G/H
-    { id: 'R32-6',  slot1: 'Runner-up Group E', slot2: 'Runner-up Group I' },
-    { id: 'R32-7',  slot1: 'Winner Group A', slot2: '3rd' },  // 3rd from C/E/F/H/I
-    { id: 'R32-8',  slot1: 'Winner Group L', slot2: '3rd' },  // 3rd from E/H/I/J/K
-    { id: 'R32-9',  slot1: 'Winner Group D', slot2: '3rd' },  // 3rd from B/E/F/I/J
-    { id: 'R32-10', slot1: 'Winner Group G', slot2: '3rd' },  // 3rd from A/E/H/I/J
-    { id: 'R32-11', slot1: 'Runner-up Group K', slot2: 'Runner-up Group L' },
-    { id: 'R32-12', slot1: 'Winner Group H', slot2: 'Runner-up Group J' },
-    { id: 'R32-13', slot1: 'Winner Group B', slot2: '3rd' },  // 3rd from E/F/G/I/J
-    { id: 'R32-14', slot1: 'Winner Group J', slot2: 'Runner-up Group H' },
-    { id: 'R32-15', slot1: 'Winner Group K', slot2: '3rd' },  // 3rd from D/E/I/J/L
-    { id: 'R32-16', slot1: 'Runner-up Group D', slot2: 'Runner-up Group G' }
-  ];
-  
+  // 3-4. Build R32 bracket - use known matchups if available, else compute from slots
   const r32Winners = {};
   const r32Matchups = [];
   
-  for (const match of r32Bracket) {
-    let team1, team2;
-    
-    // Resolve slot 1
-    if (match.slot1.startsWith('Winner Group ')) {
-      team1 = groupWinners[match.slot1.replace('Winner Group ', '')];
-    } else if (match.slot1.startsWith('Runner-up Group ')) {
-      team1 = groupRunners[match.slot1.replace('Runner-up Group ', '')];
+  if (knownR32Matchups) {
+    // Use confirmed matchups from odds API (avoids 3rd-place allocation ambiguity)
+    const r32Order = ['R32-1','R32-2','R32-3','R32-4','R32-5','R32-6','R32-7','R32-8',
+                      'R32-9','R32-10','R32-11','R32-12','R32-13','R32-14','R32-15','R32-16'];
+    for (const matchId of r32Order) {
+      const known = knownR32Matchups[matchId];
+      if (known) {
+        const winner = simulateKnockoutMatch(known.team1, known.team2, matchOdds, eloRatings, teamStrengths);
+        r32Winners[matchId] = winner;
+        results.r32.push(winner);
+        r32Matchups.push({ id: matchId, team1: known.team1, team2: known.team2, winner });
+      }
     }
+  } else {
+    // Fallback: compute from group positions + 3rd-place allocation
+    const thirdPlaceSlots = {
+      'R32-2': { eligible_groups: ['A','B','C','D','F'] },
+      'R32-5': { eligible_groups: ['C','D','F','G','H'] },
+      'R32-7': { eligible_groups: ['C','E','F','H','I'] },
+      'R32-8': { eligible_groups: ['E','H','I','J','K'] },
+      'R32-9': { eligible_groups: ['B','E','F','I','J'] },
+      'R32-10': { eligible_groups: ['A','E','H','I','J'] },
+      'R32-13': { eligible_groups: ['E','F','G','I','J'] },
+      'R32-15': { eligible_groups: ['D','E','I','J','L'] }
+    };
     
-    // Resolve slot 2
-    if (match.slot2 === '3rd') {
-      team2 = thirdPlaceAssignments[match.id];
-    } else if (match.slot2.startsWith('Winner Group ')) {
-      team2 = groupWinners[match.slot2.replace('Winner Group ', '')];
-    } else if (match.slot2.startsWith('Runner-up Group ')) {
-      team2 = groupRunners[match.slot2.replace('Runner-up Group ', '')];
-    }
+    const thirdPlaceAssignments = assignThirdPlaceTeams(best3rd, thirdPlaceSlots);
     
-    if (team1 && team2) {
-      const winner = simulateKnockoutMatch(team1, team2, matchOdds, eloRatings, teamStrengths);
-      r32Winners[match.id] = winner;
-      results.r32.push(winner);
-      r32Matchups.push({ id: match.id, team1, team2, winner });
+    const r32Bracket = [
+      { id: 'R32-1',  slot1: 'Runner-up Group A', slot2: 'Runner-up Group B' },
+      { id: 'R32-2',  slot1: 'Winner Group E', slot2: '3rd' },
+      { id: 'R32-3',  slot1: 'Winner Group F', slot2: 'Runner-up Group C' },
+      { id: 'R32-4',  slot1: 'Winner Group C', slot2: 'Runner-up Group F' },
+      { id: 'R32-5',  slot1: 'Winner Group I', slot2: '3rd' },
+      { id: 'R32-6',  slot1: 'Runner-up Group E', slot2: 'Runner-up Group I' },
+      { id: 'R32-7',  slot1: 'Winner Group A', slot2: '3rd' },
+      { id: 'R32-8',  slot1: 'Winner Group L', slot2: '3rd' },
+      { id: 'R32-9',  slot1: 'Winner Group D', slot2: '3rd' },
+      { id: 'R32-10', slot1: 'Winner Group G', slot2: '3rd' },
+      { id: 'R32-11', slot1: 'Runner-up Group K', slot2: 'Runner-up Group L' },
+      { id: 'R32-12', slot1: 'Winner Group H', slot2: 'Runner-up Group J' },
+      { id: 'R32-13', slot1: 'Winner Group B', slot2: '3rd' },
+      { id: 'R32-14', slot1: 'Winner Group J', slot2: 'Runner-up Group H' },
+      { id: 'R32-15', slot1: 'Winner Group K', slot2: '3rd' },
+      { id: 'R32-16', slot1: 'Runner-up Group D', slot2: 'Runner-up Group G' }
+    ];
+    
+    for (const match of r32Bracket) {
+      let team1, team2;
+      
+      if (match.slot1.startsWith('Winner Group ')) {
+        team1 = groupWinners[match.slot1.replace('Winner Group ', '')];
+      } else if (match.slot1.startsWith('Runner-up Group ')) {
+        team1 = groupRunners[match.slot1.replace('Runner-up Group ', '')];
+      }
+      
+      if (match.slot2 === '3rd') {
+        team2 = thirdPlaceAssignments[match.id];
+      } else if (match.slot2.startsWith('Winner Group ')) {
+        team2 = groupWinners[match.slot2.replace('Winner Group ', '')];
+      } else if (match.slot2.startsWith('Runner-up Group ')) {
+        team2 = groupRunners[match.slot2.replace('Runner-up Group ', '')];
+      }
+      
+      if (team1 && team2) {
+        const winner = simulateKnockoutMatch(team1, team2, matchOdds, eloRatings, teamStrengths);
+        r32Winners[match.id] = winner;
+        results.r32.push(winner);
+        r32Matchups.push({ id: match.id, team1, team2, winner });
+      }
     }
   }
   
@@ -786,7 +895,7 @@ export function simulateTournament(tournament, matchOdds, teamStrengths, eloRati
 }
 
 // Run Monte Carlo simulation
-export function runMonteCarloSimulation(tournament, matchOdds, teamStrengths, iterations = 10000, eloRatings = null) {
+export function runMonteCarloSimulation(tournament, matchOdds, teamStrengths, iterations = 10000, eloRatings = null, knownR32Matchups = null) {
   console.log(`\nRunning Monte Carlo simulation (${iterations} iterations)...`);
   
   const teamStats = {};
@@ -811,7 +920,7 @@ export function runMonteCarloSimulation(tournament, matchOdds, teamStrengths, it
       process.stdout.write(`\r   Progress: ${i}/${iterations} simulations`);
     }
     
-    const result = simulateTournament(tournament, matchOdds, teamStrengths, eloRatings);
+    const result = simulateTournament(tournament, matchOdds, teamStrengths, eloRatings, knownR32Matchups);
     
     // Track group positions
     for (const group of Object.keys(result.groupStage)) {
@@ -881,7 +990,7 @@ export function runMonteCarloSimulation(tournament, matchOdds, teamStrengths, it
  *     - bracketTopology: fixed bracket structure (which matches feed into which)
  *     - runs: array of compact run arrays [r32 participants..., r32 winners..., r16 winners..., qf..., sf..., final]
  */
-export function runMonteCarloWithPaths(tournament, matchOdds, teamStrengths, iterations = 10000, eloRatings = null) {
+export function runMonteCarloWithPaths(tournament, matchOdds, teamStrengths, iterations = 10000, eloRatings = null, knownR32Matchups = null) {
   console.log(`\nRunning Monte Carlo with path recording (${iterations} iterations)...`);
   
   // Build team index for compact encoding
@@ -959,7 +1068,7 @@ export function runMonteCarloWithPaths(tournament, matchOdds, teamStrengths, ite
       process.stdout.write(`\r   Progress: ${i}/${iterations} simulations`);
     }
     
-    const result = simulateTournament(tournament, matchOdds, teamStrengths, eloRatings);
+    const result = simulateTournament(tournament, matchOdds, teamStrengths, eloRatings, knownR32Matchups);
     
     // Aggregate stats (same as runMonteCarloSimulation)
     for (const group of Object.keys(result.groupStage)) {

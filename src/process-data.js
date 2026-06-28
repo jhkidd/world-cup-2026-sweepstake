@@ -2,7 +2,7 @@ import { readFileSync, writeFileSync, readdirSync, mkdirSync, existsSync } from 
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { addDays, parseISO, formatISO } from 'date-fns';
-import { runMonteCarloSimulation, runMonteCarloWithPaths, deriveTeamStrengths, calibrateDampingFactor } from './monte-carlo.js';
+import { runMonteCarloSimulation, runMonteCarloWithPaths, deriveTeamStrengths, calibrateDampingFactor, resolveKnownR32Matchups, simulateGroupStage } from './monte-carlo.js';
 import { normalizeTeamName } from './shared/team-names.js';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -948,6 +948,20 @@ async function main() {
     // Merge completed results with match odds (override odds to 100% for actual winners)
     const matchOddsWithResults = mergeCompletedResults(oddsData.matchOdds, combinedResults, tournament);
     
+    // Resolve known R32 matchups from odds API knockout data
+    // This avoids the ambiguous 3rd-place allocation by using FIFA's confirmed matchups
+    let knownR32Matchups = null;
+    if (oddsData.matchOdds && oddsData.matchOdds.length > 0) {
+      // Run group stage once to get standings for resolving matchups
+      const groups = simulateGroupStage(tournament, matchOddsWithResults, {});
+      knownR32Matchups = resolveKnownR32Matchups(oddsData.matchOdds, groups);
+      if (knownR32Matchups) {
+        console.log('   ✓ Resolved 16 confirmed R32 matchups from odds API');
+      } else {
+        console.log('   ⚠ Could not resolve all R32 matchups from odds API, using allocation algorithm');
+      }
+    }
+    
     // Use Elo ratings directly for knockout matches, bookmaker H2H for group stage
     // Fall back to calibrated strengths if no Elo available
     let calibratedStrengths = null;
@@ -967,7 +981,8 @@ async function main() {
       matchOddsWithResults, 
       calibratedStrengths || teamProbs, // Fallback strengths
       10000,
-      Object.keys(eloRatings).length > 0 ? eloRatings : null
+      Object.keys(eloRatings).length > 0 ? eloRatings : null,
+      knownR32Matchups
     );
     console.log('✓ Monte Carlo simulation complete');
     
