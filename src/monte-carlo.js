@@ -817,12 +817,12 @@ export function simulateTournament(tournament, matchOdds, teamStrengths, eloRati
   const r16Bracket = [
     { id: 'R16-1', slot1: 'R32-2', slot2: 'R32-5' },
     { id: 'R16-2', slot1: 'R32-1', slot2: 'R32-3' },
-    { id: 'R16-3', slot1: 'R32-4', slot2: 'R32-7' },
-    { id: 'R16-4', slot1: 'R32-6', slot2: 'R32-8' },
-    { id: 'R16-5', slot1: 'R32-9', slot2: 'R32-10' },
-    { id: 'R16-6', slot1: 'R32-11', slot2: 'R32-13' },
-    { id: 'R16-7', slot1: 'R32-12', slot2: 'R32-14' },
-    { id: 'R16-8', slot1: 'R32-15', slot2: 'R32-16' }
+    { id: 'R16-3', slot1: 'R32-4', slot2: 'R32-6' },
+    { id: 'R16-4', slot1: 'R32-7', slot2: 'R32-8' },
+    { id: 'R16-5', slot1: 'R32-11', slot2: 'R32-12' },
+    { id: 'R16-6', slot1: 'R32-9', slot2: 'R32-10' },
+    { id: 'R16-7', slot1: 'R32-14', slot2: 'R32-16' },
+    { id: 'R16-8', slot1: 'R32-13', slot2: 'R32-15' }
   ];
   
   const r16Winners = {};
@@ -1024,12 +1024,12 @@ export function runMonteCarloWithPaths(tournament, matchOdds, teamStrengths, ite
     r16: [
       { id: 'R16-1', feeds: ['R32-2', 'R32-5'] },
       { id: 'R16-2', feeds: ['R32-1', 'R32-3'] },
-      { id: 'R16-3', feeds: ['R32-4', 'R32-7'] },
-      { id: 'R16-4', feeds: ['R32-6', 'R32-8'] },
-      { id: 'R16-5', feeds: ['R32-9', 'R32-10'] },
-      { id: 'R16-6', feeds: ['R32-11', 'R32-13'] },
-      { id: 'R16-7', feeds: ['R32-12', 'R32-14'] },
-      { id: 'R16-8', feeds: ['R32-15', 'R32-16'] }
+      { id: 'R16-3', feeds: ['R32-4', 'R32-6'] },
+      { id: 'R16-4', feeds: ['R32-7', 'R32-8'] },
+      { id: 'R16-5', feeds: ['R32-11', 'R32-12'] },
+      { id: 'R16-6', feeds: ['R32-9', 'R32-10'] },
+      { id: 'R16-7', feeds: ['R32-14', 'R32-16'] },
+      { id: 'R16-8', feeds: ['R32-13', 'R32-15'] }
     ],
     qf: [
       { id: 'QF-1', feeds: ['R16-1', 'R16-2'] },
