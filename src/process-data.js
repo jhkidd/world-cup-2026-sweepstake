@@ -980,7 +980,7 @@ async function main() {
       tournament, 
       matchOddsWithResults, 
       calibratedStrengths || teamProbs, // Fallback strengths
-      10000,
+      50000,
       Object.keys(eloRatings).length > 0 ? eloRatings : null,
       knownR32Matchups
     );
