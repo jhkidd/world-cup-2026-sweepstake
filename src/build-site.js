@@ -2069,6 +2069,43 @@ tr.section-break td {
   box-shadow: 0 0 0 2px rgba(0,45,114,0.12);
 }
 
+.bracket-match.completed-match {
+  border-color: #2e7d32;
+  border-width: 2px;
+  background: #f1f8e9;
+  cursor: default;
+}
+
+.bracket-match.completed-match:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: #2e7d32;
+}
+
+.bracket-match.completed-match .bracket-match-team:hover {
+  background: transparent;
+}
+
+.bracket-match.completed-match .bracket-match-team.completed-winner {
+  background: #c8e6c9;
+  font-weight: 600;
+}
+
+.bracket-match.completed-match .team-score {
+  font-size: 11px;
+  font-weight: 700;
+  color: #333;
+  flex-shrink: 0;
+  min-width: 20px;
+  text-align: right;
+}
+
+.bracket-match.completed-match .team-score .penalty-score {
+  font-size: 9px;
+  font-weight: 400;
+  color: #666;
+}
+
 .bracket-match.ghosted {
   opacity: 0.5;
   border-style: dashed;
@@ -2774,6 +2811,7 @@ function renderKnockoutMatches() {
         <div class="legend-item"><div class="legend-box draw"></div> Draw</div>
         <div class="legend-item"><div class="legend-box away"></div> Right team win</div>
         <div class="legend-note">Bold name = favourite</div>
+        <div class="legend-note">Odds reflect the result after 90 minutes (draw = extra time / penalties)</div>
       </div>
       \${roundSections}
     </div>
@@ -4175,6 +4213,12 @@ async function loadAndRenderBracket() {
     try {
       const resp = await fetch('data/bracket.json', { cache: 'no-store' });
       bracketData = await resp.json();
+      // Pre-populate locked results from actual completed matches
+      if (bracketData.actualResults) {
+        for (const [matchId, result] of Object.entries(bracketData.actualResults)) {
+          lockedResults[matchId] = result.winnerIdx;
+        }
+      }
     } catch (e) {
       main.innerHTML = '<div class="card"><div class="card-title">Bracket data not available</div><p>Run npm run process to generate bracket data.</p></div>';
       return;
@@ -4419,6 +4463,34 @@ function renderBracketMatch(matchId, probs, isLeft, filteredRuns) {
     }
   }
   
+  // Check if this match has an actual result
+  const actualResult = bracketData.actualResults?.[matchId];
+  if (actualResult) {
+    // Completed match — show score, non-interactive
+    const team1IsHome = team1Idx === actualResult.homeIdx;
+    const t1Score = team1IsHome ? actualResult.homeScore : actualResult.awayScore;
+    const t2Score = team1IsHome ? actualResult.awayScore : actualResult.homeScore;
+    const t1Pens = team1IsHome ? actualResult.homePenalties : actualResult.awayPenalties;
+    const t2Pens = team1IsHome ? actualResult.awayPenalties : actualResult.homePenalties;
+    const t1IsWinner = actualResult.winnerIdx === team1Idx;
+    const t2IsWinner = actualResult.winnerIdx === team2Idx;
+    const penText1 = t1Pens !== null ? \` <span class="penalty-score">(\${t1Pens})</span>\` : '';
+    const penText2 = t2Pens !== null ? \` <span class="penalty-score">(\${t2Pens})</span>\` : '';
+
+    return \`<div class="bracket-match completed-match" data-match-id="\${matchId}" data-team1="\${team1Idx}" data-team2="\${team2Idx}" data-completed="true">
+      <div class="bracket-match-team \${t1IsWinner ? 'completed-winner' : ''}" data-team-idx="\${team1Idx}">
+        \${getTeamBadgeHtml(team1Idx)}
+        <span class="team-name">\${team1Idx >= 0 ? getShortTeamName(team1Idx) : 'TBD'}</span>
+        <span class="team-score">\${t1Score}\${penText1}</span>
+      </div>
+      <div class="bracket-match-team \${t2IsWinner ? 'completed-winner' : ''}" data-team-idx="\${team2Idx}">
+        \${getTeamBadgeHtml(team2Idx)}
+        <span class="team-name">\${team2Idx >= 0 ? getShortTeamName(team2Idx) : 'TBD'}</span>
+        <span class="team-score">\${t2Score}\${penText2}</span>
+      </div>
+    </div>\`;
+  }
+
   // Normalize probabilities: wins of each displayed team / total wins of both
   const team1Wins = team1Idx >= 0 && winnerCounts[team1Idx] ? winnerCounts[team1Idx] : 0;
   const team2Wins = team2Idx >= 0 && winnerCounts[team2Idx] ? winnerCounts[team2Idx] : 0;
@@ -4508,7 +4580,7 @@ function renderBracket() {
           \${renderBracketMatch('F', probs, false, filteredRuns)}
           <div class="bracket-trophy">🏆</div>
           <div class="bracket-winner-name">\${winnerIdx >= 0 ? getTeamBadgeHtml(winnerIdx) + ' ' + winnerName : 'TBD'}</div>
-          <div class="bracket-winner-prob">\${winnerProbPct}% to win</div>
+          <div class="bracket-winner-prob">\${winnerProbPct}% to win tournament (across all scenarios)</div>
         </div>
         <div class="bracket-round bracket-right">
           \${rightSF.map(id => renderBracketMatch(id, probs, false, filteredRuns)).join('')}
@@ -4545,6 +4617,7 @@ function renderBracket() {
 function attachBracketListeners() {
   document.querySelectorAll('.bracket-match').forEach(el => {
     el.addEventListener('click', (e) => {
+      if (el.dataset.completed === 'true') return; // Skip completed matches
       const matchId = el.dataset.matchId;
       const team1 = parseInt(el.dataset.team1);
       const team2 = parseInt(el.dataset.team2);
@@ -4573,7 +4646,13 @@ function attachBracketListeners() {
 }
 
 function resetBracket() {
+  // Reset to only actual results (preserve completed matches)
   lockedResults = {};
+  if (bracketData?.actualResults) {
+    for (const [matchId, result] of Object.entries(bracketData.actualResults)) {
+      lockedResults[matchId] = result.winnerIdx;
+    }
+  }
   const main = document.querySelector('.main');
   main.innerHTML = renderBracket();
   attachBracketListeners();

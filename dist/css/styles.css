@@ -1955,6 +1955,43 @@ tr.section-break td {
   box-shadow: 0 0 0 2px rgba(0,45,114,0.12);
 }
 
+.bracket-match.completed-match {
+  border-color: #2e7d32;
+  border-width: 2px;
+  background: #f1f8e9;
+  cursor: default;
+}
+
+.bracket-match.completed-match:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: #2e7d32;
+}
+
+.bracket-match.completed-match .bracket-match-team:hover {
+  background: transparent;
+}
+
+.bracket-match.completed-match .bracket-match-team.completed-winner {
+  background: #c8e6c9;
+  font-weight: 600;
+}
+
+.bracket-match.completed-match .team-score {
+  font-size: 11px;
+  font-weight: 700;
+  color: #333;
+  flex-shrink: 0;
+  min-width: 20px;
+  text-align: right;
+}
+
+.bracket-match.completed-match .team-score .penalty-score {
+  font-size: 9px;
+  font-weight: 400;
+  color: #666;
+}
+
 .bracket-match.ghosted {
   opacity: 0.5;
   border-style: dashed;

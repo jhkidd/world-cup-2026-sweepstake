@@ -401,20 +401,26 @@ function mergeCompletedResults(matchOdds, completedResults, tournament) {
       merged.push(oddsMatch);
     }
     
-    // Determine winner
+    // Align scores to the odds entry's home/away orientation
+    const oddsHome = normalizeTeamName(oddsMatch.home_team);
+    const sameOrientation = oddsHome === normalizedHome;
+    const oddsHomeScore = sameOrientation ? completed.home_score : completed.away_score;
+    const oddsAwayScore = sameOrientation ? completed.away_score : completed.home_score;
+    
+    // Determine winner relative to odds entry's home/away
     let homeWinProb, drawProb, awayWinProb;
     
-    if (completed.home_score > completed.away_score) {
-      homeWinProb = 1.0;  // Home won
+    if (oddsHomeScore > oddsAwayScore) {
+      homeWinProb = 1.0;
       drawProb = 0.0;
       awayWinProb = 0.0;
-    } else if (completed.home_score < completed.away_score) {
+    } else if (oddsHomeScore < oddsAwayScore) {
       homeWinProb = 0.0;
       drawProb = 0.0;
-      awayWinProb = 1.0;  // Away won
+      awayWinProb = 1.0;
     } else {
       homeWinProb = 0.0;
-      drawProb = 1.0;     // Draw
+      drawProb = 1.0;
       awayWinProb = 0.0;
     }
     
@@ -435,10 +441,10 @@ function mergeCompletedResults(matchOdds, completedResults, tournament) {
       }
     }
     
-    // Store actual score for goal difference calculations
+    // Store actual score aligned to odds entry's home/away
     oddsMatch.actual_result = {
-      home_score: completed.home_score,
-      away_score: completed.away_score,
+      home_score: oddsHomeScore,
+      away_score: oddsAwayScore,
       completed: true
     };
   }
@@ -669,7 +675,7 @@ function getAllMatchdays(oddsData, tournament, sweepstake, localResults = []) {
   };
 }
 
-function getKnockoutMatches(oddsData, sweepstake) {
+function getKnockoutMatches(oddsData, sweepstake, localResults = []) {
   // Build owner lookup
   const ownerLookup = {};
   for (const participant of sweepstake.participants) {
@@ -679,7 +685,13 @@ function getKnockoutMatches(oddsData, sweepstake) {
   }
 
   const matchOdds = oddsData.matchOdds || [];
-  if (matchOdds.length === 0) return { round_of_32: [], round_of_16: [], quarter_finals: [], semi_finals: [], third_place: [], final: [] };
+
+  // Build a set of knockout results from localResults (stage != 'group_stage')
+  const knockoutResults = localResults.filter(r => r.stage && r.stage !== 'group_stage');
+
+  if (matchOdds.length === 0 && knockoutResults.length === 0) {
+    return { round_of_32: [], round_of_16: [], quarter_finals: [], semi_finals: [], third_place: [], final: [] };
+  }
 
   // Determine round based on number of matches and dates
   // Round of 32 = 16 matches, Round of 16 = 8, QF = 4, SF = 2, Final = 1
@@ -688,25 +700,58 @@ function getKnockoutMatches(oddsData, sweepstake) {
     const normalizedHome = normalizeTeamName(m.home_team);
     const normalizedAway = normalizeTeamName(m.away_team);
 
-    // Extract probabilities from first bookmaker's h2h market
+    // Check local results for this match
+    const localResult = knockoutResults.find(r => {
+      const rHome = normalizeTeamName(r.home_team);
+      const rAway = normalizeTeamName(r.away_team);
+      return (rHome === normalizedHome && rAway === normalizedAway) ||
+             (rAway === normalizedHome && rHome === normalizedAway);
+    });
+
+    let actualResult = null;
     let homeWinProb = null, drawProb = null, awayWinProb = null;
-    if (m.bookmakers && m.bookmakers.length > 0) {
-      const market = m.bookmakers[0].markets.find(mk => mk.key === 'h2h');
-      if (market) {
-        const homeOutcome = market.outcomes.find(o => normalizeTeamName(o.name) === normalizedHome);
-        const awayOutcome = market.outcomes.find(o => normalizeTeamName(o.name) === normalizedAway);
-        const drawOutcome = market.outcomes.find(o => o.name === 'Draw');
 
-        homeWinProb = homeOutcome ? (1 / homeOutcome.price) : null;
-        awayWinProb = awayOutcome ? (1 / awayOutcome.price) : null;
-        drawProb = drawOutcome ? (1 / drawOutcome.price) : null;
+    if (localResult) {
+      const localHome = normalizeTeamName(localResult.home_team);
+      if (localHome === normalizedHome) {
+        actualResult = {
+          home_score: localResult.home_score, away_score: localResult.away_score, completed: true,
+          home_penalties: localResult.home_penalties || null, away_penalties: localResult.away_penalties || null
+        };
+      } else {
+        actualResult = {
+          home_score: localResult.away_score, away_score: localResult.home_score, completed: true,
+          home_penalties: localResult.away_penalties || null, away_penalties: localResult.home_penalties || null
+        };
+      }
+      // Set probabilities to 100% for actual result
+      if (actualResult.home_score > actualResult.away_score) {
+        homeWinProb = 1.0; drawProb = 0.0; awayWinProb = 0.0;
+      } else if (actualResult.away_score > actualResult.home_score) {
+        homeWinProb = 0.0; drawProb = 0.0; awayWinProb = 1.0;
+      } else {
+        homeWinProb = 0.0; drawProb = 1.0; awayWinProb = 0.0;
+      }
+    } else {
+      // Extract probabilities from first bookmaker's h2h market
+      if (m.bookmakers && m.bookmakers.length > 0) {
+        const market = m.bookmakers[0].markets.find(mk => mk.key === 'h2h');
+        if (market) {
+          const homeOutcome = market.outcomes.find(o => normalizeTeamName(o.name) === normalizedHome);
+          const awayOutcome = market.outcomes.find(o => normalizeTeamName(o.name) === normalizedAway);
+          const drawOutcome = market.outcomes.find(o => o.name === 'Draw');
 
-        // Normalize probabilities
-        if (homeWinProb !== null && awayWinProb !== null && drawProb !== null) {
-          const total = homeWinProb + awayWinProb + drawProb;
-          homeWinProb /= total;
-          awayWinProb /= total;
-          drawProb /= total;
+          homeWinProb = homeOutcome ? (1 / homeOutcome.price) : null;
+          awayWinProb = awayOutcome ? (1 / awayOutcome.price) : null;
+          drawProb = drawOutcome ? (1 / drawOutcome.price) : null;
+
+          // Normalize probabilities
+          if (homeWinProb !== null && awayWinProb !== null && drawProb !== null) {
+            const total = homeWinProb + awayWinProb + drawProb;
+            homeWinProb /= total;
+            awayWinProb /= total;
+            drawProb /= total;
+          }
         }
       }
     }
@@ -720,9 +765,35 @@ function getKnockoutMatches(oddsData, sweepstake) {
       home_win_prob: homeWinProb,
       draw_prob: drawProb,
       away_win_prob: awayWinProb,
-      actual_result: null
+      actual_result: actualResult
     };
   });
+
+  // Add completed knockout matches that are no longer in the odds API
+  for (const result of knockoutResults) {
+    const rHome = normalizeTeamName(result.home_team);
+    const rAway = normalizeTeamName(result.away_team);
+    const alreadyIncluded = matches.some(m =>
+      (m.home_team === rHome && m.away_team === rAway) ||
+      (m.home_team === rAway && m.away_team === rHome)
+    );
+    if (!alreadyIncluded) {
+      matches.push({
+        home_team: rHome,
+        away_team: rAway,
+        home_owner: ownerLookup[rHome] || null,
+        away_owner: ownerLookup[rAway] || null,
+        commence_time: result.date ? new Date(result.date).toISOString() : new Date().toISOString(),
+        home_win_prob: result.home_score > result.away_score ? 1.0 : 0.0,
+        draw_prob: result.home_score === result.away_score ? 1.0 : 0.0,
+        away_win_prob: result.away_score > result.home_score ? 1.0 : 0.0,
+        actual_result: {
+          home_score: result.home_score, away_score: result.away_score, completed: true,
+          home_penalties: result.home_penalties || null, away_penalties: result.away_penalties || null
+        }
+      });
+    }
+  }
 
   // Sort by date
   matches.sort((a, b) => new Date(a.commence_time) - new Date(b.commence_time));
@@ -922,7 +993,7 @@ async function main() {
 
     // Knockout matches
     console.log('\nProcessing knockout match odds...');
-    const knockoutMatches = getKnockoutMatches(oddsData, sweepstake);
+    const knockoutMatches = getKnockoutMatches(oddsData, sweepstake, combinedResults);
     const knockoutTotal = Object.values(knockoutMatches).reduce((sum, arr) => sum + arr.length, 0);
     console.log(`✓ Found ${knockoutTotal} knockout matches (R32: ${knockoutMatches.round_of_32.length}, R16: ${knockoutMatches.round_of_16.length}, QF: ${knockoutMatches.quarter_finals.length}, SF: ${knockoutMatches.semi_finals.length}, F: ${knockoutMatches.final.length})`);
     
@@ -1090,6 +1161,54 @@ async function main() {
     writeFileSync(outputPath, JSON.stringify(output, null, 2));
     console.log(`\n✅ Processed data saved to: data/processed/latest.json`);
     
+    // Add actual results to bracket data by matching knockout_matches to R32 positions
+    const actualResults = {};
+    if (bracketData.runs.length > 0) {
+      const sampleRun = bracketData.runs[0];
+      const allKnockoutRounds = [
+        ...knockoutMatches.round_of_32,
+        ...knockoutMatches.round_of_16,
+        ...knockoutMatches.quarter_finals,
+        ...knockoutMatches.semi_finals,
+        ...knockoutMatches.third_place,
+        ...knockoutMatches.final
+      ];
+      // Map R32 matches: positions 0-31 in pairs → R32-1 through R32-16
+      for (let i = 0; i < 16; i++) {
+        const t1Name = bracketData.indexToTeam[sampleRun[i * 2]];
+        const t2Name = bracketData.indexToTeam[sampleRun[i * 2 + 1]];
+        if (!t1Name || !t2Name) continue;
+        const nt1 = normalizeTeamName(t1Name);
+        const nt2 = normalizeTeamName(t2Name);
+        const match = allKnockoutRounds.find(m => {
+          const mh = normalizeTeamName(m.home_team);
+          const ma = normalizeTeamName(m.away_team);
+          return (mh === nt1 && ma === nt2) || (mh === nt2 && ma === nt1);
+        });
+        if (match?.actual_result?.completed) {
+          const mh = normalizeTeamName(match.home_team);
+          const homeIdx = mh === nt1 ? sampleRun[i * 2] : sampleRun[i * 2 + 1];
+          const awayIdx = mh === nt1 ? sampleRun[i * 2 + 1] : sampleRun[i * 2];
+          const winnerIdx = match.actual_result.home_score > match.actual_result.away_score ? homeIdx : awayIdx;
+          actualResults[`R32-${i + 1}`] = {
+            winnerIdx,
+            homeIdx,
+            awayIdx,
+            homeScore: match.actual_result.home_score,
+            awayScore: match.actual_result.away_score,
+            homePenalties: match.actual_result.home_penalties || null,
+            awayPenalties: match.actual_result.away_penalties || null
+          };
+        }
+      }
+      // TODO: extend for R16, QF, SF, Final when those matches complete
+    }
+    bracketData.actualResults = actualResults;
+    const completedCount = Object.keys(actualResults).length;
+    if (completedCount > 0) {
+      console.log(`✓ Mapped ${completedCount} completed knockout match(es) to bracket positions`);
+    }
+
     // Save bracket data separately (large file, loaded on demand by client)
     const bracketPath = join(processedDir, 'bracket.json');
     writeFileSync(bracketPath, JSON.stringify(bracketData));
