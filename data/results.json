@@ -867,16 +867,17 @@
       "matchday": 3
     },
     {
-      "id": "South Africa-Canada",
-      "home_team": "South Africa",
-      "away_team": "Canada",
-      "home_score": 0,
-      "away_score": 1,
+      "id": "Canada-South Africa",
+      "home_team": "Canada",
+      "away_team": "South Africa",
+      "home_score": 1,
+      "away_score": 0,
+      "home_penalties": null,
+      "away_penalties": null,
       "status": "completed",
-      "group": null,
-      "stage": "last_32",
-      "date": "2026-06-28",
-      "matchday": null
+      "stage": "round_of_32",
+      "date": "2026-06-28"
     }
-  ]
+  ],
+  "last_updated": "2026-06-29T09:00:00.000Z"
 }
