@@ -4527,12 +4527,12 @@ function renderBracket() {
   const probs = computeBracketProbabilities(filteredRuns);
   const lockedCount = Object.keys(lockedResults).length;
   
-  const leftR32 = ['R32-2','R32-5','R32-1','R32-3','R32-4','R32-6','R32-7','R32-8'];
-  const rightR32 = ['R32-11','R32-12','R32-9','R32-10','R32-14','R32-16','R32-13','R32-15'];
-  const leftR16 = ['R16-1','R16-2','R16-3','R16-4'];
-  const rightR16 = ['R16-5','R16-6','R16-7','R16-8'];
-  const leftQF = ['QF-1','QF-2'];
-  const rightQF = ['QF-3','QF-4'];
+  const leftR32 = ['R32-2','R32-5','R32-1','R32-3','R32-11','R32-12','R32-9','R32-10'];
+  const rightR32 = ['R32-4','R32-6','R32-7','R32-8','R32-14','R32-16','R32-13','R32-15'];
+  const leftR16 = ['R16-1','R16-2','R16-5','R16-6'];
+  const rightR16 = ['R16-3','R16-4','R16-7','R16-8'];
+  const leftQF = ['QF-1','QF-3'];
+  const rightQF = ['QF-2','QF-4'];
   const leftSF = ['SF-1'];
   const rightSF = ['SF-2'];
   

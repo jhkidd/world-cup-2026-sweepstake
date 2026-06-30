@@ -729,6 +729,13 @@ function getKnockoutMatches(oddsData, sweepstake, localResults = []) {
         homeWinProb = 1.0; drawProb = 0.0; awayWinProb = 0.0;
       } else if (actualResult.away_score > actualResult.home_score) {
         homeWinProb = 0.0; drawProb = 0.0; awayWinProb = 1.0;
+      } else if (actualResult.home_penalties != null && actualResult.away_penalties != null) {
+        // Penalty shootout: winner is whoever won on pens
+        if (actualResult.home_penalties > actualResult.away_penalties) {
+          homeWinProb = 1.0; drawProb = 0.0; awayWinProb = 0.0;
+        } else {
+          homeWinProb = 0.0; drawProb = 0.0; awayWinProb = 1.0;
+        }
       } else {
         homeWinProb = 0.0; drawProb = 1.0; awayWinProb = 0.0;
       }
@@ -956,25 +963,33 @@ async function main() {
     console.log(`✓ Ranked ${teamRankings.length} teams`);
     
     // Combine remote results (from odds API) with local results (authoritative)
+    // Local results override API results when both exist for the same match
     // This must happen before getAllMatchdays so matchday 2/3 results are available
     const combinedResults = [...(oddsData.results || [])];
     for (const localResult of localResults) {
-      const alreadyExists = combinedResults.find(r => 
-        normalizeTeamName(r.home_team) === normalizeTeamName(localResult.home_team) &&
-        normalizeTeamName(r.away_team) === normalizeTeamName(localResult.away_team)
+      const existingIdx = combinedResults.findIndex(r => 
+        (normalizeTeamName(r.home_team) === normalizeTeamName(localResult.home_team) &&
+         normalizeTeamName(r.away_team) === normalizeTeamName(localResult.away_team)) ||
+        (normalizeTeamName(r.home_team) === normalizeTeamName(localResult.away_team) &&
+         normalizeTeamName(r.away_team) === normalizeTeamName(localResult.home_team))
       );
-      if (!alreadyExists) {
-        combinedResults.push({
-          id: localResult.id,
-          home_team: localResult.home_team,
-          away_team: localResult.away_team,
-          home_score: localResult.home_score,
-          away_score: localResult.away_score,
-          status: 'completed',
-          group: localResult.group,
-          stage: localResult.stage || 'group_stage',
-          date: localResult.date
-        });
+      const entry = {
+        id: localResult.id,
+        home_team: localResult.home_team,
+        away_team: localResult.away_team,
+        home_score: localResult.home_score,
+        away_score: localResult.away_score,
+        home_penalties: localResult.home_penalties || null,
+        away_penalties: localResult.away_penalties || null,
+        status: 'completed',
+        group: localResult.group,
+        stage: localResult.stage || 'group_stage',
+        date: localResult.date
+      };
+      if (existingIdx !== -1) {
+        combinedResults[existingIdx] = entry; // Local overrides API
+      } else {
+        combinedResults.push(entry);
       }
     }
     console.log(`✓ Combined ${combinedResults.length} match results (${localResults.length} local + ${(oddsData.results || []).length} from API)`);
@@ -1019,15 +1034,20 @@ async function main() {
     // Merge completed results with match odds (override odds to 100% for actual winners)
     const matchOddsWithResults = mergeCompletedResults(oddsData.matchOdds, combinedResults, tournament);
     
-    // Resolve known R32 matchups from odds API knockout data
+    // Resolve known R32 matchups from odds API knockout data + completed results
     // This avoids the ambiguous 3rd-place allocation by using FIFA's confirmed matchups
     let knownR32Matchups = null;
     if (oddsData.matchOdds && oddsData.matchOdds.length > 0) {
       // Run group stage once to get standings for resolving matchups
       const groups = simulateGroupStage(tournament, matchOddsWithResults, {});
-      knownR32Matchups = resolveKnownR32Matchups(oddsData.matchOdds, groups);
+      // Include completed knockout results alongside odds API matches
+      const completedKnockout = combinedResults
+        .filter(r => r.stage && r.stage !== 'group_stage')
+        .map(r => ({ home_team: r.home_team, away_team: r.away_team }));
+      const allKnockoutMatchups = [...oddsData.matchOdds, ...completedKnockout];
+      knownR32Matchups = resolveKnownR32Matchups(allKnockoutMatchups, groups);
       if (knownR32Matchups) {
-        console.log('   ✓ Resolved 16 confirmed R32 matchups from odds API');
+        console.log('   ✓ Resolved 16 confirmed R32 matchups from odds API + completed results');
       } else {
         console.log('   ⚠ Could not resolve all R32 matchups from odds API, using allocation algorithm');
       }
@@ -1189,7 +1209,14 @@ async function main() {
           const mh = normalizeTeamName(match.home_team);
           const homeIdx = mh === nt1 ? sampleRun[i * 2] : sampleRun[i * 2 + 1];
           const awayIdx = mh === nt1 ? sampleRun[i * 2 + 1] : sampleRun[i * 2];
-          const winnerIdx = match.actual_result.home_score > match.actual_result.away_score ? homeIdx : awayIdx;
+          let winnerIdx;
+          if (match.actual_result.home_score !== match.actual_result.away_score) {
+            winnerIdx = match.actual_result.home_score > match.actual_result.away_score ? homeIdx : awayIdx;
+          } else if (match.actual_result.home_penalties != null && match.actual_result.away_penalties != null) {
+            winnerIdx = match.actual_result.home_penalties > match.actual_result.away_penalties ? homeIdx : awayIdx;
+          } else {
+            winnerIdx = awayIdx; // fallback
+          }
           actualResults[`R32-${i + 1}`] = {
             winnerIdx,
             homeIdx,
