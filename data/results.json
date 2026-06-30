@@ -1,6 +1,6 @@
 {
   "description": "Auto-updated match results from external APIs. Used as fallback for completed matches.",
-  "last_updated": "2026-06-30T07:30:37.938Z",
+  "last_updated": "2026-06-30T09:33:24.808Z",
   "matches": [
     {
       "id": "Mexico-South Africa",
@@ -894,10 +894,8 @@
       "id": "Germany-Paraguay",
       "home_team": "Germany",
       "away_team": "Paraguay",
-      "home_score": 1,
-      "away_score": 1,
-      "home_penalties": 4,
-      "away_penalties": 5,
+      "home_score": 4,
+      "away_score": 5,
       "status": "completed",
       "group": null,
       "stage": "last_32",
