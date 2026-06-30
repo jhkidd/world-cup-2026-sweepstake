@@ -857,10 +857,10 @@ export function simulateTournament(tournament, matchOdds, teamStrengths, eloRati
     }
   }
   
-  // 7. Semi-finals
+  // 7. Semi-finals (left half: QF-1 vs QF-3, right half: QF-2 vs QF-4)
   const sfBracket = [
-    { id: 'SF-1', slot1: 'QF-1', slot2: 'QF-2' },
-    { id: 'SF-2', slot1: 'QF-3', slot2: 'QF-4' }
+    { id: 'SF-1', slot1: 'QF-1', slot2: 'QF-3' },
+    { id: 'SF-2', slot1: 'QF-2', slot2: 'QF-4' }
   ];
   
   const sfWinners = {};
@@ -1038,8 +1038,8 @@ export function runMonteCarloWithPaths(tournament, matchOdds, teamStrengths, ite
       { id: 'QF-4', feeds: ['R16-7', 'R16-8'] }
     ],
     sf: [
-      { id: 'SF-1', feeds: ['QF-1', 'QF-2'] },
-      { id: 'SF-2', feeds: ['QF-3', 'QF-4'] }
+      { id: 'SF-1', feeds: ['QF-1', 'QF-3'] },
+      { id: 'SF-2', feeds: ['QF-2', 'QF-4'] }
     ],
     final: [
       { id: 'F', feeds: ['SF-1', 'SF-2'] }
