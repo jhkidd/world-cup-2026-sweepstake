@@ -1,6 +1,6 @@
 {
   "description": "Auto-updated match results from external APIs. Used as fallback for completed matches.",
-  "last_updated": "2026-07-01T13:06:55.681Z",
+  "last_updated": "2026-07-01T18:48:07.281Z",
   "matches": [
     {
       "id": "Mexico-South Africa",
@@ -944,6 +944,18 @@
       "away_team": "Ecuador",
       "home_score": 2,
       "away_score": 0,
+      "status": "completed",
+      "group": null,
+      "stage": "last_32",
+      "date": "2026-07-01",
+      "matchday": null
+    },
+    {
+      "id": "England-Congo DR",
+      "home_team": "England",
+      "away_team": "Congo DR",
+      "home_score": 2,
+      "away_score": 1,
       "status": "completed",
       "group": null,
       "stage": "last_32",
