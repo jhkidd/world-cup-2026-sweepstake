@@ -619,22 +619,29 @@ export function resolveKnownR32Matchups(knockoutMatchOdds, groups) {
   }
 
   // R32 slot definitions: slot1 identity determines the slot
+  // For "Winner vs 3rd" slots, the opponent must NOT be a group winner or runner-up
+  // (3rd-place teams are neither winners nor runners). This prevents R16+ matches
+  // (which pit winners against other winners/runners) from falsely claiming R32 slots.
+  const allWinners = new Set(Object.values(groupWinners));
+  const allRunners = new Set(Object.values(groupRunners));
+  const isThirdPlace = (team) => !allWinners.has(team) && !allRunners.has(team);
+
   const slotIdentifiers = [
     { id: 'R32-1', check: (t1, t2) => (t1 === groupRunners.A && t2 === groupRunners.B) || (t2 === groupRunners.A && t1 === groupRunners.B) },
-    { id: 'R32-2', check: (t1, t2) => t1 === groupWinners.E || t2 === groupWinners.E },
+    { id: 'R32-2', check: (t1, t2) => (t1 === groupWinners.E && isThirdPlace(t2)) || (t2 === groupWinners.E && isThirdPlace(t1)) },
     { id: 'R32-3', check: (t1, t2) => (t1 === groupWinners.F || t2 === groupWinners.F) && (t1 === groupRunners.C || t2 === groupRunners.C) },
     { id: 'R32-4', check: (t1, t2) => (t1 === groupWinners.C || t2 === groupWinners.C) && (t1 === groupRunners.F || t2 === groupRunners.F) },
-    { id: 'R32-5', check: (t1, t2) => t1 === groupWinners.I || t2 === groupWinners.I },
+    { id: 'R32-5', check: (t1, t2) => (t1 === groupWinners.I && isThirdPlace(t2)) || (t2 === groupWinners.I && isThirdPlace(t1)) },
     { id: 'R32-6', check: (t1, t2) => (t1 === groupRunners.E && t2 === groupRunners.I) || (t2 === groupRunners.E && t1 === groupRunners.I) },
-    { id: 'R32-7', check: (t1, t2) => t1 === groupWinners.A || t2 === groupWinners.A },
-    { id: 'R32-8', check: (t1, t2) => t1 === groupWinners.L || t2 === groupWinners.L },
-    { id: 'R32-9', check: (t1, t2) => t1 === groupWinners.D || t2 === groupWinners.D },
-    { id: 'R32-10', check: (t1, t2) => t1 === groupWinners.G || t2 === groupWinners.G },
+    { id: 'R32-7', check: (t1, t2) => (t1 === groupWinners.A && isThirdPlace(t2)) || (t2 === groupWinners.A && isThirdPlace(t1)) },
+    { id: 'R32-8', check: (t1, t2) => (t1 === groupWinners.L && isThirdPlace(t2)) || (t2 === groupWinners.L && isThirdPlace(t1)) },
+    { id: 'R32-9', check: (t1, t2) => (t1 === groupWinners.D && isThirdPlace(t2)) || (t2 === groupWinners.D && isThirdPlace(t1)) },
+    { id: 'R32-10', check: (t1, t2) => (t1 === groupWinners.G && isThirdPlace(t2)) || (t2 === groupWinners.G && isThirdPlace(t1)) },
     { id: 'R32-11', check: (t1, t2) => (t1 === groupRunners.K && t2 === groupRunners.L) || (t2 === groupRunners.K && t1 === groupRunners.L) },
     { id: 'R32-12', check: (t1, t2) => (t1 === groupWinners.H || t2 === groupWinners.H) && (t1 === groupRunners.J || t2 === groupRunners.J) },
-    { id: 'R32-13', check: (t1, t2) => t1 === groupWinners.B || t2 === groupWinners.B },
+    { id: 'R32-13', check: (t1, t2) => (t1 === groupWinners.B && isThirdPlace(t2)) || (t2 === groupWinners.B && isThirdPlace(t1)) },
     { id: 'R32-14', check: (t1, t2) => (t1 === groupWinners.J || t2 === groupWinners.J) && (t1 === groupRunners.H || t2 === groupRunners.H) },
-    { id: 'R32-15', check: (t1, t2) => t1 === groupWinners.K || t2 === groupWinners.K },
+    { id: 'R32-15', check: (t1, t2) => (t1 === groupWinners.K && isThirdPlace(t2)) || (t2 === groupWinners.K && isThirdPlace(t1)) },
     { id: 'R32-16', check: (t1, t2) => (t1 === groupRunners.D && t2 === groupRunners.G) || (t2 === groupRunners.D && t1 === groupRunners.G) },
   ];
 

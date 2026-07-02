@@ -1041,10 +1041,12 @@ async function main() {
       // Run group stage once to get standings for resolving matchups
       const groups = simulateGroupStage(tournament, matchOddsWithResults, {});
       // Include completed knockout results alongside odds API matches
+      // Completed results come FIRST so they claim their correct R32 slots
+      // before predicted R16+ matches from odds API can incorrectly fill them
       const completedKnockout = combinedResults
         .filter(r => r.stage && r.stage !== 'group_stage')
         .map(r => ({ home_team: r.home_team, away_team: r.away_team }));
-      const allKnockoutMatchups = [...oddsData.matchOdds, ...completedKnockout];
+      const allKnockoutMatchups = [...completedKnockout, ...oddsData.matchOdds];
       knownR32Matchups = resolveKnownR32Matchups(allKnockoutMatchups, groups);
       if (knownR32Matchups) {
         console.log('   ✓ Resolved 16 confirmed R32 matchups from odds API + completed results');
