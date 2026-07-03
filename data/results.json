@@ -1,6 +1,6 @@
 {
   "description": "Auto-updated match results from external APIs. Used as fallback for completed matches.",
-  "last_updated": "2026-07-03T00:52:49.773Z",
+  "last_updated": "2026-07-03T07:14:36.903Z",
   "matches": [
     {
       "id": "Mexico-South Africa",
@@ -996,6 +996,30 @@
       "group": null,
       "stage": "last_32",
       "date": "2026-07-02",
+      "matchday": null
+    },
+    {
+      "id": "Portugal-Croatia",
+      "home_team": "Portugal",
+      "away_team": "Croatia",
+      "home_score": 2,
+      "away_score": 1,
+      "status": "completed",
+      "group": null,
+      "stage": "last_32",
+      "date": "2026-07-02",
+      "matchday": null
+    },
+    {
+      "id": "Switzerland-Algeria",
+      "home_team": "Switzerland",
+      "away_team": "Algeria",
+      "home_score": 2,
+      "away_score": 0,
+      "status": "completed",
+      "group": null,
+      "stage": "last_32",
+      "date": "2026-07-03",
       "matchday": null
     }
   ]
