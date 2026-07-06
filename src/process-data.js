@@ -141,22 +141,26 @@ function computePredictionsVsResults(tournament, localResults, ownerLookup) {
     
     const kickoffTs = kickoffUtc.replace(/:/g, '-').replace('T', '_').replace('Z', '');
     
-    // Find last odds file before kickoff
+    // Find last odds file before kickoff that contains this match
     const preMatchFiles = oddsFiles.filter(f => f < kickoffTs);
     if (preMatchFiles.length === 0) continue;
     
-    const preMatchFile = preMatchFiles[preMatchFiles.length - 1];
-    const oddsData = JSON.parse(readFileSync(join(oddsDir, preMatchFile), 'utf-8'));
+    let oddsMatch = null;
+    let oddsData = null;
+    for (let i = preMatchFiles.length - 1; i >= 0 && !oddsMatch; i--) {
+      oddsData = JSON.parse(readFileSync(join(oddsDir, preMatchFiles[i]), 'utf-8'));
+      oddsMatch = (oddsData.matchOdds || []).find(m => {
+        const oHome = normalizeTeamName(m.home_team);
+        const oAway = normalizeTeamName(m.away_team);
+        return (oHome === normalizedHome && oAway === normalizedAway) ||
+               (oAway === normalizedHome && oHome === normalizedAway);
+      });
+      if (oddsMatch && (!oddsMatch.bookmakers || oddsMatch.bookmakers.length === 0)) {
+        oddsMatch = null;
+      }
+    }
     
-    // Find this match in the odds data
-    const oddsMatch = (oddsData.matchOdds || []).find(m => {
-      const oHome = normalizeTeamName(m.home_team);
-      const oAway = normalizeTeamName(m.away_team);
-      return (oHome === normalizedHome && oAway === normalizedAway) ||
-             (oAway === normalizedHome && oHome === normalizedAway);
-    });
-    
-    if (!oddsMatch || !oddsMatch.bookmakers || oddsMatch.bookmakers.length === 0) continue;
+    if (!oddsMatch) continue;
     
     // Average probabilities across all bookmakers
     const homeProbs = [], drawProbs = [], awayProbs = [];

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-06T08:53:06.786Z",
+  "timestamp": "2026-07-06T09:00:42.930Z",
   "tournament_stage": "Pre-Tournament",
   "leaderboard": [
     {
@@ -27,7 +27,7 @@
         "probability": 0
       },
       "total_probability": 0.17711598746081506,
-      "change_from_last_week": 0.0014611338398597407,
+      "change_from_last_week": 0,
       "rank": 2
     },
     {
@@ -55,7 +55,7 @@
         "probability": 0
       },
       "total_probability": 0.14285714285714285,
-      "change_from_last_week": 0.001984126984126977,
+      "change_from_last_week": 0,
       "rank": 4
     },
     {
@@ -293,7 +293,7 @@
       "owner": "Rajdeep Singh",
       "rank": 1,
       "bookmaker_win_probability": 0.3666666666666667,
-      "simulated_win_probability": 0.2912
+      "simulated_win_probability": 0.2881
     },
     {
       "name": "Argentina",
@@ -304,7 +304,7 @@
       "owner": "Nicholas Burgoyne",
       "rank": 2,
       "bookmaker_win_probability": 0.17711598746081506,
-      "simulated_win_probability": 0.25056
+      "simulated_win_probability": 0.24926
     },
     {
       "name": "Spain",
@@ -315,7 +315,7 @@
       "owner": "Ian Whelan",
       "rank": 3,
       "bookmaker_win_probability": 0.14285714285714285,
-      "simulated_win_probability": 0.19758
+      "simulated_win_probability": 0.20208
     },
     {
       "name": "England",
@@ -326,7 +326,7 @@
       "owner": "Tina Buckley",
       "rank": 4,
       "bookmaker_win_probability": 0.14835164835164835,
-      "simulated_win_probability": 0.1266
+      "simulated_win_probability": 0.12844
     },
     {
       "name": "Portugal",
@@ -337,7 +337,7 @@
       "owner": null,
       "rank": 5,
       "bookmaker_win_probability": 0.06944444444444445,
-      "simulated_win_probability": 0.03634
+      "simulated_win_probability": 0.03676
     },
     {
       "name": "Colombia",
@@ -348,7 +348,7 @@
       "owner": "Logan Garwood",
       "rank": 6,
       "bookmaker_win_probability": 0.03774928774928775,
-      "simulated_win_probability": 0.03622
+      "simulated_win_probability": 0.0356
     },
     {
       "name": "Norway",
@@ -359,7 +359,7 @@
       "owner": "Nathan Nekrews",
       "rank": 7,
       "bookmaker_win_probability": 0.05213903743315508,
-      "simulated_win_probability": 0.01866
+      "simulated_win_probability": 0.01796
     },
     {
       "name": "Morocco",
@@ -370,18 +370,7 @@
       "owner": "Yousaf Mahmood",
       "rank": 8,
       "bookmaker_win_probability": 0.031130268199233715,
-      "simulated_win_probability": 0.01688
-    },
-    {
-      "name": "Switzerland",
-      "group": "B",
-      "confederation": "UEFA",
-      "win_probability": 0.012725844461901021,
-      "status": "active",
-      "owner": null,
-      "rank": 9,
-      "bookmaker_win_probability": 0.012725844461901021,
-      "simulated_win_probability": 0.01132
+      "simulated_win_probability": 0.0176
     },
     {
       "name": "Belgium",
@@ -390,9 +379,20 @@
       "win_probability": 0.019337979094076654,
       "status": "active",
       "owner": "Catherine Swain",
-      "rank": 10,
+      "rank": 9,
       "bookmaker_win_probability": 0.019337979094076654,
-      "simulated_win_probability": 0.0113
+      "simulated_win_probability": 0.01066
+    },
+    {
+      "name": "Switzerland",
+      "group": "B",
+      "confederation": "UEFA",
+      "win_probability": 0.012725844461901021,
+      "status": "active",
+      "owner": null,
+      "rank": 10,
+      "bookmaker_win_probability": 0.012725844461901021,
+      "simulated_win_probability": 0.01026
     },
     {
       "name": "USA",
@@ -403,7 +403,7 @@
       "owner": "Julie Hulme",
       "rank": 11,
       "bookmaker_win_probability": 0.029411764705882353,
-      "simulated_win_probability": 0.00262
+      "simulated_win_probability": 0.00244
     },
     {
       "name": "Egypt",
@@ -414,7 +414,7 @@
       "owner": "Tina Buckley",
       "rank": 12,
       "bookmaker_win_probability": 0.0038764510779436155,
-      "simulated_win_probability": 0.00072
+      "simulated_win_probability": 0.00084
     },
     {
       "name": "Mexico",
@@ -7812,6 +7812,31 @@
         "Shirlee Scott": 0,
         "Rajdeep Singh": 0.3666666666666667
       }
+    },
+    {
+      "date": "2026-07-06T09:00:42.930Z",
+      "participants": {
+        "Nicholas Burgoyne": 0.17711598746081506,
+        "Dave Moseley": 0,
+        "Bryn Mills": 0,
+        "Anugrah Sebastian": 0,
+        "Joshua Kidd": 0,
+        "Ian Whelan": 0.14285714285714285,
+        "Yousaf Mahmood": 0.031130268199233715,
+        "Allan Chan": 0,
+        "Julie Hulme": 0.029411764705882353,
+        "Caitlin Kilcoyne": 0,
+        "Andrew Turner": 0,
+        "Tim Copland": 0,
+        "Tina Buckley": 0.15222809942959198,
+        "Emma Ryan": 0,
+        "Logan Garwood": 0.03774928774928775,
+        "Nathan Nekrews": 0.05213903743315508,
+        "Catherine Swain": 0.019337979094076654,
+        "Peter Lees": 0,
+        "Shirlee Scott": 0,
+        "Rajdeep Singh": 0.3666666666666667
+      }
     }
   ],
   "stage_probabilities": {
@@ -7890,10 +7915,10 @@
       "group_second": 0,
       "group_third": 0,
       "make_r16": 1,
-      "make_quarters": 0.40256,
-      "make_semis": 0.11036,
-      "make_final": 0.04098,
-      "win_tournament": 0.01132
+      "make_quarters": 0.40634,
+      "make_semis": 0.10812,
+      "make_final": 0.03906,
+      "win_tournament": 0.01026
     },
     "Brazil": {
       "group_first": 1,
@@ -7911,9 +7936,9 @@
       "group_third": 0,
       "make_r16": 1,
       "make_quarters": 1,
-      "make_semis": 0.21432,
-      "make_final": 0.0627,
-      "win_tournament": 0.01688
+      "make_semis": 0.21834,
+      "make_final": 0.06574,
+      "win_tournament": 0.0176
     },
     "Haiti": {
       "group_first": 0,
@@ -7940,10 +7965,10 @@
       "group_second": 0,
       "group_third": 0,
       "make_r16": 1,
-      "make_quarters": 0.51072,
-      "make_semis": 0.08284,
-      "make_final": 0.01464,
-      "win_tournament": 0.00262
+      "make_quarters": 0.51708,
+      "make_semis": 0.08452,
+      "make_final": 0.01506,
+      "win_tournament": 0.00244
     },
     "Paraguay": {
       "group_first": 0,
@@ -8060,20 +8085,20 @@
       "group_second": 0,
       "group_third": 0,
       "make_r16": 1,
-      "make_quarters": 0.48928,
-      "make_semis": 0.13124,
-      "make_final": 0.03782,
-      "win_tournament": 0.0113
+      "make_quarters": 0.48292,
+      "make_semis": 0.12802,
+      "make_final": 0.0366,
+      "win_tournament": 0.01066
     },
     "Egypt": {
       "group_first": 0,
       "group_second": 1,
       "group_third": 0,
       "make_r16": 1,
-      "make_quarters": 0.12596,
-      "make_semis": 0.02728,
-      "make_final": 0.00536,
-      "win_tournament": 0.00072
+      "make_quarters": 0.12306,
+      "make_semis": 0.02718,
+      "make_final": 0.00476,
+      "win_tournament": 0.00084
     },
     "Iran": {
       "group_first": 0,
@@ -8100,10 +8125,10 @@
       "group_second": 0,
       "group_third": 0,
       "make_r16": 1,
-      "make_quarters": 0.67968,
-      "make_semis": 0.56954,
-      "make_final": 0.32942,
-      "win_tournament": 0.19758
+      "make_quarters": 0.68412,
+      "make_semis": 0.57286,
+      "make_final": 0.3312,
+      "win_tournament": 0.20208
     },
     "Cape Verde": {
       "group_first": 0,
@@ -8141,9 +8166,9 @@
       "group_third": 0,
       "make_r16": 1,
       "make_quarters": 1,
-      "make_semis": 0.78568,
-      "make_final": 0.47402,
-      "win_tournament": 0.2912
+      "make_semis": 0.78166,
+      "make_final": 0.46992,
+      "win_tournament": 0.2881
     },
     "Senegal": {
       "group_first": 0,
@@ -8171,19 +8196,19 @@
       "group_third": 0,
       "make_r16": 1,
       "make_quarters": 1,
-      "make_semis": 0.33964,
-      "make_final": 0.1053,
-      "win_tournament": 0.01866
+      "make_semis": 0.3387,
+      "make_final": 0.10514,
+      "win_tournament": 0.01796
     },
     "Argentina": {
       "group_first": 1,
       "group_second": 0,
       "group_third": 0,
       "make_r16": 1,
-      "make_quarters": 0.87404,
-      "make_semis": 0.642,
-      "make_final": 0.44152,
-      "win_tournament": 0.25056
+      "make_quarters": 0.87694,
+      "make_semis": 0.6453,
+      "make_final": 0.44184,
+      "win_tournament": 0.24926
     },
     "Algeria": {
       "group_first": 0,
@@ -8220,10 +8245,10 @@
       "group_second": 1,
       "group_third": 0,
       "make_r16": 1,
-      "make_quarters": 0.32032,
-      "make_semis": 0.21638,
-      "make_final": 0.0814,
-      "win_tournament": 0.03634
+      "make_quarters": 0.31588,
+      "make_semis": 0.2146,
+      "make_final": 0.08148,
+      "win_tournament": 0.03676
     },
     "DR Congo": {
       "group_first": 0,
@@ -8250,10 +8275,10 @@
       "group_second": 0,
       "group_third": 0,
       "make_r16": 1,
-      "make_quarters": 0.59744,
-      "make_semis": 0.22036,
-      "make_final": 0.1083,
-      "win_tournament": 0.03622
+      "make_quarters": 0.59366,
+      "make_semis": 0.2194,
+      "make_final": 0.10668,
+      "win_tournament": 0.0356
     },
     "England": {
       "group_first": 1,
@@ -8261,9 +8286,9 @@
       "group_third": 0,
       "make_r16": 1,
       "make_quarters": 1,
-      "make_semis": 0.66036,
-      "make_final": 0.29854,
-      "win_tournament": 0.1266
+      "make_semis": 0.6613,
+      "make_final": 0.30252,
+      "win_tournament": 0.12844
     },
     "Croatia": {
       "group_first": 0,
@@ -8491,7 +8516,7 @@
           "date_of_birth": "2003-04-20"
         }
       ],
-      "fetched_at": "2026-07-06T07:45:45.679Z",
+      "fetched_at": "2026-07-06T09:00:50.287Z",
       "group": "A",
       "confederation": "CONCACAF"
     },
@@ -8689,7 +8714,7 @@
           "date_of_birth": "2000-10-02"
         }
       ],
-      "fetched_at": "2026-07-06T07:45:52.530Z",
+      "fetched_at": "2026-07-06T09:00:57.153Z",
       "group": "A",
       "confederation": "CAF"
     },
@@ -8887,7 +8912,7 @@
           "date_of_birth": "2002-05-09"
         }
       ],
-      "fetched_at": "2026-07-06T07:45:59.430Z",
+      "fetched_at": "2026-07-06T09:01:04.010Z",
       "group": "A",
       "confederation": "AFC"
     },
@@ -9085,7 +9110,7 @@
           "date_of_birth": "1999-04-29"
         }
       ],
-      "fetched_at": "2026-07-06T07:46:06.278Z",
+      "fetched_at": "2026-07-06T09:01:10.846Z",
       "group": "A",
       "confederation": "UEFA"
     },
@@ -9283,7 +9308,7 @@
           "date_of_birth": "2001-07-03"
         }
       ],
-      "fetched_at": "2026-07-06T07:46:13.099Z",
+      "fetched_at": "2026-07-06T09:01:17.729Z",
       "group": "B",
       "confederation": "CONCACAF"
     },
@@ -9481,7 +9506,7 @@
           "date_of_birth": "2007-09-21"
         }
       ],
-      "fetched_at": "2026-07-06T07:46:19.914Z",
+      "fetched_at": "2026-07-06T09:01:24.546Z",
       "group": "B",
       "confederation": "UEFA"
     },
@@ -9679,7 +9704,7 @@
           "date_of_birth": "1994-08-19"
         }
       ],
-      "fetched_at": "2026-07-06T07:46:26.713Z",
+      "fetched_at": "2026-07-06T09:01:31.367Z",
       "group": "B",
       "confederation": "AFC"
     },
@@ -9877,7 +9902,7 @@
           "date_of_birth": "2000-12-04"
         }
       ],
-      "fetched_at": "2026-07-06T07:46:33.527Z",
+      "fetched_at": "2026-07-06T09:01:38.179Z",
       "group": "B",
       "confederation": "UEFA"
     },
@@ -10075,7 +10100,7 @@
           "date_of_birth": "2006-08-03"
         }
       ],
-      "fetched_at": "2026-07-06T07:46:40.359Z",
+      "fetched_at": "2026-07-06T09:01:45.036Z",
       "group": "C",
       "confederation": "CONMEBOL"
     },
@@ -10273,7 +10298,7 @@
           "date_of_birth": "2004-11-30"
         }
       ],
-      "fetched_at": "2026-07-06T07:46:47.185Z",
+      "fetched_at": "2026-07-06T09:01:51.848Z",
       "group": "C",
       "confederation": "CAF"
     },
@@ -10471,7 +10496,7 @@
           "date_of_birth": "2001-07-07"
         }
       ],
-      "fetched_at": "2026-07-06T07:46:53.989Z",
+      "fetched_at": "2026-07-06T09:01:58.655Z",
       "group": "C",
       "confederation": "CONCACAF"
     },
@@ -10669,7 +10694,7 @@
           "date_of_birth": "1995-08-10"
         }
       ],
-      "fetched_at": "2026-07-06T07:47:00.865Z",
+      "fetched_at": "2026-07-06T09:02:05.510Z",
       "group": "C",
       "confederation": "UEFA"
     },
@@ -10867,7 +10892,7 @@
           "date_of_birth": "2001-04-19"
         }
       ],
-      "fetched_at": "2026-07-06T07:47:07.680Z",
+      "fetched_at": "2026-07-06T09:02:12.311Z",
       "group": "D",
       "confederation": "CONCACAF"
     },
@@ -11065,7 +11090,7 @@
           "date_of_birth": "1995-06-16"
         }
       ],
-      "fetched_at": "2026-07-06T07:47:14.507Z",
+      "fetched_at": "2026-07-06T09:02:19.137Z",
       "group": "D",
       "confederation": "CONMEBOL"
     },
@@ -11263,7 +11288,7 @@
           "date_of_birth": "2000-11-28"
         }
       ],
-      "fetched_at": "2026-07-06T07:47:21.314Z",
+      "fetched_at": "2026-07-06T09:02:26.057Z",
       "group": "D",
       "confederation": "AFC"
     },
@@ -11461,7 +11486,7 @@
           "date_of_birth": "2005-11-11"
         }
       ],
-      "fetched_at": "2026-07-06T07:47:28.151Z",
+      "fetched_at": "2026-07-06T09:02:32.894Z",
       "group": "D",
       "confederation": "UEFA"
     },
@@ -11659,7 +11684,7 @@
           "date_of_birth": "2002-10-17"
         }
       ],
-      "fetched_at": "2026-07-06T07:47:34.956Z",
+      "fetched_at": "2026-07-06T09:02:39.753Z",
       "group": "E",
       "confederation": "UEFA"
     },
@@ -11857,7 +11882,7 @@
           "date_of_birth": "1992-09-19"
         }
       ],
-      "fetched_at": "2026-07-06T07:47:41.810Z",
+      "fetched_at": "2026-07-06T09:02:46.587Z",
       "group": "E",
       "confederation": "CONCACAF"
     },
@@ -12055,7 +12080,7 @@
           "date_of_birth": "2006-11-14"
         }
       ],
-      "fetched_at": "2026-07-06T07:47:48.640Z",
+      "fetched_at": "2026-07-06T09:02:53.393Z",
       "group": "E",
       "confederation": "CAF"
     },
@@ -12253,7 +12278,7 @@
           "date_of_birth": "2005-03-19"
         }
       ],
-      "fetched_at": "2026-07-06T07:47:55.496Z",
+      "fetched_at": "2026-07-06T09:03:00.266Z",
       "group": "E",
       "confederation": "CONMEBOL"
     },
@@ -12451,7 +12476,7 @@
           "date_of_birth": "2002-02-01"
         }
       ],
-      "fetched_at": "2026-07-06T07:48:02.328Z",
+      "fetched_at": "2026-07-06T09:03:07.119Z",
       "group": "F",
       "confederation": "UEFA"
     },
@@ -12649,7 +12674,7 @@
           "date_of_birth": "2005-06-03"
         }
       ],
-      "fetched_at": "2026-07-06T07:48:09.158Z",
+      "fetched_at": "2026-07-06T09:03:13.921Z",
       "group": "F",
       "confederation": "AFC"
     },
@@ -12847,7 +12872,7 @@
           "date_of_birth": "2002-04-27"
         }
       ],
-      "fetched_at": "2026-07-06T07:48:15.995Z",
+      "fetched_at": "2026-07-06T09:03:20.760Z",
       "group": "F",
       "confederation": "UEFA"
     },
@@ -13045,7 +13070,7 @@
           "date_of_birth": "2005-02-02"
         }
       ],
-      "fetched_at": "2026-07-06T07:48:22.819Z",
+      "fetched_at": "2026-07-06T09:03:27.600Z",
       "group": "F",
       "confederation": "CAF"
     },
@@ -13243,7 +13268,7 @@
           "date_of_birth": "2005-02-03"
         }
       ],
-      "fetched_at": "2026-07-06T07:48:29.681Z",
+      "fetched_at": "2026-07-06T09:03:34.503Z",
       "group": "G",
       "confederation": "UEFA"
     },
@@ -13441,7 +13466,7 @@
           "date_of_birth": "2008-01-01"
         }
       ],
-      "fetched_at": "2026-07-06T07:48:36.502Z",
+      "fetched_at": "2026-07-06T09:03:41.363Z",
       "group": "G",
       "confederation": "CAF"
     },
@@ -13639,7 +13664,7 @@
           "date_of_birth": "2000-10-30"
         }
       ],
-      "fetched_at": "2026-07-06T07:48:43.405Z",
+      "fetched_at": "2026-07-06T09:03:48.157Z",
       "group": "G",
       "confederation": "AFC"
     },
@@ -13837,7 +13862,7 @@
           "date_of_birth": "2002-08-19"
         }
       ],
-      "fetched_at": "2026-07-06T07:48:50.234Z",
+      "fetched_at": "2026-07-06T09:03:54.983Z",
       "group": "G",
       "confederation": "OFC"
     },
@@ -14035,7 +14060,7 @@
           "date_of_birth": "2003-07-13"
         }
       ],
-      "fetched_at": "2026-07-06T07:48:57.050Z",
+      "fetched_at": "2026-07-06T09:04:01.840Z",
       "group": "H",
       "confederation": "UEFA"
     },
@@ -14233,7 +14258,7 @@
           "date_of_birth": "2002-05-03"
         }
       ],
-      "fetched_at": "2026-07-06T07:49:03.870Z",
+      "fetched_at": "2026-07-06T09:04:08.668Z",
       "group": "H",
       "confederation": "CAF"
     },
@@ -14431,7 +14456,7 @@
           "date_of_birth": "2000-05-14"
         }
       ],
-      "fetched_at": "2026-07-06T07:49:10.727Z",
+      "fetched_at": "2026-07-06T09:04:15.495Z",
       "group": "H",
       "confederation": "AFC"
     },
@@ -14629,7 +14654,7 @@
           "date_of_birth": "1998-06-30"
         }
       ],
-      "fetched_at": "2026-07-06T07:49:17.526Z",
+      "fetched_at": "2026-07-06T09:04:22.383Z",
       "group": "H",
       "confederation": "CONMEBOL"
     },
@@ -14827,7 +14852,7 @@
           "date_of_birth": "2002-09-02"
         }
       ],
-      "fetched_at": "2026-07-06T07:49:24.363Z",
+      "fetched_at": "2026-07-06T09:04:29.227Z",
       "group": "I",
       "confederation": "UEFA"
     },
@@ -15032,7 +15057,7 @@
           "date_of_birth": "1981-02-05"
         }
       ],
-      "fetched_at": "2026-07-06T07:49:31.179Z",
+      "fetched_at": "2026-07-06T09:04:36.060Z",
       "group": "I",
       "confederation": "CAF"
     },
@@ -15230,7 +15255,7 @@
           "date_of_birth": "1996-01-19"
         }
       ],
-      "fetched_at": "2026-07-06T07:49:38.010Z",
+      "fetched_at": "2026-07-06T09:04:42.911Z",
       "group": "I",
       "confederation": "AFC"
     },
@@ -15428,7 +15453,7 @@
           "date_of_birth": "2000-02-06"
         }
       ],
-      "fetched_at": "2026-07-06T07:49:44.824Z",
+      "fetched_at": "2026-07-06T09:04:49.731Z",
       "group": "I",
       "confederation": "UEFA"
     },
@@ -15626,7 +15651,7 @@
           "date_of_birth": "2002-12-18"
         }
       ],
-      "fetched_at": "2026-07-06T07:49:51.636Z",
+      "fetched_at": "2026-07-06T09:04:56.566Z",
       "group": "J",
       "confederation": "CONMEBOL"
     },
@@ -15824,7 +15849,7 @@
           "date_of_birth": "2002-09-06"
         }
       ],
-      "fetched_at": "2026-07-06T07:49:58.442Z",
+      "fetched_at": "2026-07-06T09:05:03.597Z",
       "group": "J",
       "confederation": "CAF"
     },
@@ -16022,7 +16047,7 @@
           "date_of_birth": "1997-07-07"
         }
       ],
-      "fetched_at": "2026-07-06T07:50:05.375Z",
+      "fetched_at": "2026-07-06T09:05:10.440Z",
       "group": "J",
       "confederation": "UEFA"
     },
@@ -16220,7 +16245,7 @@
           "date_of_birth": "2004-04-13"
         }
       ],
-      "fetched_at": "2026-07-06T07:50:12.180Z",
+      "fetched_at": "2026-07-06T09:05:17.283Z",
       "group": "J",
       "confederation": "AFC"
     },
@@ -16418,7 +16443,7 @@
           "date_of_birth": "2002-12-14"
         }
       ],
-      "fetched_at": "2026-07-06T07:50:19.027Z",
+      "fetched_at": "2026-07-06T09:05:24.179Z",
       "group": "K",
       "confederation": "UEFA"
     },
@@ -16616,7 +16641,7 @@
           "date_of_birth": "1994-06-24"
         }
       ],
-      "fetched_at": "2026-07-06T07:50:25.835Z",
+      "fetched_at": "2026-07-06T09:05:31.024Z",
       "group": "K",
       "confederation": "CAF"
     },
@@ -16814,7 +16839,7 @@
           "date_of_birth": "1997-10-30"
         }
       ],
-      "fetched_at": "2026-07-06T07:50:32.662Z",
+      "fetched_at": "2026-07-06T09:05:37.858Z",
       "group": "K",
       "confederation": "AFC"
     },
@@ -17012,7 +17037,7 @@
           "date_of_birth": "2002-09-12"
         }
       ],
-      "fetched_at": "2026-07-06T07:50:39.479Z",
+      "fetched_at": "2026-07-06T09:05:44.695Z",
       "group": "K",
       "confederation": "CONMEBOL"
     },
@@ -17210,7 +17235,7 @@
           "date_of_birth": "2002-03-10"
         }
       ],
-      "fetched_at": "2026-07-06T07:50:46.315Z",
+      "fetched_at": "2026-07-06T09:05:51.538Z",
       "group": "L",
       "confederation": "UEFA"
     },
@@ -17408,7 +17433,7 @@
           "date_of_birth": "2003-03-31"
         }
       ],
-      "fetched_at": "2026-07-06T07:50:53.175Z",
+      "fetched_at": "2026-07-06T09:05:58.338Z",
       "group": "L",
       "confederation": "UEFA"
     },
@@ -17606,7 +17631,7 @@
           "date_of_birth": "2003-09-23"
         }
       ],
-      "fetched_at": "2026-07-06T07:50:59.986Z",
+      "fetched_at": "2026-07-06T09:06:05.190Z",
       "group": "L",
       "confederation": "CAF"
     },
@@ -17804,19 +17829,19 @@
           "date_of_birth": "2001-06-21"
         }
       ],
-      "fetched_at": "2026-07-06T07:51:06.832Z",
+      "fetched_at": "2026-07-06T09:06:12.005Z",
       "group": "L",
       "confederation": "CONCACAF"
     }
   },
   "predictions_vs_results": {
     "summary": {
-      "matches_played": 83,
+      "matches_played": 92,
       "total_matches": 104,
-      "average_rps": 0.145,
-      "average_surprise_bits": 1.19,
-      "correct_predictions": 55,
-      "correct_pct": 66
+      "average_rps": 0.144,
+      "average_surprise_bits": 1.17,
+      "correct_predictions": 62,
+      "correct_pct": 67
     },
     "matches": [
       {
@@ -18212,6 +18237,34 @@
         "away_owner": "Shirlee Scott"
       },
       {
+        "home_team": "Türkiye",
+        "away_team": "Paraguay",
+        "group": "D",
+        "stage": "group_stage",
+        "date": "2026-06-20T08:00:00Z",
+        "pre_match_probs": {
+          "home_win": 0.4658,
+          "draw": 0.2846,
+          "away_win": 0.2496
+        },
+        "predicted_outcome": "home_win",
+        "actual_outcome": "away_win",
+        "actual_score": {
+          "home": 0,
+          "away": 1
+        },
+        "surprise_bits": 2,
+        "raw_probability": 0.25,
+        "rps": 0.39,
+        "best_bet": {
+          "odds": 4.2,
+          "return_10": 42,
+          "bookie": "Smarkets"
+        },
+        "home_owner": "Tim Copland",
+        "away_owner": "Yousaf Mahmood"
+      },
+      {
         "home_team": "Brazil",
         "away_team": "Morocco",
         "group": "C",
@@ -18548,6 +18601,34 @@
         "away_owner": "Tim Copland"
       },
       {
+        "home_team": "Netherlands",
+        "away_team": "Morocco",
+        "group": null,
+        "stage": "last_32",
+        "date": "2026-06-30T23:59:59Z",
+        "pre_match_probs": {
+          "home_win": 0.3965,
+          "draw": 0.3174,
+          "away_win": 0.2862
+        },
+        "predicted_outcome": "home_win",
+        "actual_outcome": "draw",
+        "actual_score": {
+          "home": 1,
+          "away": 1
+        },
+        "surprise_bits": 1.66,
+        "raw_probability": 0.317,
+        "rps": 0.12,
+        "best_bet": {
+          "odds": 3.15,
+          "return_10": 31.5,
+          "bookie": "Smarkets"
+        },
+        "home_owner": "Emma Ryan",
+        "away_owner": "Yousaf Mahmood"
+      },
+      {
         "home_team": "Egypt",
         "away_team": "Iran",
         "group": "G",
@@ -18658,6 +18739,34 @@
         },
         "home_owner": "Bryn Mills",
         "away_owner": "Peter Lees"
+      },
+      {
+        "home_team": "Mexico",
+        "away_team": "England",
+        "group": null,
+        "stage": "last_16",
+        "date": "2026-07-06T23:59:59Z",
+        "pre_match_probs": {
+          "home_win": 0.3078,
+          "draw": 0.3167,
+          "away_win": 0.3755
+        },
+        "predicted_outcome": "away_win",
+        "actual_outcome": "away_win",
+        "actual_score": {
+          "home": 2,
+          "away": 3
+        },
+        "surprise_bits": 1.41,
+        "raw_probability": 0.375,
+        "rps": 0.242,
+        "best_bet": {
+          "odds": 2.66,
+          "return_10": 26.6,
+          "bookie": "Matchbook"
+        },
+        "home_owner": "Andrew Turner",
+        "away_owner": "Tina Buckley"
       },
       {
         "home_team": "Switzerland",
@@ -18772,6 +18881,34 @@
         "away_owner": "Caitlin Kilcoyne"
       },
       {
+        "home_team": "Mexico",
+        "away_team": "Ecuador",
+        "group": null,
+        "stage": "last_32",
+        "date": "2026-07-01T23:59:59Z",
+        "pre_match_probs": {
+          "home_win": 0.4187,
+          "draw": 0.3431,
+          "away_win": 0.2383
+        },
+        "predicted_outcome": "home_win",
+        "actual_outcome": "home_win",
+        "actual_score": {
+          "home": 2,
+          "away": 0
+        },
+        "surprise_bits": 1.26,
+        "raw_probability": 0.419,
+        "rps": 0.197,
+        "best_bet": {
+          "odds": 2.4,
+          "return_10": 24,
+          "bookie": "Betfair"
+        },
+        "home_owner": "Andrew Turner",
+        "away_owner": "Dave Moseley"
+      },
+      {
         "home_team": "Norway",
         "away_team": "Senegal",
         "group": "I",
@@ -18882,6 +19019,34 @@
         },
         "home_owner": "Emma Ryan",
         "away_owner": "Shirlee Scott"
+      },
+      {
+        "home_team": "Switzerland",
+        "away_team": "Algeria",
+        "group": null,
+        "stage": "last_32",
+        "date": "2026-07-03T23:59:59Z",
+        "pre_match_probs": {
+          "home_win": 0.4829,
+          "draw": 0.2934,
+          "away_win": 0.2237
+        },
+        "predicted_outcome": "home_win",
+        "actual_outcome": "home_win",
+        "actual_score": {
+          "home": 2,
+          "away": 0
+        },
+        "surprise_bits": 1.05,
+        "raw_probability": 0.483,
+        "rps": 0.159,
+        "best_bet": {
+          "odds": 2.08,
+          "return_10": 20.8,
+          "bookie": "LeoVegas"
+        },
+        "home_owner": null,
+        "away_owner": "Emma Ryan"
       },
       {
         "home_team": "Ivory Coast",
@@ -19472,6 +19637,34 @@
         "away_owner": "Dave Moseley"
       },
       {
+        "home_team": "Colombia",
+        "away_team": "Ghana",
+        "group": null,
+        "stage": "last_32",
+        "date": "2026-07-04T23:59:59Z",
+        "pre_match_probs": {
+          "home_win": 0.6717,
+          "draw": 0.2176,
+          "away_win": 0.1107
+        },
+        "predicted_outcome": "home_win",
+        "actual_outcome": "home_win",
+        "actual_score": {
+          "home": 1,
+          "away": 0
+        },
+        "surprise_bits": 0.57,
+        "raw_probability": 0.672,
+        "rps": 0.06,
+        "best_bet": {
+          "odds": 1.46,
+          "return_10": 14.6,
+          "bookie": "Smarkets"
+        },
+        "home_owner": "Logan Garwood",
+        "away_owner": "Anugrah Sebastian"
+      },
+      {
         "home_team": "Mexico",
         "away_team": "South Africa",
         "group": "A",
@@ -19722,6 +19915,62 @@
         },
         "home_owner": "Joshua Kidd",
         "away_owner": "Caitlin Kilcoyne"
+      },
+      {
+        "home_team": "Canada",
+        "away_team": "Qatar",
+        "group": "B",
+        "stage": "group_stage",
+        "date": "2026-06-19T02:00:00Z",
+        "pre_match_probs": {
+          "home_win": 0.7316,
+          "draw": 0.1757,
+          "away_win": 0.0927
+        },
+        "predicted_outcome": "home_win",
+        "actual_outcome": "home_win",
+        "actual_score": {
+          "home": 6,
+          "away": 0
+        },
+        "surprise_bits": 0.45,
+        "raw_probability": 0.732,
+        "rps": 0.04,
+        "best_bet": {
+          "odds": 1.34,
+          "return_10": 13.4,
+          "bookie": "Betfair"
+        },
+        "home_owner": null,
+        "away_owner": "Ian Whelan"
+      },
+      {
+        "home_team": "England",
+        "away_team": "DR Congo",
+        "group": null,
+        "stage": "last_32",
+        "date": "2026-07-01T23:59:59Z",
+        "pre_match_probs": {
+          "home_win": 0.736,
+          "draw": 0.1908,
+          "away_win": 0.0732
+        },
+        "predicted_outcome": "home_win",
+        "actual_outcome": "home_win",
+        "actual_score": {
+          "home": 2,
+          "away": 1
+        },
+        "surprise_bits": 0.44,
+        "raw_probability": 0.736,
+        "rps": 0.038,
+        "best_bet": {
+          "odds": 1.33,
+          "return_10": 13.3,
+          "bookie": "LeoVegas"
+        },
+        "home_owner": "Tina Buckley",
+        "away_owner": "Bryn Mills"
       },
       {
         "home_team": "France",
@@ -20004,6 +20253,34 @@
         "away_owner": "Nicholas Burgoyne"
       },
       {
+        "home_team": "USA",
+        "away_team": "Bosnia and Herzegovina",
+        "group": null,
+        "stage": "last_32",
+        "date": "2026-07-02T23:59:59Z",
+        "pre_match_probs": {
+          "home_win": 0.8429,
+          "draw": 0.1233,
+          "away_win": 0.0338
+        },
+        "predicted_outcome": "home_win",
+        "actual_outcome": "home_win",
+        "actual_score": {
+          "home": 2,
+          "away": 0
+        },
+        "surprise_bits": 0.25,
+        "raw_probability": 0.843,
+        "rps": 0.013,
+        "best_bet": {
+          "odds": 1.15,
+          "return_10": 11.5,
+          "bookie": "Betfair"
+        },
+        "home_owner": "Julie Hulme",
+        "away_owner": null
+      },
+      {
         "home_team": "Tunisia",
         "away_team": "Netherlands",
         "group": "F",
@@ -20156,56 +20433,6 @@
         "direction": "overperforming"
       },
       {
-        "team": "Qatar",
-        "matches_played": 2,
-        "avg_rps": 0.191,
-        "expected_points": 0.91,
-        "actual_points": 1,
-        "delta": 0.09,
-        "surprise_per_match": 1.16,
-        "direction": "overperforming"
-      },
-      {
-        "team": "Ghana",
-        "matches_played": 3,
-        "avg_rps": 0.225,
-        "expected_points": 2.66,
-        "actual_points": 4,
-        "delta": 1.34,
-        "surprise_per_match": 1.1,
-        "direction": "overperforming"
-      },
-      {
-        "team": "DR Congo",
-        "matches_played": 3,
-        "avg_rps": 0.19,
-        "expected_points": 2.68,
-        "actual_points": 4,
-        "delta": 1.32,
-        "surprise_per_match": 1.09,
-        "direction": "overperforming"
-      },
-      {
-        "team": "Morocco",
-        "matches_played": 4,
-        "avg_rps": 0.088,
-        "expected_points": 7.67,
-        "actual_points": 10,
-        "delta": 2.33,
-        "surprise_per_match": 0.9,
-        "direction": "overperforming"
-      },
-      {
-        "team": "Mexico",
-        "matches_played": 3,
-        "avg_rps": 0.122,
-        "expected_points": 5.77,
-        "actual_points": 9,
-        "delta": 3.23,
-        "surprise_per_match": 0.88,
-        "direction": "overperforming"
-      },
-      {
         "team": "Norway",
         "matches_played": 5,
         "avg_rps": 0.175,
@@ -20216,6 +20443,26 @@
         "direction": "overperforming"
       },
       {
+        "team": "DR Congo",
+        "matches_played": 4,
+        "avg_rps": 0.152,
+        "expected_points": 3.09,
+        "actual_points": 4,
+        "delta": 0.91,
+        "surprise_per_match": 0.71,
+        "direction": "overperforming"
+      },
+      {
+        "team": "Ghana",
+        "matches_played": 4,
+        "avg_rps": 0.184,
+        "expected_points": 3.21,
+        "actual_points": 4,
+        "delta": 0.79,
+        "surprise_per_match": 0.68,
+        "direction": "overperforming"
+      },
+      {
         "team": "South Africa",
         "matches_played": 4,
         "avg_rps": 0.203,
@@ -20223,6 +20470,16 @@
         "actual_points": 4,
         "delta": 0.83,
         "surprise_per_match": 0.68,
+        "direction": "overperforming"
+      },
+      {
+        "team": "Qatar",
+        "matches_played": 3,
+        "avg_rps": 0.141,
+        "expected_points": 1.36,
+        "actual_points": 1,
+        "delta": -0.36,
+        "surprise_per_match": 0.62,
         "direction": "overperforming"
       },
       {
@@ -20246,13 +20503,13 @@
         "direction": "overperforming"
       },
       {
-        "team": "Bosnia and Herzegovina",
-        "matches_played": 3,
-        "avg_rps": 0.101,
-        "expected_points": 3.81,
-        "actual_points": 4,
-        "delta": 0.19,
-        "surprise_per_match": 0.57,
+        "team": "Mexico",
+        "matches_played": 5,
+        "avg_rps": 0.161,
+        "expected_points": 8.61,
+        "actual_points": 12,
+        "delta": 3.39,
+        "surprise_per_match": 0.5,
         "direction": "overperforming"
       },
       {
@@ -20276,6 +20533,36 @@
         "direction": "overperforming"
       },
       {
+        "team": "Morocco",
+        "matches_played": 5,
+        "avg_rps": 0.094,
+        "expected_points": 8.84,
+        "actual_points": 11,
+        "delta": 2.16,
+        "surprise_per_match": 0.39,
+        "direction": "overperforming"
+      },
+      {
+        "team": "Bosnia and Herzegovina",
+        "matches_played": 4,
+        "avg_rps": 0.079,
+        "expected_points": 4.04,
+        "actual_points": 4,
+        "delta": -0.04,
+        "surprise_per_match": 0.37,
+        "direction": "overperforming"
+      },
+      {
+        "team": "Paraguay",
+        "matches_played": 5,
+        "avg_rps": 0.187,
+        "expected_points": 4.38,
+        "actual_points": 5,
+        "delta": 0.62,
+        "surprise_per_match": 0.33,
+        "direction": "overperforming"
+      },
+      {
         "team": "Saudi Arabia",
         "matches_played": 3,
         "avg_rps": 0.107,
@@ -20283,6 +20570,16 @@
         "actual_points": 2,
         "delta": -0.04,
         "surprise_per_match": 0.24,
+        "direction": "overperforming"
+      },
+      {
+        "team": "Colombia",
+        "matches_played": 4,
+        "avg_rps": 0.063,
+        "expected_points": 7.77,
+        "actual_points": 10,
+        "delta": 2.23,
+        "surprise_per_match": 0.21,
         "direction": "overperforming"
       },
       {
@@ -20296,22 +20593,32 @@
         "direction": "overperforming"
       },
       {
-        "team": "Colombia",
-        "matches_played": 3,
-        "avg_rps": 0.064,
-        "expected_points": 5.54,
-        "actual_points": 7,
-        "delta": 1.46,
-        "surprise_per_match": 0.09,
+        "team": "Switzerland",
+        "matches_played": 4,
+        "avg_rps": 0.201,
+        "expected_points": 7.82,
+        "actual_points": 10,
+        "delta": 2.18,
+        "surprise_per_match": 0.07,
         "direction": "overperforming"
       },
       {
         "team": "USA",
-        "matches_played": 3,
-        "avg_rps": 0.219,
-        "expected_points": 5.37,
-        "actual_points": 6,
-        "delta": 0.63,
+        "matches_played": 4,
+        "avg_rps": 0.168,
+        "expected_points": 8.02,
+        "actual_points": 9,
+        "delta": 0.98,
+        "surprise_per_match": 0.07,
+        "direction": "overperforming"
+      },
+      {
+        "team": "England",
+        "matches_played": 5,
+        "avg_rps": 0.147,
+        "expected_points": 10.95,
+        "actual_points": 13,
+        "delta": 2.05,
         "surprise_per_match": 0.01,
         "direction": "overperforming"
       },
@@ -20323,16 +20630,6 @@
         "actual_points": 6,
         "delta": 0.37,
         "surprise_per_match": -0.02,
-        "direction": "underperforming"
-      },
-      {
-        "team": "Paraguay",
-        "matches_played": 4,
-        "avg_rps": 0.136,
-        "expected_points": 3.35,
-        "actual_points": 2,
-        "delta": -1.35,
-        "surprise_per_match": -0.09,
         "direction": "underperforming"
       },
       {
@@ -20353,26 +20650,6 @@
         "actual_points": 10,
         "delta": -0.05,
         "surprise_per_match": -0.22,
-        "direction": "underperforming"
-      },
-      {
-        "team": "Switzerland",
-        "matches_played": 3,
-        "avg_rps": 0.215,
-        "expected_points": 6.07,
-        "actual_points": 7,
-        "delta": 0.93,
-        "surprise_per_match": -0.26,
-        "direction": "underperforming"
-      },
-      {
-        "team": "Türkiye",
-        "matches_played": 2,
-        "avg_rps": 0.438,
-        "expected_points": 3.01,
-        "actual_points": 3,
-        "delta": -0.01,
-        "surprise_per_match": -0.29,
         "direction": "underperforming"
       },
       {
@@ -20402,26 +20679,6 @@
         "expected_points": 9.52,
         "actual_points": 10,
         "delta": 0.48,
-        "surprise_per_match": -0.38,
-        "direction": "underperforming"
-      },
-      {
-        "team": "Ecuador",
-        "matches_played": 3,
-        "avg_rps": 0.338,
-        "expected_points": 4.38,
-        "actual_points": 4,
-        "delta": -0.38,
-        "surprise_per_match": -0.38,
-        "direction": "underperforming"
-      },
-      {
-        "team": "Algeria",
-        "matches_played": 3,
-        "avg_rps": 0.078,
-        "expected_points": 4.05,
-        "actual_points": 4,
-        "delta": -0.05,
         "surprise_per_match": -0.38,
         "direction": "underperforming"
       },
@@ -20456,6 +20713,16 @@
         "direction": "underperforming"
       },
       {
+        "team": "Canada",
+        "matches_played": 5,
+        "avg_rps": 0.123,
+        "expected_points": 7.69,
+        "actual_points": 7,
+        "delta": -0.69,
+        "surprise_per_match": -0.47,
+        "direction": "underperforming"
+      },
+      {
         "team": "Jordan",
         "matches_played": 3,
         "avg_rps": 0.05,
@@ -20466,13 +20733,23 @@
         "direction": "underperforming"
       },
       {
-        "team": "Netherlands",
-        "matches_played": 3,
-        "avg_rps": 0.05,
-        "expected_points": 7.28,
-        "actual_points": 7,
-        "delta": -0.28,
-        "surprise_per_match": -0.53,
+        "team": "Algeria",
+        "matches_played": 4,
+        "avg_rps": 0.099,
+        "expected_points": 5.01,
+        "actual_points": 4,
+        "delta": -1.01,
+        "surprise_per_match": -0.55,
+        "direction": "underperforming"
+      },
+      {
+        "team": "Ecuador",
+        "matches_played": 4,
+        "avg_rps": 0.303,
+        "expected_points": 5.43,
+        "actual_points": 4,
+        "delta": -1.43,
+        "surprise_per_match": -0.6,
         "direction": "underperforming"
       },
       {
@@ -20483,16 +20760,6 @@
         "actual_points": 0,
         "delta": -1.73,
         "surprise_per_match": -0.6,
-        "direction": "underperforming"
-      },
-      {
-        "team": "England",
-        "matches_played": 3,
-        "avg_rps": 0.152,
-        "expected_points": 7.1,
-        "actual_points": 7,
-        "delta": -0.1,
-        "surprise_per_match": -0.61,
         "direction": "underperforming"
       },
       {
@@ -20516,16 +20783,6 @@
         "direction": "underperforming"
       },
       {
-        "team": "Canada",
-        "matches_played": 4,
-        "avg_rps": 0.144,
-        "expected_points": 5.32,
-        "actual_points": 4,
-        "delta": -1.32,
-        "surprise_per_match": -0.7,
-        "direction": "underperforming"
-      },
-      {
         "team": "Panama",
         "matches_played": 3,
         "avg_rps": 0.102,
@@ -20533,6 +20790,26 @@
         "actual_points": 0,
         "delta": -2.08,
         "surprise_per_match": -0.73,
+        "direction": "underperforming"
+      },
+      {
+        "team": "Netherlands",
+        "matches_played": 4,
+        "avg_rps": 0.067,
+        "expected_points": 8.79,
+        "actual_points": 8,
+        "delta": -0.79,
+        "surprise_per_match": -0.81,
+        "direction": "underperforming"
+      },
+      {
+        "team": "Türkiye",
+        "matches_played": 3,
+        "avg_rps": 0.422,
+        "expected_points": 4.69,
+        "actual_points": 3,
+        "delta": -1.69,
+        "surprise_per_match": -0.86,
         "direction": "underperforming"
       },
       {
@@ -20633,55 +20910,55 @@
             0,
             0.2
           ],
-          "count": 87,
+          "count": 94,
           "avg_predicted": 0.117,
-          "actual_frequency": 0.115
+          "actual_frequency": 0.106
         },
         {
           "predicted_range": [
             0.2,
             0.4
           ],
-          "count": 84,
-          "avg_predicted": 0.272,
-          "actual_frequency": 0.25
+          "count": 97,
+          "avg_predicted": 0.276,
+          "actual_frequency": 0.247
         },
         {
           "predicted_range": [
             0.4,
             0.6
           ],
-          "count": 33,
-          "avg_predicted": 0.502,
-          "actual_frequency": 0.576
+          "count": 36,
+          "avg_predicted": 0.499,
+          "actual_frequency": 0.583
         },
         {
           "predicted_range": [
             0.6,
             0.8
           ],
-          "count": 30,
-          "avg_predicted": 0.687,
-          "actual_frequency": 0.7
+          "count": 33,
+          "avg_predicted": 0.689,
+          "actual_frequency": 0.727
         },
         {
           "predicted_range": [
             0.8,
             1
           ],
-          "count": 15,
-          "avg_predicted": 0.852,
-          "actual_frequency": 0.8
+          "count": 16,
+          "avg_predicted": 0.851,
+          "actual_frequency": 0.813
         }
       ]
     }
   },
   "elo_source": "eloratings.net",
   "validation": {
-    "mean_absolute_error": 0.034257796632643715,
+    "mean_absolute_error": 0.03480379663264371,
     "max_deviation": {
       "team": "France",
-      "diff": 0.07546666666666668
+      "diff": 0.07856666666666667
     }
   },
   "bracket": {
