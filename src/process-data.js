@@ -118,17 +118,27 @@ function computePredictionsVsResults(tournament, localResults, ownerLookup) {
     const normalizedHome = normalizeTeamName(result.home_team);
     const normalizedAway = normalizeTeamName(result.away_team);
     
-    const tournamentMatch = tournament.matches.group_stage.find(m => {
+    // Try group stage first, then use result date for knockout matches
+    let kickoffUtc = null;
+    let tournamentMatch = tournament.matches.group_stage.find(m => {
       const tHome = normalizeTeamName(m.home);
       const tAway = normalizeTeamName(m.away);
       return (tHome === normalizedHome && tAway === normalizedAway) ||
              (tAway === normalizedHome && tHome === normalizedAway);
     });
     
-    if (!tournamentMatch) continue;
+    if (tournamentMatch) {
+      kickoffUtc = tournamentMatch.kickoff_utc;
+    } else if (result.date) {
+      // Knockout match — use date from result (end of day as upper bound for odds lookup)
+      kickoffUtc = `${result.date}T23:59:59Z`;
+      tournamentMatch = { home: result.home_team, away: result.away_team, group: null };
+    } else {
+      continue;
+    }
     
-    const kickoffUtc = tournamentMatch.kickoff_utc;
-    // Convert kickoff to comparable timestamp (files are named YYYY-MM-DD_HH-MM-SS)
+    const isKnockout = result.stage && result.stage !== 'group_stage';
+    
     const kickoffTs = kickoffUtc.replace(/:/g, '-').replace('T', '_').replace('Z', '');
     
     // Find last odds file before kickoff
@@ -192,10 +202,15 @@ function computePredictionsVsResults(tournament, localResults, ownerLookup) {
     awayWinProb /= total;
     
     // Determine actual outcome (relative to tournament home team)
-    const homeScore = result.home_team === tournamentMatch.home ? result.home_score :
-                      normalizeTeamName(result.home_team) === tournamentHomeNorm ? result.home_score : result.away_score;
-    const awayScore = result.home_team === tournamentMatch.home ? result.away_score :
-                      normalizeTeamName(result.home_team) === tournamentHomeNorm ? result.away_score : result.home_score;
+    // For knockout matches, use 90-minute score (bookmaker odds predict 90-min result)
+    const useScore90 = isKnockout && result.home_score_90min != null && result.away_score_90min != null;
+    const resultHomeScore = useScore90 ? result.home_score_90min : result.home_score;
+    const resultAwayScore = useScore90 ? result.away_score_90min : result.away_score;
+
+    const homeScore = result.home_team === tournamentMatch.home ? resultHomeScore :
+                      normalizeTeamName(result.home_team) === tournamentHomeNorm ? resultHomeScore : resultAwayScore;
+    const awayScore = result.home_team === tournamentMatch.home ? resultAwayScore :
+                      normalizeTeamName(result.home_team) === tournamentHomeNorm ? resultAwayScore : resultHomeScore;
     
     let actualOutcome;
     if (homeScore > awayScore) actualOutcome = 'home_win';
@@ -247,6 +262,7 @@ function computePredictionsVsResults(tournament, localResults, ownerLookup) {
       home_team: tournamentMatch.home,
       away_team: tournamentMatch.away,
       group: tournamentMatch.group || result.group,
+      stage: isKnockout ? (result.stage || 'knockout') : 'group_stage',
       date: kickoffUtc,
       pre_match_probs: {
         home_win: Math.round(homeWinProb * 10000) / 10000,
@@ -280,21 +296,31 @@ function computePredictionsVsResults(tournament, localResults, ownerLookup) {
   for (const match of matches) {
     // Home team
     if (!teamStats[match.home_team]) {
-      teamStats[match.home_team] = { matches: 0, expected_pts: 0, actual_pts: 0, total_rps: 0 };
+      teamStats[match.home_team] = { matches: 0, expected_pts: 0, actual_pts: 0, total_rps: 0, total_signed_surprise: 0 };
     }
     teamStats[match.home_team].matches++;
-    teamStats[match.home_team].expected_pts += match.pre_match_probs.home_win * 3 + match.pre_match_probs.draw * 1;
-    teamStats[match.home_team].actual_pts += match.actual_outcome === 'home_win' ? 3 : match.actual_outcome === 'draw' ? 1 : 0;
+    const homeExpPts = match.pre_match_probs.home_win * 3 + match.pre_match_probs.draw * 1;
+    const homeActPts = match.actual_outcome === 'home_win' ? 3 : match.actual_outcome === 'draw' ? 1 : 0;
+    teamStats[match.home_team].expected_pts += homeExpPts;
+    teamStats[match.home_team].actual_pts += homeActPts;
     teamStats[match.home_team].total_rps += match.rps;
+    // Signed surprise: positive when overperforming, negative when underperforming
+    const homeSign = homeActPts > homeExpPts ? 1 : homeActPts < homeExpPts ? -1 : 0;
+    teamStats[match.home_team].total_signed_surprise += homeSign * match.surprise_bits;
     
     // Away team
     if (!teamStats[match.away_team]) {
-      teamStats[match.away_team] = { matches: 0, expected_pts: 0, actual_pts: 0, total_rps: 0 };
+      teamStats[match.away_team] = { matches: 0, expected_pts: 0, actual_pts: 0, total_rps: 0, total_signed_surprise: 0 };
     }
     teamStats[match.away_team].matches++;
-    teamStats[match.away_team].expected_pts += match.pre_match_probs.away_win * 3 + match.pre_match_probs.draw * 1;
-    teamStats[match.away_team].actual_pts += match.actual_outcome === 'away_win' ? 3 : match.actual_outcome === 'draw' ? 1 : 0;
+    const awayExpPts = match.pre_match_probs.away_win * 3 + match.pre_match_probs.draw * 1;
+    const awayActPts = match.actual_outcome === 'away_win' ? 3 : match.actual_outcome === 'draw' ? 1 : 0;
+    teamStats[match.away_team].expected_pts += awayExpPts;
+    teamStats[match.away_team].actual_pts += awayActPts;
     teamStats[match.away_team].total_rps += match.rps;
+    // Signed surprise for away team
+    const awaySign = awayActPts > awayExpPts ? 1 : awayActPts < awayExpPts ? -1 : 0;
+    teamStats[match.away_team].total_signed_surprise += awaySign * match.surprise_bits;
   }
   
   const teamPerformance = Object.entries(teamStats).map(([team, stats]) => ({
@@ -304,9 +330,10 @@ function computePredictionsVsResults(tournament, localResults, ownerLookup) {
     expected_points: Math.round(stats.expected_pts * 100) / 100,
     actual_points: stats.actual_pts,
     delta: Math.round((stats.actual_pts - stats.expected_pts) * 100) / 100,
-    direction: stats.actual_pts > stats.expected_pts ? 'overperforming' :
-               stats.actual_pts < stats.expected_pts ? 'underperforming' : 'as_expected'
-  })).sort((a, b) => b.delta - a.delta);
+    surprise_per_match: Math.round((stats.total_signed_surprise / stats.matches) * 100) / 100,
+    direction: stats.total_signed_surprise > 0 ? 'overperforming' :
+               stats.total_signed_surprise < 0 ? 'underperforming' : 'as_expected'
+  })).sort((a, b) => b.surprise_per_match - a.surprise_per_match);
   
   // Calibration bins - pool all outcome probabilities
   const bins = [

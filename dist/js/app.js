@@ -878,16 +878,18 @@ function renderPredictions() {
     `;
   }).join('');
   
-  // Team performance tables
+  // Team performance tables — ranked by signed surprise bits per match
   const overperformers = team_performance.filter(t => t.direction === 'overperforming').slice(0, 5);
-  const underperformers = team_performance.filter(t => t.direction === 'underperforming').sort((a, b) => a.delta - b.delta).slice(0, 5);
+  const underperformers = team_performance.filter(t => t.direction === 'underperforming').sort((a, b) => a.surprise_per_match - b.surprise_per_match).slice(0, 5);
   
   function teamPerfRow(t) {
     const flag = flagEmoji[t.team] || '🏴';
+    const surpriseStr = t.surprise_per_match > 0 ? '+' + t.surprise_per_match.toFixed(2) : t.surprise_per_match.toFixed(2);
     return `
       <tr>
         <td>${flag} ${t.team}</td>
         <td>${t.matches_played}</td>
+        <td class="delta ${t.direction}">${surpriseStr}</td>
         <td>${t.expected_points.toFixed(1)}</td>
         <td>${t.actual_points}</td>
         <td class="delta ${t.direction}">${t.delta > 0 ? '+' : ''}${t.delta.toFixed(1)}</td>
@@ -1023,14 +1025,14 @@ function renderPredictions() {
             <div class="team-perf-section">
               <h3 class="perf-heading overperforming">🔥 Most Underestimated</h3>
               <table class="perf-table">
-                <thead><tr><th>Team</th><th>GP</th><th>xPts</th><th>Pts</th><th>Δ</th></tr></thead>
+                <thead><tr><th>Team</th><th>GP</th><th>Surprise</th><th>xPts</th><th>Pts</th><th>Δ Pts</th></tr></thead>
                 <tbody>${overperformers.map(teamPerfRow).join('')}</tbody>
               </table>
             </div>
             <div class="team-perf-section">
               <h3 class="perf-heading underperforming">📉 Most Overestimated</h3>
               <table class="perf-table">
-                <thead><tr><th>Team</th><th>GP</th><th>xPts</th><th>Pts</th><th>Δ</th></tr></thead>
+                <thead><tr><th>Team</th><th>GP</th><th>Surprise</th><th>xPts</th><th>Pts</th><th>Δ Pts</th></tr></thead>
                 <tbody>${underperformers.map(teamPerfRow).join('')}</tbody>
               </table>
             </div>
@@ -1044,13 +1046,19 @@ function renderPredictions() {
           <h4>Surprise (bits)</h4>
           <p>Information content: <code>-log₂(P)</code> where P is the pre-match probability of the actual outcome. A 50% outcome = 1 bit. A 10% outcome = 3.3 bits. Higher = more surprising.</p>
           
+          <h4>Team Surprise Score (bits/match)</h4>
+          <p>Signed average surprise per match. For each match: if the team overperformed expectations, their surprise bits are positive; if underperformed, negative. Averaged across all matches played. This properly weights unlikely heroics (e.g., drawing at 18:1 odds) much higher than marginal wins.</p>
+          
           <h4>Ranked Probability Score (RPS)</h4>
           <p>Measures prediction quality respecting the ordinal nature of outcomes (Home Win ↔ Draw ↔ Away Win). Penalizes a prediction more if the actual result is further away from what was predicted.</p>
           <p><code>RPS = ½ × Σ(CDF_predicted - CDF_actual)²</code></p>
           <p>Range: 0 (perfect) to 1 (worst). Predicting 80% home win when the away team wins scores worse than when it's a draw.</p>
           
           <h4>Expected Points (xPts)</h4>
-          <p><code>xPts = P(win) × 3 + P(draw) × 1</code> per match. Teams above their expected points are overperforming relative to pre-match bookmaker odds.</p>
+          <p><code>xPts = P(win) × 3 + P(draw) × 1</code> per match. Teams above their expected points are overperforming relative to pre-match bookmaker odds. Shown as secondary detail alongside surprise score.</p>
+          
+          <h4>Knockout matches</h4>
+          <p>For knockout games, the 90-minute result is used (matching the bookmakers' 3-way market). Extra time and penalties determine who advances but the bookmaker prediction is for the result at full time.</p>
         </div>
       </details>
     </div>

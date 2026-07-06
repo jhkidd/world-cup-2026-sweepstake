@@ -1,0 +1,4994 @@
+{
+  "timestamp": "2026-07-06T08:53:06.786Z",
+  "matchOdds": [
+    {
+      "id": "16ed3adcf661b3a9bea39871a2d204df",
+      "sport_key": "soccer_fifa_world_cup",
+      "sport_title": "FIFA World Cup",
+      "commence_time": "2026-07-06T19:00:00Z",
+      "home_team": "Portugal",
+      "away_team": "Spain",
+      "bookmakers": [
+        {
+          "key": "virginbet",
+          "title": "Virgin Bet",
+          "last_update": "2026-07-06T08:52:59Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:59Z",
+              "outcomes": [
+                {
+                  "name": "Portugal",
+                  "price": 4
+                },
+                {
+                  "name": "Spain",
+                  "price": 1.87
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "grosvenor",
+          "title": "Grosvenor",
+          "last_update": "2026-07-06T08:52:02Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:02Z",
+              "outcomes": [
+                {
+                  "name": "Portugal",
+                  "price": 4
+                },
+                {
+                  "name": "Spain",
+                  "price": 1.89
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "casumo",
+          "title": "Casumo",
+          "last_update": "2026-07-06T08:52:37Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:37Z",
+              "outcomes": [
+                {
+                  "name": "Portugal",
+                  "price": 4.1
+                },
+                {
+                  "name": "Spain",
+                  "price": 1.89
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.6
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "livescorebet",
+          "title": "LiveScore Bet",
+          "last_update": "2026-07-06T08:52:48Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:48Z",
+              "outcomes": [
+                {
+                  "name": "Portugal",
+                  "price": 4
+                },
+                {
+                  "name": "Spain",
+                  "price": 1.87
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "sport888",
+          "title": "888sport",
+          "last_update": "2026-07-06T08:52:37Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:37Z",
+              "outcomes": [
+                {
+                  "name": "Portugal",
+                  "price": 3.8
+                },
+                {
+                  "name": "Spain",
+                  "price": 1.85
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.3
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "williamhill",
+          "title": "William Hill",
+          "last_update": "2026-07-06T08:52:03Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:03Z",
+              "outcomes": [
+                {
+                  "name": "Portugal",
+                  "price": 3.9
+                },
+                {
+                  "name": "Spain",
+                  "price": 1.91
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.4
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "betfred_uk",
+          "title": "Betfred (UK)",
+          "last_update": "2026-07-06T08:52:59Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:59Z",
+              "outcomes": [
+                {
+                  "name": "Portugal",
+                  "price": 3.75
+                },
+                {
+                  "name": "Spain",
+                  "price": 1.91
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.75
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "paddypower",
+          "title": "Paddy Power",
+          "last_update": "2026-07-06T08:52:59Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:59Z",
+              "outcomes": [
+                {
+                  "name": "Portugal",
+                  "price": 4
+                },
+                {
+                  "name": "Spain",
+                  "price": 1.87
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "skybet",
+          "title": "Sky Bet",
+          "last_update": "2026-07-06T08:52:48Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:48Z",
+              "outcomes": [
+                {
+                  "name": "Portugal",
+                  "price": 4
+                },
+                {
+                  "name": "Spain",
+                  "price": 1.85
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.6
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "betway",
+          "title": "Betway",
+          "last_update": "2026-07-06T08:53:00Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:53:00Z",
+              "outcomes": [
+                {
+                  "name": "Portugal",
+                  "price": 3.8
+                },
+                {
+                  "name": "Spain",
+                  "price": 1.91
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.6
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "betvictor",
+          "title": "Bet Victor",
+          "last_update": "2026-07-06T08:52:40Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:40Z",
+              "outcomes": [
+                {
+                  "name": "Portugal",
+                  "price": 4.1
+                },
+                {
+                  "name": "Spain",
+                  "price": 1.87
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "leovegas",
+          "title": "LeoVegas",
+          "last_update": "2026-07-06T08:53:02Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:53:02Z",
+              "outcomes": [
+                {
+                  "name": "Portugal",
+                  "price": 4
+                },
+                {
+                  "name": "Spain",
+                  "price": 1.93
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.6
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "unibet_uk",
+          "title": "Unibet (UK)",
+          "last_update": "2026-07-06T08:51:52Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:51:52Z",
+              "outcomes": [
+                {
+                  "name": "Portugal",
+                  "price": 4
+                },
+                {
+                  "name": "Spain",
+                  "price": 1.95
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.6
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "matchbook",
+          "title": "Matchbook",
+          "last_update": "2026-07-06T08:52:26Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:26Z",
+              "outcomes": [
+                {
+                  "name": "Portugal",
+                  "price": 4.4
+                },
+                {
+                  "name": "Spain",
+                  "price": 1.96
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.75
+                }
+              ]
+            },
+            {
+              "key": "h2h_lay",
+              "last_update": "2026-07-06T08:52:26Z",
+              "outcomes": [
+                {
+                  "name": "Portugal",
+                  "price": 4.5
+                },
+                {
+                  "name": "Spain",
+                  "price": 1.97
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.8
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "ladbrokes_uk",
+          "title": "Ladbrokes",
+          "last_update": "2026-07-06T08:52:26Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:26Z",
+              "outcomes": [
+                {
+                  "name": "Portugal",
+                  "price": 3.8
+                },
+                {
+                  "name": "Spain",
+                  "price": 1.95
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "smarkets",
+          "title": "Smarkets",
+          "last_update": "2026-07-06T08:53:01Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:53:01Z",
+              "outcomes": [
+                {
+                  "name": "Portugal",
+                  "price": 4.4
+                },
+                {
+                  "name": "Spain",
+                  "price": 1.96
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.7
+                }
+              ]
+            },
+            {
+              "key": "h2h_lay",
+              "last_update": "2026-07-06T08:53:01Z",
+              "outcomes": [
+                {
+                  "name": "Portugal",
+                  "price": 4.5
+                },
+                {
+                  "name": "Spain",
+                  "price": 1.97
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.8
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "coral",
+          "title": "Coral",
+          "last_update": "2026-07-06T08:52:02Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:02Z",
+              "outcomes": [
+                {
+                  "name": "Portugal",
+                  "price": 3.8
+                },
+                {
+                  "name": "Spain",
+                  "price": 1.95
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "boylesports",
+          "title": "BoyleSports",
+          "last_update": "2026-07-06T08:52:15Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:15Z",
+              "outcomes": [
+                {
+                  "name": "Portugal",
+                  "price": 3.8
+                },
+                {
+                  "name": "Spain",
+                  "price": 1.83
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.6
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "betfair_ex_uk",
+          "title": "Betfair",
+          "last_update": "2026-07-06T08:52:59Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:59Z",
+              "outcomes": [
+                {
+                  "name": "Portugal",
+                  "price": 4.4
+                },
+                {
+                  "name": "Spain",
+                  "price": 1.96
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.75
+                }
+              ]
+            },
+            {
+              "key": "h2h_lay",
+              "last_update": "2026-07-06T08:52:59Z",
+              "outcomes": [
+                {
+                  "name": "Portugal",
+                  "price": 4.5
+                },
+                {
+                  "name": "Spain",
+                  "price": 1.97
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.8
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "810f80b3ae79f5e86b3747ca15718ed8",
+      "sport_key": "soccer_fifa_world_cup",
+      "sport_title": "FIFA World Cup",
+      "commence_time": "2026-07-07T00:00:00Z",
+      "home_team": "USA",
+      "away_team": "Belgium",
+      "bookmakers": [
+        {
+          "key": "casumo",
+          "title": "Casumo",
+          "last_update": "2026-07-06T08:52:37Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:37Z",
+              "outcomes": [
+                {
+                  "name": "Belgium",
+                  "price": 2.7
+                },
+                {
+                  "name": "USA",
+                  "price": 2.55
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.45
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "grosvenor",
+          "title": "Grosvenor",
+          "last_update": "2026-07-06T08:52:02Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:02Z",
+              "outcomes": [
+                {
+                  "name": "Belgium",
+                  "price": 2.6
+                },
+                {
+                  "name": "USA",
+                  "price": 2.6
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.4
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "livescorebet",
+          "title": "LiveScore Bet",
+          "last_update": "2026-07-06T08:52:48Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:48Z",
+              "outcomes": [
+                {
+                  "name": "Belgium",
+                  "price": 2.65
+                },
+                {
+                  "name": "USA",
+                  "price": 2.48
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.4
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "virginbet",
+          "title": "Virgin Bet",
+          "last_update": "2026-07-06T08:52:59Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:59Z",
+              "outcomes": [
+                {
+                  "name": "Belgium",
+                  "price": 2.65
+                },
+                {
+                  "name": "USA",
+                  "price": 2.48
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.4
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "leovegas",
+          "title": "LeoVegas",
+          "last_update": "2026-07-06T08:53:02Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:53:02Z",
+              "outcomes": [
+                {
+                  "name": "Belgium",
+                  "price": 2.75
+                },
+                {
+                  "name": "USA",
+                  "price": 2.55
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.4
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "unibet_uk",
+          "title": "Unibet (UK)",
+          "last_update": "2026-07-06T08:51:52Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:51:52Z",
+              "outcomes": [
+                {
+                  "name": "Belgium",
+                  "price": 2.75
+                },
+                {
+                  "name": "USA",
+                  "price": 2.6
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.4
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "betfred_uk",
+          "title": "Betfred (UK)",
+          "last_update": "2026-07-06T08:52:59Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:59Z",
+              "outcomes": [
+                {
+                  "name": "Belgium",
+                  "price": 2.75
+                },
+                {
+                  "name": "USA",
+                  "price": 2.5
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "smarkets",
+          "title": "Smarkets",
+          "last_update": "2026-07-06T08:53:01Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:53:01Z",
+              "outcomes": [
+                {
+                  "name": "Belgium",
+                  "price": 2.9
+                },
+                {
+                  "name": "USA",
+                  "price": 2.6
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.55
+                }
+              ]
+            },
+            {
+              "key": "h2h_lay",
+              "last_update": "2026-07-06T08:53:01Z",
+              "outcomes": [
+                {
+                  "name": "Belgium",
+                  "price": 2.92
+                },
+                {
+                  "name": "USA",
+                  "price": 2.64
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.6
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "paddypower",
+          "title": "Paddy Power",
+          "last_update": "2026-07-06T08:52:59Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:59Z",
+              "outcomes": [
+                {
+                  "name": "Belgium",
+                  "price": 2.75
+                },
+                {
+                  "name": "USA",
+                  "price": 2.5
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.3
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "skybet",
+          "title": "Sky Bet",
+          "last_update": "2026-07-06T08:52:48Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:48Z",
+              "outcomes": [
+                {
+                  "name": "Belgium",
+                  "price": 2.7
+                },
+                {
+                  "name": "USA",
+                  "price": 2.45
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.4
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "betway",
+          "title": "Betway",
+          "last_update": "2026-07-06T08:53:00Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:53:00Z",
+              "outcomes": [
+                {
+                  "name": "Belgium",
+                  "price": 2.7
+                },
+                {
+                  "name": "USA",
+                  "price": 2.5
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.4
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "betfair_ex_uk",
+          "title": "Betfair",
+          "last_update": "2026-07-06T08:52:59Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:59Z",
+              "outcomes": [
+                {
+                  "name": "Belgium",
+                  "price": 2.9
+                },
+                {
+                  "name": "USA",
+                  "price": 2.62
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.55
+                }
+              ]
+            },
+            {
+              "key": "h2h_lay",
+              "last_update": "2026-07-06T08:52:59Z",
+              "outcomes": [
+                {
+                  "name": "Belgium",
+                  "price": 2.92
+                },
+                {
+                  "name": "USA",
+                  "price": 2.64
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.6
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "matchbook",
+          "title": "Matchbook",
+          "last_update": "2026-07-06T08:52:26Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:26Z",
+              "outcomes": [
+                {
+                  "name": "Belgium",
+                  "price": 2.9
+                },
+                {
+                  "name": "USA",
+                  "price": 2.62
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.55
+                }
+              ]
+            },
+            {
+              "key": "h2h_lay",
+              "last_update": "2026-07-06T08:52:26Z",
+              "outcomes": [
+                {
+                  "name": "Belgium",
+                  "price": 2.94
+                },
+                {
+                  "name": "USA",
+                  "price": 2.64
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.6
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "coral",
+          "title": "Coral",
+          "last_update": "2026-07-06T08:52:02Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:02Z",
+              "outcomes": [
+                {
+                  "name": "Belgium",
+                  "price": 2.62
+                },
+                {
+                  "name": "USA",
+                  "price": 2.4
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "ladbrokes_uk",
+          "title": "Ladbrokes",
+          "last_update": "2026-07-06T08:52:26Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:26Z",
+              "outcomes": [
+                {
+                  "name": "Belgium",
+                  "price": 2.62
+                },
+                {
+                  "name": "USA",
+                  "price": 2.4
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "sport888",
+          "title": "888sport",
+          "last_update": "2026-07-06T08:52:37Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:37Z",
+              "outcomes": [
+                {
+                  "name": "Belgium",
+                  "price": 2.62
+                },
+                {
+                  "name": "USA",
+                  "price": 2.5
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "williamhill",
+          "title": "William Hill",
+          "last_update": "2026-07-06T08:52:03Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:03Z",
+              "outcomes": [
+                {
+                  "name": "Belgium",
+                  "price": 2.62
+                },
+                {
+                  "name": "USA",
+                  "price": 2.5
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.25
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "boylesports",
+          "title": "BoyleSports",
+          "last_update": "2026-07-06T08:52:15Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:15Z",
+              "outcomes": [
+                {
+                  "name": "Belgium",
+                  "price": 2.7
+                },
+                {
+                  "name": "USA",
+                  "price": 2.4
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.4
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "betvictor",
+          "title": "Bet Victor",
+          "last_update": "2026-07-06T08:52:40Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:40Z",
+              "outcomes": [
+                {
+                  "name": "Belgium",
+                  "price": 2.75
+                },
+                {
+                  "name": "USA",
+                  "price": 2.45
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.4
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "190922affd0be754bfefd71548dbf90d",
+      "sport_key": "soccer_fifa_world_cup",
+      "sport_title": "FIFA World Cup",
+      "commence_time": "2026-07-07T16:00:00Z",
+      "home_team": "Argentina",
+      "away_team": "Egypt",
+      "bookmakers": [
+        {
+          "key": "casumo",
+          "title": "Casumo",
+          "last_update": "2026-07-06T08:52:37Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:37Z",
+              "outcomes": [
+                {
+                  "name": "Argentina",
+                  "price": 1.36
+                },
+                {
+                  "name": "Egypt",
+                  "price": 9.5
+                },
+                {
+                  "name": "Draw",
+                  "price": 4.7
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "virginbet",
+          "title": "Virgin Bet",
+          "last_update": "2026-07-06T08:52:59Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:59Z",
+              "outcomes": [
+                {
+                  "name": "Argentina",
+                  "price": 1.35
+                },
+                {
+                  "name": "Egypt",
+                  "price": 9
+                },
+                {
+                  "name": "Draw",
+                  "price": 4.6
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "livescorebet",
+          "title": "LiveScore Bet",
+          "last_update": "2026-07-06T08:52:48Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:48Z",
+              "outcomes": [
+                {
+                  "name": "Argentina",
+                  "price": 1.35
+                },
+                {
+                  "name": "Egypt",
+                  "price": 9
+                },
+                {
+                  "name": "Draw",
+                  "price": 4.6
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "grosvenor",
+          "title": "Grosvenor",
+          "last_update": "2026-07-06T08:52:02Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:02Z",
+              "outcomes": [
+                {
+                  "name": "Argentina",
+                  "price": 1.36
+                },
+                {
+                  "name": "Egypt",
+                  "price": 9.5
+                },
+                {
+                  "name": "Draw",
+                  "price": 4.7
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "ladbrokes_uk",
+          "title": "Ladbrokes",
+          "last_update": "2026-07-06T08:52:26Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:26Z",
+              "outcomes": [
+                {
+                  "name": "Argentina",
+                  "price": 1.4
+                },
+                {
+                  "name": "Egypt",
+                  "price": 7.5
+                },
+                {
+                  "name": "Draw",
+                  "price": 4.8
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "coral",
+          "title": "Coral",
+          "last_update": "2026-07-06T08:52:02Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:02Z",
+              "outcomes": [
+                {
+                  "name": "Argentina",
+                  "price": 1.4
+                },
+                {
+                  "name": "Egypt",
+                  "price": 8
+                },
+                {
+                  "name": "Draw",
+                  "price": 4.8
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "betfred_uk",
+          "title": "Betfred (UK)",
+          "last_update": "2026-07-06T08:52:59Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:59Z",
+              "outcomes": [
+                {
+                  "name": "Argentina",
+                  "price": 1.36
+                },
+                {
+                  "name": "Egypt",
+                  "price": 9
+                },
+                {
+                  "name": "Draw",
+                  "price": 4.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "smarkets",
+          "title": "Smarkets",
+          "last_update": "2026-07-06T08:53:01Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:53:01Z",
+              "outcomes": [
+                {
+                  "name": "Argentina",
+                  "price": 1.39
+                },
+                {
+                  "name": "Egypt",
+                  "price": 11
+                },
+                {
+                  "name": "Draw",
+                  "price": 5
+                }
+              ]
+            },
+            {
+              "key": "h2h_lay",
+              "last_update": "2026-07-06T08:53:01Z",
+              "outcomes": [
+                {
+                  "name": "Argentina",
+                  "price": 1.41
+                },
+                {
+                  "name": "Egypt",
+                  "price": 11.49
+                },
+                {
+                  "name": "Draw",
+                  "price": 5.1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "leovegas",
+          "title": "LeoVegas",
+          "last_update": "2026-07-06T08:53:02Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:53:02Z",
+              "outcomes": [
+                {
+                  "name": "Argentina",
+                  "price": 1.4
+                },
+                {
+                  "name": "Egypt",
+                  "price": 8.5
+                },
+                {
+                  "name": "Draw",
+                  "price": 4.6
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "betway",
+          "title": "Betway",
+          "last_update": "2026-07-06T08:53:00Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:53:00Z",
+              "outcomes": [
+                {
+                  "name": "Argentina",
+                  "price": 1.36
+                },
+                {
+                  "name": "Egypt",
+                  "price": 9
+                },
+                {
+                  "name": "Draw",
+                  "price": 4.75
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "unibet_uk",
+          "title": "Unibet (UK)",
+          "last_update": "2026-07-06T08:51:52Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:51:52Z",
+              "outcomes": [
+                {
+                  "name": "Argentina",
+                  "price": 1.4
+                },
+                {
+                  "name": "Egypt",
+                  "price": 8.5
+                },
+                {
+                  "name": "Draw",
+                  "price": 4.6
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "paddypower",
+          "title": "Paddy Power",
+          "last_update": "2026-07-06T08:52:59Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:59Z",
+              "outcomes": [
+                {
+                  "name": "Argentina",
+                  "price": 1.33
+                },
+                {
+                  "name": "Egypt",
+                  "price": 9.5
+                },
+                {
+                  "name": "Draw",
+                  "price": 4.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "skybet",
+          "title": "Sky Bet",
+          "last_update": "2026-07-06T08:52:48Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:48Z",
+              "outcomes": [
+                {
+                  "name": "Argentina",
+                  "price": 1.33
+                },
+                {
+                  "name": "Egypt",
+                  "price": 9
+                },
+                {
+                  "name": "Draw",
+                  "price": 4.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "betvictor",
+          "title": "Bet Victor",
+          "last_update": "2026-07-06T08:52:40Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:40Z",
+              "outcomes": [
+                {
+                  "name": "Argentina",
+                  "price": 1.36
+                },
+                {
+                  "name": "Egypt",
+                  "price": 9
+                },
+                {
+                  "name": "Draw",
+                  "price": 4.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "matchbook",
+          "title": "Matchbook",
+          "last_update": "2026-07-06T08:52:26Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:26Z",
+              "outcomes": [
+                {
+                  "name": "Argentina",
+                  "price": 1.4
+                },
+                {
+                  "name": "Egypt",
+                  "price": 10.5
+                },
+                {
+                  "name": "Draw",
+                  "price": 5
+                }
+              ]
+            },
+            {
+              "key": "h2h_lay",
+              "last_update": "2026-07-06T08:52:26Z",
+              "outcomes": [
+                {
+                  "name": "Argentina",
+                  "price": 1.42
+                },
+                {
+                  "name": "Egypt",
+                  "price": 11
+                },
+                {
+                  "name": "Draw",
+                  "price": 5.1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "sport888",
+          "title": "888sport",
+          "last_update": "2026-07-06T08:52:37Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:37Z",
+              "outcomes": [
+                {
+                  "name": "Argentina",
+                  "price": 1.36
+                },
+                {
+                  "name": "Egypt",
+                  "price": 8
+                },
+                {
+                  "name": "Draw",
+                  "price": 4.2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "williamhill",
+          "title": "William Hill",
+          "last_update": "2026-07-06T08:52:03Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:03Z",
+              "outcomes": [
+                {
+                  "name": "Argentina",
+                  "price": 1.36
+                },
+                {
+                  "name": "Egypt",
+                  "price": 8
+                },
+                {
+                  "name": "Draw",
+                  "price": 4.4
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "betfair_ex_uk",
+          "title": "Betfair",
+          "last_update": "2026-07-06T08:52:59Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:59Z",
+              "outcomes": [
+                {
+                  "name": "Argentina",
+                  "price": 1.4
+                },
+                {
+                  "name": "Egypt",
+                  "price": 11
+                },
+                {
+                  "name": "Draw",
+                  "price": 5
+                }
+              ]
+            },
+            {
+              "key": "h2h_lay",
+              "last_update": "2026-07-06T08:52:59Z",
+              "outcomes": [
+                {
+                  "name": "Argentina",
+                  "price": 1.41
+                },
+                {
+                  "name": "Egypt",
+                  "price": 11.5
+                },
+                {
+                  "name": "Draw",
+                  "price": 5.1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "boylesports",
+          "title": "BoyleSports",
+          "last_update": "2026-07-06T08:52:15Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:15Z",
+              "outcomes": [
+                {
+                  "name": "Argentina",
+                  "price": 1.36
+                },
+                {
+                  "name": "Egypt",
+                  "price": 9.5
+                },
+                {
+                  "name": "Draw",
+                  "price": 4.33
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a6da973c5749ce60adab77d64b3664f4",
+      "sport_key": "soccer_fifa_world_cup",
+      "sport_title": "FIFA World Cup",
+      "commence_time": "2026-07-07T20:00:00Z",
+      "home_team": "Switzerland",
+      "away_team": "Colombia",
+      "bookmakers": [
+        {
+          "key": "leovegas",
+          "title": "LeoVegas",
+          "last_update": "2026-07-06T08:53:02Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:53:02Z",
+              "outcomes": [
+                {
+                  "name": "Colombia",
+                  "price": 2.3
+                },
+                {
+                  "name": "Switzerland",
+                  "price": 3.4
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "casumo",
+          "title": "Casumo",
+          "last_update": "2026-07-06T08:52:37Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:37Z",
+              "outcomes": [
+                {
+                  "name": "Colombia",
+                  "price": 2.33
+                },
+                {
+                  "name": "Switzerland",
+                  "price": 3.45
+                },
+                {
+                  "name": "Draw",
+                  "price": 3
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "grosvenor",
+          "title": "Grosvenor",
+          "last_update": "2026-07-06T08:52:02Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:02Z",
+              "outcomes": [
+                {
+                  "name": "Colombia",
+                  "price": 2.33
+                },
+                {
+                  "name": "Switzerland",
+                  "price": 3.45
+                },
+                {
+                  "name": "Draw",
+                  "price": 3
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "virginbet",
+          "title": "Virgin Bet",
+          "last_update": "2026-07-06T08:52:59Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:59Z",
+              "outcomes": [
+                {
+                  "name": "Colombia",
+                  "price": 2.28
+                },
+                {
+                  "name": "Switzerland",
+                  "price": 3.4
+                },
+                {
+                  "name": "Draw",
+                  "price": 2.95
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "livescorebet",
+          "title": "LiveScore Bet",
+          "last_update": "2026-07-06T08:52:48Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:48Z",
+              "outcomes": [
+                {
+                  "name": "Colombia",
+                  "price": 2.28
+                },
+                {
+                  "name": "Switzerland",
+                  "price": 3.4
+                },
+                {
+                  "name": "Draw",
+                  "price": 2.95
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "unibet_uk",
+          "title": "Unibet (UK)",
+          "last_update": "2026-07-06T08:51:52Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:51:52Z",
+              "outcomes": [
+                {
+                  "name": "Colombia",
+                  "price": 2.3
+                },
+                {
+                  "name": "Switzerland",
+                  "price": 3.4
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "betfred_uk",
+          "title": "Betfred (UK)",
+          "last_update": "2026-07-06T08:52:59Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:59Z",
+              "outcomes": [
+                {
+                  "name": "Colombia",
+                  "price": 2.3
+                },
+                {
+                  "name": "Switzerland",
+                  "price": 3.25
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "smarkets",
+          "title": "Smarkets",
+          "last_update": "2026-07-06T08:53:01Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:53:01Z",
+              "outcomes": [
+                {
+                  "name": "Colombia",
+                  "price": 2.4
+                },
+                {
+                  "name": "Switzerland",
+                  "price": 3.65
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.15
+                }
+              ]
+            },
+            {
+              "key": "h2h_lay",
+              "last_update": "2026-07-06T08:53:01Z",
+              "outcomes": [
+                {
+                  "name": "Colombia",
+                  "price": 2.42
+                },
+                {
+                  "name": "Switzerland",
+                  "price": 3.7
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "paddypower",
+          "title": "Paddy Power",
+          "last_update": "2026-07-06T08:52:59Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:59Z",
+              "outcomes": [
+                {
+                  "name": "Colombia",
+                  "price": 2.25
+                },
+                {
+                  "name": "Switzerland",
+                  "price": 3.4
+                },
+                {
+                  "name": "Draw",
+                  "price": 3
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "skybet",
+          "title": "Sky Bet",
+          "last_update": "2026-07-06T08:52:48Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:48Z",
+              "outcomes": [
+                {
+                  "name": "Colombia",
+                  "price": 2.25
+                },
+                {
+                  "name": "Switzerland",
+                  "price": 3.4
+                },
+                {
+                  "name": "Draw",
+                  "price": 2.9
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "betway",
+          "title": "Betway",
+          "last_update": "2026-07-06T08:53:00Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:53:00Z",
+              "outcomes": [
+                {
+                  "name": "Colombia",
+                  "price": 2.3
+                },
+                {
+                  "name": "Switzerland",
+                  "price": 3.4
+                },
+                {
+                  "name": "Draw",
+                  "price": 3
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "matchbook",
+          "title": "Matchbook",
+          "last_update": "2026-07-06T08:52:26Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:26Z",
+              "outcomes": [
+                {
+                  "name": "Colombia",
+                  "price": 2.4
+                },
+                {
+                  "name": "Switzerland",
+                  "price": 3.65
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.15
+                }
+              ]
+            },
+            {
+              "key": "h2h_lay",
+              "last_update": "2026-07-06T08:52:26Z",
+              "outcomes": [
+                {
+                  "name": "Colombia",
+                  "price": 2.42
+                },
+                {
+                  "name": "Switzerland",
+                  "price": 3.7
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "betvictor",
+          "title": "Bet Victor",
+          "last_update": "2026-07-06T08:52:40Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:40Z",
+              "outcomes": [
+                {
+                  "name": "Colombia",
+                  "price": 2.25
+                },
+                {
+                  "name": "Switzerland",
+                  "price": 3.3
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.12
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "coral",
+          "title": "Coral",
+          "last_update": "2026-07-06T08:52:02Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:02Z",
+              "outcomes": [
+                {
+                  "name": "Colombia",
+                  "price": 2.37
+                },
+                {
+                  "name": "Switzerland",
+                  "price": 3.3
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "ladbrokes_uk",
+          "title": "Ladbrokes",
+          "last_update": "2026-07-06T08:52:26Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:26Z",
+              "outcomes": [
+                {
+                  "name": "Colombia",
+                  "price": 2.3
+                },
+                {
+                  "name": "Switzerland",
+                  "price": 3.25
+                },
+                {
+                  "name": "Draw",
+                  "price": 3
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "betfair_ex_uk",
+          "title": "Betfair",
+          "last_update": "2026-07-06T08:52:59Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:59Z",
+              "outcomes": [
+                {
+                  "name": "Colombia",
+                  "price": 2.4
+                },
+                {
+                  "name": "Switzerland",
+                  "price": 3.65
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.15
+                }
+              ]
+            },
+            {
+              "key": "h2h_lay",
+              "last_update": "2026-07-06T08:52:59Z",
+              "outcomes": [
+                {
+                  "name": "Colombia",
+                  "price": 2.42
+                },
+                {
+                  "name": "Switzerland",
+                  "price": 3.7
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "sport888",
+          "title": "888sport",
+          "last_update": "2026-07-06T08:52:37Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:37Z",
+              "outcomes": [
+                {
+                  "name": "Colombia",
+                  "price": 2.25
+                },
+                {
+                  "name": "Switzerland",
+                  "price": 3.3
+                },
+                {
+                  "name": "Draw",
+                  "price": 2.9
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "williamhill",
+          "title": "William Hill",
+          "last_update": "2026-07-06T08:52:03Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:03Z",
+              "outcomes": [
+                {
+                  "name": "Colombia",
+                  "price": 2.3
+                },
+                {
+                  "name": "Switzerland",
+                  "price": 3.3
+                },
+                {
+                  "name": "Draw",
+                  "price": 2.9
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "boylesports",
+          "title": "BoyleSports",
+          "last_update": "2026-07-06T08:52:15Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:15Z",
+              "outcomes": [
+                {
+                  "name": "Colombia",
+                  "price": 2.2
+                },
+                {
+                  "name": "Switzerland",
+                  "price": 3.4
+                },
+                {
+                  "name": "Draw",
+                  "price": 3
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b6e926d7f026782b9cab2fa02b823d92",
+      "sport_key": "soccer_fifa_world_cup",
+      "sport_title": "FIFA World Cup",
+      "commence_time": "2026-07-09T20:00:00Z",
+      "home_team": "France",
+      "away_team": "Morocco",
+      "bookmakers": [
+        {
+          "key": "unibet_uk",
+          "title": "Unibet (UK)",
+          "last_update": "2026-07-06T08:51:52Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:51:52Z",
+              "outcomes": [
+                {
+                  "name": "France",
+                  "price": 1.6
+                },
+                {
+                  "name": "Morocco",
+                  "price": 5.75
+                },
+                {
+                  "name": "Draw",
+                  "price": 4
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "ladbrokes_uk",
+          "title": "Ladbrokes",
+          "last_update": "2026-07-06T08:52:26Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:26Z",
+              "outcomes": [
+                {
+                  "name": "France",
+                  "price": 1.57
+                },
+                {
+                  "name": "Morocco",
+                  "price": 6
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.9
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "casumo",
+          "title": "Casumo",
+          "last_update": "2026-07-06T08:52:37Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:37Z",
+              "outcomes": [
+                {
+                  "name": "France",
+                  "price": 1.57
+                },
+                {
+                  "name": "Morocco",
+                  "price": 6.4
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.85
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "coral",
+          "title": "Coral",
+          "last_update": "2026-07-06T08:52:02Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:02Z",
+              "outcomes": [
+                {
+                  "name": "France",
+                  "price": 1.57
+                },
+                {
+                  "name": "Morocco",
+                  "price": 6
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.9
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "livescorebet",
+          "title": "LiveScore Bet",
+          "last_update": "2026-07-06T08:52:48Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:48Z",
+              "outcomes": [
+                {
+                  "name": "France",
+                  "price": 1.56
+                },
+                {
+                  "name": "Morocco",
+                  "price": 6.1
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.75
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "virginbet",
+          "title": "Virgin Bet",
+          "last_update": "2026-07-06T08:52:59Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:59Z",
+              "outcomes": [
+                {
+                  "name": "France",
+                  "price": 1.56
+                },
+                {
+                  "name": "Morocco",
+                  "price": 6.1
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.75
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "leovegas",
+          "title": "LeoVegas",
+          "last_update": "2026-07-06T08:53:02Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:53:02Z",
+              "outcomes": [
+                {
+                  "name": "France",
+                  "price": 1.57
+                },
+                {
+                  "name": "Morocco",
+                  "price": 5.8
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.9
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "grosvenor",
+          "title": "Grosvenor",
+          "last_update": "2026-07-06T08:52:02Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:02Z",
+              "outcomes": [
+                {
+                  "name": "France",
+                  "price": 1.57
+                },
+                {
+                  "name": "Morocco",
+                  "price": 6.4
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.85
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "smarkets",
+          "title": "Smarkets",
+          "last_update": "2026-07-06T08:53:01Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:53:01Z",
+              "outcomes": [
+                {
+                  "name": "France",
+                  "price": 1.59
+                },
+                {
+                  "name": "Morocco",
+                  "price": 7.2
+                },
+                {
+                  "name": "Draw",
+                  "price": 4.1
+                }
+              ]
+            },
+            {
+              "key": "h2h_lay",
+              "last_update": "2026-07-06T08:53:01Z",
+              "outcomes": [
+                {
+                  "name": "France",
+                  "price": 1.61
+                },
+                {
+                  "name": "Morocco",
+                  "price": 7.4
+                },
+                {
+                  "name": "Draw",
+                  "price": 4.2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "betfred_uk",
+          "title": "Betfred (UK)",
+          "last_update": "2026-07-06T08:52:59Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:59Z",
+              "outcomes": [
+                {
+                  "name": "France",
+                  "price": 1.57
+                },
+                {
+                  "name": "Morocco",
+                  "price": 6
+                },
+                {
+                  "name": "Draw",
+                  "price": 4
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "betway",
+          "title": "Betway",
+          "last_update": "2026-07-06T08:53:00Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:53:00Z",
+              "outcomes": [
+                {
+                  "name": "France",
+                  "price": 1.57
+                },
+                {
+                  "name": "Morocco",
+                  "price": 6
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.8
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "skybet",
+          "title": "Sky Bet",
+          "last_update": "2026-07-06T08:52:48Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:48Z",
+              "outcomes": [
+                {
+                  "name": "France",
+                  "price": 1.53
+                },
+                {
+                  "name": "Morocco",
+                  "price": 6.25
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.8
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "paddypower",
+          "title": "Paddy Power",
+          "last_update": "2026-07-06T08:52:59Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:59Z",
+              "outcomes": [
+                {
+                  "name": "France",
+                  "price": 1.53
+                },
+                {
+                  "name": "Morocco",
+                  "price": 6.5
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.8
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "betvictor",
+          "title": "Bet Victor",
+          "last_update": "2026-07-06T08:52:40Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:40Z",
+              "outcomes": [
+                {
+                  "name": "France",
+                  "price": 1.55
+                },
+                {
+                  "name": "Morocco",
+                  "price": 6
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.9
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "matchbook",
+          "title": "Matchbook",
+          "last_update": "2026-07-06T08:52:26Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:26Z",
+              "outcomes": [
+                {
+                  "name": "France",
+                  "price": 1.61
+                },
+                {
+                  "name": "Morocco",
+                  "price": 7.2
+                },
+                {
+                  "name": "Draw",
+                  "price": 4.1
+                }
+              ]
+            },
+            {
+              "key": "h2h_lay",
+              "last_update": "2026-07-06T08:52:26Z",
+              "outcomes": [
+                {
+                  "name": "France",
+                  "price": 1.62
+                },
+                {
+                  "name": "Morocco",
+                  "price": 7.4
+                },
+                {
+                  "name": "Draw",
+                  "price": 4.2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "betfair_ex_uk",
+          "title": "Betfair",
+          "last_update": "2026-07-06T08:52:59Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:59Z",
+              "outcomes": [
+                {
+                  "name": "France",
+                  "price": 1.6
+                },
+                {
+                  "name": "Morocco",
+                  "price": 7.2
+                },
+                {
+                  "name": "Draw",
+                  "price": 4.1
+                }
+              ]
+            },
+            {
+              "key": "h2h_lay",
+              "last_update": "2026-07-06T08:52:59Z",
+              "outcomes": [
+                {
+                  "name": "France",
+                  "price": 1.62
+                },
+                {
+                  "name": "Morocco",
+                  "price": 7.4
+                },
+                {
+                  "name": "Draw",
+                  "price": 4.2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "sport888",
+          "title": "888sport",
+          "last_update": "2026-07-06T08:52:37Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:37Z",
+              "outcomes": [
+                {
+                  "name": "France",
+                  "price": 1.57
+                },
+                {
+                  "name": "Morocco",
+                  "price": 5.75
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.6
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "williamhill",
+          "title": "William Hill",
+          "last_update": "2026-07-06T08:52:03Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:03Z",
+              "outcomes": [
+                {
+                  "name": "France",
+                  "price": 1.57
+                },
+                {
+                  "name": "Morocco",
+                  "price": 5.8
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.7
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "boylesports",
+          "title": "BoyleSports",
+          "last_update": "2026-07-06T08:52:15Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:15Z",
+              "outcomes": [
+                {
+                  "name": "France",
+                  "price": 1.53
+                },
+                {
+                  "name": "Morocco",
+                  "price": 6
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.8
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "e66e4478b739fa0657a7a11235e1fcee",
+      "sport_key": "soccer_fifa_world_cup",
+      "sport_title": "FIFA World Cup",
+      "commence_time": "2026-07-11T21:00:00Z",
+      "home_team": "Norway",
+      "away_team": "England",
+      "bookmakers": [
+        {
+          "key": "virginbet",
+          "title": "Virgin Bet",
+          "last_update": "2026-07-06T08:52:59Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:59Z",
+              "outcomes": [
+                {
+                  "name": "England",
+                  "price": 1.97
+                },
+                {
+                  "name": "Norway",
+                  "price": 3.85
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.3
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "coral",
+          "title": "Coral",
+          "last_update": "2026-07-06T08:52:02Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:02Z",
+              "outcomes": [
+                {
+                  "name": "England",
+                  "price": 2
+                },
+                {
+                  "name": "Norway",
+                  "price": 3.6
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.6
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "grosvenor",
+          "title": "Grosvenor",
+          "last_update": "2026-07-06T08:52:02Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:02Z",
+              "outcomes": [
+                {
+                  "name": "England",
+                  "price": 2
+                },
+                {
+                  "name": "Norway",
+                  "price": 3.95
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.35
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "ladbrokes_uk",
+          "title": "Ladbrokes",
+          "last_update": "2026-07-06T08:52:26Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:26Z",
+              "outcomes": [
+                {
+                  "name": "England",
+                  "price": 2
+                },
+                {
+                  "name": "Norway",
+                  "price": 3.5
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.6
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "smarkets",
+          "title": "Smarkets",
+          "last_update": "2026-07-06T08:53:01Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:53:01Z",
+              "outcomes": [
+                {
+                  "name": "England",
+                  "price": 1.99
+                },
+                {
+                  "name": "Norway",
+                  "price": 4.2
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.65
+                }
+              ]
+            },
+            {
+              "key": "h2h_lay",
+              "last_update": "2026-07-06T08:53:01Z",
+              "outcomes": [
+                {
+                  "name": "England",
+                  "price": 2.04
+                },
+                {
+                  "name": "Norway",
+                  "price": 4.3
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.7
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "casumo",
+          "title": "Casumo",
+          "last_update": "2026-07-06T08:52:37Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:37Z",
+              "outcomes": [
+                {
+                  "name": "England",
+                  "price": 2
+                },
+                {
+                  "name": "Norway",
+                  "price": 3.95
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.35
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "livescorebet",
+          "title": "LiveScore Bet",
+          "last_update": "2026-07-06T08:52:48Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:48Z",
+              "outcomes": [
+                {
+                  "name": "England",
+                  "price": 1.97
+                },
+                {
+                  "name": "Norway",
+                  "price": 3.85
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.3
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "betway",
+          "title": "Betway",
+          "last_update": "2026-07-06T08:53:00Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:53:00Z",
+              "outcomes": [
+                {
+                  "name": "England",
+                  "price": 1.88
+                },
+                {
+                  "name": "Norway",
+                  "price": 3.8
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "betfred_uk",
+          "title": "Betfred (UK)",
+          "last_update": "2026-07-06T08:52:59Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:59Z",
+              "outcomes": [
+                {
+                  "name": "England",
+                  "price": 2
+                },
+                {
+                  "name": "Norway",
+                  "price": 3.75
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "unibet_uk",
+          "title": "Unibet (UK)",
+          "last_update": "2026-07-06T08:51:52Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:51:52Z",
+              "outcomes": [
+                {
+                  "name": "England",
+                  "price": 1.95
+                },
+                {
+                  "name": "Norway",
+                  "price": 3.75
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.4
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "leovegas",
+          "title": "LeoVegas",
+          "last_update": "2026-07-06T08:53:02Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:53:02Z",
+              "outcomes": [
+                {
+                  "name": "England",
+                  "price": 1.95
+                },
+                {
+                  "name": "Norway",
+                  "price": 3.72
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "paddypower",
+          "title": "Paddy Power",
+          "last_update": "2026-07-06T08:52:59Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:59Z",
+              "outcomes": [
+                {
+                  "name": "England",
+                  "price": 1.95
+                },
+                {
+                  "name": "Norway",
+                  "price": 3.5
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.6
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "skybet",
+          "title": "Sky Bet",
+          "last_update": "2026-07-06T08:52:48Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:48Z",
+              "outcomes": [
+                {
+                  "name": "England",
+                  "price": 1.95
+                },
+                {
+                  "name": "Norway",
+                  "price": 3.5
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.6
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "betvictor",
+          "title": "Bet Victor",
+          "last_update": "2026-07-06T08:52:40Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:40Z",
+              "outcomes": [
+                {
+                  "name": "England",
+                  "price": 1.93
+                },
+                {
+                  "name": "Norway",
+                  "price": 3.8
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "betfair_ex_uk",
+          "title": "Betfair",
+          "last_update": "2026-07-06T08:52:59Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:59Z",
+              "outcomes": [
+                {
+                  "name": "England",
+                  "price": 2
+                },
+                {
+                  "name": "Norway",
+                  "price": 4.2
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.65
+                }
+              ]
+            },
+            {
+              "key": "h2h_lay",
+              "last_update": "2026-07-06T08:52:59Z",
+              "outcomes": [
+                {
+                  "name": "England",
+                  "price": 2.04
+                },
+                {
+                  "name": "Norway",
+                  "price": 4.3
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.7
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "matchbook",
+          "title": "Matchbook",
+          "last_update": "2026-07-06T08:52:26Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:26Z",
+              "outcomes": [
+                {
+                  "name": "England",
+                  "price": 2.02
+                },
+                {
+                  "name": "Norway",
+                  "price": 4.2
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.65
+                }
+              ]
+            },
+            {
+              "key": "h2h_lay",
+              "last_update": "2026-07-06T08:52:26Z",
+              "outcomes": [
+                {
+                  "name": "England",
+                  "price": 2.04
+                },
+                {
+                  "name": "Norway",
+                  "price": 4.3
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.7
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "sport888",
+          "title": "888sport",
+          "last_update": "2026-07-06T08:52:37Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:37Z",
+              "outcomes": [
+                {
+                  "name": "England",
+                  "price": 1.91
+                },
+                {
+                  "name": "Norway",
+                  "price": 3.7
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.4
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "williamhill",
+          "title": "William Hill",
+          "last_update": "2026-07-06T08:52:03Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:03Z",
+              "outcomes": [
+                {
+                  "name": "England",
+                  "price": 1.95
+                },
+                {
+                  "name": "Norway",
+                  "price": 3.75
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.4
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "boylesports",
+          "title": "BoyleSports",
+          "last_update": "2026-07-06T08:52:15Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-07-06T08:52:15Z",
+              "outcomes": [
+                {
+                  "name": "England",
+                  "price": 1.91
+                },
+                {
+                  "name": "Norway",
+                  "price": 3.75
+                },
+                {
+                  "name": "Draw",
+                  "price": 3.5
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "winnerOdds": [
+    {
+      "id": "94d798388a4dab6d081114ad5e83db38",
+      "has_outrights": true,
+      "sport_key": "soccer_fifa_world_cup_winner",
+      "sport_title": "FIFA World Cup Winner",
+      "commence_time": "2026-07-19T19:00:00Z",
+      "home_team": null,
+      "away_team": null,
+      "bookmakers": [
+        {
+          "key": "betfair_ex_uk",
+          "title": "Betfair",
+          "last_update": "2026-07-06T08:52:21Z",
+          "markets": [
+            {
+              "key": "outrights",
+              "last_update": "2026-07-06T08:52:21Z",
+              "outcomes": [
+                {
+                  "name": "France",
+                  "price": 3
+                },
+                {
+                  "name": "Argentina",
+                  "price": 5.8
+                },
+                {
+                  "name": "Spain",
+                  "price": 7
+                },
+                {
+                  "name": "England",
+                  "price": 7
+                },
+                {
+                  "name": "Portugal",
+                  "price": 18
+                },
+                {
+                  "name": "Norway",
+                  "price": 22
+                },
+                {
+                  "name": "Colombia",
+                  "price": 27
+                },
+                {
+                  "name": "USA",
+                  "price": 34
+                },
+                {
+                  "name": "Morocco",
+                  "price": 36
+                },
+                {
+                  "name": "Belgium",
+                  "price": 70
+                },
+                {
+                  "name": "Switzerland",
+                  "price": 95
+                },
+                {
+                  "name": "Egypt",
+                  "price": 360
+                }
+              ]
+            },
+            {
+              "key": "outrights_lay",
+              "last_update": "2026-07-06T08:52:21Z",
+              "outcomes": [
+                {
+                  "name": "France",
+                  "price": 3.05
+                },
+                {
+                  "name": "Argentina",
+                  "price": 5.9
+                },
+                {
+                  "name": "Spain",
+                  "price": 7.2
+                },
+                {
+                  "name": "England",
+                  "price": 7.2
+                },
+                {
+                  "name": "Portugal",
+                  "price": 18.5
+                },
+                {
+                  "name": "Norway",
+                  "price": 23
+                },
+                {
+                  "name": "Colombia",
+                  "price": 29
+                },
+                {
+                  "name": "USA",
+                  "price": 36
+                },
+                {
+                  "name": "Morocco",
+                  "price": 38
+                },
+                {
+                  "name": "Belgium",
+                  "price": 75
+                },
+                {
+                  "name": "Switzerland",
+                  "price": 100
+                },
+                {
+                  "name": "Egypt",
+                  "price": 430
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "williamhill",
+          "title": "William Hill",
+          "last_update": "2026-07-06T08:52:18Z",
+          "markets": [
+            {
+              "key": "outrights",
+              "last_update": "2026-07-06T08:52:18Z",
+              "outcomes": [
+                {
+                  "name": "France",
+                  "price": 2.5
+                },
+                {
+                  "name": "Argentina",
+                  "price": 5.5
+                },
+                {
+                  "name": "England",
+                  "price": 6.5
+                },
+                {
+                  "name": "Spain",
+                  "price": 7
+                },
+                {
+                  "name": "Portugal",
+                  "price": 12
+                },
+                {
+                  "name": "Norway",
+                  "price": 17
+                },
+                {
+                  "name": "Colombia",
+                  "price": 26
+                },
+                {
+                  "name": "Morocco",
+                  "price": 29
+                },
+                {
+                  "name": "USA",
+                  "price": 34
+                },
+                {
+                  "name": "Belgium",
+                  "price": 41
+                },
+                {
+                  "name": "Switzerland",
+                  "price": 67
+                },
+                {
+                  "name": "Egypt",
+                  "price": 201
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "results": [
+    {
+      "id": "Mexico-South Africa",
+      "home_team": "Mexico",
+      "away_team": "South Africa",
+      "home_score": 2,
+      "away_score": 0,
+      "home_score_90min": 2,
+      "away_score_90min": 0,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "A",
+      "stage": "group_stage",
+      "date": "2026-06-11",
+      "matchday": 1
+    },
+    {
+      "id": "South Korea-Czechia",
+      "home_team": "South Korea",
+      "away_team": "Czechia",
+      "home_score": 2,
+      "away_score": 1,
+      "home_score_90min": 2,
+      "away_score_90min": 1,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "A",
+      "stage": "group_stage",
+      "date": "2026-06-12",
+      "matchday": 1
+    },
+    {
+      "id": "Canada-Bosnia-Herzegovina",
+      "home_team": "Canada",
+      "away_team": "Bosnia-Herzegovina",
+      "home_score": 1,
+      "away_score": 1,
+      "home_score_90min": 1,
+      "away_score_90min": 1,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "B",
+      "stage": "group_stage",
+      "date": "2026-06-12",
+      "matchday": 1
+    },
+    {
+      "id": "United States-Paraguay",
+      "home_team": "United States",
+      "away_team": "Paraguay",
+      "home_score": 4,
+      "away_score": 1,
+      "home_score_90min": 4,
+      "away_score_90min": 1,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "D",
+      "stage": "group_stage",
+      "date": "2026-06-13",
+      "matchday": 1
+    },
+    {
+      "id": "Qatar-Switzerland",
+      "home_team": "Qatar",
+      "away_team": "Switzerland",
+      "home_score": 1,
+      "away_score": 1,
+      "home_score_90min": 1,
+      "away_score_90min": 1,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "B",
+      "stage": "group_stage",
+      "date": "2026-06-13",
+      "matchday": 1
+    },
+    {
+      "id": "Brazil-Morocco",
+      "home_team": "Brazil",
+      "away_team": "Morocco",
+      "home_score": 1,
+      "away_score": 1,
+      "home_score_90min": 1,
+      "away_score_90min": 1,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "C",
+      "stage": "group_stage",
+      "date": "2026-06-13",
+      "matchday": 1
+    },
+    {
+      "id": "Haiti-Scotland",
+      "home_team": "Haiti",
+      "away_team": "Scotland",
+      "home_score": 0,
+      "away_score": 1,
+      "home_score_90min": 0,
+      "away_score_90min": 1,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "C",
+      "stage": "group_stage",
+      "date": "2026-06-14",
+      "matchday": 1
+    },
+    {
+      "id": "Australia-Turkey",
+      "home_team": "Australia",
+      "away_team": "Turkey",
+      "home_score": 2,
+      "away_score": 0,
+      "home_score_90min": 2,
+      "away_score_90min": 0,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "D",
+      "stage": "group_stage",
+      "date": "2026-06-14",
+      "matchday": 1
+    },
+    {
+      "id": "Germany-Curaçao",
+      "home_team": "Germany",
+      "away_team": "Curaçao",
+      "home_score": 7,
+      "away_score": 1,
+      "home_score_90min": 7,
+      "away_score_90min": 1,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "E",
+      "stage": "group_stage",
+      "date": "2026-06-14",
+      "matchday": 1
+    },
+    {
+      "id": "Netherlands-Japan",
+      "home_team": "Netherlands",
+      "away_team": "Japan",
+      "home_score": 2,
+      "away_score": 2,
+      "home_score_90min": 2,
+      "away_score_90min": 2,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "F",
+      "stage": "group_stage",
+      "date": "2026-06-14",
+      "matchday": 1
+    },
+    {
+      "id": "Ivory Coast-Ecuador",
+      "home_team": "Ivory Coast",
+      "away_team": "Ecuador",
+      "home_score": 1,
+      "away_score": 0,
+      "home_score_90min": 1,
+      "away_score_90min": 0,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "E",
+      "stage": "group_stage",
+      "date": "2026-06-14",
+      "matchday": 1
+    },
+    {
+      "id": "Sweden-Tunisia",
+      "home_team": "Sweden",
+      "away_team": "Tunisia",
+      "home_score": 5,
+      "away_score": 1,
+      "home_score_90min": 5,
+      "away_score_90min": 1,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "F",
+      "stage": "group_stage",
+      "date": "2026-06-15",
+      "matchday": 1
+    },
+    {
+      "id": "Spain-Cape Verde Islands",
+      "home_team": "Spain",
+      "away_team": "Cape Verde Islands",
+      "home_score": 0,
+      "away_score": 0,
+      "home_score_90min": 0,
+      "away_score_90min": 0,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "H",
+      "stage": "group_stage",
+      "date": "2026-06-15",
+      "matchday": 1
+    },
+    {
+      "id": "Belgium-Egypt",
+      "home_team": "Belgium",
+      "away_team": "Egypt",
+      "home_score": 1,
+      "away_score": 1,
+      "home_score_90min": 1,
+      "away_score_90min": 1,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "G",
+      "stage": "group_stage",
+      "date": "2026-06-15",
+      "matchday": 1
+    },
+    {
+      "id": "Saudi Arabia-Uruguay",
+      "home_team": "Saudi Arabia",
+      "away_team": "Uruguay",
+      "home_score": 1,
+      "away_score": 1,
+      "home_score_90min": 1,
+      "away_score_90min": 1,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "H",
+      "stage": "group_stage",
+      "date": "2026-06-15",
+      "matchday": 1
+    },
+    {
+      "id": "Iran-New Zealand",
+      "home_team": "Iran",
+      "away_team": "New Zealand",
+      "home_score": 2,
+      "away_score": 2,
+      "home_score_90min": 2,
+      "away_score_90min": 2,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "G",
+      "stage": "group_stage",
+      "date": "2026-06-16",
+      "matchday": 1
+    },
+    {
+      "id": "France-Senegal",
+      "home_team": "France",
+      "away_team": "Senegal",
+      "home_score": 3,
+      "away_score": 1,
+      "home_score_90min": 3,
+      "away_score_90min": 1,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "I",
+      "stage": "group_stage",
+      "date": "2026-06-16",
+      "matchday": 1
+    },
+    {
+      "id": "Iraq-Norway",
+      "home_team": "Iraq",
+      "away_team": "Norway",
+      "home_score": 1,
+      "away_score": 4,
+      "home_score_90min": 1,
+      "away_score_90min": 4,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "I",
+      "stage": "group_stage",
+      "date": "2026-06-16",
+      "matchday": 1
+    },
+    {
+      "id": "Argentina-Algeria",
+      "home_team": "Argentina",
+      "away_team": "Algeria",
+      "home_score": 3,
+      "away_score": 0,
+      "home_score_90min": 3,
+      "away_score_90min": 0,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "J",
+      "stage": "group_stage",
+      "date": "2026-06-17",
+      "matchday": 1
+    },
+    {
+      "id": "Austria-Jordan",
+      "home_team": "Austria",
+      "away_team": "Jordan",
+      "home_score": 3,
+      "away_score": 1,
+      "home_score_90min": 3,
+      "away_score_90min": 1,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "J",
+      "stage": "group_stage",
+      "date": "2026-06-17",
+      "matchday": 1
+    },
+    {
+      "id": "Portugal-Congo DR",
+      "home_team": "Portugal",
+      "away_team": "Congo DR",
+      "home_score": 1,
+      "away_score": 1,
+      "home_score_90min": 1,
+      "away_score_90min": 1,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "K",
+      "stage": "group_stage",
+      "date": "2026-06-17",
+      "matchday": 1
+    },
+    {
+      "id": "England-Croatia",
+      "home_team": "England",
+      "away_team": "Croatia",
+      "home_score": 4,
+      "away_score": 2,
+      "home_score_90min": 4,
+      "away_score_90min": 2,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "L",
+      "stage": "group_stage",
+      "date": "2026-06-17",
+      "matchday": 1
+    },
+    {
+      "id": "Ghana-Panama",
+      "home_team": "Ghana",
+      "away_team": "Panama",
+      "home_score": 1,
+      "away_score": 0,
+      "home_score_90min": 1,
+      "away_score_90min": 0,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "L",
+      "stage": "group_stage",
+      "date": "2026-06-17",
+      "matchday": 1
+    },
+    {
+      "id": "Uzbekistan-Colombia",
+      "home_team": "Uzbekistan",
+      "away_team": "Colombia",
+      "home_score": 1,
+      "away_score": 3,
+      "home_score_90min": 1,
+      "away_score_90min": 3,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "K",
+      "stage": "group_stage",
+      "date": "2026-06-18",
+      "matchday": 1
+    },
+    {
+      "id": "Czechia-South Africa",
+      "home_team": "Czechia",
+      "away_team": "South Africa",
+      "home_score": 1,
+      "away_score": 1,
+      "home_score_90min": 1,
+      "away_score_90min": 1,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "A",
+      "stage": "group_stage",
+      "date": "2026-06-18",
+      "matchday": 2
+    },
+    {
+      "id": "Switzerland-Bosnia-Herzegovina",
+      "home_team": "Switzerland",
+      "away_team": "Bosnia-Herzegovina",
+      "home_score": 4,
+      "away_score": 1,
+      "home_score_90min": 4,
+      "away_score_90min": 1,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "B",
+      "stage": "group_stage",
+      "date": "2026-06-18",
+      "matchday": 2
+    },
+    {
+      "id": "Canada-Qatar",
+      "home_team": "Canada",
+      "away_team": "Qatar",
+      "home_score": 6,
+      "away_score": 0,
+      "home_score_90min": 6,
+      "away_score_90min": 0,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "B",
+      "stage": "group_stage",
+      "date": "2026-06-18",
+      "matchday": 2
+    },
+    {
+      "id": "Mexico-South Korea",
+      "home_team": "Mexico",
+      "away_team": "South Korea",
+      "home_score": 1,
+      "away_score": 0,
+      "home_score_90min": 1,
+      "away_score_90min": 0,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "A",
+      "stage": "group_stage",
+      "date": "2026-06-19",
+      "matchday": 2
+    },
+    {
+      "id": "United States-Australia",
+      "home_team": "United States",
+      "away_team": "Australia",
+      "home_score": 2,
+      "away_score": 0,
+      "home_score_90min": 2,
+      "away_score_90min": 0,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "D",
+      "stage": "group_stage",
+      "date": "2026-06-19",
+      "matchday": 2
+    },
+    {
+      "id": "Scotland-Morocco",
+      "home_team": "Scotland",
+      "away_team": "Morocco",
+      "home_score": 0,
+      "away_score": 1,
+      "home_score_90min": 0,
+      "away_score_90min": 1,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "C",
+      "stage": "group_stage",
+      "date": "2026-06-19",
+      "matchday": 2
+    },
+    {
+      "id": "Brazil-Haiti",
+      "home_team": "Brazil",
+      "away_team": "Haiti",
+      "home_score": 3,
+      "away_score": 0,
+      "home_score_90min": 3,
+      "away_score_90min": 0,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "C",
+      "stage": "group_stage",
+      "date": "2026-06-20",
+      "matchday": 2
+    },
+    {
+      "id": "Turkey-Paraguay",
+      "home_team": "Turkey",
+      "away_team": "Paraguay",
+      "home_score": 0,
+      "away_score": 1,
+      "home_score_90min": 0,
+      "away_score_90min": 1,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "D",
+      "stage": "group_stage",
+      "date": "2026-06-20",
+      "matchday": 2
+    },
+    {
+      "id": "Netherlands-Sweden",
+      "home_team": "Netherlands",
+      "away_team": "Sweden",
+      "home_score": 5,
+      "away_score": 1,
+      "home_score_90min": 5,
+      "away_score_90min": 1,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "F",
+      "stage": "group_stage",
+      "date": "2026-06-20",
+      "matchday": 2
+    },
+    {
+      "id": "Germany-Ivory Coast",
+      "home_team": "Germany",
+      "away_team": "Ivory Coast",
+      "home_score": 2,
+      "away_score": 1,
+      "home_score_90min": 2,
+      "away_score_90min": 1,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "E",
+      "stage": "group_stage",
+      "date": "2026-06-20",
+      "matchday": 2
+    },
+    {
+      "id": "Ecuador-Curaçao",
+      "home_team": "Ecuador",
+      "away_team": "Curaçao",
+      "home_score": 0,
+      "away_score": 0,
+      "home_score_90min": 0,
+      "away_score_90min": 0,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "E",
+      "stage": "group_stage",
+      "date": "2026-06-21",
+      "matchday": 2
+    },
+    {
+      "id": "Tunisia-Japan",
+      "home_team": "Tunisia",
+      "away_team": "Japan",
+      "home_score": 0,
+      "away_score": 4,
+      "home_score_90min": 0,
+      "away_score_90min": 4,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "F",
+      "stage": "group_stage",
+      "date": "2026-06-21",
+      "matchday": 2
+    },
+    {
+      "id": "Spain-Saudi Arabia",
+      "home_team": "Spain",
+      "away_team": "Saudi Arabia",
+      "home_score": 4,
+      "away_score": 0,
+      "home_score_90min": 4,
+      "away_score_90min": 0,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "H",
+      "stage": "group_stage",
+      "date": "2026-06-21",
+      "matchday": 2
+    },
+    {
+      "id": "Belgium-Iran",
+      "home_team": "Belgium",
+      "away_team": "Iran",
+      "home_score": 0,
+      "away_score": 0,
+      "home_score_90min": 0,
+      "away_score_90min": 0,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "G",
+      "stage": "group_stage",
+      "date": "2026-06-21",
+      "matchday": 2
+    },
+    {
+      "id": "Uruguay-Cape Verde Islands",
+      "home_team": "Uruguay",
+      "away_team": "Cape Verde Islands",
+      "home_score": 2,
+      "away_score": 2,
+      "home_score_90min": 2,
+      "away_score_90min": 2,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "H",
+      "stage": "group_stage",
+      "date": "2026-06-21",
+      "matchday": 2
+    },
+    {
+      "id": "New Zealand-Egypt",
+      "home_team": "New Zealand",
+      "away_team": "Egypt",
+      "home_score": 1,
+      "away_score": 3,
+      "home_score_90min": 1,
+      "away_score_90min": 3,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "G",
+      "stage": "group_stage",
+      "date": "2026-06-22",
+      "matchday": 2
+    },
+    {
+      "id": "Argentina-Austria",
+      "home_team": "Argentina",
+      "away_team": "Austria",
+      "home_score": 2,
+      "away_score": 0,
+      "home_score_90min": 2,
+      "away_score_90min": 0,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "J",
+      "stage": "group_stage",
+      "date": "2026-06-22",
+      "matchday": 2
+    },
+    {
+      "id": "France-Iraq",
+      "home_team": "France",
+      "away_team": "Iraq",
+      "home_score": 3,
+      "away_score": 0,
+      "home_score_90min": 3,
+      "away_score_90min": 0,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "I",
+      "stage": "group_stage",
+      "date": "2026-06-22",
+      "matchday": 2
+    },
+    {
+      "id": "Norway-Senegal",
+      "home_team": "Norway",
+      "away_team": "Senegal",
+      "home_score": 3,
+      "away_score": 2,
+      "home_score_90min": 3,
+      "away_score_90min": 2,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "I",
+      "stage": "group_stage",
+      "date": "2026-06-23",
+      "matchday": 2
+    },
+    {
+      "id": "Jordan-Algeria",
+      "home_team": "Jordan",
+      "away_team": "Algeria",
+      "home_score": 1,
+      "away_score": 2,
+      "home_score_90min": 1,
+      "away_score_90min": 2,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "J",
+      "stage": "group_stage",
+      "date": "2026-06-23",
+      "matchday": 2
+    },
+    {
+      "id": "Portugal-Uzbekistan",
+      "home_team": "Portugal",
+      "away_team": "Uzbekistan",
+      "home_score": 5,
+      "away_score": 0,
+      "home_score_90min": 5,
+      "away_score_90min": 0,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "K",
+      "stage": "group_stage",
+      "date": "2026-06-23",
+      "matchday": 2
+    },
+    {
+      "id": "England-Ghana",
+      "home_team": "England",
+      "away_team": "Ghana",
+      "home_score": 0,
+      "away_score": 0,
+      "home_score_90min": 0,
+      "away_score_90min": 0,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "L",
+      "stage": "group_stage",
+      "date": "2026-06-23",
+      "matchday": 2
+    },
+    {
+      "id": "Panama-Croatia",
+      "home_team": "Panama",
+      "away_team": "Croatia",
+      "home_score": 0,
+      "away_score": 1,
+      "home_score_90min": 0,
+      "away_score_90min": 1,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "L",
+      "stage": "group_stage",
+      "date": "2026-06-23",
+      "matchday": 2
+    },
+    {
+      "id": "Colombia-Congo DR",
+      "home_team": "Colombia",
+      "away_team": "Congo DR",
+      "home_score": 1,
+      "away_score": 0,
+      "home_score_90min": 1,
+      "away_score_90min": 0,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "K",
+      "stage": "group_stage",
+      "date": "2026-06-24",
+      "matchday": 2
+    },
+    {
+      "id": "Switzerland-Canada",
+      "home_team": "Switzerland",
+      "away_team": "Canada",
+      "home_score": 2,
+      "away_score": 1,
+      "home_score_90min": 2,
+      "away_score_90min": 1,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "B",
+      "stage": "group_stage",
+      "date": "2026-06-24",
+      "matchday": 3
+    },
+    {
+      "id": "Bosnia-Herzegovina-Qatar",
+      "home_team": "Bosnia-Herzegovina",
+      "away_team": "Qatar",
+      "home_score": 3,
+      "away_score": 1,
+      "home_score_90min": 3,
+      "away_score_90min": 1,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "B",
+      "stage": "group_stage",
+      "date": "2026-06-24",
+      "matchday": 3
+    },
+    {
+      "id": "Morocco-Haiti",
+      "home_team": "Morocco",
+      "away_team": "Haiti",
+      "home_score": 4,
+      "away_score": 2,
+      "home_score_90min": 4,
+      "away_score_90min": 2,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "C",
+      "stage": "group_stage",
+      "date": "2026-06-24",
+      "matchday": 3
+    },
+    {
+      "id": "Scotland-Brazil",
+      "home_team": "Scotland",
+      "away_team": "Brazil",
+      "home_score": 0,
+      "away_score": 3,
+      "home_score_90min": 0,
+      "away_score_90min": 3,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "C",
+      "stage": "group_stage",
+      "date": "2026-06-24",
+      "matchday": 3
+    },
+    {
+      "id": "Czechia-Mexico",
+      "home_team": "Czechia",
+      "away_team": "Mexico",
+      "home_score": 0,
+      "away_score": 3,
+      "home_score_90min": 0,
+      "away_score_90min": 3,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "A",
+      "stage": "group_stage",
+      "date": "2026-06-25",
+      "matchday": 3
+    },
+    {
+      "id": "South Africa-South Korea",
+      "home_team": "South Africa",
+      "away_team": "South Korea",
+      "home_score": 1,
+      "away_score": 0,
+      "home_score_90min": 1,
+      "away_score_90min": 0,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "A",
+      "stage": "group_stage",
+      "date": "2026-06-25",
+      "matchday": 3
+    },
+    {
+      "id": "Ecuador-Germany",
+      "home_team": "Ecuador",
+      "away_team": "Germany",
+      "home_score": 2,
+      "away_score": 1,
+      "home_score_90min": 2,
+      "away_score_90min": 1,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "E",
+      "stage": "group_stage",
+      "date": "2026-06-25",
+      "matchday": 3
+    },
+    {
+      "id": "Curaçao-Ivory Coast",
+      "home_team": "Curaçao",
+      "away_team": "Ivory Coast",
+      "home_score": 0,
+      "away_score": 2,
+      "home_score_90min": 0,
+      "away_score_90min": 2,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "E",
+      "stage": "group_stage",
+      "date": "2026-06-25",
+      "matchday": 3
+    },
+    {
+      "id": "Tunisia-Netherlands",
+      "home_team": "Tunisia",
+      "away_team": "Netherlands",
+      "home_score": 1,
+      "away_score": 3,
+      "home_score_90min": 1,
+      "away_score_90min": 3,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "F",
+      "stage": "group_stage",
+      "date": "2026-06-25",
+      "matchday": 3
+    },
+    {
+      "id": "Japan-Sweden",
+      "home_team": "Japan",
+      "away_team": "Sweden",
+      "home_score": 1,
+      "away_score": 1,
+      "home_score_90min": 1,
+      "away_score_90min": 1,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "F",
+      "stage": "group_stage",
+      "date": "2026-06-25",
+      "matchday": 3
+    },
+    {
+      "id": "Turkey-United States",
+      "home_team": "Turkey",
+      "away_team": "United States",
+      "home_score": 3,
+      "away_score": 2,
+      "home_score_90min": 3,
+      "away_score_90min": 2,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "D",
+      "stage": "group_stage",
+      "date": "2026-06-26",
+      "matchday": 3
+    },
+    {
+      "id": "Paraguay-Australia",
+      "home_team": "Paraguay",
+      "away_team": "Australia",
+      "home_score": 0,
+      "away_score": 0,
+      "home_score_90min": 0,
+      "away_score_90min": 0,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "D",
+      "stage": "group_stage",
+      "date": "2026-06-26",
+      "matchday": 3
+    },
+    {
+      "id": "Norway-France",
+      "home_team": "Norway",
+      "away_team": "France",
+      "home_score": 1,
+      "away_score": 4,
+      "home_score_90min": 1,
+      "away_score_90min": 4,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "I",
+      "stage": "group_stage",
+      "date": "2026-06-26",
+      "matchday": 3
+    },
+    {
+      "id": "Senegal-Iraq",
+      "home_team": "Senegal",
+      "away_team": "Iraq",
+      "home_score": 5,
+      "away_score": 0,
+      "home_score_90min": 5,
+      "away_score_90min": 0,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "I",
+      "stage": "group_stage",
+      "date": "2026-06-26",
+      "matchday": 3
+    },
+    {
+      "id": "Uruguay-Spain",
+      "home_team": "Uruguay",
+      "away_team": "Spain",
+      "home_score": 0,
+      "away_score": 1,
+      "home_score_90min": 0,
+      "away_score_90min": 1,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "H",
+      "stage": "group_stage",
+      "date": "2026-06-27",
+      "matchday": 3
+    },
+    {
+      "id": "Cape Verde Islands-Saudi Arabia",
+      "home_team": "Cape Verde Islands",
+      "away_team": "Saudi Arabia",
+      "home_score": 0,
+      "away_score": 0,
+      "home_score_90min": 0,
+      "away_score_90min": 0,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "H",
+      "stage": "group_stage",
+      "date": "2026-06-27",
+      "matchday": 3
+    },
+    {
+      "id": "New Zealand-Belgium",
+      "home_team": "New Zealand",
+      "away_team": "Belgium",
+      "home_score": 1,
+      "away_score": 5,
+      "home_score_90min": 1,
+      "away_score_90min": 5,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "G",
+      "stage": "group_stage",
+      "date": "2026-06-27",
+      "matchday": 3
+    },
+    {
+      "id": "Egypt-Iran",
+      "home_team": "Egypt",
+      "away_team": "Iran",
+      "home_score": 1,
+      "away_score": 1,
+      "home_score_90min": 1,
+      "away_score_90min": 1,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "G",
+      "stage": "group_stage",
+      "date": "2026-06-27",
+      "matchday": 3
+    },
+    {
+      "id": "Panama-England",
+      "home_team": "Panama",
+      "away_team": "England",
+      "home_score": 0,
+      "away_score": 2,
+      "home_score_90min": 0,
+      "away_score_90min": 2,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "L",
+      "stage": "group_stage",
+      "date": "2026-06-27",
+      "matchday": 3
+    },
+    {
+      "id": "Croatia-Ghana",
+      "home_team": "Croatia",
+      "away_team": "Ghana",
+      "home_score": 2,
+      "away_score": 1,
+      "home_score_90min": 2,
+      "away_score_90min": 1,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "L",
+      "stage": "group_stage",
+      "date": "2026-06-27",
+      "matchday": 3
+    },
+    {
+      "id": "Colombia-Portugal",
+      "home_team": "Colombia",
+      "away_team": "Portugal",
+      "home_score": 0,
+      "away_score": 0,
+      "home_score_90min": 0,
+      "away_score_90min": 0,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "K",
+      "stage": "group_stage",
+      "date": "2026-06-27",
+      "matchday": 3
+    },
+    {
+      "id": "Congo DR-Uzbekistan",
+      "home_team": "Congo DR",
+      "away_team": "Uzbekistan",
+      "home_score": 3,
+      "away_score": 1,
+      "home_score_90min": 3,
+      "away_score_90min": 1,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "K",
+      "stage": "group_stage",
+      "date": "2026-06-27",
+      "matchday": 3
+    },
+    {
+      "id": "Jordan-Argentina",
+      "home_team": "Jordan",
+      "away_team": "Argentina",
+      "home_score": 1,
+      "away_score": 3,
+      "home_score_90min": 1,
+      "away_score_90min": 3,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "J",
+      "stage": "group_stage",
+      "date": "2026-06-28",
+      "matchday": 3
+    },
+    {
+      "id": "Algeria-Austria",
+      "home_team": "Algeria",
+      "away_team": "Austria",
+      "home_score": 3,
+      "away_score": 3,
+      "home_score_90min": 3,
+      "away_score_90min": 3,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": "J",
+      "stage": "group_stage",
+      "date": "2026-06-28",
+      "matchday": 3
+    },
+    {
+      "id": "South Africa-Canada",
+      "home_team": "South Africa",
+      "away_team": "Canada",
+      "home_score": 0,
+      "away_score": 1,
+      "home_score_90min": 0,
+      "away_score_90min": 1,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": null,
+      "stage": "last_32",
+      "date": "2026-06-28",
+      "matchday": null
+    },
+    {
+      "id": "Brazil-Japan",
+      "home_team": "Brazil",
+      "away_team": "Japan",
+      "home_score": 2,
+      "away_score": 1,
+      "home_score_90min": 2,
+      "away_score_90min": 1,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": null,
+      "stage": "last_32",
+      "date": "2026-06-29",
+      "matchday": null
+    },
+    {
+      "id": "Germany-Paraguay",
+      "home_team": "Germany",
+      "away_team": "Paraguay",
+      "home_score": 4,
+      "away_score": 5,
+      "home_score_90min": 1,
+      "away_score_90min": 1,
+      "home_penalties": 3,
+      "away_penalties": 4,
+      "duration": "PENALTY_SHOOTOUT",
+      "status": "completed",
+      "group": null,
+      "stage": "last_32",
+      "date": "2026-06-29",
+      "matchday": null
+    },
+    {
+      "id": "Netherlands-Morocco",
+      "home_team": "Netherlands",
+      "away_team": "Morocco",
+      "home_score": 3,
+      "away_score": 4,
+      "home_score_90min": 1,
+      "away_score_90min": 1,
+      "home_penalties": 2,
+      "away_penalties": 3,
+      "duration": "PENALTY_SHOOTOUT",
+      "status": "completed",
+      "group": null,
+      "stage": "last_32",
+      "date": "2026-06-30",
+      "matchday": null
+    },
+    {
+      "id": "Ivory Coast-Norway",
+      "home_team": "Ivory Coast",
+      "away_team": "Norway",
+      "home_score": 1,
+      "away_score": 2,
+      "home_score_90min": 1,
+      "away_score_90min": 2,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": null,
+      "stage": "last_32",
+      "date": "2026-06-30",
+      "matchday": null
+    },
+    {
+      "id": "France-Sweden",
+      "home_team": "France",
+      "away_team": "Sweden",
+      "home_score": 3,
+      "away_score": 0,
+      "home_score_90min": 3,
+      "away_score_90min": 0,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": null,
+      "stage": "last_32",
+      "date": "2026-06-30",
+      "matchday": null
+    },
+    {
+      "id": "Mexico-Ecuador",
+      "home_team": "Mexico",
+      "away_team": "Ecuador",
+      "home_score": 2,
+      "away_score": 0,
+      "home_score_90min": 2,
+      "away_score_90min": 0,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": null,
+      "stage": "last_32",
+      "date": "2026-07-01",
+      "matchday": null
+    },
+    {
+      "id": "England-Congo DR",
+      "home_team": "England",
+      "away_team": "Congo DR",
+      "home_score": 2,
+      "away_score": 1,
+      "home_score_90min": 2,
+      "away_score_90min": 1,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": null,
+      "stage": "last_32",
+      "date": "2026-07-01",
+      "matchday": null
+    },
+    {
+      "id": "Belgium-Senegal",
+      "home_team": "Belgium",
+      "away_team": "Senegal",
+      "home_score": 3,
+      "away_score": 2,
+      "home_score_90min": 2,
+      "away_score_90min": 2,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "EXTRA_TIME",
+      "status": "completed",
+      "group": null,
+      "stage": "last_32",
+      "date": "2026-07-01",
+      "matchday": null
+    },
+    {
+      "id": "United States-Bosnia-Herzegovina",
+      "home_team": "United States",
+      "away_team": "Bosnia-Herzegovina",
+      "home_score": 2,
+      "away_score": 0,
+      "home_score_90min": 2,
+      "away_score_90min": 0,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": null,
+      "stage": "last_32",
+      "date": "2026-07-02",
+      "matchday": null
+    },
+    {
+      "id": "Spain-Austria",
+      "home_team": "Spain",
+      "away_team": "Austria",
+      "home_score": 3,
+      "away_score": 0,
+      "home_score_90min": 3,
+      "away_score_90min": 0,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": null,
+      "stage": "last_32",
+      "date": "2026-07-02",
+      "matchday": null
+    },
+    {
+      "id": "Portugal-Croatia",
+      "home_team": "Portugal",
+      "away_team": "Croatia",
+      "home_score": 2,
+      "away_score": 1,
+      "home_score_90min": 2,
+      "away_score_90min": 1,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": null,
+      "stage": "last_32",
+      "date": "2026-07-02",
+      "matchday": null
+    },
+    {
+      "id": "Switzerland-Algeria",
+      "home_team": "Switzerland",
+      "away_team": "Algeria",
+      "home_score": 2,
+      "away_score": 0,
+      "home_score_90min": 2,
+      "away_score_90min": 0,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": null,
+      "stage": "last_32",
+      "date": "2026-07-03",
+      "matchday": null
+    },
+    {
+      "id": "Australia-Egypt",
+      "home_team": "Australia",
+      "away_team": "Egypt",
+      "home_score": 3,
+      "away_score": 5,
+      "home_score_90min": 1,
+      "away_score_90min": 1,
+      "home_penalties": 2,
+      "away_penalties": 4,
+      "duration": "PENALTY_SHOOTOUT",
+      "status": "completed",
+      "group": null,
+      "stage": "last_32",
+      "date": "2026-07-03",
+      "matchday": null
+    },
+    {
+      "id": "Argentina-Cape Verde Islands",
+      "home_team": "Argentina",
+      "away_team": "Cape Verde Islands",
+      "home_score": 3,
+      "away_score": 2,
+      "home_score_90min": 1,
+      "away_score_90min": 1,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "EXTRA_TIME",
+      "status": "completed",
+      "group": null,
+      "stage": "last_32",
+      "date": "2026-07-03",
+      "matchday": null
+    },
+    {
+      "id": "Colombia-Ghana",
+      "home_team": "Colombia",
+      "away_team": "Ghana",
+      "home_score": 1,
+      "away_score": 0,
+      "home_score_90min": 1,
+      "away_score_90min": 0,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": null,
+      "stage": "last_32",
+      "date": "2026-07-04",
+      "matchday": null
+    },
+    {
+      "id": "Canada-Morocco",
+      "home_team": "Canada",
+      "away_team": "Morocco",
+      "home_score": 0,
+      "away_score": 3,
+      "home_score_90min": 0,
+      "away_score_90min": 3,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": null,
+      "stage": "last_16",
+      "date": "2026-07-04",
+      "matchday": null
+    },
+    {
+      "id": "Paraguay-France",
+      "home_team": "Paraguay",
+      "away_team": "France",
+      "home_score": 0,
+      "away_score": 1,
+      "home_score_90min": 0,
+      "away_score_90min": 1,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": null,
+      "stage": "last_16",
+      "date": "2026-07-04",
+      "matchday": null
+    },
+    {
+      "id": "Brazil-Norway",
+      "home_team": "Brazil",
+      "away_team": "Norway",
+      "home_score": 1,
+      "away_score": 2,
+      "home_score_90min": 1,
+      "away_score_90min": 2,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": null,
+      "stage": "last_16",
+      "date": "2026-07-05",
+      "matchday": null
+    },
+    {
+      "id": "Mexico-England",
+      "home_team": "Mexico",
+      "away_team": "England",
+      "home_score": 2,
+      "away_score": 3,
+      "home_score_90min": 2,
+      "away_score_90min": 3,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": null,
+      "stage": "last_16",
+      "date": "2026-07-06",
+      "matchday": null
+    }
+  ]
+}

@@ -94,18 +94,39 @@ async function fetchMatchResultsFromFootballData() {
   const matches = response.data.matches || [];
   console.log(`   ✓ Found ${matches.length} completed matches from football-data.org`);
   
-  return matches.map(m => ({
-    id: `${m.homeTeam.name}-${m.awayTeam.name}`,
-    home_team: m.homeTeam.name,
-    away_team: m.awayTeam.name,
-    home_score: m.score?.fullTime?.home ?? 0,
-    away_score: m.score?.fullTime?.away ?? 0,
-    status: 'completed',
-    group: m.group ? m.group.replace('GROUP_', '') : null,
-    stage: m.stage === 'GROUP_STAGE' ? 'group_stage' : (m.stage || 'group_stage').toLowerCase(),
-    date: m.utcDate ? m.utcDate.split('T')[0] : null,
-    matchday: m.matchday || null
-  }));
+  return matches.map(m => {
+    const isKnockout = m.stage !== 'GROUP_STAGE';
+    const duration = m.score?.duration || 'REGULAR';
+    // regularTime is the 90-minute score; fullTime includes extra time
+    const regularHome = m.score?.regularTime?.home;
+    const regularAway = m.score?.regularTime?.away;
+    const fullHome = m.score?.fullTime?.home ?? 0;
+    const fullAway = m.score?.fullTime?.away ?? 0;
+    const penaltiesHome = m.score?.penalties?.home ?? null;
+    const penaltiesAway = m.score?.penalties?.away ?? null;
+
+    // For 90-minute score: use regularTime if available, else fullTime (group stage has no ET)
+    const home90 = regularHome != null ? regularHome : fullHome;
+    const away90 = regularAway != null ? regularAway : fullAway;
+
+    return {
+      id: `${m.homeTeam.name}-${m.awayTeam.name}`,
+      home_team: m.homeTeam.name,
+      away_team: m.awayTeam.name,
+      home_score: fullHome,
+      away_score: fullAway,
+      home_score_90min: home90,
+      away_score_90min: away90,
+      home_penalties: penaltiesHome,
+      away_penalties: penaltiesAway,
+      duration: isKnockout ? duration : 'REGULAR',
+      status: 'completed',
+      group: m.group ? m.group.replace('GROUP_', '') : null,
+      stage: m.stage === 'GROUP_STAGE' ? 'group_stage' : (m.stage || 'group_stage').toLowerCase(),
+      date: m.utcDate ? m.utcDate.split('T')[0] : null,
+      matchday: m.matchday || null
+    };
+  });
 }
 
 async function fetchMatchResults() {
