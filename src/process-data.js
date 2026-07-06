@@ -1230,7 +1230,180 @@ async function main() {
           };
         }
       }
-      // TODO: extend for R16, QF, SF, Final when those matches complete
+      // Map R16 matches: use R32 winner indices to identify R16 participants
+      const r16Feeds = [
+        { id: 'R16-1', feeds: ['R32-2', 'R32-5'] },
+        { id: 'R16-2', feeds: ['R32-1', 'R32-3'] },
+        { id: 'R16-3', feeds: ['R32-4', 'R32-6'] },
+        { id: 'R16-4', feeds: ['R32-7', 'R32-8'] },
+        { id: 'R16-5', feeds: ['R32-11', 'R32-12'] },
+        { id: 'R16-6', feeds: ['R32-9', 'R32-10'] },
+        { id: 'R16-7', feeds: ['R32-14', 'R32-16'] },
+        { id: 'R16-8', feeds: ['R32-13', 'R32-15'] }
+      ];
+      const r32WinnerOffset = 32; // R32 winners start at index 32
+      const r32IdToOffset = (id) => parseInt(id.replace('R32-', '')) - 1;
+
+      for (let i = 0; i < r16Feeds.length; i++) {
+        const { id, feeds } = r16Feeds[i];
+        const team1Idx = sampleRun[r32WinnerOffset + r32IdToOffset(feeds[0])];
+        const team2Idx = sampleRun[r32WinnerOffset + r32IdToOffset(feeds[1])];
+        const t1Name = bracketData.indexToTeam[team1Idx];
+        const t2Name = bracketData.indexToTeam[team2Idx];
+        if (!t1Name || !t2Name) continue;
+        const nt1 = normalizeTeamName(t1Name);
+        const nt2 = normalizeTeamName(t2Name);
+        const match = allKnockoutRounds.find(m => {
+          const mh = normalizeTeamName(m.home_team);
+          const ma = normalizeTeamName(m.away_team);
+          return (mh === nt1 && ma === nt2) || (mh === nt2 && ma === nt1);
+        });
+        if (match?.actual_result?.completed) {
+          const mh = normalizeTeamName(match.home_team);
+          const homeIdx = mh === nt1 ? team1Idx : team2Idx;
+          const awayIdx = mh === nt1 ? team2Idx : team1Idx;
+          let winnerIdx;
+          if (match.actual_result.home_score !== match.actual_result.away_score) {
+            winnerIdx = match.actual_result.home_score > match.actual_result.away_score ? homeIdx : awayIdx;
+          } else if (match.actual_result.home_penalties != null && match.actual_result.away_penalties != null) {
+            winnerIdx = match.actual_result.home_penalties > match.actual_result.away_penalties ? homeIdx : awayIdx;
+          } else {
+            winnerIdx = awayIdx;
+          }
+          actualResults[id] = {
+            winnerIdx, homeIdx, awayIdx,
+            homeScore: match.actual_result.home_score,
+            awayScore: match.actual_result.away_score,
+            homePenalties: match.actual_result.home_penalties || null,
+            awayPenalties: match.actual_result.away_penalties || null
+          };
+        }
+      }
+
+      // Map QF matches: use R16 winner indices
+      const qfFeeds = [
+        { id: 'QF-1', feeds: ['R16-1', 'R16-2'] },
+        { id: 'QF-2', feeds: ['R16-3', 'R16-4'] },
+        { id: 'QF-3', feeds: ['R16-5', 'R16-6'] },
+        { id: 'QF-4', feeds: ['R16-7', 'R16-8'] }
+      ];
+      const r16WinnerOffset = 48;
+      const r16IdToOffset = (id) => parseInt(id.replace('R16-', '')) - 1;
+
+      for (const { id, feeds } of qfFeeds) {
+        const team1Idx = sampleRun[r16WinnerOffset + r16IdToOffset(feeds[0])];
+        const team2Idx = sampleRun[r16WinnerOffset + r16IdToOffset(feeds[1])];
+        const t1Name = bracketData.indexToTeam[team1Idx];
+        const t2Name = bracketData.indexToTeam[team2Idx];
+        if (!t1Name || !t2Name) continue;
+        const nt1 = normalizeTeamName(t1Name);
+        const nt2 = normalizeTeamName(t2Name);
+        const match = allKnockoutRounds.find(m => {
+          const mh = normalizeTeamName(m.home_team);
+          const ma = normalizeTeamName(m.away_team);
+          return (mh === nt1 && ma === nt2) || (mh === nt2 && ma === nt1);
+        });
+        if (match?.actual_result?.completed) {
+          const mh = normalizeTeamName(match.home_team);
+          const homeIdx = mh === nt1 ? team1Idx : team2Idx;
+          const awayIdx = mh === nt1 ? team2Idx : team1Idx;
+          let winnerIdx;
+          if (match.actual_result.home_score !== match.actual_result.away_score) {
+            winnerIdx = match.actual_result.home_score > match.actual_result.away_score ? homeIdx : awayIdx;
+          } else if (match.actual_result.home_penalties != null && match.actual_result.away_penalties != null) {
+            winnerIdx = match.actual_result.home_penalties > match.actual_result.away_penalties ? homeIdx : awayIdx;
+          } else {
+            winnerIdx = awayIdx;
+          }
+          actualResults[id] = {
+            winnerIdx, homeIdx, awayIdx,
+            homeScore: match.actual_result.home_score,
+            awayScore: match.actual_result.away_score,
+            homePenalties: match.actual_result.home_penalties || null,
+            awayPenalties: match.actual_result.away_penalties || null
+          };
+        }
+      }
+
+      // Map SF matches: use QF winner indices
+      const sfFeeds = [
+        { id: 'SF-1', feeds: ['QF-1', 'QF-3'] },
+        { id: 'SF-2', feeds: ['QF-2', 'QF-4'] }
+      ];
+      const qfWinnerOffset = 56;
+      const qfIdToOffset = (id) => parseInt(id.replace('QF-', '')) - 1;
+
+      for (const { id, feeds } of sfFeeds) {
+        const team1Idx = sampleRun[qfWinnerOffset + qfIdToOffset(feeds[0])];
+        const team2Idx = sampleRun[qfWinnerOffset + qfIdToOffset(feeds[1])];
+        const t1Name = bracketData.indexToTeam[team1Idx];
+        const t2Name = bracketData.indexToTeam[team2Idx];
+        if (!t1Name || !t2Name) continue;
+        const nt1 = normalizeTeamName(t1Name);
+        const nt2 = normalizeTeamName(t2Name);
+        const match = allKnockoutRounds.find(m => {
+          const mh = normalizeTeamName(m.home_team);
+          const ma = normalizeTeamName(m.away_team);
+          return (mh === nt1 && ma === nt2) || (mh === nt2 && ma === nt1);
+        });
+        if (match?.actual_result?.completed) {
+          const mh = normalizeTeamName(match.home_team);
+          const homeIdx = mh === nt1 ? team1Idx : team2Idx;
+          const awayIdx = mh === nt1 ? team2Idx : team1Idx;
+          let winnerIdx;
+          if (match.actual_result.home_score !== match.actual_result.away_score) {
+            winnerIdx = match.actual_result.home_score > match.actual_result.away_score ? homeIdx : awayIdx;
+          } else if (match.actual_result.home_penalties != null && match.actual_result.away_penalties != null) {
+            winnerIdx = match.actual_result.home_penalties > match.actual_result.away_penalties ? homeIdx : awayIdx;
+          } else {
+            winnerIdx = awayIdx;
+          }
+          actualResults[id] = {
+            winnerIdx, homeIdx, awayIdx,
+            homeScore: match.actual_result.home_score,
+            awayScore: match.actual_result.away_score,
+            homePenalties: match.actual_result.home_penalties || null,
+            awayPenalties: match.actual_result.away_penalties || null
+          };
+        }
+      }
+
+      // Map Final: use SF winner indices
+      const sfWinnerOffset = 60;
+      const sfIdToOffset = (id) => parseInt(id.replace('SF-', '')) - 1;
+      const finalTeam1Idx = sampleRun[sfWinnerOffset + sfIdToOffset('SF-1')];
+      const finalTeam2Idx = sampleRun[sfWinnerOffset + sfIdToOffset('SF-2')];
+      const ft1Name = bracketData.indexToTeam[finalTeam1Idx];
+      const ft2Name = bracketData.indexToTeam[finalTeam2Idx];
+      if (ft1Name && ft2Name) {
+        const fnt1 = normalizeTeamName(ft1Name);
+        const fnt2 = normalizeTeamName(ft2Name);
+        const finalMatch = allKnockoutRounds.find(m => {
+          const mh = normalizeTeamName(m.home_team);
+          const ma = normalizeTeamName(m.away_team);
+          return (mh === fnt1 && ma === fnt2) || (mh === fnt2 && ma === fnt1);
+        });
+        if (finalMatch?.actual_result?.completed) {
+          const mh = normalizeTeamName(finalMatch.home_team);
+          const homeIdx = mh === fnt1 ? finalTeam1Idx : finalTeam2Idx;
+          const awayIdx = mh === fnt1 ? finalTeam2Idx : finalTeam1Idx;
+          let winnerIdx;
+          if (finalMatch.actual_result.home_score !== finalMatch.actual_result.away_score) {
+            winnerIdx = finalMatch.actual_result.home_score > finalMatch.actual_result.away_score ? homeIdx : awayIdx;
+          } else if (finalMatch.actual_result.home_penalties != null && finalMatch.actual_result.away_penalties != null) {
+            winnerIdx = finalMatch.actual_result.home_penalties > finalMatch.actual_result.away_penalties ? homeIdx : awayIdx;
+          } else {
+            winnerIdx = awayIdx;
+          }
+          actualResults['F'] = {
+            winnerIdx, homeIdx, awayIdx,
+            homeScore: finalMatch.actual_result.home_score,
+            awayScore: finalMatch.actual_result.away_score,
+            homePenalties: finalMatch.actual_result.home_penalties || null,
+            awayPenalties: finalMatch.actual_result.away_penalties || null
+          };
+        }
+      }
     }
     bracketData.actualResults = actualResults;
     const completedCount = Object.keys(actualResults).length;
