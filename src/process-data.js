@@ -132,7 +132,7 @@ function computePredictionsVsResults(tournament, localResults, ownerLookup) {
     } else if (result.date) {
       // Knockout match — use date from result (end of day as upper bound for odds lookup)
       kickoffUtc = `${result.date}T23:59:59Z`;
-      tournamentMatch = { home: result.home_team, away: result.away_team, group: null };
+      tournamentMatch = { home: normalizeTeamName(result.home_team), away: normalizeTeamName(result.away_team), group: null };
     } else {
       continue;
     }
