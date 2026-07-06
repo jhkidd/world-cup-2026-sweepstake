@@ -1,6 +1,6 @@
 {
   "description": "Auto-updated match results from external APIs. Used as fallback for completed matches.",
-  "last_updated": "2026-07-06T00:56:31.932Z",
+  "last_updated": "2026-07-06T07:09:33.477Z",
   "matches": [
     {
       "id": "Mexico-South Africa",
@@ -1092,6 +1092,18 @@
       "group": null,
       "stage": "last_16",
       "date": "2026-07-05",
+      "matchday": null
+    },
+    {
+      "id": "Mexico-England",
+      "home_team": "Mexico",
+      "away_team": "England",
+      "home_score": 2,
+      "away_score": 3,
+      "status": "completed",
+      "group": null,
+      "stage": "last_16",
+      "date": "2026-07-06",
       "matchday": null
     }
   ]
