@@ -1,6 +1,6 @@
 {
   "description": "Auto-updated match results from external APIs. Used as fallback for completed matches.",
-  "last_updated": "2026-07-06T18:44:31.215Z",
+  "last_updated": "2026-07-07T00:54:59.557Z",
   "matches": [
     {
       "id": "Mexico-South Africa",
@@ -1557,6 +1557,23 @@
       "away_score": 3,
       "home_score_90min": 2,
       "away_score_90min": 3,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": null,
+      "stage": "last_16",
+      "date": "2026-07-06",
+      "matchday": null
+    },
+    {
+      "id": "Portugal-Spain",
+      "home_team": "Portugal",
+      "away_team": "Spain",
+      "home_score": 0,
+      "away_score": 1,
+      "home_score_90min": 0,
+      "away_score_90min": 1,
       "home_penalties": null,
       "away_penalties": null,
       "duration": "REGULAR",
