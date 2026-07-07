@@ -1,6 +1,6 @@
 {
   "description": "Auto-updated match results from external APIs. Used as fallback for completed matches.",
-  "last_updated": "2026-07-07T00:54:59.557Z",
+  "last_updated": "2026-07-07T07:20:45.158Z",
   "matches": [
     {
       "id": "Mexico-South Africa",
@@ -1581,6 +1581,23 @@
       "group": null,
       "stage": "last_16",
       "date": "2026-07-06",
+      "matchday": null
+    },
+    {
+      "id": "United States-Belgium",
+      "home_team": "United States",
+      "away_team": "Belgium",
+      "home_score": 1,
+      "away_score": 4,
+      "home_score_90min": 1,
+      "away_score_90min": 4,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": null,
+      "stage": "last_16",
+      "date": "2026-07-07",
       "matchday": null
     }
   ]
