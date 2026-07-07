@@ -1,6 +1,6 @@
 {
   "description": "Auto-updated match results from external APIs. Used as fallback for completed matches.",
-  "last_updated": "2026-07-07T12:57:44.345Z",
+  "last_updated": "2026-07-07T18:47:19.896Z",
   "matches": [
     {
       "id": "Mexico-South Africa",
@@ -1591,6 +1591,23 @@
       "away_score": 4,
       "home_score_90min": 1,
       "away_score_90min": 4,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": null,
+      "stage": "last_16",
+      "date": "2026-07-07",
+      "matchday": null
+    },
+    {
+      "id": "Argentina-Egypt",
+      "home_team": "Argentina",
+      "away_team": "Egypt",
+      "home_score": 3,
+      "away_score": 2,
+      "home_score_90min": 3,
+      "away_score_90min": 2,
       "home_penalties": null,
       "away_penalties": null,
       "duration": "REGULAR",
