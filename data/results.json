@@ -1,6 +1,6 @@
 {
   "description": "Auto-updated match results from external APIs. Used as fallback for completed matches.",
-  "last_updated": "2026-07-08T00:46:37.440Z",
+  "last_updated": "2026-07-08T06:58:38.721Z",
   "matches": [
     {
       "id": "Mexico-South Africa",
@@ -1625,7 +1625,7 @@
       "away_score": 3,
       "home_score_90min": 0,
       "away_score_90min": 0,
-      "home_penalties": 3,
+      "home_penalties": 4,
       "away_penalties": 3,
       "duration": "PENALTY_SHOOTOUT",
       "status": "completed",
