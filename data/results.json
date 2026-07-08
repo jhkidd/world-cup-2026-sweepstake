@@ -1,6 +1,6 @@
 {
   "description": "Auto-updated match results from external APIs. Used as fallback for completed matches.",
-  "last_updated": "2026-07-07T18:47:19.896Z",
+  "last_updated": "2026-07-08T00:46:37.440Z",
   "matches": [
     {
       "id": "Mexico-South Africa",
@@ -1611,6 +1611,23 @@
       "home_penalties": null,
       "away_penalties": null,
       "duration": "REGULAR",
+      "status": "completed",
+      "group": null,
+      "stage": "last_16",
+      "date": "2026-07-07",
+      "matchday": null
+    },
+    {
+      "id": "Switzerland-Colombia",
+      "home_team": "Switzerland",
+      "away_team": "Colombia",
+      "home_score": 4,
+      "away_score": 3,
+      "home_score_90min": 0,
+      "away_score_90min": 0,
+      "home_penalties": 3,
+      "away_penalties": 3,
+      "duration": "PENALTY_SHOOTOUT",
       "status": "completed",
       "group": null,
       "stage": "last_16",
