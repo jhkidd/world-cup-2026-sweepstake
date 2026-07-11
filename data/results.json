@@ -1,6 +1,6 @@
 {
   "description": "Auto-updated match results from external APIs. Used as fallback for completed matches.",
-  "last_updated": "2026-07-10T18:35:47.815Z",
+  "last_updated": "2026-07-11T00:44:33.352Z",
   "matches": [
     {
       "id": "Mexico-South Africa",
@@ -1649,6 +1649,23 @@
       "group": null,
       "stage": "quarter_finals",
       "date": "2026-07-09",
+      "matchday": null
+    },
+    {
+      "id": "Spain-Belgium",
+      "home_team": "Spain",
+      "away_team": "Belgium",
+      "home_score": 2,
+      "away_score": 1,
+      "home_score_90min": 2,
+      "away_score_90min": 1,
+      "home_penalties": null,
+      "away_penalties": null,
+      "duration": "REGULAR",
+      "status": "completed",
+      "group": null,
+      "stage": "quarter_finals",
+      "date": "2026-07-10",
       "matchday": null
     }
   ]
