@@ -15,6 +15,7 @@
     "fetch-player-stats": "node src/fetch-player-stats.js",
     "fetch-missing": "node src/fetch-missing-players.js",
     "process": "node src/process-data.js",
+    "generate-pre-knockout": "node src/generate-pre-knockout.js",
     "visualize": "node src/generate-visualizations.js",
     "generate": "npm run fetch && npm run process && npm run visualize",
     "build-site": "node src/build-site.js",

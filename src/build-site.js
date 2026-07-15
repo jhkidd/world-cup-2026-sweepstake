@@ -36,6 +36,13 @@ if (existsSync(bracketSrcPath)) {
   console.log('✓ Copied bracket.json');
 }
 
+// Copy bracket-pre-knockout.json (loaded on demand by "What If?" toggle)
+const preKnockoutSrcPath = join(projectRoot, 'data', 'processed', 'bracket-pre-knockout.json');
+if (existsSync(preKnockoutSrcPath)) {
+  cpSync(preKnockoutSrcPath, join(distDir, 'data', 'bracket-pre-knockout.json'));
+  console.log('✓ Copied bracket-pre-knockout.json');
+}
+
 // Copy profile pictures
 console.log('\nCopying profile pictures...');
 const profilesDir = join(projectRoot, 'data', 'profiles');
@@ -1998,6 +2005,30 @@ tr.section-break td {
 .bracket-reset-btn:disabled {
   background: #ccc;
   cursor: not-allowed;
+}
+
+.bracket-whatif-btn {
+  background: #5c6bc0;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.bracket-whatif-btn:hover {
+  background: #3f51b5;
+}
+
+.bracket-whatif-btn.what-if-active {
+  background: #43a047;
+}
+
+.bracket-whatif-btn.what-if-active:hover {
+  background: #2e7d32;
 }
 
 .bracket-scenario-count {
@@ -4212,7 +4243,13 @@ function route() {
 // ============================================================
 
 let bracketData = null;
+let preKnockoutBracketData = null;
+let isWhatIfMode = false;
 let lockedResults = {}; // { matchId: winnerTeamIndex }
+
+function getActiveBracketData() {
+  return isWhatIfMode ? preKnockoutBracketData : bracketData;
+}
 
 async function loadAndRenderBracket() {
   const main = document.querySelector('.main');
@@ -4238,10 +4275,11 @@ async function loadAndRenderBracket() {
 }
 
 function getFilteredRuns() {
-  if (!bracketData) return [];
-  if (Object.keys(lockedResults).length === 0) return bracketData.runs;
+  const active = getActiveBracketData();
+  if (!active) return [];
+  if (Object.keys(lockedResults).length === 0) return active.runs;
   
-  return bracketData.runs.filter(run => {
+  return active.runs.filter(run => {
     for (const [matchId, winnerIdx] of Object.entries(lockedResults)) {
       const pos = getWinnerPosition(matchId);
       if (pos === -1) continue;
@@ -4282,7 +4320,7 @@ function getParticipantPositions(matchId) {
   const idx = r32Order.indexOf(matchId);
   if (idx !== -1) return [idx * 2, idx * 2 + 1];
   
-  const topology = bracketData.bracketTopology;
+  const topology = getActiveBracketData().bracketTopology;
   
   const r16Match = topology.r16.find(m => m.id === matchId);
   if (r16Match) return r16Match.feeds.map(f => getWinnerPosition(f));
@@ -4373,7 +4411,8 @@ function computeBracketProbabilities(runs) {
 }
 
 function getTeamName(idx) {
-  return bracketData.indexToTeam[idx] || 'TBD';
+  const active = getActiveBracketData();
+  return active?.indexToTeam[idx] || 'TBD';
 }
 
 function getShortTeamName(idx) {
@@ -4432,7 +4471,7 @@ function renderBracketMatch(matchId, probs, isLeft, filteredRuns) {
     team1Idx = parseInt(team1Idx);
     team2Idx = parseInt(team2Idx);
   } else {
-    const topology = bracketData.bracketTopology;
+    const topology = getActiveBracketData().bracketTopology;
     let feeds = null;
     for (const round of [topology.r16, topology.qf, topology.sf, topology.final]) {
       const m = round.find(x => x.id === matchId);
@@ -4472,7 +4511,7 @@ function renderBracketMatch(matchId, probs, isLeft, filteredRuns) {
   }
   
   // Check if this match has an actual result
-  const actualResult = bracketData.actualResults?.[matchId];
+  const actualResult = getActiveBracketData().actualResults?.[matchId];
   if (actualResult) {
     // Completed match — show score, non-interactive
     const team1IsHome = team1Idx === actualResult.homeIdx;
@@ -4549,13 +4588,19 @@ function renderBracket() {
   const winnerName = winnerIdx >= 0 ? getTeamName(winnerIdx) : 'TBD';
   const winnerProbPct = finalProb ? Math.round(finalProb.winnerProb * 100) : 0;
   
+  const active = getActiveBracketData();
+  const bracketTitle = isWhatIfMode ? '🏆 Knockout Bracket - Circa June 27th' : '🏆 Knockout Bracket';
+  const whatIfLabel = isWhatIfMode ? 'Back to Reality' : 'What If?';
+  const whatIfActiveClass = isWhatIfMode ? 'what-if-active' : '';
+  
   return \`
     <div class="bracket-container">
       <div class="bracket-header">
-        <h2>🏆 Knockout Bracket</h2>
+        <h2>\${bracketTitle}</h2>
         <div class="bracket-controls">
-          <span class="bracket-scenario-count">\${filteredRuns.length.toLocaleString()} / \${bracketData.runs.length.toLocaleString()} scenarios</span>
+          <span class="bracket-scenario-count">\${filteredRuns.length.toLocaleString()} / \${active.runs.length.toLocaleString()} scenarios</span>
           <button class="bracket-reset-btn" onclick="resetBracket()" \${lockedCount === 0 ? 'disabled' : ''}>Reset (\${lockedCount})</button>
+          <button class="bracket-whatif-btn \${whatIfActiveClass}" onclick="toggleWhatIf()">\${whatIfLabel}</button>
         </div>
       </div>
       
@@ -4656,12 +4701,45 @@ function attachBracketListeners() {
 function resetBracket() {
   // Reset to only actual results (preserve completed matches)
   lockedResults = {};
-  if (bracketData?.actualResults) {
-    for (const [matchId, result] of Object.entries(bracketData.actualResults)) {
+  const active = getActiveBracketData();
+  if (active?.actualResults) {
+    for (const [matchId, result] of Object.entries(active.actualResults)) {
       lockedResults[matchId] = result.winnerIdx;
     }
   }
   const main = document.querySelector('.main');
+  main.innerHTML = renderBracket();
+  attachBracketListeners();
+}
+
+async function toggleWhatIf() {
+  const main = document.querySelector('.main');
+  
+  if (!isWhatIfMode) {
+    // Switching TO "What If?" mode
+    if (!preKnockoutBracketData) {
+      main.innerHTML = '<div class="loading">Loading pre-knockout predictions...</div>';
+      try {
+        const resp = await fetch('data/bracket-pre-knockout.json', { cache: 'no-store' });
+        preKnockoutBracketData = await resp.json();
+      } catch (e) {
+        main.innerHTML = '<div class="card"><div class="card-title">Pre-knockout data not available</div><p>Run npm run generate-pre-knockout to generate the snapshot.</p></div>';
+        return;
+      }
+    }
+    lockedResults = {};
+    isWhatIfMode = true;
+  } else {
+    // Switching BACK to "current" mode
+    lockedResults = {};
+    if (bracketData?.actualResults) {
+      for (const [matchId, result] of Object.entries(bracketData.actualResults)) {
+        lockedResults[matchId] = result.winnerIdx;
+      }
+    }
+    isWhatIfMode = false;
+  }
+  
   main.innerHTML = renderBracket();
   attachBracketListeners();
 }
