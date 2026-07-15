@@ -1,6 +1,7 @@
 node_modules/
 .env
 data/processed/
+!data/processed/bracket-pre-knockout.json
 output/
 *.log
 docs/superpowers/
