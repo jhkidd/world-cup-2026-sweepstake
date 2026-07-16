@@ -96,23 +96,51 @@ async function main() {
     console.log(`  Group ${groupName}: ${standings.map(t => t.name).join(', ')}`);
   }
 
-  // Build the set of known knockout matchups from the odds API
-  // These are the R32 matches the bookmakers already had odds for
-  const knockoutMatchups = matchOdds.filter(m => {
-    const date = m.commence_time;
-    return date && date >= '2026-06-28';
-  });
+  // Use the ACTUAL R32 matchups from results.json (FIFA's confirmed pairings)
+  // This avoids the non-deterministic 3rd-place allocation algorithm
+  const knockoutResults = allResults.filter(r => r.stage === 'last_32' && r.status === 'completed');
+  if (knockoutResults.length !== 16) {
+    console.error(`❌ Expected 16 R32 results, got ${knockoutResults.length}. Cannot generate accurate snapshot.`);
+    process.exit(1);
+  }
 
-  // Also add any group-results-derived knockout matchups
-  const knownR32Matchups = resolveKnownR32Matchups(knockoutMatchups, groups);
+  // Map actual R32 matches to slot IDs by comparing to current bracket's slot assignments
+  // The slot definitions are based on group positions — we use the same logic as bracket.json
+  const knownR32Matchups = resolveKnownR32Matchups(
+    knockoutResults.map(r => ({ home_team: r.home_team, away_team: r.away_team })),
+    groups
+  );
+
   if (knownR32Matchups) {
-    console.log(`✓ Resolved all 16 R32 matchups`);
+    console.log(`✓ Resolved all 16 R32 matchups from actual results`);
     for (const [id, m] of Object.entries(knownR32Matchups)) {
       console.log(`  ${id}: ${m.team1} vs ${m.team2}`);
     }
   } else {
-    console.log('⚠ Could not resolve all 16 R32 matchups — using allocation algorithm as fallback');
+    // Fallback: manually build from actual results using the same order as bracket.json
+    // These are the confirmed FIFA pairings from the tournament
+    console.log('⚠ resolveKnownR32Matchups could not map all slots, using hardcoded actual pairings...');
   }
+
+  // If resolution failed, hardcode the actual matchups (they're known and fixed)
+  const actualR32Matchups = knownR32Matchups || {
+    'R32-1':  { team1: normalizeTeamName('South Africa'), team2: normalizeTeamName('Canada') },
+    'R32-2':  { team1: normalizeTeamName('Germany'), team2: normalizeTeamName('Paraguay') },
+    'R32-3':  { team1: normalizeTeamName('Netherlands'), team2: normalizeTeamName('Morocco') },
+    'R32-4':  { team1: normalizeTeamName('Brazil'), team2: normalizeTeamName('Japan') },
+    'R32-5':  { team1: normalizeTeamName('France'), team2: normalizeTeamName('Sweden') },
+    'R32-6':  { team1: normalizeTeamName('Ivory Coast'), team2: normalizeTeamName('Norway') },
+    'R32-7':  { team1: normalizeTeamName('Mexico'), team2: normalizeTeamName('Ecuador') },
+    'R32-8':  { team1: normalizeTeamName('England'), team2: normalizeTeamName('DR Congo') },
+    'R32-9':  { team1: normalizeTeamName('USA'), team2: normalizeTeamName('Bosnia and Herzegovina') },
+    'R32-10': { team1: normalizeTeamName('Belgium'), team2: normalizeTeamName('Senegal') },
+    'R32-11': { team1: normalizeTeamName('Portugal'), team2: normalizeTeamName('Croatia') },
+    'R32-12': { team1: normalizeTeamName('Spain'), team2: normalizeTeamName('Austria') },
+    'R32-13': { team1: normalizeTeamName('Switzerland'), team2: normalizeTeamName('Algeria') },
+    'R32-14': { team1: normalizeTeamName('Argentina'), team2: normalizeTeamName('Cape Verde') },
+    'R32-15': { team1: normalizeTeamName('Colombia'), team2: normalizeTeamName('Ghana') },
+    'R32-16': { team1: normalizeTeamName('Australia'), team2: normalizeTeamName('Egypt') },
+  };
 
   // 4. Determine team strengths for any non-Elo fallbacks
   let teamStrengths = {};
@@ -140,7 +168,7 @@ async function main() {
     teamStrengths,
     ITERATIONS,
     Object.keys(eloRatings).length > 0 ? eloRatings : null,
-    knownR32Matchups
+    actualR32Matchups
   );
 
   // 6. Set empty actualResults (no knockout matches played yet)
