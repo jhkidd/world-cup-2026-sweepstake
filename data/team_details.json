@@ -193,7 +193,7 @@
         "date_of_birth": "2003-04-20"
       }
     ],
-    "fetched_at": "2026-07-21T18:35:15.803Z",
+    "fetched_at": "2026-07-22T00:44:37.366Z",
     "group": "A",
     "confederation": "CONCACAF"
   },
@@ -391,7 +391,7 @@
         "date_of_birth": "2000-10-02"
       }
     ],
-    "fetched_at": "2026-07-21T18:35:23.075Z",
+    "fetched_at": "2026-07-22T00:44:44.318Z",
     "group": "A",
     "confederation": "CAF"
   },
@@ -589,7 +589,7 @@
         "date_of_birth": "2002-05-09"
       }
     ],
-    "fetched_at": "2026-07-21T18:35:30.109Z",
+    "fetched_at": "2026-07-22T00:44:51.153Z",
     "group": "A",
     "confederation": "AFC"
   },
@@ -787,7 +787,7 @@
         "date_of_birth": "1999-04-29"
       }
     ],
-    "fetched_at": "2026-07-21T18:35:37.121Z",
+    "fetched_at": "2026-07-22T00:44:58.093Z",
     "group": "A",
     "confederation": "UEFA"
   },
@@ -985,7 +985,7 @@
         "date_of_birth": "2001-07-03"
       }
     ],
-    "fetched_at": "2026-07-21T18:35:44.162Z",
+    "fetched_at": "2026-07-22T00:45:04.998Z",
     "group": "B",
     "confederation": "CONCACAF"
   },
@@ -1183,7 +1183,7 @@
         "date_of_birth": "2007-09-21"
       }
     ],
-    "fetched_at": "2026-07-21T18:35:51.336Z",
+    "fetched_at": "2026-07-22T00:45:11.863Z",
     "group": "B",
     "confederation": "UEFA"
   },
@@ -1381,7 +1381,7 @@
         "date_of_birth": "1994-08-19"
       }
     ],
-    "fetched_at": "2026-07-21T18:35:58.303Z",
+    "fetched_at": "2026-07-22T00:45:18.739Z",
     "group": "B",
     "confederation": "AFC"
   },
@@ -1579,7 +1579,7 @@
         "date_of_birth": "2000-12-04"
       }
     ],
-    "fetched_at": "2026-07-21T18:36:05.271Z",
+    "fetched_at": "2026-07-22T00:45:25.611Z",
     "group": "B",
     "confederation": "UEFA"
   },
@@ -1777,7 +1777,7 @@
         "date_of_birth": "2006-08-03"
       }
     ],
-    "fetched_at": "2026-07-21T18:36:12.225Z",
+    "fetched_at": "2026-07-22T00:45:32.429Z",
     "group": "C",
     "confederation": "CONMEBOL"
   },
@@ -1975,7 +1975,7 @@
         "date_of_birth": "2004-11-30"
       }
     ],
-    "fetched_at": "2026-07-21T18:36:19.179Z",
+    "fetched_at": "2026-07-22T00:45:39.368Z",
     "group": "C",
     "confederation": "CAF"
   },
@@ -2173,7 +2173,7 @@
         "date_of_birth": "2001-07-07"
       }
     ],
-    "fetched_at": "2026-07-21T18:36:26.120Z",
+    "fetched_at": "2026-07-22T00:45:46.334Z",
     "group": "C",
     "confederation": "CONCACAF"
   },
@@ -2371,7 +2371,7 @@
         "date_of_birth": "2005-11-11"
       }
     ],
-    "fetched_at": "2026-07-21T18:36:33.136Z",
+    "fetched_at": "2026-07-22T00:45:53.164Z",
     "group": "C",
     "confederation": "UEFA"
   },
@@ -2569,7 +2569,7 @@
         "date_of_birth": "2001-04-19"
       }
     ],
-    "fetched_at": "2026-07-21T18:36:40.090Z",
+    "fetched_at": "2026-07-22T00:46:00.082Z",
     "group": "D",
     "confederation": "CONCACAF"
   },
@@ -2767,7 +2767,7 @@
         "date_of_birth": "1995-06-16"
       }
     ],
-    "fetched_at": "2026-07-21T18:36:47.060Z",
+    "fetched_at": "2026-07-22T00:46:06.920Z",
     "group": "D",
     "confederation": "CONMEBOL"
   },
@@ -2965,7 +2965,7 @@
         "date_of_birth": "2000-11-28"
       }
     ],
-    "fetched_at": "2026-07-21T18:36:54.277Z",
+    "fetched_at": "2026-07-22T00:46:13.927Z",
     "group": "D",
     "confederation": "AFC"
   },
@@ -3163,7 +3163,7 @@
         "date_of_birth": "2005-05-04"
       }
     ],
-    "fetched_at": "2026-07-21T18:37:01.270Z",
+    "fetched_at": "2026-07-22T00:46:20.755Z",
     "group": "D",
     "confederation": "UEFA"
   },
@@ -3361,7 +3361,7 @@
         "date_of_birth": "2002-10-17"
       }
     ],
-    "fetched_at": "2026-07-21T18:37:08.309Z",
+    "fetched_at": "2026-07-22T00:46:27.586Z",
     "group": "E",
     "confederation": "UEFA"
   },
@@ -3559,7 +3559,7 @@
         "date_of_birth": "1992-09-19"
       }
     ],
-    "fetched_at": "2026-07-21T18:37:15.275Z",
+    "fetched_at": "2026-07-22T00:46:34.391Z",
     "group": "E",
     "confederation": "CONCACAF"
   },
@@ -3757,7 +3757,7 @@
         "date_of_birth": "2006-11-14"
       }
     ],
-    "fetched_at": "2026-07-21T18:37:22.216Z",
+    "fetched_at": "2026-07-22T00:46:41.345Z",
     "group": "E",
     "confederation": "CAF"
   },
@@ -3955,7 +3955,7 @@
         "date_of_birth": "2005-03-19"
       }
     ],
-    "fetched_at": "2026-07-21T18:37:29.231Z",
+    "fetched_at": "2026-07-22T00:46:48.176Z",
     "group": "E",
     "confederation": "CONMEBOL"
   },
@@ -4153,7 +4153,7 @@
         "date_of_birth": "2001-10-30"
       }
     ],
-    "fetched_at": "2026-07-21T18:37:36.184Z",
+    "fetched_at": "2026-07-22T00:46:55.121Z",
     "group": "F",
     "confederation": "UEFA"
   },
@@ -4351,7 +4351,7 @@
         "date_of_birth": "2005-06-03"
       }
     ],
-    "fetched_at": "2026-07-21T18:37:43.152Z",
+    "fetched_at": "2026-07-22T00:47:02.128Z",
     "group": "F",
     "confederation": "AFC"
   },
@@ -4549,7 +4549,7 @@
         "date_of_birth": "2002-04-27"
       }
     ],
-    "fetched_at": "2026-07-21T18:37:50.103Z",
+    "fetched_at": "2026-07-22T00:47:09.081Z",
     "group": "F",
     "confederation": "UEFA"
   },
@@ -4677,25 +4677,11 @@
         "date_of_birth": "2001-03-16"
       },
       {
-        "id": 161414,
-        "name": "Ismaël Gharbi",
-        "position": "Midfield",
-        "nationality": "Tunisia",
-        "date_of_birth": "2004-04-10"
-      },
-      {
         "id": 169325,
         "name": "Hannibal Mejbri",
         "position": "Midfield",
         "nationality": "Tunisia",
         "date_of_birth": "2003-01-21"
-      },
-      {
-        "id": 171368,
-        "name": "Elias Achouri",
-        "position": "Midfield",
-        "nationality": "Tunisia",
-        "date_of_birth": "1999-02-10"
       },
       {
         "id": 172854,
@@ -4717,6 +4703,20 @@
         "position": "Offence",
         "nationality": "Tunisia",
         "date_of_birth": "1996-05-08"
+      },
+      {
+        "id": 161414,
+        "name": "Ismaël Gharbi",
+        "position": "Offence",
+        "nationality": "Tunisia",
+        "date_of_birth": "2004-04-10"
+      },
+      {
+        "id": 171368,
+        "name": "Elias Achouri",
+        "position": "Offence",
+        "nationality": "Tunisia",
+        "date_of_birth": "1999-02-10"
       },
       {
         "id": 171927,
@@ -4747,7 +4747,7 @@
         "date_of_birth": "2005-02-02"
       }
     ],
-    "fetched_at": "2026-07-21T18:37:57.161Z",
+    "fetched_at": "2026-07-22T00:47:15.888Z",
     "group": "F",
     "confederation": "CAF"
   },
@@ -4945,7 +4945,7 @@
         "date_of_birth": "2005-02-03"
       }
     ],
-    "fetched_at": "2026-07-21T18:38:04.428Z",
+    "fetched_at": "2026-07-22T00:47:22.735Z",
     "group": "G",
     "confederation": "UEFA"
   },
@@ -5143,7 +5143,7 @@
         "date_of_birth": "2008-01-01"
       }
     ],
-    "fetched_at": "2026-07-21T18:38:11.403Z",
+    "fetched_at": "2026-07-22T00:47:29.702Z",
     "group": "G",
     "confederation": "CAF"
   },
@@ -5341,7 +5341,7 @@
         "date_of_birth": "2000-10-30"
       }
     ],
-    "fetched_at": "2026-07-21T18:38:18.350Z",
+    "fetched_at": "2026-07-22T00:47:36.547Z",
     "group": "G",
     "confederation": "AFC"
   },
@@ -5539,7 +5539,7 @@
         "date_of_birth": "2002-08-19"
       }
     ],
-    "fetched_at": "2026-07-21T18:38:25.319Z",
+    "fetched_at": "2026-07-22T00:47:43.397Z",
     "group": "G",
     "confederation": "OFC"
   },
@@ -5737,7 +5737,7 @@
         "date_of_birth": "2003-07-13"
       }
     ],
-    "fetched_at": "2026-07-21T18:38:32.281Z",
+    "fetched_at": "2026-07-22T00:47:50.206Z",
     "group": "H",
     "confederation": "UEFA"
   },
@@ -5865,13 +5865,6 @@
         "date_of_birth": "1995-12-29"
       },
       {
-        "id": 145346,
-        "name": "Telmo Arcanjo",
-        "position": "Midfield",
-        "nationality": "Cape Verde Islands",
-        "date_of_birth": "2001-06-21"
-      },
-      {
         "id": 167455,
         "name": "Jamiro Monteiro",
         "position": "Midfield",
@@ -5907,6 +5900,13 @@
         "date_of_birth": "1998-06-14"
       },
       {
+        "id": 145346,
+        "name": "Telmo Arcanjo",
+        "position": "Offence",
+        "nationality": "Cape Verde Islands",
+        "date_of_birth": "2001-06-21"
+      },
+      {
         "id": 151942,
         "name": "Gilson Tavares",
         "position": "Offence",
@@ -5935,7 +5935,7 @@
         "date_of_birth": "2002-05-03"
       }
     ],
-    "fetched_at": "2026-07-21T18:38:39.252Z",
+    "fetched_at": "2026-07-22T00:47:57.009Z",
     "group": "H",
     "confederation": "CAF"
   },
@@ -6133,7 +6133,7 @@
         "date_of_birth": "2000-05-14"
       }
     ],
-    "fetched_at": "2026-07-21T18:38:46.254Z",
+    "fetched_at": "2026-07-22T00:48:03.854Z",
     "group": "H",
     "confederation": "AFC"
   },
@@ -6331,7 +6331,7 @@
         "date_of_birth": "1998-06-30"
       }
     ],
-    "fetched_at": "2026-07-21T18:38:53.272Z",
+    "fetched_at": "2026-07-22T00:48:10.841Z",
     "group": "H",
     "confederation": "CONMEBOL"
   },
@@ -6529,7 +6529,7 @@
         "date_of_birth": "2002-09-02"
       }
     ],
-    "fetched_at": "2026-07-21T18:39:00.301Z",
+    "fetched_at": "2026-07-22T00:48:17.673Z",
     "group": "I",
     "confederation": "UEFA"
   },
@@ -6734,7 +6734,7 @@
         "date_of_birth": "1981-02-05"
       }
     ],
-    "fetched_at": "2026-07-21T18:39:07.320Z",
+    "fetched_at": "2026-07-22T00:48:24.636Z",
     "group": "I",
     "confederation": "CAF"
   },
@@ -6932,7 +6932,7 @@
         "date_of_birth": "1996-01-19"
       }
     ],
-    "fetched_at": "2026-07-21T18:39:14.365Z",
+    "fetched_at": "2026-07-22T00:48:31.585Z",
     "group": "I",
     "confederation": "AFC"
   },
@@ -7130,7 +7130,7 @@
         "date_of_birth": "2000-02-06"
       }
     ],
-    "fetched_at": "2026-07-21T18:39:21.404Z",
+    "fetched_at": "2026-07-22T00:48:38.439Z",
     "group": "I",
     "confederation": "UEFA"
   },
@@ -7328,7 +7328,7 @@
         "date_of_birth": "2002-12-18"
       }
     ],
-    "fetched_at": "2026-07-21T18:39:28.487Z",
+    "fetched_at": "2026-07-22T00:48:45.250Z",
     "group": "J",
     "confederation": "CONMEBOL"
   },
@@ -7526,7 +7526,7 @@
         "date_of_birth": "2002-09-06"
       }
     ],
-    "fetched_at": "2026-07-21T18:39:35.455Z",
+    "fetched_at": "2026-07-22T00:48:52.117Z",
     "group": "J",
     "confederation": "CAF"
   },
@@ -7724,7 +7724,7 @@
         "date_of_birth": "2001-05-30"
       }
     ],
-    "fetched_at": "2026-07-21T18:39:42.456Z",
+    "fetched_at": "2026-07-22T00:48:58.959Z",
     "group": "J",
     "confederation": "UEFA"
   },
@@ -7922,7 +7922,7 @@
         "date_of_birth": "2004-04-13"
       }
     ],
-    "fetched_at": "2026-07-21T18:39:49.456Z",
+    "fetched_at": "2026-07-22T00:49:05.775Z",
     "group": "J",
     "confederation": "AFC"
   },
@@ -8120,7 +8120,7 @@
         "date_of_birth": "2002-12-14"
       }
     ],
-    "fetched_at": "2026-07-21T18:39:56.491Z",
+    "fetched_at": "2026-07-22T00:49:12.625Z",
     "group": "K",
     "confederation": "UEFA"
   },
@@ -8318,7 +8318,7 @@
         "date_of_birth": "1994-06-24"
       }
     ],
-    "fetched_at": "2026-07-21T18:40:03.601Z",
+    "fetched_at": "2026-07-22T00:49:19.459Z",
     "group": "K",
     "confederation": "CAF"
   },
@@ -8516,7 +8516,7 @@
         "date_of_birth": "1997-10-30"
       }
     ],
-    "fetched_at": "2026-07-21T18:40:10.651Z",
+    "fetched_at": "2026-07-22T00:49:26.273Z",
     "group": "K",
     "confederation": "AFC"
   },
@@ -8651,13 +8651,6 @@
         "date_of_birth": "2000-09-29"
       },
       {
-        "id": 170245,
-        "name": "Jaminton Campaz",
-        "position": "Midfield",
-        "nationality": "Colombia",
-        "date_of_birth": "2000-05-24"
-      },
-      {
         "id": 170657,
         "name": "Richard Rios",
         "position": "Midfield",
@@ -8707,6 +8700,13 @@
         "date_of_birth": "1999-04-20"
       },
       {
+        "id": 170245,
+        "name": "Jaminton Campaz",
+        "position": "Offence",
+        "nationality": "Colombia",
+        "date_of_birth": "2000-05-24"
+      },
+      {
         "id": 178432,
         "name": "Carlos Gómez",
         "position": "Offence",
@@ -8714,7 +8714,7 @@
         "date_of_birth": "2002-09-12"
       }
     ],
-    "fetched_at": "2026-07-21T18:40:17.708Z",
+    "fetched_at": "2026-07-22T00:49:33.231Z",
     "group": "K",
     "confederation": "CONMEBOL"
   },
@@ -8912,7 +8912,7 @@
         "date_of_birth": "2002-03-10"
       }
     ],
-    "fetched_at": "2026-07-21T18:40:24.702Z",
+    "fetched_at": "2026-07-22T00:49:40.056Z",
     "group": "L",
     "confederation": "UEFA"
   },
@@ -9110,7 +9110,7 @@
         "date_of_birth": "2003-03-31"
       }
     ],
-    "fetched_at": "2026-07-21T18:40:31.709Z",
+    "fetched_at": "2026-07-22T00:49:46.874Z",
     "group": "L",
     "confederation": "UEFA"
   },
@@ -9308,7 +9308,7 @@
         "date_of_birth": "2003-09-23"
       }
     ],
-    "fetched_at": "2026-07-21T18:40:38.640Z",
+    "fetched_at": "2026-07-22T00:49:53.684Z",
     "group": "L",
     "confederation": "CAF"
   },
@@ -9422,13 +9422,6 @@
         "date_of_birth": "1998-11-28"
       },
       {
-        "id": 28668,
-        "name": "Cecilio Waterman",
-        "position": "Midfield",
-        "nationality": "Panama",
-        "date_of_birth": "1991-04-13"
-      },
-      {
         "id": 39139,
         "name": "Édgar Bárcenas",
         "position": "Midfield",
@@ -9457,13 +9450,6 @@
         "date_of_birth": "2000-02-03"
       },
       {
-        "id": 110577,
-        "name": "César Yanis",
-        "position": "Midfield",
-        "nationality": "Panama",
-        "date_of_birth": "1996-01-28"
-      },
-      {
         "id": 166946,
         "name": "Christian Martinez",
         "position": "Midfield",
@@ -9485,6 +9471,13 @@
         "date_of_birth": "1998-06-19"
       },
       {
+        "id": 28668,
+        "name": "Cecilio Waterman",
+        "position": "Offence",
+        "nationality": "Panama",
+        "date_of_birth": "1991-04-13"
+      },
+      {
         "id": 43795,
         "name": "Ismael Díaz",
         "position": "Offence",
@@ -9499,6 +9492,13 @@
         "date_of_birth": "1999-03-09"
       },
       {
+        "id": 110577,
+        "name": "César Yanis",
+        "position": "Offence",
+        "nationality": "Panama",
+        "date_of_birth": "1996-01-28"
+      },
+      {
         "id": 159094,
         "name": "Azarias Londoño",
         "position": "Offence",
@@ -9506,7 +9506,7 @@
         "date_of_birth": "2001-06-21"
       }
     ],
-    "fetched_at": "2026-07-21T18:40:45.635Z",
+    "fetched_at": "2026-07-22T00:50:00.598Z",
     "group": "L",
     "confederation": "CONCACAF"
   }
