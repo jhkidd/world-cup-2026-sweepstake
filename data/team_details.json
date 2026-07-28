@@ -193,7 +193,7 @@
         "date_of_birth": "2003-04-20"
       }
     ],
-    "fetched_at": "2026-07-28T07:01:22.535Z",
+    "fetched_at": "2026-07-28T12:44:52.378Z",
     "group": "A",
     "confederation": "CONCACAF"
   },
@@ -391,7 +391,7 @@
         "date_of_birth": "2000-10-02"
       }
     ],
-    "fetched_at": "2026-07-28T07:01:29.791Z",
+    "fetched_at": "2026-07-28T12:44:59.333Z",
     "group": "A",
     "confederation": "CAF"
   },
@@ -589,7 +589,7 @@
         "date_of_birth": "2002-05-09"
       }
     ],
-    "fetched_at": "2026-07-28T07:01:36.999Z",
+    "fetched_at": "2026-07-28T12:45:06.432Z",
     "group": "A",
     "confederation": "AFC"
   },
@@ -787,7 +787,7 @@
         "date_of_birth": "1999-04-29"
       }
     ],
-    "fetched_at": "2026-07-28T07:01:43.959Z",
+    "fetched_at": "2026-07-28T12:45:13.513Z",
     "group": "A",
     "confederation": "UEFA"
   },
@@ -985,7 +985,7 @@
         "date_of_birth": "2001-07-03"
       }
     ],
-    "fetched_at": "2026-07-28T07:01:51.365Z",
+    "fetched_at": "2026-07-28T12:45:20.583Z",
     "group": "B",
     "confederation": "CONCACAF"
   },
@@ -1183,7 +1183,7 @@
         "date_of_birth": "2007-09-21"
       }
     ],
-    "fetched_at": "2026-07-28T07:01:58.353Z",
+    "fetched_at": "2026-07-28T12:45:27.513Z",
     "group": "B",
     "confederation": "UEFA"
   },
@@ -1381,7 +1381,7 @@
         "date_of_birth": "1994-08-19"
       }
     ],
-    "fetched_at": "2026-07-28T07:02:05.473Z",
+    "fetched_at": "2026-07-28T12:45:34.626Z",
     "group": "B",
     "confederation": "AFC"
   },
@@ -1579,7 +1579,7 @@
         "date_of_birth": "2000-12-04"
       }
     ],
-    "fetched_at": "2026-07-28T07:02:12.426Z",
+    "fetched_at": "2026-07-28T12:45:41.534Z",
     "group": "B",
     "confederation": "UEFA"
   },
@@ -1777,7 +1777,7 @@
         "date_of_birth": "2006-08-03"
       }
     ],
-    "fetched_at": "2026-07-28T07:02:19.377Z",
+    "fetched_at": "2026-07-28T12:45:48.642Z",
     "group": "C",
     "confederation": "CONMEBOL"
   },
@@ -1975,7 +1975,7 @@
         "date_of_birth": "2004-11-30"
       }
     ],
-    "fetched_at": "2026-07-28T07:02:26.329Z",
+    "fetched_at": "2026-07-28T12:45:55.630Z",
     "group": "C",
     "confederation": "CAF"
   },
@@ -2173,7 +2173,7 @@
         "date_of_birth": "2001-07-07"
       }
     ],
-    "fetched_at": "2026-07-28T07:02:33.512Z",
+    "fetched_at": "2026-07-28T12:46:02.699Z",
     "group": "C",
     "confederation": "CONCACAF"
   },
@@ -2371,7 +2371,7 @@
         "date_of_birth": null
       }
     ],
-    "fetched_at": "2026-07-28T07:02:40.808Z",
+    "fetched_at": "2026-07-28T12:46:09.601Z",
     "group": "C",
     "confederation": "UEFA"
   },
@@ -2569,7 +2569,7 @@
         "date_of_birth": "2001-04-19"
       }
     ],
-    "fetched_at": "2026-07-28T07:02:47.749Z",
+    "fetched_at": "2026-07-28T12:46:16.481Z",
     "group": "D",
     "confederation": "CONCACAF"
   },
@@ -2767,7 +2767,7 @@
         "date_of_birth": "1995-06-16"
       }
     ],
-    "fetched_at": "2026-07-28T07:02:54.884Z",
+    "fetched_at": "2026-07-28T12:46:23.366Z",
     "group": "D",
     "confederation": "CONMEBOL"
   },
@@ -2965,7 +2965,7 @@
         "date_of_birth": "2000-11-28"
       }
     ],
-    "fetched_at": "2026-07-28T07:03:02.143Z",
+    "fetched_at": "2026-07-28T12:46:30.255Z",
     "group": "D",
     "confederation": "AFC"
   },
@@ -3163,7 +3163,7 @@
         "date_of_birth": "2005-05-04"
       }
     ],
-    "fetched_at": "2026-07-28T07:03:09.119Z",
+    "fetched_at": "2026-07-28T12:46:37.151Z",
     "group": "D",
     "confederation": "UEFA"
   },
@@ -3361,7 +3361,7 @@
         "date_of_birth": "2002-10-17"
       }
     ],
-    "fetched_at": "2026-07-28T07:03:16.189Z",
+    "fetched_at": "2026-07-28T12:46:44.100Z",
     "group": "E",
     "confederation": "UEFA"
   },
@@ -3559,7 +3559,7 @@
         "date_of_birth": "1992-09-19"
       }
     ],
-    "fetched_at": "2026-07-28T07:03:23.134Z",
+    "fetched_at": "2026-07-28T12:46:51.051Z",
     "group": "E",
     "confederation": "CONCACAF"
   },
@@ -3757,7 +3757,7 @@
         "date_of_birth": "2006-11-14"
       }
     ],
-    "fetched_at": "2026-07-28T07:03:30.075Z",
+    "fetched_at": "2026-07-28T12:46:57.961Z",
     "group": "E",
     "confederation": "CAF"
   },
@@ -3955,7 +3955,7 @@
         "date_of_birth": "2005-03-19"
       }
     ],
-    "fetched_at": "2026-07-28T07:03:37.028Z",
+    "fetched_at": "2026-07-28T12:47:04.935Z",
     "group": "E",
     "confederation": "CONMEBOL"
   },
@@ -4153,7 +4153,7 @@
         "date_of_birth": "2001-10-30"
       }
     ],
-    "fetched_at": "2026-07-28T07:03:43.972Z",
+    "fetched_at": "2026-07-28T12:47:11.847Z",
     "group": "F",
     "confederation": "UEFA"
   },
@@ -4351,7 +4351,7 @@
         "date_of_birth": "2005-06-03"
       }
     ],
-    "fetched_at": "2026-07-28T07:03:50.919Z",
+    "fetched_at": "2026-07-28T12:47:18.722Z",
     "group": "F",
     "confederation": "AFC"
   },
@@ -4549,7 +4549,7 @@
         "date_of_birth": "2002-04-27"
       }
     ],
-    "fetched_at": "2026-07-28T07:03:57.859Z",
+    "fetched_at": "2026-07-28T12:47:25.658Z",
     "group": "F",
     "confederation": "UEFA"
   },
@@ -4747,7 +4747,7 @@
         "date_of_birth": "2005-02-02"
       }
     ],
-    "fetched_at": "2026-07-28T07:04:04.814Z",
+    "fetched_at": "2026-07-28T12:47:32.539Z",
     "group": "F",
     "confederation": "CAF"
   },
@@ -4945,7 +4945,7 @@
         "date_of_birth": "2005-02-03"
       }
     ],
-    "fetched_at": "2026-07-28T07:04:11.787Z",
+    "fetched_at": "2026-07-28T12:47:39.436Z",
     "group": "G",
     "confederation": "UEFA"
   },
@@ -5143,7 +5143,7 @@
         "date_of_birth": "2008-01-01"
       }
     ],
-    "fetched_at": "2026-07-28T07:04:18.734Z",
+    "fetched_at": "2026-07-28T12:47:46.315Z",
     "group": "G",
     "confederation": "CAF"
   },
@@ -5341,7 +5341,7 @@
         "date_of_birth": "2000-10-30"
       }
     ],
-    "fetched_at": "2026-07-28T07:04:25.665Z",
+    "fetched_at": "2026-07-28T12:47:53.209Z",
     "group": "G",
     "confederation": "AFC"
   },
@@ -5539,7 +5539,7 @@
         "date_of_birth": "2002-08-19"
       }
     ],
-    "fetched_at": "2026-07-28T07:04:32.641Z",
+    "fetched_at": "2026-07-28T12:48:00.302Z",
     "group": "G",
     "confederation": "OFC"
   },
@@ -5737,7 +5737,7 @@
         "date_of_birth": "2003-07-13"
       }
     ],
-    "fetched_at": "2026-07-28T07:04:39.576Z",
+    "fetched_at": "2026-07-28T12:48:07.240Z",
     "group": "H",
     "confederation": "UEFA"
   },
@@ -5935,7 +5935,7 @@
         "date_of_birth": "2002-05-03"
       }
     ],
-    "fetched_at": "2026-07-28T07:04:46.531Z",
+    "fetched_at": "2026-07-28T12:48:14.330Z",
     "group": "H",
     "confederation": "CAF"
   },
@@ -6133,7 +6133,7 @@
         "date_of_birth": "2000-05-14"
       }
     ],
-    "fetched_at": "2026-07-28T07:04:53.533Z",
+    "fetched_at": "2026-07-28T12:48:21.409Z",
     "group": "H",
     "confederation": "AFC"
   },
@@ -6331,7 +6331,7 @@
         "date_of_birth": "1998-06-30"
       }
     ],
-    "fetched_at": "2026-07-28T07:05:00.503Z",
+    "fetched_at": "2026-07-28T12:48:28.331Z",
     "group": "H",
     "confederation": "CONMEBOL"
   },
@@ -6529,7 +6529,7 @@
         "date_of_birth": "2005-06-03"
       }
     ],
-    "fetched_at": "2026-07-28T07:05:07.903Z",
+    "fetched_at": "2026-07-28T12:48:35.411Z",
     "group": "I",
     "confederation": "UEFA"
   },
@@ -6734,7 +6734,7 @@
         "date_of_birth": "1981-02-05"
       }
     ],
-    "fetched_at": "2026-07-28T07:05:15.313Z",
+    "fetched_at": "2026-07-28T12:48:42.318Z",
     "group": "I",
     "confederation": "CAF"
   },
@@ -6932,7 +6932,7 @@
         "date_of_birth": "1996-01-19"
       }
     ],
-    "fetched_at": "2026-07-28T07:05:22.650Z",
+    "fetched_at": "2026-07-28T12:48:49.351Z",
     "group": "I",
     "confederation": "AFC"
   },
@@ -7130,7 +7130,7 @@
         "date_of_birth": "2000-02-06"
       }
     ],
-    "fetched_at": "2026-07-28T07:05:29.674Z",
+    "fetched_at": "2026-07-28T12:48:56.231Z",
     "group": "I",
     "confederation": "UEFA"
   },
@@ -7328,7 +7328,7 @@
         "date_of_birth": "2002-12-18"
       }
     ],
-    "fetched_at": "2026-07-28T07:05:36.607Z",
+    "fetched_at": "2026-07-28T12:49:03.341Z",
     "group": "J",
     "confederation": "CONMEBOL"
   },
@@ -7526,7 +7526,7 @@
         "date_of_birth": "2002-09-06"
       }
     ],
-    "fetched_at": "2026-07-28T07:05:43.559Z",
+    "fetched_at": "2026-07-28T12:49:10.247Z",
     "group": "J",
     "confederation": "CAF"
   },
@@ -7724,7 +7724,7 @@
         "date_of_birth": "2001-05-30"
       }
     ],
-    "fetched_at": "2026-07-28T07:05:50.731Z",
+    "fetched_at": "2026-07-28T12:49:17.146Z",
     "group": "J",
     "confederation": "UEFA"
   },
@@ -7922,7 +7922,7 @@
         "date_of_birth": "2004-04-13"
       }
     ],
-    "fetched_at": "2026-07-28T07:05:57.700Z",
+    "fetched_at": "2026-07-28T12:49:24.194Z",
     "group": "J",
     "confederation": "AFC"
   },
@@ -8120,7 +8120,7 @@
         "date_of_birth": "2002-12-14"
       }
     ],
-    "fetched_at": "2026-07-28T07:06:04.639Z",
+    "fetched_at": "2026-07-28T12:49:31.095Z",
     "group": "K",
     "confederation": "UEFA"
   },
@@ -8318,7 +8318,7 @@
         "date_of_birth": "1994-06-24"
       }
     ],
-    "fetched_at": "2026-07-28T07:06:12.028Z",
+    "fetched_at": "2026-07-28T12:49:37.972Z",
     "group": "K",
     "confederation": "CAF"
   },
@@ -8516,7 +8516,7 @@
         "date_of_birth": "1997-10-30"
       }
     ],
-    "fetched_at": "2026-07-28T07:06:18.996Z",
+    "fetched_at": "2026-07-28T12:49:44.893Z",
     "group": "K",
     "confederation": "AFC"
   },
@@ -8714,7 +8714,7 @@
         "date_of_birth": "2002-09-12"
       }
     ],
-    "fetched_at": "2026-07-28T07:06:25.944Z",
+    "fetched_at": "2026-07-28T12:49:51.767Z",
     "group": "K",
     "confederation": "CONMEBOL"
   },
@@ -8912,7 +8912,7 @@
         "date_of_birth": "2002-03-10"
       }
     ],
-    "fetched_at": "2026-07-28T07:06:32.889Z",
+    "fetched_at": "2026-07-28T12:49:58.652Z",
     "group": "L",
     "confederation": "UEFA"
   },
@@ -9110,7 +9110,7 @@
         "date_of_birth": "2003-03-31"
       }
     ],
-    "fetched_at": "2026-07-28T07:06:39.848Z",
+    "fetched_at": "2026-07-28T12:50:05.659Z",
     "group": "L",
     "confederation": "UEFA"
   },
@@ -9308,7 +9308,7 @@
         "date_of_birth": "2003-09-23"
       }
     ],
-    "fetched_at": "2026-07-28T07:06:47.414Z",
+    "fetched_at": "2026-07-28T12:50:12.741Z",
     "group": "L",
     "confederation": "CAF"
   },
@@ -9506,7 +9506,7 @@
         "date_of_birth": "2001-06-21"
       }
     ],
-    "fetched_at": "2026-07-28T07:06:54.353Z",
+    "fetched_at": "2026-07-28T12:50:19.616Z",
     "group": "L",
     "confederation": "CONCACAF"
   }
