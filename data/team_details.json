@@ -4,7 +4,7 @@
     "api_id": 769,
     "flag": "🇲🇽",
     "error": "API error 403: ",
-    "fetched_at": "2026-08-14T07:39:31.754Z",
+    "fetched_at": "2026-08-14T13:16:44.567Z",
     "group": "A",
     "confederation": "CONCACAF"
   },
@@ -13,7 +13,7 @@
     "api_id": 774,
     "flag": "🇿🇦",
     "error": "API error 403: ",
-    "fetched_at": "2026-08-14T07:39:38.788Z",
+    "fetched_at": "2026-08-14T13:16:51.423Z",
     "group": "A",
     "confederation": "CAF"
   },
@@ -22,7 +22,7 @@
     "api_id": 772,
     "flag": "🇰🇷",
     "error": "API error 403: ",
-    "fetched_at": "2026-08-14T07:39:45.749Z",
+    "fetched_at": "2026-08-14T13:16:58.428Z",
     "group": "A",
     "confederation": "AFC"
   },
@@ -31,7 +31,7 @@
     "api_id": 798,
     "flag": "🇨🇿",
     "error": "API error 403: ",
-    "fetched_at": "2026-08-14T07:39:52.761Z",
+    "fetched_at": "2026-08-14T13:17:05.229Z",
     "group": "A",
     "confederation": "UEFA"
   },
@@ -40,7 +40,7 @@
     "api_id": 828,
     "flag": "🇨🇦",
     "error": "API error 403: ",
-    "fetched_at": "2026-08-14T07:39:59.771Z",
+    "fetched_at": "2026-08-14T13:17:12.223Z",
     "group": "B",
     "confederation": "CONCACAF"
   },
@@ -49,7 +49,7 @@
     "api_id": 1060,
     "flag": "🇧🇦",
     "error": "API error 403: ",
-    "fetched_at": "2026-08-14T07:40:06.795Z",
+    "fetched_at": "2026-08-14T13:17:19.048Z",
     "group": "B",
     "confederation": "UEFA"
   },
@@ -58,7 +58,7 @@
     "api_id": 8030,
     "flag": "🇶🇦",
     "error": "API error 403: ",
-    "fetched_at": "2026-08-14T07:40:13.759Z",
+    "fetched_at": "2026-08-14T13:17:25.862Z",
     "group": "B",
     "confederation": "AFC"
   },
@@ -67,7 +67,7 @@
     "api_id": 788,
     "flag": "🇨🇭",
     "error": "API error 403: ",
-    "fetched_at": "2026-08-14T07:40:20.723Z",
+    "fetched_at": "2026-08-14T13:17:32.809Z",
     "group": "B",
     "confederation": "UEFA"
   },
@@ -76,7 +76,7 @@
     "api_id": 764,
     "flag": "🇧🇷",
     "error": "API error 403: ",
-    "fetched_at": "2026-08-14T07:40:27.742Z",
+    "fetched_at": "2026-08-14T13:17:39.774Z",
     "group": "C",
     "confederation": "CONMEBOL"
   },
@@ -85,7 +85,7 @@
     "api_id": 815,
     "flag": "🇲🇦",
     "error": "API error 403: ",
-    "fetched_at": "2026-08-14T07:40:35.006Z",
+    "fetched_at": "2026-08-14T13:17:46.585Z",
     "group": "C",
     "confederation": "CAF"
   },
@@ -94,7 +94,7 @@
     "api_id": 836,
     "flag": "🇭🇹",
     "error": "API error 403: ",
-    "fetched_at": "2026-08-14T07:40:42.016Z",
+    "fetched_at": "2026-08-14T13:17:53.382Z",
     "group": "C",
     "confederation": "CONCACAF"
   },
@@ -103,7 +103,7 @@
     "api_id": 8873,
     "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
     "error": "API error 403: ",
-    "fetched_at": "2026-08-14T07:40:49.032Z",
+    "fetched_at": "2026-08-14T13:18:00.378Z",
     "group": "C",
     "confederation": "UEFA"
   },
@@ -112,7 +112,7 @@
     "api_id": 771,
     "flag": "🇺🇸",
     "error": "API error 403: ",
-    "fetched_at": "2026-08-14T07:40:55.992Z",
+    "fetched_at": "2026-08-14T13:18:07.382Z",
     "group": "D",
     "confederation": "CONCACAF"
   },
@@ -121,7 +121,7 @@
     "api_id": 761,
     "flag": "🇵🇾",
     "error": "API error 403: ",
-    "fetched_at": "2026-08-14T07:41:03.017Z",
+    "fetched_at": "2026-08-14T13:18:14.181Z",
     "group": "D",
     "confederation": "CONMEBOL"
   },
@@ -130,7 +130,7 @@
     "api_id": 779,
     "flag": "🇦🇺",
     "error": "API error 403: ",
-    "fetched_at": "2026-08-14T07:41:10.269Z",
+    "fetched_at": "2026-08-14T13:18:20.977Z",
     "group": "D",
     "confederation": "AFC"
   },
@@ -139,7 +139,7 @@
     "api_id": 803,
     "flag": "🇹🇷",
     "error": "API error 403: ",
-    "fetched_at": "2026-08-14T07:41:17.230Z",
+    "fetched_at": "2026-08-14T13:18:27.917Z",
     "group": "D",
     "confederation": "UEFA"
   },
@@ -148,7 +148,7 @@
     "api_id": 759,
     "flag": "🇩🇪",
     "error": "API error 403: ",
-    "fetched_at": "2026-08-14T07:41:24.489Z",
+    "fetched_at": "2026-08-14T13:18:34.733Z",
     "group": "E",
     "confederation": "UEFA"
   },
@@ -157,7 +157,7 @@
     "api_id": 9460,
     "flag": "🇨🇼",
     "error": "API error 403: ",
-    "fetched_at": "2026-08-14T07:41:31.506Z",
+    "fetched_at": "2026-08-14T13:18:41.533Z",
     "group": "E",
     "confederation": "CONCACAF"
   },
@@ -166,7 +166,7 @@
     "api_id": 1935,
     "flag": "🇨🇮",
     "error": "API error 403: ",
-    "fetched_at": "2026-08-14T07:41:38.464Z",
+    "fetched_at": "2026-08-14T13:18:48.535Z",
     "group": "E",
     "confederation": "CAF"
   },
@@ -175,7 +175,7 @@
     "api_id": 791,
     "flag": "🇪🇨",
     "error": "API error 403: ",
-    "fetched_at": "2026-08-14T07:41:45.757Z",
+    "fetched_at": "2026-08-14T13:18:55.349Z",
     "group": "E",
     "confederation": "CONMEBOL"
   },
@@ -184,7 +184,7 @@
     "api_id": 8601,
     "flag": "🇳🇱",
     "error": "API error 403: ",
-    "fetched_at": "2026-08-14T07:41:52.778Z",
+    "fetched_at": "2026-08-14T13:19:02.176Z",
     "group": "F",
     "confederation": "UEFA"
   },
@@ -193,7 +193,7 @@
     "api_id": 766,
     "flag": "🇯🇵",
     "error": "API error 403: ",
-    "fetched_at": "2026-08-14T07:41:59.795Z",
+    "fetched_at": "2026-08-14T13:19:09.012Z",
     "group": "F",
     "confederation": "AFC"
   },
@@ -202,7 +202,7 @@
     "api_id": 792,
     "flag": "🇸🇪",
     "error": "API error 403: ",
-    "fetched_at": "2026-08-14T07:42:06.758Z",
+    "fetched_at": "2026-08-14T13:19:15.851Z",
     "group": "F",
     "confederation": "UEFA"
   },
@@ -211,7 +211,7 @@
     "api_id": 802,
     "flag": "🇹🇳",
     "error": "API error 403: ",
-    "fetched_at": "2026-08-14T07:42:13.719Z",
+    "fetched_at": "2026-08-14T13:19:22.798Z",
     "group": "F",
     "confederation": "CAF"
   },
@@ -220,7 +220,7 @@
     "api_id": 805,
     "flag": "🇧🇪",
     "error": "API error 403: ",
-    "fetched_at": "2026-08-14T07:42:20.980Z",
+    "fetched_at": "2026-08-14T13:19:29.620Z",
     "group": "G",
     "confederation": "UEFA"
   },
@@ -229,7 +229,7 @@
     "api_id": 825,
     "flag": "🇪🇬",
     "error": "API error 403: ",
-    "fetched_at": "2026-08-14T07:42:27.940Z",
+    "fetched_at": "2026-08-14T13:19:36.459Z",
     "group": "G",
     "confederation": "CAF"
   },
@@ -238,7 +238,7 @@
     "api_id": 840,
     "flag": "🇮🇷",
     "error": "API error 403: ",
-    "fetched_at": "2026-08-14T07:42:34.956Z",
+    "fetched_at": "2026-08-14T13:19:43.450Z",
     "group": "G",
     "confederation": "AFC"
   },
@@ -247,7 +247,7 @@
     "api_id": 783,
     "flag": "🇳🇿",
     "error": "API error 403: ",
-    "fetched_at": "2026-08-14T07:42:42.039Z",
+    "fetched_at": "2026-08-14T13:19:50.384Z",
     "group": "G",
     "confederation": "OFC"
   },
@@ -256,7 +256,7 @@
     "api_id": 760,
     "flag": "🇪🇸",
     "error": "API error 403: ",
-    "fetched_at": "2026-08-14T07:42:49.057Z",
+    "fetched_at": "2026-08-14T13:19:57.214Z",
     "group": "H",
     "confederation": "UEFA"
   },
@@ -265,7 +265,7 @@
     "api_id": 1930,
     "flag": "🇨🇻",
     "error": "API error 403: ",
-    "fetched_at": "2026-08-14T07:42:56.091Z",
+    "fetched_at": "2026-08-14T13:20:04.236Z",
     "group": "H",
     "confederation": "CAF"
   },
@@ -274,7 +274,7 @@
     "api_id": 801,
     "flag": "🇸🇦",
     "error": "API error 403: ",
-    "fetched_at": "2026-08-14T07:43:03.057Z",
+    "fetched_at": "2026-08-14T13:20:11.186Z",
     "group": "H",
     "confederation": "AFC"
   },
@@ -283,7 +283,7 @@
     "api_id": 758,
     "flag": "🇺🇾",
     "error": "API error 403: ",
-    "fetched_at": "2026-08-14T07:43:10.016Z",
+    "fetched_at": "2026-08-14T13:20:18.195Z",
     "group": "H",
     "confederation": "CONMEBOL"
   },
@@ -292,7 +292,7 @@
     "api_id": 773,
     "flag": "🇫🇷",
     "error": "API error 403: ",
-    "fetched_at": "2026-08-14T07:43:16.978Z",
+    "fetched_at": "2026-08-14T13:20:25.017Z",
     "group": "I",
     "confederation": "UEFA"
   },
@@ -301,7 +301,7 @@
     "api_id": 804,
     "flag": "🇸🇳",
     "error": "API error 403: ",
-    "fetched_at": "2026-08-14T07:43:23.936Z",
+    "fetched_at": "2026-08-14T13:20:31.958Z",
     "group": "I",
     "confederation": "CAF"
   },
@@ -310,7 +310,7 @@
     "api_id": 8062,
     "flag": "🇮🇶",
     "error": "API error 403: ",
-    "fetched_at": "2026-08-14T07:43:30.896Z",
+    "fetched_at": "2026-08-14T13:20:38.893Z",
     "group": "I",
     "confederation": "AFC"
   },
@@ -319,7 +319,7 @@
     "api_id": 8872,
     "flag": "🇳🇴",
     "error": "API error 403: ",
-    "fetched_at": "2026-08-14T07:43:37.905Z",
+    "fetched_at": "2026-08-14T13:20:45.823Z",
     "group": "I",
     "confederation": "UEFA"
   },
@@ -328,7 +328,7 @@
     "api_id": 762,
     "flag": "🇦🇷",
     "error": "API error 403: ",
-    "fetched_at": "2026-08-14T07:43:44.867Z",
+    "fetched_at": "2026-08-14T13:20:52.644Z",
     "group": "J",
     "confederation": "CONMEBOL"
   },
@@ -337,7 +337,7 @@
     "api_id": 778,
     "flag": "🇩🇿",
     "error": "API error 403: ",
-    "fetched_at": "2026-08-14T07:43:51.829Z",
+    "fetched_at": "2026-08-14T13:20:59.491Z",
     "group": "J",
     "confederation": "CAF"
   },
@@ -346,7 +346,7 @@
     "api_id": 816,
     "flag": "🇦🇹",
     "error": "API error 403: ",
-    "fetched_at": "2026-08-14T07:43:58.807Z",
+    "fetched_at": "2026-08-14T13:21:06.591Z",
     "group": "J",
     "confederation": "UEFA"
   },
@@ -355,7 +355,7 @@
     "api_id": 8049,
     "flag": "🇯🇴",
     "error": "API error 403: ",
-    "fetched_at": "2026-08-14T07:44:05.774Z",
+    "fetched_at": "2026-08-14T13:21:13.431Z",
     "group": "J",
     "confederation": "AFC"
   },
@@ -364,7 +364,7 @@
     "api_id": 765,
     "flag": "🇵🇹",
     "error": "API error 403: ",
-    "fetched_at": "2026-08-14T07:44:12.735Z",
+    "fetched_at": "2026-08-14T13:21:20.228Z",
     "group": "K",
     "confederation": "UEFA"
   },
@@ -373,7 +373,7 @@
     "api_id": 1934,
     "flag": "🇨🇩",
     "error": "API error 403: ",
-    "fetched_at": "2026-08-14T07:44:19.695Z",
+    "fetched_at": "2026-08-14T13:21:27.029Z",
     "group": "K",
     "confederation": "CAF"
   },
@@ -382,7 +382,7 @@
     "api_id": 8070,
     "flag": "🇺🇿",
     "error": "API error 403: ",
-    "fetched_at": "2026-08-14T07:44:26.947Z",
+    "fetched_at": "2026-08-14T13:21:33.978Z",
     "group": "K",
     "confederation": "AFC"
   },
@@ -391,7 +391,7 @@
     "api_id": 818,
     "flag": "🇨🇴",
     "error": "API error 403: ",
-    "fetched_at": "2026-08-14T07:44:33.976Z",
+    "fetched_at": "2026-08-14T13:21:40.983Z",
     "group": "K",
     "confederation": "CONMEBOL"
   },
@@ -400,7 +400,7 @@
     "api_id": 770,
     "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
     "error": "API error 403: ",
-    "fetched_at": "2026-08-14T07:44:40.965Z",
+    "fetched_at": "2026-08-14T13:21:47.782Z",
     "group": "L",
     "confederation": "UEFA"
   },
@@ -409,7 +409,7 @@
     "api_id": 799,
     "flag": "🇭🇷",
     "error": "API error 403: ",
-    "fetched_at": "2026-08-14T07:44:47.925Z",
+    "fetched_at": "2026-08-14T13:21:54.585Z",
     "group": "L",
     "confederation": "UEFA"
   },
@@ -418,7 +418,7 @@
     "api_id": 763,
     "flag": "🇬🇭",
     "error": "API error 403: ",
-    "fetched_at": "2026-08-14T07:44:54.886Z",
+    "fetched_at": "2026-08-14T13:22:01.408Z",
     "group": "L",
     "confederation": "CAF"
   },
@@ -427,7 +427,7 @@
     "api_id": 1836,
     "flag": "🇵🇦",
     "error": "API error 403: ",
-    "fetched_at": "2026-08-14T07:45:02.347Z",
+    "fetched_at": "2026-08-14T13:22:08.209Z",
     "group": "L",
     "confederation": "CONCACAF"
   }
