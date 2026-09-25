@@ -1,7 +1,8 @@
 {
-  "description": "Auto-updated match results from external APIs. Used as fallback for completed matches.",
-  "last_updated": "2026-09-25T16:56:18.700Z",
-  "matches": [
+  "timestamp": "2026-09-25T16:56:18.699Z",
+  "matchOdds": [],
+  "winnerOdds": [],
+  "results": [
     {
       "id": "Mexico-South Africa",
       "home_team": "Mexico",
